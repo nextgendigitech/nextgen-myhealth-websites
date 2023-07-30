@@ -4,7 +4,7 @@ import { H1 } from "../../components/Typography";
 const Home = () => {
     return (
         <VBox>
-            <H1>Home Page</H1>
+            <H1 className="m-4">Home Page</H1>
         </VBox>
     );
 }
