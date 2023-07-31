@@ -15,6 +15,8 @@ const colors = {
     lessDarkGrey: '#8c8c8c',
     darkGrey: '#262626',
     shadow: 'rgba(0,0,0,0.25)',
+    mercury: '#DAEBE2',
+    white: '#FFFFFF',
 }
 
 export default colors;
