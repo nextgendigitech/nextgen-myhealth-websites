@@ -1,11 +1,11 @@
 @font-face {
-  font-family: 'bangla';
-  src: local('bangla'),
-    url('./assets/fonts/') format('truetype');
+  font-family: 'NotoSans';
+  src: local('NotoSans'),
+    url('./assets/fonts/NotoSansBengali-VariableFont_wdth,wght.ttf') format('truetype');
 }
 
 :root {
-  font-family: bangla, Arial, Inter, system-ui, Avenir, Helvetica, sans-serif;
+  font-family: NotoSans, Arial, Inter, system-ui, Avenir, Helvetica, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
