@@ -6,9 +6,9 @@ import { P1 } from '../components/Typography';
 
 import SearchBar from '../components/SearchBar';
 import colors from '../config/colors';
-import facebook_icon from '../images/facebook_icon.png';
-import linkedin_icon from '../images/linkedin_icon.png';
-import youtube_logo from '../images/youtube_logo.png';
+import facebook_icon from '../assets/images/facebook_icon.png';
+import linkedin_icon from '../assets/images/linkedin_icon.png';
+import youtube_logo from '../assets/images/youtube_logo.png';
 
 const Container = styled(HBox)`
     position: sticky;

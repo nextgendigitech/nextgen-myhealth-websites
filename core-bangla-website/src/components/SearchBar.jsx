@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 import colors from "../config/colors";
-import search_icon from '../images/search_icon.png';
+import search_icon from '../assets/images/search_icon.png';
 
 
 const SearchBarContainer = styled.div`
