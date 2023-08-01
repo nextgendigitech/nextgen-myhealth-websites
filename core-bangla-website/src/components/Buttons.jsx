@@ -88,7 +88,7 @@ export const Button = styled.button`
     cursor: pointer;
     box-shadow: ${props => props.elevated && `0px 2px 3px ${colors.shadow}`};
 
-    :hover {
+    &:hover {
         background-color: ${props => props.outlined ? colorProps[props.color || 'default'].hoverBGOutlined : colorProps[props.color || 'default'].hoverBackgrouond};
         color: ${props => props.outlined ? colorProps[props.color || 'default'].hoverBackgrouond : colorProps[props.color || 'default'].hoverColor};
         box-shadow: ${props => props.elevated && `0px 3px 5px ${colors.shadow}`};
