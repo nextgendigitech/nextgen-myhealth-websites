@@ -13,7 +13,9 @@ const Container = styled(HBox)`
     height: 80px;
     width: 100%;
     border: 1px solid ${colors.grey};
-    background-color: rgba(40, 193, 253, 0.05);
+    background-color: ${colors.veryLightGreen};
+    padding-left: 120px;
+    padding-right: 120px;
 `
 
 const LogoImage = styled.img`
@@ -22,25 +24,29 @@ const LogoImage = styled.img`
 
 const NavBar = () => {
     return (
-        <Container justify='center' align='center'>
-            <LogoImage className='mr-8' src={logo}/>
-            <NavLink className='bold' style={{textDecoration: 'none'}} to='/'>
-                <P1>হোম</P1>
-            </NavLink>
-            <NavLink className='bold' style={{textDecoration: 'none'}} to='/about-us'>
-                <P1 className='mx-1'>পরিচিতি</P1>
-            </NavLink>
-            <NavLink className='bold' style={{textDecoration: 'none'}} to='/specialties'>
-                <P1 className='mx-1'>বিশেষজ্ঞ ডাক্তার</P1>
-            </NavLink>
-            <NavLink className='bold' style={{textDecoration: 'none'}} to='/payment'>
-                <P1 className='mx-1'>পেমেন্ট</P1>
-            </NavLink>
-            <NavLink className='bold' style={{textDecoration: 'none'}} to='/contact-us'>
-                <P1 className='mx-1'>যোগাযোগ</P1>
-            </NavLink>
-            <Button className='bold ml-3' color='first' elevated>পেশেন্ট পোর্টাল</Button>
-            <Button className='bold ml-3' color='third' elevated>ডাক্তার পোর্টাল</Button>
+        <Container justify='space-between' align='center'>
+            <LogoImage src={logo}/>
+            <HBox>
+                <NavLink style={{textDecoration: 'none'}} to='/'>
+                    <P1 className='bold'>হোম</P1>
+                </NavLink>
+                <NavLink className='mx-2' style={{textDecoration: 'none'}} to='/about-us'>
+                    <P1 className='bold'>পরিচিতি</P1>
+                </NavLink>
+                <NavLink className='mx-2' style={{textDecoration: 'none'}} to='/specialties'>
+                    <P1 className='bold'>বিশেষজ্ঞ ডাক্তার</P1>
+                </NavLink>
+                <NavLink className='mx-2' style={{textDecoration: 'none'}} to='/payment'>
+                    <P1 className='bold'>পেমেন্ট</P1>
+                </NavLink>
+                <NavLink style={{textDecoration: 'none'}} to='/contact-us'>
+                    <P1 className='bold'>যোগাযোগ</P1>
+                </NavLink>
+            </HBox>
+            <HBox>
+                <Button className='bold' color='first' elevated>পেশেন্ট পোর্টাল</Button>
+                <Button className='bold ml-3' color='third' elevated>ডাক্তার পোর্টাল</Button>
+            </HBox>
         </Container>
     );
 }
