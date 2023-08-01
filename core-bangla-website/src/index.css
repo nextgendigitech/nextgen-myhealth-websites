@@ -1,5 +1,11 @@
+@font-face {
+  font-family: 'bangla';
+  src: local('bangla'),
+    url('./assets/fonts/') format('truetype');
+}
+
 :root {
-  font-family: Arial, Inter, system-ui, Avenir, Helvetica, sans-serif;
+  font-family: bangla, Arial, Inter, system-ui, Avenir, Helvetica, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
