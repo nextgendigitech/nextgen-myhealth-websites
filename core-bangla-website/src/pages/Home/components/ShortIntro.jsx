@@ -7,7 +7,7 @@ const Container = styled(HBox)`
     margin-right: 120px;
 `
 
-const Banner = () => {
+const ShortIntro = () => {
   return (
     <Container>
       
@@ -15,4 +15,4 @@ const Banner = () => {
   );
 }
 
-export default Banner;
+export default ShortIntro;

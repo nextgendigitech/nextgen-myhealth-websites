@@ -1,10 +1,14 @@
 import { VBox } from "../../components/Containers";
-import { H1 } from "../../components/Typography";
+import Banner from "./components/Banner";
+import ShortIntro from "./components/ShortIntro";
+
+
 
 const Home = () => {
     return (
         <VBox>
-            <H1 className="m-4">Home Page</H1>
+            <Banner />
+            <ShortIntro />
         </VBox>
     );
 }
