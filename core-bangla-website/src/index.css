@@ -6,8 +6,8 @@
 
 :root {
   font-family: NotoSans, Arial, Inter, system-ui, Avenir, Helvetica, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  /* line-height: 1.5; */
+  /* font-weight: 400; */
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;

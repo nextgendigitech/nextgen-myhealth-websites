@@ -12,7 +12,7 @@ const Container = styled(HBox)`
 const ShortIntro = () => {
   return (
     <Container>
-      <ImageContainer></ImageContainer>
+      <Container></Container>
     </Container>
   );
 }
