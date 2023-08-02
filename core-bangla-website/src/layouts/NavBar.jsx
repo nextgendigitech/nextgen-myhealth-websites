@@ -1,9 +1,7 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
-import { useRef } from 'react';
 
 import { HBox } from '../components/Containers';
-import { P1, P2 } from '../components/Typography';
 import { Button } from '../components/Buttons';
 import logo from '../assets/images/Website-Logo.png'
 import colors from '../config/colors';
@@ -41,18 +39,18 @@ const NavBar = () => {
                 <SNavLink to='/'>
                     হোম
                 </SNavLink>
-                <SNavLink className='mx-2' style={{textDecoration: 'none'}} to='/about-us'>
+                <SNavLink className='mx-4' style={{textDecoration: 'none'}} to='/about-us'>
                     পরিচিতি
                 </SNavLink>
-                <SNavLink className='mx-2' style={{textDecoration: 'none'}} to='/specialties'>
+                <SNavLink className='' style={{textDecoration: 'none'}} to='/specialties'>
                     বিশেষজ্ঞ ডাক্তার
                 </SNavLink>
-                <SNavLink className='mx-2' style={{textDecoration: 'none'}} to='/payment'>
+                {/* <SNavLink className='mx-2' style={{textDecoration: 'none'}} to='/payment'>
                     পেমেন্ট
-                </SNavLink>
-                <SNavLink style={{textDecoration: 'none'}} to='/contact-us'>
+                </SNavLink> */}
+                {/* <SNavLink style={{textDecoration: 'none'}} to='/contact-us'>
                     যোগাযোগ
-                </SNavLink>
+                </SNavLink> */}
             </HBox>
             <HBox>
                 <Button className='bold' color='first' elevated>পেশেন্ট পোর্টাল</Button>
