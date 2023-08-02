@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
+import { useRef } from 'react';
 
 import { HBox } from '../components/Containers';
 import { P1, P2 } from '../components/Typography';
@@ -22,26 +23,36 @@ const LogoImage = styled.img`
     height: 80px;
 `
 
+const SNavLink = styled(NavLink)`
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: ${colors.darkGrey};
+
+    &.active {
+        font-weight: bold;
+    }
+`
+
 const NavBar = () => {
     return (
         <Container justify='space-between' align='center'>
             <LogoImage src={logo}/>
             <HBox>
-                <NavLink style={{textDecoration: 'none'}} to='/'>
-                    <P2>হোম</P2>
-                </NavLink>
-                <NavLink className='mx-2' style={{textDecoration: 'none'}} to='/about-us'>
-                    <P2>পরিচিতি</P2>
-                </NavLink>
-                <NavLink className='mx-2' style={{textDecoration: 'none'}} to='/specialties'>
-                    <P2>বিশেষজ্ঞ ডাক্তার</P2>
-                </NavLink>
-                <NavLink className='mx-2' style={{textDecoration: 'none'}} to='/payment'>
-                    <P2>পেমেন্ট</P2>
-                </NavLink>
-                <NavLink style={{textDecoration: 'none'}} to='/contact-us'>
-                    <P2>যোগাযোগ</P2>
-                </NavLink>
+                <SNavLink to='/'>
+                    হোম
+                </SNavLink>
+                <SNavLink className='mx-2' style={{textDecoration: 'none'}} to='/about-us'>
+                    পরিচিতি
+                </SNavLink>
+                <SNavLink className='mx-2' style={{textDecoration: 'none'}} to='/specialties'>
+                    বিশেষজ্ঞ ডাক্তার
+                </SNavLink>
+                <SNavLink className='mx-2' style={{textDecoration: 'none'}} to='/payment'>
+                    পেমেন্ট
+                </SNavLink>
+                <SNavLink style={{textDecoration: 'none'}} to='/contact-us'>
+                    যোগাযোগ
+                </SNavLink>
             </HBox>
             <HBox>
                 <Button className='bold' color='first' elevated>পেশেন্ট পোর্টাল</Button>
