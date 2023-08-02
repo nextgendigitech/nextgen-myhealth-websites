@@ -41,7 +41,7 @@ const TopBar = () => {
                 <IconImage src={linkedin_icon} alt="LinkedIn Image" className="mx-3"/>
                 <IconImage src={youtube_logo} alt="Youtube Image"/>
             </HBox>
-            <P1 className="bold">হটলাইন +৮৮০১৩২১১১৯৩৯১</P1> 
+            <P1 className="bold">হটলাইন +৮৮০১৩২১১১৯৩৯১</P1>
             <SearchBar
                 placeholder="ডাক্তার অনুসন্ধান করুন"
                 onChange={handleSearchChange}
