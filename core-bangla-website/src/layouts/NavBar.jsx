@@ -2,14 +2,14 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 import { HBox } from '../components/Containers';
-import { P1 } from '../components/Typography';
+import { P1, P2 } from '../components/Typography';
 import { Button } from '../components/Buttons';
 import logo from '../assets/images/Website-Logo.png'
 import colors from '../config/colors';
 
 const Container = styled(HBox)`
     position: sticky;
-    top: 0px;
+    top: 60px;
     height: 80px;
     width: 100%;
     border: 1px solid ${colors.grey};
@@ -28,19 +28,19 @@ const NavBar = () => {
             <LogoImage src={logo}/>
             <HBox>
                 <NavLink style={{textDecoration: 'none'}} to='/'>
-                    <P1 className='bold'>হোম</P1>
+                    <P2>হোম</P2>
                 </NavLink>
                 <NavLink className='mx-2' style={{textDecoration: 'none'}} to='/about-us'>
-                    <P1 className='bold'>পরিচিতি</P1>
+                    <P2>পরিচিতি</P2>
                 </NavLink>
                 <NavLink className='mx-2' style={{textDecoration: 'none'}} to='/specialties'>
-                    <P1 className='bold'>বিশেষজ্ঞ ডাক্তার</P1>
+                    <P2>বিশেষজ্ঞ ডাক্তার</P2>
                 </NavLink>
                 <NavLink className='mx-2' style={{textDecoration: 'none'}} to='/payment'>
-                    <P1 className='bold'>পেমেন্ট</P1>
+                    <P2>পেমেন্ট</P2>
                 </NavLink>
                 <NavLink style={{textDecoration: 'none'}} to='/contact-us'>
-                    <P1 className='bold'>যোগাযোগ</P1>
+                    <P2>যোগাযোগ</P2>
                 </NavLink>
             </HBox>
             <HBox>

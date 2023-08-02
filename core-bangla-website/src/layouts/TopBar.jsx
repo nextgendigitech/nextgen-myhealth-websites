@@ -2,7 +2,7 @@ import { useState } from 'react';
 import styled from 'styled-components';
 
 import { HBox } from '../components/Containers';
-import { P1 } from '../components/Typography';
+import { P1, P2 } from '../components/Typography';
 
 import SearchBar from '../components/SearchBar';
 import colors from '../config/colors';
@@ -41,7 +41,7 @@ const TopBar = () => {
                 <IconImage src={linkedin_icon} alt="LinkedIn Image" className="mx-3"/>
                 <IconImage src={youtube_logo} alt="Youtube Image"/>
             </HBox>
-            <P1 className="bold">হটলাইন +৮৮০১৩২১১১৯৩৯১</P1>
+            <P2 className="bold">হটলাইন +৮৮০১৩২১১১৯৩৯১</P2>
             <SearchBar
                 placeholder="ডাক্তার অনুসন্ধান করুন"
                 onChange={handleSearchChange}

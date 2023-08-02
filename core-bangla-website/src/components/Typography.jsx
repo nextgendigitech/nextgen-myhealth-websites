@@ -38,7 +38,7 @@ export const H1 = styled.h1`
     display: ${props => displayProps[props.display || 'block']};
     text-align: ${props => alignProps[props.align || 'left']};
     font-weight: normal;
-    font-size: 1.8rem;
+    font-size: 3.5rem;
 `
 
 export const H2 = styled.h2`
@@ -46,7 +46,7 @@ export const H2 = styled.h2`
     display: ${props => displayProps[props.display || 'block']};
     text-align: ${props => alignProps[props.align || 'left']};
     font-weight: normal;
-    font-size: 1.6rem;
+    font-size: 2.5rem;
 `
 
 export const H3 = styled.h3`
@@ -54,7 +54,7 @@ export const H3 = styled.h3`
     display: ${props => displayProps[props.display || 'block']};
     text-align: ${props => alignProps[props.align || 'left']};
     font-weight: normal;
-    font-size: 1.4rem;
+    font-size: 2rem;
 `
 
 export const H4 = styled.h4`
@@ -62,7 +62,7 @@ export const H4 = styled.h4`
     display: ${props => displayProps[props.display || 'block']};
     text-align: ${props => alignProps[props.align || 'left']};
     font-weight: normal;
-    font-size: 1.2rem;
+    font-size: 1.8rem;
 `
 
 export const H5 = styled.h5`
@@ -70,7 +70,7 @@ export const H5 = styled.h5`
     display: ${props => displayProps[props.display || 'block']};
     text-align: ${props => alignProps[props.align || 'left']};
     font-weight: bold;
-    font-size: 1rem;
+    font-size: 1.6rem;
 `
 
 export const H6 = styled.h6`
@@ -78,7 +78,7 @@ export const H6 = styled.h6`
     display: ${props => displayProps[props.display || 'block']};
     text-align: ${props => alignProps[props.align || 'left']};
     font-weight: bold;
-    font-size: 0.8rem;
+    font-size: 1.4rem;
 `
 
 export const P1 = styled.p`
@@ -86,7 +86,7 @@ export const P1 = styled.p`
     display: ${props => displayProps[props.display || 'block']};
     text-align: ${props => alignProps[props.align || 'left']};
     font-weight: normal;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
 `
 
 export const P2 = styled.p`
@@ -94,7 +94,7 @@ export const P2 = styled.p`
     display: ${props => displayProps[props.display || 'block']};
     text-align: ${props => alignProps[props.align || 'left']};
     font-weight: normal;
-    font-size: 1rem;
+    font-size: 1.2rem;
 `
 
 export const P3 = styled.p`
@@ -102,7 +102,7 @@ export const P3 = styled.p`
     display: ${props => displayProps[props.display || 'block']};
     text-align: ${props => alignProps[props.align || 'left']};
     font-weight: normal;
-    font-size: 0.8rem;
+    font-size: 1rem;
 `
 
 export const P4 = styled.p`
@@ -110,5 +110,5 @@ export const P4 = styled.p`
     display: ${props => displayProps[props.display || 'block']};
     text-align: ${props => alignProps[props.align || 'left']};
     font-weight: normal;
-    font-size: 0.6rem;
+    font-size: 0.8rem;
 `
