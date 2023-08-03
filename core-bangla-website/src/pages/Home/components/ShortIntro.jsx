@@ -25,7 +25,7 @@ const Image = styled.img`
   position: relative;
   top: calc(-100px + 8px);
   left: 8px;
-  z-index: 1;
+  /* z-index: 1; */
 `
 
 const RightArrowIcon = styled(FaArrowRightLong)`

@@ -40,8 +40,8 @@ const LogoImage = styled.img`
 const Footer = () => {
     return (
         <>
-            <FooterContainer1>
-                <LogoImage className='mt-4' src={logo}></LogoImage>
+            <FooterContainer1 style={{borderRadius: '30px 30px 0px 0px'}}>
+                <LogoImage className='mt-4' src={logo} />
             </FooterContainer1>
             <FooterContainer1 className='pb-7' justify='space-between'>
                 <VBox>    

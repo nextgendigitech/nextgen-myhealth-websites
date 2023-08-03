@@ -19,6 +19,7 @@ const Container = styled(HBox)`
     background: ${colors.mercury};
     padding-left: 120px;
     padding-right: 120px;
+    z-index: 1;
 `
 
 const IconImage = styled.img`
