@@ -13,24 +13,24 @@ const Container = styled(HBox)`
 `
 
 const GreenBox = styled.div`
-  height: 100px;
-  width: 100px;
-  background-color: ${colors.darkGreen};
-  border-radius: 0px 10px 0px 10px;
+    height: 100px;
+    width: 100px;
+    background-color: ${colors.darkGreen};
+    border-radius: 0px 10px 0px 10px;
 `
 
 const Image = styled.img`
-  width: 80%;
-  height: auto;
-  position: relative;
-  top: calc(-100px + 8px);
-  left: 8px;
-  z-index: 1;
+    width: 80%;
+    height: auto;
+    position: relative;
+    top: calc(-100px + 8px);
+    left: 8px;
+    z-index: 1;
 `
 
 const RightArrowIcon = styled(FaArrowRightLong)`
-  font-size: 24px;
-  color: ${colors.darkGreen};
+    font-size: 24px;
+    color: ${colors.darkGreen};
 `
 
 const ShortIntro = () => {
