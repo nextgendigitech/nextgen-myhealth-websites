@@ -1,10 +1,12 @@
 import { VBox } from "../../components/Containers";
-import { H1 } from "../../components/Typography";
+import Banner from "./components/Banner";
+import WhoWeAre from "./components/WhoWeAre";
 
 const AboutUs = () => {
     return (
         <VBox>
-            <H1>About Us Page</H1>
+            <Banner />
+            <WhoWeAre />
         </VBox>
     );
 }
