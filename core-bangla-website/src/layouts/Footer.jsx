@@ -10,7 +10,7 @@ import colors from '../config/colors';
 const FooterContainer1 = styled(VBox)`
     padding-left: 120px;
     padding-right: 120px;
-    margin-top: 200px;
+    margin-top: 120px;
     background-color: ${colors.mercury};
     border-radius: 30px 30px 0px 0px;
 `

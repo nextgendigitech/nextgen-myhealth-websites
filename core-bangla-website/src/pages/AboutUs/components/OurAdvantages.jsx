@@ -1,12 +1,14 @@
 import styled from "styled-components";
-import colors from "../../../config/colors";
 
+import colors from "../../../config/colors";
 import { HBox, VBox } from "../../../components/Containers";
 import { H3, P2, P4 } from "../../../components/Typography";
 
+const Container = styled(VBox)`
+    margin-top: 120px;
+`
 
 const VContainer = styled(VBox)`
-    margin-top: 120px;
     align-items: center;
     flex-wrap: nowrap;
 `
@@ -30,19 +32,13 @@ const LowerHalfCircleCard = styled.div`
   
 `
 
-const Content = styled.div`
-    margin: 12px;
-    padding: 20px;
-    text-align: center;
-`
-
 const TopContentCard = ({ title, detail, className }) => {
     return (
         <UpperHalfCircleCard>
-            <Content className={className}>
+            <VBox className='pt-6 px-2'>
                 <P2 className="bold" color="white" align="center">{title}</P2>
                 <P4 color="white" className="mt-2" align="center">{detail}</P4>
-            </Content>
+            </VBox>
         </UpperHalfCircleCard>
 
     );
@@ -51,10 +47,10 @@ const TopContentCard = ({ title, detail, className }) => {
 const BottomContentCard = ({ title, detail, className }) => {
     return (
         <LowerHalfCircleCard>
-            <Content className={className}>
+            <VBox className='pt-2 px-2'>
                 <P2 className="bold mb-2" color="white" align="center">{title}</P2>
                 <P4 color="white" align="center">{detail}</P4>
-            </Content>
+            </VBox>
         </LowerHalfCircleCard>
 
     );
@@ -62,17 +58,17 @@ const BottomContentCard = ({ title, detail, className }) => {
 
 const OurAdvantages = () => {
   return (
-    <>
-        <H3 className="bold" align="center" style={{ marginTop: '120px' }}>আমাদের প্ল্যাটফর্ম ব্যবহার করার সুবিধা</H3>
-        <HBox justify="center" align="center"> 
+    <Container>
+        <H3 className="bold" align="center">আমাদের প্ল্যাটফর্ম ব্যবহার করার সুবিধা</H3>
+        <HBox justify="center" align="center" className="mt-8"> 
             <VContainer>
-                <TopContentCard 
-                title="ব্যবহারকারী বান্ধব পোর্টাল"
-                detail="রোগী এবং ডাক্তার পক্ষের সকল বয়সের ব্যবহারকারীদের জন্য ব্যবহার করা সহজ।"
+                <TopContentCard
+                    title="ব্যবহারকারী বান্ধব পোর্টাল"
+                    detail="রোগী এবং ডাক্তার পক্ষের সকল বয়সের ব্যবহারকারীদের জন্য ব্যবহার করা সহজ।"
                 />
                 <BottomContentCard 
-                title="অ্যাপয়েন্টমেন্ট নোটিফিকেশন"
-                detail="অনলাইন পরামর্শের জন্য রোগী এবং ডাক্তার উভয়কে এসএমএস এবং ই-মেইলের মাধ্যমে প্রাথমিকভাবে জানানো হবে।"
+                    title="অ্যাপয়েন্টমেন্ট নোটিফিকেশন"
+                    detail="অনলাইন পরামর্শের জন্য রোগী এবং ডাক্তার উভয়কে এসএমএস এবং ই-মেইলের মাধ্যমে প্রাথমিকভাবে জানানো হবে।"
                 />
             </VContainer>
             <VContainer>
@@ -86,17 +82,17 @@ const OurAdvantages = () => {
                 />
             </VContainer>
             <VContainer>
-            <TopContentCard 
-                title="ই-প্রেসক্রিপশন সেবা"
-                detail="ভিডিও সেশনের সমাপ্তির পর ডাক্তার ই-প্রেসক্রিপশন আপলোড করবেন। ই-প্রেসক্রিপশনটি তখনই বা পরে ডাউনলোড এবং ব্যবহার করা যাবে।"
-            />
-            <BottomContentCard 
-                title="সপ্তাহব্যাপী সেবা"
-                detail="নেক্সটজেন মাইহেলথ ভিসিপি সপ্তাহে সাত দিনই সেবা প্রদানের জন্য নিবেদিত।"
-            />
+                <TopContentCard 
+                    title="ই-প্রেসক্রিপশন সেবা"
+                    detail="ভিডিও সেশনের সমাপ্তির পর ডাক্তার ই-প্রেসক্রিপশন আপলোড করবেন। ই-প্রেসক্রিপশনটি তখনই বা পরে ডাউনলোড এবং ব্যবহার করা যাবে।"
+                />
+                <BottomContentCard 
+                    title="সপ্তাহব্যাপী সেবা"
+                    detail="নেক্সটজেন মাইহেলথ ভিসিপি সপ্তাহে সাত দিনই সেবা প্রদানের জন্য নিবেদিত।"
+                />
             </VContainer>
         </HBox>
-    </>
+    </Container>
   );
 }
 

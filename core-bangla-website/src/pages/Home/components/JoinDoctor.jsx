@@ -9,6 +9,7 @@ const Container = styled(HBox)`
     margin-top: 120px;
     width: 100%;
     height: 330px;
+    margin-bottom: 80px;
 `
 
 const TopBorder = styled.div`
@@ -55,6 +56,6 @@ const JoinDoctor = () => {
             <BottomBorder />
         </Container>
     );
-};
+}
 
 export default JoinDoctor;
