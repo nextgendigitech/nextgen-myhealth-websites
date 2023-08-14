@@ -1,10 +1,13 @@
 import { VBox } from "../../components/Containers";
-import { H1 } from "../../components/Typography";
+import { P1 } from "../../components/Typography";
+import MedicineSection from "./components/MedicineSection";
+import SurgerySection from "./components/SurgerySection";
 
 const Specialties = () => {
     return (
         <VBox>
-            <H1>Specialties Page</H1>
+            <MedicineSection></MedicineSection>
+            <SurgerySection></SurgerySection>
         </VBox>
     );
 }

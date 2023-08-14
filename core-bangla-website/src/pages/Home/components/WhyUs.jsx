@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 import { VBox, HBox } from "../../../components/Containers";
-import { H3, P1, P2, P3 } from "../../../components/Typography";
+import { H3, P1, P2 } from "../../../components/Typography";
 import colors from '../../../config/colors';
 
 const Container = styled(VBox)`
@@ -129,7 +129,7 @@ const WhyUs = () => {
                         </ItemTextContainer>
                     </Item1>
     
-                    <CircleContainer justify='center' top_position='33.8%' left_position='41%'>
+                    <CircleContainer justify='center' top_position='34.4%' left_position='41%'>
                         <Circle></Circle>
                     </CircleContainer>
                     
@@ -139,7 +139,7 @@ const WhyUs = () => {
                         </ItemTextContainer>
                     </Item2>
 
-                    <CircleContainer justify='center' top_position='58%' left_position='41%'>
+                    <CircleContainer justify='center' top_position='58.8%' left_position='41%'>
                         <Circle></Circle>
                     </CircleContainer>
 
@@ -154,7 +154,7 @@ const WhyUs = () => {
                 <VBox style={{width: '50%'}}>
                     {/* Center */}
 
-                    <VBox style={{height: '100%', padding: '40px'}}>
+                    <VBox className='p-5' style={{height: '100%'}}>
                         <CenterCircleContainer>
                             <CenterCircle align='center' justify='center'>
                                 <CircleTextContainer1 align='center'>
@@ -178,7 +178,7 @@ const WhyUs = () => {
                         </ItemTextContainer>
                     </Item1>
 
-                    <CircleContainer justify='center' top_position='33.8%' left_position='41%'>
+                    <CircleContainer justify='center' top_position='34.4%' left_position='41%'>
                         <Circle></Circle>
                     </CircleContainer>
 
@@ -189,13 +189,13 @@ const WhyUs = () => {
                         </ItemTextContainer>
                     </Item2>
 
-                    <CircleContainer justify='center' top_position='58%' left_position='41%'>
+                    <CircleContainer justify='center' top_position='58.8%' left_position='41%'>
                         <Circle></Circle>
                     </CircleContainer>
 
                     <Item3 className='ml-2 mr-2' top_position='-40px' justify='center' align='center' style={{transform: 'ScaleX(-1)'}}>
                         <ItemTextContainer justify='center' align='center'>
-                            <P2 align='center' style={{transform: 'ScaleX(-1)', padding: 20}}>ক্লাউড-ভিত্তিক ডেটা এবং গোপনীয়তার নিরাপত্তা</P2>
+                            <P2 className='p-3' align='center' style={{transform: 'ScaleX(-1)'}}>ক্লাউড-ভিত্তিক ডেটা এবং গোপনীয়তার নিরাপত্তা</P2>
                         </ItemTextContainer>
                     </Item3>
                 </VBox>
