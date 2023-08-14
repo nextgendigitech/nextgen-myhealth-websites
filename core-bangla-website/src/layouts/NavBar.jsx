@@ -15,7 +15,7 @@ const Container = styled(HBox)`
     background-color: ${colors.veryLightGreen};
     padding-left: 120px;
     padding-right: 120px;
-    z-index: 1;
+    z-index: 10;
 `
 
 const LogoImage = styled.img`
