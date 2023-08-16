@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 import { VBox, HBox } from "../../../components/Containers";
-import { H3, P1, P2 } from "../../../components/Typography";
+import { H2, H3, P1, P2 } from "../../../components/Typography";
 import colors from '../../../config/colors';
 
 const Container = styled(VBox)`
@@ -83,7 +83,7 @@ const CenterCircle = styled(VBox)`
     background-image: linear-gradient(to bottom left, ${colors.grey}, ${colors.lightGrey}); 
 `
 
-const CircleTextContainer1 = styled(VBox)`
+const CircleTextContainerOuter = styled(VBox)`
     width: 80%;
     border-bottom: 6px solid ${colors.darkGreen};
     padding: 10px;
@@ -91,28 +91,17 @@ const CircleTextContainer1 = styled(VBox)`
     box-shadow: 0 10px 5px -5px ${colors.lessDarkGrey};
 `
 
-const CircleTextContainer2 = styled(VBox)`
+const CircleTextContainerInner = styled(VBox)`
     width: 90%;
     border-bottom: 6px solid ${colors.darkGreen};
     box-shadow: 0 10px 5px -5px ${colors.lessDarkGrey};
 `
 
-const CenterCircleText1 = styled(P1)`
+const CenterCircleText = styled(H2)`
     position: relative;
-    font-size: 40px;
-    color: ${colors.darkGreen}; 
-    text-shadow: 4px 4px 5px ${colors.lessDarkGrey};
-`
-
-const CenterCircleText2 = styled(P1)`
-    position: relative;
-    font-size: 40px;
     color: ${colors.darkGreen};
-    width: 50%; 
     text-shadow: 4px 4px 5px ${colors.lessDarkGrey};
 `
-
-
 
 const WhyUs = () => {
     return (
@@ -150,24 +139,22 @@ const WhyUs = () => {
                     </Item3>
                 </VBox>
 
-
                 <VBox style={{width: '50%'}}>
                     {/* Center */}
 
                     <VBox className='p-5' style={{height: '100%'}}>
                         <CenterCircleContainer>
                             <CenterCircle align='center' justify='center'>
-                                <CircleTextContainer1 align='center'>
-                                    <CircleTextContainer2 align='center'>
-                                        <CenterCircleText1 className='bold' align='center'>কারণ আমাদের</CenterCircleText1>
-                                        <CenterCircleText2 className='bold' align='center'>আছে</CenterCircleText2>
-                                    </CircleTextContainer2>
-                                </CircleTextContainer1>
+                                <CircleTextContainerOuter align='center'>
+                                    <CircleTextContainerInner align='center'>
+                                        <CenterCircleText className='bold' align='center'>কারণ আমাদের</CenterCircleText>
+                                        <CenterCircleText className='bold' align='center'>আছে</CenterCircleText>
+                                    </CircleTextContainerInner>
+                                </CircleTextContainerOuter>
                             </CenterCircle>
                         </CenterCircleContainer>
                     </VBox>
                 </VBox>
-
 
                 <VBox justify='center' style={{width: '25%', position: 'relative'}}>
                     {/* Right */}
