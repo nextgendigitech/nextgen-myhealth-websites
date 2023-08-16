@@ -1,10 +1,18 @@
+import { useEffect } from "react";
+
 import { VBox } from "../../components/Containers";
-import { H1 } from "../../components/Typography";
+import Map from "./components/Map";
+import Form from "./components/Form";
 
 const ContactUs = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    });
+
     return (
         <VBox>
-            <H1>Contact Us Page</H1>
+            <Map />
+            <Form />
         </VBox>
     );
 }

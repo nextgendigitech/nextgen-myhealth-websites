@@ -1,16 +1,17 @@
-import { HiOutlinePhone } from 'react-icons/hi'
-import { AiOutlineMail } from 'react-icons/ai'
 import styled from 'styled-components';
-
-import { HBox, VBox } from '../components/Containers';
-import { P3, P4 } from '../components/Typography';
 import logo from '../assets/images/Website-Logo.png'
 import colors from '../config/colors';
+
+import { HiOutlinePhone } from 'react-icons/hi'
+import { AiOutlineMail } from 'react-icons/ai'
+import { NavLink } from 'react-router-dom';
+import { HBox, VBox } from '../components/Containers';
+import { P3, P4 } from '../components/Typography';
 
 const FooterContainer1 = styled(VBox)`
     padding-left: 120px;
     padding-right: 120px;
-    margin-top: 200px;
+    margin-top: 120px;
     background-color: ${colors.mercury};
     border-radius: 30px 30px 0px 0px;
 `
@@ -34,6 +35,15 @@ const LogoImage = styled.img`
     width: 13%;
 `
 
+const SNavLink = styled(NavLink)`
+    text-decoration: none;
+    color: ${colors.darkGrey};
+
+    &.active {
+        font-weight: bold;
+    }
+`
+
 const Footer = () => {
     return (
         <>
@@ -52,9 +62,16 @@ const Footer = () => {
                     </VBox>
                     <VBox>    
                         <P3 className='bold'>কোম্পানী</P3>
-                        <P4 className='mt-2'>যোগাযোগ করুন</P4>
-                        <P4 className='mt-2'>পরিচিতি</P4>
-                        <P4 className='mt-2'>বিশেষত্ব</P4>
+                        <SNavLink to='/contact-us'>
+                            <P4 className='mt-2'>যোগাযোগ করুন</P4>
+                        </SNavLink>
+                        <SNavLink to='/about-us'>
+                            <P4 className='mt-2'>পরিচিতি</P4>
+                        </SNavLink>
+                        <SNavLink to='/specialties'>
+                            <P4 className='mt-2'>বিশেষজ্ঞ ডাক্তার</P4>
+                        </SNavLink>
+                        
                         <P4 className='mt-2'>ব্লগ</P4>
                     </VBox>
                     <VBox>    

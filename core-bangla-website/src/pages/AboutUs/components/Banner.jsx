@@ -1,12 +1,16 @@
 import styled from "styled-components";
 
+import colors from "../../../config/colors";
+import aboutus_banner from "../../../assets/images/aboutus_banner.png"
+
 const BannerImage = styled.img`
-    /* Write your CSS */
+    height: auto;
+    width: 100%;
 `
 
 const Banner = () => {
     return (
-        <BannerImage />
+        <BannerImage src={aboutus_banner} />
     );
 }
 
