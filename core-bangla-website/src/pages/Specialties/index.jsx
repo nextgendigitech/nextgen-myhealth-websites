@@ -1,5 +1,4 @@
 import { VBox } from "../../components/Containers";
-import { P1 } from "../../components/Typography";
 import MedicineSection from "./components/MedicineSection";
 import SurgerySection from "./components/SurgerySection";
 
