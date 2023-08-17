@@ -35,7 +35,7 @@ const MedicineSection = () => {
                 <SpecialtyCard image={NeurologyImage} specialtyBang='স্নায়ুরোগ' specialtyEng='Neurology' />
                 <SpecialtyCard image={NephrologyImage} specialtyBang='কিডনি' specialtyEng='Nephrology' />
                 <SpecialtyCard image={GastroenterologyImage} specialtyBang='পরিপাকতন্ত্র' specialtyEng='Gastroenterology' />
-                <SpecialtyCard image={HepatologyImage} specialtyBang='লিভার' specialtyEng='লিভার' />
+                <SpecialtyCard image={HepatologyImage} specialtyBang='লিভার' specialtyEng='Hepatology' />
                 <SpecialtyCard image={EndocrinologyImage} specialtyBang='হরমোন' specialtyEng='Endocrinology' />
                 <SpecialtyCard image={PediatricsImage} specialtyBang='শিশুরোগ' specialtyEng='Pediatrics' />
                 <SpecialtyCard image={OncologyImage} specialtyBang='ক্যান্সার' specialtyEng='Oncology' />

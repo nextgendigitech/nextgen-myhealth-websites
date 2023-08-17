@@ -38,7 +38,9 @@ const TopBar = () => {
     return (
         <Container justify='space-between' align='center'>
             <HBox>
-                <IconImage src={facebook_icon} alt="Facebook Image" className='ml-1'/>
+                <a href="https://www.facebook.com/nextgenmyhealthvcp" target="_blank" rel="noopener noreferrer">
+                    <IconImage src={facebook_icon} alt="Facebook Image" className='ml-1' />
+                </a>
                 <IconImage src={linkedin_icon} alt="LinkedIn Image" className="mx-3"/>
                 <IconImage src={youtube_logo} alt="Youtube Image"/>
             </HBox>

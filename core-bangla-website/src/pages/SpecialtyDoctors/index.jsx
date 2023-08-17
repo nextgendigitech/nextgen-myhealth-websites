@@ -1,14 +1,20 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, CSSProperties } from "react";
 import colors from "../../config/colors";
 import styled from "styled-components";
 import axios from "axios";
-
 import { useParams } from "react-router-dom";
 
 import { HBox, VBox } from "../../components/Containers";
 import { H3, P2 } from "../../components/Typography";
 import { specialtyEtoB } from "../../data";
 import DoctorCard from "./components/DoctorCard";
+import ClipLoader from "react-spinners/ClipLoader";
+
+// const override: CSSProperties = {
+//     display: "block",
+//     margin: "0 auto",
+//     borderColor: "red",
+// };
 
 const TitleCard = styled(VBox)`
     width: 100%;
@@ -18,6 +24,11 @@ const TitleCard = styled(VBox)`
     border-radius: 0px 30px;
 `
 
+const CardsContainer = styled(HBox)`
+    margin-left: 104px;
+    margin-right: 104px;
+`
+
 const SpecialtyDoctors = () => {
     let { specialty } = useParams();
     const [doctors, setDoctors] = useState([]);
@@ -25,11 +36,14 @@ const SpecialtyDoctors = () => {
 
     useEffect(() => {
         fetchDoctors();
+        setIsLoading(true);
+        setTimeout(() => {
+            setIsLoading(false)
+        }, 5000)
     }, []);
 
     const fetchDoctors = () => {
         setIsLoading(true);
-        console.log('Fetching...')
         axios({
             method: 'GET',
             url: `${import.meta.env.VITE_SERVER_URL}patient/doctor-list/`,
@@ -58,15 +72,42 @@ const SpecialtyDoctors = () => {
             <TitleCard className="mt-4" justify="center" align="center">
                 <H3>{specialtyEtoB[specialty]}</H3>
             </TitleCard>
-            <VBox style={{ paddingLeft: "120px" }}>
-                <P2 className="bold mt-8">{doctors.length} জন চিকিৎসক পাওয়া গেছে</P2>
-                {doctors.map((doctor, index) => (
-                    <DoctorCard
-                        
+            {
+                isLoading ?
+                <HBox justify="center" align="center" className="p-5">
+                    <ClipLoader
+                        color= "green"
+                        /*cssOverride={override}*/
+                        loading={isLoading}
+                        size={100}
+                        aria-label="Loading Spinner"
+                        data-testid="loader"
                     />
-                ))}
-            </VBox>
-        </VBox>
+                </HBox>
+                :
+                <VBox>
+                    <VBox style={{ paddingLeft: "120px" }}>
+                        <P2 className="bold mt-8">{doctors.length} জন চিকিৎসক পাওয়া গেছে</P2>
+                    </VBox>
+                    <CardsContainer>
+                        {doctors.map((doctor, index) => (
+                            <DoctorCard
+                                key={index}
+                                id={doctor.id}
+                                name={doctor.name}
+                                bmdc={doctor.bmdc}
+                                qualification={doctor.qualification}
+                                specialty={doctor.specialty}
+                                experience={doctor.experience}
+                                affiliation={doctor.affiliation}
+                                image={doctor.image}
+                                fee={doctor.fee}
+                            />
+                        ))}
+                    </CardsContainer>
+                </VBox>
+            }
+        </VBox> 
     );
 }
 
