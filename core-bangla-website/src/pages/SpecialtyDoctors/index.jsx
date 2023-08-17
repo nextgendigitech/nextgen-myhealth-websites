@@ -19,6 +19,18 @@ const TitleCard = styled(VBox)`
 const SpecialtyDoctors = () => {
     let { specialty } = useParams();
 
+    const EnglishSpecialtyNames = ["Internal Medicine", "Cardiology", "Respiratory Medicine", 
+                                    "Neurology", "Nephrology", "Gastroenterology", "Rheumatology", 
+                                    "Hematology", "Endocrinology", "Psychiatry", "Pediatrics", 
+                                    "Physical Medicine & Rehabilitation", 
+                                    "Aesthetic Dermatology", "Dermatology & Venereology", 
+                                    "Hepatology"];
+    const A = ["ইন্টারনাল মেডিসিন", "হৃদরোগ", "কিডনি", "ফুসফুস", "বাতরোগ", "লিভার", "পরিপাকতন্ত্র", "স্নায়ুরোগ",
+                "ক্যান্সার", "রক্তরোগ", "হরমোন", "চর্ম ও যৌনরোগ", "শিশুরোগ", "মনোরোগ", "ফিজিক্যাল মেডিসিন", 
+                "এস্থেটিক ডার্মাটোলজি"]
+    const BanglaSpecialtyNames = EnglishSpecialtyNames.map(number => "number * 2");
+    console.log(BanglaSpecialtyNames);
+
     return (
         <VBox>
             <TitleCard className="mt-4" justify="center" align="center">

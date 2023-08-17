@@ -16,7 +16,7 @@ const VContainer = styled(VBox)`
 `
 
 const CardContainer = styled(VBox)`
-    width: 40%;
+    width: 35%;
     height: auto;
     background: ${colors.veryLightBlue};
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
@@ -43,18 +43,18 @@ const DoctorCard = ({ id, name, bmdc, qualification, specialty,
         <CardContainer className="mt-8 p-3">
             <P2 className="bold mb-3">ডাঃ সাইখ ফেরদৌস: {name}</P2>
             <HContainer>
-                <VContainer>
+                <VBox style={{ width: "20%" }}>
                     <Image className="mb-3" src={image} />
                     <P4 className="bold">বি এম ডি সি</P4>
                     <P4 className="bold">এ-৬৮৩৩৮: {bmdc}</P4>
-                </VContainer>
-                <VContainer className="ml-2">
+                </VBox>
+                <VBox className='pl-3' style={{ width: "80%" }}>
                     <P4 className="bold mb-3">এম বি বি এস, এম আর সিপি (যুক্তরাজ্য), সিসিডি-বারডেম: {affiliation}</P4>
                     <P4 className="bold mb-3">ইন্টারনাল মেডিসিন: {specialty}</P4>
                     <P4 className="bold mb-3">বি আর বি হাসপাতাল লিমিটেড: {qualification}</P4>
                     <P4 className="bold mb-3">অভিজ্ঞতা: ৮+ বছর: {experience}</P4>
                     <SButton style={{ fontSize: "16px", width: "180px" }} color='third' elevated>অ্যাপয়েন্টমেন্ট নিন</SButton> 
-                </VContainer>
+                </VBox>
             </HContainer>
         </CardContainer>
     );
