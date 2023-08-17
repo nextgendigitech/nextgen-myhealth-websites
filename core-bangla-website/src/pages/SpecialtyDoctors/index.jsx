@@ -5,8 +5,8 @@ import { useParams } from "react-router-dom";
 
 import { HBox, VBox } from "../../components/Containers";
 import { H3, P2 } from "../../components/Typography";
+import { specialtyEtoB } from "../../data";
 import DoctorCard from "./components/DoctorCard";
-
 
 const TitleCard = styled(VBox)`
     width: 100%;
@@ -18,27 +18,48 @@ const TitleCard = styled(VBox)`
 
 const SpecialtyDoctors = () => {
     let { specialty } = useParams();
+    const [doctors, setDoctors] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
 
-    const EnglishSpecialtyNames = ["Internal Medicine", "Cardiology", "Respiratory Medicine", 
-                                    "Neurology", "Nephrology", "Gastroenterology", "Rheumatology", 
-                                    "Hematology", "Endocrinology", "Psychiatry", "Pediatrics", 
-                                    "Physical Medicine & Rehabilitation", 
-                                    "Aesthetic Dermatology", "Dermatology & Venereology", 
-                                    "Hepatology"];
-    const A = ["ইন্টারনাল মেডিসিন", "হৃদরোগ", "কিডনি", "ফুসফুস", "বাতরোগ", "লিভার", "পরিপাকতন্ত্র", "স্নায়ুরোগ",
-                "ক্যান্সার", "রক্তরোগ", "হরমোন", "চর্ম ও যৌনরোগ", "শিশুরোগ", "মনোরোগ", "ফিজিক্যাল মেডিসিন", 
-                "এস্থেটিক ডার্মাটোলজি"]
-    const BanglaSpecialtyNames = EnglishSpecialtyNames.map(number => "number * 2");
-    console.log(BanglaSpecialtyNames);
+    useEffect(() => {
+        getData();
+    }, []);
+
+    const getData = () => {
+        setIsLoading(true);
+        axios({
+            method: 'GET',
+            url: `patient/doctor-list/?specialty=${specialty}&offset=0&limit=1000`,
+            headers: {
+                'Authorization': `Bearer ${localStorage.getItem('nh-access')}`
+            }
+        })
+        .then((response) => {
+            setIsLoading(false);
+            if (response.status === 200) {
+                setDoctors(doctors.concat(response.data.doctors));
+            } else {
+                console.log('DOCTOR LIST FETCH FAILED', response.status);
+            }
+        })
+        .catch((error) => {
+            setIsLoading(false);
+            console.log('DOCTOR LIST FETCH ERROR', error);
+        })
+    }
 
     return (
         <VBox>
             <TitleCard className="mt-4" justify="center" align="center">
-                <H3>{specialty}</H3>
+                <H3>{specialtyEtoB[specialty]}</H3>
             </TitleCard>
             <VBox style={{ paddingLeft: "120px" }}>
-                <P2 className="bold mt-8">৯ জন চিকিৎসক পাওয়া গেছে</P2>
-                <DoctorCard />
+                <P2 className="bold mt-8">{doctors.length} জন চিকিৎসক পাওয়া গেছে</P2>
+                {doctors.map((doctor, index) => (
+                    <DoctorCard
+                        
+                    />
+                ))}
             </VBox>
         </VBox>
     );
