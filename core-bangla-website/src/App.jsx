@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import axios from 'axios';
 
 import TopBar from './layouts/TopBar';
 import NavBar from './layouts/NavBar';
@@ -11,6 +12,8 @@ import Payment from './pages/Payment';
 import ContactUs from './pages/ContactUs';
 import Footer from './layouts/Footer';
 import './App.css';
+
+// axios.defaults.baseURL = import.meta.env.VITE_SERVER_URL;
 
 function App() {
   return (

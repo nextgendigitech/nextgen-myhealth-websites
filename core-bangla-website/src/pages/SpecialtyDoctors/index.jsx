@@ -1,5 +1,7 @@
+import { useState, useEffect } from "react";
 import colors from "../../config/colors";
 import styled from "styled-components";
+import axios from "axios";
 
 import { useParams } from "react-router-dom";
 
@@ -22,22 +24,25 @@ const SpecialtyDoctors = () => {
     const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
-        getData();
+        fetchDoctors();
     }, []);
 
-    const getData = () => {
+    const fetchDoctors = () => {
         setIsLoading(true);
+        console.log('Fetching...')
         axios({
             method: 'GET',
-            url: `patient/doctor-list/?specialty=${specialty}&offset=0&limit=1000`,
-            headers: {
-                'Authorization': `Bearer ${localStorage.getItem('nh-access')}`
-            }
+            url: `${import.meta.env.VITE_SERVER_URL}patient/doctor-list/`,
+            params: {
+                specialty: specialty,
+                offset: 0,
+                limit: 1000
+            },
         })
         .then((response) => {
             setIsLoading(false);
             if (response.status === 200) {
-                setDoctors(doctors.concat(response.data.doctors));
+                setDoctors(response.data.doctors);
             } else {
                 console.log('DOCTOR LIST FETCH FAILED', response.status);
             }

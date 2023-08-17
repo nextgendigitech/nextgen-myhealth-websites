@@ -1,13 +1,12 @@
 import styled from "styled-components";
 import colors from "../../../config/colors";
 
-import internal_medicine from "../../../assets/images/internal_medicine.png";
-import cardiology from "../../../assets/images/cardiology.png";
-import respiratory_medicine from "../../../assets/images/respiratory_medicine.png";
-import neurology from "../../../assets/images/neurology.png";
+import internal_medicine from "../../../assets/images/specialties/internal_medicine.png";
+import cardiology from "../../../assets/images/specialties/cardiology.png";
+import respiratory_medicine from "../../../assets/images/specialties/respiratory_medicine.png";
+import neurology from "../../../assets/images/specialties/neurology.png";
 import specialties_banner from "../../../assets/images/specialties_banner.png";
 import right_arrow from "../../../assets/images/right_arrow.png";
-
 
 import { Button } from '../../../components/Buttons';
 import { HBox, VBox } from "../../../components/Containers";
