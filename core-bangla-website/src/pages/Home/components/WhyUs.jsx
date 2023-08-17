@@ -24,30 +24,51 @@ const Item = styled(VBox)`
 `
 
 const Item1 = styled(Item)`
-    clip-path: polygon(0 0, 100% 0, 100% 50%, 90% 50%, 90% 70%, 80% 70%, 80% 90%, 70% 90%, 50% 90%, 50% 100%, 0 100%);
     top: ${props => props.top_position};
-    padding: 4px;
-    background-image: linear-gradient(to top, ${colors.lightGreen}, ${colors.darkGreen});
+    
+    &:before {
+        content: '';
+        height: 100%;
+        width: 100%;
+        border-radius: 25% 25% 25% 25% / 50% 50% 50% 50%;
+        background-image: linear-gradient(to top, ${colors.lightGreen}, ${colors.darkGreen});
+        clip-path: polygon(0 0, 100% 0, 100% 50%, 90% 50%, 90% 70%, 80% 70%, 80% 90%, 70% 90%, 50% 90%, 50% 100%, 0 100%);
+        z-index: 0;
+    }
 `
 
 const Item2 = styled(Item)`
-    clip-path: polygon(50% 0, 50% 15%, 10% 15%, 10% 85%, 50% 85%, 50% 100%, 100% 100%, 100% 0);
     top: ${props => props.top_position};
-    padding: 4px;
-    background-image: linear-gradient(to left, ${colors.lightGreen}, ${colors.darkGreen});
+    
+    &:before {
+        content: '';
+        height: 100%;
+        width: 100%;
+        border-radius: 25% 25% 25% 25% / 50% 50% 50% 50%;
+        background-image: linear-gradient(to left, ${colors.lightGreen}, ${colors.darkGreen});
+        clip-path: polygon(50% 0, 50% 15%, 10% 15%, 10% 85%, 50% 85%, 50% 100%, 100% 100%, 100% 0);
+        z-index: 0;
+    }
 `
 
 const Item3 = styled(Item)`
-    clip-path: polygon(0 0, 50% 0, 50% 15%, 80% 15%, 80% 30%, 95% 30%, 95% 50%, 100% 50%, 100% 100%, 0 100%);
     top: ${props => props.top_position};
-    padding: 4px;
-    background-image: linear-gradient(to top, ${colors.lightGreen}, ${colors.darkGreen});
+    
+    &:before {
+        content: '';
+        height: 100%;
+        width: 100%;
+        border-radius: 25% 25% 25% 25% / 50% 50% 50% 50%;
+        background-image: linear-gradient(to top, ${colors.lightGreen}, ${colors.darkGreen});
+        clip-path: polygon(0 0, 50% 0, 50% 15%, 80% 15%, 80% 30%, 95% 30%, 95% 50%, 100% 50%, 100% 100%, 0 100%);
+        z-index: 0;
+    }
 `
 
 const ItemTextContainer = styled(VBox)`
-    /* clip-path: polygon(0 0, 100% 0, 100% 50%, 90% 50%, 90% 70%, 80% 70%, 80% 90%, 70% 90%, 50% 90%, 50% 100%, 0 100%); */
-    height: 100%;
-    width: 100%;
+    position: absolute;
+    height: 93%;
+    width: 96%;
     border-radius: 25% 25% 25% 25% / 50% 50% 50% 50%;
     background-color: ${colors.white};
 `
@@ -120,22 +141,20 @@ const WhyUs = () => {
                     </Item1>
     
                     <CircleContainer justify='center' top_position='34.4%' left_position='41%'>
-                        <Circle></Circle>
+                        <Circle />
                     </CircleContainer>
                     
-                    <Item2 className='mb-2 ml-2 mr-2' top_position='-20px' justify='center' align='center'>
-                        <ItemTextContainer>
+                    <Item2 className='mb-2 ml-2 mr-2' top_position='-21px' justify='center' align='center'>
                         <ItemTextContainer justify='center' align='center'>
                             <P2 align='center'>ই-প্রেসক্রিপশন সেবা</P2>
-                        </ItemTextContainer>
                         </ItemTextContainer>
                     </Item2>
 
                     <CircleContainer justify='center' top_position='58.8%' left_position='41%'>
-                        <Circle></Circle>
+                        <Circle />
                     </CircleContainer>
 
-                    <Item3 className='ml-2 mr-2' top_position='-40px' justify='center' align='center'>    
+                    <Item3 className='ml-2 mr-2' top_position='-42px' justify='center' align='center'>    
                         <ItemTextContainer justify='center' align='center'>
                             <P2 align='center'>ডায়গনিস্টিক রিপোর্ট আপলোড</P2>
                         </ItemTextContainer>
@@ -170,10 +189,10 @@ const WhyUs = () => {
                     </Item1>
 
                     <CircleContainer justify='center' top_position='34.4%' left_position='41%'>
-                        <Circle></Circle>
+                        <Circle />
                     </CircleContainer>
 
-                    <Item2 className='mb-2 ml-2 mr-2' top_position='-20px' justify='center' align='center' style={{transform: 'ScaleX(-1)'}}>
+                    <Item2 className='mb-2 ml-2 mr-2' top_position='-21px' justify='center' align='center' style={{transform: 'ScaleX(-1)'}}>
                         <ItemTextContainer justify='center' align='center'>
                             <P2 align='center' style={{transform: 'ScaleX(-1)'}}>অনলাইন এবং অফলাইন</P2>
                             <P2 align='center' style={{transform: 'ScaleX(-1)'}}>পরামর্শ</P2>
@@ -181,10 +200,10 @@ const WhyUs = () => {
                     </Item2>
 
                     <CircleContainer justify='center' top_position='58.8%' left_position='41%'>
-                        <Circle></Circle>
+                        <Circle />
                     </CircleContainer>
 
-                    <Item3 className='ml-2 mr-2' top_position='-40px' justify='center' align='center' style={{transform: 'ScaleX(-1)'}}>
+                    <Item3 className='ml-2 mr-2' top_position='-42px' justify='center' align='center' style={{transform: 'ScaleX(-1)'}}>
                         <ItemTextContainer justify='center' align='center'>
                             <P2 className='p-3' align='center' style={{transform: 'ScaleX(-1)'}}>ক্লাউড-ভিত্তিক ডেটা এবং গোপনীয়তার নিরাপত্তা</P2>
                         </ItemTextContainer>
