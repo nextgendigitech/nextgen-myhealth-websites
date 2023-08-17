@@ -45,6 +45,7 @@ const Item3 = styled(Item)`
 `
 
 const ItemTextContainer = styled(VBox)`
+    /* clip-path: polygon(0 0, 100% 0, 100% 50%, 90% 50%, 90% 70%, 80% 70%, 80% 90%, 70% 90%, 50% 90%, 50% 100%, 0 100%); */
     height: 100%;
     width: 100%;
     border-radius: 25% 25% 25% 25% / 50% 50% 50% 50%;
@@ -123,8 +124,10 @@ const WhyUs = () => {
                     </CircleContainer>
                     
                     <Item2 className='mb-2 ml-2 mr-2' top_position='-20px' justify='center' align='center'>
+                        <ItemTextContainer>
                         <ItemTextContainer justify='center' align='center'>
                             <P2 align='center'>ই-প্রেসক্রিপশন সেবা</P2>
+                        </ItemTextContainer>
                         </ItemTextContainer>
                     </Item2>
 
@@ -132,10 +135,11 @@ const WhyUs = () => {
                         <Circle></Circle>
                     </CircleContainer>
 
-                    <Item3 className='ml-2 mr-2' top_position='-40px' justify='center' align='center'>
+                    <Item3 className='ml-2 mr-2' top_position='-40px' justify='center' align='center'>    
                         <ItemTextContainer justify='center' align='center'>
                             <P2 align='center'>ডায়গনিস্টিক রিপোর্ট আপলোড</P2>
                         </ItemTextContainer>
+                        
                     </Item3>
                 </VBox>
 
