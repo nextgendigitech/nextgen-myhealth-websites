@@ -46,7 +46,7 @@ const SpecialtyDoctors = () => {
         setIsLoading(true);
         axios({
             method: 'GET',
-            url: `${import.meta.env.VITE_SERVER_URL}patient/doctor-list/`,
+            url: `${import.meta.env.VITE_SERVER_URL}/patient/doctor-list/`,
             params: {
                 specialty: specialty,
                 offset: 0,
