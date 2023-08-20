@@ -81,7 +81,9 @@ const Footer = () => {
                     </VBox>
                     <VBox>    
                         <P3 className='bold'>অর্থ প্রদান</P3>
-                        <P4 className='mt-2'>পেমেন্ট</P4>
+                        <SNavLink to='/payment'>
+                            <P4 className='mt-2'>পেমেন্ট</P4>
+                        </SNavLink>
                     </VBox>
                 </HBox>
             </FooterContainer1>
@@ -89,7 +91,7 @@ const Footer = () => {
             <FooterContainer2>
                 <VBox align='center'>
                     <P4 className='mt-4' style={{ color: colors.grey }}>নিয়ম ও শর্তাবলী  |  গোপনীয়তা নীতিমালা  |  ফেরত নীতিমালা</P4>
-                    <P4 className='mb-4' style={{ color: colors.grey }}>© নেক্সটজেন ডিজিটেক লিমিটেড.</P4>
+                    <P4 className='mb-4' style={{ color: colors.grey }}>{new Date().getFullYear()} © নেক্সটজেন ডিজিটেক লিমিটেড.</P4>
                 </VBox>
             </FooterContainer2>
         </>

@@ -1,10 +1,13 @@
 import { VBox } from "../../components/Containers";
 import { H1 } from "../../components/Typography";
+import Banner from './components/Banner';
+import PaymentMethods from './components/PaymentMethods';
 
 const Payment = () => {
     return (
         <VBox>
-            <H1>Payment Page</H1>
+            <Banner></Banner>
+            <PaymentMethods></PaymentMethods>
         </VBox>
     );
 }
