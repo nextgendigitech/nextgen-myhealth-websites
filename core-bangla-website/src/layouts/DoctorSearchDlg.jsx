@@ -5,6 +5,7 @@ import axios from "axios";
 import { Dialog } from '@mui/material';
 import { Scrollbars } from 'react-custom-scrollbars-2';
 import { FiSearch, FiX } from "react-icons/fi";
+import { TbCurrencyTaka } from 'react-icons/tb';
 
 import { HBox, VBox } from "../components/Containers";
 import { Button, IconButton } from "../components/Buttons";
@@ -40,19 +41,45 @@ const Image = styled.img`
     height: auto;
 `
 
+const DoctorImage = styled.img`
+    height: 90px;
+    width: 100%;
+    border-radius: 50%;
+`
+
 const SLink = styled(Link)`
     text-decoration: none;
 `
 
 const DoctorCardContainer = styled(HBox)`
+    margin-bottom: 25px;
 
+    &:hover {
+        box-shadow: 4px 4px 4px 6px ${colors.grey};
+    }
 `
 
 const DoctorCard = ({ id, name, image, bmdc, doctorType, qualification,
-                      specialty, fee, institution, designation }) => {
+                      specialty, fee, affiliation }) => {
     return (
         <DoctorCardContainer>
-
+            <HBox style={{width: '100%'}}>
+                <VBox justify='center'>
+                    <DoctorImage src={`${import.meta.env.VITE_SERVER_URL}${image}`} />
+                </VBox>
+                <VBox style={{width: '50%'}}>
+                    <P2 className='ml-2'>{name} (BMDC: {doctorType==='MBBS' ? 'A-' : ''}{bmdc})</P2>
+                    <P3 className='ml-2'>{affiliation ? `${affiliation.designation} at ${affiliation.institution}` : <></>}</P3>
+                    <P3 className='ml-2'>{qualification}</P3>
+                    <P3 className='ml-2'>Specialty: {specialty}</P3>
+                </VBox>
+                <VBox justify='center'>
+                    <Button className='ml-2' size='sm' color='third'>অ্যাপয়েন্টমেন্ট নিন</Button>
+                </VBox>
+                <VBox justify='center'>
+                    <Button className='ml-2' size='sm' color='first'><TbCurrencyTaka />{fee}</Button>
+                </VBox>
+            </HBox>
         </DoctorCardContainer>
     );
 }
@@ -203,6 +230,7 @@ const DoctorSearchDlg = ({ isMobile, open, setOpen }) => {
                                         fee={doctor.fee}
                                         experience={doctor.experience}
                                         isOnline={doctor.is_online}
+                                        affiliation={doctor.affiliation_summary[0] ? doctor.affiliation_summary[0] : null}
                                     />
                                 </SLink>
                             ))}
