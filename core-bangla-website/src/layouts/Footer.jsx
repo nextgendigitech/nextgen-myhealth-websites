@@ -71,8 +71,9 @@ const Footer = () => {
                         <SNavLink to='/specialties'>
                             <P4 className='mt-2'>বিশেষজ্ঞ ডাক্তার</P4>
                         </SNavLink>
-                        
-                        <P4 className='mt-2'>ব্লগ</P4>
+                        <SNavLink to='/blog'>
+                            <P4 className='mt-2'>ব্লগ</P4>
+                        </SNavLink>
                     </VBox>
                     <VBox>    
                         <P3 className='bold'>সেবাসমূহ</P3>
@@ -88,7 +89,17 @@ const Footer = () => {
 
             <FooterContainer2>
                 <VBox align='center'>
-                    <P4 className='mt-4' style={{ color: colors.grey }}>নিয়ম ও শর্তাবলী  |  গোপনীয়তা নীতিমালা  |  ফেরত নীতিমালা</P4>
+                    <HBox className='mt-4 mb-1'>
+                        <SNavLink to='/terms-conditions'>
+                            <P4 style={{ color: colors.grey }}>নিয়ম ও শর্তাবলী&nbsp;</P4>
+                        </SNavLink>
+                        <SNavLink to='/privacy-policy'>
+                            <P4 style={{ color: colors.grey }}>|  গোপনীয়তা নীতিমালা&nbsp;</P4>  
+                        </SNavLink>
+                        <SNavLink to='/refund-policy'>
+                            <P4 style={{ color: colors.grey }}>|  ফেরত নীতিমালা</P4>
+                        </SNavLink>
+                    </HBox>
                     <P4 className='mb-4' style={{ color: colors.grey }}>© নেক্সটজেন ডিজিটেক লিমিটেড.</P4>
                 </VBox>
             </FooterContainer2>
