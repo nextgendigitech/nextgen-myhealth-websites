@@ -1,0 +1,644 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Half margins */
+.m-0_5 {
+  margin: 4px;
+}
+
+.ml-0_5 {
+  margin-left: 4px;
+}
+
+.mr-0_5 {
+  margin-right: 4px;
+}
+
+.mt-0_5 {
+  margin-top: 4px;
+}
+
+.mb-0_5 {
+  margin-bottom: 4px;
+}
+
+.mx-0_5 {
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+.my-0_5 {
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+/* End half margins */
+/* Margins */
+.m-0 {
+  margin: 0px;
+}
+
+.ml-0 {
+  margin-left: 0px;
+}
+
+.mr-0 {
+  margin-right: 0px;
+}
+
+.mt-0 {
+  margin-top: 0px;
+}
+
+.mb-0 {
+  margin-bottom: 0px;
+}
+
+.mx-0 {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.my-0 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.m-1 {
+  margin: 8px;
+}
+
+.ml-1 {
+  margin-left: 8px;
+}
+
+.mr-1 {
+  margin-right: 8px;
+}
+
+.mt-1 {
+  margin-top: 8px;
+}
+
+.mb-1 {
+  margin-bottom: 8px;
+}
+
+.mx-1 {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.my-1 {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.m-2 {
+  margin: 16px;
+}
+
+.ml-2 {
+  margin-left: 16px;
+}
+
+.mr-2 {
+  margin-right: 16px;
+}
+
+.mt-2 {
+  margin-top: 16px;
+}
+
+.mb-2 {
+  margin-bottom: 16px;
+}
+
+.mx-2 {
+  margin-left: 16px;
+  margin-right: 16px;
+}
+
+.my-2 {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.m-3 {
+  margin: 24px;
+}
+
+.ml-3 {
+  margin-left: 24px;
+}
+
+.mr-3 {
+  margin-right: 24px;
+}
+
+.mt-3 {
+  margin-top: 24px;
+}
+
+.mb-3 {
+  margin-bottom: 24px;
+}
+
+.mx-3 {
+  margin-left: 24px;
+  margin-right: 24px;
+}
+
+.my-3 {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.m-4 {
+  margin: 32px;
+}
+
+.ml-4 {
+  margin-left: 32px;
+}
+
+.mr-4 {
+  margin-right: 32px;
+}
+
+.mt-4 {
+  margin-top: 32px;
+}
+
+.mb-4 {
+  margin-bottom: 32px;
+}
+
+.mx-4 {
+  margin-left: 32px;
+  margin-right: 32px;
+}
+
+.my-4 {
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
+.m-5 {
+  margin: 40px;
+}
+
+.ml-5 {
+  margin-left: 40px;
+}
+
+.mr-5 {
+  margin-right: 40px;
+}
+
+.mt-5 {
+  margin-top: 40px;
+}
+
+.mb-5 {
+  margin-bottom: 40px;
+}
+
+.mx-5 {
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.my-5 {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.m-6 {
+  margin: 48px;
+}
+
+.ml-6 {
+  margin-left: 48px;
+}
+
+.mr-6 {
+  margin-right: 48px;
+}
+
+.mt-6 {
+  margin-top: 48px;
+}
+
+.mb-6 {
+  margin-bottom: 48px;
+}
+
+.mx-6 {
+  margin-left: 48px;
+  margin-right: 48px;
+}
+
+.my-6 {
+  margin-top: 48px;
+  margin-bottom: 48px;
+}
+
+.m-7 {
+  margin: 56px;
+}
+
+.ml-7 {
+  margin-left: 56px;
+}
+
+.mr-7 {
+  margin-right: 56px;
+}
+
+.mt-7 {
+  margin-top: 56px;
+}
+
+.mb-7 {
+  margin-bottom: 56px;
+}
+
+.mx-7 {
+  margin-left: 56px;
+  margin-right: 56px;
+}
+
+.my-7 {
+  margin-top: 56px;
+  margin-bottom: 56px;
+}
+
+.m-8 {
+  margin: 64px;
+}
+
+.ml-8 {
+  margin-left: 64px;
+}
+
+.mr-8 {
+  margin-right: 64px;
+}
+
+.mt-8 {
+  margin-top: 64px;
+}
+
+.mb-8 {
+  margin-bottom: 64px;
+}
+
+.mx-8 {
+  margin-left: 64px;
+  margin-right: 64px;
+}
+
+.my-8 {
+  margin-top: 64px;
+  margin-bottom: 64px;
+}
+
+/* End margins */
+/* Half paddings */
+.p-0_5 {
+  padding: 4px;
+}
+
+.pl-0_5 {
+  padding-left: 4px;
+}
+
+.pr-0_5 {
+  padding-right: 4px;
+}
+
+.pt-0_5 {
+  padding-top: 4px;
+}
+
+.pb-0_5 {
+  padding-bottom: 4px;
+}
+
+.px-0_5 {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.py-0_5 {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+/* End half paddings */
+/* Paddings */
+.p-0 {
+  padding: 0px;
+}
+
+.pl-0 {
+  padding-left: 0px;
+}
+
+.pr-0 {
+  padding-right: 0px;
+}
+
+.pt-0 {
+  padding-top: 0px;
+}
+
+.pb-0 {
+  padding-bottom: 0px;
+}
+
+.px-0 {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.py-0 {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.p-1 {
+  padding: 8px;
+}
+
+.pl-1 {
+  padding-left: 8px;
+}
+
+.pr-1 {
+  padding-right: 8px;
+}
+
+.pt-1 {
+  padding-top: 8px;
+}
+
+.pb-1 {
+  padding-bottom: 8px;
+}
+
+.px-1 {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.py-1 {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.p-2 {
+  padding: 16px;
+}
+
+.pl-2 {
+  padding-left: 16px;
+}
+
+.pr-2 {
+  padding-right: 16px;
+}
+
+.pt-2 {
+  padding-top: 16px;
+}
+
+.pb-2 {
+  padding-bottom: 16px;
+}
+
+.px-2 {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.py-2 {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.p-3 {
+  padding: 24px;
+}
+
+.pl-3 {
+  padding-left: 24px;
+}
+
+.pr-3 {
+  padding-right: 24px;
+}
+
+.pt-3 {
+  padding-top: 24px;
+}
+
+.pb-3 {
+  padding-bottom: 24px;
+}
+
+.px-3 {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.py-3 {
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.p-4 {
+  padding: 32px;
+}
+
+.pl-4 {
+  padding-left: 32px;
+}
+
+.pr-4 {
+  padding-right: 32px;
+}
+
+.pt-4 {
+  padding-top: 32px;
+}
+
+.pb-4 {
+  padding-bottom: 32px;
+}
+
+.px-4 {
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+.py-4 {
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+.p-5 {
+  padding: 40px;
+}
+
+.pl-5 {
+  padding-left: 40px;
+}
+
+.pr-5 {
+  padding-right: 40px;
+}
+
+.pt-5 {
+  padding-top: 40px;
+}
+
+.pb-5 {
+  padding-bottom: 40px;
+}
+
+.px-5 {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.py-5 {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.p-6 {
+  padding: 48px;
+}
+
+.pl-6 {
+  padding-left: 48px;
+}
+
+.pr-6 {
+  padding-right: 48px;
+}
+
+.pt-6 {
+  padding-top: 48px;
+}
+
+.pb-6 {
+  padding-bottom: 48px;
+}
+
+.px-6 {
+  padding-left: 48px;
+  padding-right: 48px;
+}
+
+.py-6 {
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
+.p-7 {
+  padding: 56px;
+}
+
+.pl-7 {
+  padding-left: 56px;
+}
+
+.pr-7 {
+  padding-right: 56px;
+}
+
+.pt-7 {
+  padding-top: 56px;
+}
+
+.pb-7 {
+  padding-bottom: 56px;
+}
+
+.px-7 {
+  padding-left: 56px;
+  padding-right: 56px;
+}
+
+.py-7 {
+  padding-top: 56px;
+  padding-bottom: 56px;
+}
+
+.p-8 {
+  padding: 64px;
+}
+
+.pl-8 {
+  padding-left: 64px;
+}
+
+.pr-8 {
+  padding-right: 64px;
+}
+
+.pt-8 {
+  padding-top: 64px;
+}
+
+.pb-8 {
+  padding-bottom: 64px;
+}
+
+.px-8 {
+  padding-left: 64px;
+  padding-right: 64px;
+}
+
+.py-8 {
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+
+/* End paddings */
+/* Font weight */
+.bold {
+  font-weight: bold !important;
+}
+
+.normal {
+  font-weight: normal !important;
+}
+
+/* End font weight */
+/* Enable pointer cursor */
+.clickable {
+  cursor: pointer;
+}
+
+/* End enable pointer cursor */
+/* Removing input background color for Chrome autocomplete */
+input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+textarea:-webkit-autofill:active,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus,
+select:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+}
+
+/* End removing background *//*# sourceMappingURL=App.css.map */

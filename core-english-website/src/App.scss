@@ -1,0 +1,140 @@
+$space: 8;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Half margins */
+.m-0_5 {
+    margin: 4px;
+}
+.ml-0_5 {
+    margin-left: 4px;
+}
+.mr-0_5 {
+    margin-right: 4px;
+}
+.mt-0_5 {
+    margin-top: 4px;
+}
+.mb-0_5 {
+    margin-bottom: 4px;
+}
+.mx-0_5 {
+    margin-left: 4px;
+    margin-right: 4px;
+}
+.my-0_5 {
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+/* End half margins */
+
+/* Margins */
+@for $i from 0 through 8 {
+    .m-#{$i} {
+        margin: #{$space*$i}px;
+    }
+    .ml-#{$i} {
+        margin-left: #{$space*$i}px;
+    }
+    .mr-#{$i} {
+        margin-right: #{$space*$i}px;
+    }
+    .mt-#{$i} {
+        margin-top: #{$space*$i}px;
+    }
+    .mb-#{$i} {
+        margin-bottom: #{$space*$i}px;
+    }
+    .mx-#{$i} {
+        margin-left: #{$space*$i}px;
+        margin-right: #{$space*$i}px;
+    }
+    .my-#{$i} {
+        margin-top: #{$space*$i}px;
+        margin-bottom: #{$space*$i}px;
+    }
+}
+/* End margins */
+
+/* Half paddings */
+.p-0_5 {
+    padding: 4px;
+}
+.pl-0_5 {
+    padding-left: 4px;
+}
+.pr-0_5 {
+    padding-right: 4px;
+}
+.pt-0_5 {
+    padding-top: 4px;
+}
+.pb-0_5 {
+    padding-bottom: 4px;
+}
+.px-0_5 {
+    padding-left: 4px;
+    padding-right: 4px;
+}
+.py-0_5 {
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+/* End half paddings */
+
+/* Paddings */
+@for $i from 0 through 8 {
+    .p-#{$i} {
+        padding: #{$space*$i}px;
+    }
+    .pl-#{$i} {
+        padding-left: #{$space*$i}px;
+    }
+    .pr-#{$i} {
+        padding-right: #{$space*$i}px;
+    }
+    .pt-#{$i} {
+        padding-top: #{$space*$i}px;
+    }
+    .pb-#{$i} {
+        padding-bottom: #{$space*$i}px;
+    }
+    .px-#{$i} {
+        padding-left: #{$space*$i}px;
+        padding-right: #{$space*$i}px;
+    }
+    .py-#{$i} {
+        padding-top: #{$space*$i}px;
+        padding-bottom: #{$space*$i}px;
+    }
+}
+/* End paddings */
+
+/* Font weight */
+.bold {
+    font-weight: bold !important;
+}
+.normal {
+    font-weight: normal !important;
+}
+/* End font weight */
+
+/* Enable pointer cursor */
+.clickable {
+    cursor: pointer;
+}
+/* End enable pointer cursor */
+
+/* Removing input background color for Chrome autocomplete */
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    &, &:hover, &:focus, &:active{
+        -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+    }
+}
+/* End removing background */
