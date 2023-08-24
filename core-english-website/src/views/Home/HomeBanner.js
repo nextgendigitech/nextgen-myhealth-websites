@@ -15,25 +15,21 @@ const BannerImage = styled('img')(
 )
 
 const HomeBanner = () => {
-  const isMediumScreen = useMediaQuery(useTheme().breakpoints.down('md'));
-  const isMobileScreen = useMediaQuery(useTheme().breakpoints.down('sm'));
+  // const isMediumScreen = useMediaQuery(useTheme().breakpoints.down('md'));
+  // const isMobileScreen = useMediaQuery(useTheme().breakpoints.down('sm'));
 
-  const sliderList = [SliderOne, SliderTwo, SliderThree]
+  // const sliderList = [SliderOne, SliderTwo, SliderThree]
+  const sliderList = [SliderOne]
 
   const [bannerIndex, setBannerIndex] = useState(0)
-  const [slideIn, setSlideIn] = useState(false)
-
-  let slide = 0;
+  
   let items = sliderList.length;
   
   function nextSlide() {
-    if (slide < items) {
-      setBannerIndex(slide)
-      slide ++;
-    } else if (slide === items) {
-      slide = 0;
-      setBannerIndex(slide);
-    }
+    setBannerIndex(index => {
+      if (index < items-1) return index + 1;
+      else return 0;
+    });
   }
 
   useEffect(() => {
@@ -43,48 +39,18 @@ const HomeBanner = () => {
     }, 4000);
     return () => clearInterval(interval);
   }, [bannerIndex])
-  
 
+  function handleClickBanner() {
+    if (bannerIndex === 0) window.open('https://patient.nextgenmyhealth.com/doctor/136');
+    else window.open('https://patient.nextgenmyhealth.com');
+  }
+  
   return (
-    
-    <>
-      {
-        
-        isMediumScreen ?
-      //   <Box
-      //     sx={{
-      //         display: 'flex',
-      //         backgroundImage: `url(${sliderList[bannerIndex]})`,
-      //         height: isMobileScreen ? '30vh' : '45vh',
-      //         width: 1,
-      //         marginTop: isMobileScreen ? '90px' : '45px',
-      //         backgroundSize: 'contain',
-      //         backgroundPosition: 'center',
-      //         backgroundRepeat: 'no-repeat',
-      //         transition: '1s'
-      //     }}
-      //   >
-      // </Box> 
-      <BannerImage src={sliderList[bannerIndex]} />
-      : 
-        // <Box
-        //   sx={{
-        //       display: 'flex',
-        //       backgroundImage: `url(${sliderList[bannerIndex]})`,
-        //       height: '75vh',
-        //       width: 1,
-        //       flexWrap: 'wrap',
-        //       marginTop: '10vh',
-        //       backgroundSize: 'contain',
-        //       backgroundPosition: 'center',
-        //       backgroundRepeat: 'no-repeat',
-        //       transition: '1s'
-        //   }}
-        // >
-        // </Box>
-        <BannerImage src={sliderList[bannerIndex]} />
-      }
-    </>
+    <BannerImage
+      className='clickable'
+      src={sliderList[bannerIndex]}
+      onClick={handleClickBanner}
+    />
   )
 }
 
