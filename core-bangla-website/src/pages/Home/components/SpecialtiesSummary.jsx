@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import colors from "../../../config/colors";
 
 import internal_medicine from "../../../assets/images/specialties/internal_medicine.png";
@@ -73,6 +74,10 @@ const BannerImage = styled.img`
     width: 25%;
 `
 
+const SLink = styled(Link)`
+    text-decoration: none;
+`
+
 const SpecialtiesCard = ({ icon, name, className }) => {
     return (
         <CardContainer className={className} align='center'>
@@ -96,16 +101,20 @@ const SpecialtiesSummary = () => {
                         <P2 color='third'>বিশেষজ্ঞ চিকিৎসক</P2>
                         <P3>আছেন</P3>
                     </TitleCard>
-                    <SButton className='mb-5' color='third' elevated>সব বিশেষজ্ঞ ডাক্তার দেখুন</SButton> 
+                    <SLink to='/specialties'>
+                        <SButton className='mb-5' color='third' elevated>সব বিশেষজ্ঞ ডাক্তার দেখুন</SButton> 
+                    </SLink>
                 </VBox> 
                 <VBox align='center' className="" style={{ width: '25%' }}>
                     <SpecialtiesCard className="my-3" icon={internal_medicine} name="ইন্টারনাল মেডিসিন"/>
                     <SpecialtiesCard className="" icon={cardiology} name="হৃদরোগ"/>
                     <SpecialtiesCard className="my-3" icon={respiratory_medicine} name="ফুসফুস"/>
                     <SpecialtiesCard className="" icon={neurology} name="স্নায়ুরোগ"/>
-                    <RoundButton className='my-3' elevated>
-                        <Icon src={right_arrow} alt="Button Image" />
-                    </RoundButton>
+                    <SLink to='/specialties'>
+                        <RoundButton className='my-3' elevated>
+                            <Icon src={right_arrow} alt="Button Image" />
+                        </RoundButton>
+                    </SLink>
                 </VBox>
                 <BannerImage className='mt-3 mr-8' src={specialties_banner} />
             </HBox>

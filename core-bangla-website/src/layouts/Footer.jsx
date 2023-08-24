@@ -7,7 +7,7 @@ import { HiOutlinePhone } from 'react-icons/hi'
 import { AiOutlineMail } from 'react-icons/ai'
 import { NavLink } from 'react-router-dom';
 import { HBox, VBox } from '../components/Containers';
-import { P3, P4 } from '../components/Typography';
+import { P2, P3, P4 } from '../components/Typography';
 import DoctorSearchDlg from './DoctorSearchDlg';
 
 const FooterContainer1 = styled(VBox)`
@@ -55,39 +55,39 @@ const Footer = () => {
                 <LogoImage className='mt-4' src={logo} />
                 <HBox justify='space-between'>
                     <VBox>    
-                        <P3 className='bold'>নেক্সটজেন মাইহেলথ ভিসিপি</P3>
-                        <P4>স্বাস্থ্য বিভাগ</P4>
-                        <P4 color='first'>নেক্সটজেন ডিজিটেক লিমিটেড</P4>
-                        <P4>টুল অ্যান্ড টেকনোলজি ইনস্টিটিউট, বিট্যাক শিল্প</P4>
-                        <P4>মন্ত্রণালয় ১১৬ (খ), তেজগাঁও শিল্প এলাকা,</P4>
-                        <P4>ঢাকা-১২০৮, বাংলাদেশ</P4>
-                        <HBox align='center'><PhoneIcon className='mt-2' /><P4 className='ml-1 mt-2'> +৮৮০ ১৩২১১১৯৩৯১</P4></HBox>
-                        <HBox align='center'><EmailIcon className='mt-2' /><P4 className='ml-1 mt-2'>info@nextgenmyhealth.com</P4></HBox>
+                        <P2 className='bold'>নেক্সটজেন মাইহেলথ ভিসিপি</P2>
+                        <P3>স্বাস্থ্য বিভাগ</P3>
+                        <P3 color='first'>নেক্সটজেন ডিজিটেক লিমিটেড</P3>
+                        <P3>টুল অ্যান্ড টেকনোলজি ইনস্টিটিউট, বিট্যাক শিল্প</P3>
+                        <P3>মন্ত্রণালয় ১১৬ (খ), তেজগাঁও শিল্প এলাকা,</P3>
+                        <P3>ঢাকা-১২০৮, বাংলাদেশ</P3>
+                        <HBox align='center'><PhoneIcon className='mt-2' /><P3 className='ml-1 mt-2'> +৮৮০ ১৩২১১১৯৩৯১</P3></HBox>
+                        <HBox align='center'><EmailIcon className='mt-2' /><P3 className='ml-1 mt-2'>info@nextgenmyhealth.com</P3></HBox>
                     </VBox>
                     <VBox>    
-                        <P3 className='bold'>কোম্পানী</P3>
+                        <P2 className='bold'>কোম্পানী</P2>
                         <SNavLink to='/contact-us'>
-                            <P4 className='mt-2'>যোগাযোগ করুন</P4>
+                            <P3 className='mt-2'>যোগাযোগ করুন</P3>
                         </SNavLink>
                         <SNavLink to='/about-us'>
-                            <P4 className='mt-2'>পরিচিতি</P4>
+                            <P3 className='mt-2'>পরিচিতি</P3>
                         </SNavLink>
                         <SNavLink to='/specialties'>
-                            <P4 className='mt-2'>বিশেষজ্ঞ ডাক্তার</P4>
+                            <P3 className='mt-2'>বিশেষজ্ঞ ডাক্তার</P3>
                         </SNavLink>
                         {/* <SNavLink to='/blog'>
                             <P4 className='mt-2'>ব্লগ</P4>
                         </SNavLink> */}
                     </VBox>
                     <VBox>    
-                        <P3 className='bold'>সেবাসমূহ</P3>
-                        <P4 className='mt-2 clickable' onClick={() => setOpenDoctorSearchDlg(true)}>ডাক্তার অনুসন্ধান করুন</P4>
+                        <P2 className='bold'>সেবাসমূহ</P2>
+                        <P3 className='mt-2 clickable' onClick={() => setOpenDoctorSearchDlg(true)}>ডাক্তার অনুসন্ধান করুন</P3>
                         {/* <P4 className='mt-2'>প্রতিনিয়ত জিজ্ঞাসিত প্রশ্ন</P4> */}
                     </VBox>
                     <VBox>    
-                        <P3 className='bold'>অর্থ প্রদান</P3>
+                        <P2 className='bold'>অর্থ প্রদান</P2>
                         <SNavLink to='/payment'>
-                            <P4 className='mt-2'>পেমেন্ট</P4>
+                            <P3 className='mt-2'>পেমেন্ট</P3>
                         </SNavLink>
                     </VBox>
                 </HBox>
@@ -97,18 +97,18 @@ const Footer = () => {
                 <VBox align='center'>
                     <HBox className='mt-4 mb-1'>
                         <SNavLink to='/terms-conditions'>
-                            <P4 style={{ color: colors.grey }}>নিয়ম ও শর্তাবলী&nbsp;</P4>
+                            <P3 style={{ color: colors.grey }}>নিয়ম ও শর্তাবলী&nbsp;</P3>
                         </SNavLink>
-                        <P4 className='mx-0_5' style={{ color: colors.grey }}>|</P4>
+                        <P3 className='mx-0_5' style={{ color: colors.grey }}>|</P3>
                         <SNavLink to='/privacy-policy'>
-                            <P4 style={{ color: colors.grey }}>গোপনীয়তা নীতিমালা&nbsp;</P4>  
+                            <P3 style={{ color: colors.grey }}>গোপনীয়তা নীতিমালা&nbsp;</P3>  
                         </SNavLink>
-                        <P4 className='mx-0_5' style={{ color: colors.grey }}>|</P4>
+                        <P3 className='mx-0_5' style={{ color: colors.grey }}>|</P3>
                         <SNavLink to='/refund-policy'>
-                            <P4 style={{ color: colors.grey }}>ফেরত নীতিমালা&nbsp;</P4>
+                            <P3 style={{ color: colors.grey }}>ফেরত নীতিমালা&nbsp;</P3>
                         </SNavLink>
                     </HBox>
-                    <P4 className='mb-4' style={{ color: colors.grey }}>{new Date().getFullYear()} © নেক্সটজেন ডিজিটেক লিমিটেড.</P4>
+                    <P3 className='mb-4' style={{ color: colors.grey }}>{new Date().getFullYear()} © নেক্সটজেন ডিজিটেক লিমিটেড.</P3>
                 </VBox>
             </FooterContainer2>
 

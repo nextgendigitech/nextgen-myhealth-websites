@@ -54,8 +54,12 @@ const NavBar = () => {
                 </SNavLink> */}
             </HBox>
             <HBox>
-                <Button className='bold' color='first' elevated>পেশেন্ট পোর্টাল</Button>
-                <Button className='bold ml-3' color='third' elevated>ডাক্তার পোর্টাল</Button>
+                <SNavLink to='https://patient.nextgenmyhealth.com/login'>
+                    <Button className='bold' color='first' elevated>পেশেন্ট পোর্টাল</Button>
+                </SNavLink>
+                <SNavLink to='https://doctor.nextgenmyhealth.com/login'>
+                    <Button className='bold ml-3' color='third' elevated>ডাক্তার পোর্টাল</Button>
+                </SNavLink>
             </HBox>
         </Container>
     );
