@@ -29,9 +29,10 @@ const IconImage = styled.img`
 `
 
 const SearchBar = styled(Button)`
-    // Add your CSS here
     background-color: ${colors.lightGrey};
-    box-shadow: 0 0 4px 1px ${colors.darkGrey};
+    border: 1px solid ${colors.grey};
+    box-shadow: 0px 2px 3px ${colors.grey};
+
     &:hover {
         background-color: ${colors.lightGrey};
         color: ${colors.darkGrey};
@@ -51,11 +52,6 @@ const TopBar = () => {
                 <IconImage src={youtubeLogo} alt="Youtube Image"/>
             </HBox>
             <P2 className="bold">হটলাইন +৮৮০১৩২১১১৯৩৯১</P2>
-            {/* <SearchBar
-                placeholder="ডাক্তার অনুসন্ধান করুন"
-                onChange={handleSearchChange}
-                value={searchValue}
-            /> */}
             <SearchBar
                 size='sm'
                 onClick={() => setOpenSearchDlg(true)}

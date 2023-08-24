@@ -75,7 +75,7 @@ const DoctorCard = ({ id, name, image, bmdc, doctorType, qualification,
                     <P3 className='ml-2' color='first'>{affiliation ? `${affiliation.designation} at ${affiliation.institution}` : <></>}</P3>
                 </VBox>
                 <VBox justify='center' align='center' style={{flexGrow: '1'}}>
-                    <Button className='bold ml-2' size='sm' color='third' style={{width: '80%'}}>অ্যাপয়েন্টমেন্ট নিন</Button>
+                    <Button className='bold ml-2' size='sm' color='third' style={{ height: 40, borderRadius: 20 }}>অ্যাপয়েন্টমেন্ট নিন</Button>
                     <P2 className='bold mt-2' color='first'><TbCurrencyTaka />{fee}</P2>
                 </VBox>
             </HBox>
