@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 // import colors from '../../../config/colors';
 import bannerimage from '../../../assets/images/banner_image.png';
 
@@ -43,7 +44,9 @@ const Banner = () => {
 					আমরা সর্বোচ্চ মানের সেবা দেওয়ার চেষ্টা করি।
 				</P2>
 				<HBox className='bold px-0 mt-4'>
-					<SButton color='third' elevated>অ্যাপয়েন্টমেন্ট নিন</SButton> 
+					<Link style={{textDecoration: 'none'}} to='https://patient.nextgenmyhealth.com/login'>
+					    <SButton color='third' elevated>অ্যাপয়েন্টমেন্ট নিন</SButton>
+					</Link> 
 				</HBox>
 				</VBox>
 				<BannerImage src={bannerimage} />

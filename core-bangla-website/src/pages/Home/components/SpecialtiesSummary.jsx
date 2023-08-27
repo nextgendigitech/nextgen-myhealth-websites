@@ -56,7 +56,7 @@ const RoundButton = styled(Button)`
 `
 
 const CardContainer = styled(HBox)`
-    width: 80%;
+    width: 280px;
     height: 80px;
     background: ${colors.veryLightBlue};
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
@@ -106,10 +106,18 @@ const SpecialtiesSummary = () => {
                     </SLink>
                 </VBox> 
                 <VBox align='center' className="" style={{ width: '25%' }}>
-                    <SpecialtiesCard className="my-3" icon={internal_medicine} name="ইন্টারনাল মেডিসিন"/>
-                    <SpecialtiesCard className="" icon={cardiology} name="হৃদরোগ"/>
-                    <SpecialtiesCard className="my-3" icon={respiratory_medicine} name="ফুসফুস"/>
-                    <SpecialtiesCard className="" icon={neurology} name="স্নায়ুরোগ"/>
+                    <SLink to='/specialty-doctors/Internal Medicine'>
+                        <SpecialtiesCard className="my-3" icon={internal_medicine} name="ইন্টারনাল মেডিসিন"/>
+                    </SLink>
+                    <SLink to='/specialty-doctors/Cardiology'>
+                        <SpecialtiesCard className="" icon={cardiology} name="হৃদরোগ"/>
+                    </SLink>
+                    <SLink to='/specialty-doctors/Respiratory Medicine'>
+                        <SpecialtiesCard className="my-3" icon={respiratory_medicine} name="ফুসফুস"/>
+                    </SLink>
+                    <SLink to='/specialty-doctors/Neurology'>
+                        <SpecialtiesCard className="" icon={neurology} name="স্নায়ুরোগ"/>
+                    </SLink>
                     <SLink to='/specialties'>
                         <RoundButton className='my-3' elevated>
                             <Icon src={right_arrow} alt="Button Image" />

@@ -46,7 +46,7 @@ const JoinDoctor = () => {
                 <H5>আমাদের সাথে যোগ দিতে চান?</H5>
                 <P3 className="bold">
                     এই
-                    <a className="mx-0_5" href="https://www.google.com" target="_blank">
+                    <a className="mx-0_5" href="https://docs.google.com/forms/d/e/1FAIpQLSe2oTRWq02VzSy7S5HyZLXbUtGdY1uwZrnmZjM5bEXNPWZMZA/viewform?pli=1" target="_blank">
                         Google Form
                     </a>
                     পূরণ করুন
