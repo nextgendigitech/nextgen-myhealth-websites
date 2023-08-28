@@ -45,6 +45,16 @@ const VerticalBorder = styled.div`
     );
 `
 
+const VideoContainer = styled.iframe`
+    position: relative;
+    height: auto;
+    width: 500px;
+    left: 32px;
+    top 32px;
+    border: 5px solid ${colors.lightBlack};
+    border-radius: 15px;
+`
+
 const WhoWeAre = () => {
     return (
         <Container>
@@ -63,9 +73,7 @@ const WhoWeAre = () => {
                 স্বাস্থ্যসেবা বিষয়ক ভোগান্তি কমাতে বদ্ধপরিকর।
             </P1>
             <HBox className="mt-8" justify='center'>
-                <ImageBox className="px-8" justify='center' align='center'>
-                    <Image src={youtube_logo} />
-                </ImageBox>
+                <VideoContainer src="https://www.youtube.com/embed/NdZ9vPHAy7w" title="Virtual Care Platform - NextGen MyHealth VCP" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen />
                 <CardContainer>
                     <P2>
                         নেক্সটজেন ডিজিটেক লিমিটেড একটি বেসরকারি গবেষণা-ভিত্তিক কোম্পানি যা ডাক্তার, চিকিৎসা 

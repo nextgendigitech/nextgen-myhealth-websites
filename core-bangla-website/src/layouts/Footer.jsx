@@ -108,7 +108,7 @@ const Footer = () => {
                             <P3 style={{ color: colors.grey }}>ফেরত নীতিমালা&nbsp;</P3>
                         </SNavLink>
                     </HBox>
-                    <P3 className='mb-4' style={{ color: colors.grey }}>{new Date().getFullYear()} © নেক্সটজেন ডিজিটেক লিমিটেড.</P3>
+                    <P3 className='mb-4' style={{ color: colors.grey }}>কপিরাইট © {new Date().getFullYear()} নেক্সটজেন ডিজিটেক লিমিটেড.</P3>
                 </VBox>
             </FooterContainer2>
 

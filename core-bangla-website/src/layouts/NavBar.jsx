@@ -35,7 +35,9 @@ const SNavLink = styled(NavLink)`
 const NavBar = () => {
     return (
         <Container justify='space-between' align='center'>
-            <LogoImage src={logo}/>
+            <SNavLink to='/'>
+                <LogoImage src={logo}/>
+            </SNavLink>
             <HBox>
                 <SNavLink to='/'>
                     হোম
@@ -54,10 +56,10 @@ const NavBar = () => {
                 </SNavLink> */}
             </HBox>
             <HBox>
-                <SNavLink to='https://patient.nextgenmyhealth.com/login'>
+                <SNavLink to='https://patient.nextgenmyhealth.com/login' target='_blank'>
                     <Button className='bold' color='first' elevated>পেশেন্ট পোর্টাল</Button>
                 </SNavLink>
-                <SNavLink to='https://doctor.nextgenmyhealth.com/login'>
+                <SNavLink to='https://doctor.nextgenmyhealth.com/login' target='_blank'>
                     <Button className='bold ml-3' color='third' elevated>ডাক্তার পোর্টাল</Button>
                 </SNavLink>
             </HBox>

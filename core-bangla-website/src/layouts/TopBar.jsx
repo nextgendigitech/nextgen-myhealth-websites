@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 import { HBox } from '../components/Containers';
@@ -45,11 +46,15 @@ const TopBar = () => {
     return (
         <Container justify='space-between' align='center'>
             <HBox>
-                <a href="https://www.facebook.com/nextgenmyhealthvcp" target="_blank" rel="noopener noreferrer">
+                <Link to="https://www.facebook.com/nextgenmyhealthvcp" target="_blank">
                     <IconImage src={facebookIcon} alt="Facebook Image" className='ml-1' />
-                </a>
-                <IconImage src={linkedinIcon} alt="LinkedIn Image" className="mx-3"/>
-                <IconImage src={youtubeLogo} alt="Youtube Image"/>
+                </Link>
+                <Link to='https://www.linkedin.com/company/nextgen-myhealth-vcp/' target='_blank'>
+                    <IconImage src={linkedinIcon} alt="LinkedIn Image" className="mx-3"/>
+                </Link>
+                <Link to='https://www.youtube.com/channel/UCSDFJqW2y9UYs6IMWGK2i9w' target='_blank'>
+                    <IconImage src={youtubeLogo} alt="Youtube Image"/>
+                </Link>
             </HBox>
             <P2 className="bold">হটলাইন +৮৮০১৩২১১১৯৩৯১</P2>
             <SearchBar

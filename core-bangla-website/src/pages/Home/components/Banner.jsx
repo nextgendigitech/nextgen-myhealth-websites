@@ -44,7 +44,7 @@ const Banner = () => {
 					আমরা সর্বোচ্চ মানের সেবা দেওয়ার চেষ্টা করি।
 				</P2>
 				<HBox className='bold px-0 mt-4'>
-					<Link style={{textDecoration: 'none'}} to='https://patient.nextgenmyhealth.com/login'>
+					<Link style={{textDecoration: 'none'}} to='/specialties'>
 					    <SButton color='third' elevated>অ্যাপয়েন্টমেন্ট নিন</SButton>
 					</Link> 
 				</HBox>
