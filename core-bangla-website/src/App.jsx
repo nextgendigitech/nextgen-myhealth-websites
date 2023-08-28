@@ -14,6 +14,7 @@ import TermsConditions from './pages/TermsConditions';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import RefundPolicy from './pages/RefundPolicy';
 import Blog from './pages/Blog';
+import DoctorProfile from './pages/DoctorProfile';
 import Footer from './layouts/Footer';
 import './App.css';
 
@@ -35,6 +36,7 @@ function App() {
           <Route path='/privacy-policy' element={<PrivacyPolicy />} />
           <Route path='/refund-policy' element={<RefundPolicy />} />
           <Route path='/blog' element={<Blog />} />
+          <Route path='/doctor-profile' element={<DoctorProfile />} />
       </Routes>
       <Footer />
     </BrowserRouter>

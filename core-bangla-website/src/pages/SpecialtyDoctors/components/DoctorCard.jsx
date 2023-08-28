@@ -5,6 +5,7 @@ import { Button } from '../../../components/Buttons';
 import { HBox, VBox } from "../../../components/Containers";
 import { P2, P4 } from "../../../components/Typography";
 import { TbCurrencyTaka } from 'react-icons/tb';
+import { NavLink } from 'react-router-dom';
 
 
 const CardContainer = styled(HBox)`
@@ -27,6 +28,15 @@ const SButton = styled(Button)`
    border-radius: 30px;
 `
 
+const SNavLink = styled(NavLink)`
+    text-decoration: none;
+    color: ${colors.darkGrey};
+
+    &.active {
+        font-weight: bold;
+    }
+`
+
 const DoctorCard = ({ name, bmdc, qualification, specialty,
                       experience, affiliation, image, fee }) => {
     return (
@@ -43,7 +53,12 @@ const DoctorCard = ({ name, bmdc, qualification, specialty,
                     <P4 className="bold mb-1">{specialty}</P4>
                     <P4 className="bold mb-1">{qualification}</P4>
                     <P4 className="bold mb-4">অভিজ্ঞতা: {experience}</P4>
-                    <SButton style={{ fontSize: "16px", width: "190px" }} color='third' elevated>অ্যাপয়েন্টমেন্ট নিন</SButton> 
+                    <HBox justify="space-between">
+                        <SNavLink to='/doctor-profile'>
+                            <SButton style={{ fontSize: "16px", width: "120px" }} color='first' elevated>বিস্তারিত</SButton>
+                        </SNavLink> 
+                        <SButton style={{ fontSize: "16px", width: "190px" }} color='third' elevated>অ্যাপয়েন্টমেন্ট নিন</SButton>
+                    </HBox> 
                 </VBox>
         </CardContainer>
     );
