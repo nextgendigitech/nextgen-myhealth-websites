@@ -8,6 +8,7 @@ import neurology from "../../../assets/images/specialties/neurology.png";
 import specialties_banner from "../../../assets/images/specialties_banner.png";
 import right_arrow from "../../../assets/images/right_arrow.png";
 
+import { NavLink } from 'react-router-dom';
 import { Button } from '../../../components/Buttons';
 import { HBox, VBox } from "../../../components/Containers";
 import { P2, P3 } from "../../../components/Typography";
@@ -37,6 +38,14 @@ const SButton = styled(Button)`
    width: 220px;
    border-radius: 30px;
    font-size: 16px;
+`
+const SNavLink = styled(NavLink)`
+    text-decoration: none;
+    color: ${colors.darkGrey};
+
+    &.active {
+        font-weight: bold;
+    }
 `
 
 const RoundButton = styled(Button)`
@@ -103,9 +112,11 @@ const SpecialtiesSummary = () => {
                     <SpecialtiesCard className="" icon={cardiology} name="হৃদরোগ"/>
                     <SpecialtiesCard className="my-3" icon={respiratory_medicine} name="ফুসফুস"/>
                     <SpecialtiesCard className="" icon={neurology} name="স্নায়ুরোগ"/>
-                    <RoundButton className='my-3' elevated>
-                        <Icon src={right_arrow} alt="Button Image" />
-                    </RoundButton>
+                    <SNavLink to='/specialties'>
+                        <RoundButton className='my-3' elevated>
+                            <Icon src={right_arrow} alt="Button Image" />
+                        </RoundButton>
+                    </SNavLink>
                 </VBox>
                 <BannerImage className='mt-3 mr-8' src={specialties_banner} />
             </HBox>

@@ -37,7 +37,7 @@ const SNavLink = styled(NavLink)`
     }
 `
 
-const DoctorCard = ({ name, bmdc, qualification, specialty,
+const DoctorCard = ({ id, name, bmdc, qualification, specialty,
                       experience, affiliation, image, fee }) => {
     return (
         <CardContainer className="m-2 p-3">
@@ -54,7 +54,7 @@ const DoctorCard = ({ name, bmdc, qualification, specialty,
                     <P4 className="bold mb-1">{qualification}</P4>
                     <P4 className="bold mb-4">অভিজ্ঞতা: {experience}</P4>
                     <HBox justify="space-between">
-                        <SNavLink to='/doctor-profile'>
+                        <SNavLink to={`/doctor-profile/${id}`}>
                             <SButton style={{ fontSize: "16px", width: "120px" }} color='first' elevated>বিস্তারিত</SButton>
                         </SNavLink> 
                         <SButton style={{ fontSize: "16px", width: "190px" }} color='third' elevated>অ্যাপয়েন্টমেন্ট নিন</SButton>

@@ -1,11 +1,12 @@
 import styled from "styled-components";
 import colors from "../../../config/colors";
 
+import { month } from "../../../data";
 import { HBox, VBox } from "../../../components/Containers";
-import { H3, P1, P2, P3, P4 } from "../../../components/Typography";
+import { P2, P3, P4 } from "../../../components/Typography";
 
 
-const AffliationCard = styled(VBox)`
+const Card = styled(VBox)`
     width: 50%;
     height: auto;
     margin-left: 120px;
@@ -14,20 +15,26 @@ const AffliationCard = styled(VBox)`
     border-radius: 20px;
 `
 
-const DetailCard = ({ qualification, affiliation }) => {
+const DetailCard = ({ chambers, affiliations, attended, created_at }) => {
+
+    const dateandtime = created_at;
+    const fulldate = dateandtime.split("T")[0];
+    const date = fulldate.split("-");
     return (
         <>
-            <AffliationCard className="m-3 p-4" justify="center" align="center">
+            <Card className="m-6 p-4" justify="center">
                 <P2 className="bold">Affliliation(s):</P2>
-            </AffliationCard>
-            <AffliationCard className="m-3 p-4" justify="fles-end" align="center">
+                <P3 className="ml-6 px-2">{affiliations}</P3>
+            </Card>
+            <Card className="m-6 p-4" justify="center" style={{ marginLeft: "40%" }}>
                 <P2 className="bold">Chamber(s):</P2>
-            </AffliationCard>
-            <AffliationCard className="m-3 p-4" justify="center" align="center">
+                <P3 className="ml-6 px-2">{chambers}</P3>
+            </Card>
+            <Card className="m-6 p-4" justify="center">
                 <P2 className="bold">Other information:</P2>
-                <P4>Joined Nextgen MyHealth: 2nd March, 2023</P4>
-                <P4>Patient attended: 500</P4>
-            </AffliationCard>
+                <li className="ml-6 pt-2">Joined Nextgen MyHealth: {date[2]} {month[date[1]]}, {date[0]}</li>
+                <li className="ml-6 pt-2">Patient attended: {attended}</li>
+            </Card>
         </>
     );
 }
