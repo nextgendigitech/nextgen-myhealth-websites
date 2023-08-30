@@ -1,13 +1,20 @@
+import { useState } from "react";
 import styled from "styled-components";
 import colors from "../../../config/colors";
+import Snackbar from '@mui/material/Snackbar';
+import SnackbarContent from '@mui/material/SnackbarContent';
+import CloseIcon from '@mui/icons-material/Close';
+import IconButton from '@mui/material/IconButton';
 
 import { Button } from '../../../components/Buttons';
 import { HBox, VBox } from "../../../components/Containers";
 import { H3, P1, P2, P3, P4 } from "../../../components/Typography";
 import { TbCurrencyTaka } from 'react-icons/tb';
+import { FiShare2 } from 'react-icons/fi';
+import { BiArrowBack } from 'react-icons/bi';
 
 
-const TitleCard = styled(VBox)`
+const TitleCard = styled(HBox)`
     width: 100%;
     height: 70px;
     background: ${colors.veryLightGreen};
@@ -37,13 +44,13 @@ const Image = styled.img`
 `
 
 const VerticalLine = styled.div`
-    border-left: 1px solid green;
+    border-left: 1px solid ${colors.green};
     height: auto;
     margin-left: 8px;
 `
 
 const HorizontalLine = styled.div`
-    border-bottom: 1px solid green;
+    border-bottom: 1px solid ${colors.green};
     width: 100%;
     margin-bottom: 8px;
 `
@@ -62,12 +69,74 @@ const SpecialtyBox = styled(HBox)`
     padding-right: 3px;
 `
 
+const Circle = styled.div`
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid ${colors.lightGreen};
+    justify-content: center;
+    align-items: center;
+    margin-left: 60px;
+    margin-right: 60px;
+    background-color: ${colors.lightGreen};
+    cursor: pointer;
+`
+
 const Banner = ({ image, name, bmdc, doctor_type, qualification, specialty,
     experience, institution, designation, department, consultation_fee }) => {
+    
+    const [showAlert, setShowAlert] = useState(false);
+
+    const copyToClipboard = () => {
+        const pageUrl = window.location.href;
+        navigator.clipboard.writeText(pageUrl)
+            .then(() => {
+                setShowAlert(true);
+                setTimeout(() => {
+                  setShowAlert(false);
+                }, 3000);
+            })
+            .catch((error) => {
+            console.error('Error copying to clipboard:', error);
+            });
+    };
+
+    const closeShowAlert = () => {
+        setShowAlert(false);
+    };
+
+    const goBack = () => {
+        window.history.back();
+    };
+
     return (
         <VBox>
-            <TitleCard className="mt-4" justify="center" align="center">
+            <TitleCard className="mt-4" justify="space-between" align="center">
+                <Circle onClick={goBack}>
+                    <BiArrowBack className="ml-1 mt-1"/>
+                </Circle>
                 <H3>ডাক্তার বর্ণনা</H3>
+                <Circle onClick={copyToClipboard}>
+                    <FiShare2 className="ml-1 mt-1" />
+                    <Snackbar
+                        open={showAlert}
+                        autoHideDuration={3000}
+                        onClose={closeShowAlert}
+                        anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
+                    >
+                        <SnackbarContent
+                            sx={{
+                                backgroundColor: colors.green,
+                            }}
+                            message="Doctor profile link is copied to clipboard!"
+                            action={
+                                <IconButton size="small" aria-label="close" color="inherit" onClick={closeShowAlert}>
+                                    <CloseIcon fontSize="small" />
+                                </IconButton>
+                            }
+                        />
+                    </Snackbar>
+                </Circle>
             </TitleCard>
             
             <BannerCard className="m-6 p-4">

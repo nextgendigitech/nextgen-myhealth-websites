@@ -31,7 +31,7 @@ const VerticalLine = styled.div`
 
 const Summary = ({ consultation_fee, followup_fee, appointment_schedules, language, consultationlanguage }) => {
     return (
-        <SummaryCard className="m-2 p-3" justify="space-around" align="center">
+        <SummaryCard className="py-3 pl-6" justify="space-around" align="center">
             <VerticalLine />
             <VBox style={{ width: "25%" }}>
                 <P3>Consultation fee: <TbCurrencyTaka/>{consultation_fee}</P3>

@@ -1,4 +1,4 @@
-import { useState, useEffect, CSSProperties } from "react";
+import { useState, useEffect } from "react";
 
 import axios from "axios";
 import Banner from "./components/Banner";
@@ -39,7 +39,6 @@ const DoctorProfile = () => {
             console.log('DOCTOR DETAILS FETCH ERROR', error);
         })
     }
-
     return (
         <>
             <Banner
@@ -67,13 +66,15 @@ const DoctorProfile = () => {
                 attended={doctor?.attended}
                 created_at={doctor?.created_at?.length ? doctor.created_at : ''}
                 affiliations={doctor?.affiliations ? doctor.affiliations.map((affiliation, index) => (
-                        <li className="my-2" key={index}>{affiliation.designation}, {affiliation.department}, {affiliation.institution}
+                        <li className="my-2" key={index}>
+                            {affiliation.designation}, {affiliation.department}, {affiliation.institution}
                         </li>
                 )) : ''}
                 chambers={doctor?.chambers ? doctor.chambers.map((chamber, index) => (
-                    <li className="my-2" key={index}>{chamber.address}
+                    <li className="my-2" key={index}>
+                        {chamber.address}
                     </li>
-            )) : ''}
+                )) : ''}
             />
         </>
     )

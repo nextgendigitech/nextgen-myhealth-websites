@@ -9,6 +9,7 @@ import { H3, P2 } from "../../components/Typography";
 import { specialtyEtoB } from "../../data";
 import DoctorCard from "./components/DoctorCard";
 import ClipLoader from "react-spinners/ClipLoader";
+import { BiArrowBack } from 'react-icons/bi';
 
 // const override: CSSProperties = {
 //     display: "block",
@@ -27,6 +28,18 @@ const TitleCard = styled(VBox)`
 const CardsContainer = styled(HBox)`
     margin-left: 104px;
     margin-right: 104px;
+`
+
+const Circle = styled.div`
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid ${colors.lightGreen};
+    justify-content: center;
+    align-items: center;
+    margin-right: 88%;
+    background-color: ${colors.lightGreen};
+    cursor: pointer;
 `
 
 const SpecialtyDoctors = () => {
@@ -67,10 +80,17 @@ const SpecialtyDoctors = () => {
         })
     }
 
+    const goBack = () => {
+        window.history.back();
+    };
+
     return (
         <VBox>
             <TitleCard className="mt-4" justify="center" align="center">
-                <H3>{specialtyEtoB[specialty]}</H3>
+                <Circle onClick={goBack}>
+                    <BiArrowBack className="ml-1 mt-1"/>
+                </Circle>
+                <H3 style={{ position: "fixed" }}>{specialtyEtoB[specialty]}</H3>
             </TitleCard>
             {
                 isLoading ?

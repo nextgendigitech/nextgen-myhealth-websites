@@ -20,16 +20,19 @@ const DetailCard = ({ chambers, affiliations, attended, created_at }) => {
     const dateandtime = created_at;
     const fulldate = dateandtime.split("T")[0];
     const date = fulldate.split("-");
+    console.log(chambers);
     return (
         <>
             <Card className="m-6 p-4" justify="center">
                 <P2 className="bold">Affliliation(s):</P2>
                 <P3 className="ml-6 px-2">{affiliations}</P3>
             </Card>
+            {(chambers.length > 0) && (
             <Card className="m-6 p-4" justify="center" style={{ marginLeft: "40%" }}>
                 <P2 className="bold">Chamber(s):</P2>
                 <P3 className="ml-6 px-2">{chambers}</P3>
             </Card>
+            )}
             <Card className="m-6 p-4" justify="center">
                 <P2 className="bold">Other information:</P2>
                 <li className="ml-6 pt-2">Joined Nextgen MyHealth: {date[2]} {month[date[1]]}, {date[0]}</li>
