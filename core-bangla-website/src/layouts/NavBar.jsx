@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Drawer, List, ListItem, ListItemText } from '@mui/material';
+import { GiHamburgerMenu } from 'react-icons/gi';
 
 import { HBox } from '../components/Containers';
 import { Button } from '../components/Buttons';
@@ -17,26 +18,14 @@ const Container = styled(HBox)`
     width: 100%;
     border: 1px solid ${colors.grey};
     background-color: ${colors.veryLightGreen};
-    padding-left: 120px;
-    padding-right: 120px;
+    padding-left: 8%;
+    padding-right: 8%;
     z-index: 10;
     flex-wrap: nowrap;
 `
 
 const LogoImage = styled.img`
     height: 80px;
-`
-
-const NavOptionContainer = styled(HBox)`
-    @media only screen and (min-width: ${responsive.sm}px) {
-        flex-wrap: nowrap;
-    }
-`
-
-const ButtonContainer = styled(HBox)`
-    @media only screen and (min-width: ${responsive.sm}px) {
-        flex-wrap: nowrap;
-    }
 `
 
 const SNavLink = styled(NavLink)`
@@ -49,8 +38,15 @@ const SNavLink = styled(NavLink)`
     }
 `
 
+const MenuIcon = styled(GiHamburgerMenu)`
+    cursor: pointer;
+    font-size: 20px;
+    flex-shrink: 0;
+`
+
 const NavBar = () => {
     const [isMobile, setIsMobile] = useState(false);
+    const [activeMenu, setActiveMenu] = useState(false);
 
     useEffect(() => {
         const setResponsiveness = () => {
@@ -61,6 +57,7 @@ const NavBar = () => {
             }
             else {
                 setIsMobile(false);
+                setActiveMenu(false);
             }
         }
         setResponsiveness();
@@ -69,27 +66,59 @@ const NavBar = () => {
         return () => window.removeEventListener('resize', () => setResponsiveness());
     }, []);
 
+    function handleMenu() {
+        if(activeMenu) {
+            setActiveMenu(false);
+        }
+        else {
+            setActiveMenu(true);
+        }
+    }
+
     return (
         <Container justify='space-between' align='center'>
             <SNavLink to='/'>
-                <LogoImage src={logo}/>
+                <LogoImage src={logo} />
             </SNavLink>
             {
             isMobile ?
-            <Drawer open={true} anchor={'right'}>
-                <List>  
+            <>
+            <MenuIcon onClick={handleMenu} />
+            <Drawer open={activeMenu} anchor={'right'} PaperProps={{ style: { width: '50%', backgroundColor: `${colors.veryLightGreen}` } }}>
+                <List>
+                    <ListItem className='mb-4'>
+                        <LogoImage src={logo} />
+                    </ListItem>
+                    <ListItem className='mb-4'>
+                        <MenuIcon onClick={handleMenu} />
+                    </ListItem>
+                    <ListItem className='mb-4'>
+                        <ListItemText>
+                            <SNavLink to='/' onClick={handleMenu}>
+                                হোম
+                            </SNavLink>
+                        </ListItemText>
+                    </ListItem>
+                    <ListItem className='mb-4'>
+                        <ListItemText>
+                            <SNavLink to='/about-us' onClick={handleMenu}>
+                                পরিচিতি
+                            </SNavLink>
+                        </ListItemText>
+                    </ListItem>
                     <ListItem>
                         <ListItemText>
-                            <SNavLink to='/'>
-                                হোম
+                            <SNavLink to='/specialties' onClick={handleMenu}>
+                                বিশেষজ্ঞ ডাক্তার
                             </SNavLink>
                         </ListItemText>
                     </ListItem>
                 </List>
             </Drawer>
+            </>
             :
             <>
-            <NavOptionContainer style={{flexShrink: '0'}}>
+            <HBox style={{flexShrink: '0', flexWrap: 'nowrap'}}>
                 <SNavLink to='/'>
                     হোম
                 </SNavLink>
@@ -105,15 +134,15 @@ const NavBar = () => {
                 {/* <SNavLink style={{textDecoration: 'none'}} to='/contact-us'>
                     যোগাযোগ
                 </SNavLink> */}
-            </NavOptionContainer>
-            <ButtonContainer>
+            </HBox>
+            <HBox className='ml-6' style={{flexWrap: 'nowrap'}}>
                 <SNavLink to='https://patient.nextgenmyhealth.com/login' target='_blank'>
                     <Button color='first' elevated><P2 className='bold' color='white' style={{flexShrink: '0'}}>পেশেন্ট পোর্টাল</P2></Button>
                 </SNavLink>
                 <SNavLink to='https://doctor.nextgenmyhealth.com/login' target='_blank'>
                     <Button className='ml-3' color='third' elevated><P2 className='bold' color='white' style={{flexShrink: '0'}}>ডাক্তার পোর্টাল</P2></Button>
                 </SNavLink>
-            </ButtonContainer>
+            </HBox>
 
             {/* <HBox>
                 <SNavLink to='https://patient.nextgenmyhealth.com/login' target='_blank'>
