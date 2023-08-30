@@ -25,7 +25,7 @@ const TitleCard = styled(VBox)`
     border-radius: 0px 30px;
 `
 
-const index = () => {
+const PrivacyPolicy = () => {
     return (
         <VBox>
             <TitleCard className="mt-4" justify="center" align="center">
@@ -46,4 +46,4 @@ const index = () => {
     );
 }
 
-export default index;
+export default PrivacyPolicy;

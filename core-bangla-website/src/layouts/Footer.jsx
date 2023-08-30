@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import styled from 'styled-components';
 import logo from '../assets/images/Website-Logo.png'
 import colors from '../config/colors';
@@ -7,6 +8,7 @@ import { AiOutlineMail } from 'react-icons/ai'
 import { NavLink } from 'react-router-dom';
 import { HBox, VBox } from '../components/Containers';
 import { P3, P4 } from '../components/Typography';
+import DoctorSearchDlg from './DoctorSearchDlg';
 
 const FooterContainer1 = styled(VBox)`
     padding-left: 120px;
@@ -45,6 +47,8 @@ const SNavLink = styled(NavLink)`
 `
 
 const Footer = () => {
+    const [openDoctorSearchDlg, setOpenDoctorSearchDlg] = useState(false);
+
     return (
         <>
             <FooterContainer1 className='pb-7'>
@@ -71,18 +75,20 @@ const Footer = () => {
                         <SNavLink to='/specialties'>
                             <P4 className='mt-2'>বিশেষজ্ঞ ডাক্তার</P4>
                         </SNavLink>
-                        <SNavLink to='/blog'>
+                        {/* <SNavLink to='/blog'>
                             <P4 className='mt-2'>ব্লগ</P4>
-                        </SNavLink>
+                        </SNavLink> */}
                     </VBox>
                     <VBox>    
                         <P3 className='bold'>সেবাসমূহ</P3>
-                        <P4 className='mt-2'>ডাক্তার অনুসন্ধান করুন</P4>
-                        <P4 className='mt-2'>প্রতিনিয়ত জিজ্ঞাসিত প্রশ্ন</P4>
+                        <P4 className='mt-2 clickable' onClick={() => setOpenDoctorSearchDlg(true)}>ডাক্তার অনুসন্ধান করুন</P4>
+                        {/* <P4 className='mt-2'>প্রতিনিয়ত জিজ্ঞাসিত প্রশ্ন</P4> */}
                     </VBox>
                     <VBox>    
                         <P3 className='bold'>অর্থ প্রদান</P3>
-                        <P4 className='mt-2'>পেমেন্ট</P4>
+                        <SNavLink to='/payment'>
+                            <P4 className='mt-2'>পেমেন্ট</P4>
+                        </SNavLink>
                     </VBox>
                 </HBox>
             </FooterContainer1>
@@ -93,16 +99,23 @@ const Footer = () => {
                         <SNavLink to='/terms-conditions'>
                             <P4 style={{ color: colors.grey }}>নিয়ম ও শর্তাবলী&nbsp;</P4>
                         </SNavLink>
+                        <P4 className='mx-0_5' style={{ color: colors.grey }}>|</P4>
                         <SNavLink to='/privacy-policy'>
-                            <P4 style={{ color: colors.grey }}>|  গোপনীয়তা নীতিমালা&nbsp;</P4>  
+                            <P4 style={{ color: colors.grey }}>গোপনীয়তা নীতিমালা&nbsp;</P4>  
                         </SNavLink>
+                        <P4 className='mx-0_5' style={{ color: colors.grey }}>|</P4>
                         <SNavLink to='/refund-policy'>
-                            <P4 style={{ color: colors.grey }}>|  ফেরত নীতিমালা</P4>
+                            <P4 style={{ color: colors.grey }}>ফেরত নীতিমালা&nbsp;</P4>
                         </SNavLink>
                     </HBox>
-                    <P4 className='mb-4' style={{ color: colors.grey }}>© নেক্সটজেন ডিজিটেক লিমিটেড.</P4>
+                    <P4 className='mb-4' style={{ color: colors.grey }}>{new Date().getFullYear()} © নেক্সটজেন ডিজিটেক লিমিটেড.</P4>
                 </VBox>
             </FooterContainer2>
+
+            <DoctorSearchDlg
+                open={openDoctorSearchDlg}
+                setOpen={setOpenDoctorSearchDlg}
+            />
         </>
     );
 }

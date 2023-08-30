@@ -3,12 +3,13 @@ import styled from 'styled-components';
 
 import { HBox } from '../components/Containers';
 import { P1, P2 } from '../components/Typography';
-
-import SearchBar from '../components/SearchBar';
+import { Button } from '../components/Buttons';
 import colors from '../config/colors';
-import facebook_icon from '../assets/images/facebook_icon.png';
-import linkedin_icon from '../assets/images/linkedin_icon.png';
-import youtube_logo from '../assets/images/youtube_logo.png';
+import facebookIcon from '../assets/images/facebook_icon.png';
+import linkedinIcon from '../assets/images/linkedin_icon.png';
+import youtubeLogo from '../assets/images/youtube_logo.png';
+import searchIcon from '../assets/images/search_icon.png';
+import DoctorSearchDlg from './DoctorSearchDlg';
 
 const Container = styled(HBox)`
     position: sticky;
@@ -27,28 +28,41 @@ const IconImage = styled.img`
     width: auto;
 `
 
-const TopBar = () => {
-    const [searchValue, setSearchValue] = useState('');
+const SearchBar = styled(Button)`
+    background-color: ${colors.lightGrey};
+    border: 1px solid ${colors.grey};
+    box-shadow: 0px 2px 3px ${colors.grey};
 
-    const handleSearchChange = (event) => {
-      setSearchValue(event.target.value);
-      // Add your search logic here, like filtering data based on the search value
+    &:hover {
+        background-color: ${colors.lightGrey};
+        color: ${colors.darkGrey};
     }
+`
+
+const TopBar = () => {
+    const [openSearchDlg, setOpenSearchDlg] = useState(false);
 
     return (
         <Container justify='space-between' align='center'>
             <HBox>
                 <a href="https://www.facebook.com/nextgenmyhealthvcp" target="_blank" rel="noopener noreferrer">
-                    <IconImage src={facebook_icon} alt="Facebook Image" className='ml-1' />
+                    <IconImage src={facebookIcon} alt="Facebook Image" className='ml-1' />
                 </a>
-                <IconImage src={linkedin_icon} alt="LinkedIn Image" className="mx-3"/>
-                <IconImage src={youtube_logo} alt="Youtube Image"/>
+                <IconImage src={linkedinIcon} alt="LinkedIn Image" className="mx-3"/>
+                <IconImage src={youtubeLogo} alt="Youtube Image"/>
             </HBox>
             <P2 className="bold">হটলাইন +৮৮০১৩২১১১৯৩৯১</P2>
             <SearchBar
-                placeholder="ডাক্তার অনুসন্ধান করুন"
-                onChange={handleSearchChange}
-                value={searchValue}
+                size='sm'
+                onClick={() => setOpenSearchDlg(true)}
+            >
+                ডাক্তার অনুসন্ধান করুন
+                <img className='ml-8' src={searchIcon} style={{height: '70%'}} />
+            </SearchBar>
+
+            <DoctorSearchDlg
+                open={openSearchDlg}
+                setOpen={setOpenSearchDlg}
             />
         </Container>
     );
