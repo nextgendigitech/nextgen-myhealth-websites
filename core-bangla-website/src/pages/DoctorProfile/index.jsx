@@ -8,7 +8,6 @@ import { useParams } from "react-router-dom";
 
 const DoctorProfile = () => {
     let { id } = useParams();
-    const [affiliations, setAffiliations] = useState([]);
     const [doctor, setDoctor] = useState({});
     const [isLoading, setIsLoading] = useState(false);
 
@@ -44,6 +43,7 @@ const DoctorProfile = () => {
             <Banner
                 id={doctor?.id}
                 name={doctor?.name}
+                is_online={doctor?.is_online}
                 bmdc={doctor?.bmdc}
                 image={doctor?.image}
                 doctor_type={doctor?.doctor_type}
@@ -65,16 +65,8 @@ const DoctorProfile = () => {
                 id={doctor?.id}
                 attended={doctor?.attended}
                 created_at={doctor?.created_at?.length ? doctor.created_at : ''}
-                affiliations={doctor?.affiliations ? doctor.affiliations.map((affiliation, index) => (
-                        <li className="my-2" key={index}>
-                            {affiliation.designation}, {affiliation.department}, {affiliation.institution}
-                        </li>
-                )) : ''}
-                chambers={doctor?.chambers ? doctor.chambers.map((chamber, index) => (
-                    <li className="my-2" key={index}>
-                        {chamber.address}
-                    </li>
-                )) : ''}
+                affiliations={doctor?.affiliations?.length ? doctor.affiliations : ''}
+                chambers={doctor?.chambers?.length ? doctor.chambers : ''}
             />
         </>
     )

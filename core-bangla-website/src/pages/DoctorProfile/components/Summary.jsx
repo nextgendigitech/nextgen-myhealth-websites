@@ -2,7 +2,7 @@ import styled from "styled-components";
 import colors from "../../../config/colors";
 
 import { HBox, VBox } from "../../../components/Containers";
-import { H3, P1, P2, P3, P4 } from "../../../components/Typography";
+import { P3 } from "../../../components/Typography";
 import { TbCurrencyTaka } from 'react-icons/tb';
 
 
@@ -29,7 +29,7 @@ const VerticalLine = styled.div`
 `
 
 
-const Summary = ({ consultation_fee, followup_fee, appointment_schedules, language, consultationlanguage }) => {
+const Summary = ({ consultation_fee, followup_fee, appointment_schedules }) => {
     return (
         <SummaryCard className="py-3 pl-6" justify="space-around" align="center">
             <VerticalLine />

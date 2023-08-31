@@ -2,8 +2,8 @@ import styled from "styled-components";
 import colors from "../../../config/colors";
 
 import { month } from "../../../data";
-import { HBox, VBox } from "../../../components/Containers";
-import { P2, P3, P4 } from "../../../components/Typography";
+import { VBox } from "../../../components/Containers";
+import { P2, P3 } from "../../../components/Typography";
 
 
 const Card = styled(VBox)`
@@ -20,17 +20,27 @@ const DetailCard = ({ chambers, affiliations, attended, created_at }) => {
     const dateandtime = created_at;
     const fulldate = dateandtime.split("T")[0];
     const date = fulldate.split("-");
-    console.log(chambers);
+
     return (
         <>
+            {(affiliations.length > 0) && (
             <Card className="m-6 p-4" justify="center">
                 <P2 className="bold">Affliliation(s):</P2>
-                <P3 className="ml-6 px-2">{affiliations}</P3>
+                <P3 className="ml-6 px-2">{affiliations.map((affiliation, index) => (
+                    <li className="my-2" key={index}>
+                        {affiliation.designation}, {affiliation.department}, {affiliation.institution}
+                    </li>
+                ))}</P3>
             </Card>
-            {(chambers.length > 0) && (
+            )}
+            {(chambers.length > 0) && (chambers[0].address.length > 0) && (
             <Card className="m-6 p-4" justify="center" style={{ marginLeft: "40%" }}>
                 <P2 className="bold">Chamber(s):</P2>
-                <P3 className="ml-6 px-2">{chambers}</P3>
+                <P3 className="ml-6 px-2">{chambers.map((chamber, index) => (
+                    <li className="my-2" key={index}>
+                        {chamber.address}
+                    </li>
+                ))}</P3>
             </Card>
             )}
             <Card className="m-6 p-4" justify="center">
