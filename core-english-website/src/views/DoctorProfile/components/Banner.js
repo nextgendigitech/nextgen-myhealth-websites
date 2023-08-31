@@ -132,8 +132,8 @@ const Banner = ({ isMobile, id, name, image, bmdc, doctorType, qualification, ex
                     </VBox>}
                 </SHBox>
 
-                <div to={`/appointment-schedule/${id}`} className='mt-6 mb-8'>
-                    <Hyperlink href='https://patient.nextgenmyhealth.com/' target="_blank"><Button name='Book Appointment' color={COLORS.facebookColor}></Button></Hyperlink>
+                <div className='mt-6 mb-8'>
+                    <Hyperlink href={`https://patient.nextgenmyhealth.com/doctor/${id}`} target="_blank"><Button name='Book Appointment' color={COLORS.facebookColor}></Button></Hyperlink>
                 </div>
             </VBox>
             {/* <Nav className="mt-4">

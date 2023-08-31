@@ -3,7 +3,7 @@ import { useNavigate, Link, useParams } from "react-router-dom";
 import styled from "styled-components";
 import axios from "axios";
 import { FiX, FiArrowLeft, FiSearch } from "react-icons/fi";
-import { Scrollbars } from 'react-custom-scrollbars';
+import { Scrollbars } from 'react-custom-scrollbars-2';
 
 import { HBox, VBox } from "../../components/Containers";
 import { H1, H2, H3, H4, H5, H6, P1, P2, P3 } from "../../components/Typography";

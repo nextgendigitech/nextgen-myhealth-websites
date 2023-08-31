@@ -70,10 +70,10 @@ const AppBarItems = styled('button')(
   color: ${COLORS.textColor};
   text-transform: uppercase;
   border: none;
-  font-size: 1.75rem;
-  font-family:  "Arial Rounded MT Bold";
+  font-size: 1.3rem;
+  // font-family:  "Arial Rounded MT Bold";
   background: ${COLORS.whiteColor};
-  margin: ${theme.spacing(1)};
+  margin: ${theme.spacing(2)};
   cursor: pointer;
   &:after {
     position: absolute;
