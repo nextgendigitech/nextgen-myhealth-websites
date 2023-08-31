@@ -8,6 +8,7 @@ import colors from '../config/colors';
 import facebookIcon from '../assets/images/facebook_icon.png';
 import linkedinIcon from '../assets/images/linkedin_icon.png';
 import youtubeLogo from '../assets/images/youtube_logo.png';
+import searchIcon from '../assets/images/search_icon.png';
 import DoctorSearchDlg from './DoctorSearchDlg';
 
 const Container = styled(HBox)`
@@ -28,7 +29,14 @@ const IconImage = styled.img`
 `
 
 const SearchBar = styled(Button)`
-    // Add your CSS here
+    background-color: ${colors.lightGrey};
+    border: 1px solid ${colors.grey};
+    box-shadow: 0px 2px 3px ${colors.grey};
+
+    &:hover {
+        background-color: ${colors.lightGrey};
+        color: ${colors.darkGrey};
+    }
 `
 
 const TopBar = () => {
@@ -44,16 +52,12 @@ const TopBar = () => {
                 <IconImage src={youtubeLogo} alt="Youtube Image"/>
             </HBox>
             <P2 className="bold">হটলাইন +৮৮০১৩২১১১৯৩৯১</P2>
-            {/* <SearchBar
-                placeholder="ডাক্তার অনুসন্ধান করুন"
-                onChange={handleSearchChange}
-                value={searchValue}
-            /> */}
             <SearchBar
                 size='sm'
                 onClick={() => setOpenSearchDlg(true)}
             >
                 ডাক্তার অনুসন্ধান করুন
+                <img className='ml-8' src={searchIcon} style={{height: '70%'}} />
             </SearchBar>
 
             <DoctorSearchDlg

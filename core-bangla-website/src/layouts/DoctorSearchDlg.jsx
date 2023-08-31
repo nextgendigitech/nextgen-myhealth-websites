@@ -5,6 +5,7 @@ import axios from "axios";
 import { Dialog } from '@mui/material';
 import { Scrollbars } from 'react-custom-scrollbars-2';
 import { FiSearch, FiX } from "react-icons/fi";
+import { TbCurrencyTaka } from 'react-icons/tb';
 
 import { HBox, VBox } from "../components/Containers";
 import { Button, IconButton } from "../components/Buttons";
@@ -40,19 +41,44 @@ const Image = styled.img`
     height: auto;
 `
 
+const DoctorImage = styled.img`
+    height: 120px;
+    width: 100%;
+    border-radius: 50%;
+`
+
 const SLink = styled(Link)`
     text-decoration: none;
 `
 
 const DoctorCardContainer = styled(HBox)`
+    border-radius: 20px;
 
+    &:hover {
+        box-shadow: 0px 0px 6px 6px ${colors.grey};
+    }
 `
 
 const DoctorCard = ({ id, name, image, bmdc, doctorType, qualification,
-                      specialty, fee, institution, designation }) => {
+                      specialty, fee, affiliation }) => {
     return (
-        <DoctorCardContainer>
-
+        <DoctorCardContainer className='mb-3'>
+            <HBox style={{width: '100%'}}>
+                <VBox className='ml-2 mb-2 mt-2' justify='center' style={{width: ''}}>
+                    <DoctorImage src={`${import.meta.env.VITE_SERVER_URL}${image}`} />
+                    <P3 className='bold mt-2' color='third'>BMDC: {doctorType==='MBBS' ? 'A-' : ''}{bmdc}</P3>
+                </VBox>
+                <VBox className='mt-2' style={{width: '50%'}}>
+                    <P2 className='bold ml-2'>{name}</P2>
+                    <P3 className='ml-2' color='second'>{specialty}</P3>
+                    <P3 className='ml-2'>{qualification}</P3>
+                    <P3 className='ml-2' color='first'>{affiliation ? `${affiliation.designation} at ${affiliation.institution}` : <></>}</P3>
+                </VBox>
+                <VBox justify='center' align='center' style={{flexGrow: '1'}}>
+                    <Button className='bold ml-2' size='sm' color='third' style={{ height: 40, borderRadius: 20 }}>অ্যাপয়েন্টমেন্ট নিন</Button>
+                    <P2 className='bold mt-2' color='first'><TbCurrencyTaka />{fee}</P2>
+                </VBox>
+            </HBox>
         </DoctorCardContainer>
     );
 }
@@ -203,6 +229,7 @@ const DoctorSearchDlg = ({ isMobile, open, setOpen }) => {
                                         fee={doctor.fee}
                                         experience={doctor.experience}
                                         isOnline={doctor.is_online}
+                                        affiliation={doctor.affiliation_summary[0] ? doctor.affiliation_summary[0] : null}
                                     />
                                 </SLink>
                             ))}

@@ -7,6 +7,7 @@ import { P2, P4 } from "../../../components/Typography";
 import { TbCurrencyTaka } from 'react-icons/tb';
 import noImage from '../../../assets/images/no_image.svg';
 
+
 const CardContainer = styled(HBox)`
     width: calc(50% - 32px);
     height: auto;
@@ -36,8 +37,8 @@ const DoctorCard = ({ name, bmdc, qualification, specialty,
                         className="mb-3"
                         src={`${import.meta.env.VITE_SERVER_URL}${image}` ? `${import.meta.env.VITE_SERVER_URL}${image}` : noImage}
                     />
-                    <P4 className="bold">বি.এম.ডি.সি</P4>
-                    <P4 className="bold">{bmdc}</P4>
+                    <P4 className="bold">বি.এম.ডি.সি&nbsp;</P4>
+                    <P4 className="bold">{qualification.includes("MBBS") ? "এ-" : ""}{bmdc}</P4>
                     <P2 className="bold mt-2" color="first"><TbCurrencyTaka/>{fee}</P2>
                 </VBox>
                 <VBox className='pl-5' style={{ width: "78%" }}>
@@ -46,7 +47,7 @@ const DoctorCard = ({ name, bmdc, qualification, specialty,
                     <P4 className="bold mb-1">{specialty}</P4>
                     <P4 className="bold mb-1">{qualification}</P4>
                     <P4 className="bold mb-4">অভিজ্ঞতা: {experience}</P4>
-                    <SButton style={{ fontSize: "16px", width: "180px" }} color='third' elevated>অ্যাপয়েন্টমেন্ট নিন</SButton> 
+                    <SButton style={{ fontSize: "16px", width: "190px" }} color='third' elevated>অ্যাপয়েন্টমেন্ট নিন</SButton> 
                 </VBox>
         </CardContainer>
     );
