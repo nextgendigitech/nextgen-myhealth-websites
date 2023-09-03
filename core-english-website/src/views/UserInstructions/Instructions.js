@@ -1,21 +1,21 @@
-import { Box, Typography } from '@mui/material';
-// import { styled } from '@mui/system';
+import { Box } from '@mui/material';
 import styled from 'styled-components';
+
+import { H2 } from '../../components/Typography';
 import colors from '../../utility/styles';
 import responsive from '../../utility/responsive';
 import logo from '../../images/google_play_store_logo.svg';
 
 const Container = styled(Box)`
-    position: relative;
     display: flex;
     flex-direction: row;
-    /* height: 80vh; */
     background-color: ${colors.primaryLight};
     overflow: hidden;
+    border: 3px solid orange;
 `
 
 const InstructionContainerOuter = styled(Box)`
-    position: absolute;
+    position: relative;
     display: flex;
     flex-direction: row;
     height: 100%;
@@ -24,10 +24,6 @@ const InstructionContainerOuter = styled(Box)`
     align-items: center;
     border: 3px solid red;
     flex-wrap: wrap;
-    
-    @media only screen and (max-width: ${responsive.mobileThresh}px) {
-        overflow-y: scroll;
-    }
 `
 
 const InstructionContainerInner = styled(Box)`
@@ -38,46 +34,42 @@ const InstructionContainerInner = styled(Box)`
     width: 500px;
     min-width: 250px;
     border: 3px solid black;
-    /* flex-shrink: 0; */
-    /* padding-top: 5%;
-    padding-left: 4%;
-    padding-right: 4%; */
 
     @media only screen and (max-width: ${responsive.mobileThresh}px) {
         width: 100%;
     }
 `
 
-const PatientInstructionTitle = styled(Box)`
-    padding-top: 5%;
-    padding-left: 5%;
-    font-size: 30px;
-`
+// const PatientInstructionTitle = styled(P3)`
+//     font-size: 50px;
+//     color: ${colors.whiteColor};
+//     text-align: center;
+// `
 
 const Circle = styled(Box)`
     /* height: ${props => props.height || 'auto'}; */
     /* width: ${props => props.width || '50px'}; */
-    position: relative;
+    position: absolute;
     top: ${props => props.top || '0'};
     left: ${props => props.left || '0'};
     height: ${props => props.height || '50vw'};
     width: ${props => props.width || '50vw'};
     border-radius: 50%;
     background-color: ${props => props.backgroundcolor || colors.lightBlue};
-    /* border: 3px solid black; */
 `
 
 const Instruction = () => {
     return (
         <Container>
-            <Circle top='-30vw' left='-10vw'/>
-            {/* <Typography style={{fontSize: '50px'}}>Hello</Typography> */}
+            {/* <Circle top='-30vw' left='-10vw'/> */}
+            
             <InstructionContainerOuter>
+                <Circle top='-30vw' left='-10vw'/>
                 <InstructionContainerInner className='pt-5 pl-5 pr-5'>
                     <Box style={{backgroundColor: `${colors.primaryColor}`}}>
-                        <Typography style={{fontSize: '30px', color: `${colors.whiteColor}`}}>
+                        <H2 align='center' color='white'>
                             DOWNLOAD PATIENT APP
-                        </Typography>
+                        </H2>
                     </Box>
                     <img className='mt-5' src={logo}/>
                 </InstructionContainerInner>
