@@ -274,8 +274,8 @@ const TopAppBar = (props) => {
                     > 
                       <LogoSM src={MyHealthLogo} height={isMobileScreen ? 7 : 11}/>
                       <div>
-                        <HyperLink href='https://patient.nextgenmyhealth.com/' target="_blank"><SmallButton name='Patients Portal' color={COLORS.primaryColor} size='small' fontSize={isMobileScreen ? '0.5rem' : '1rem'}/></HyperLink>
-                        <HyperLink href='https://doctor.nextgenmyhealth.com/' target="_blank"><SmallButton name='Doctors Portal' color={COLORS.greenColor} size='small' fontSize={isMobileScreen ? '0.5rem' : '1rem'}/></HyperLink>
+                        <HyperLink href='https://patient.nextgenmyhealth.com/' target="_blank"><SmallButton name='Patient Portal' color={COLORS.primaryColor} size='small' fontSize={isMobileScreen ? '0.5rem' : '1rem'}/></HyperLink>
+                        <HyperLink href='https://doctor.nextgenmyhealth.com/' target="_blank"><SmallButton name='Doctor Portal' color={COLORS.greenColor} size='small' fontSize={isMobileScreen ? '0.5rem' : '1rem'}/></HyperLink>
                       </div>
                   </Box>
                 </Container>

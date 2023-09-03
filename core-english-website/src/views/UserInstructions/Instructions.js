@@ -9,7 +9,7 @@ const Container = styled(Box)`
     position: relative;
     display: flex;
     flex-direction: row;
-    height: 80vh;
+    /* height: 80vh; */
     background-color: ${colors.primaryLight};
     overflow: hidden;
 `
@@ -24,7 +24,10 @@ const InstructionContainerOuter = styled(Box)`
     align-items: center;
     border: 3px solid red;
     flex-wrap: wrap;
-    overflow-y: scroll;
+    
+    @media only screen and (max-width: ${responsive.mobileThresh}px) {
+        overflow-y: scroll;
+    }
 `
 
 const InstructionContainerInner = styled(Box)`
@@ -35,7 +38,7 @@ const InstructionContainerInner = styled(Box)`
     width: 500px;
     min-width: 250px;
     border: 3px solid black;
-    flex-shrink: 0;
+    /* flex-shrink: 0; */
     /* padding-top: 5%;
     padding-left: 4%;
     padding-right: 4%; */
