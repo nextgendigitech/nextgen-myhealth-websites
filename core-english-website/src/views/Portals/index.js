@@ -64,7 +64,7 @@ const Portals = () => {
 
             </Typography>
             <Typography variant='h5'>Please click the below button</Typography>
-            <Hyperlink href='https://doctor.nextgenmyhealth.com/' target="_blank"><Button name='Doctor Portal' size='large' color={COLORS.greenColor}/></Hyperlink>
+            <Hyperlink href='https://doctor.nextgenmyhealth.com/'><Button name='Doctor Portal' size='large' color={COLORS.greenColor}/></Hyperlink>
           </Box>
           </PortalBox>
         </Grid>
