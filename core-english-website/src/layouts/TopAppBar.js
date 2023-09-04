@@ -274,8 +274,8 @@ const TopAppBar = (props) => {
                     > 
                       <LogoSM src={MyHealthLogo} height={isMobileScreen ? 7 : 11}/>
                       <div>
-                        <HyperLink href='https://patient.nextgenmyhealth.com/'><SmallButton name='Patient Portal' color={COLORS.primaryColor} size='small' fontSize={isMobileScreen ? '0.5rem' : '1rem'}/></HyperLink>
-                        <HyperLink href='https://doctor.nextgenmyhealth.com/'><SmallButton name='Doctor Portal' color={COLORS.greenColor} size='small' fontSize={isMobileScreen ? '0.5rem' : '1rem'}/></HyperLink>
+                        <HyperLink href='https://patient.nextgenmyhealth.com/' target="_blank"><SmallButton name='Patient Portal' color={COLORS.primaryColor} size='small' fontSize={isMobileScreen ? '0.5rem' : '1rem'}/></HyperLink>
+                        <HyperLink href='https://doctor.nextgenmyhealth.com/' target="_blank"><SmallButton name='Doctor Portal' color={COLORS.greenColor} size='small' fontSize={isMobileScreen ? '0.5rem' : '1rem'}/></HyperLink>
                       </div>
                   </Box>
                 </Container>
@@ -357,10 +357,10 @@ const TopAppBar = (props) => {
                       <HyperLink href='https://www.linkedin.com/company/nextgen-myhealth-vcp/' target="_blank" ><SocialIconContainer color={COLORS.linkedInColor}><FaLinkedinIn /></SocialIconContainer></HyperLink>
                       <HyperLink href='https://www.youtube.com/channel/UCSDFJqW2y9UYs6IMWGK2i9w' target="_blank"><SocialIconContainer color={COLORS.youtubeColor}><TiSocialYoutube /></SocialIconContainer></HyperLink>
                       <div style={{ marginRight: '5px', marginLeft: '15px'}}>
-                        <HyperLink href='https://patient.nextgenmyhealth.com/'><Button name='Patient Portal' color={COLORS.primaryColor} size='large' /></HyperLink>
+                        <HyperLink href='https://patient.nextgenmyhealth.com/' target="_blank"><Button name='Patient Portal' color={COLORS.primaryColor} size='large' /></HyperLink>
                       </div>
                       <div>
-                        <HyperLink href='https://doctor.nextgenmyhealth.com/'><Button name='Doctor Portal' color={COLORS.greenColor} size='large' /></HyperLink>
+                        <HyperLink href='https://doctor.nextgenmyhealth.com/' target="_blank"><Button name='Doctor Portal' color={COLORS.greenColor} size='large' /></HyperLink>
                       </div>
                   </Grid>
                 </Grid>
