@@ -2,6 +2,7 @@ import { Backdrop, Box, CircularProgress, Grid } from '@mui/material'
 import React, { useEffect, useState } from 'react'
 import SpecialtyContainer from '../../components/SpecialtyContainer'
 import Gastroenterology from '../../images/specialties/gastroenterology.png';
+import GeneralPhysician from '../../images/specialties/generalphysician.png';
 import InternalMedicine from '../../images/specialties/internal-medicine.png';
 import Cardiology from '../../images/specialties/cardiology.png';
 import RespiratoryMedicine from '../../images/specialties/resp-medicine.png';
@@ -23,7 +24,13 @@ import { fetchDoctors }  from '../../services/apis';
 
 const MedicineSection = () => {
     const specialityMedicineList = [
+        
         [{
+            image: GeneralPhysician,
+            specialityHeader: 'General Physician',
+            specialityBangla: 'জেনারেল ফিজিসিয়ান'
+        },
+        {
             image: InternalMedicine,
             specialityHeader: 'Internal Medicine',
             specialityBangla: 'ইন্টারনাল মেডিসিন'
@@ -37,13 +44,12 @@ const MedicineSection = () => {
             image: Nephrology,
             specialityHeader: 'Nephrology',
             specialityBangla: 'কিডনি'
-        },
-        {
+        }],
+        [{
             image: RespiratoryMedicine,
             specialityHeader: 'Respiratory Medicine',
             specialityBangla: 'ফুসফুস'
-        }],
-        [,
+        },
         {
             image: Rheumatology,
             specialityHeader: 'Rheumatology',
@@ -58,13 +64,13 @@ const MedicineSection = () => {
             image: Gastroenterology, 
             specialityHeader: 'Gastroenterology',
             specialityBangla: 'পরিপাকতন্ত্র'
-        },
+        }],
+        [
         {	
             image: Neurology, 
             specialityHeader: 'Neurology', 
             specialityBangla: 'স্নায়ুরোগ'
-        }],
-        [
+        },
         {
             image: Oncology, 
             specialityHeader: 'Oncology',
@@ -79,13 +85,13 @@ const MedicineSection = () => {
             image: Endocrinology, 
             specialityHeader: 'Endocrinology',
             specialityBangla: 'হরমোন'
-        },
-        {	
+        }],
+        [{	
             image: DermatologyVenereology, 
             specialityHeader: 'Dermatology & Venereology', 
             specialityBangla: 'চর্ম ও যৌনরোগ'
-        }],
-        [{
+        },
+        {
             image: Pediatrics, 
             specialityHeader: 'Pediatrics',
             specialityBangla: 'শিশুরোগ'
