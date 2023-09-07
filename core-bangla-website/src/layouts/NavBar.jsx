@@ -137,10 +137,18 @@ const NavBar = () => {
             </HBox>
             <HBox className='ml-6' style={{flexWrap: 'nowrap'}}>
                 <SNavLink to='https://patient.nextgenmyhealth.com/login' target='_blank'>
-                    <Button color='first' elevated><P2 className='bold' color='white' style={{flexShrink: '0'}}>পেশেন্ট পোর্টাল</P2></Button>
+                    <Button color='first' elevated>
+                        <P2 className='bold' color='white' style={{flexShrink: '0'}}>
+                            পেশেন্ট পোর্টাল
+                        </P2>
+                    </Button>
                 </SNavLink>
                 <SNavLink to='https://doctor.nextgenmyhealth.com/login' target='_blank'>
-                    <Button className='ml-3' color='third' elevated><P2 className='bold' color='white' style={{flexShrink: '0'}}>ডাক্তার পোর্টাল</P2></Button>
+                    <Button className='ml-3' color='third' elevated>
+                        <P2 className='bold' color='white' style={{flexShrink: '0'}}>
+                            ডাক্তার পোর্টাল
+                        </P2>
+                    </Button>
                 </SNavLink>
             </HBox>
 
