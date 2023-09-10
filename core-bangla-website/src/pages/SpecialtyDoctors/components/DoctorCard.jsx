@@ -30,9 +30,9 @@ const SButton = styled(Button)`
 `
 
 const DoctorCard = ({ id, name, bmdc, qualification, specialty,
-                      experience, affiliation, image, fee }) => {
+                      experience, affiliation, image, fee, isMobile }) => {
     return (
-        <CardContainer className="m-2 p-3">
+        <CardContainer className="m-2 p-3" style={{ width: isMobile ? "calc(100% - 32px)" : "calc(50% - 32px)" }}>
                 <VBox align='center' style={{ width: "22%" }}>
                     <Image
                         className="mb-3"

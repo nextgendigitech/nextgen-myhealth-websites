@@ -75,9 +75,9 @@ const Footer = () => {
                         <SNavLink to='/specialties'>
                             <P3 className='mt-2'>বিশেষজ্ঞ ডাক্তার</P3>
                         </SNavLink>
-                        {/* <SNavLink to='/blog'>
+                        <SNavLink to='/blog'>
                             <P4 className='mt-2'>ব্লগ</P4>
-                        </SNavLink> */}
+                        </SNavLink>
                     </VBox>
                     <VBox>    
                         <P2 className='bold'>সেবাসমূহ</P2>

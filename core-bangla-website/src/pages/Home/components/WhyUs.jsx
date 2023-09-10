@@ -128,7 +128,7 @@ const CenterCircleText = styled(H2)`
 const WhyUs = () => {
     return (
         <Container align='center'>
-            <H3 className="bold">কেন আমদের প্লাটফর্ম ব্যবহার করবেন?</H3>
+            <H3 className="bold">কেন আমাদের প্লাটফর্ম ব্যবহার করবেন?</H3>
             <Underline className="my-2" />
             <HBox justify='center' style={{height: '40rem', width: '100%'}}>
                 <VBox justify='center' style={{width: '25%', position: 'relative'}}>

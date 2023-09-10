@@ -10,6 +10,7 @@ import { specialtyEtoB } from "../../data";
 import DoctorCard from "./components/DoctorCard";
 import ClipLoader from "react-spinners/ClipLoader";
 import { BiArrowBack } from 'react-icons/bi';
+import responsive from '../../config/responsive';
 
 
 const TitleCard = styled(VBox)`
@@ -29,7 +30,24 @@ const SpecialtyDoctors = () => {
     let { specialty } = useParams();
     const [doctors, setDoctors] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
-    
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const setResponsiveness = () => {
+            let orientation = !navigator.maxTouchPoints ? 'desktop' : !window.screen.orientation.angle ? 'portrait' : 'landscape';
+
+            if (orientation === 'portrait' || window.innerWidth < responsive.mobileThresh) {
+                setIsMobile(true);
+            }
+            else {
+                setIsMobile(false);
+            }
+        }
+        setResponsiveness();
+        window.addEventListener('resize', () => setResponsiveness());
+
+        return () => window.removeEventListener('resize', () => setResponsiveness());
+    }, []);
     useEffect(() => {
         window.scrollTo(0, 0);
     });
@@ -96,6 +114,7 @@ const SpecialtyDoctors = () => {
                     <CardsContainer>
                         {doctors.map((doctor, index) => (
                             <DoctorCard
+                                isMobile={isMobile}
                                 key={index}
                                 id={doctor.id}
                                 name={doctor.name}

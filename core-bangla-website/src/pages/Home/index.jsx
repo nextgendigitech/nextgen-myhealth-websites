@@ -8,6 +8,7 @@ import SpecialtiesSummary from "./components/SpecialtiesSummary";
 import BookingSteps from "./components/BookingSteps";
 import CustomerReview from "./components/CustomerReview";
 import JoinDoctor from "./components/JoinDoctor";
+import responsive from '../../config/responsive';
 
 const Home = () => {
     const [isMobile, setIsMobile] = useState(false);
@@ -21,7 +22,6 @@ const Home = () => {
             }
             else {
                 setIsMobile(false);
-                setOpenNavDrawer(false);
             }
         }
         setResponsiveness();
