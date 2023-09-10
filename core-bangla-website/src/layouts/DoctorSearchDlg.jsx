@@ -70,8 +70,8 @@ const DoctorCard = ({ id, name, image, bmdc, doctorType, qualification,
                 </VBox>
                 <VBox className='mt-2' style={{width: '50%'}}>
                     <P2 className='bold ml-2'>{name}</P2>
-                    <P3 className='ml-2' color='second'>{specialty}</P3>
                     <P3 className='ml-2'>{qualification}</P3>
+                    <P3 className='ml-2' color='second'>{specialty}</P3>
                     <P3 className='ml-2' color='first'>{affiliation ? `${affiliation.designation} at ${affiliation.institution}` : <></>}</P3>
                 </VBox>
                 <VBox justify='center' align='center' style={{flexGrow: '1'}}>
@@ -217,9 +217,10 @@ const DoctorSearchDlg = ({ isMobile, open, setOpen }) => {
                     {doctors.length ?
                         <VBox className="m-2">
                             {doctors.map((doctor, index) => (
-                                <SLink to={`/doctor/${doctor.id}`}>
+                                <SLink to={`https://patient.nextgenmyhealth.com/doctor/${doctor.id}`} target='_blank'>
                                     <DoctorCard
                                         index={index}
+                                        id={doctor.id}
                                         name={doctor.name}
                                         image={doctor.image}
                                         doctorType={doctor.doctor_type}

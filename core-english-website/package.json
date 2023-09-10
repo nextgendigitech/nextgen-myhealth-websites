@@ -16,7 +16,7 @@
     "moment": "^2.29.4",
     "rc-progress": "^3.4.2",
     "react": "^18.2.0",
-    "react-custom-scrollbars": "^4.2.1",
+    "react-custom-scrollbars-2": "^4.5.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.6.0",
     "react-intersection-observer": "^9.4.1",

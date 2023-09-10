@@ -1,10 +1,15 @@
 import styled from 'styled-components';
+import { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
+import { Drawer, List, ListItem, ListItemText } from '@mui/material';
+import { GiHamburgerMenu } from 'react-icons/gi';
 
 import { HBox } from '../components/Containers';
 import { Button } from '../components/Buttons';
+import { P2 } from '../components/Typography';
 import logo from '../assets/images/Website-Logo.png'
 import colors from '../config/colors';
+import responsive from '../config/responsive';
 
 const Container = styled(HBox)`
     position: sticky;
@@ -13,9 +18,10 @@ const Container = styled(HBox)`
     width: 100%;
     border: 1px solid ${colors.grey};
     background-color: ${colors.veryLightGreen};
-    padding-left: 120px;
-    padding-right: 120px;
+    padding-left: 8%;
+    padding-right: 8%;
     z-index: 10;
+    flex-wrap: nowrap;
 `
 
 const LogoImage = styled.img`
@@ -32,31 +38,113 @@ const SNavLink = styled(NavLink)`
     }
 `
 
+const MenuIcon = styled(GiHamburgerMenu)`
+    cursor: pointer;
+    font-size: 20px;
+    flex-shrink: 0;
+`
+
 const NavBar = () => {
+    const [isMobile, setIsMobile] = useState(false);
+    const [openNavDrawer, setOpenNavDrawer] = useState(false);
+
+    useEffect(() => {
+        const setResponsiveness = () => {
+            let orientation = !navigator.maxTouchPoints ? 'desktop' : !window.screen.orientation.angle ? 'portrait' : 'landscape';
+    
+            if (orientation === 'portrait' || window.innerWidth < responsive.mobileThresh) {
+                setIsMobile(true);
+            }
+            else {
+                setIsMobile(false);
+                setOpenNavDrawer(false);
+            }
+        }
+        setResponsiveness();
+        window.addEventListener('resize', () => setResponsiveness());
+
+        return () => window.removeEventListener('resize', () => setResponsiveness());
+    }, []);
+
+    const handleClickMenuItem = () => {
+        setOpenNavDrawer(!openNavDrawer);
+    }
+
     return (
         <Container justify='space-between' align='center'>
-            <LogoImage src={logo}/>
-            <HBox>
-                <SNavLink to='/'>
-                    হোম
-                </SNavLink>
-                <SNavLink className='mx-4' style={{textDecoration: 'none'}} to='/about-us'>
-                    পরিচিতি
-                </SNavLink>
-                <SNavLink className='' style={{textDecoration: 'none'}} to='/specialties'>
-                    বিশেষজ্ঞ ডাক্তার
-                </SNavLink>
-                {/* <SNavLink className='mx-2' style={{textDecoration: 'none'}} to='/payment'>
-                    পেমেন্ট
-                </SNavLink> */}
-                {/* <SNavLink style={{textDecoration: 'none'}} to='/contact-us'>
-                    যোগাযোগ
-                </SNavLink> */}
-            </HBox>
-            <HBox>
-                <Button className='bold' color='first' elevated>পেশেন্ট পোর্টাল</Button>
-                <Button className='bold ml-3' color='third' elevated>ডাক্তার পোর্টাল</Button>
-            </HBox>
+            <SNavLink to='/'>
+                <LogoImage src={logo} />
+            </SNavLink>
+            {
+            isMobile ?
+                <>
+                    <MenuIcon onClick={() => setOpenNavDrawer(!openNavDrawer)} />
+                    <Drawer
+                        open={openNavDrawer}
+                        anchor='right'
+                        PaperProps={{ style: { width: '50%', backgroundColor: `${colors.veryLightGreen}` } }}
+                        onClose={() => setOpenNavDrawer(false)}
+
+                    >
+                        <List>
+                            <ListItem className='mb-4'>
+                                <LogoImage src={logo} />
+                            </ListItem>
+                            <ListItem className='mb-2'>
+                                <ListItemText>
+                                    <SNavLink to='/' onClick={handleClickMenuItem}>
+                                        হোম
+                                    </SNavLink>
+                                </ListItemText>
+                            </ListItem>
+                            <ListItem className='mb-2'>
+                                <ListItemText>
+                                    <SNavLink to='/about-us' onClick={handleClickMenuItem}>
+                                        পরিচিতি
+                                    </SNavLink>
+                                </ListItemText>
+                            </ListItem>
+                            <ListItem>
+                                <ListItemText>
+                                    <SNavLink to='/specialties' onClick={handleClickMenuItem}>
+                                        বিশেষজ্ঞ ডাক্তার
+                                    </SNavLink>
+                                </ListItemText>
+                            </ListItem>
+                        </List>
+                    </Drawer>
+                </>
+                :
+                <>
+                    <HBox style={{flexShrink: '0', flexWrap: 'nowrap'}}>
+                        <SNavLink to='/'>
+                            হোম
+                        </SNavLink>
+                        <SNavLink className='mx-4' to='/about-us'>
+                            পরিচিতি
+                        </SNavLink>
+                        <SNavLink to='/specialties'>
+                            বিশেষজ্ঞ ডাক্তার
+                        </SNavLink>
+                    </HBox>
+                    <HBox className='ml-6' style={{flexWrap: 'nowrap'}}>
+                        <SNavLink to='https://patient.nextgenmyhealth.com/login' target='_blank'>
+                            <Button color='first' elevated>
+                                <P2 className='bold' color='white' style={{flexShrink: '0'}}>
+                                    পেশেন্ট পোর্টাল
+                                </P2>
+                            </Button>
+                        </SNavLink>
+                        <SNavLink to='https://doctor.nextgenmyhealth.com/login' target='_blank'>
+                            <Button className='ml-3' color='third' elevated>
+                                <P2 className='bold' color='white' style={{flexShrink: '0'}}>
+                                    ডাক্তার পোর্টাল
+                                </P2>
+                            </Button>
+                        </SNavLink>
+                    </HBox>
+                </>
+            }
         </Container>
     );
 }

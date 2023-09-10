@@ -50,10 +50,10 @@ const ShortIntro = () => {
           প্রযুক্তির নিত্যনতুন উদ্ভাবন ব্যবহার করে স্বাস্থ্যসেবাকে দেশের প্রত্যন্ত অঞ্চল থেকে শহর পর্যন্ত সকলের কাছে পৌঁছে দেয়ার লক্ষ্যে বাংলাদেশে শুরু হয় নেক্সটজেন মাইহেলথ ভিসিপি এর কার্যক্রম।
         </P2>
         
-        <HBox align='center' className='mt-2'>
+        {/* <HBox align='center' className='mt-2'>
           <H3 className='bold' color='third'>ইস্তাহার দেখুন</H3>
           <RightArrowIcon className='ml-1' />
-        </HBox>
+        </HBox> */}
       </VBox>
     </Container>
   );

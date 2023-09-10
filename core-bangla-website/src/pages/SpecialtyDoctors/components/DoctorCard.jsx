@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import colors from "../../../config/colors";
 import styled from "styled-components";
 
@@ -28,15 +29,6 @@ const SButton = styled(Button)`
    border-radius: 30px;
 `
 
-const SNavLink = styled(NavLink)`
-    text-decoration: none;
-    color: ${colors.darkGrey};
-
-    &.active {
-        font-weight: bold;
-    }
-`
-
 const DoctorCard = ({ id, name, bmdc, qualification, specialty,
                       experience, affiliation, image, fee }) => {
     return (
@@ -56,12 +48,9 @@ const DoctorCard = ({ id, name, bmdc, qualification, specialty,
                     <P4 className="bold mb-1">{specialty}</P4>
                     <P4 className="bold mb-1">{qualification}</P4>
                     <P4 className="bold mb-4">অভিজ্ঞতা: {experience}</P4>
-                    <HBox justify="space-between">
-                        <SNavLink to={`/doctor-profile/${id}`}>
-                            <SButton style={{ fontSize: "16px", width: "120px" }} color='first' elevated>বিস্তারিত</SButton>
-                        </SNavLink> 
-                        <SButton style={{ fontSize: "16px", width: "190px" }} color='third' elevated>অ্যাপয়েন্টমেন্ট নিন</SButton>
-                    </HBox> 
+                    <Link to={`https://patient.nextgenmyhealth.com/doctor/${id}`} target='_blank' style={{textDecoration: 'none'}}>
+                        <SButton style={{ fontSize: "16px", width: "190px" }} color='third' elevated>অ্যাপয়েন্টমেন্ট নিন</SButton> 
+                    </Link>
                 </VBox>
         </CardContainer>
     );
