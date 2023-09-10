@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import colors from "../../../config/colors";
 import styled from "styled-components";
 
@@ -28,7 +29,7 @@ const SButton = styled(Button)`
    border-radius: 30px;
 `
 
-const DoctorCard = ({ name, bmdc, qualification, specialty,
+const DoctorCard = ({ id, name, bmdc, qualification, specialty,
                       experience, affiliation, image, fee }) => {
     return (
         <CardContainer className="m-2 p-3">
@@ -47,7 +48,9 @@ const DoctorCard = ({ name, bmdc, qualification, specialty,
                     <P4 className="bold mb-1">{specialty}</P4>
                     <P4 className="bold mb-1">{qualification}</P4>
                     <P4 className="bold mb-4">অভিজ্ঞতা: {experience}</P4>
-                    <SButton style={{ fontSize: "16px", width: "190px" }} color='third' elevated>অ্যাপয়েন্টমেন্ট নিন</SButton> 
+                    <Link to={`https://patient.nextgenmyhealth.com/doctor/${id}`} target='_blank' style={{textDecoration: 'none'}}>
+                        <SButton style={{ fontSize: "16px", width: "190px" }} color='third' elevated>অ্যাপয়েন্টমেন্ট নিন</SButton> 
+                    </Link>
                 </VBox>
         </CardContainer>
     );
