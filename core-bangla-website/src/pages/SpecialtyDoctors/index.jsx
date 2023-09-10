@@ -33,6 +33,10 @@ const SpecialtyDoctors = () => {
     let { specialty } = useParams();
     const [doctors, setDoctors] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
+    
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    });
 
     useEffect(() => {
         fetchDoctors();

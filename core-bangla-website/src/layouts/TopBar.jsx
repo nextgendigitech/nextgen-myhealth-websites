@@ -1,10 +1,12 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 import { HBox } from '../components/Containers';
-import { P1, P2 } from '../components/Typography';
+import { P2 } from '../components/Typography';
 import { Button } from '../components/Buttons';
 import colors from '../config/colors';
+import responsive from '../config/responsive';
 import facebookIcon from '../assets/images/facebook_icon.png';
 import linkedinIcon from '../assets/images/linkedin_icon.png';
 import youtubeLogo from '../assets/images/youtube_logo.png';
@@ -18,9 +20,16 @@ const Container = styled(HBox)`
     width: 100%;
     border: 1px solid ${colors.grey};
     background: ${colors.mercury};
-    padding-left: 120px;
-    padding-right: 120px;
+    padding-left: 8%;
+    padding-right: 8%;
     z-index: 10;
+    flex-wrap: nowrap;
+`
+
+const IconContainer = styled(HBox)`
+    @media only screen and (max-width: ${responsive.mobileThresh-1}px) {
+        display: none;
+    }
 `
 
 const IconImage = styled.img`
@@ -32,10 +41,28 @@ const SearchBar = styled(Button)`
     background-color: ${colors.lightGrey};
     border: 1px solid ${colors.grey};
     box-shadow: 0px 2px 3px ${colors.grey};
+    flex-shrink: 0;
 
     &:hover {
         background-color: ${colors.lightGrey};
         color: ${colors.darkGrey};
+    }
+
+    @media only screen and (max-width: ${responsive.mobileThresh-1}px) {
+        width: 50px;
+    }
+`
+
+const DoctorSearchText = styled(P2)`
+    @media only screen and (max-width: ${responsive.mobileThresh-1}px) {
+        display: none;
+    }
+`
+
+const DoctorSearchIcon = styled.img`
+    height: 70%;
+    @media only screen and (max-width: ${responsive.mobileThresh-1}px) {
+        margin: 0;
     }
 `
 
@@ -44,20 +71,26 @@ const TopBar = () => {
 
     return (
         <Container justify='space-between' align='center'>
-            <HBox>
-                <a href="https://www.facebook.com/nextgenmyhealthvcp" target="_blank" rel="noopener noreferrer">
+            <IconContainer>
+                <Link to="https://www.facebook.com/nextgenmyhealthvcp" target="_blank">
                     <IconImage src={facebookIcon} alt="Facebook Image" className='ml-1' />
-                </a>
-                <IconImage src={linkedinIcon} alt="LinkedIn Image" className="mx-3"/>
-                <IconImage src={youtubeLogo} alt="Youtube Image"/>
-            </HBox>
+                </Link>
+                <Link to='https://www.linkedin.com/company/nextgen-myhealth-vcp/' target='_blank'>
+                    <IconImage src={linkedinIcon} alt="LinkedIn Image" className="mx-3"/>
+                </Link>
+                <Link to='https://www.youtube.com/channel/UCSDFJqW2y9UYs6IMWGK2i9w' target='_blank'>
+                    <IconImage src={youtubeLogo} alt="Youtube Image"/>
+                </Link>
+            </IconContainer>
             <P2 className="bold">হটলাইন +৮৮০১৩২১১১৯৩৯১</P2>
             <SearchBar
                 size='sm'
                 onClick={() => setOpenSearchDlg(true)}
             >
-                ডাক্তার অনুসন্ধান করুন
-                <img className='ml-8' src={searchIcon} style={{height: '70%'}} />
+                <DoctorSearchText>
+                    ডাক্তার অনুসন্ধান করুন
+                </DoctorSearchText>
+                <DoctorSearchIcon className='ml-8' src={searchIcon} />
             </SearchBar>
 
             <DoctorSearchDlg
