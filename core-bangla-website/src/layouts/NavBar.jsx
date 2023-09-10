@@ -46,7 +46,7 @@ const MenuIcon = styled(GiHamburgerMenu)`
 
 const NavBar = () => {
     const [isMobile, setIsMobile] = useState(false);
-    const [activeMenu, setActiveMenu] = useState(false);
+    const [openNavDrawer, setOpenNavDrawer] = useState(false);
 
     useEffect(() => {
         const setResponsiveness = () => {
@@ -57,7 +57,7 @@ const NavBar = () => {
             }
             else {
                 setIsMobile(false);
-                setActiveMenu(false);
+                setOpenNavDrawer(false);
             }
         }
         setResponsiveness();
@@ -66,13 +66,8 @@ const NavBar = () => {
         return () => window.removeEventListener('resize', () => setResponsiveness());
     }, []);
 
-    function handleMenu() {
-        if(activeMenu) {
-            setActiveMenu(false);
-        }
-        else {
-            setActiveMenu(true);
-        }
+    const handleClickMenuItem = () => {
+        setOpenNavDrawer(!openNavDrawer);
     }
 
     return (
@@ -82,85 +77,73 @@ const NavBar = () => {
             </SNavLink>
             {
             isMobile ?
-            <>
-            <MenuIcon onClick={handleMenu} />
-            <Drawer open={activeMenu} anchor={'right'} PaperProps={{ style: { width: '50%', backgroundColor: `${colors.veryLightGreen}` } }}>
-                <List>
-                    <ListItem className='mb-4'>
-                        <LogoImage src={logo} />
-                    </ListItem>
-                    <ListItem className='mb-4'>
-                        <MenuIcon onClick={handleMenu} />
-                    </ListItem>
-                    <ListItem className='mb-4'>
-                        <ListItemText>
-                            <SNavLink to='/' onClick={handleMenu}>
-                                হোম
-                            </SNavLink>
-                        </ListItemText>
-                    </ListItem>
-                    <ListItem className='mb-4'>
-                        <ListItemText>
-                            <SNavLink to='/about-us' onClick={handleMenu}>
-                                পরিচিতি
-                            </SNavLink>
-                        </ListItemText>
-                    </ListItem>
-                    <ListItem>
-                        <ListItemText>
-                            <SNavLink to='/specialties' onClick={handleMenu}>
-                                বিশেষজ্ঞ ডাক্তার
-                            </SNavLink>
-                        </ListItemText>
-                    </ListItem>
-                </List>
-            </Drawer>
-            </>
-            :
-            <>
-            <HBox style={{flexShrink: '0', flexWrap: 'nowrap'}}>
-                <SNavLink to='/'>
-                    হোম
-                </SNavLink>
-                <SNavLink className='mx-4' to='/about-us'>
-                    পরিচিতি
-                </SNavLink>
-                <SNavLink to='/specialties'>
-                    বিশেষজ্ঞ ডাক্তার
-                </SNavLink>
-                {/* <SNavLink className='mx-2' style={{textDecoration: 'none'}} to='/payment'>
-                    পেমেন্ট
-                </SNavLink> */}
-                {/* <SNavLink style={{textDecoration: 'none'}} to='/contact-us'>
-                    যোগাযোগ
-                </SNavLink> */}
-            </HBox>
-            <HBox className='ml-6' style={{flexWrap: 'nowrap'}}>
-                <SNavLink to='https://patient.nextgenmyhealth.com/login' target='_blank'>
-                    <Button color='first' elevated>
-                        <P2 className='bold' color='white' style={{flexShrink: '0'}}>
-                            পেশেন্ট পোর্টাল
-                        </P2>
-                    </Button>
-                </SNavLink>
-                <SNavLink to='https://doctor.nextgenmyhealth.com/login' target='_blank'>
-                    <Button className='ml-3' color='third' elevated>
-                        <P2 className='bold' color='white' style={{flexShrink: '0'}}>
-                            ডাক্তার পোর্টাল
-                        </P2>
-                    </Button>
-                </SNavLink>
-            </HBox>
+                <>
+                    <MenuIcon onClick={() => setOpenNavDrawer(!openNavDrawer)} />
+                    <Drawer
+                        open={openNavDrawer}
+                        anchor='right'
+                        PaperProps={{ style: { width: '50%', backgroundColor: `${colors.veryLightGreen}` } }}
+                        onClose={() => setOpenNavDrawer(false)}
 
-            {/* <HBox>
-                <SNavLink to='https://patient.nextgenmyhealth.com/login' target='_blank'>
-                    <Button className='bold' color='first' elevated>পেশেন্ট পোর্টাল</Button>
-                </SNavLink>
-                <SNavLink to='https://doctor.nextgenmyhealth.com/login' target='_blank'>
-                    <Button className='bold ml-3' color='third' elevated>ডাক্তার পোর্টাল</Button>
-                </SNavLink>
-            </HBox> */}
-            </>
+                    >
+                        <List>
+                            <ListItem className='mb-4'>
+                                <LogoImage src={logo} />
+                            </ListItem>
+                            <ListItem className='mb-2'>
+                                <ListItemText>
+                                    <SNavLink to='/' onClick={handleClickMenuItem}>
+                                        হোম
+                                    </SNavLink>
+                                </ListItemText>
+                            </ListItem>
+                            <ListItem className='mb-2'>
+                                <ListItemText>
+                                    <SNavLink to='/about-us' onClick={handleClickMenuItem}>
+                                        পরিচিতি
+                                    </SNavLink>
+                                </ListItemText>
+                            </ListItem>
+                            <ListItem>
+                                <ListItemText>
+                                    <SNavLink to='/specialties' onClick={handleClickMenuItem}>
+                                        বিশেষজ্ঞ ডাক্তার
+                                    </SNavLink>
+                                </ListItemText>
+                            </ListItem>
+                        </List>
+                    </Drawer>
+                </>
+                :
+                <>
+                    <HBox style={{flexShrink: '0', flexWrap: 'nowrap'}}>
+                        <SNavLink to='/'>
+                            হোম
+                        </SNavLink>
+                        <SNavLink className='mx-4' to='/about-us'>
+                            পরিচিতি
+                        </SNavLink>
+                        <SNavLink to='/specialties'>
+                            বিশেষজ্ঞ ডাক্তার
+                        </SNavLink>
+                    </HBox>
+                    <HBox className='ml-6' style={{flexWrap: 'nowrap'}}>
+                        <SNavLink to='https://patient.nextgenmyhealth.com/login' target='_blank'>
+                            <Button color='first' elevated>
+                                <P2 className='bold' color='white' style={{flexShrink: '0'}}>
+                                    পেশেন্ট পোর্টাল
+                                </P2>
+                            </Button>
+                        </SNavLink>
+                        <SNavLink to='https://doctor.nextgenmyhealth.com/login' target='_blank'>
+                            <Button className='ml-3' color='third' elevated>
+                                <P2 className='bold' color='white' style={{flexShrink: '0'}}>
+                                    ডাক্তার পোর্টাল
+                                </P2>
+                            </Button>
+                        </SNavLink>
+                    </HBox>
+                </>
             }
         </Container>
     );

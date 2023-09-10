@@ -24,7 +24,7 @@ const SButton = styled(Button)`
    border-radius: 30px;
 `
 
-const Banner = () => {
+const Banner = ({ isMobile }) => {
 	return (
 		<>
 			<Container justify='space-between' align='center'>
