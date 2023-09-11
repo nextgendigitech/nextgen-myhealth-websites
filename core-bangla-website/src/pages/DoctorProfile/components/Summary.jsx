@@ -1,15 +1,13 @@
 import styled from "styled-components";
-import colors from "../../../config/colors";
+import { TbCurrencyTaka } from 'react-icons/tb';
 
 import { HBox, VBox } from "../../../components/Containers";
 import { P3 } from "../../../components/Typography";
-import { TbCurrencyTaka } from 'react-icons/tb';
-
+import colors from "../../../config/colors";
 
 const SummaryCard = styled(HBox)`
-    width: 80%;
+    width: 100%;
     height: auto;
-    margin-left: 120px;
     background: ${colors.veryLightBlue};
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 30px;
@@ -27,7 +25,6 @@ const VerticalLine = styled.div`
     );
     border-radius: 5px;
 `
-
 
 const Summary = ({ consultation_fee, followup_fee, appointment_schedules }) => {
     return (

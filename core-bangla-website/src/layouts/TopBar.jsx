@@ -63,7 +63,6 @@ const TopBar = () => {
             }
             else {
                 setIsMobile(false);
-                setOpenNavDrawer(false);
             }
         }
         setResponsiveness();

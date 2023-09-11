@@ -29,21 +29,6 @@ export const specialtyEtoB = {
     'Vascular Surgery': 'রক্তনালী সার্জারি',
 };
 
-export const month = {
-    '01': 'January',
-    '02': 'February',
-    '03': 'March',
-    '04': 'April',
-    '05': 'May',
-    '06': 'June',
-    '07': 'July',
-    '08': 'August',
-    '09': 'September',
-    '10': 'October',
-    '11': 'November',
-    '12': 'December',
-};
-
 export const termsAndConditionsData = {
     'Terms & Conditions': [
             'Please read these terms and conditions (“Terms and Conditions“) carefully before using the website and services.These terms & conditions create a contract between you & NextGen MyHealth VCP.If you are under age of 18 please confirm that you have your parents or legal guardian’s permission to use this platform.',

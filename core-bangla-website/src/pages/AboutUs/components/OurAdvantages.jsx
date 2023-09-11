@@ -96,4 +96,4 @@ const OurAdvantages = () => {
   );
 }
 
-export default OurAdvantages
+export default OurAdvantages;

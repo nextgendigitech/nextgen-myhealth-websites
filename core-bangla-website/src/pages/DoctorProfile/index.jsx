@@ -1,10 +1,18 @@
 import { useState, useEffect } from "react";
-
+import styled from "styled-components";
 import axios from "axios";
+import { useParams } from "react-router-dom";
+
+import { VBox } from "../../components/Containers";
+import Header from "./components/Header";
 import Banner from "./components/Banner";
 import Summary from "./components/Summary";
-import DetailCard from "./components/DetailCard";
-import { useParams } from "react-router-dom";
+import Details from "./components/Details";
+
+const Container = styled(VBox)`
+    margin-left: 120px;
+    margin-right: 120px;
+`
 
 const DoctorProfile = () => {
     let { id } = useParams();
@@ -38,37 +46,40 @@ const DoctorProfile = () => {
             console.log('DOCTOR DETAILS FETCH ERROR', error);
         })
     }
+
     return (
-        <>
-            <Banner
-                id={doctor?.id}
-                name={doctor?.name}
-                is_online={doctor?.is_online}
-                bmdc={doctor?.bmdc}
-                image={doctor?.image}
-                doctor_type={doctor?.doctor_type}
-                qualification={doctor?.qualification}
-                consultation_fee={doctor?.appointment_config?.fee}
-                experience={doctor?.experience}
-                institution={doctor?.affiliation_summary?.length ? doctor.affiliation_summary[0].institution : ''}
-                designation={doctor?.affiliation_summary?.length ? doctor.affiliation_summary[0].designation : ''}
-                department={doctor?.affiliation_summary?.length ? doctor.affiliation_summary[0].department : ''}
-                specialty={doctor?.specialty}
-            />
-            <Summary 
-                id={doctor?.id}
-                consultation_fee={doctor?.appointment_config?.fee}
-                followup_fee={doctor?.appointment_config?.followup_fee}
-                // appointment_schedules={doctor?.appointment_schedules}
-            />
-            <DetailCard 
-                id={doctor?.id}
-                attended={doctor?.attended}
-                created_at={doctor?.created_at?.length ? doctor.created_at : ''}
-                affiliations={doctor?.affiliations?.length ? doctor.affiliations : ''}
-                chambers={doctor?.chambers?.length ? doctor.chambers : ''}
-            />
-        </>
+        <VBox>
+            <Header />
+            <Container>
+                <Banner
+                    id={doctor?.id}
+                    name={doctor?.name}
+                    is_online={doctor?.is_online}
+                    bmdc={doctor?.bmdc}
+                    image={doctor?.image}
+                    doctor_type={doctor?.doctor_type}
+                    qualification={doctor?.qualification}
+                    consultation_fee={doctor?.appointment_config?.fee}
+                    experience={doctor?.experience}
+                    institution={doctor?.affiliation_summary?.length ? doctor.affiliation_summary[0].institution : ''}
+                    designation={doctor?.affiliation_summary?.length ? doctor.affiliation_summary[0].designation : ''}
+                    department={doctor?.affiliation_summary?.length ? doctor.affiliation_summary[0].department : ''}
+                    specialty={doctor?.specialty}
+                />
+                <Summary 
+                    id={doctor?.id}
+                    consultation_fee={doctor?.appointment_config?.fee}
+                    followup_fee={doctor?.appointment_config?.followup_fee}
+                />
+                <Details
+                    id={doctor?.id}
+                    attended={doctor?.attended}
+                    created_at={doctor?.created_at?.length ? doctor.created_at : ''}
+                    affiliations={doctor?.affiliations?.length ? doctor.affiliations : ''}
+                    chambers={doctor?.chambers?.length ? doctor.chambers : ''}
+                />
+            </Container>
+        </VBox>
     )
 }
 
