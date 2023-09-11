@@ -1,13 +1,15 @@
+import { useState, useEffect } from 'react';
 import styled from "styled-components";
 
-import { VBox, HBox } from "../../../components/Containers";
-import { H2, H3, P1, P2 } from "../../../components/Typography";
+import { VBox, HBox } from '../../../components/Containers';
+import { H2, H3, P1, P2 } from '../../../components/Typography';
 import colors from '../../../config/colors';
+import responsive from '../../../config/responsive';
 
 const Container = styled(VBox)`
     margin-top: 120px;
-    padding-left: 120px;
-    padding-right: 120px;
+    padding-left: 8%;
+    padding-right: 8%;
 `
 
 const Underline = styled.div`
@@ -19,13 +21,13 @@ const Underline = styled.div`
 
 const Item = styled(VBox)`
     position: relative;
-    height: 25%;
+    height: ${props => props.height || '25%'};
+    width: ${props => props.width || 'auto'};
+    top: ${props => props.top_position};
     border-radius: 25% 25% 25% 25% / 50% 50% 50% 50%;
 `
 
 const Item1 = styled(Item)`
-    top: ${props => props.top_position};
-    
     &:before {
         content: '';
         height: 100%;
@@ -38,8 +40,6 @@ const Item1 = styled(Item)`
 `
 
 const Item2 = styled(Item)`
-    top: ${props => props.top_position};
-    
     &:before {
         content: '';
         height: 100%;
@@ -52,8 +52,6 @@ const Item2 = styled(Item)`
 `
 
 const Item3 = styled(Item)`
-    top: ${props => props.top_position};
-    
     &:before {
         content: '';
         height: 100%;
@@ -90,7 +88,8 @@ const Circle = styled(HBox)`
 `
 
 const CenterCircleContainer = styled(VBox)`
-    height: 90%;
+    height: ${props => props.height || '90%'};
+    width: ${props => props.width || 'auto'};
     margin-top: 5%;
     border-radius: 50%;
     background-image: linear-gradient(to top left, ${colors.grey}, ${colors.lightGrey});
@@ -126,10 +125,114 @@ const CenterCircleText = styled(H2)`
 `
 
 const WhyUs = () => {
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const setResponsiveness = () => {
+            let orientation = !navigator.maxTouchPoints ? 'desktop' : !window.screen.orientation.angle ? 'portrait' : 'landscape';
+    
+            if (orientation === 'portrait' || window.innerWidth < responsive.mobileThresh) {
+                setIsMobile(true);
+            }
+            else {
+                setIsMobile(false);
+            }
+        }
+        setResponsiveness();
+        window.addEventListener('resize', () => setResponsiveness());
+
+        return () => window.removeEventListener('resize', () => setResponsiveness());
+    }, []);
+
+
+
     return (
         <Container align='center'>
             <H3 className="bold">কেন আমাদের প্লাটফর্ম ব্যবহার করবেন?</H3>
             <Underline className="my-2" />
+
+            {isMobile ?
+            <VBox align='center' style={{height: 'fit-content', width: '100%'}}>
+                <VBox justify='center' align='center' style={{width: '100%', height:'40%', position: 'relative'}}>
+                    {/* Left */}
+                
+                    <Item1 className='m-2' height='150px' width='300px' top_position='0' justify='center' align='center'>
+                        <ItemTextContainer justify='center' align='center'>
+                            <P2 align='center'>নিবন্ধিত বিশেষজ্ঞ চিকিৎসক</P2>
+                        </ItemTextContainer>
+                    </Item1>
+
+                    <CircleContainer justify='center' top_position='30.4%' left_position='41%'>
+                        <Circle />
+                    </CircleContainer>
+                
+                    <Item2 className='mb-2 ml-2 mr-2' height='150px' width='300px' top_position='-21px' justify='center' align='center'>
+                        <ItemTextContainer justify='center' align='center'>
+                            <P2 align='center'>ই-প্রেসক্রিপশন সেবা</P2>
+                        </ItemTextContainer>
+                    </Item2>
+
+                    <CircleContainer justify='center' top_position='59.8%' left_position='41%'>
+                        <Circle />
+                    </CircleContainer>
+
+                    <Item3 className='ml-2 mr-2' height='150px' width='300px' top_position='-42px' justify='center' align='center'>    
+                        <ItemTextContainer justify='center' align='center'>
+                            <P2 align='center'>ডায়গনিস্টিক রিপোর্ট আপলোড</P2>
+                        </ItemTextContainer>
+                     
+                    </Item3>
+                </VBox>
+
+                <VBox style={{width: '100%'}}>
+                    {/* Center */}
+
+                    <VBox className='p-5' justify='center' align='center' style={{height: '100%'}}>
+                        <CenterCircleContainer height='300px' width='300px'>
+                            <CenterCircle align='center' justify='center'>
+                                <CircleTextContainerOuter align='center'>
+                                    <CircleTextContainerInner align='center'>
+                                        <CenterCircleText className='bold' align='center'>কারণ আমাদের</CenterCircleText>
+                                        <CenterCircleText className='bold' align='center'>আছে</CenterCircleText>
+                                    </CircleTextContainerInner>
+                                </CircleTextContainerOuter>
+                            </CenterCircle>
+                        </CenterCircleContainer>
+                    </VBox>
+                </VBox>
+
+                <VBox justify='center' align='center' style={{height:'40%', width: '100%', position: 'relative'}}>
+                    {/* Right */}
+
+                    <Item1 className='m-2' height='150px' width='300px' top_position='0' justify='center' align='center' style={{transform: 'ScaleX(-1)'}}>
+                        <ItemTextContainer justify='center' align='center'>
+                            <P2 align='center' style={{transform: 'ScaleX(-1)'}}>ভিডিও এবং অডিও পরামর্শ</P2>
+                        </ItemTextContainer>
+                    </Item1>
+
+                    <CircleContainer justify='center' top_position='30.4%' left_position='41%'>
+                        <Circle />
+                    </CircleContainer>
+
+                    <Item2 className='mb-2 ml-2 mr-2' height='150px' width='300px' top_position='-21px' justify='center' align='center' style={{transform: 'ScaleX(-1)'}}>
+                        <ItemTextContainer justify='center' align='center'>
+                            <P2 align='center' style={{transform: 'ScaleX(-1)'}}>অনলাইন এবং অফলাইন</P2>
+                            <P2 align='center' style={{transform: 'ScaleX(-1)'}}>পরামর্শ</P2>
+                        </ItemTextContainer>
+                    </Item2>
+
+                    <CircleContainer justify='center' top_position='59.8%' left_position='41%'>
+                        <Circle />
+                    </CircleContainer>
+
+                    <Item3 className='ml-2 mr-2' height='150px' width='300px' top_position='-42px' justify='center' align='center' style={{transform: 'ScaleX(-1)'}}>
+                        <ItemTextContainer justify='center' align='center'>
+                            <P2 className='p-3' align='center' style={{transform: 'ScaleX(-1)'}}>ক্লাউড-ভিত্তিক ডেটা এবং গোপনীয়তার নিরাপত্তা</P2>
+                        </ItemTextContainer>
+                    </Item3>
+                </VBox>
+            </VBox> 
+            :
             <HBox justify='center' style={{height: '40rem', width: '100%'}}>
                 <VBox justify='center' style={{width: '25%', position: 'relative'}}>
                     {/* Left */}
@@ -209,7 +312,7 @@ const WhyUs = () => {
                         </ItemTextContainer>
                     </Item3>
                 </VBox>
-            </HBox>
+            </HBox>}
         </Container>
     );
 }
