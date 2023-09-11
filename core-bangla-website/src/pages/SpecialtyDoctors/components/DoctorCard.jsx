@@ -6,8 +6,8 @@ import { Button } from '../../../components/Buttons';
 import { HBox, VBox } from "../../../components/Containers";
 import { P2, P4 } from "../../../components/Typography";
 import { TbCurrencyTaka } from 'react-icons/tb';
+import { NavLink } from 'react-router-dom';
 import noImage from '../../../assets/images/no_image.svg';
-
 
 const CardContainer = styled(HBox)`
     width: calc(50% - 32px);
@@ -30,9 +30,9 @@ const SButton = styled(Button)`
 `
 
 const DoctorCard = ({ id, name, bmdc, qualification, specialty,
-                      experience, affiliation, image, fee }) => {
+                      experience, affiliation, image, fee, isMobile }) => {
     return (
-        <CardContainer className="m-2 p-3">
+        <CardContainer className="m-2 p-3" style={{ width: isMobile ? "calc(100% - 32px)" : "calc(50% - 32px)" }}>
                 <VBox align='center' style={{ width: "22%" }}>
                     <Image
                         className="mb-3"

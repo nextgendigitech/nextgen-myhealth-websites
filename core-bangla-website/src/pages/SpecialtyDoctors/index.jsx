@@ -9,12 +9,9 @@ import { H3, P2 } from "../../components/Typography";
 import { specialtyEtoB } from "../../data";
 import DoctorCard from "./components/DoctorCard";
 import ClipLoader from "react-spinners/ClipLoader";
+import { BiArrowBack } from 'react-icons/bi';
+import responsive from '../../config/responsive';
 
-// const override: CSSProperties = {
-//     display: "block",
-//     margin: "0 auto",
-//     borderColor: "red",
-// };
 
 const TitleCard = styled(VBox)`
     width: 100%;
@@ -33,7 +30,24 @@ const SpecialtyDoctors = () => {
     let { specialty } = useParams();
     const [doctors, setDoctors] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
-    
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const setResponsiveness = () => {
+            let orientation = !navigator.maxTouchPoints ? 'desktop' : !window.screen.orientation.angle ? 'portrait' : 'landscape';
+
+            if (orientation === 'portrait' || window.innerWidth < responsive.mobileThresh) {
+                setIsMobile(true);
+            }
+            else {
+                setIsMobile(false);
+            }
+        }
+        setResponsiveness();
+        window.addEventListener('resize', () => setResponsiveness());
+
+        return () => window.removeEventListener('resize', () => setResponsiveness());
+    }, []);
     useEffect(() => {
         window.scrollTo(0, 0);
     });
@@ -71,17 +85,21 @@ const SpecialtyDoctors = () => {
         })
     }
 
+    const goBack = () => {
+        window.history.back();
+    };
+
     return (
         <VBox>
             <TitleCard className="mt-4" justify="center" align="center">
-                <H3>{specialtyEtoB[specialty]}</H3>
+                <BiArrowBack className="mt-1" style={{ marginRight:"90%", cursor: "pointer" }} onClick={goBack} />
+                <H3 style={{ position: "absolute" }}>{specialtyEtoB[specialty]}</H3>
             </TitleCard>
             {
                 isLoading ?
                 <HBox justify="center" align="center" className="p-5">
                     <ClipLoader
-                        color= "green"
-                        /*cssOverride={override}*/
+                        color= {colors.green}
                         loading={isLoading}
                         size={100}
                         aria-label="Loading Spinner"
@@ -96,6 +114,7 @@ const SpecialtyDoctors = () => {
                     <CardsContainer>
                         {doctors.map((doctor, index) => (
                             <DoctorCard
+                                isMobile={isMobile}
                                 key={index}
                                 id={doctor.id}
                                 name={doctor.name}

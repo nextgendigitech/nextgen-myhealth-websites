@@ -9,6 +9,7 @@ import neurology from "../../../assets/images/specialties/neurology.png";
 import specialties_banner from "../../../assets/images/specialties_banner.png";
 import right_arrow from "../../../assets/images/right_arrow.png";
 
+import { NavLink } from 'react-router-dom';
 import { Button } from '../../../components/Buttons';
 import { HBox, VBox } from "../../../components/Containers";
 import { P2, P3 } from "../../../components/Typography";
@@ -38,6 +39,14 @@ const SButton = styled(Button)`
    width: 220px;
    border-radius: 30px;
    font-size: 16px;
+`
+const SNavLink = styled(NavLink)`
+    text-decoration: none;
+    color: ${colors.darkGrey};
+
+    &.active {
+        font-weight: bold;
+    }
 `
 
 const RoundButton = styled(Button)`
