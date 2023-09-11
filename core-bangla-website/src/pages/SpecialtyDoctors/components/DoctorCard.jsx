@@ -1,12 +1,13 @@
 import { Link } from 'react-router-dom';
-import colors from "../../../config/colors";
 import styled from "styled-components";
+import { TbCurrencyTaka } from 'react-icons/tb';
+import { NavLink } from 'react-router-dom';
 
+import colors from "../../../config/colors";
 import { Button } from '../../../components/Buttons';
 import { HBox, VBox } from "../../../components/Containers";
 import { P2, P4 } from "../../../components/Typography";
-import { TbCurrencyTaka } from 'react-icons/tb';
-import { NavLink } from 'react-router-dom';
+
 import noImage from '../../../assets/images/no_image.svg';
 
 const CardContainer = styled(HBox)`
@@ -48,9 +49,14 @@ const DoctorCard = ({ id, name, bmdc, qualification, specialty,
                     <P4 className="bold mb-1">{specialty}</P4>
                     <P4 className="bold mb-1">{qualification}</P4>
                     <P4 className="bold mb-4">অভিজ্ঞতা: {experience}</P4>
-                    <Link to={`https://patient.nextgenmyhealth.com/doctor/${id}`} target='_blank' style={{textDecoration: 'none'}}>
-                        <SButton style={{ fontSize: "16px", width: "190px" }} color='third' elevated>অ্যাপয়েন্টমেন্ট নিন</SButton> 
-                    </Link>
+                    <HBox justify="space-around">
+                        <NavLink to= {`/doctor-profile/${id}`} style={{textDecoration: 'none'}}>
+                            <SButton style={{ fontSize: "15px", width: "140px" }} color='first' elevated>বিস্তারিত দেখুন</SButton> 
+                        </NavLink>
+                        <Link to={`https://patient.nextgenmyhealth.com/doctor/${id}`} style={{textDecoration: 'none'}}>
+                            <SButton style={{ fontSize: "15px", width: "180px" }} color='third' elevated>অ্যাপয়েন্টমেন্ট নিন</SButton> 
+                        </Link>
+                    </HBox>
                 </VBox>
         </CardContainer>
     );
