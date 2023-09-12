@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -27,9 +27,6 @@ const Container = styled(HBox)`
 `
 
 const IconContainer = styled(HBox)`
-    @media only screen and (max-width: ${responsive.mobileThresh-1}px) {
-        display: none;
-    }
 `
 
 const IconImage = styled.img`
@@ -47,31 +44,36 @@ const SearchBar = styled(Button)`
         background-color: ${colors.lightGrey};
         color: ${colors.darkGrey};
     }
-
-    @media only screen and (max-width: ${responsive.mobileThresh-1}px) {
-        width: 50px;
-    }
-`
-
-const DoctorSearchText = styled(P2)`
-    @media only screen and (max-width: ${responsive.mobileThresh-1}px) {
-        display: none;
-    }
 `
 
 const DoctorSearchIcon = styled.img`
     height: 70%;
-    @media only screen and (max-width: ${responsive.mobileThresh-1}px) {
-        margin: 0;
-    }
 `
 
 const TopBar = () => {
     const [openSearchDlg, setOpenSearchDlg] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const setResponsiveness = () => {
+            let orientation = !navigator.maxTouchPoints ? 'desktop' : !window.screen.orientation.angle ? 'portrait' : 'landscape';
+    
+            if (orientation === 'portrait' || window.innerWidth < responsive.mobileThresh) {
+                setIsMobile(true);
+            }
+            else {
+                setIsMobile(false);
+            }
+        }
+        setResponsiveness();
+        window.addEventListener('resize', () => setResponsiveness());
+
+        return () => window.removeEventListener('resize', () => setResponsiveness());
+    }, []);
 
     return (
         <Container justify='space-between' align='center'>
-            <IconContainer>
+            {!isMobile && <IconContainer>
                 <Link to="https://www.facebook.com/nextgenmyhealthvcp" target="_blank">
                     <IconImage src={facebookIcon} alt="Facebook Image" className='ml-1' />
                 </Link>
@@ -81,16 +83,14 @@ const TopBar = () => {
                 <Link to='https://www.youtube.com/channel/UCSDFJqW2y9UYs6IMWGK2i9w' target='_blank'>
                     <IconImage src={youtubeLogo} alt="Youtube Image"/>
                 </Link>
-            </IconContainer>
+            </IconContainer>}
             <P2 className="bold">হটলাইন +৮৮০১৩২১১১৯৩৯১</P2>
             <SearchBar
                 size='sm'
                 onClick={() => setOpenSearchDlg(true)}
             >
-                <DoctorSearchText>
-                    ডাক্তার অনুসন্ধান করুন
-                </DoctorSearchText>
-                <DoctorSearchIcon className='ml-8' src={searchIcon} />
+                {!isMobile && <P2>ডাক্তার অনুসন্ধান করুন</P2>}
+                <DoctorSearchIcon className={isMobile ? '' : 'ml-8'} src={searchIcon} />
             </SearchBar>
 
             <DoctorSearchDlg

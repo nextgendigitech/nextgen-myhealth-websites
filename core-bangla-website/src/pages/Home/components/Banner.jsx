@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+
 import bannerimage from '../../../assets/images/banner_image.png';
-import responsive from '../../../config/responsive';
 import { Button } from '../../../components/Buttons';
 import { HBox, VBox } from '../../../components/Containers';
 import { H1, H2, H3, H4, H5, H6, P1, P2, P3, P4 } from '../../../components/Typography';
@@ -9,7 +9,7 @@ import { H1, H2, H3, H4, H5, H6, P1, P2, P3, P4 } from '../../../components/Typo
 
 const Container = styled(HBox)`
 	padding-left: 8%;
-    padding-right: 8%;
+	padding-right: 8%;
 	/* padding-top: 4%; */
 	width: 100%;
 `
@@ -17,11 +17,6 @@ const Container = styled(HBox)`
 const BannerImage = styled.img`
     height: 90%;
     width: auto;
-`
-
-const SButton = styled(Button)`
-   height: 50px;
-   border-radius: 30px;
 `
 
 const Banner = ({ isMobile }) => {
@@ -44,7 +39,8 @@ const Banner = ({ isMobile }) => {
 				</P2>
 				<HBox className='bold px-0 mt-4'>
 					<Link style={{textDecoration: 'none'}} to='/specialties'>
-						<SButton color='third' elevated>অ্যাপয়েন্টমেন্ট নিন</SButton>
+						<Button color='third' style={{ borderRadius: '30px', fontSize: isMobile ? '80%' : 'auto', 
+						height: isMobile ? '30px' : '50px' }} elevated>অ্যাপয়েন্টমেন্ট নিন</Button>
 					</Link> 
 				</HBox>
 			</VBox>
