@@ -46,15 +46,22 @@ const DoctorCard = ({ id, name, bmdc, qualification, specialty,
                 <VBox className='pl-5' style={{ width: "78%" }}>
                     <P2 className="bold mb-1">{name}</P2>
                     <P4 className="bold mb-1">{affiliation}</P4>
-                    <P4 className="bold mb-1">{specialty}</P4>
+                    <HBox>{typeof specialty === "object" ? specialty.map((spec, index) => (
+                            <P4 className="bold mb-1" key={index}>{spec}</P4>
+                        ))
+                        : 
+                        typeof specialty === "string" && (
+                            <P4 className="bold mb-1">{specialty}</P4>
+                        )}
+                    </HBox>
                     <P4 className="bold mb-1">{qualification}</P4>
                     <P4 className="bold mb-4">অভিজ্ঞতা: {experience}</P4>
                     <HBox justify="space-around">
                         <NavLink to= {`/doctor-profile/${id}`} style={{textDecoration: 'none'}}>
-                            <SButton style={{ fontSize: "15px", width: "140px" }} color='first' elevated>বিস্তারিত দেখুন</SButton> 
+                            <SButton style={{ fontSize: "15px", width: "100%" }} color='first' elevated>বিস্তারিত দেখুন</SButton> 
                         </NavLink>
                         <Link to={`https://patient.nextgenmyhealth.com/doctor/${id}`} style={{textDecoration: 'none'}}>
-                            <SButton style={{ fontSize: "15px", width: "180px" }} color='third' elevated>অ্যাপয়েন্টমেন্ট নিন</SButton> 
+                            <SButton style={{ fontSize: "15px", width: "100%" }} color='third' elevated>অ্যাপয়েন্টমেন্ট নিন</SButton> 
                         </Link>
                     </HBox>
                 </VBox>

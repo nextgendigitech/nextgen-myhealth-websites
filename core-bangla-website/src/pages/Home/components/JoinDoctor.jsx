@@ -6,10 +6,9 @@ import { HBox, VBox } from "../../../components/Containers";
 import { H5, P3 } from "../../../components/Typography";
 
 const Container = styled(HBox)`
-    margin-top: 120px;
+    margin-top: 8%;
     width: 100%;
-    height: 330px;
-    margin-bottom: 80px;
+    margin-bottom: 8%;
 `
 
 const TopBorder = styled.div`
@@ -34,10 +33,9 @@ const BottomBorder = styled.div`
 
 const Image = styled.img`
     height: auto;
-    width: 28%;
 `
 
-const JoinDoctor = () => {
+const JoinDoctor = ({ isMobile }) => {
     return (
         <Container justify="center">
             <TopBorder />
@@ -52,7 +50,7 @@ const JoinDoctor = () => {
                     পূরণ করুন
                 </P3>
             </VBox>
-            <Image src={joindoctorbanner} />
+            <Image src={joindoctorbanner} style={{ width: isMobile ? "35%" : "25%" }}/>
             <BottomBorder />
         </Container>
     );

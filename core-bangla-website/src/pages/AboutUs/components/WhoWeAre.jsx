@@ -1,14 +1,14 @@
 import styled from "styled-components";
 
 import colors from "../../../config/colors";
-import youtube_logo from "../../../assets/images/youtube_logo.png";
 import { VBox, HBox } from "../../../components/Containers";
-import { H2, H3, P1, P2 } from "../../../components/Typography";
+import { H2, P1, P2 } from "../../../components/Typography";
 
 const Container = styled(VBox)`
-    margin-top: 120px;
-    padding-left: 120px;
-    padding-right: 120px;
+    margin-top: 8%;
+    padding-left: 8%;
+    padding-right: 8%;
+    width: 100%;
 `
 
 const CardContainer = styled(HBox)`
@@ -19,20 +19,6 @@ const CardContainer = styled(HBox)`
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 15px;
     padding: 45px 45px 45px 75px;
-`
-
-const ImageBox = styled(HBox)`
-    position: relative;
-    left: 32px;
-    top: 32px;
-    border: solid 5px black;
-    border-radius: 15px;
-    background-color: ${colors.white};
-`
-
-const Image = styled.img`
-    height: 200px;
-    width: auto;
 `
 
 const VerticalBorder = styled.div`
@@ -48,14 +34,13 @@ const VerticalBorder = styled.div`
 const VideoContainer = styled.iframe`
     position: relative;
     height: auto;
-    width: 500px;
     left: 32px;
-    top 32px;
+    top: 32px;
     border: 5px solid ${colors.lightBlack};
     border-radius: 15px;
 `
 
-const WhoWeAre = () => {
+const WhoWeAre = ({ isMobile }) => {
     return (
         <Container>
             <HBox align='center' className="mb-4">
@@ -65,7 +50,7 @@ const WhoWeAre = () => {
                     <H2 color="third" className="bold">পরিচিতি</H2>
                 </VBox>
             </HBox>
-            <P1>
+            <P1 style={{ width: "100%" }}>
                 নেক্সটজেন ডিজিটেক লিমিটেড একটি বেসরকারি গবেষণা-ভিত্তিক কোম্পানি যা ডাক্তার, চিকিৎসা বিশেষজ্ঞ, 
                 গবেষক এবং আইটি বিশেষজ্ঞদের একটি দল নিয়ে গঠিত। নেক্সটজেন ডিজিটেক, রোগী এবং ডাক্তার উভয়ের 
                 উন্নয়নের জন্য প্রতিনিয়ত আপসহীনভাবে কাজ করে যাচ্ছে। নেক্সটজেন মাইহেলথ ভিসিপি নেক্সটজেন ডিজিটেক
@@ -73,8 +58,15 @@ const WhoWeAre = () => {
                 স্বাস্থ্যসেবা বিষয়ক ভোগান্তি কমাতে বদ্ধপরিকর।
             </P1>
             <HBox className="mt-8" justify='center'>
-                <VideoContainer src="https://www.youtube.com/embed/NdZ9vPHAy7w" title="Virtual Care Platform - NextGen MyHealth VCP" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen />
-                <CardContainer>
+                <VideoContainer
+                    style={{ width: isMobile ? '80%' : '40%', marginRight: isMobile ? '23%' : '' }}
+                    src="https://www.youtube.com/embed/NdZ9vPHAy7w" 
+                    title="Virtual Care Platform - NextGen MyHealth VCP" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allowfullscreen 
+                />
+                <CardContainer style={{ width: isMobile ? "100%" : "50%", padding: isMobile ? "15%" : "" }}>
                     <P2>
                         নেক্সটজেন ডিজিটেক লিমিটেড একটি বেসরকারি গবেষণা-ভিত্তিক কোম্পানি যা ডাক্তার, চিকিৎসা 
                         বিশেষজ্ঞ, গবেষক এবং আইটি বিশেষজ্ঞদের একটি দল নিয়ে গঠিত। নেক্সটজেন ডিজিটেক, রোগী এবং 

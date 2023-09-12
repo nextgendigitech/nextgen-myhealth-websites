@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 import colors from "../../../config/colors";
-import dummyimage from "../../../assets/images/dummy_image.jpg";
+import boy_avatar from "../../../assets/images/boy_avatar.png";
+import girl_avatar from "../../../assets/images/girl_avatar.jpg";
 import { HBox, VBox } from "../../../components/Containers";
 import { H3, P2, P4 } from "../../../components/Typography";
 
@@ -19,22 +20,21 @@ const Container = styled(HBox)`
 
 const CardContainer = styled(VBox)`
     width: 25%;
-    height: 320px;
     background: ${colors.white};
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
     border-radius: 0px 30px;
 `
 
 const Image = styled.img`
-    height: 80px;
-    width: 80px;
-    border-radius: 40px;
+    width: 30%;
+    border-radius: 50%;
     box-shadow: 0px 3px 5px ${colors.shadow};
 `
 
-const ReviewCard = ({ image, name, review, className }) => {
+const ReviewCard = ({ image, name, review, mobileview }) => {
+    const mobile = mobileview;
     return (
-        <CardContainer className={className} justify="flex-start" align="center">
+        <CardContainer className="p-3 my-2" justify="flex-start" align="center" style={{ width: mobile ? "100%" : "25%" }}>
             <Image className="mb-2" src={image} />
             <P2 className="bold mb-2">{name}</P2>
             <P4>{review}</P4>
@@ -42,35 +42,33 @@ const ReviewCard = ({ image, name, review, className }) => {
     );
 }
 
-const CustomerReview = () => {
+const CustomerReview = ({ isMobile }) => {
     return (
-        <VBox style={{ marginTop: 120 }}>
+        <VBox style={{ width: "100%", paddingTop: "8%" }}>
             <H3 align="center" className="bold pb-3">
                 আমাদের ক্লায়েন্টরা কি বলেন
             </H3>
-            <Container className="p-8" justify="center" align="center">
+            <Container style={{ padding: isMobile ? "30px" : "50px" }} justify="space-around" align="center">
                 <ReviewCard
-                className="p-3 mx-4"
-                image={dummyimage}
-                name="রামিসা ফারিহা জয়ী"
-                review="খুব ভালো প্লাটফর্ম| 
-                        আমার হাতে কম সময় থাকার জন্য ডাক্তার এর কাছে যেতে পারিনি। এই প্লাটফর্ম আমাকে ভার্চুয়ালি ডাক্তার 
-                        দেখানোর সুযোগ করে দেয়ায় আমি খুব কৃতজ্ঞ।"
+                mobileview={isMobile}
+                image={boy_avatar}
+                name="হাবিবুর রহমান"
+                review="আমি খুশি যে বাংলাদেশে এখন বিশ্বমানের অনলাইন চিকিৎসার বিকল্প রয়েছে। 
+                        এটি আমার মতো অনেক রোগীকে চিকিৎসার জন্য বিদেশে যাওয়ার ভারী ব্যয় বহন না করে স্বাভাবিক জীবনযাপন করার সুযোগ দেয়।"
                 />
                 <ReviewCard
-                className="p-3 mx-4"
-                image={null}
+                mobileview={isMobile}
+                image={boy_avatar}
                 name="ইমাম হাশেম"
-                review="আমি সত্যিই খুশি যে ডাক্তাররা আমাকে 
-                        আমার অবস্থা এবং থেরাপি সম্পর্কে আরও জানার সুযোগ দিয়েছেন যা আমাকে চিকিত্সা করতে সাহায্য করেছিল। 
-                        পিঠের ব্যথা ছাড়াই আমি আমার নিয়মিত জীবনে ফিরে এসেছি। আমি অবশেষে শান্তিতে আছি।"
+                review="আমি সত্যিই খুশি যে ডাক্তাররা আমার অবস্থা এবং থেরাপি সম্পর্কে আরও জানার সুযোগ দিয়েছেন যা আমাকে চিকিৎসা করতে সাহায্য করেছিল। 
+                        পিঠের ব্যথা ছাড়াই আমি আমার দৈনন্দিন জীবনে ফিরে এসেছি। আমি অবশেষে শান্তিতে আছি।"
                 />
                 <ReviewCard
-                className="p-3 mx-4"
-                image={null}
-                name="জয়ী"
+                mobileview={isMobile}
+                image={girl_avatar}
+                name="তাসনিমা ওয়াহিদ"
                 review="নেক্সটজেন মাইহেলথ ভিসিপি চিকিৎসার জন্য সেরা অনলাইন প্ল্যাটফর্ম।
-                        আমি তাদের একজন ডাক্তার দ্বারা চিকিত্সা করেছি এবং ডাক্তার খুব ভাল এবং আমার চিকিত্সা করার সময় অনেক যত্ন নেন।
+                        আমি তাদের একজন ডাক্তার দ্বারা চিকিৎসা করেছি। ডাক্তার খুব ভাল এবং আমার চিকিৎসা করার সময় অনেক যত্ন নেন।
                         এটা সত্যিই একটি ভাল অভিজ্ঞতা ছিল।"
                 />
             </Container>

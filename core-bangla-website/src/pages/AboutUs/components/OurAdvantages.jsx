@@ -5,7 +5,7 @@ import { HBox, VBox } from "../../../components/Containers";
 import { H3, P2, P4 } from "../../../components/Typography";
 
 const Container = styled(VBox)`
-    margin-top: 120px;
+    margin-top: 8%;
 `
 
 const VContainer = styled(VBox)`
@@ -15,7 +15,7 @@ const VContainer = styled(VBox)`
 
 const UpperHalfCircleCard = styled.div`
     width: 230px;
-    height: 210px;
+    height: 200px;
     background-color: ${colors.green};
     border-top-left-radius: 110px;
     border-top-right-radius: 105px;
@@ -24,7 +24,7 @@ const UpperHalfCircleCard = styled.div`
 
 const LowerHalfCircleCard = styled.div`
     width: 230px;
-    height: 210px;
+    height: 200px;
     background-color: ${colors.green};
     border-bottom-left-radius: 110px;
     border-bottom-right-radius: 105px;
@@ -32,9 +32,10 @@ const LowerHalfCircleCard = styled.div`
   
 `
 
-const TopContentCard = ({ title, detail, className }) => {
+const TopContentCard = ({ title, detail, mobileview }) => {
+    const mobile = mobileview;
     return (
-        <UpperHalfCircleCard>
+        <UpperHalfCircleCard style={{ marginBottom: mobile ? '10%' : '' }}>
             <VBox className='pt-6 px-2'>
                 <P2 className="bold" color="white" align="center">{title}</P2>
                 <P4 color="white" className="mt-2" align="center">{detail}</P4>
@@ -44,9 +45,10 @@ const TopContentCard = ({ title, detail, className }) => {
     );
 }
 
-const BottomContentCard = ({ title, detail, className }) => {
+const BottomContentCard = ({ title, detail, mobileview }) => {
+    const mobile = mobileview;
     return (
-        <LowerHalfCircleCard>
+        <LowerHalfCircleCard style={{ marginBottom: mobile ? '10%' : '' }}>
             <VBox className='pt-2 px-2'>
                 <P2 className="bold mb-2" color="white" align="center">{title}</P2>
                 <P4 color="white" align="center">{detail}</P4>
@@ -56,37 +58,43 @@ const BottomContentCard = ({ title, detail, className }) => {
     );
 }
 
-const OurAdvantages = () => {
+const OurAdvantages = ({ isMobile }) => {
   return (
     <Container>
-        <H3 className="bold" align="center">আমাদের প্ল্যাটফর্ম ব্যবহার করার সুবিধা</H3>
-        <HBox justify="center" align="center" className="mt-8"> 
+        <H3 className="bold" align="center" style={{ marginBottom: isMobile ? "8%" : "48px"  }}>আমাদের প্ল্যাটফর্ম ব্যবহার করার সুবিধা</H3>
+        <HBox justify="center" align="center"> 
             <VContainer>
                 <TopContentCard
+                    mobileview={isMobile}
                     title="ব্যবহারকারী বান্ধব পোর্টাল"
                     detail="রোগী এবং ডাক্তার পক্ষের সকল বয়সের ব্যবহারকারীদের জন্য ব্যবহার করা সহজ।"
                 />
                 <BottomContentCard 
+                    mobileview={isMobile}
                     title="অ্যাপয়েন্টমেন্ট নোটিফিকেশন"
                     detail="অনলাইন পরামর্শের জন্য রোগী এবং ডাক্তার উভয়কে এসএমএস এবং ই-মেইলের মাধ্যমে প্রাথমিকভাবে জানানো হবে।"
                 />
             </VContainer>
             <VContainer>
                 <TopContentCard 
+                    mobileview={isMobile}
                     title="স্বনামধন্য বিশেষজ্ঞ ডাক্তার"
                     detail="নেক্সটজেন মাইহেলথ ভিসিপি-তে আছেন দেশ - বিদেশের সকল বিখ্যাত বিশেষজ্ঞ ডাক্তারণ।"
                 />
                 <BottomContentCard 
+                    mobileview={isMobile}
                     title="ডায়াগনস্টিক রিপোর্ট আপলোড"
                     detail="রোগী পোর্টালে তার ডায়াগনস্টিক রিপোর্ট আপলোড করতে স্মার্টফোন ক্যামেরা এবং উল্লেখিত ছবি আপলোড উভয় বিকল্পই ব্যবহার করতে পারেন।"
                 />
             </VContainer>
             <VContainer>
                 <TopContentCard 
+                    mobileview={isMobile}
                     title="ই-প্রেসক্রিপশন সেবা"
                     detail="ভিডিও সেশনের সমাপ্তির পর ডাক্তার ই-প্রেসক্রিপশন আপলোড করবেন। ই-প্রেসক্রিপশনটি তখনই বা পরে ডাউনলোড এবং ব্যবহার করা যাবে।"
                 />
                 <BottomContentCard 
+                    mobileview={isMobile}
                     title="সপ্তাহব্যাপী সেবা"
                     detail="নেক্সটজেন মাইহেলথ ভিসিপি সপ্তাহে সাত দিনই সেবা প্রদানের জন্য নিবেদিত।"
                 />

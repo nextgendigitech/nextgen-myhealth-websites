@@ -53,6 +53,7 @@ const Chip = styled(HBox)`
 
 const Banner = ({ image, name, bmdc, doctor_type, qualification, specialty,
     experience, institution, designation, department, consultation_fee, is_online }) => {
+        console.log(typeof(specialty));
     return (          
         <BannerCard className="my-4 p-4">
             <HBox style={{ width: '100%' }}>
@@ -84,7 +85,17 @@ const Banner = ({ image, name, bmdc, doctor_type, qualification, specialty,
                     <P3 className="mb-2">{qualification}</P3>
                     <P3 className="mb-2">{designation}, {department}, {institution}</P3>
                     <Chip className="mb-2">
-                        <P4 className="bold px-1" color="white" justify="center" align="center" style={{ backgroundColor: colors.blue, borderRadius: "5px" }}>{specialty}</P4>
+                        {typeof specialty === "object" ? specialty.map((spec, index) => (
+                            <P4 className="bold px-1 mr-1" color="white" justify="center" align="center" style={{ backgroundColor: colors.blue, borderRadius: "5px" }} key={index}>
+                                {spec}
+                            </P4>
+                        ))
+                        : 
+                        typeof specialty === "string" && (
+                            <P4 className="bold px-1 mr-1" color="white" justify="center" align="center" style={{ backgroundColor: colors.blue, borderRadius: "5px" }}>
+                                {specialty}
+                            </P4>
+                        )}
                     </Chip>
                     <HBox className="mb-2" align="center">
                         <P3 className="">Consultation fee: </P3>
