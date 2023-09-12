@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import styled from "styled-components";
+import styled from 'styled-components';
 
 import { VBox, HBox } from '../../../components/Containers';
 import { H2, H3, P2 } from '../../../components/Typography';
