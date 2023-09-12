@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import styled from "styled-components";
 
 import { VBox, HBox } from '../../../components/Containers';
-import { H2, H3, P1, P2 } from '../../../components/Typography';
+import { H2, H3, P2 } from '../../../components/Typography';
 import colors from '../../../config/colors';
 import responsive from '../../../config/responsive';
 
@@ -17,6 +17,12 @@ const Underline = styled.div`
     border-bottom: 5px solid ${colors.darkGreen};
     border-image: linear-gradient(to top left, ${colors.lightGreen}, ${colors.darkGreen});
     border-image-slice: 1;
+`
+
+const ItemContainerMobile = styled(VBox)`
+    position: relative;
+    height: 40%;
+    width: 100%;
 `
 
 const Item = styled(VBox)`
@@ -87,14 +93,27 @@ const Circle = styled(HBox)`
     border-radius: 50%;
 `
 
-const CenterCircleContainer = styled(VBox)`
+const CenterCircleContainerOuter = styled(VBox)`
+    width: 50%;
+
+    @media only screen and (min-width: ${responsive.sm}px) and (max-width: ${responsive.md-1}px) {
+        justify-content: center;
+        align-items: center;
+    }
+`
+
+const CenterCircleContainerInner = styled(VBox)`
     height: ${props => props.height || '90%'};
     width: ${props => props.width || 'auto'};
     margin-top: 5%;
     border-radius: 50%;
     background-image: linear-gradient(to top left, ${colors.grey}, ${colors.lightGrey});
-    padding: 20px;
     box-shadow: 0 0 30px 12px ${colors.grey};
+
+    @media only screen and (min-width: ${responsive.sm}px) and (max-width: ${responsive.md-1}px) {
+        height: 350px;
+        width: 350px;
+    }
 `
 
 const CenterCircle = styled(VBox)`
@@ -102,6 +121,11 @@ const CenterCircle = styled(VBox)`
     width: auto;
     border-radius: 50%;
     background-image: linear-gradient(to bottom left, ${colors.grey}, ${colors.lightGrey}); 
+
+    @media only screen and (min-width: ${responsive.sm}px) and (max-width: ${responsive.md-1}px) {
+        height: 300px;
+        width: 300px;
+    }
 `
 
 const CircleTextContainerOuter = styled(VBox)`
@@ -153,8 +177,25 @@ const WhyUs = () => {
 
             {isMobile ?
             <VBox align='center' style={{height: 'fit-content', width: '100%'}}>
-                <VBox justify='center' align='center' style={{width: '100%', height:'40%', position: 'relative'}}>
-                    {/* Left */}
+                <VBox style={{width: '100%'}}>
+                    {/* Top */}
+
+                    <VBox className='p-5' justify='center' align='center' style={{height: '100%'}}>
+                        <CenterCircleContainerInner className='p-3' height='300px' width='300px'>
+                            <CenterCircle align='center' justify='center'>
+                                <CircleTextContainerOuter align='center'>
+                                    <CircleTextContainerInner align='center'>
+                                        <CenterCircleText className='bold' align='center'>কারণ আমাদের</CenterCircleText>
+                                        <CenterCircleText className='bold' align='center'>আছে</CenterCircleText>
+                                    </CircleTextContainerInner>
+                                </CircleTextContainerOuter>
+                            </CenterCircle>
+                        </CenterCircleContainerInner>
+                    </VBox>
+                </VBox>
+
+                <ItemContainerMobile justify='center' align='center'>
+                    {/* Middle */}
                 
                     <Item1 className='m-2' height='150px' width='300px' top_position='0' justify='center' align='center'>
                         <ItemTextContainer justify='center' align='center'>
@@ -182,27 +223,10 @@ const WhyUs = () => {
                         </ItemTextContainer>
                      
                     </Item3>
-                </VBox>
+                </ItemContainerMobile>
 
-                <VBox style={{width: '100%'}}>
-                    {/* Center */}
-
-                    <VBox className='p-5' justify='center' align='center' style={{height: '100%'}}>
-                        <CenterCircleContainer height='300px' width='300px'>
-                            <CenterCircle align='center' justify='center'>
-                                <CircleTextContainerOuter align='center'>
-                                    <CircleTextContainerInner align='center'>
-                                        <CenterCircleText className='bold' align='center'>কারণ আমাদের</CenterCircleText>
-                                        <CenterCircleText className='bold' align='center'>আছে</CenterCircleText>
-                                    </CircleTextContainerInner>
-                                </CircleTextContainerOuter>
-                            </CenterCircle>
-                        </CenterCircleContainer>
-                    </VBox>
-                </VBox>
-
-                <VBox justify='center' align='center' style={{height:'40%', width: '100%', position: 'relative'}}>
-                    {/* Right */}
+                <ItemContainerMobile justify='center' align='center'>
+                    {/* Bottom */}
 
                     <Item1 className='m-2' height='150px' width='300px' top_position='0' justify='center' align='center' style={{transform: 'ScaleX(-1)'}}>
                         <ItemTextContainer justify='center' align='center'>
@@ -230,10 +254,10 @@ const WhyUs = () => {
                             <P2 className='p-3' align='center' style={{transform: 'ScaleX(-1)'}}>ক্লাউড-ভিত্তিক ডেটা এবং গোপনীয়তার নিরাপত্তা</P2>
                         </ItemTextContainer>
                     </Item3>
-                </VBox>
+                </ItemContainerMobile>
             </VBox> 
             :
-            <HBox justify='center' style={{height: '40rem', width: '100%'}}>
+            <HBox justify='center' style={{height: '700px', width: '100%'}}>
                 <VBox justify='center' style={{width: '25%', position: 'relative'}}>
                     {/* Left */}
                     
@@ -265,22 +289,20 @@ const WhyUs = () => {
                     </Item3>
                 </VBox>
 
-                <VBox style={{width: '50%'}}>
+                <CenterCircleContainerOuter className='p-5'>
                     {/* Center */}
 
-                    <VBox className='p-5' style={{height: '100%'}}>
-                        <CenterCircleContainer>
-                            <CenterCircle align='center' justify='center'>
-                                <CircleTextContainerOuter align='center'>
-                                    <CircleTextContainerInner align='center'>
-                                        <CenterCircleText className='bold' align='center'>কারণ আমাদের</CenterCircleText>
-                                        <CenterCircleText className='bold' align='center'>আছে</CenterCircleText>
-                                    </CircleTextContainerInner>
-                                </CircleTextContainerOuter>
-                            </CenterCircle>
-                        </CenterCircleContainer>
-                    </VBox>
-                </VBox>
+                    <CenterCircleContainerInner className='p-3'>
+                        <CenterCircle align='center' justify='center'>
+                            <CircleTextContainerOuter align='center'>
+                                <CircleTextContainerInner align='center'>
+                                    <CenterCircleText className='bold' align='center'>কারণ আমাদের</CenterCircleText>
+                                    <CenterCircleText className='bold' align='center'>আছে</CenterCircleText>
+                                </CircleTextContainerInner>
+                            </CircleTextContainerOuter>
+                        </CenterCircle>
+                    </CenterCircleContainerInner>
+                </CenterCircleContainerOuter>
 
                 <VBox justify='center' style={{width: '25%', position: 'relative'}}>
                     {/* Right */}
