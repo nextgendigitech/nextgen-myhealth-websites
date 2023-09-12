@@ -84,10 +84,10 @@ const TopBar = () => {
                     <IconImage src={facebookIcon} alt="Facebook Image" className='ml-1' />
                 </Link>
                 <Link to='https://www.linkedin.com/company/nextgen-myhealth-vcp/' target='_blank'>
-                    <IconImage src={linkedinIcon} alt="LinkedIn Image" className="mx-1"/>
+                    <IconImage src={linkedinIcon} alt="LinkedIn Image" className={isMobile ? 'mx-2' : 'mx-3'} />
                 </Link>
                 <Link to='https://www.youtube.com/channel/UCSDFJqW2y9UYs6IMWGK2i9w' target='_blank'>
-                    <IconImage src={youtubeLogo} alt="Youtube Image"/>
+                    <IconImage src={youtubeLogo} alt="Youtube Image" />
                 </Link>
             </IconContainer>
             <P2 className="bold">
