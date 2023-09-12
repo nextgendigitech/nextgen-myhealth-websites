@@ -8,8 +8,8 @@ import responsive from '../../../config/responsive';
 
 const Container = styled(VBox)`
   margin-top: 120px;
-  padding-left: 120px;
-  padding-right: 120px;
+  padding-left: 8%;
+  padding-right: 8%;
 `
 
 const LeftStepBox = styled(VBox)`
