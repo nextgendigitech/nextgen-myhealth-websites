@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { HiOutlinePhone } from 'react-icons/hi';
 import styled from 'styled-components';
 
 import { HBox } from '../components/Containers';
@@ -27,11 +28,16 @@ const Container = styled(HBox)`
 `
 
 const IconContainer = styled(HBox)`
+    flex-wrap: nowrap;
 `
 
 const IconImage = styled.img`
     height: 30px;
     width: auto;
+
+    @media only screen and (max-width: ${responsive.mobileThresh-1}px) {
+        height: 20px;
+    }
 `
 
 const SearchBar = styled(Button)`
@@ -73,18 +79,20 @@ const TopBar = () => {
 
     return (
         <Container justify='space-between' align='center'>
-            {!isMobile && <IconContainer>
+            <IconContainer>
                 <Link to="https://www.facebook.com/nextgenmyhealthvcp" target="_blank">
                     <IconImage src={facebookIcon} alt="Facebook Image" className='ml-1' />
                 </Link>
                 <Link to='https://www.linkedin.com/company/nextgen-myhealth-vcp/' target='_blank'>
-                    <IconImage src={linkedinIcon} alt="LinkedIn Image" className="mx-3"/>
+                    <IconImage src={linkedinIcon} alt="LinkedIn Image" className={isMobile ? 'mx-1' : 'mx-3'} />
                 </Link>
                 <Link to='https://www.youtube.com/channel/UCSDFJqW2y9UYs6IMWGK2i9w' target='_blank'>
-                    <IconImage src={youtubeLogo} alt="Youtube Image"/>
+                    <IconImage src={youtubeLogo} alt="Youtube Image" />
                 </Link>
-            </IconContainer>}
-            <P2 className="bold">হটলাইন +৮৮০১৩২১১১৯৩৯১</P2>
+            </IconContainer>
+            <P2 className="bold">
+                {isMobile ? <HiOutlinePhone style={{position: 'relative', top:'2px'}}/> : 'হটলাইন'} +৮৮০১৩২১১১৯৩৯১
+            </P2>
             <SearchBar
                 size='sm'
                 onClick={() => setOpenSearchDlg(true)}

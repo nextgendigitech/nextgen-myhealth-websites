@@ -8,10 +8,9 @@ import { H1, H2, H3, H4, H5, H6, P1, P2, P3, P4 } from '../../../components/Typo
 
 
 const Container = styled(HBox)`
-	padding-left: 8%;
-	padding-right: 8%;
-	/* padding-top: 4%; */
-	width: 100%;
+    padding-left: 8%;
+    padding-right: 8%;
+    width: 100%;
 `
 
 const BannerImage = styled.img`
@@ -39,8 +38,14 @@ const Banner = ({ isMobile }) => {
 				</P2>
 				<HBox className='bold px-0 mt-4'>
 					<Link style={{textDecoration: 'none'}} to='/specialties'>
-						<Button color='third' style={{ borderRadius: '30px', fontSize: isMobile ? '80%' : 'auto', 
-						height: isMobile ? '30px' : '50px' }} elevated>অ্যাপয়েন্টমেন্ট নিন</Button>
+						<Button
+							color='third'
+							size={isMobile ? 'xs' : 'lg'}
+							style={{ borderRadius: 25, height: isMobile ? 30 : 50 }}
+							elevated
+						>
+							অ্যাপয়েন্টমেন্ট নিন
+						</Button>
 					</Link> 
 				</HBox>
 			</VBox>

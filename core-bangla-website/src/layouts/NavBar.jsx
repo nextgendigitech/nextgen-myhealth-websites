@@ -6,7 +6,7 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 
 import { HBox } from '../components/Containers';
 import { Button } from '../components/Buttons';
-import { P2 } from '../components/Typography';
+import { P1, P2 } from '../components/Typography';
 import logo from '../assets/images/Website-Logo.png'
 import colors from '../config/colors';
 import responsive from '../config/responsive';
@@ -25,7 +25,21 @@ const Container = styled(HBox)`
 `
 
 const LogoImage = styled.img`
-    height: 80px;
+    @media only screen and (max-width: ${responsive.xs-1}px) { // xs
+        height: 65px;
+    }
+    @media only screen and (min-width: ${responsive.xs}px) and (max-width: ${responsive.sm-1}px) {  // sm
+        height: 70px;
+    }
+    @media only screen and (min-width: ${responsive.sm}px) and (max-width: ${responsive.md-1}px) {  // md
+        height: 80px;
+    }
+    @media only screen and (min-width: ${responsive.md}px) and (max-width: ${responsive.lg-1}px) {  // lg
+        height: 80px;
+    }
+    @media only screen and (min-width: ${responsive.lg}px) {  // xl
+        height: 80px;
+    }
 `
 
 const SNavLink = styled(NavLink)`
@@ -93,21 +107,21 @@ const NavBar = () => {
                             <ListItem className='mb-2'>
                                 <ListItemText>
                                     <SNavLink to='/' onClick={handleClickMenuItem}>
-                                        হোম
+                                        <P1>হোম</P1>
                                     </SNavLink>
                                 </ListItemText>
                             </ListItem>
                             <ListItem className='mb-2'>
                                 <ListItemText>
                                     <SNavLink to='/about-us' onClick={handleClickMenuItem}>
-                                        পরিচিতি
+                                        <P1>পরিচিতি</P1>
                                     </SNavLink>
                                 </ListItemText>
                             </ListItem>
                             <ListItem>
                                 <ListItemText>
                                     <SNavLink to='/specialties' onClick={handleClickMenuItem}>
-                                        বিশেষজ্ঞ ডাক্তার
+                                        <P1>বিশেষজ্ঞ ডাক্তার</P1>
                                     </SNavLink>
                                 </ListItemText>
                             </ListItem>
