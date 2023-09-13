@@ -5,7 +5,6 @@ import { VBox, HBox } from "../../../components/Containers";
 import { H2, P1, P2 } from "../../../components/Typography";
 
 const Container = styled(VBox)`
-    margin-top: 8%;
     padding-left: 8%;
     padding-right: 8%;
     width: 100%;
@@ -42,7 +41,7 @@ const VideoContainer = styled.iframe`
 
 const WhoWeAre = ({ isMobile }) => {
     return (
-        <Container>
+        <Container style={{paddingTop: isMobile ? '30px' : '60px'}}>
             <HBox align='center' className="mb-4">
                 <VerticalBorder/>
                 <VBox className="ml-2">
@@ -57,7 +56,7 @@ const WhoWeAre = ({ isMobile }) => {
                 লিমিটেড বাংলাদেশের একটি স্বাস্থ্য পণ্য। এটির উদ্ভাবনী ভার্চুয়াল স্বাস্থ্যসেবা প্ল্যাটফর্ম বাংলাদেশের জনগণের 
                 স্বাস্থ্যসেবা বিষয়ক ভোগান্তি কমাতে বদ্ধপরিকর।
             </P1>
-            <HBox className="mt-8" justify='center'>
+            <HBox justify='center' style={{marginTop: isMobile ? '30px' : '100px'}}>
                 <VideoContainer
                     style={{ width: isMobile ? '80%' : '40%', marginRight: isMobile ? '23%' : '' }}
                     src="https://www.youtube.com/embed/NdZ9vPHAy7w" 

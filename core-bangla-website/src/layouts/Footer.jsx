@@ -13,7 +13,7 @@ import DoctorSearchDlg from './DoctorSearchDlg';
 const FooterContainer1 = styled(VBox)`
     padding-left: 120px;
     padding-right: 120px;
-    margin-top: 120px;
+    /* margin-top: 120px; */
     background-color: ${colors.mercury};
     border-radius: 30px 30px 0px 0px;
 `
@@ -46,12 +46,12 @@ const SNavLink = styled(NavLink)`
     }
 `
 
-const Footer = () => {
+const Footer = ({isMobile}) => {
     const [openDoctorSearchDlg, setOpenDoctorSearchDlg] = useState(false);
 
     return (
         <>
-            <FooterContainer1 className='pb-7'>
+            <FooterContainer1 className='pb-7' style={{ marginTop: isMobile ? '60px' : '120px' }}>
                 <LogoImage className='mt-4' src={logo} />
                 <HBox justify='space-between'>
                     <VBox>    

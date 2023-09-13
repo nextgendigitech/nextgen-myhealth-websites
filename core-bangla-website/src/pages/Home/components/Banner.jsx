@@ -11,6 +11,7 @@ const Container = styled(HBox)`
     padding-left: 8%;
     padding-right: 8%;
     width: 100%;
+	flex-wrap: nowrap;
 `
 
 const BannerImage = styled.img`
@@ -22,7 +23,7 @@ const Banner = ({ isMobile }) => {
 	return (
 		<Container justify='space-between' align='center'>
 			<VBox style={{ width: isMobile ? '65%' : '60%' }}>
-				<H3 className='bold mb-2' style={{ lineHeight: isMobile ? 1 : 1.2, paddingTop: isMobile ? '8%' : '0%' }}>স্বাগতম আপনাকে</H3>
+				<H3 className='bold mb-2' style={{ lineHeight: isMobile ? 1 : 1.2, paddingTop: isMobile ? '8%' : '1%' }}>স্বাগতম আপনাকে</H3>
 				<H3 className='bold' color='third'>নেক্সটজেন</H3>
 				<VBox className='bold mb-4'> 
 					<HBox>
