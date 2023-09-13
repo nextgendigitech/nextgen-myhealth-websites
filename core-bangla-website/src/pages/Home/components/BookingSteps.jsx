@@ -1,13 +1,15 @@
+import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 import { HBox, VBox } from '../../../components/Containers';
 import { P1, P2, P3 } from '../../../components/Typography';
 import colors from '../../../config/colors';
+import responsive from '../../../config/responsive';
 
 const Container = styled(VBox)`
   margin-top: 120px;
-  padding-left: 120px;
-  padding-right: 120px;
+  padding-left: 8%;
+  padding-right: 8%;
 `
 
 const LeftStepBox = styled(VBox)`
@@ -32,6 +34,25 @@ const Circle = styled(VBox)`
 `
 
 const BookingSteps = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+      const setResponsiveness = () => {
+        let orientation = !navigator.maxTouchPoints ? 'desktop' : !window.screen.orientation.angle ? 'portrait' : 'landscape';
+    
+        if (orientation === 'portrait' || window.innerWidth < responsive.mobileThresh) {
+          setIsMobile(true);
+        }
+        else {
+          setIsMobile(false);
+        }
+      }
+      setResponsiveness();
+      window.addEventListener('resize', () => setResponsiveness());
+
+      return () => window.removeEventListener('resize', () => setResponsiveness());
+  }, []);
+  
   return (
     <Container>
       <VBox align='center' className='mb-4'>
@@ -42,7 +63,9 @@ const BookingSteps = () => {
       <HBox>
         <LeftStepBox align='center' justify='flex-end'>
           <Circle align='center' justify='center' className='mb-4'>
-            <P2 className='bold' color='third'>স্টেপ</P2>
+            {isMobile ?
+            <></> : <P2 className='bold' color='third'>স্টেপ</P2>
+            }
             <P2 className='bold' color='third'>০১</P2>
           </Circle>
           <VBox style={{ width: '80%' }} className='mb-1'>
@@ -58,7 +81,9 @@ const BookingSteps = () => {
       <HBox justify='flex-end'>
         <RightStepBox align='center' justify='flex-end'>
           <Circle align='center' justify='center' className='mb-4'>
-            <P2 className='bold' color='third'>স্টেপ</P2>
+            {isMobile ?
+            <></> : <P2 className='bold' color='third'>স্টেপ</P2>
+            }
             <P2 className='bold' color='third'>০২</P2>
           </Circle>
           <VBox style={{ width: '80%' }} className='mb-1'>
@@ -76,7 +101,9 @@ const BookingSteps = () => {
       <HBox>
         <LeftStepBox align='center' justify='flex-end'>
           <Circle align='center' justify='center' className='mb-4'>
-            <P2 className='bold' color='third'>স্টেপ</P2>
+            {isMobile ?
+            <></> : <P2 className='bold' color='third'>স্টেপ</P2>
+            }
             <P2 className='bold' color='third'>০৩</P2>
           </Circle>
           <VBox style={{ width: '80%' }} className='mb-1'>
@@ -92,7 +119,9 @@ const BookingSteps = () => {
       <HBox justify='flex-end'>
         <RightStepBox align='center' justify='flex-end'>
           <Circle align='center' justify='center' className='mb-4'>
-            <P2 className='bold' color='third'>স্টেপ</P2>
+            {isMobile ?
+            <></> : <P2 className='bold' color='third'>স্টেপ</P2>
+            }
             <P2 className='bold' color='third'>০৪</P2>
           </Circle>
           <VBox style={{ width: '80%' }} className='mb-1'>
