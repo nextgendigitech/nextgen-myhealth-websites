@@ -148,27 +148,23 @@ const CenterCircleText = styled(H2)`
     text-shadow: 4px 4px 5px ${colors.lessDarkGrey};
 `
 
-const WhyUs = () => {
-    const [isMobile, setIsMobile] = useState(false);
-
-    useEffect(() => {
-        const setResponsiveness = () => {
-            let orientation = !navigator.maxTouchPoints ? 'desktop' : !window.screen.orientation.angle ? 'portrait' : 'landscape';
-    
-            if (orientation === 'portrait' || window.innerWidth < responsive.mobileThresh) {
-                setIsMobile(true);
-            }
-            else {
-                setIsMobile(false);
-            }
-        }
-        setResponsiveness();
-        window.addEventListener('resize', () => setResponsiveness());
-
-        return () => window.removeEventListener('resize', () => setResponsiveness());
-    }, []);
-
-
+const WhyUs = ({ isMobile }) => {
+    const CenterHtml = () => (
+        <VBox style={{width: '100%'}}>
+            <VBox className='p-5' justify='center' align='center' style={{height: '100%'}}>
+                <CenterCircleContainerInner className='p-3' height='300px' width='300px'>
+                    <CenterCircle align='center' justify='center'>
+                        <CircleTextContainerOuter align='center'>
+                            <CircleTextContainerInner align='center'>
+                                <CenterCircleText className='bold' align='center'>কারণ আমাদের</CenterCircleText>
+                                <CenterCircleText className='bold' align='center'>আছে</CenterCircleText>
+                            </CircleTextContainerInner>
+                        </CircleTextContainerOuter>
+                    </CenterCircle>
+                </CenterCircleContainerInner>
+            </VBox>
+        </VBox>
+    );
 
     return (
         <Container align='center'>
@@ -177,22 +173,7 @@ const WhyUs = () => {
 
             {isMobile ?
             <VBox align='center' style={{height: 'fit-content', width: '100%'}}>
-                <VBox style={{width: '100%'}}>
-                    {/* Top */}
-
-                    <VBox className='p-5' justify='center' align='center' style={{height: '100%'}}>
-                        <CenterCircleContainerInner className='p-3' height='300px' width='300px'>
-                            <CenterCircle align='center' justify='center'>
-                                <CircleTextContainerOuter align='center'>
-                                    <CircleTextContainerInner align='center'>
-                                        <CenterCircleText className='bold' align='center'>কারণ আমাদের</CenterCircleText>
-                                        <CenterCircleText className='bold' align='center'>আছে</CenterCircleText>
-                                    </CircleTextContainerInner>
-                                </CircleTextContainerOuter>
-                            </CenterCircle>
-                        </CenterCircleContainerInner>
-                    </VBox>
-                </VBox>
+                {CenterHtml()}
 
                 <ItemContainerMobile justify='center' align='center'>
                     {/* Middle */}

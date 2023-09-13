@@ -31,10 +31,9 @@ const Image = styled.img`
     box-shadow: 0px 3px 5px ${colors.shadow};
 `
 
-const ReviewCard = ({ image, name, review, mobileview }) => {
-    const mobile = mobileview;
+const ReviewCard = ({ image, name, review, isMobile }) => {
     return (
-        <CardContainer className="p-3 my-2" justify="flex-start" align="center" style={{ width: mobile ? "100%" : "25%" }}>
+        <CardContainer className="p-3 my-2" justify="flex-start" align="center" style={{ width: isMobile ? "100%" : "25%" }}>
             <Image className="mb-2" src={image} />
             <P2 className="bold mb-2">{name}</P2>
             <P4>{review}</P4>
@@ -44,30 +43,30 @@ const ReviewCard = ({ image, name, review, mobileview }) => {
 
 const CustomerReview = ({ isMobile }) => {
     return (
-        <VBox style={{ width: "100%", paddingTop: "8%" }}>
+        <VBox style={{ width: "100%", paddingTop: "120px" }}>
             <H3 align="center" className="bold pb-3">
                 আমাদের ক্লায়েন্টরা কি বলেন
             </H3>
             <Container style={{ padding: isMobile ? "30px" : "50px" }} justify="space-around" align="center">
                 <ReviewCard
-                mobileview={isMobile}
-                image={boy_avatar}
-                name="হাবিবুর রহমান"
-                review="আমি খুশি যে বাংলাদেশে এখন বিশ্বমানের অনলাইন চিকিৎসার বিকল্প রয়েছে। 
+                    isMobile={isMobile}
+                    image={boy_avatar}
+                    name="হাবিবুর রহমান"
+                    review="আমি খুশি যে বাংলাদেশে এখন বিশ্বমানের অনলাইন চিকিৎসার বিকল্প রয়েছে। 
                         এটি আমার মতো অনেক রোগীকে চিকিৎসার জন্য বিদেশে যাওয়ার ভারী ব্যয় বহন না করে স্বাভাবিক জীবনযাপন করার সুযোগ দেয়।"
                 />
                 <ReviewCard
-                mobileview={isMobile}
-                image={boy_avatar}
-                name="ইমাম হাশেম"
-                review="আমি সত্যিই খুশি যে ডাক্তাররা আমার অবস্থা এবং থেরাপি সম্পর্কে আরও জানার সুযোগ দিয়েছেন যা আমাকে চিকিৎসা করতে সাহায্য করেছিল। 
+                    isMobile={isMobile}
+                    image={boy_avatar}
+                    name="ইমাম হাশেম"
+                    review="আমি সত্যিই খুশি যে ডাক্তাররা আমার অবস্থা এবং থেরাপি সম্পর্কে আরও জানার সুযোগ দিয়েছেন যা আমাকে চিকিৎসা করতে সাহায্য করেছিল। 
                         পিঠের ব্যথা ছাড়াই আমি আমার দৈনন্দিন জীবনে ফিরে এসেছি। আমি অবশেষে শান্তিতে আছি।"
                 />
                 <ReviewCard
-                mobileview={isMobile}
-                image={girl_avatar}
-                name="তাসনিমা ওয়াহিদ"
-                review="নেক্সটজেন মাইহেলথ ভিসিপি চিকিৎসার জন্য সেরা অনলাইন প্ল্যাটফর্ম।
+                    isMobile={isMobile}
+                    image={girl_avatar}
+                    name="তাসনিমা ওয়াহিদ"
+                    review="নেক্সটজেন মাইহেলথ ভিসিপি চিকিৎসার জন্য সেরা অনলাইন প্ল্যাটফর্ম।
                         আমি তাদের একজন ডাক্তার দ্বারা চিকিৎসা করেছি। ডাক্তার খুব ভাল এবং আমার চিকিৎসা করার সময় অনেক যত্ন নেন।
                         এটা সত্যিই একটি ভাল অভিজ্ঞতা ছিল।"
                 />

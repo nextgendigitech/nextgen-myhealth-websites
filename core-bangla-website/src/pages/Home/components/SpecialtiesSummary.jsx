@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 import colors from "../../../config/colors";
+import responsive from "../../../config/responsive";
 import internal_medicine from "../../../assets/images/specialties/internal_medicine.png";
 import cardiology from "../../../assets/images/specialties/cardiology.png";
 import respiratory_medicine from "../../../assets/images/specialties/respiratory_medicine.png";
@@ -23,12 +24,28 @@ const Container = styled(HBox)`
         ${colors.darkGreen}, ${colors.veryLightGreen}, ${colors.darkGreen});
     background-origin: border-box;
     background-clip: content-box, border-box;
-`;
+`
 
 const TitleCard = styled(VBox)`
     width: 70%;
-    border:6px solid ${colors.darkGreen};
+    /* border: 6px solid ${colors.darkGreen}; */
     border-radius: 0px 30px 0px 30px;
+
+    @media only screen and (max-width: ${responsive.xs-1}px) { // xs
+        border: 3px solid ${colors.darkGreen};
+    }
+    @media only screen and (min-width: ${responsive.xs}px) and (max-width: ${responsive.sm-1}px) {  // sm
+        border: 4px solid ${colors.darkGreen};
+    }
+    @media only screen and (min-width: ${responsive.sm}px) and (max-width: ${responsive.md-1}px) {  // md
+        border: 5px solid ${colors.darkGreen};
+    }
+    @media only screen and (min-width: ${responsive.md}px) and (max-width: ${responsive.lg-1}px) {  // lg
+        border: 6px solid ${colors.darkGreen};
+    }
+    @media only screen and (min-width: ${responsive.lg}px) {  // xl
+        border: 6px solid ${colors.darkGreen};
+    }
 `
 
 const SButton = styled(Button)`
@@ -71,15 +88,14 @@ const SLink = styled(Link)`
     text-decoration: none;
 `
 
-const SpecialtiesCard = ({ icon, name, className, mobileview }) => {
-    const mobile = mobileview;
+const SpecialtiesCard = ({ icon, name, className, isMobile }) => {
     return (
-        <CardContainer className={className} align='center' style={{ width: mobile ? '180px' : '280px' }}>
+        <CardContainer className={className} align='center' style={{ width: isMobile ? '180px' : '280px' }}>
             <HBox style={{ width: '15%' }}>
-                <Icon style={{ width: mobile ? '22px' : '30px' }} src={icon} className="ml-2"/>
+                <Icon style={{ width: isMobile ? '22px' : '30px' }} src={icon} className="ml-2"/>
             </HBox>
             <HBox justify='center' align='center' style={{ width: 'clac(100% - 15%)'}}>
-                <P2 className="bold" style={{ marginLeft: mobile ? '20px' : '30px' }}>{name}</P2>
+                <P2 className="bold" style={{ marginLeft: isMobile ? '20px' : '30px' }}>{name}</P2>
             </HBox>
         </CardContainer>
     );
@@ -98,19 +114,19 @@ const SpecialtiesSummary = ({ isMobile }) => {
                     <SLink to='/specialties'>
                         <SButton className='mb-5' color='third' style={{ fontSize: isMobile ? "12px" : "16px" }} elevated>সব বিশেষজ্ঞ ডাক্তার দেখুন</SButton> 
                     </SLink>
-                </VBox> 
+                </VBox>
                 <VBox align='center' className="" style={{ width: isMobile ? '60%' : '25%' }}>
                     <SLink to='/specialty-doctors/Internal Medicine'>
-                        <SpecialtiesCard mobileview={isMobile} className="my-3" icon={internal_medicine} name="ইন্টারনাল মেডিসিন"/>
+                        <SpecialtiesCard isMobile={isMobile} className="my-3" icon={internal_medicine} name="ইন্টারনাল মেডিসিন"/>
                     </SLink>
                     <SLink to='/specialty-doctors/Cardiology'>
-                        <SpecialtiesCard mobileview={isMobile} className="" icon={cardiology} name="হৃদরোগ"/>
+                        <SpecialtiesCard isMobile={isMobile} className="" icon={cardiology} name="হৃদরোগ"/>
                     </SLink>
                     <SLink to='/specialty-doctors/Respiratory Medicine'>
-                        <SpecialtiesCard mobileview={isMobile} className="my-3" icon={respiratory_medicine} name="ফুসফুস"/>
+                        <SpecialtiesCard isMobile={isMobile} className="my-3" icon={respiratory_medicine} name="ফুসফুস"/>
                     </SLink>
                     <SLink to='/specialty-doctors/Neurology'>
-                        <SpecialtiesCard mobileview={isMobile} className="" icon={neurology} name="স্নায়ুরোগ"/>
+                        <SpecialtiesCard isMobile={isMobile} className="" icon={neurology} name="স্নায়ুরোগ"/>
                     </SLink>
                     <SLink to='/specialties'>
                         <RoundButton className='my-3' style={{ height: isMobile ? '40px' : '50px' }} elevated>
