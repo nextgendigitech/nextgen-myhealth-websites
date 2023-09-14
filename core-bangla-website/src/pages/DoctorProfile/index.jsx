@@ -8,16 +8,34 @@ import Header from "./components/Header";
 import Banner from "./components/Banner";
 import Summary from "./components/Summary";
 import Details from "./components/Details";
+import responsive from '../../config/responsive';
 
-const Container = styled(VBox)`
-    margin-left: 120px;
-    margin-right: 120px;
-`
 
 const DoctorProfile = () => {
     let { id } = useParams();
     const [doctor, setDoctor] = useState({});
     const [isLoading, setIsLoading] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const setResponsiveness = () => {
+            let orientation = !navigator.maxTouchPoints ? 'desktop' : !window.screen.orientation.angle ? 'portrait' : 'landscape';
+
+            if (orientation === 'portrait' || window.innerWidth < responsive.mobileThresh) {
+                setIsMobile(true);
+            }
+            else {
+                setIsMobile(false);
+            }
+        }
+        setResponsiveness();
+        window.addEventListener('resize', () => setResponsiveness());
+
+        return () => window.removeEventListener('resize', () => setResponsiveness());
+    }, []);
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    });
 
     useEffect(() => {
         setIsLoading(true);
@@ -49,9 +67,10 @@ const DoctorProfile = () => {
 
     return (
         <VBox>
-            <Header />
-            <Container>
+            <Header isMobile={isMobile}/>
+            <VBox style={{ margin: isMobile ? "0% 4%" : "0% 8%" }}>
                 <Banner
+                    isMobile={isMobile}
                     id={doctor?.id}
                     name={doctor?.name}
                     is_online={doctor?.is_online}
@@ -67,18 +86,20 @@ const DoctorProfile = () => {
                     specialty={doctor?.specialty}
                 />
                 <Summary 
+                    isMobile={isMobile}
                     id={doctor?.id}
                     consultation_fee={doctor?.appointment_config?.fee}
                     followup_fee={doctor?.appointment_config?.followup_fee}
                 />
                 <Details
+                    isMobile={isMobile}
                     id={doctor?.id}
                     attended={doctor?.attended}
                     created_at={doctor?.created_at?.length ? doctor.created_at : ''}
                     affiliations={doctor?.affiliations?.length ? doctor.affiliations : ''}
                     chambers={doctor?.chambers?.length ? doctor.chambers : ''}
                 />
-            </Container>
+            </VBox>
         </VBox>
     )
 }

@@ -7,19 +7,18 @@ import { getDate } from "../../../utils";
 
 const Card = styled(VBox)`
     width: 65%;
-    height: auto;
     background: ${colors.lightGrey};
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.15);
     border-radius: 20px;
 `
 
-const Details = ({ chambers, affiliations, attended, created_at }) => {
+const Details = ({ chambers, affiliations, attended, created_at, isMobile }) => {
     return (
         <>
             {(affiliations.length > 0) && (
-                <Card className="my-4 p-4" justify="center">
+                <Card className="p-3" justify="center" style={{ margin: isMobile ? "12px 0px" : "24px 0px", width: isMobile ? "100%" : "65%"  }}>
                     <P2 className="bold">Affliliation(s):</P2>
-                    <P3 className="ml-6 px-2">{affiliations.map((affiliation, index) => (
+                    <P3 style={{ marginLeft: isMobile ? "24px" : "48px" }}>{affiliations.map((affiliation, index) => (
                         <li className="my-2" key={index}>
                             {affiliation.designation}, {affiliation.department}, {affiliation.institution}
                         </li>
@@ -27,19 +26,21 @@ const Details = ({ chambers, affiliations, attended, created_at }) => {
                 </Card>
             )}
             {(chambers.length > 0) && (chambers[0].address.length > 0) && (
-                <Card className="my-4 p-4" justify="center" style={{ alignSelf: 'flex-end' }}>
+                <Card className="p-3" justify="center" style={{ margin: isMobile ? "12px 0px" : "24px 0px", alignSelf: 'flex-end', width: isMobile ? "100%" : "65%"  }}>
                     <P2 className="bold">Chamber(s):</P2>
-                    <P3 className="ml-6 px-2">{chambers.map((chamber, index) => (
-                        <li className="my-2" key={index}>
+                    <P3 style={{ marginLeft: isMobile ? "24px" : "48px" }}>{chambers.map((chamber, index) => (
+                        <li className="my-2"  key={index}>
                             {chamber.address}
                         </li>
                     ))}</P3>
                 </Card>
             )}
-            <Card className="my-4 p-4" justify="center">
+            <Card className="p-3" justify="center" style={{ marginTop: isMobile ? "12px" : "24px", width: isMobile ? "100%" : "65%"  }}>
                 <P2 className="bold">Other information:</P2>
-                <li className="ml-6 pt-2">Joined Nextgen MyHealth: {getDate(created_at, 'long')}</li>
-                <li className="ml-6 pt-2">Patient attended: {attended}</li>
+                <P3 style={{ marginLeft: isMobile ? "24px" : "48px" }}>
+                    <li className="pt-2">Joined Nextgen MyHealth: {getDate(created_at, 'long')}</li>
+                    <li className="pt-2">Patient attended: {attended}</li>
+                </P3>
             </Card>
         </>
     );

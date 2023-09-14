@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { TbCurrencyTaka } from 'react-icons/tb';
+import { TbCurrencyTaka } from "react-icons/tb";
 
 import { HBox, VBox } from "../../../components/Containers";
 import { P3 } from "../../../components/Typography";
@@ -7,7 +7,6 @@ import colors from "../../../config/colors";
 
 const SummaryCard = styled(HBox)`
     width: 100%;
-    height: auto;
     background: ${colors.veryLightBlue};
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 30px;
@@ -26,20 +25,28 @@ const VerticalLine = styled.div`
     border-radius: 5px;
 `
 
-const Summary = ({ consultation_fee, followup_fee, appointment_schedules }) => {
+const Summary = ({ consultation_fee, followup_fee, appointment_schedules, isMobile }) => {
     return (
-        <SummaryCard className="py-3 pl-6" justify="space-around" align="center">
+        <SummaryCard className="py-3 pl-6" justify="space-around" align="center" style={{ margin: isMobile ? "12px 0px" : "24px 0px" }}>
             <VerticalLine />
             <VBox style={{ width: "25%" }}>
-                <P3>Consultation fee: <TbCurrencyTaka/>{consultation_fee}</P3>
-                <P3>Followup fee: <TbCurrencyTaka/>{followup_fee}</P3>
+                <P3>
+                    Consultation fee: <TbCurrencyTaka />
+                    {consultation_fee}
+                </P3>
+                <P3>
+                    Followup fee: <TbCurrencyTaka />
+                    {followup_fee}
+                </P3>
             </VBox>
             <VerticalLine />
             <P3 style={{ width: "25%" }}>Spoken Language: English, Bangla</P3>
             <VerticalLine />
-            <P3 style={{ width: "40%" }}>Consultation time: {appointment_schedules}</P3>
+            <P3 style={{ width: "40%" }}>
+                Consultation time: {appointment_schedules}
+            </P3>
         </SummaryCard>
     );
-}
+};
 
 export default Summary;

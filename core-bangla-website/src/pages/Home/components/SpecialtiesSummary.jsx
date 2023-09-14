@@ -136,8 +136,7 @@ const SpecialtiesSummary = ({ isMobile }) => {
                 </VBox>
                 {!isMobile && (
                     <BannerImage className='mt-3 mr-8' src={specialties_banner} />
-                )}
-                
+                )}   
             </HBox>
         </Container>
     );

@@ -1,11 +1,12 @@
 import { useState } from "react";
 import styled from "styled-components";
-import { TbCurrencyTaka } from 'react-icons/tb';
+import { TbCurrencyTaka } from "react-icons/tb";
 
-import { Button } from '../../../components/Buttons';
+import { Button } from "../../../components/Buttons";
 import { HBox, VBox } from "../../../components/Containers";
 import { H3, P1, P2, P3, P4 } from "../../../components/Typography";
 import colors from "../../../config/colors";
+
 
 const BannerCard = styled(VBox)`
     width: 100%;
@@ -21,9 +22,7 @@ const BannerCard = styled(VBox)`
 `
 
 const Image = styled.img`
-    height: 190px;
-    width: 180px;
-    border-radius: 20px;
+    border-radius: 100px;
     box-shadow: 0px 3px 5px ${colors.shadow};
 `
 
@@ -39,11 +38,6 @@ const HorizontalLine = styled.div`
     margin-bottom: 8px;
 `
 
-const SButton = styled(Button)`
-    height: 40px;
-    border-radius: 30px;
-`
-
 const Chip = styled(HBox)`
     color: ${colors.white};
     width: fit-content;
@@ -52,22 +46,21 @@ const Chip = styled(HBox)`
 `
 
 const Banner = ({ image, name, bmdc, doctor_type, qualification, specialty,
-    experience, institution, designation, department, consultation_fee, is_online }) => {
-        console.log(typeof(specialty));
+    experience, institution, designation, department, consultation_fee, is_online, isMobile }) => {
     return (          
-        <BannerCard className="my-4 p-4">
-            <HBox style={{ width: '100%' }}>
-                <VBox align='center' style={{ width: "22%" }}>
-                    <Image className="mb-3" src={`${import.meta.env.VITE_SERVER_URL}${image}`} alt="image"/>
-                    <P3 className="bold" color="">বি.এম.ডি.সি: {doctor_type===("MBBS") ? "এ-" : ""}{bmdc}</P3>
+        <BannerCard justify="center" align="center" style={{ padding: isMobile ? "16px" : "32px", margin: isMobile ? "16px 0px" : " 32px 0px" }}>
+            <HBox style={{ width: "100%" }} justify="center">
+                <VBox align='center' style={{ width: isMobile ? "fit-content" : "22%" }}>
+                    <Image className="mb-3" style={{ width: isMobile ? "100px" : "160px" }} src={`${import.meta.env.VITE_SERVER_URL}${image}`} alt="image"/>
+                    <P3 className="bold" style={{ marginTop: isMobile ? "-10px" : "" }}>বি.এম.ডি.সি: {doctor_type===("MBBS") ? "এ-" : ""}{bmdc}</P3>
                 </VBox>
-                
-                <VerticalLine />
-                
-                <VBox className="pl-3" style={{ width: "74%" }}>
-                    <HBox>
+                {!isMobile && (
+                    <VerticalLine />
+                )}
+                <VBox style={{ paddingLeft: isMobile ? "4px" : "24px", width: isMobile ? "fit-content" : "74%" }}>
+                    <HBox style={{ marginTop: isMobile ? "20px" : "" }}>
                         <P1 className="bold mb-2" color="third">{name}</P1>
-                        <Chip className="mb-3 ml-1" justify="center" align="center">
+                        <Chip className="mb-3 ml-1" >
                             <P4
                                 className="bold px-1 py-0_5"
                                 color="white"
@@ -82,11 +75,11 @@ const Banner = ({ image, name, bmdc, doctor_type, qualification, specialty,
                             </P4>
                         </Chip>
                     </HBox>
-                    <P3 className="mb-2">{qualification}</P3>
-                    <P3 className="mb-2">{designation}, {department}, {institution}</P3>
-                    <Chip className="mb-2">
+                    <P3 style={{ marginTop: isMobile ? "0px" : "", marginBottom: isMobile ? "6px" : "16px" }}>{qualification}</P3>
+                    <P3 style={{ marginBottom: isMobile ? "6px" : "16px" }}>{designation}, {department}, {institution}</P3>
+                    <Chip style={{ marginBottom: isMobile ? "1px" : "16px" }}>
                         {typeof specialty === "object" ? specialty.map((spec, index) => (
-                            <P4 className="bold px-1 mr-1" color="white" justify="center" align="center" style={{ backgroundColor: colors.blue, borderRadius: "5px" }} key={index}>
+                            <P4 className="bold px-1 mr-1 mb-1" color="white" justify="center" align="center" style={{ backgroundColor: colors.blue, borderRadius: "5px" }} key={index}>
                                 {spec}
                             </P4>
                         ))
@@ -97,20 +90,28 @@ const Banner = ({ image, name, bmdc, doctor_type, qualification, specialty,
                             </P4>
                         )}
                     </Chip>
-                    <HBox className="mb-2" align="center">
+                    <HBox style={{ marginBottom: isMobile ? "6px" : "16px" }} align="center">
                         <P3 className="">Consultation fee: </P3>
                         <P2 className="bold mt-0_5"><TbCurrencyTaka/></P2>
                         <P2 className="bold">{consultation_fee}</P2>
                     </HBox>
-                    <HBox className="mb-2">
+                    <HBox style={{ marginBottom: isMobile ? "24px" : "16px" }}>
                         <P3>Experience:</P3>
                         <P3 className="bold ml-1">{experience}</P3>
                     </HBox>
-                    
-                    <SButton className="mb-2" style={{ marginLeft: "70%", fontSize: "16px", width: "190px" }} color='third' elevated>অ্যাপয়েন্টমেন্ট নিন</SButton>
+                    <Button
+							color='third'
+							size={isMobile ? 'xs' : 'sm'}
+							style={{ marginBottom: isMobile ? "0px" : "16px", marginLeft: isMobile ? "50%" : "70%", borderRadius: 25, height: isMobile ? 30 : 40, width: "fit-content" }}
+							elevated
+						>
+							অ্যাপয়েন্টমেন্ট নিন
+					</Button>
                 </VBox>
             </HBox>
-            <HorizontalLine />
+            {!isMobile && (
+                <HorizontalLine />
+            )}  
         </BannerCard>
     );
 }
