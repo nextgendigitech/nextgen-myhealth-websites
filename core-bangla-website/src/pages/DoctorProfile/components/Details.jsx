@@ -16,7 +16,7 @@ const Details = ({ chambers, affiliations, attended, created_at, isMobile }) => 
     return (
         <>
             {(affiliations.length > 0) && (
-                <Card className="p-3" justify="center" style={{ margin: isMobile ? "12px 0px" : "24px 0px", width: isMobile ? "100%" : "65%"  }}>
+                <Card className="p-3" justify="center" style={{ margin: isMobile ? "16px 0px" : "24px 0px", width: isMobile ? "100%" : "65%"  }}>
                     <P2 className="bold">Affliliation(s):</P2>
                     <P3 style={{ marginLeft: isMobile ? "24px" : "48px" }}>{affiliations.map((affiliation, index) => (
                         <li className="my-2" key={index}>
@@ -26,7 +26,14 @@ const Details = ({ chambers, affiliations, attended, created_at, isMobile }) => 
                 </Card>
             )}
             {(chambers.length > 0) && (chambers[0].address.length > 0) && (
-                <Card className="p-3" justify="center" style={{ margin: isMobile ? "12px 0px" : "24px 0px", alignSelf: 'flex-end', width: isMobile ? "100%" : "65%"  }}>
+                <Card 
+                    className="p-3" 
+                    justify="center" 
+                    style={{ marginTop: isMobile ? "0px" : "24px", 
+                            marginBottom: isMobile ? "16px" : "24px", 
+                            alignSelf: 'flex-end', 
+                            width: isMobile ? "100%" : "65%"  
+                            }}>
                     <P2 className="bold">Chamber(s):</P2>
                     <P3 style={{ marginLeft: isMobile ? "24px" : "48px" }}>{chambers.map((chamber, index) => (
                         <li className="my-2"  key={index}>
@@ -35,7 +42,7 @@ const Details = ({ chambers, affiliations, attended, created_at, isMobile }) => 
                     ))}</P3>
                 </Card>
             )}
-            <Card className="p-3" justify="center" style={{ marginTop: isMobile ? "12px" : "24px", width: isMobile ? "100%" : "65%"  }}>
+            <Card className="p-3" justify="center" style={{ marginTop: isMobile ? "0px" : "24px", width: isMobile ? "100%" : "65%"  }}>
                 <P2 className="bold">Other information:</P2>
                 <P3 style={{ marginLeft: isMobile ? "24px" : "48px" }}>
                     <li className="pt-2">Joined Nextgen MyHealth: {getDate(created_at, 'long')}</li>
