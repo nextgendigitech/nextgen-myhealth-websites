@@ -102,6 +102,7 @@ const TopBar = () => {
             </SearchBar>
 
             <DoctorSearchDlg
+                isMobile={isMobile}
                 open={openSearchDlg}
                 setOpen={setOpenSearchDlg}
             />

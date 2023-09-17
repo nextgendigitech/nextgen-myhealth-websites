@@ -60,7 +60,7 @@ const DoctorCardContainer = styled(HBox)`
 `
 
 const DoctorCard = ({ id, name, image, bmdc, doctorType, qualification,
-                      specialty, fee, affiliation }) => {
+                      specialty, fee, affiliation, isMobile }) => {
     return (
         <DoctorCardContainer className='mb-3'>
             <HBox style={{width: '100%'}}>
@@ -73,11 +73,27 @@ const DoctorCard = ({ id, name, image, bmdc, doctorType, qualification,
                     <P3 className='ml-2'>{qualification}</P3>
                     <P3 className='ml-2' color='second'>{specialty}</P3>
                     <P3 className='ml-2' color='first'>{affiliation ? `${affiliation.designation} at ${affiliation.institution}` : <></>}</P3>
+                    {isMobile ?
+                        <>
+                            <VBox className='mt-1' align='center'>
+                                <Button className='bold ml-2' size='xs' color='third' style={{ height: 40, borderRadius: 20 }}><P2 color='white'>অ্যাপয়েন্টমেন্ট নিন</P2></Button>
+                                <P2 className='bold mt-1' color='first'><TbCurrencyTaka />{fee}</P2>
+                            </VBox>
+                        </>
+                        :
+                        <>
+                        </>
+                    }
                 </VBox>
+                {isMobile ?
+                <>
+                </>
+                :
                 <VBox justify='center' align='center' style={{flexGrow: '1'}}>
-                    <Button className='bold ml-2' size='sm' color='third' style={{ height: 40, borderRadius: 20 }}>অ্যাপয়েন্টমেন্ট নিন</Button>
+                    <Button className='bold ml-2' size='sm' color='third' style={{ height: 40, borderRadius: 20 }}><P2 color='white'>অ্যাপয়েন্টমেন্ট নিন</P2></Button>
                     <P2 className='bold mt-2' color='first'><TbCurrencyTaka />{fee}</P2>
                 </VBox>
+                }
             </HBox>
         </DoctorCardContainer>
     );
@@ -231,6 +247,7 @@ const DoctorSearchDlg = ({ isMobile, open, setOpen }) => {
                                         experience={doctor.experience}
                                         isOnline={doctor.is_online}
                                         affiliation={doctor.affiliation_summary[0] ? doctor.affiliation_summary[0] : null}
+                                        isMobile={isMobile}
                                     />
                                 </SLink>
                             ))}
