@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import colors from "../../config/colors";
 
+import colors from "../../config/colors";
 import { VBox } from "../../components/Containers";
 import { H3, H6, P3 } from "../../components/Typography";
 

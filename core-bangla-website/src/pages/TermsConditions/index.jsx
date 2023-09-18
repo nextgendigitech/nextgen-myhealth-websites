@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import styled from 'styled-components';
-import colors from "../../config/colors";
 
+import colors from "../../config/colors";
 import { VBox } from "../../components/Containers";
 import { H3, H6, P3 } from "../../components/Typography";
 import { termsAndConditionsData } from '../../data';
@@ -10,7 +10,7 @@ import responsive from '../../config/responsive';
 const Line = styled.div`
     width: 100%;
     border-bottom: 1px solid ${colors.grey};
-    margin-top: 16px;
+    margin-top: 3%; //16px
 `
 
 const TitleCard = styled(VBox)`
@@ -48,13 +48,13 @@ const TermsConditions = () => {
             <TitleCard className="mt-4" justify="center" align="center" style={{ marginTop: isMobile ? "16px" : "32px", height: isMobile ? '40px' : '70px', borderRadius: isMobile ? '0px 15px' : '0px 30px'}}>
                 <H3 className="bold" color="third">নিয়ম ও শর্তাবলী</H3>
             </TitleCard>
-            <VBox>
+            <VBox style={{ margin: isMobile ? "24px 16px" : "72px 120px" }}>
                 {Object.keys(termsAndConditionsData).map((key) => ( 
-                    <VBox style={{ margin: isMobile ? "0px 30px" : "0px 120px", marginTop: isMobile ? "24px" : "72px" }}>
+                    <VBox style={{ marginBottom: isMobile ? "16px" : "72px" }}>
                         <H6 color='third' className="bold">{key}</H6>
-                        <Line className='mb-0_5' />
+                        <Line style={{ marginBottom: isMobile ? "0px" : "4px" }}/>
                         {termsAndConditionsData[key].map((paragraph) => (
-                            <P3 className='mt-4 mx-3' style={{ textAlign: 'justify' }}>{paragraph}</P3>
+                            <P3 className='mx-3' style={{ marginTop: isMobile ? "16px" : "32px", textAlign: 'justify' }}>{paragraph}</P3>
                         ))}
                     </VBox>
                 ))}

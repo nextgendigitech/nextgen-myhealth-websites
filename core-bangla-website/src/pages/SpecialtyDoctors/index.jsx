@@ -109,7 +109,7 @@ const SpecialtyDoctors = () => {
                     <VBox style={{ alignItems: isMobile ? "center" : "", marginLeft: isMobile ? "" : "8%", marginTop: isMobile ? '24px' : '48px' }}>
                         <P2 className="bold">{doctors.length} জন চিকিৎসক পাওয়া গেছে</P2>
                     </VBox>
-                    <CardsContainer justify="center" style={{ margin: isMobile ? "2%" : "6%" }}>
+                    <CardsContainer justify="center" style={{ margin: isMobile ? "0px 2%" : "0px 60px" }}>
                         {doctors.map((doctor, index) => (
                             <DoctorCard
                                 isMobile={isMobile}

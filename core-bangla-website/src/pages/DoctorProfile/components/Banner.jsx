@@ -49,7 +49,7 @@ const Banner = ({ image, name, bmdc, doctor_type, qualification, specialty,
     return (          
         <BannerCard justify="center" align="center" style={{ padding: isMobile ? "16px" : "32px", margin: isMobile ? "16px 0px" : " 32px 0px" }}>
             <HBox style={{ width: "100%" }} justify="center">
-                <VBox align='center' style={{ width: isMobile ? "fit-content" : "22%" }}>
+                <VBox style={{ width: isMobile ? "fit-content" : "22%" }}>
                     <Image className="mb-3" style={{ width: isMobile ? "100px" : "160px" }} src={`${import.meta.env.VITE_SERVER_URL}${image}`} alt="image"/>
                     <P3 className="bold" style={{ marginTop: isMobile ? "-10px" : "" }}>বি.এম.ডি.সি: {doctor_type===("MBBS") ? "এ-" : ""}{bmdc}</P3>
                 </VBox>

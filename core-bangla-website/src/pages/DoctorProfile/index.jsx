@@ -63,7 +63,7 @@ const DoctorProfile = () => {
             console.log('DOCTOR DETAILS FETCH ERROR', error);
         })
     }
-    // console.log(doctor?.appointment_schedules?.length ? doctor.appointment_schedules[0].schedule : '')
+
     return (
         <VBox>
             <Header isMobile={isMobile}/>
@@ -89,7 +89,7 @@ const DoctorProfile = () => {
                     id={doctor?.id}
                     consultation_fee={doctor?.appointment_config?.fee}
                     followup_fee={doctor?.appointment_config?.followup_fee}
-                    // appointment_schedules={doctor?.appointment_schedules?.length ? doctor.appointment_schedules[0].schedule : {}}
+                    appointment_schedules = {doctor.appointment_schedules && doctor.appointment_schedules.length > 0 ? doctor.appointment_schedules[0].schedule : null}
                 />
                 <Details
                     isMobile={isMobile}

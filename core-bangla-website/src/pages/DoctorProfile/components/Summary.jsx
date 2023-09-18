@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import { TbCurrencyTaka } from "react-icons/tb";
+import { getTime } from "../../../utils";
+
 
 import { HBox, VBox } from "../../../components/Containers";
 import { P3 } from "../../../components/Typography";
@@ -20,7 +22,6 @@ const VSummaryCard = styled(VBox)`
 `
 
 const VerticalLine = styled.div`
-    height: 100px;
     width: 5px;
     margin-left: 4px;
     background: linear-gradient(
@@ -56,21 +57,53 @@ const Summary = ({ consultation_fee, followup_fee, appointment_schedules, isMobi
                         <VerticalLine style={{ height: "60px", marginLeft: "8px" }}/>
                     </HBox>
                     <HBox align="center">
-                        <VerticalLine style={{ height: "60px", marginRight: "8px" }}/>
-                        <P3>Consultation time: {appointment_schedules}</P3>
+                        {appointment_schedules ? (
+                            <>
+                                <VerticalLine style={{ height: "90px", marginRight: "8px" }}/>
+                                <VBox>
+                                    <P3>Consultation time:</P3>
+                                    <HBox>
+                                        <P3>Sunday: {appointment_schedules.sunday ? 'Available' : 'Not available'},&nbsp;</P3>
+                                        <P3>Monday: {appointment_schedules.monday ? 'Available' : 'Not available'},&nbsp;</P3>
+                                        
+                                    </HBox>
+                                    <HBox>
+                                        <P3>Tuesday: {appointment_schedules.tuesday ? 'Available' : 'Not available'},&nbsp;</P3>
+                                        <P3>Wednesday: {appointment_schedules.wednesday ? 'Available' : 'Not available'},&nbsp;</P3>
+                                    </HBox>
+                                    <HBox>
+                                        <P3>Thursday: {appointment_schedules.thursday ? 'Available' : 'Not available'},&nbsp;</P3>
+                                        <P3>Friday: {appointment_schedules.friday ? 'Available' : 'Not available'},&nbsp;</P3>
+                                    </HBox>
+                                    <HBox>
+                                        <P3>Saturday: {appointment_schedules.saturday ? 'Available' : 'Not available'}</P3>
+                                    </HBox>
+                                    <HBox>
+                                        <P3>Time: {getTime(appointment_schedules.startTime)}&nbsp;-&nbsp;{getTime(appointment_schedules.endTime)}</P3>
+                                        {/* <P3>End Time: {getTime(appointment_schedules.endTime)}</P3> */}
+                                    </HBox>
+                                </VBox>
+                            </>
+                            ) : (
+                            <>
+                                <VerticalLine style={{ height: "60px", marginRight: "8px" }}/>
+                                <VBox>
+                                    <P3>Consultation time:</P3>
+                                    <P3>No schedule available</P3>  
+                                </VBox>     
+                            </>
+                        )}
                     </HBox>
                 </VSummaryCard>
-                </>
-            
+            </>
             :
             <>
                 <HSummaryCard 
                     className="py-3 pl-6 my-3" 
-                    justify="space-around" 
                     align="center" 
                 >
-                    <VerticalLine />
-                    <VBox style={{ width: "25%" }}>
+                    <VerticalLine style={{ height: "110px" }}/>
+                    <VBox className="pl-3" style={{ width: "23%" }}>
                         <P3>
                             Consultation fee: <TbCurrencyTaka />
                             {consultation_fee}
@@ -80,12 +113,36 @@ const Summary = ({ consultation_fee, followup_fee, appointment_schedules, isMobi
                             {followup_fee}
                         </P3>
                     </VBox>
-                    <VerticalLine style={{ height: "100px" }}/>
-                    <P3 style={{ width: "25%" }}>Spoken Language: English, Bangla</P3>
-                    <VerticalLine style={{ height: "100px" }}/>
-                    <P3 style={{ width: "40%" }}>
-                        Consultation time: {appointment_schedules}
-                    </P3>
+                    <VerticalLine style={{ height: "110px" }}/>
+                    <P3 className="pl-3 mr-3" style={{ width: "25%" }}>Spoken Language: English, Bangla</P3>
+                    <VerticalLine style={{ height: "110px" }}/>
+                    <VBox className="pl-3">
+                        <P3>Consultation time:</P3>
+                        {appointment_schedules ? (
+                            <>
+                                <HBox>
+                                    <P3>Sunday: {appointment_schedules.sunday ? 'Available' : 'Not available'},&nbsp;</P3>
+                                    <P3>Monday: {appointment_schedules.monday ? 'Available' : 'Not available'},&nbsp;</P3>
+                                    <P3>Tuesday: {appointment_schedules.tuesday ? 'Available' : 'Not available'},&nbsp;</P3>
+                                    
+                                </HBox>
+                                <HBox>
+                                    <P3>Wednesday: {appointment_schedules.wednesday ? 'Available' : 'Not available'},&nbsp;</P3>
+                                    <P3>Thursday: {appointment_schedules.thursday ? 'Available' : 'Not available'},&nbsp;</P3>
+                                    <P3>Friday: {appointment_schedules.friday ? 'Available' : 'Not available'},&nbsp;</P3>
+                                </HBox>
+                                <HBox>
+                                    <P3>Saturday: {appointment_schedules.saturday ? 'Available' : 'Not available'}</P3>
+                                </HBox>
+                                <HBox>
+                                    <P3>Time: {getTime(appointment_schedules.startTime)}&nbsp;-&nbsp;{getTime(appointment_schedules.endTime)}</P3>
+                                    {/* <P3>End Time: {getTime(appointment_schedules.endTime)}</P3> */}
+                                </HBox>
+                            </>
+                            ) : (
+                            <P3>No schedule available</P3>
+                        )}
+                    </VBox>
                 </HSummaryCard>
             </>
             }
