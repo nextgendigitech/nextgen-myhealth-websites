@@ -2,8 +2,9 @@ import { useState, forwardRef, useEffect } from "react";
 import { useNavigate, Link, useParams, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import axios from "axios";
-import { FiX, FiArrowLeft, FiSearch } from "react-icons/fi";
-import { Scrollbars } from 'react-custom-scrollbars-2';
+import { BiArrowBack } from 'react-icons/bi';
+import { AiOutlineShareAlt } from "react-icons/ai";
+import { Box, IconButton, Typography, Snackbar, Alert } from "@mui/material";
 
 import { HBox, VBox } from "../../components/Containers";
 import { H1, H2, H3, H4, H5, H6, P1, P2, P3 } from "../../components/Typography";
@@ -14,7 +15,6 @@ import AppointmentDetails from "./components/AppointmentDetails";
 import Affiliation from "./components/Affiliation";
 import Chamber from "./components/Chamber"
 import Reviews from "./components/Reviews";
-import { Box } from "@mui/material";
 
 const SLink = styled(Link)`
     text-decoration: none;
@@ -28,6 +28,7 @@ const DoctorDetails = () => {
     
     const [isLoading, setIsLoading] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
+    const [openShareSnack, setOpenShareSnack] = useState(false);
 
     useEffect(() => {
         const setResponsiveness = () => {
@@ -74,10 +75,44 @@ const DoctorDetails = () => {
         })
     }
 
+    const copyUrl = () => {
+        navigator.clipboard.writeText(window.location.href)
+    }
+
     return (
+        <>
+        <Box
+            display='flex'
+            direction='row'
+            sx={{mt: 16, p: 2,
+                color: COLORS.whiteColor,
+                backgroundColor: COLORS.primaryColor,
+                alignItems: 'center',
+                justifyContent: 'space-between'
+                }}
+        >
+            <Box display='flex' direction='row' sx={{alignItems: 'center'}}>
+                <IconButton
+                    color="inherit"
+                    onClick={() => navigate(-1)}
+                > 
+                    <BiArrowBack />
+                </IconButton>
+                <Typography sx={{ml: 2}} variant="h6" component="div">
+                    Doctor Details
+                </Typography>
+            </Box>
+            <IconButton color='inherit'>
+                <AiOutlineShareAlt onClick={() => {copyUrl(); setOpenShareSnack(true)}} />
+            </IconButton>
+        </Box>
+        <Snackbar open={openShareSnack} autoHideDuration={6000} onClose={() => setOpenShareSnack(false)}>
+            <Alert onClose={() => setOpenShareSnack(false)} severity="success" sx={{ width: '100%' }}>
+                Doctor profile link is copied to your clipboard!
+            </Alert>
+        </Snackbar>
         <Box
         sx={{
-            mt: 6
         }}
         >
             <Banner
@@ -125,7 +160,7 @@ const DoctorDetails = () => {
                         />
                     ))}
                 </HBox>
-                {doctor.chambers?.length && <><H4 color='first' className={`${isMobile ? 'mx-2' : 'mx-4'} mb-1`}>Chambers ({doctor.chambers?.length})</H4>
+                {doctor.chambers?.length ? <><H4 color='first' className={`${isMobile ? 'mx-2' : 'mx-4'} mb-1`}>Chambers ({doctor.chambers?.length})</H4>
                 <VBox className={`${isMobile ? 'mx-2' : 'mx-4'} mb-2`}>
                     {doctor.chambers?.map((chamber, index) => (
                         <Chamber
@@ -133,11 +168,12 @@ const DoctorDetails = () => {
                             address={chamber.address}
                         />
                     ))}
-                </VBox></>}
+                </VBox></> : null}
                 {/* <H3 className={`${isMobile ? 'mx-2' : 'mx-4'} mb-2`}>Ratings & Reviews</H3> */}
                 {/* <Reviews isMobile={isMobile} /> */}
             </VBox>
         </Box>
+        </>
     );
 }
 

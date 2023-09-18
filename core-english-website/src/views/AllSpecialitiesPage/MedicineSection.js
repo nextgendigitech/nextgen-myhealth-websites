@@ -19,9 +19,6 @@ import Psychiatry from '../../images/specialties/psychiratry.png';
 import Rehab from '../../images/specialties/rehabilitation.png';
 import Pediatrics from '../../images/specialties/pediatrics.png';
 import AestheticDermatology from '../../images/specialties/female_beautification.png';
-import Modal from '../../components/Modal';
-import DoctorList from '../DoctorList';
-import { fetchDoctors }  from '../../services/apis';
 
 const MedicineSection = () => {
     const specialityMedicineList = [

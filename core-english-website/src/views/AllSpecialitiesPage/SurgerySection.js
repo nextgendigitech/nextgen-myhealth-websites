@@ -15,9 +15,6 @@ import Ophthalmology from '../../images/specialties/opthalmology.png';
 import Urology from '../../images/specialties/urology.png';
 import VascularSurgery from '../../images/specialties/vascularsurgery.png';
 import DentalSurgery from '../../images/specialties/dentistry.png';
-import Modal from '../../components/Modal';
-import { fetchDoctors }  from '../../services/apis';
-import DoctorList from '../DoctorList';
 
 const SurgerySection = () => {
     const specialitySurgeryList = [

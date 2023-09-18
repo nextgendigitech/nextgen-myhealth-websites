@@ -1,20 +1,13 @@
 import { Avatar, Box, Card, Grid, Typography, useMediaQuery, useTheme } from '@mui/material'
 import React from 'react'
-import DoctorImage from '../../images/ClientImageTwo.jpg'
 import COLORS from '../../utility/styles.js'
 import Button from '../../components/Button'
-import { borderColor } from '@mui/system'
-import { Hyperlink } from '../../components/Hyperlink'
-import Modal from '../../components/Modal'
 import { useState } from 'react'
-import DoctorProfile from '../DoctorProfile'
-import { AiOutlineShareAlt } from 'react-icons/ai'
 import { Link } from 'react-router-dom'
 
 const Doctor = (props) => {
   const isMobileScreen = useMediaQuery(useTheme().breakpoints.down('sm'));
   const [loader, setLoader] = useState(false)
-
 
   return (
     <>

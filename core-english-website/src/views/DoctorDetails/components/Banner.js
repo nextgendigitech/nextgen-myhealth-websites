@@ -62,23 +62,6 @@ const Banner = ({ isMobile, id, name, image, bmdc, doctorType, qualification, ex
 
     return (
         <Container align='center'>
-            <Topbar>
-                <Button
-                    className="ml-2"
-                    onClick={() => navigate(-1)}
-                >
-                    <FiArrowLeft />
-                </Button>
-                {/* <P1>Profile</P1> */}
-                <SLink to="/dashboard">
-                    <Button
-                        className="mr-2"
-                        // onClick={() => setShowUppernav(true)}
-                    >
-                        <FiX />
-                    </Button>
-                </SLink>
-            </Topbar>
             <VBox align="center" style={{ width: isMobile ? '95%' : '50%' }}>
                 <Image
                     className="mt-6"

@@ -9,7 +9,7 @@ import { getDate, getTime } from "../../../utility/utils";
 const Container = styled(HBox)`
     background-color: ${COLORS.lightBlue};
     border: 1px solid ${COLORS.primaryColor};
-    border-radius: 10px;
+    /* border-radius: 10px; */
     justify-content: space-between;
 `
 
@@ -45,11 +45,11 @@ const AppointmentDetails = ({ isMobile, fee, followupFee, attended, appointmentS
         <Container className={isMobile ? "p-2 m-2" : "p-3 m-4"}>
             <VBox className="m-1" style={{ width: isMobile ? 'calc(50% - 16px)' : 'calc(25% - 16px)' }}>
                 <P3 className='bold' color='second'>Consultation Fee</P3>
-                <P1>BDT {fee}</P1>
+                <P1>BDT {fee}*</P1>
             </VBox>
             <VBox className="m-1" style={{ width: isMobile ? 'calc(50% - 16px)' : 'calc(25% - 16px)' }}>
                 <P3 className='bold' color='second'>Follow Up Fee</P3>
-                <P1>BDT {followupFee}</P1>
+                <P1>BDT {followupFee}*</P1>
             </VBox>
             <VBox className="m-1" style={{ width: isMobile ? 'calc(50% - 16px)' : 'calc(25% - 16px)' }}>
                 <P3 className='bold' color='second'>Patient Attended</P3>
@@ -70,6 +70,7 @@ const AppointmentDetails = ({ isMobile, fee, followupFee, attended, appointmentS
                     ))}
                 </VBox>
             </VBox>
+            <P3 className="m-1 bold">*Including VAT and all charges</P3>
         </Container>
     )
 }
