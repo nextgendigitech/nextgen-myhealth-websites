@@ -18,9 +18,10 @@ const Container = styled(VBox)`
 
 const BankPayment = styled(VBox)`
     height: 80vh;
-    width: 45%;
+    width: 50%;
     background-color: ${colors.lightBlue};
     border-radius: 0 15px 0 15px;
+    min-height: 500px;
 
     @media only screen and (max-width: ${responsive.mobileThresh-1}px) {
         width: 100%;
@@ -49,6 +50,7 @@ const BkashPayment = styled(VBox)`
     width: 45%;
     background-color: ${colors.lightBlue};
     border-radius: 0 15px 0 15px;
+    min-height: 500px;
 
     @media only screen and (max-width: ${responsive.mobileThresh-1}px) {
         width: 100%;
