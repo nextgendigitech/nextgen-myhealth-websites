@@ -13,11 +13,13 @@ import Contact from './views/Contact';
 import Home from './views/Home';
 import Payment from './views/Payment';
 import AllSpecialities from './views/AllSpecialities';
+import AllSpecialitiesPage from './views/AllSpecialitiesPage';
 import PrivacyPolicy from './views/PrivacyPolicy';
 import RefundPolicy from './views/RefundPolicy';
 import TermsAndConditions from './views/TermsAndConditions';
 import ScrollTop from './components/ScrollTop';
 import DoctorProfile from './views/DoctorProfile';
+import DoctorListPage from './views/DoctorListPage';
 import DoctorDetails from './views/DoctorDetails';
 
 function App() {
@@ -28,7 +30,8 @@ function App() {
       <TopAppBar />
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/specialities' element={<AllSpecialities />} />
+          <Route path='/specialities' element={<AllSpecialitiesPage />} />
+          <Route path='/specialities/:specialty' element={<DoctorListPage />} />
           <Route path='/about-us' element={<AboutUs />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/payment' element={<Payment />} />
