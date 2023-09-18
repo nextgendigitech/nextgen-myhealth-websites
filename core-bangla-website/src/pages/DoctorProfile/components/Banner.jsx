@@ -1,10 +1,9 @@
-import { useState } from "react";
 import styled from "styled-components";
 import { TbCurrencyTaka } from "react-icons/tb";
 
 import { Button } from "../../../components/Buttons";
 import { HBox, VBox } from "../../../components/Containers";
-import { H3, P1, P2, P3, P4 } from "../../../components/Typography";
+import { P1, P2, P3, P4 } from "../../../components/Typography";
 import colors from "../../../config/colors";
 
 
@@ -58,9 +57,9 @@ const Banner = ({ image, name, bmdc, doctor_type, qualification, specialty,
                     <VerticalLine />
                 )}
                 <VBox style={{ paddingLeft: isMobile ? "4px" : "24px", width: isMobile ? "fit-content" : "74%" }}>
-                    <HBox style={{ marginTop: isMobile ? "20px" : "" }}>
-                        <P1 className="bold mb-2" color="third">{name}</P1>
-                        <Chip className="mb-3 ml-1" >
+                    <HBox style={{ justifyContent: isMobile ? "center" : "left", marginTop: isMobile ? "16px" : "" }}>
+                        <P1 className="bold" color="third" style={{ marginBottom: isMobile ? "8px" : "16px", }}>{name}</P1>
+                        <Chip className="ml-1" style={{ marginBottom: isMobile ? "10px" : "24px", }}>
                             <P4
                                 className="bold px-1 py-0_5"
                                 color="white"
@@ -90,7 +89,7 @@ const Banner = ({ image, name, bmdc, doctor_type, qualification, specialty,
                             </P4>
                         )}
                     </Chip>
-                    <HBox style={{ marginBottom: isMobile ? "6px" : "16px" }} align="center">
+                    <HBox style={{ marginBottom: isMobile ? "1px" : "16px" }} align="center">
                         <P3 className="">Consultation fee: </P3>
                         <P2 className="bold mt-0_5"><TbCurrencyTaka/></P2>
                         <P2 className="bold">{consultation_fee}</P2>
@@ -102,7 +101,7 @@ const Banner = ({ image, name, bmdc, doctor_type, qualification, specialty,
                     <Button
 							color='third'
 							size={isMobile ? 'xs' : 'sm'}
-							style={{ marginBottom: isMobile ? "0px" : "16px", marginLeft: isMobile ? "50%" : "70%", borderRadius: 25, height: isMobile ? 30 : 40, width: "fit-content" }}
+							style={{ align: "center", marginBottom: isMobile ? "0px" : "16px", marginLeft: isMobile ? "50%" : "70%", borderRadius: 25, height: isMobile ? 30 : 40, width: "fit-content" }}
 							elevated
 						>
 							অ্যাপয়েন্টমেন্ট নিন

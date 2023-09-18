@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import styled from "styled-components";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 
@@ -64,7 +63,7 @@ const DoctorProfile = () => {
             console.log('DOCTOR DETAILS FETCH ERROR', error);
         })
     }
-
+    // console.log(doctor?.appointment_schedules?.length ? doctor.appointment_schedules[0].schedule : '')
     return (
         <VBox>
             <Header isMobile={isMobile}/>
@@ -90,6 +89,7 @@ const DoctorProfile = () => {
                     id={doctor?.id}
                     consultation_fee={doctor?.appointment_config?.fee}
                     followup_fee={doctor?.appointment_config?.followup_fee}
+                    // appointment_schedules={doctor?.appointment_schedules?.length ? doctor.appointment_schedules[0].schedule : {}}
                 />
                 <Details
                     isMobile={isMobile}
