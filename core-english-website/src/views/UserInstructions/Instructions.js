@@ -65,21 +65,21 @@ const Instruction = () => {
 
                 <InstructionContainerInner className='pt-5 pl-5 pr-5'>
                     <H2 className='bold' align='center' color='black'>
-                        ARE YOU A PATIENT?
+                        DOWNLOAD THE PATIENT APP
                     </H2>
                     <a href='https://play.google.com/store/apps/details?id=com.nextgen_digitech.myhealth_patients' target='_blank'>
                         <img className='mt-5' src={logo} style={{ height: '50px' }} />
                     </a>
                     <img className='mt-5' src={qr_code} style={{height: '150px', width: '150px'}} />
                 </InstructionContainerInner>
-                <InstructionContainerInner className='pt-5 pl-5 pr-5'>
+                {/* <InstructionContainerInner className='pt-5 pl-5 pr-5'>
                     <H2 className='bold' align='center' color='black'>
                         ARE YOU A DOCTOR?
                     </H2>
                     <a href='https://drive.google.com/file/d/19_ICiyPu4Rt8Ca1_0nZDJd18cdnqpLtq/view?usp=sharing' target='_blank' className='mt-4'>
                         <Button name='Manual' color={COLORS.greenColor} size='large' />
                     </a>
-                </InstructionContainerInner>
+                </InstructionContainerInner> */}
             </InstructionContainerOuter>
         </Container>
     );
