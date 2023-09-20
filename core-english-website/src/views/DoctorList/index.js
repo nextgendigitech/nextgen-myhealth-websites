@@ -15,7 +15,7 @@ const DoctorList = (props) => {
               <h4>Please wait... We value your time!</h4>
             </> :
             <>
-            {props.doctors.length && props.doctors.length > 0 ? <h4>We have found <b>{props.doctors.length}</b> experienced {props.doctors.length > 1 ? 'doctors' : 'doctor'} for you.</h4> : <h4>No doctor found</h4>}
+            {props.doctors.length && props.doctors.length > 0 ? <h4>We have found <b>{props.doctors.length}</b> {props.doctors.length > 1 ? 'doctors' : 'doctor'} for you.</h4> : <h4>No doctor found</h4>}
             </>
           }
           
@@ -41,7 +41,7 @@ const DoctorList = (props) => {
               <h4>Please wait... We value your time!</h4>
             </> :
             <>
-            {props.doctors.length && props.doctors.length > 0 ? <h4>We have found <b>{props.doctors.length}</b> experienced {props.doctors.length > 1 ? 'doctors' : 'doctor'} for you.</h4> : <h4>No doctor found</h4>}
+            {props.doctors.length && props.doctors.length > 0 ? <h4>We have found <b>{props.doctors.length}</b> {props.doctors.length > 1 ? 'doctors' : 'doctor'} for you.</h4> : <h4>No doctor found</h4>}
             </>
           }
           <Grid container spacing={2}>

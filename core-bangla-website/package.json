@@ -12,7 +12,6 @@
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
-    "@esbuild/linux-x64": "^0.15.18",
     "@googlemaps/react-wrapper": "^1.1.35",
     "@mui/icons-material": "^5.14.8",
     "@mui/material": "^5.14.7",
@@ -20,6 +19,7 @@
     "@mui/styled-engine-sc": "^5.12.0",
     "axios": "^1.4.0",
     "css-loader": "^6.8.1",
+    "esbuild-windows-64": "^0.15.18",
     "moment": "^2.29.4",
     "moment-timezone": "^0.5.43",
     "react": "^18.2.0",

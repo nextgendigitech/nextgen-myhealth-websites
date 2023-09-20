@@ -12,13 +12,13 @@ const Home = () => {
   return (
     <>
         <Banner />
-        <UserInstructions />
         <Features />
         <Specialities />
         <Portals />
         <Steps />
         <Testimonial />
         <DoctorJoinSection />
+        <UserInstructions />
     </>
   )
 }
