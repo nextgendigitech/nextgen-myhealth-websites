@@ -14,7 +14,6 @@ import { HBox, VBox } from "../../../components/Containers";
 import { P2, P3 } from "../../../components/Typography";
 
 const Container = styled(HBox)`
-    margin-top: 8%;
     display: inline-block; 
     width: 100%;
     border: dashed 7px white;
@@ -49,8 +48,8 @@ const TitleCard = styled(VBox)`
 `
 
 const SButton = styled(Button)`
-   width: 100%;
-   border-radius: 30px;
+    width: 100%;
+    border-radius: 30px;
 `
 
 const RoundButton = styled(Button)`
@@ -68,11 +67,12 @@ const RoundButton = styled(Button)`
 `
 
 const CardContainer = styled(HBox)`
-    width: 280px;
+    width: 80%;
     padding: 6%;
     background: ${colors.veryLightBlue};
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 0px 20px;
+    flex-wrap: nowrap;
 `
 
 const Icon = styled.img`
@@ -90,9 +90,9 @@ const SLink = styled(Link)`
 
 const SpecialtiesCard = ({ icon, name, className, isMobile }) => {
     return (
-        <CardContainer className={className} align='center' style={{ width: isMobile ? '180px' : '280px' }}>
+        <CardContainer className={className} align='center' style={{ marginTop: isMobile ? '12px' : '24px', width: isMobile ? '150px' : '280px' }}>
             <HBox style={{ width: '15%' }}>
-                <Icon style={{ width: isMobile ? '22px' : '30px' }} src={icon} className="ml-2"/>
+                <Icon style={{ width: isMobile ? '22px' : '30px' }} src={icon} className="mx-2"/>
             </HBox>
             <HBox justify='center' align='center' style={{ width: 'clac(100% - 15%)'}}>
                 <P2 className="bold" style={{ marginLeft: isMobile ? '20px' : '30px' }}>{name}</P2>
@@ -103,10 +103,10 @@ const SpecialtiesCard = ({ icon, name, className, isMobile }) => {
 
 const SpecialtiesSummary = ({ isMobile }) => {
     return (
-        <Container justify='space-around'>
+        <Container justify='space-around' style={{marginTop: isMobile ? '60px' : '120px'}}>
             <HBox justify='space-around' align='center'>
                 <VBox className="" align='center' style={{ width: isMobile ? '35%' : '25%' }}>
-                    <TitleCard className="py-1 mb-3" justify="center" align='center'>
+                    <TitleCard className="p-1 mb-3" justify="center" align='center'>
                         <P3>আমাদের কাছে যে সকল</P3>
                         <P2 color='third'>বিশেষজ্ঞ চিকিৎসক</P2>
                         <P3>আছেন</P3>
@@ -117,27 +117,26 @@ const SpecialtiesSummary = ({ isMobile }) => {
                 </VBox>
                 <VBox align='center' className="" style={{ width: isMobile ? '60%' : '25%' }}>
                     <SLink to='/specialty-doctors/Internal Medicine'>
-                        <SpecialtiesCard isMobile={isMobile} className="my-3" icon={internal_medicine} name="ইন্টারনাল মেডিসিন"/>
+                        <SpecialtiesCard className='mt-2' isMobile={isMobile} icon={internal_medicine} name="ইন্টারনাল মেডিসিন"/>
                     </SLink>
                     <SLink to='/specialty-doctors/Cardiology'>
-                        <SpecialtiesCard isMobile={isMobile} className="" icon={cardiology} name="হৃদরোগ"/>
+                        <SpecialtiesCard isMobile={isMobile} icon={cardiology} name="হৃদরোগ"/>
                     </SLink>
                     <SLink to='/specialty-doctors/Respiratory Medicine'>
-                        <SpecialtiesCard isMobile={isMobile} className="my-3" icon={respiratory_medicine} name="ফুসফুস"/>
+                        <SpecialtiesCard isMobile={isMobile} icon={respiratory_medicine} name="ফুসফুস"/>
                     </SLink>
                     <SLink to='/specialty-doctors/Neurology'>
-                        <SpecialtiesCard isMobile={isMobile} className="" icon={neurology} name="স্নায়ুরোগ"/>
+                        <SpecialtiesCard isMobile={isMobile} icon={neurology} name="স্নায়ুরোগ"/>
                     </SLink>
                     <SLink to='/specialties'>
-                        <RoundButton className='my-3' style={{ height: isMobile ? '40px' : '50px' }} elevated>
+                        <RoundButton style={{ height: isMobile ? '40px' : '50px', marginTop: isMobile ? '12px' : '24px', marginBottom: isMobile ? '12px' : '24px' }} elevated>
                             <Icon src={right_arrow} alt="Button Image" style={{ width: isMobile ? "15px" : "20px" }}/>
                         </RoundButton>
                     </SLink>
                 </VBox>
                 {!isMobile && (
                     <BannerImage className='mt-3 mr-8' src={specialties_banner} />
-                )}
-                
+                )}   
             </HBox>
         </Container>
     );

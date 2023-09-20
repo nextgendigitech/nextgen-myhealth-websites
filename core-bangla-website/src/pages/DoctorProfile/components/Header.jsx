@@ -7,19 +7,17 @@ import IconButton from '@mui/material/IconButton';
 import { FiShare2 } from 'react-icons/fi';
 import { BiArrowBack } from 'react-icons/bi';
 
-import { HBox, VBox } from "../../../components/Containers";
-import { H3, P1, P2, P3, P4 } from "../../../components/Typography";
+import { HBox } from "../../../components/Containers";
+import { H3 } from "../../../components/Typography";
 import colors from "../../../config/colors";
 
 const TitleCard = styled(HBox)`
     width: 100%;
-    height: 70px;
     background: ${colors.veryLightGreen};
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 0px 30px;
 `
 
-const Header = () => {
+const Header = ({isMobile}) => {
     const [showAlert, setShowAlert] = useState(false);
 
     const copyToClipboard = () => {
@@ -45,10 +43,10 @@ const Header = () => {
     }
 
     return (
-        <TitleCard className="mt-4" justify="space-between" align="center">
-            <BiArrowBack className="ml-1 mt-1" style={{ marginLeft: "60px", cursor: "pointer" }} onClick={goBack} />
+        <TitleCard justify="space-between" align="center" style={{ marginTop: isMobile ? "16px" : "32px", height: isMobile ? '40px' : '70px', borderRadius: isMobile ? '0px 15px' : '0px 30px'}}>
+            <BiArrowBack className="ml-1" justify="center" style={{ marginLeft: isMobile ? "16px" : "60px", cursor: "pointer" }} onClick={goBack} />
             <H3>ডাক্তার সম্পর্কে বিস্তারিত</H3>
-            <FiShare2 className="ml-1 mt-1" style={{ marginRight: "60px", cursor: "pointer" }} onClick={copyToClipboard} />
+            <FiShare2 className="ml-1" justify="center" style={{ marginRight: isMobile ? "16px" : "60px", cursor: "pointer" }} onClick={copyToClipboard} />
             
             <Snackbar
                 open={showAlert}
@@ -58,7 +56,7 @@ const Header = () => {
             >
                 <SnackbarContent
                     sx={{
-                        backgroundColor: colors.green,
+                        backgroundColor: colors.green, fontSize: '12px'
                     }}
                     message="Doctor profile link is copied to clipboard!"
                     action={

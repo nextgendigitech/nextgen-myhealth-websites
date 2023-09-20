@@ -5,7 +5,7 @@ import { HBox, VBox } from "../../../components/Containers";
 import { H3, P2, P4 } from "../../../components/Typography";
 
 const Container = styled(VBox)`
-    margin-top: 8%;
+    width: 100%;
 `
 
 const VContainer = styled(VBox)`
@@ -28,7 +28,7 @@ const LowerHalfCircleCard = styled.div`
     background-color: ${colors.green};
     border-bottom-left-radius: 110px;
     border-bottom-right-radius: 105px;
-    margin: 0px 35px 50px 35px;
+    margin: 0px 35px 0px 35px;
   
 `
 
@@ -60,7 +60,7 @@ const BottomContentCard = ({ title, detail, mobileview }) => {
 
 const OurAdvantages = ({ isMobile }) => {
   return (
-    <Container>
+    <Container style={{paddingTop: isMobile ? '60px' : '120px'}}>
         <H3 className="bold" align="center" style={{ marginBottom: isMobile ? "8%" : "48px"  }}>আমাদের প্ল্যাটফর্ম ব্যবহার করার সুবিধা</H3>
         <HBox justify="center" align="center"> 
             <VContainer>

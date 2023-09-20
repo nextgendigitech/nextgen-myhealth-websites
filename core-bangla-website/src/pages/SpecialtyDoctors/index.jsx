@@ -15,15 +15,13 @@ import responsive from '../../config/responsive';
 
 const TitleCard = styled(VBox)`
     width: 100%;
-    height: 70px;
     background: ${colors.veryLightGreen};
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 0px 30px;
 `
 
 const CardsContainer = styled(HBox)`
-    margin-left: 104px;
-    margin-right: 104px;
+    margin-left: 6%;
+    margin-right: 6%;
 `
 
 const SpecialtyDoctors = () => {
@@ -91,8 +89,8 @@ const SpecialtyDoctors = () => {
 
     return (
         <VBox>
-            <TitleCard className="mt-4" justify="center" align="center">
-                <BiArrowBack className="mt-1" style={{ marginRight:"90%", cursor: "pointer" }} onClick={goBack} />
+            <TitleCard justify="center" align="center" style={{ marginTop: isMobile ? "12px" : "32px", height: isMobile ? '40px' : '70px', borderRadius: isMobile ? '0px 15px' : '0px 30px'}}>
+                <BiArrowBack justify="center" style={{ marginRight:"90%", cursor: "pointer" }} onClick={goBack} />
                 <H3 style={{ position: "absolute" }}>{specialtyEtoB[specialty]}</H3>
             </TitleCard>
             {
@@ -108,10 +106,10 @@ const SpecialtyDoctors = () => {
                 </HBox>
                 :
                 <VBox>
-                    <VBox style={{ paddingLeft: "120px" }}>
-                        <P2 className="bold mt-8">{doctors.length} জন চিকিৎসক পাওয়া গেছে</P2>
+                    <VBox style={{ alignItems: isMobile ? "center" : "", marginLeft: isMobile ? "" : "8%", marginTop: isMobile ? '24px' : '48px' }}>
+                        <P2 className="bold">{doctors.length} জন চিকিৎসক পাওয়া গেছে</P2>
                     </VBox>
-                    <CardsContainer>
+                    <CardsContainer justify="center" style={{ margin: isMobile ? "0px 2%" : "0px 60px" }}>
                         {doctors.map((doctor, index) => (
                             <DoctorCard
                                 isMobile={isMobile}

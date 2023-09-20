@@ -10,7 +10,6 @@ import responsive from '../../../config/responsive';
 const Container = styled(HBox)`
     padding-left: 8%;
     padding-right: 8%;
-    padding-top: 120px;
     width: 100%;
 `
 
@@ -66,14 +65,14 @@ const Image = styled.img`
     }
 `
 
-const RightArrowIcon = styled(FaArrowRightLong)`
-    font-size: 24px;
-    color: ${colors.darkGreen};
-`
+// const RightArrowIcon = styled(FaArrowRightLong)`
+//     font-size: 24px;
+//     color: ${colors.darkGreen};
+// `
 
 const ShortIntro = ({ isMobile }) => {
     return (
-        <Container align='space-around'>
+        <Container align='space-around' style={{marginTop: isMobile ? '60px' : '120px'}}>
             <VBox style={{ width: '30%' }}>
                 <GreenBox />
                 <Image className='' src={image}/>

@@ -6,9 +6,7 @@ import { HBox, VBox } from "../../../components/Containers";
 import { H5, P3 } from "../../../components/Typography";
 
 const Container = styled(HBox)`
-    margin-top: 8%;
     width: 100%;
-    margin-bottom: 8%;
 `
 
 const TopBorder = styled.div`
@@ -37,7 +35,7 @@ const Image = styled.img`
 
 const JoinDoctor = ({ isMobile }) => {
     return (
-        <Container justify="center">
+        <Container justify="center" style={{marginTop: isMobile ? '60px' : '120px'}}>
             <TopBorder />
             <VBox justify="center" align="center" style={{ width: "50%" }}>
                 <H5>আপনি কি একজন ডাক্তার এবং </H5>
