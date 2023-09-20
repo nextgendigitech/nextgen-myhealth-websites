@@ -66,40 +66,32 @@ const DoctorCard = ({ id, name, image, bmdc, doctorType, qualification,
             <HBox style={{width: '100%'}}>
                 <VBox className='ml-2 mb-2 mt-2' justify='center' style={{width: ''}}>
                     <DoctorImage src={`${import.meta.env.VITE_SERVER_URL}${image}`} />
-                    <P3 className='bold mt-2' color='third'>BMDC: {doctorType==='MBBS' ? 'A-' : ''}{bmdc}</P3>
+                    <P3 className='bold mt-2' color='third' align='center'>BMDC: {doctorType==='MBBS' ? 'A-' : ''}{bmdc}</P3>
                 </VBox>
                 <VBox className='mt-2' style={{width: '50%'}}>
                     <P2 className='bold ml-2'>{name}</P2>
                     <P3 className='ml-2'>{qualification}</P3>
                     <P3 className='ml-2' color='second'>{specialty}</P3>
                     <P3 className='ml-2' color='first'>{affiliation ? `${affiliation.designation} at ${affiliation.institution}` : <></>}</P3>
-                    {isMobile ?
-                        <>
-                            <VBox className='mt-1' align='center'>
-                                <Button className='bold ml-2' size='xs' color='third' style={{ height: 40, borderRadius: 20 }}><P2 color='white'>অ্যাপয়েন্টমেন্ট নিন</P2></Button>
-                                <P2 className='bold mt-1' color='first'><TbCurrencyTaka />{fee}</P2>
-                            </VBox>
-                        </>
-                        :
-                        <>
-                        </>
+                    {isMobile &&
+                        <VBox className='mt-1' align='center'>
+                            <Button className='bold ml-2' size='xs' color='third' style={{ height: 40, borderRadius: 20 }}><P2 color='white'>অ্যাপয়েন্টমেন্ট নিন</P2></Button>
+                            <P2 className='bold mt-1' color='first'><TbCurrencyTaka />{fee}</P2>
+                        </VBox>
                     }
                 </VBox>
-                {isMobile ?
-                <>
-                </>
-                :
-                <VBox justify='center' align='center' style={{flexGrow: '1'}}>
-                    <Button className='bold ml-2' size='sm' color='third' style={{ height: 40, borderRadius: 20 }}><P2 color='white'>অ্যাপয়েন্টমেন্ট নিন</P2></Button>
-                    <P2 className='bold mt-2' color='first'><TbCurrencyTaka />{fee}</P2>
-                </VBox>
+                {!isMobile &&
+                    <VBox justify='center' align='center' style={{flexGrow: '1'}}>
+                        <Button className='bold ml-2' size='sm' color='third' style={{ height: 40, borderRadius: 20 }}><P2 color='white'>অ্যাপয়েন্টমেন্ট নিন</P2></Button>
+                        <P2 className='bold mt-2' color='first'><TbCurrencyTaka />{fee}</P2>
+                    </VBox>
                 }
             </HBox>
         </DoctorCardContainer>
     );
 }
 
-const DoctorSearchDlg = ({ isMobile, open, setOpen }) => {
+const DoctorSearchDlg = ({ open, setOpen, isMobile }) => {
     const pageSize = 10;
     const [doctors, setDoctors] = useState([]);
     const [searchKey, setSearchKey] = useState("");

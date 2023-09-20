@@ -60,7 +60,7 @@ const BottomContentCard = ({ title, detail, mobileview }) => {
 
 const OurAdvantages = ({ isMobile }) => {
   return (
-    <Container style={{paddingTop: isMobile ? '30px' : '100px'}}>
+    <Container style={{paddingTop: isMobile ? '60px' : '120px'}}>
         <H3 className="bold" align="center" style={{ marginBottom: isMobile ? "8%" : "48px"  }}>আমাদের প্ল্যাটফর্ম ব্যবহার করার সুবিধা</H3>
         <HBox justify="center" align="center"> 
             <VContainer>

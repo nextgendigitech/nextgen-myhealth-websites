@@ -133,7 +133,6 @@ const Footer = () => {
     return (
         <>
             <FooterContainer1 className='pb-7'>
-                
                 {isMobile ?
                     <VBox align='center'>
                         <VBox>
@@ -146,13 +145,13 @@ const Footer = () => {
                     </VBox>
                     :
                     <>
-                    <LogoImage className='mt-4' src={logo} />
-                    <HBox justify='space-between'>
-                        {ContactHtml()}
-                        {CompanyHtml('bold', 'mt-2')}
-                        {ServiceHtml('bold', 'mt-2 clickable')}
-                        {PaymentHtml('bold', 'mt-2')}
-                    </HBox>
+                        <LogoImage className='mt-4' src={logo} />
+                        <HBox justify='space-between'>
+                            {ContactHtml()}
+                            {CompanyHtml('bold', 'mt-2')}
+                            {ServiceHtml('bold', 'mt-2 clickable')}
+                            {PaymentHtml('bold', 'mt-2')}
+                        </HBox>
                     </>
                 }
             </FooterContainer1>
@@ -179,6 +178,7 @@ const Footer = () => {
             <DoctorSearchDlg
                 open={openDoctorSearchDlg}
                 setOpen={setOpenDoctorSearchDlg}
+                isMobile={isMobile}
             />
         </>
     );

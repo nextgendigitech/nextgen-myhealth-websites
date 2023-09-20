@@ -11,8 +11,6 @@ const Container = styled(HBox)`
 `
 
 const Banner = ({ isMobile }) => {
-    
-
     const BannerImage = (height, width) => (
         <img src={banner_image} style={{height: height, width: width}}/>
     )
@@ -28,15 +26,15 @@ const Banner = ({ isMobile }) => {
     return (
         <Container>
             {isMobile ?
-            <VBox align='center' style={{height: '50vh', width: '100%'}}>
-                {BannerImage('30%', '90%')}
-                {BannerHtml('30%', '100%')}
-            </VBox>
-            :
-            <HBox justify='center' align='center' style={{height: '50vh', width: '90%'}}>
-                {BannerImage('50%', '30%')}
-                {BannerHtml('fit-content', '50%')}
-            </HBox>
+                <VBox align='center' style={{height: '50vh', width: '100%'}}>
+                    {BannerImage('30%', '90%')}
+                    {BannerHtml('30%', '100%')}
+                </VBox>
+                :
+                <HBox justify='center' align='center' style={{height: '50vh', width: '90%'}}>
+                    {BannerImage('50%', '30%')}
+                    {BannerHtml('fit-content', '50%')}
+                </HBox>
             }
         </Container>
     );
