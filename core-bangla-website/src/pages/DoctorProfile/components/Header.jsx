@@ -8,8 +8,9 @@ import { FiShare2 } from 'react-icons/fi';
 import { BiArrowBack } from 'react-icons/bi';
 
 import { HBox } from "../../../components/Containers";
-import { H3 } from "../../../components/Typography";
+import { H3, P3, P4 } from "../../../components/Typography";
 import colors from "../../../config/colors";
+import { Button } from "../../../components/Buttons";
 
 const TitleCard = styled(HBox)`
     width: 100%;
@@ -43,11 +44,34 @@ const Header = ({isMobile}) => {
     }
 
     return (
-        <TitleCard justify="space-between" align="center" style={{ marginTop: isMobile ? "16px" : "32px", height: isMobile ? '40px' : '70px', borderRadius: isMobile ? '0px 15px' : '0px 30px'}}>
-            <BiArrowBack className="ml-1" justify="center" style={{ marginLeft: isMobile ? "16px" : "60px", cursor: "pointer" }} onClick={goBack} />
+        <TitleCard 
+            justify="space-between" 
+            align="center" 
+            style={{alignContent: "center", 
+                    marginTop: isMobile ? "16px" : "32px", 
+                    height: isMobile ? '40px' : '70px', 
+                    borderRadius: isMobile ? '0px 15px' : '0px 30px'}}>
+            <BiArrowBack 
+                className="ml-1" 
+                justify="center" 
+                style={{ marginLeft: isMobile ? "16px" : "60px", cursor: "pointer" }} 
+                onClick={goBack} 
+            />
             <H3>ডাক্তার সম্পর্কে বিস্তারিত</H3>
-            <FiShare2 className="ml-1" justify="center" style={{ marginRight: isMobile ? "16px" : "60px", cursor: "pointer" }} onClick={copyToClipboard} />
-            
+            {/* <FiShare2 className="ml-1" justify="center" style={{ marginRight: isMobile ? "16px" : "60px", cursor: "pointer" }} onClick={copyToClipboard} /> */}
+            {/* <Button
+                className="ml-1"
+                color='first'
+                size={isMobile ? 'xs' : 'sm'}
+                onClick={copyToClipboard}
+                outlined
+            >
+                Share
+			</Button> */}
+            <HBox className="clickable" justify="center" style={{ marginRight: isMobile ? "16px" : "60px" }} onClick={copyToClipboard}>
+                <FiShare2 />
+                <P3 className="ml-1"><a>Share</a></P3>
+            </HBox>
             <Snackbar
                 open={showAlert}
                 autoHideDuration={3000}

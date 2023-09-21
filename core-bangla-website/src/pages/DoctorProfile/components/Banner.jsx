@@ -47,17 +47,31 @@ const Chip = styled(HBox)`
 const Banner = ({ image, name, bmdc, doctor_type, qualification, specialty,
     experience, institution, designation, department, consultation_fee, is_online, isMobile }) => {
     return (          
-        <BannerCard justify="center" align="center" style={{ padding: isMobile ? "16px" : "32px", margin: isMobile ? "16px 0px" : " 32px 0px" }}>
-            <HBox style={{ width: "100%" }} justify="center">
+        <BannerCard justify="center" align="center" style={{ padding: isMobile ? "8px" : "32px",
+                                                             margin: isMobile ? "16px 0px" : " 32px 0px" }}>
+            <HBox justify="center" style={{ width: "100%", 
+                            flexDirection: isMobile ? 'column' : 'row', 
+                            alignItems: isMobile ? "center" : "" }}>
                 <VBox style={{ width: isMobile ? "fit-content" : "22%" }}>
-                    <Image className="mb-3" style={{ width: isMobile ? "100px" : "160px" }} src={`${import.meta.env.VITE_SERVER_URL}${image}`} alt="image"/>
-                    <P3 className="bold" style={{ marginTop: isMobile ? "-10px" : "" }}>বি.এম.ডি.সি: {doctor_type===("MBBS") ? "এ-" : ""}{bmdc}</P3>
+                    <Image className="mb-3" 
+                            style={{ width: isMobile ? "100px" : "160px" }} 
+                            src={`${import.meta.env.VITE_SERVER_URL}${image}`} 
+                            alt="image"/>
+                    <P3 className="bold" 
+                        style={{ marginTop: isMobile ? "-10px" : "" }}>
+                            বি.এম.ডি.সি: {doctor_type===("MBBS") ? "এ-" : ""}{bmdc}
+                    </P3>
                 </VBox>
                 {!isMobile && (
                     <VerticalLine />
                 )}
-                <VBox style={{ paddingLeft: isMobile ? "4px" : "24px", width: isMobile ? "fit-content" : "74%" }}>
-                    <HBox style={{ justifyContent: isMobile ? "center" : "left", marginTop: isMobile ? "16px" : "" }}>
+                <VBox style={{ alignItems: isMobile ? "center" : "", 
+                                paddingLeft: isMobile ? "4px" : "24px", 
+                                width: isMobile ? "fit-content" : "74%" }}>
+                    <HBox style={{ alignItems: "center", 
+                                    flexDirection: isMobile ? 'column' : 'row', 
+                                    justifyContent: isMobile ? "center" : "left", 
+                                    marginTop: isMobile ? "16px" : "" }}>
                         <P1 className="bold" color="third" style={{ marginBottom: isMobile ? "8px" : "16px", }}>{name}</P1>
                         <Chip className="ml-1" style={{ marginBottom: isMobile ? "10px" : "24px", }}>
                             <P4
@@ -74,17 +88,31 @@ const Banner = ({ image, name, bmdc, doctor_type, qualification, specialty,
                             </P4>
                         </Chip>
                     </HBox>
-                    <P3 style={{ marginTop: isMobile ? "0px" : "", marginBottom: isMobile ? "6px" : "16px" }}>{qualification}</P3>
-                    <P3 style={{ marginBottom: isMobile ? "6px" : "16px" }}>{designation}, {department}, {institution}</P3>
-                    <Chip style={{ marginBottom: isMobile ? "1px" : "16px" }}>
+                    <P3 style={{ textAlign: isMobile ? "center" : "", 
+                                marginTop: isMobile ? "0px" : "", 
+                                marginBottom: isMobile ? "6px" : "16px" }}>{qualification}</P3>
+                    <P3 style={{ textAlign: isMobile ? "center" : "",
+                                marginBottom: isMobile ? "6px" : "16px" }}>{designation}, {department}, {institution}</P3>
+                    <Chip style={{ justifyContent: isMobile ? "center" : "", 
+                                    alignContent: isMobile ? "center" : "", 
+                                    marginBottom: isMobile ? "1px" : "16px" }}>
                         {typeof specialty === "object" ? specialty.map((spec, index) => (
-                            <P4 className="bold px-1 mr-1 mb-1" color="white" justify="center" align="center" style={{ backgroundColor: colors.blue, borderRadius: "5px" }} key={index}>
+                            <P4 className="bold px-1 mr-1 mb-1" 
+                                color="white" 
+                                style={{ backgroundColor: colors.blue, borderRadius: "5px" }} 
+                                key={index}
+                            >
                                 {spec}
                             </P4>
                         ))
                         : 
                         typeof specialty === "string" && (
-                            <P4 className="bold px-1 mr-1" color="white" justify="center" align="center" style={{ backgroundColor: colors.blue, borderRadius: "5px" }}>
+                            <P4 className="bold px-1 mr-1" 
+                                color="white" 
+                                justify="center" 
+                                align="center" 
+                                style={{ backgroundColor: colors.blue, borderRadius: "5px" }}
+                            >
                                 {specialty}
                             </P4>
                         )}
@@ -101,7 +129,12 @@ const Banner = ({ image, name, bmdc, doctor_type, qualification, specialty,
                     <Button
 							color='third'
 							size={isMobile ? 'xs' : 'sm'}
-							style={{ align: "center", marginBottom: isMobile ? "0px" : "16px", marginLeft: isMobile ? "50%" : "70%", borderRadius: 25, height: isMobile ? 30 : 40, width: "fit-content" }}
+							style={{ alignSelf: isMobile ? "center" : "", 
+                                    marginBottom: isMobile ? "0px" : "16px", 
+                                    marginLeft: isMobile ? "" : "75%", 
+                                    borderRadius: 25, 
+                                    height: isMobile ? 30 : 40, 
+                                    width: "fit-content" }}
 							elevated
 						>
 							অ্যাপয়েন্টমেন্ট নিন

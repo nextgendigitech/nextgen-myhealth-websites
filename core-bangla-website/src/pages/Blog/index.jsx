@@ -1,31 +1,45 @@
-import styled from 'styled-components';
+import { useState, useEffect } from "react";
 
-import colors from "../../config/colors";
-import { VBox } from "../../components/Containers";
-import { H3, H6, P3 } from "../../components/Typography";
+import { HBox, VBox } from "../../components/Containers";
+import Header from "./components/Header";
+import Category from "./components/Category";
+import Contents from "./components/Contents";
+import responsive from '../../config/responsive';
 
-const VContainer = styled(VBox)`
-    margin-top: 72px;
-    margin-left: 120px;
-    margin-right: 120px;
-`
 
-const TitleCard = styled(VBox)`
-    width: 100%;
-    height: 70px;
-    background: ${colors.veryLightGreen};
-    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 0px 30px;
-`
 
-const index = () => {
+const Blog = () => {
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const setResponsiveness = () => {
+            let orientation = !navigator.maxTouchPoints ? 'desktop' : !window.screen.orientation.angle ? 'portrait' : 'landscape';
+
+            if (orientation === 'portrait' || window.innerWidth < responsive.mobileThresh) {
+                setIsMobile(true);
+            }
+            else {
+                setIsMobile(false);
+            }
+        }
+        setResponsiveness();
+        window.addEventListener('resize', () => setResponsiveness());
+
+        return () => window.removeEventListener('resize', () => setResponsiveness());
+    }, []);
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    });
+
     return (
         <VBox>
-            <TitleCard className="mt-4" justify="center" align="center">
-                <H3 className="bold" color="third">আমার স্বাস্থ্য</H3>
-            </TitleCard>
+            <Header isMobile={isMobile}/>
+            <HBox style={{ margin: isMobile ? "4% 4%" : "4% 8%" }}>
+                <Category isMobile={isMobile} style={{ width: "25%" }} />
+                <Contents isMobile={isMobile} className="ml-2" style={{ width: "40%" }} />
+            </HBox> 
         </VBox> 
     );
 }
 
-export default index;
+export default Blog;
