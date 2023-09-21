@@ -7,9 +7,13 @@ import colors from '../../../config/colors';
 import responsive from '../../../config/responsive';
 
 const Container = styled(VBox)`
-    margin-top: 120px;
+    margin-top: 10px;
     padding-left: 8%;
     padding-right: 8%;
+
+    @media only screen and (max-width: ${responsive.mobileThresh-1}px) {
+        margin-top: 80px;
+    }
 `
 
 const Underline = styled.div`

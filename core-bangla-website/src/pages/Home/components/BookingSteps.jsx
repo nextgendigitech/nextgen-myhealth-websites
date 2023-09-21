@@ -2,17 +2,21 @@ import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 import { HBox, VBox } from '../../../components/Containers';
-import { H1, H2, H3, P1, P2, P3 } from '../../../components/Typography';
+import { H2, P1, P3 } from '../../../components/Typography';
 import colors from '../../../config/colors';
 import responsive from '../../../config/responsive';
 
 const Container = styled(VBox)`
-    margin-top: 120px;
+    margin-top: 80px;
     padding-left: 8%;
     padding-right: 8%;
+    
+    @media only screen and (max-width: ${responsive.mobileThresh-1}px) {
+        margin-bottom: -50px;
+    }
 
     @media only screen and (min-width: ${responsive.mobileThresh}px) {
-        margin-bottom: -240px;
+        margin-bottom: -280px;
     }
 `
 

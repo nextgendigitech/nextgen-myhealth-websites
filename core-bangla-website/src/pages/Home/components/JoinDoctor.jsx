@@ -6,9 +6,8 @@ import { HBox, VBox } from "../../../components/Containers";
 import { H5, P3 } from "../../../components/Typography";
 
 const Container = styled(HBox)`
-    margin-top: 8%;
+    margin-top: 80px;
     width: 100%;
-    margin-bottom: 8%;
 `
 
 const TopBorder = styled.div`

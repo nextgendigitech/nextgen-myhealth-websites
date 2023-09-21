@@ -8,10 +8,14 @@ import colors from '../../../config/colors';
 import responsive from '../../../config/responsive';
 
 const Container = styled(HBox)`
+    margin-top: 50px;
     padding-left: 8%;
     padding-right: 8%;
-    padding-top: 120px;
     width: 100%;
+
+    @media only screen and (max-width: ${responsive.mobileThresh-1}px) {
+        margin-top: 80px;
+    }
 `
 
 const GreenBox = styled.div`

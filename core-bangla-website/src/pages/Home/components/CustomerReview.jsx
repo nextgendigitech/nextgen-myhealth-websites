@@ -7,6 +7,7 @@ import { HBox, VBox } from "../../../components/Containers";
 import { H3, P2, P4 } from "../../../components/Typography";
 
 const Container = styled(HBox)`
+    margin-top: 30px;
     width: 100%;
     background: linear-gradient(
         276.53deg,
