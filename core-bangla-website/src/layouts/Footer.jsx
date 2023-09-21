@@ -14,7 +14,7 @@ import DoctorSearchDlg from './DoctorSearchDlg';
 const FooterContainer1 = styled(VBox)`
     padding-left: 8%;
     padding-right: 8%;
-    margin-top: 120px;
+    margin-top: 20px;
     background-color: ${colors.mercury};
     border-radius: 30px 30px 0px 0px;
 `
