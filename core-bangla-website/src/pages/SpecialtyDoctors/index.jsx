@@ -1,4 +1,4 @@
-import { useState, useEffect, CSSProperties } from "react";
+import { useState, useEffect } from "react";
 import colors from "../../config/colors";
 import styled from "styled-components";
 import axios from "axios";

@@ -1,14 +1,21 @@
 import { useState, useEffect } from "react";
+import styled from "styled-components";
+import { useParams } from "react-router-dom";
 
 import { HBox, VBox } from "../../components/Containers";
-import Header from "./components/Header";
-import Category from "./components/Category";
-import Contents from "./components/Contents";
+import ContentBody from "./components/ContentBody";
+import AboutAuthor from "./components/AboutAuthor";
+// import ReadMore from "./components/ReadMore";
 import responsive from '../../config/responsive';
 
+const Container = styled(VBox)`
+    margin-left: 8%;
+    margin-right: 8%;
+`
 
-
-const Blog = () => {
+const BlogContent = () => {
+    let { title } = useParams();
+    // const [isLoading, setIsLoading] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
@@ -31,22 +38,18 @@ const Blog = () => {
         window.scrollTo(0, 0);
     });
 
+    // useEffect(() => {
+    //     setIsLoading(true);
+    //     fetchDoctor();
+    // }, []);
+
     return (
-        <VBox>
-            <Header isMobile={isMobile}/>
-            {isMobile ? (
-                <VBox style={{ margin: isMobile ? "4% 4%" : "4% 8%", flexWrap: "nowrap" }}>
-                    <Category isMobile={isMobile} />
-                    <Contents isMobile={isMobile} className="ml-2" />
-                </VBox> 
-            ):(
-                <HBox style={{ margin: isMobile ? "4% 4%" : "4% 8%", flexWrap: "nowrap" }}>
-                    <Category isMobile={isMobile} style={{ width: "25%" }} />
-                    <Contents isMobile={isMobile} className="ml-2" style={{ width: "40%" }} />
-                </HBox> 
-            )}
-        </VBox> 
-    );
+        <Container >
+            <ContentBody isMobile={isMobile} title={title}/>
+            <AboutAuthor isMobile={isMobile}/>
+            {/* <ReadMore/> */}
+        </Container>
+    )
 }
 
-export default Blog;
+export default BlogContent;
