@@ -47,10 +47,9 @@ const Chip = styled(HBox)`
 const Banner = ({ image, name, bmdc, doctor_type, qualification, specialty,
     experience, institution, designation, department, consultation_fee, is_online, isMobile }) => {
     return (          
-        <BannerCard justify="center" align="center" style={{ padding: isMobile ? "8px" : "32px",
-                                                             margin: isMobile ? "16px 0px" : " 32px 0px" }}>
+        <BannerCard className={isMobile ? "p-1 my-2" : "p-4 my-4"} justify="center" align="center" >
             <HBox justify="center" style={{ width: "100%", 
-                            flexDirection: isMobile ? 'column' : 'row', 
+                            flexDirection: isMobile ? "column" : "row", 
                             alignItems: isMobile ? "center" : "" }}>
                 <VBox style={{ width: isMobile ? "fit-content" : "22%" }}>
                     <Image className="mb-3" 
@@ -65,15 +64,13 @@ const Banner = ({ image, name, bmdc, doctor_type, qualification, specialty,
                 {!isMobile && (
                     <VerticalLine />
                 )}
-                <VBox style={{ alignItems: isMobile ? "center" : "", 
-                                paddingLeft: isMobile ? "4px" : "24px", 
-                                width: isMobile ? "fit-content" : "74%" }}>
-                    <HBox style={{ alignItems: "center", 
-                                    flexDirection: isMobile ? 'column' : 'row', 
-                                    justifyContent: isMobile ? "center" : "left", 
-                                    marginTop: isMobile ? "16px" : "" }}>
-                        <P1 className="bold" color="third" style={{ marginBottom: isMobile ? "8px" : "16px", }}>{name}</P1>
-                        <Chip className="ml-1" style={{ marginBottom: isMobile ? "10px" : "24px", }}>
+                <VBox className={isMobile ? "pl-0_5" : "pl-3"} style={{ alignItems: isMobile ? "center" : "", 
+                                                                        width: isMobile ? "fit-content" : "74%" }}>
+                    <HBox className={isMobile ? "mt-2" : ""} style={{ alignItems: "center", 
+                                    flexDirection: isMobile ? "column" : "row", 
+                                    justifyContent: isMobile ? "center" : "left" }}>
+                        <P1 color="third" className={isMobile ? "bold mb-1" : "bold mb-2"}>{name}</P1>
+                        <Chip className={isMobile ? "ml-1 mb-1" : "ml-1 mb-3"}>
                             <P4
                                 className="bold px-1 py-0_5"
                                 color="white"
@@ -88,14 +85,10 @@ const Banner = ({ image, name, bmdc, doctor_type, qualification, specialty,
                             </P4>
                         </Chip>
                     </HBox>
-                    <P3 style={{ textAlign: isMobile ? "center" : "", 
-                                marginTop: isMobile ? "0px" : "", 
-                                marginBottom: isMobile ? "6px" : "16px" }}>{qualification}</P3>
-                    <P3 style={{ textAlign: isMobile ? "center" : "",
-                                marginBottom: isMobile ? "6px" : "16px" }}>{designation}, {department}, {institution}</P3>
-                    <Chip style={{ justifyContent: isMobile ? "center" : "", 
-                                    alignContent: isMobile ? "center" : "", 
-                                    marginBottom: isMobile ? "1px" : "16px" }}>
+                    <P3 className={isMobile ? "mb-1" : "mb-2"} style={{ textAlign: isMobile ? "center" : "" }}>{qualification}</P3>
+                    <P3 className={isMobile ? "mb-1" : "mb-2"} style={{ textAlign: isMobile ? "center" : "" }}>{designation}, {department}, {institution}</P3>
+                    <Chip className={isMobile ? "mb-1" : "mb-2"} style={{ justifyContent: isMobile ? "center" : "", 
+                                    alignContent: isMobile ? "center" : "" }}>
                         {typeof specialty === "object" ? specialty.map((spec, index) => (
                             <P4 className="bold px-1 mr-1 mb-1" 
                                 color="white" 
@@ -122,23 +115,25 @@ const Banner = ({ image, name, bmdc, doctor_type, qualification, specialty,
                         <P2 className="bold mt-0_5"><TbCurrencyTaka/></P2>
                         <P2 className="bold">{consultation_fee}</P2>
                     </HBox>
-                    <HBox style={{ marginBottom: isMobile ? "24px" : "16px" }}>
+                    <HBox className={isMobile ? "mb-3" : "mb-2"}>
                         <P3>Experience:</P3>
                         <P3 className="bold ml-1">{experience}</P3>
                     </HBox>
-                    <Button
-							color='third'
-							size={isMobile ? 'xs' : 'sm'}
-							style={{ alignSelf: isMobile ? "center" : "", 
-                                    marginBottom: isMobile ? "0px" : "16px", 
-                                    marginLeft: isMobile ? "" : "75%", 
-                                    borderRadius: 25, 
-                                    height: isMobile ? 30 : 40, 
-                                    width: "fit-content" }}
-							elevated
-						>
-							অ্যাপয়েন্টমেন্ট নিন
-					</Button>
+                    <HBox justify={isMobile ? "center" : "flex-end"}>
+                        <Button
+                                className={isMobile ? "" : "mb-2"}
+                                color="third"
+                                size={isMobile ? "xs" : "sm"}
+                                style={{ alignContent: isMobile ? "center" : "", 
+                                        borderRadius: 25, 
+                                        height: isMobile ? 30 : 40, 
+                                        width: "fit-content" }}
+                                elevated
+                            >
+                                অ্যাপয়েন্টমেন্ট নিন
+                        </Button>
+                    </HBox>
+                    
                 </VBox>
             </HBox>
             {!isMobile && (

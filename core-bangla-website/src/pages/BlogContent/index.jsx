@@ -5,13 +5,9 @@ import { useParams } from "react-router-dom";
 import { HBox, VBox } from "../../components/Containers";
 import ContentBody from "./components/ContentBody";
 import AboutAuthor from "./components/AboutAuthor";
-// import ReadMore from "./components/ReadMore";
+import ReadMore from "./components/ReadMore";
 import responsive from '../../config/responsive';
 
-const Container = styled(VBox)`
-    margin-left: 8%;
-    margin-right: 8%;
-`
 
 const BlogContent = () => {
     let { title } = useParams();
@@ -44,11 +40,11 @@ const BlogContent = () => {
     // }, []);
 
     return (
-        <Container >
+        <VBox className={isMobile ? "mx-2 mt-1" : "mx-8 px-6"}>
             <ContentBody isMobile={isMobile} title={title}/>
             <AboutAuthor isMobile={isMobile}/>
-            {/* <ReadMore/> */}
-        </Container>
+            <ReadMore isMobile={isMobile}/>
+        </VBox>
     )
 }
 

@@ -40,7 +40,7 @@ const Summary = ({ consultation_fee, followup_fee, appointment_schedules, isMobi
             <>
                 <VSummaryCard className="py-1 px-2">
                     <HBox>
-                        <VerticalLine style={{ height: "60px", marginRight: "8px" }}/>
+                        <VerticalLine className="mr-1" style={{ height: "60px" }}/>
                         <VBox justify="center">
                             <P3>
                                 Consultation fee: <TbCurrencyTaka />
@@ -54,29 +54,29 @@ const Summary = ({ consultation_fee, followup_fee, appointment_schedules, isMobi
                     </HBox>
                     <HBox align="center" justify="right">
                         <P3 justify="center">Spoken Language: English, Bangla</P3>
-                        <VerticalLine style={{ height: "60px", marginLeft: "8px" }}/>
+                        <VerticalLine className="mr-1" style={{ height: "60px" }}/>
                     </HBox>
                     <HBox align="center">
                         {appointment_schedules ? (
                             <>
-                                <VerticalLine style={{ height: "90px", marginRight: "8px" }}/>
+                                <VerticalLine className="mr-1" style={{ height: "90px" }}/>
                                 <VBox>
                                     <P3>Consultation time:</P3>
                                     <HBox>
-                                        <P3>Sunday: {appointment_schedules.sunday ? 'Available' : 'Not available'},&nbsp;</P3>
-                                        <P3>Monday: {appointment_schedules.monday ? 'Available' : 'Not available'},&nbsp;</P3>
+                                        <P3>Sunday: {appointment_schedules.sunday ? "Available" : "Not available"},&nbsp;</P3>
+                                        <P3>Monday: {appointment_schedules.monday ? "Available" : "Not available"},&nbsp;</P3>
                                         
                                     </HBox>
                                     <HBox>
-                                        <P3>Tuesday: {appointment_schedules.tuesday ? 'Available' : 'Not available'},&nbsp;</P3>
-                                        <P3>Wednesday: {appointment_schedules.wednesday ? 'Available' : 'Not available'},&nbsp;</P3>
+                                        <P3>Tuesday: {appointment_schedules.tuesday ? "Available" : "Not available"},&nbsp;</P3>
+                                        <P3>Wednesday: {appointment_schedules.wednesday ? "Available" : "Not available"},&nbsp;</P3>
                                     </HBox>
                                     <HBox>
-                                        <P3>Thursday: {appointment_schedules.thursday ? 'Available' : 'Not available'},&nbsp;</P3>
-                                        <P3>Friday: {appointment_schedules.friday ? 'Available' : 'Not available'},&nbsp;</P3>
+                                        <P3>Thursday: {appointment_schedules.thursday ? "Available" : "Not available"},&nbsp;</P3>
+                                        <P3>Friday: {appointment_schedules.friday ? "Available" : "Not available"},&nbsp;</P3>
                                     </HBox>
                                     <HBox>
-                                        <P3>Saturday: {appointment_schedules.saturday ? 'Available' : 'Not available'}</P3>
+                                        <P3>Saturday: {appointment_schedules.saturday ? "Available" : "Not available"}</P3>
                                     </HBox>
                                     <HBox>
                                         <P3>Time: {getTime(appointment_schedules.startTime)}&nbsp;-&nbsp;{getTime(appointment_schedules.endTime)}</P3>
@@ -86,7 +86,7 @@ const Summary = ({ consultation_fee, followup_fee, appointment_schedules, isMobi
                             </>
                             ) : (
                             <>
-                                <VerticalLine style={{ height: "60px", marginRight: "8px" }}/>
+                                <VerticalLine className="mr-1" style={{ height: "60px" }}/>
                                 <VBox>
                                     <P3>Consultation time:</P3>
                                     <P3>No schedule available</P3>  
@@ -121,18 +121,18 @@ const Summary = ({ consultation_fee, followup_fee, appointment_schedules, isMobi
                         {appointment_schedules ? (
                             <>
                                 <HBox>
-                                    <P3>Sunday: {appointment_schedules.sunday ? 'Available' : 'Not available'},&nbsp;</P3>
-                                    <P3>Monday: {appointment_schedules.monday ? 'Available' : 'Not available'},&nbsp;</P3>
-                                    <P3>Tuesday: {appointment_schedules.tuesday ? 'Available' : 'Not available'},&nbsp;</P3>
+                                    <P3>Sunday: {appointment_schedules.sunday ? "Available" : "Not available"},&nbsp;</P3>
+                                    <P3>Monday: {appointment_schedules.monday ? "Available" : "Not available"},&nbsp;</P3>
+                                    <P3>Tuesday: {appointment_schedules.tuesday ? "Available" : "Not available"},&nbsp;</P3>
                                     
                                 </HBox>
                                 <HBox>
-                                    <P3>Wednesday: {appointment_schedules.wednesday ? 'Available' : 'Not available'},&nbsp;</P3>
-                                    <P3>Thursday: {appointment_schedules.thursday ? 'Available' : 'Not available'},&nbsp;</P3>
-                                    <P3>Friday: {appointment_schedules.friday ? 'Available' : 'Not available'},&nbsp;</P3>
+                                    <P3>Wednesday: {appointment_schedules.wednesday ? "Available" : "Not available"},&nbsp;</P3>
+                                    <P3>Thursday: {appointment_schedules.thursday ? "Available" : "Not available"},&nbsp;</P3>
+                                    <P3>Friday: {appointment_schedules.friday ? "Available" : "Not available"},&nbsp;</P3>
                                 </HBox>
                                 <HBox>
-                                    <P3>Saturday: {appointment_schedules.saturday ? 'Available' : 'Not available'}</P3>
+                                    <P3>Saturday: {appointment_schedules.saturday ? "Available" : "Not available"}</P3>
                                 </HBox>
                                 <HBox>
                                     <P3>Time: {getTime(appointment_schedules.startTime)}&nbsp;-&nbsp;{getTime(appointment_schedules.endTime)}</P3>

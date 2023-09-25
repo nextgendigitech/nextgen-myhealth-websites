@@ -7,7 +7,7 @@ import Header from "./components/Header";
 import Banner from "./components/Banner";
 import Summary from "./components/Summary";
 import Details from "./components/Details";
-import responsive from '../../config/responsive';
+import responsive from "../../config/responsive";
 
 
 const DoctorProfile = () => {
@@ -18,9 +18,9 @@ const DoctorProfile = () => {
 
     useEffect(() => {
         const setResponsiveness = () => {
-            let orientation = !navigator.maxTouchPoints ? 'desktop' : !window.screen.orientation.angle ? 'portrait' : 'landscape';
+            let orientation = !navigator.maxTouchPoints ? "desktop" : !window.screen.orientation.angle ? "portrait" : "landscape";
 
-            if (orientation === 'portrait' || window.innerWidth < responsive.mobileThresh) {
+            if (orientation === "portrait" || window.innerWidth < responsive.mobileThresh) {
                 setIsMobile(true);
             }
             else {
@@ -28,9 +28,9 @@ const DoctorProfile = () => {
             }
         }
         setResponsiveness();
-        window.addEventListener('resize', () => setResponsiveness());
+        window.addEventListener("resize", () => setResponsiveness());
 
-        return () => window.removeEventListener('resize', () => setResponsiveness());
+        return () => window.removeEventListener("resize", () => setResponsiveness());
     }, []);
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -44,7 +44,7 @@ const DoctorProfile = () => {
     const fetchDoctor = () => {
         setIsLoading(true);
         axios({
-            method: 'GET',
+            method: "GET",
             url: `${import.meta.env.VITE_SERVER_URL}/patient/doctor-details/`,
             params: {
                 id: id
@@ -55,12 +55,12 @@ const DoctorProfile = () => {
             if (response.status === 200) {
                 setDoctor(response.data);
             } else {
-                console.log('DOCTOR DETAILS FETCH FAILED', response.status);
+                console.log("DOCTOR DETAILS FETCH FAILED", response.status);
             }
         })
         .catch((error) => {
             setIsLoading(false);
-            console.log('DOCTOR DETAILS FETCH ERROR', error);
+            console.log("DOCTOR DETAILS FETCH ERROR", error);
         })
     }
 
@@ -79,9 +79,9 @@ const DoctorProfile = () => {
                     qualification={doctor?.qualification}
                     consultation_fee={doctor?.appointment_config?.fee}
                     experience={doctor?.experience}
-                    institution={doctor?.affiliation_summary?.length ? doctor.affiliation_summary[0].institution : ''}
-                    designation={doctor?.affiliation_summary?.length ? doctor.affiliation_summary[0].designation : ''}
-                    department={doctor?.affiliation_summary?.length ? doctor.affiliation_summary[0].department : ''}
+                    institution={doctor?.affiliation_summary?.length ? doctor.affiliation_summary[0].institution : ""}
+                    designation={doctor?.affiliation_summary?.length ? doctor.affiliation_summary[0].designation : ""}
+                    department={doctor?.affiliation_summary?.length ? doctor.affiliation_summary[0].department : ""}
                     specialty={doctor?.specialty}
                 />
                 <Summary 
@@ -95,9 +95,9 @@ const DoctorProfile = () => {
                     isMobile={isMobile}
                     id={doctor?.id}
                     attended={doctor?.attended}
-                    created_at={doctor?.created_at?.length ? doctor.created_at : ''}
-                    affiliations={doctor?.affiliations?.length ? doctor.affiliations : ''}
-                    chambers={doctor?.chambers?.length ? doctor.chambers : ''}
+                    created_at={doctor?.created_at?.length ? doctor.created_at : ""}
+                    affiliations={doctor?.affiliations?.length ? doctor.affiliations : ""}
+                    chambers={doctor?.chambers?.length ? doctor.chambers : ""}
                 />
             </VBox>
         </VBox>
