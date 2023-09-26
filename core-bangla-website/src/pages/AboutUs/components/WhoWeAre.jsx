@@ -41,8 +41,8 @@ const VideoContainer = styled.iframe`
 
 const WhoWeAre = ({ isMobile }) => {
     return (
-        <Container style={{paddingTop: isMobile ? '30px' : '60px'}}>
-            <HBox align='center' className="mb-4">
+        <Container style={{ marginTop: isMobile ? '60px' : '100px' }}>
+            <HBox align="center" className="mb-4">
                 <VerticalBorder/>
                 <VBox className="ml-2">
                     <H2 color="third" className="bold">আমাদের</H2>
@@ -56,9 +56,9 @@ const WhoWeAre = ({ isMobile }) => {
                 লিমিটেড বাংলাদেশের একটি স্বাস্থ্য পণ্য। এটির উদ্ভাবনী ভার্চুয়াল স্বাস্থ্যসেবা প্ল্যাটফর্ম বাংলাদেশের জনগণের 
                 স্বাস্থ্যসেবা বিষয়ক ভোগান্তি কমাতে বদ্ধপরিকর।
             </P1>
-            <HBox justify='center' style={{marginTop: isMobile ? '30px' : '100px'}}>
+            <HBox justify="center" style={{ marginTop: isMobile ? '60px' : '100px' }}>
                 <VideoContainer
-                    style={{ width: isMobile ? '80%' : '40%', marginRight: isMobile ? '23%' : '' }}
+                    style={{ width: isMobile ? "80%" : "40%", marginRight: isMobile ? "23%" : "" }}
                     src="https://www.youtube.com/embed/NdZ9vPHAy7w" 
                     title="Virtual Care Platform - NextGen MyHealth VCP" 
                     frameborder="0" 

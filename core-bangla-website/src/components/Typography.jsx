@@ -210,16 +210,16 @@ export const P2 = styled.p`
     /* font-size: 1.2rem; */
 
     @media only screen and (max-width: ${responsive.xs-1}px) { // xs
-        font-size: 0.7rem;
+        font-size: 0.9rem;
     }
     @media only screen and (min-width: ${responsive.xs}px) and (max-width: ${responsive.sm-1}px) {  // sm
-        font-size: 0.8rem;
+        font-size: 0.9rem;
     }
     @media only screen and (min-width: ${responsive.sm}px) and (max-width: ${responsive.md-1}px) {  // md
         font-size: 0.9rem;
     }
     @media only screen and (min-width: ${responsive.md}px) and (max-width: ${responsive.lg-1}px) {  // lg
-        font-size: 1.1rem;
+        font-size: 1.2rem;
     }
     @media only screen and (min-width: ${responsive.lg}px) {  // xl
         font-size: 1.2rem;
@@ -234,16 +234,16 @@ export const P3 = styled.p`
     /* font-size: 1rem; */
 
     @media only screen and (max-width: ${responsive.xs-1}px) { // xs
-        font-size: 0.6rem;
+        font-size: 0.8rem;
     }
     @media only screen and (min-width: ${responsive.xs}px) and (max-width: ${responsive.sm-1}px) {  // sm
-        font-size: 0.7rem;
+        font-size: 0.8rem;
     }
     @media only screen and (min-width: ${responsive.sm}px) and (max-width: ${responsive.md-1}px) {  // md
         font-size: 0.8rem;
     }
     @media only screen and (min-width: ${responsive.md}px) and (max-width: ${responsive.lg-1}px) {  // lg
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
     @media only screen and (min-width: ${responsive.lg}px) {  // xl
         font-size: 1rem;
@@ -258,13 +258,13 @@ export const P4 = styled.p`
     /* font-size: 0.8rem; */
 
     @media only screen and (max-width: ${responsive.xs-1}px) { // xs
-        font-size: 0.6rem;
+        font-size: 0.7rem;
     }
     @media only screen and (min-width: ${responsive.xs}px) and (max-width: ${responsive.sm-1}px) {  // sm
         font-size: 0.7rem;
     }
     @media only screen and (min-width: ${responsive.sm}px) and (max-width: ${responsive.md-1}px) {  // md
-        font-size: 0.8rem;
+        font-size: 0.7rem;
     }
     @media only screen and (min-width: ${responsive.md}px) and (max-width: ${responsive.lg-1}px) {  // lg
         font-size: 0.8rem;

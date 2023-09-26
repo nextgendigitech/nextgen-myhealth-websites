@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import { Drawer, List, ListItem, ListItemText } from '@mui/material';
 import { GiHamburgerMenu } from 'react-icons/gi';
 
@@ -25,16 +25,16 @@ const Container = styled(HBox)`
 `
 
 const LogoImage = styled.img`
-    @media only screen and (max-width: ${responsive.xs-1}px) { // xs
+    @media only screen and (max-width: ${responsive.xs}px) { // xs
         height: 65px;
     }
-    @media only screen and (min-width: ${responsive.xs}px) and (max-width: ${responsive.sm-1}px) {  // sm
+    @media only screen and (min-width: ${responsive.xs}px) and (max-width: ${responsive.sm}px) {  // sm
         height: 70px;
     }
-    @media only screen and (min-width: ${responsive.sm}px) and (max-width: ${responsive.md-1}px) {  // md
+    @media only screen and (min-width: ${responsive.sm}px) and (max-width: ${responsive.md}px) {  // md
         height: 80px;
     }
-    @media only screen and (min-width: ${responsive.md}px) and (max-width: ${responsive.lg-1}px) {  // lg
+    @media only screen and (min-width: ${responsive.md}px) and (max-width: ${responsive.lg}px) {  // lg
         height: 80px;
     }
     @media only screen and (min-width: ${responsive.lg}px) {  // xl
@@ -50,6 +50,10 @@ const SNavLink = styled(NavLink)`
     &.active {
         font-weight: bold;
     }
+`
+
+const SLink = styled(Link)`
+    text-decoration: none;
 `
 
 const MenuIcon = styled(GiHamburgerMenu)`
@@ -142,20 +146,20 @@ const NavBar = () => {
                         </SNavLink>
                     </HBox>
                     <HBox className='ml-6' style={{flexWrap: 'nowrap'}}>
-                        <SNavLink to='https://patient.nextgenmyhealth.com/login' target='_blank'>
+                        <SLink to='https://patient.nextgenmyhealth.com/login' target='_blank'>
                             <Button color='first' elevated>
                                 <P2 className='bold' color='white' style={{flexShrink: '0'}}>
                                     পেশেন্ট পোর্টাল
                                 </P2>
                             </Button>
-                        </SNavLink>
-                        <SNavLink to='https://doctor.nextgenmyhealth.com/login' target='_blank'>
+                        </SLink>
+                        <SLink to='https://doctor.nextgenmyhealth.com/login' target='_blank'>
                             <Button className='ml-3' color='third' elevated>
                                 <P2 className='bold' color='white' style={{flexShrink: '0'}}>
                                     ডাক্তার পোর্টাল
                                 </P2>
                             </Button>
-                        </SNavLink>
+                        </SLink>
                     </HBox>
                 </>
             }

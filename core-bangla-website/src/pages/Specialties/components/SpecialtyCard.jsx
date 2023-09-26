@@ -21,10 +21,10 @@ const Image = styled.img`
     height: 50px;
 `
 
-const SpecialtyCard = ({image, specialtyBang, specialtyEng}) => {
+const SpecialtyCard = ({isMobile, image, specialtyBang, specialtyEng}) => {
     return (
         <Link
-            className='m-2 clickable'
+            className={`${isMobile ? 'm-0_5 clickable' : 'm-2 clickable'}`}
             to={`/specialty-doctors/${specialtyEng}`}
             style={{ textDecoration: 'none' }}
         >

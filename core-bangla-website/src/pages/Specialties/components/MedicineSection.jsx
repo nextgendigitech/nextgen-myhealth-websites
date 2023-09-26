@@ -24,27 +24,27 @@ const Container = styled(VBox)`
     
 `
 
-const MedicineSection = () => {
+const MedicineSection = ({ isMobile }) => {
     return (
         <Container align='center'>
             <H3 className='bold mt-7'>মেডিসিন</H3>
             <HBox justify='center'>
-                <SpecialtyCard image={InternalMedicineImage} specialtyBang='ইন্টারনাল মেডিসিন' specialtyEng='Internal Medicine' />
-                <SpecialtyCard image={CardiologyImage} specialtyBang='হৃদরোগ' specialtyEng='Cardiology' />
-                <SpecialtyCard image={RespiratoryMedicineImage} specialtyBang='ফুসফুস' specialtyEng='Respiratory Medicine' />
-                <SpecialtyCard image={NeurologyImage} specialtyBang='স্নায়ুরোগ' specialtyEng='Neurology' />
-                <SpecialtyCard image={NephrologyImage} specialtyBang='কিডনি' specialtyEng='Nephrology' />
-                <SpecialtyCard image={GastroenterologyImage} specialtyBang='পরিপাকতন্ত্র' specialtyEng='Gastroenterology' />
-                <SpecialtyCard image={HepatologyImage} specialtyBang='লিভার' specialtyEng='Hepatology' />
-                <SpecialtyCard image={EndocrinologyImage} specialtyBang='হরমোন' specialtyEng='Endocrinology' />
-                <SpecialtyCard image={PediatricsImage} specialtyBang='শিশুরোগ' specialtyEng='Pediatrics' />
-                <SpecialtyCard image={OncologyImage} specialtyBang='ক্যান্সার' specialtyEng='Oncology' />
-                <SpecialtyCard image={RheumatologyImage} specialtyBang='বাতরোগ' specialtyEng='Rheumatology' />
-                <SpecialtyCard image={HematologyImage} specialtyBang='রক্তরোগ' specialtyEng='Hematology' />
-                <SpecialtyCard image={DermatologyImage} specialtyBang='চর্ম ও যৌনরোগ' specialtyEng='Dermatology & Venereology' />
-                <SpecialtyCard image={PsychiatryImage} specialtyBang='মনোরোগ' specialtyEng='Psychiatry' />
-                <SpecialtyCard image={PhysicalMedicineImage} specialtyBang='ফিজিক্যাল মেডিসিন' specialtyEng='Physical Medicine & Rehabilitation' />
-                <SpecialtyCard image={AestheticDermatologyImage} specialtyBang='এস্থেটিক ডার্মাটোলজি' specialtyEng='Aesthetic Dermatology' />
+                <SpecialtyCard isMobile={isMobile} image={InternalMedicineImage} specialtyBang='ইন্টারনাল মেডিসিন' specialtyEng='Internal Medicine' />
+                <SpecialtyCard isMobile={isMobile} image={CardiologyImage} specialtyBang='হৃদরোগ' specialtyEng='Cardiology' />
+                <SpecialtyCard isMobile={isMobile} image={RespiratoryMedicineImage} specialtyBang='ফুসফুস' specialtyEng='Respiratory Medicine' />
+                <SpecialtyCard isMobile={isMobile} image={NeurologyImage} specialtyBang='স্নায়ুরোগ' specialtyEng='Neurology' />
+                <SpecialtyCard isMobile={isMobile} image={NephrologyImage} specialtyBang='কিডনি' specialtyEng='Nephrology' />
+                <SpecialtyCard isMobile={isMobile} image={GastroenterologyImage} specialtyBang='পরিপাকতন্ত্র' specialtyEng='Gastroenterology' />
+                <SpecialtyCard isMobile={isMobile} image={HepatologyImage} specialtyBang='লিভার' specialtyEng='Hepatology' />
+                <SpecialtyCard isMobile={isMobile} image={EndocrinologyImage} specialtyBang='হরমোন' specialtyEng='Endocrinology' />
+                <SpecialtyCard isMobile={isMobile} image={PediatricsImage} specialtyBang='শিশুরোগ' specialtyEng='Pediatrics' />
+                <SpecialtyCard isMobile={isMobile} image={OncologyImage} specialtyBang='ক্যান্সার' specialtyEng='Oncology' />
+                <SpecialtyCard isMobile={isMobile} image={RheumatologyImage} specialtyBang='বাতরোগ' specialtyEng='Rheumatology' />
+                <SpecialtyCard isMobile={isMobile} image={HematologyImage} specialtyBang='রক্তরোগ' specialtyEng='Hematology' />
+                <SpecialtyCard isMobile={isMobile} image={DermatologyImage} specialtyBang='চর্ম ও যৌনরোগ' specialtyEng='Dermatology & Venereology' />
+                <SpecialtyCard isMobile={isMobile} image={PsychiatryImage} specialtyBang='মনোরোগ' specialtyEng='Psychiatry' />
+                <SpecialtyCard isMobile={isMobile} image={PhysicalMedicineImage} specialtyBang='ফিজিক্যাল মেডিসিন' specialtyEng='Physical Medicine & Rehabilitation' />
+                <SpecialtyCard isMobile={isMobile} image={AestheticDermatologyImage} specialtyBang='এস্থেটিক ডার্মাটোলজি' specialtyEng='Aesthetic Dermatology' />
             </HBox>
         </Container>
     );

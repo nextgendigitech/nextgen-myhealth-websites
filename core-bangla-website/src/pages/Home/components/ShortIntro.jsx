@@ -72,7 +72,7 @@ const Image = styled.img`
 
 const ShortIntro = ({ isMobile }) => {
     return (
-        <Container align='space-around' style={{marginTop: isMobile ? '60px' : '120px'}}>
+        <Container align='space-around' style={{marginTop: isMobile ? '60px' : '100px'}}>
             <VBox style={{ width: '30%' }}>
                 <GreenBox />
                 <Image className='' src={image}/>

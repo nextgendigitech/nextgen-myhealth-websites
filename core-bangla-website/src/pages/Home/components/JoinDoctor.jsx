@@ -35,7 +35,7 @@ const Image = styled.img`
 
 const JoinDoctor = ({ isMobile }) => {
     return (
-        <Container justify="center" style={{marginTop: isMobile ? '60px' : '120px'}}>
+        <Container justify="center" style={{marginTop: isMobile ? '60px' : '100px'}}>
             <TopBorder />
             <VBox justify="center" align="center" style={{ width: "50%" }}>
                 <H5>আপনি কি একজন ডাক্তার এবং </H5>
