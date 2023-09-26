@@ -47,17 +47,17 @@ const RefundPolicy = () => {
 
     return (
         <VBox>
-            <TitleCard className="mt-4" justify="center" align="center" style={{ marginTop: isMobile ? "16px" : "32px", height: isMobile ? '40px' : '70px', borderRadius: isMobile ? '0px 15px' : '0px 30px'}}>
+            <TitleCard className={isMobile ? "mt-2" : "mt-4"} justify="center" align="center" style={{ height: isMobile ? '40px' : '70px', borderRadius: isMobile ? '0px 15px' : '0px 30px'}}>
                 <H3 className="bold" color="third">ফেরত নীতিমালা</H3>
             </TitleCard>
-            <VBox style={{ margin: isMobile ? "24px 16px" : "72px 120px" }}>
+            <VBox className={isMobile ? "mx-2 my-3" : "m-8 px-7 py-1"}>
                 {Object.keys(refundPolicyData).map((key) => ( 
-                    <VBox style={{ marginBottom: isMobile ? "16px" : "72px" }}>
-                    <H6 color='third' className="bold">{key}</H6>
-                    <Line style={{ marginBottom: isMobile ? "0px" : "4px" }}/>
+                    <VBox className={isMobile ? "mb-2" : "mb-6"}>
+                        <H6 color='third' className="bold">{key}</H6>
+                        <Line className={isMobile ? "" : "mb-0_5"} />
                         {refundPolicyData[key].map((paragraph) => (
-                            <P3 className='mx-3' style={{ marginTop: isMobile ? "16px" : "32px", textAlign: 'justify' }}>{paragraph}</P3>
-                            ))}
+                            <P3 className={isMobile ? "mt-2 mx-3" : 'mt-4 mx-3'} style={{ textAlign: 'justify' }}>{paragraph}</P3>
+                        ))}
                     </VBox>
                 ))}
             </VBox>

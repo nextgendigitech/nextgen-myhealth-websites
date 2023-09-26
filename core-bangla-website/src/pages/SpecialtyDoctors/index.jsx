@@ -1,4 +1,4 @@
-import { useState, useEffect, CSSProperties } from "react";
+import { useState, useEffect } from "react";
 import colors from "../../config/colors";
 import styled from "styled-components";
 import axios from "axios";
@@ -17,11 +17,6 @@ const TitleCard = styled(VBox)`
     width: 100%;
     background: ${colors.veryLightGreen};
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
-`
-
-const CardsContainer = styled(HBox)`
-    margin-left: 6%;
-    margin-right: 6%;
 `
 
 const SpecialtyDoctors = () => {
@@ -89,7 +84,7 @@ const SpecialtyDoctors = () => {
 
     return (
         <VBox>
-            <TitleCard justify="center" align="center" style={{ marginTop: isMobile ? "12px" : "32px", height: isMobile ? '40px' : '70px', borderRadius: isMobile ? '0px 15px' : '0px 30px'}}>
+            <TitleCard justify="center" align="center" className={isMobile ? "mt-2" : "mt-4"} style={{ height: isMobile ? '40px' : '70px', borderRadius: isMobile ? '0px 15px' : '0px 30px'}}>
                 <BiArrowBack justify="center" style={{ marginRight:"90%", cursor: "pointer" }} onClick={goBack} />
                 <H3 style={{ position: "absolute" }}>{specialtyEtoB[specialty]}</H3>
             </TitleCard>
@@ -106,10 +101,10 @@ const SpecialtyDoctors = () => {
                 </HBox>
                 :
                 <VBox>
-                    <VBox style={{ alignItems: isMobile ? "center" : "", marginLeft: isMobile ? "" : "8%", marginTop: isMobile ? '24px' : '48px' }}>
+                    <VBox className={isMobile ? "mt-3" : "mt-6 ml-8 pl-6"} style={{ alignItems: isMobile ? "center" : "" }}>
                         <P2 className="bold">{doctors.length} জন চিকিৎসক পাওয়া গেছে</P2>
                     </VBox>
-                    <CardsContainer justify="center" style={{ margin: isMobile ? "0px 2%" : "0px 60px" }}>
+                    <HBox justify="center" style={{marginRight: isMobile ? "10px" : "120px", marginLeft: isMobile ? "10px" : "120px"}}>
                         {doctors.map((doctor, index) => (
                             <DoctorCard
                                 isMobile={isMobile}
@@ -125,7 +120,7 @@ const SpecialtyDoctors = () => {
                                 fee={doctor.fee}
                             />
                         ))}
-                    </CardsContainer>
+                    </HBox>
                 </VBox>
             }
         </VBox> 
