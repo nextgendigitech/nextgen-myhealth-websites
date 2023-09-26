@@ -24,7 +24,7 @@ const AboutAuthor = ({isMobile}) => {
                     <P3>সাবেক বিভাগীয় প্রধান, নাক কান গলা বিভাগ, ঢাকা মেডিকেল কলেজ ও হাসপাতাল</P3>
                 </VBox>
             </HBox>
-            <HBox justify="flex-end" className={isMobile ? "" : "mb-2"}>
+            <HBox justify="flex-end" className={isMobile ? "" : "mb-1"}>
                 <P3 className="mr-1" style={{ fontSize: "15px" }}><BiSolidTime style={{color: colors.lightBlack}}/></P3>
                 <P3>23.09.2023</P3>
             </HBox>

@@ -41,7 +41,7 @@ const ContentCard = ({ image, title, detail, isMobile }) => {
         >
             <VBox>
                 <HBox className={isMobile ? "mt-2" : "my-2"} style={{ width: "100%" }}>
-                    <Image src={image} style={{ width: isMobile ? "100%" : "28%" }}/>
+                    <Image src={image} className={isMobile ? "mb-2" : ""} style={{ width: isMobile ? "100%" : "28%" }}/>
                     <VBox className={isMobile ? "" : "ml-2 pl-2"} style={{ width: isMobile ? "100%" : "70%" }}>
                         <P2 className="bold mb-2">{title}</P2>
                         <P3>{detail}</P3>
@@ -56,10 +56,12 @@ const ContentCard = ({ image, title, detail, isMobile }) => {
 const Contents = ({isMobile}) => {
   return (
     <VBox className={isMobile ? "" : "ml-4"}>
-        <SearchBar className={isMobile ? "mb-4" : "mb-6"} size="sm"> 
-            <P2>অনুসন্ধান করুন</P2>
-            <BiSearchAlt2 className="ml-3" />
-        </SearchBar>
+        <HBox justify="flex-end">
+            <SearchBar className={isMobile ? "mb-4" : "mb-6"} size="sm"> 
+                <P2>অনুসন্ধান করুন</P2>
+                <BiSearchAlt2 className="ml-3" />
+            </SearchBar>
+        </HBox> 
         <HorizontalLine className="mb-2" />
         <ContentCard
             isMobile={isMobile}

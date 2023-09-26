@@ -4,16 +4,16 @@ import { VBox } from "../../components/Containers";
 import Banner from "./components/Banner";
 import WhoWeAre from "./components/WhoWeAre";
 import OurAdvantages from "./components/OurAdvantages";
-import responsive from '../../config/responsive';
+import responsive from "../../config/responsive";
 
 const AboutUs = () => {
     const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
         const setResponsiveness = () => {
-            let orientation = !navigator.maxTouchPoints ? 'desktop' : !window.screen.orientation.angle ? 'portrait' : 'landscape';
+            let orientation = !navigator.maxTouchPoints ? "desktop" : !window.screen.orientation.angle ? "portrait" : "landscape";
     
-            if (orientation === 'portrait' || window.innerWidth < responsive.mobileThresh) {
+            if (orientation === "portrait" || window.innerWidth < responsive.mobileThresh) {
                 setIsMobile(true);
             }
             else {
@@ -21,9 +21,9 @@ const AboutUs = () => {
             }
         }
         setResponsiveness();
-        window.addEventListener('resize', () => setResponsiveness());
+        window.addEventListener("resize", () => setResponsiveness());
 
-        return () => window.removeEventListener('resize', () => setResponsiveness());
+        return () => window.removeEventListener("resize", () => setResponsiveness());
     }, []);
 
     useEffect(() => {
