@@ -44,8 +44,8 @@ const ReviewCard = ({ image, name, review, isMobile }) => {
 
 const CustomerReview = ({ isMobile }) => {
     return (
-        <VBox style={{ width: "100%", marginTop: isMobile ? '60px' : '120px' }}>
-            <H3 align="center" className="bold pb-3">
+        <VBox style={{ width: "100%", marginTop: isMobile ? '60px' : '-140px' }}>
+            <H3 align="center" className="bold">
                 আমাদের ক্লায়েন্টরা কি বলেন
             </H3>
             <Container style={{ padding: isMobile ? "30px" : "50px" }} justify="space-around" align="center">

@@ -8,14 +8,9 @@ import colors from '../../../config/colors';
 import responsive from '../../../config/responsive';
 
 const Container = styled(HBox)`
-    margin-top: 50px;
     padding-left: 8%;
     padding-right: 8%;
     width: 100%;
-
-    @media only screen and (max-width: ${responsive.mobileThresh-1}px) {
-        margin-top: 80px;
-    }
 `
 
 const GreenBox = styled.div`
@@ -77,7 +72,7 @@ const Image = styled.img`
 
 const ShortIntro = ({ isMobile }) => {
     return (
-        <Container align='space-around' style={{marginTop: isMobile ? '60px' : '120px'}}>
+        <Container align='space-around' style={{marginTop: isMobile ? '60px' : '100px'}}>
             <VBox style={{ width: '30%' }}>
                 <GreenBox />
                 <Image className='' src={image}/>

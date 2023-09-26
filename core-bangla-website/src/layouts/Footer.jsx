@@ -14,39 +14,68 @@ import DoctorSearchDlg from './DoctorSearchDlg';
 const FooterContainer1 = styled(VBox)`
     padding-left: 8%;
     padding-right: 8%;
-    margin-top: 80px;
     background-color: ${colors.mercury};
     border-radius: 30px 30px 0px 0px;
 `
 
 const FooterContainer2 = styled(HBox)`
-    padding-left: 120px;
-    padding-right: 120px;
+    padding-left: 8%;
+    padding-right: 8%;
     background-color: ${colors.lightBlack};
     justify-content: center;
 `
 
 const PhoneIcon = styled(HiOutlinePhone)`
-    font-size: 25px;
-
-    @media only screen and (max-width: ${responsive.mobileThresh-1}px) {
-        font-size: 15px;
+    @media only screen and (max-width: ${responsive.xs-1}px) { // xs
+        width: 15px;
+    }
+    @media only screen and (min-width: ${responsive.xs}px) and (max-width: ${responsive.sm-1}px) {  // sm
+        width: 15px;
+    }
+    @media only screen and (min-width: ${responsive.sm}px) and (max-width: ${responsive.md-1}px) {  // md
+        width: 15px;
+    }
+    @media only screen and (min-width: ${responsive.md}px) and (max-width: ${responsive.lg-1}px) {  // lg
+        width: 20px;
+    }
+    @media only screen and (min-width: ${responsive.lg}px) {  // xl
+        width: 25px;
     }
 `
 
 const EmailIcon = styled(AiOutlineMail)`
-    font-size: 25px;
-
-    @media only screen and (max-width: ${responsive.mobileThresh-1}px) {
-        font-size: 15px;
+    @media only screen and (max-width: ${responsive.xs-1}px) { // xs
+        width: 15px;
+    }
+    @media only screen and (min-width: ${responsive.xs}px) and (max-width: ${responsive.sm-1}px) {  // sm
+        width: 15px;
+    }
+    @media only screen and (min-width: ${responsive.sm}px) and (max-width: ${responsive.md-1}px) {  // md
+        width: 15px;
+    }
+    @media only screen and (min-width: ${responsive.md}px) and (max-width: ${responsive.lg-1}px) {  // lg
+        width: 20px;
+    }
+    @media only screen and (min-width: ${responsive.lg}px) {  // xl
+        width: 25px;
     }
 `
 
 const LogoImage = styled.img`
-    width: 200px;
-    
-    @media only screen and (max-width: ${responsive.mobileThresh-1}px) {
+    @media only screen and (max-width: ${responsive.xs-1}px) { // xs
         width: 120px;
+    }
+    @media only screen and (min-width: ${responsive.xs}px) and (max-width: ${responsive.sm-1}px) {  // sm
+        width: 120px;
+    }
+    @media only screen and (min-width: ${responsive.sm}px) and (max-width: ${responsive.md-1}px) {  // md
+        width: 120px;
+    }
+    @media only screen and (min-width: ${responsive.md}px) and (max-width: ${responsive.lg-1}px) {  // lg
+        width: 180px;
+    }
+    @media only screen and (min-width: ${responsive.lg}px) {  // xl
+        width: 200px;
     }
 `
 
@@ -107,9 +136,9 @@ const Footer = () => {
             <SNavLink to='/specialties'>
                 <P3 className={margin2}>বিশেষজ্ঞ ডাক্তার</P3>
             </SNavLink>
-            <SNavLink to='/blog'>
-                <P4 className={margin2}>ব্লগ</P4>
-            </SNavLink>
+            {/* <SNavLink to='/blog'>
+                <P3 className={margin2}>ব্লগ</P3>
+            </SNavLink> */}
         </VBox>
     )
 
@@ -132,7 +161,7 @@ const Footer = () => {
 
     return (
         <>
-            <FooterContainer1 className='pb-7'>
+            <FooterContainer1 className='pb-7' style={{ marginTop: isMobile ? '60px' : '100px' }}>
                 {isMobile ?
                     <VBox align='center'>
                         <VBox>

@@ -7,13 +7,8 @@ import colors from '../../../config/colors';
 import responsive from '../../../config/responsive';
 
 const Container = styled(VBox)`
-    margin-top: 10px;
     padding-left: 8%;
     padding-right: 8%;
-
-    @media only screen and (max-width: ${responsive.mobileThresh-1}px) {
-        margin-top: 80px;
-    }
 `
 
 const Underline = styled.div`
@@ -92,10 +87,6 @@ const Circle = styled(HBox)`
 `
 
 const CenterCircleContainerOuter = styled(VBox)`
-    @media only screen and (min-width: ${responsive.sm}px) and (max-width: ${responsive.md-1}px) {
-        justify-content: center;
-        align-items: center;
-    }
 `
 
 const CenterCircleContainerInner = styled(VBox)`
@@ -231,22 +222,23 @@ const WhyUs = ({ isMobile }) => {
     );
 
     return (
-        <Container align='center'>
+        <Container align='center' style={{marginTop: isMobile ? '60px' : '0px'}}>
             <H3 className="bold">কেন আমাদের প্লাটফর্ম ব্যবহার করবেন?</H3>
             <Underline className="my-2" />
 
             {isMobile ?
-            <VBox align='center' style={{height: 'fit-content', width: '100%'}}>
-                {CenterHtml('100%', 'initial', 'initial', 'center', '350px', '350px')}
-                {LeftHtml('initial', 'center', 'center', '150px', '300px', '30.4%', '59.8%')}
-                {RightHtml('initial', 'center', 'center', '150px', '300px', '30.4%', '59.8%')}
-            </VBox> 
-            :
-            <HBox justify='center' style={{height: '700px', width: '100%'}}>
-                {LeftHtml('25%', 'center', 'initial', '25%', 'auto', '34.4%', '58.8%')}
-                {CenterHtml('initial', '50%', 'initial', 'initial', '90%', 'auto')}
-                {RightHtml('25%', 'center', 'initial', '25%', 'auto', '34.4%', '58.8%')}
-            </HBox>}
+                <VBox align='center' style={{height: 'fit-content', width: '100%'}}>
+                    {CenterHtml('100%', 'initial', 'center', 'center', '350px', '350px')}
+                    {LeftHtml('initial', 'center', 'center', '150px', '300px', '30.4%', '59.8%')}
+                    {RightHtml('initial', 'center', 'center', '150px', '300px', '30.4%', '59.8%')}
+                </VBox> 
+                :
+                <HBox justify='center' style={{height: '700px', width: '100%'}}>
+                    {LeftHtml('25%', 'center', 'initial', '25%', 'auto', '34.4%', '58.8%')}
+                    {CenterHtml('initial', '50%', 'initial', 'initial', '90%', 'auto')}
+                    {RightHtml('25%', 'center', 'initial', '25%', 'auto', '34.4%', '58.8%')}
+                </HBox>
+            }
         </Container>
     );
 }

@@ -7,25 +7,15 @@ import colors from '../../../config/colors';
 import responsive from '../../../config/responsive';
 
 const Container = styled(VBox)`
-    margin-top: 40px;
     padding-left: 8%;
     padding-right: 8%;
-
-    @media only screen and (max-width: ${responsive.mobileThresh-1}px) {
-        margin-top: 20px;
-    }
 `
 
 const BankPayment = styled(VBox)`
     height: 80vh;
-    width: 50%;
     background-color: ${colors.lightBlue};
     border-radius: 0 15px 0 15px;
     min-height: 500px;
-
-    @media only screen and (max-width: ${responsive.mobileThresh-1}px) {
-        width: 100%;
-    }
 `
 
 const Circle = styled(VBox)`
@@ -34,31 +24,24 @@ const Circle = styled(VBox)`
     border-radius: 50%;
     background-color: white;
 
-    @media only screen and (min-width: ${responsive.xs}px) and (max-width: ${responsive.sm-1}px) {
-        height: 20%;
-        width: 25%;
-    }
-
     @media only screen and (max-width: ${responsive.xs-1}px) {
         height: 20%;
         width: 40%;
+    }
+    @media only screen and (min-width: ${responsive.xs}px) and (max-width: ${responsive.sm-1}px) {
+        height: 20%;
+        width: 25%;
     }
 `
 
 const BkashPayment = styled(VBox)`
     height: 80vh;
-    width: 45%;
     background-color: ${colors.lightBlue};
     border-radius: 0 15px 0 15px;
     min-height: 500px;
-
-    @media only screen and (max-width: ${responsive.mobileThresh-1}px) {
-        width: 100%;
-    }
 `
 
 const PaymentHelp = styled(HBox)`
-    margin-top: 120px;
     padding: 15px;
     border-radius: 0 10px 0 10px;
     background-color: ${colors.lightBlue};
@@ -66,7 +49,7 @@ const PaymentHelp = styled(HBox)`
 
 const PaymentMethods = ({ isMobile }) => {
     const Bank = () => (
-        <BankPayment align='center'>
+        <BankPayment align='center' style={{ width: isMobile ? '100%' : '50%', marginTop: isMobile ? '0px' : '30px' }}>
             <Circle className='mt-8' justify='center' align='center'><H1 className='bold'>B</H1></Circle>
             <P2 className='mt-5 bold'>নগদ/চেক/ব্যাঙ্ক আমানত</P2>
             <P2 className='mt-3 bold'>নেক্সটজেন ডিজিটেক লিমিটেড</P2>
@@ -79,7 +62,7 @@ const PaymentMethods = ({ isMobile }) => {
     )
 
     const Bkash = () => (
-        <BkashPayment className={isMobile ? 'mt-5' : ''} align='center'>
+        <BkashPayment style={{ width: isMobile ? '100%' : '45%', marginTop: isMobile ? '30px' : '30px' }} align='center'>
             <img className='mt-8' src={bkash_image} style={{width: '55%'}} />
             <P2 className='mt-3 bold'>বিকাশ নম্বর:</P2>
             <P2 className='mt-3 bold'>+৮৮০ ১৩২১১১৯৩৯১৮৩</P2>
@@ -104,19 +87,21 @@ const PaymentMethods = ({ isMobile }) => {
             </VBox>
             
             {isMobile ?
-            <VBox className='mt-8' align='center' style={{width: '100%'}}>
-                {Bank()}
-                {Bkash()}
-            </VBox>
-            :
-            <HBox className='mt-8' justify='space-between' style={{width: '100%'}}>
-                {Bank()}
-                {Bkash()}
-            </HBox>
+                <VBox className='mt-8' align='center' style={{width: '100%'}}>
+                    {Bank()}
+                    {Bkash()}
+                </VBox>
+                :
+                <HBox className='mt-8' justify='space-between' style={{width: '100%'}}>
+                    {Bank()}
+                    {Bkash()}
+                </HBox>
             }
         </Container>
 
-        <PaymentHelp justify='center'><P2 className='bold' color='second'>আপনি যদি পেমেন্ট সংক্রান্ত কোনো সমস্যার সম্মুখীন হন, তাহলে অনুগ্রহ করে +৮৮০ ১৩২১১১৯৩৯১ এ কল করুন</P2></PaymentHelp>
+        <PaymentHelp justify='center' style={{ marginTop: isMobile ? '60px' : '100px' }}>
+            <P2 className='bold' color='second'>আপনি যদি পেমেন্ট সংক্রান্ত কোনো সমস্যার সম্মুখীন হন, তাহলে অনুগ্রহ করে +৮৮০ ১৩২১১১৯৩৯১ এ কল করুন</P2>
+        </PaymentHelp>
         </>
     );
 }

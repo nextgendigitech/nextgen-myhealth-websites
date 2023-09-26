@@ -7,17 +7,8 @@ import colors from '../../../config/colors';
 import responsive from '../../../config/responsive';
 
 const Container = styled(VBox)`
-    margin-top: 80px;
     padding-left: 8%;
     padding-right: 8%;
-    
-    @media only screen and (max-width: ${responsive.mobileThresh-1}px) {
-        margin-bottom: -50px;
-    }
-
-    @media only screen and (min-width: ${responsive.mobileThresh}px) {
-        margin-bottom: -280px;
-    }
 `
 
 const LeftStepBox = styled(VBox)`
@@ -63,7 +54,7 @@ const BookingSteps = () => {
     }, []);
 
     return (
-        <Container>
+        <Container style={{ marginTop: isMobile ? '60px' : '100px' }}>
             <VBox align='center' className='mb-4'>
                 <P1 className='bold' color='third'>ঘণ্টার পর ঘণ্টা লাইনে দাঁড়িয়ে থাকার দিন শেষ!</P1>
                 <P1 className='bold'>পরামর্শ নিন কিছু সহজ পদক্ষেপেই</P1>
@@ -90,7 +81,7 @@ const BookingSteps = () => {
                 </LeftStepBox>
             </HBox>
 
-            <HBox justify='flex-end' style={{position: 'relative', top: `${isMobile ? '0' : '-75px'}`}}>
+            <HBox justify='flex-end' style={{position: 'relative', top: `${isMobile ? '0px' : '-75px'}`}}>
                 <RightStepBox align='center' justify='flex-end'>
                     <Circle align='center' justify='center' className='mb-4'>
                         {/* {isMobile ?
