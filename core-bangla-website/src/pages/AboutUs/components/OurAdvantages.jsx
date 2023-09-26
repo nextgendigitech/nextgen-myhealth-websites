@@ -55,7 +55,7 @@ const BottomContentCard = ({ title, detail, isMobile }) => {
 
 const OurAdvantages = ({ isMobile }) => {
   return (
-    <Container className={isMobile ? "pt-4" : "pt-8 mt-5"}>
+    <Container style={{paddingTop: isMobile ? '60px' : '100px'}}>
         <H3 align="center" className={isMobile ? "bold mb-2" : "bold mb-4"}>আমাদের প্ল্যাটফর্ম ব্যবহার করার সুবিধা</H3>
         <HBox justify="center" align="center"> 
             <VContainer>

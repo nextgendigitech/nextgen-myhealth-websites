@@ -27,7 +27,6 @@ const Container = styled(HBox)`
 
 const TitleCard = styled(VBox)`
     width: 70%;
-    /* border: 6px solid ${colors.darkGreen}; */
     border-radius: 0px 30px 0px 30px;
 
     @media only screen and (max-width: ${responsive.xs-1}px) { // xs
@@ -103,7 +102,7 @@ const SpecialtiesCard = ({ icon, name, className, isMobile }) => {
 
 const SpecialtiesSummary = ({ isMobile }) => {
     return (
-        <Container justify='space-around' style={{marginTop: isMobile ? '60px' : '120px'}}>
+        <Container justify='space-around' style={{marginTop: isMobile ? '30px' : '60px'}}>
             <HBox justify='space-around' align='center'>
                 <VBox className="" align='center' style={{ width: isMobile ? '35%' : '25%' }}>
                     <TitleCard className="p-1 mb-3" justify="center" align='center'>

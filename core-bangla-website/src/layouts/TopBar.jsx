@@ -4,7 +4,7 @@ import { HiOutlinePhone } from 'react-icons/hi';
 import styled from 'styled-components';
 
 import { HBox } from '../components/Containers';
-import { P2 } from '../components/Typography';
+import { P2, P3 } from '../components/Typography';
 import { Button } from '../components/Buttons';
 import colors from '../config/colors';
 import responsive from '../config/responsive';
@@ -97,11 +97,12 @@ const TopBar = () => {
                 size='sm'
                 onClick={() => setOpenSearchDlg(true)}
             >
-                {!isMobile && <P2>ডাক্তার অনুসন্ধান করুন</P2>}
+                {!isMobile && <P3>ডাক্তার অনুসন্ধান করুন</P3>}
                 <DoctorSearchIcon className={isMobile ? '' : 'ml-8'} src={searchIcon} />
             </SearchBar>
 
             <DoctorSearchDlg
+                isMobile={isMobile}
                 open={openSearchDlg}
                 setOpen={setOpenSearchDlg}
             />

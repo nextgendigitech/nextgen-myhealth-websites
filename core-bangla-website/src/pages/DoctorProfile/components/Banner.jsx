@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { TbCurrencyTaka } from "react-icons/tb";
+import { Link } from "react-router-dom";
 
 import { Button } from "../../../components/Buttons";
 import { HBox, VBox } from "../../../components/Containers";
@@ -44,10 +45,10 @@ const Chip = styled(HBox)`
     padding-right: 3px;
 `
 
-const Banner = ({ image, name, bmdc, doctor_type, qualification, specialty,
+const Banner = ({id, image, name, bmdc, doctor_type, qualification, specialty,
     experience, institution, designation, department, consultation_fee, is_online, isMobile }) => {
     return (          
-        <BannerCard className={isMobile ? "p-1 my-2" : "p-4 my-4"} justify="center" align="center" >
+        <BannerCard className={isMobile ? "py-2 px-1 my-2" : "p-4 my-4"} justify="center" align="center" >
             <HBox justify="center" style={{ width: "100%", 
                             flexDirection: isMobile ? "column" : "row", 
                             alignItems: isMobile ? "center" : "" }}>
@@ -120,18 +121,20 @@ const Banner = ({ image, name, bmdc, doctor_type, qualification, specialty,
                         <P3 className="bold ml-1">{experience}</P3>
                     </HBox>
                     <HBox justify={isMobile ? "center" : "flex-end"}>
-                        <Button
-                                className={isMobile ? "" : "mb-2"}
-                                color="third"
-                                size={isMobile ? "xs" : "sm"}
-                                style={{ alignContent: isMobile ? "center" : "", 
-                                        borderRadius: 25, 
-                                        height: isMobile ? 30 : 40, 
-                                        width: "fit-content" }}
-                                elevated
-                            >
-                                অ্যাপয়েন্টমেন্ট নিন
-                        </Button>
+                        <Link to={`https://patient.nextgenmyhealth.com/doctor/${id}`} style={{textDecoration: 'none'}} target='_blank'>
+                            <Button
+                                    className={isMobile ? "" : "mb-2"}
+                                    color="third"
+                                    size={isMobile ? "xs" : "sm"}
+                                    style={{ alignContent: isMobile ? "center" : "", 
+                                            borderRadius: 25, 
+                                            height: isMobile ? 30 : 40, 
+                                            width: "fit-content" }}
+                                    elevated
+                                >
+                                    অ্যাপয়েন্টমেন্ট নিন
+                            </Button>
+                        </Link>
                     </HBox>
                     
                 </VBox>

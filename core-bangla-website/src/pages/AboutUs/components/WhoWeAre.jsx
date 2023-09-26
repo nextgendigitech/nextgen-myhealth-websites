@@ -41,7 +41,7 @@ const VideoContainer = styled.iframe`
 
 const WhoWeAre = ({ isMobile }) => {
     return (
-        <Container className={isMobile ? "pt-5" : "pt-8"}>
+        <Container style={{ marginTop: isMobile ? '60px' : '100px' }}>
             <HBox align="center" className="mb-4">
                 <VerticalBorder/>
                 <VBox className="ml-2">
@@ -56,7 +56,7 @@ const WhoWeAre = ({ isMobile }) => {
                 লিমিটেড বাংলাদেশের একটি স্বাস্থ্য পণ্য। এটির উদ্ভাবনী ভার্চুয়াল স্বাস্থ্যসেবা প্ল্যাটফর্ম বাংলাদেশের জনগণের 
                 স্বাস্থ্যসেবা বিষয়ক ভোগান্তি কমাতে বদ্ধপরিকর।
             </P1>
-            <HBox justify="center" className={isMobile ? "mt-4" : "mt-8 pt-4"}>
+            <HBox justify="center" style={{ marginTop: isMobile ? '60px' : '100px' }}>
                 <VideoContainer
                     style={{ width: isMobile ? "80%" : "40%", marginRight: isMobile ? "23%" : "" }}
                     src="https://www.youtube.com/embed/NdZ9vPHAy7w" 

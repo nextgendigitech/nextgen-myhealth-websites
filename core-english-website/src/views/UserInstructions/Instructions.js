@@ -1,11 +1,13 @@
 import { Box } from '@mui/material';
 import styled from 'styled-components';
 
+import Button from "../../components/Button";
 import { H1, H2 } from '../../components/Typography';
 import colors from '../../utility/styles';
 import responsive from '../../utility/responsive';
 import logo from '../../images/google-play-store-logo.svg';
 import qr_code from '../../images/qr-code-download-app.png';
+import COLORS from '../../utility/styles';
 
 const Container = styled(Box)`
     display: flex;
@@ -39,16 +41,6 @@ const InstructionContainerInner = styled(Box)`
     }
 `
 
-const ManualContainer = styled(Box)`
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    height: 250px;
-    width: 350px;
-    background-color: ${colors.lightBlue};
-`
-
 const Circle = styled(Box)`
     position: absolute;
     top: ${props => props.top || '0'};
@@ -73,22 +65,21 @@ const Instruction = () => {
 
                 <InstructionContainerInner className='pt-5 pl-5 pr-5'>
                     <H2 className='bold' align='center' color='black'>
-                        DOWNLOAD PATIENT APP
+                        DOWNLOAD THE PATIENT APP
                     </H2>
-                    <img className='mt-5' src={logo}/>
+                    <a href='https://play.google.com/store/apps/details?id=com.nextgen_digitech.myhealth_patients' target='_blank'>
+                        <img className='mt-5' src={logo} style={{ height: '50px' }} />
+                    </a>
                     <img className='mt-5' src={qr_code} style={{height: '150px', width: '150px'}} />
                 </InstructionContainerInner>
-                <InstructionContainerInner className='pt-5 pl-5 pr-5'>
+                {/* <InstructionContainerInner className='pt-5 pl-5 pr-5'>
                     <H2 className='bold' align='center' color='black'>
                         ARE YOU A DOCTOR?
                     </H2>
-
-                    <ManualContainer className='mt-8'>
-                        <H1 className='bold' color='black'>
-                            MANUAL
-                        </H1>
-                    </ManualContainer>
-                </InstructionContainerInner>
+                    <a href='https://drive.google.com/file/d/19_ICiyPu4Rt8Ca1_0nZDJd18cdnqpLtq/view?usp=sharing' target='_blank' className='mt-4'>
+                        <Button name='Manual' color={COLORS.greenColor} size='large' />
+                    </a>
+                </InstructionContainerInner> */}
             </InstructionContainerOuter>
         </Container>
     );

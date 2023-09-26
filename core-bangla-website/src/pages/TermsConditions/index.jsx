@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import styled from 'styled-components';
+import { BiArrowBack } from "react-icons/bi";
 
 import colors from "../../config/colors";
-import { VBox } from "../../components/Containers";
+import { VBox, HBox } from "../../components/Containers";
 import { H3, H6, P3 } from "../../components/Typography";
 import { termsAndConditionsData } from '../../data';
 import responsive from '../../config/responsive';
@@ -10,10 +11,9 @@ import responsive from '../../config/responsive';
 const Line = styled.div`
     width: 100%;
     border-bottom: 1px solid ${colors.grey};
-    margin-top: 3%; //16px
 `
 
-const TitleCard = styled(VBox)`
+const TitleCard = styled(HBox)`
     width: 100%;
     background: ${colors.veryLightGreen};
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
@@ -43,10 +43,21 @@ const TermsConditions = () => {
         window.scrollTo(0, 0);
     });
 
+    const goBack = () => {
+        window.history.back();
+    }
+
     return (
         <VBox>
-            <TitleCard className={isMobile ? "mt-2" : "mt-4"} justify="center" align="center" style={{ height: isMobile ? '40px' : '70px', borderRadius: isMobile ? '0px 15px' : '0px 30px'}}>
+            <TitleCard className={isMobile ? "mt-2" : "mt-4"} justify="space-between" align="center" style={{ height: isMobile ? '40px' : '70px', borderRadius: isMobile ? '0px 15px' : '0px 30px'}}>
+                <BiArrowBack 
+                    className={isMobile ? "ml-2" : "ml-8"}
+                    justify="center" 
+                    style={{ cursor: "pointer" }} 
+                    onClick={goBack} 
+                />
                 <H3 className="bold" color="third">নিয়ম ও শর্তাবলী</H3>
+                <HBox />
             </TitleCard>
             <VBox className={isMobile ? "mx-2 my-3" : "m-8 px-7 py-1"}>
                 {Object.keys(termsAndConditionsData).map((key) => ( 
