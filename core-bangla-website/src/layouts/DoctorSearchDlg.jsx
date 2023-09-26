@@ -179,7 +179,7 @@ const DoctorSearchDlg = ({ open, setOpen, isMobile }) => {
 
     return (
         <Dialog
-            maxWidth="md"
+            maxWidth={isMobile ? "lg" : "md"}
             open={open}
             onClose={handleClose}
             fullWidth
