@@ -13,6 +13,7 @@ import linkedinIcon from '../assets/images/linkedin_icon.png';
 import youtubeLogo from '../assets/images/youtube_logo.png';
 import searchIcon from '../assets/images/search_icon.png';
 import DoctorSearchDlg from './DoctorSearchDlg';
+import { topbarData } from '../data';
 
 const Container = styled(HBox)`
     position: sticky;
@@ -91,13 +92,13 @@ const TopBar = () => {
                 </Link>
             </IconContainer>
             <P2 className="bold">
-                {isMobile ? <HiOutlinePhone style={{position: 'relative', top:'2px'}}/> : 'হটলাইন'} +৮৮০১৩২১১১৯৩৯১
+                {isMobile ? <HiOutlinePhone style={{position: 'relative', top:'2px'}}/> : topbarData.head1['bang']} {topbarData.head2['bang']}
             </P2>
             <SearchBar
                 size='sm'
                 onClick={() => setOpenSearchDlg(true)}
             >
-                {!isMobile && <P3>ডাক্তার অনুসন্ধান করুন</P3>}
+                {!isMobile && <P3>{topbarData.btn1['bang']}</P3>}
                 <DoctorSearchIcon className={isMobile ? '' : 'ml-8'} src={searchIcon} />
             </SearchBar>
 

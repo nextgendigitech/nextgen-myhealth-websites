@@ -6,6 +6,7 @@ import { HBox, VBox } from '../../../components/Containers';
 import image from '../../../assets/images/short_intro_image.png';
 import colors from '../../../config/colors';
 import responsive from '../../../config/responsive';
+import { homeData } from '../../../data';
 
 const Container = styled(HBox)`
     padding-left: 8%;
@@ -14,8 +15,6 @@ const Container = styled(HBox)`
 `
 
 const GreenBox = styled.div`
-    /* height: 100px; */
-    /* width: 100px; */
     background-color: ${colors.darkGreen};
     border-radius: 0px 10px 0px 10px;
     position: relative;
@@ -78,13 +77,9 @@ const ShortIntro = ({ isMobile }) => {
                 <Image className='' src={image}/>
             </VBox>
             <VBox style={{ width: '70%' }}>
-                <H3 className='bold' color='third'>আমরা কারা?</H3>
-                <H3 className='bold'>আমাদের সংক্ষিপ্ত পরিচিতি</H3>
-                <P2 className='mt-2'>
-                    নেক্সটজেন মাইহেলথ ভিসিপি, নেক্সটজেন ডিজিটেক লিমিটেড বাংলাদেশের একটি স্বাস্থ্য সেবা প্রদানকারী প্ল্যাটফর্ম। 
-                    নেক্সটজেন মাইহেলথ ভিসিপি আমেরিকা, ইউরোপ, যুক্তরাজ্য এবং বাংলাদেশের সহস্রাধিক বিএমডিসি নিবন্ধিত বিশেষজ্ঞ চিকিৎসকদের সঙ্গে ঘরে বসে ভিডিও কলের মাধ্যমে পরামর্শ ও স্বাস্থ্যসেবা নেয়া সম্ভব করেছে। 
-                    প্রযুক্তির নিত্যনতুন উদ্ভাবন ব্যবহার করে স্বাস্থ্যসেবাকে দেশের প্রত্যন্ত অঞ্চল থেকে শহর পর্যন্ত সকলের কাছে পৌঁছে দেয়ার লক্ষ্যে বাংলাদেশে শুরু হয় নেক্সটজেন মাইহেলথ ভিসিপি এর কার্যক্রম।
-                </P2>
+                <H3 className='bold' color='third'>{homeData.shortIntro.head1['bang']}</H3>
+                <H3 className='bold'>{homeData.shortIntro.head2['bang']}</H3>
+                <P2 className='mt-2'>{homeData.shortIntro.para1['bang']}</P2>
             </VBox>
         </Container>
     );

@@ -10,6 +10,7 @@ import { P1, P2 } from '../components/Typography';
 import logo from '../assets/images/Website-Logo.png'
 import colors from '../config/colors';
 import responsive from '../config/responsive';
+import { navbarData } from '../data';
 
 const Container = styled(HBox)`
     position: sticky;
@@ -111,21 +112,21 @@ const NavBar = () => {
                             <ListItem className='mb-2'>
                                 <ListItemText>
                                     <SNavLink to='/' onClick={handleClickMenuItem}>
-                                        <P1>হোম</P1>
+                                        <P1>{navbarData.head1['bang']}</P1>
                                     </SNavLink>
                                 </ListItemText>
                             </ListItem>
                             <ListItem className='mb-2'>
                                 <ListItemText>
                                     <SNavLink to='/about-us' onClick={handleClickMenuItem}>
-                                        <P1>পরিচিতি</P1>
+                                        <P1>{navbarData.head2['bang']}</P1>
                                     </SNavLink>
                                 </ListItemText>
                             </ListItem>
                             <ListItem>
                                 <ListItemText>
                                     <SNavLink to='/specialties' onClick={handleClickMenuItem}>
-                                        <P1>বিশেষজ্ঞ ডাক্তার</P1>
+                                        <P1>{navbarData.head3['bang']}</P1>
                                     </SNavLink>
                                 </ListItemText>
                             </ListItem>
@@ -149,14 +150,14 @@ const NavBar = () => {
                         <SLink to='https://patient.nextgenmyhealth.com/login' target='_blank'>
                             <Button color='first' elevated>
                                 <P2 className='bold' color='white' style={{flexShrink: '0'}}>
-                                    পেশেন্ট পোর্টাল
+                                    {navbarData.btn1['bang']}
                                 </P2>
                             </Button>
                         </SLink>
                         <SLink to='https://doctor.nextgenmyhealth.com/login' target='_blank'>
                             <Button className='ml-3' color='third' elevated>
                                 <P2 className='bold' color='white' style={{flexShrink: '0'}}>
-                                    ডাক্তার পোর্টাল
+                                    {navbarData.btn2['bang']}
                                 </P2>
                             </Button>
                         </SLink>

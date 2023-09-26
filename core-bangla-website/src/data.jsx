@@ -1,36 +1,492 @@
+export const navbarrData = {
+    head1: {
+        bang: 'হোম',
+        eng: 'home'
+    },
+    head2: {
+        bang: 'পরিচিতি',
+        eng: 'About Us'
+    },
+    head3: {
+        bang: 'বিশেষজ্ঞ ডাক্তার',
+        eng: 'Specialties'
+    },
+    btn1: {
+        bang: 'পেশেন্ট পোর্টাল',
+        eng: 'Patient Portal'
+    },
+    btn2: {
+        bang: 'ডাক্তার পোর্টাল',
+        eng: 'Doctor Portal'
+    },
+}
+
+export const topbarData = {
+    head1: {
+        bang: 'হটলাইন',
+        eng: 'Hotline'
+    },
+    head2: {
+        bang: '+৮৮০১৩২১১১৯৩৯১',
+        eng: '+8801321119391'
+    },
+    btn1: {
+        bang: 'ডাক্তার অনুসন্ধান করুন',
+        eng: 'Find doctors'
+    },
+}
+
+export const footerData = {
+    head1: {
+        bang: 'নেক্সটজেন মাইহেলথ ভিসিপি',
+        eng: 'NextGen MyHealth VCP'
+    },
+    head2: {
+        bang: 'কোম্পানী',
+        eng: 'Company'
+    },
+    head3: {
+        bang: 'সেবাসমূহ',
+        eng: 'Services'
+    },
+    head4: {
+        bang: 'অর্থ প্রদান',
+        eng: 'Pay with'
+    },
+    para11: {
+        bang: 'স্বাস্থ্য বিভাগ',
+        eng: 'Health Division'
+    },
+    para21: {
+        bang: 'নেক্সটজেন ডিজিটেক লিমিটেড',
+        eng: 'NextGen DigiTech Ltd.'
+    },
+    para31: {
+        bang: 'টুল অ্যান্ড টেকনোলজি ইনস্টিটিউট, বিটাক শিল্প',
+        eng: 'Tool & Technology Institute, BITAC'
+    },
+    para41: {
+        bang: 'মন্ত্রণালয় ১১৬ (খ), তেজগাঁও শিল্প এলাকা,',
+        eng: 'Ministry of Industries 116 (kha), Tejgaon Industrial Area,'
+    },
+    para51: {
+        bang: 'ঢাকা-১২০৮, বাংলাদেশ',
+        eng: 'Dhaka-1208, Bangladesh'
+    },
+    para61: {
+        bang: ' +৮৮০১৩২১১১৯৩৯১',
+        eng: '+8801321119391'
+    },
+    para71: {
+        bang: 'info@nextgenmyhealth.com',
+        eng: 'info@nextgenmyhealth.com'
+    },
+    para12: {
+        bang: 'যোগাযোগ করুন',
+        eng: 'Contact Us'
+    },
+    para22: {
+        bang: 'পরিচিতি',
+        eng: 'About Us'
+    },
+    para32: {
+        bang: 'বিশেষজ্ঞ ডাক্তার',
+        eng: 'Specialties'
+    },
+    para13: {
+        bang: 'ডাক্তার অনুসন্ধান করুন',
+        eng: 'Find doctor'
+    },
+    para14: {
+        bang: 'পেমেন্ট',
+        eng: 'Payment'
+    },
+    footer1: {
+        bang: 'নিয়ম ও শর্তাবলী',
+        eng: 'Terms and Conditions'
+    },
+    footer2: {
+        bang: 'গোপনীয়তা নীতিমালা',
+        eng: 'Privacy Policy'
+    },
+    footer3: {
+        bang: 'ফেরত নীতিমালা',
+        eng: 'Refund policy'
+    },
+    footer4: {
+        bang: 'কপিরাইট © 2023 নেক্সটজেন ডিজিটেক লিমিটেড.',
+        eng: 'Copyright © 2023 NextGen DigiTech Ltd. All rights reserved.'
+    },
+}
+
 export const homeData = {
     banner: {
         head1: {
             bang: 'স্বাগতম আপনাকে',
-            eng: '',
+            eng: 'Welcome',
         },
         head2: {
             bang: 'নেক্সটজেন',
-            eng: '',
+            eng: 'NextGen',
         },
         head31: {
             bang: 'মাই',
-            eng: ''
+            eng: 'my'
         },
         head32: {
             bang: 'হেলথ',
-            eng: ''
+            eng: 'Health'
         },
         head4: {
             bang: 'ভার্চুয়াল কেয়ার প্লাটফর্মে',
-            eng: ''
+            eng: 'Virtual Care Platform'
         },
         para1: {
             bang: 'জরুরী সমস্যায় আক্রান্ত রোগীদের জন্য আমরা সর্বদা প্রস্তুত। আপনি যেকোন সময় আমাদের সাথে সহজেই যোগাযোগ করতে পারেন। আমরা সর্বোচ্চ মানের সেবা দেওয়ার চেষ্টা করি।',
-            eng: ''
+            eng: 'For patients in critical conditions, we are always ready. You can easily reach out to us at any time. We strive to provide the highest quality of service.'
         },
         btn1: {
             bang: 'অ্যাপয়েন্টমেন্ট নিন',
-            eng: '',
+            eng: 'Book Appointment',
         },
     },
     shortIntro: {
-        head1: '',
+        head1: {
+            bang: 'আমরা কারা?',
+            eng: 'Who we are?',
+        },
+        head2: {
+            bang: 'আমাদের সংক্ষিপ্ত পরিচিতি',
+            eng: 'Our short introduction',
+        },
+        para1: {
+            bang: 'নেক্সটজেন মাইহেলথ ভিসিপি, নেক্সটজেন ডিজিটেক লিমিটেড বাংলাদেশের একটি স্বাস্থ্য সেবা প্রদানকারী প্ল্যাটফর্ম। নেক্সটজেন মাইহেলথ ভিসিপি আমেরিকা, ইউরোপ, যুক্তরাজ্য এবং বাংলাদেশের সহস্রাধিক বিএমডিসি নিবন্ধিত বিশেষজ্ঞ চিকিৎসকদের সঙ্গে ঘরে বসে ভিডিও কলের মাধ্যমে পরামর্শ ও স্বাস্থ্যসেবা নেয়া সম্ভব করেছে। প্রযুক্তির নিত্যনতুন উদ্ভাবন ব্যবহার করে স্বাস্থ্যসেবাকে দেশের প্রত্যন্ত অঞ্চল থেকে শহর পর্যন্ত সকলের কাছে পৌঁছে দেয়ার লক্ষ্যে বাংলাদেশে শুরু হয় নেক্সটজেন মাইহেলথ ভিসিপি এর কার্যক্রম।',
+            eng: 'NextGen MyHealth VCP, NextGen DigiTech Ltd. is a healthcare service provider platform in Bangladesh. NextGen MyHealth VCP has made it possible to consult and receive healthcare services through video calls with registered specialist doctors from America, Europe, the United Kingdom, and numerous BMDC registered specialists in Bangladesh. Utilizing cutting-edge technology, NextGen MyHealth VCP aims to reach healthcare services from rural areas to urban areas, commencing in Bangladesh.',
+        },
+    },
+    WhyUs: {
+        head1: {
+            bang: 'কেন আমাদের প্লাটফর্ম ব্যবহার করবেন?',
+            eng: '"Why should you use our platform?"',
+        },
+        head2: {
+            bang: 'কারণ আমাদের আছে',
+            eng: 'Because we have',
+        },
+        point1: {
+            bang: 'নিবন্ধিত বিশেষজ্ঞ চিকিৎসক',
+            eng: 'Registered Specialist Doctor',
+        },
+        point2: {
+            bang: 'ই-প্রেসক্রিপশন সেবা',
+            eng: 'E-Prescription Service',
+        },
+        point3: {
+            bang: 'ডায়গনস্টিক রিপোর্ট আপলোড',
+            eng: 'Diagnostic Report Upload',
+        },
+        point4: {
+            bang: 'ভিডিও এবং অডিও পরামর্শ',
+            eng: 'Video and Audio Consultation',
+        },
+        point5: {
+            bang: 'অনলাইন এবং অফলাইন পরামর্শ',
+            eng: 'Online and Offline Consultation',
+        },
+        point6: {
+            bang: 'ক্লাউড-ভিত্তিক ডেটা এবং গোপনীয়তার নিরাপত্তা',
+            eng: 'Cloud-based Data and Privacy Security',
+        },
+    },
+    SpecialtiesSummary: {
+        head1: {
+            bang: 'আমাদের কাছে যে সকল',
+            eng: 'We have the following',
+        },
+        head2: {
+            bang: 'বিশেষজ্ঞ চিকিৎসক',
+            eng: 'specialist doctors',
+        },
+        head3: {
+            bang: 'আছেন',
+            eng: '',
+        },
+        point1: {
+            bang: 'ইন্টারনাল মেডিসিন',
+            eng: 'Internal Medicine',
+        },
+        point2: {
+            bang: 'হৃদরোগ',
+            eng: 'Cardiology',
+        },
+        point3: {
+            bang: 'ফুসফুস',
+            eng: 'Respiratory Medicine',
+        },
+        point4: {
+            bang: 'স্নায়ুরোগ',
+            eng: 'Neurology',
+        },
+        btn1: {
+            bang: 'সব বিশেষজ্ঞ ডাক্তার দেখুন',
+            eng: 'See all specialist doctors',
+        },
+    },
+    BookingSteps: {
+        head1: {
+            bang: 'ঘণ্টার পর ঘণ্টা লাইনে দাঁড়িয়ে থাকার দিন শেষ!',
+            eng: '',
+        },
+        head2: {
+            bang: 'পরামর্শ নিন কিছু সহজ পদক্ষেপেই',
+            eng: '',
+        },
+        num1: {
+            bang: '১',
+            eng: '1',
+        },
+        num2: {
+            bang: '২',
+            eng: '2',
+        },
+        num3: {
+            bang: '৩',
+            eng: '3',
+        },
+        num4: {
+            bang: '৪',
+            eng: '4',
+        },
+        parahead1: {
+            bang: 'ডাক্তার অনুসন্ধান করুন',
+            eng: '',
+        },
+        parahead2: {
+            bang: 'লগ ইন করুন',
+            eng: '',
+        },
+        parahead3: {
+            bang: 'অ্যাপয়েন্টমেন্ট নির্বাচন করুন',
+            eng: '',
+        },
+        parahead4: {
+            bang: 'অ্যাপয়েন্টমেন্ট বুক করুন',
+            eng: '',
+        },
+        para1: {
+            bang: 'স্পেশালাইজেশন, প্রোফাইল, এবং অভিজ্ঞতা দ্বারা বা আপনার প্রয়োজন এবং উপসর্গ অনুসারে একজন ডাক্তার খুঁজুন।',
+            eng: '',
+        },
+        para2: {
+            bang: 'ফোন নম্বর/ইমেল ঠিকানা এবং পাসওয়ার্ড দিয়ে পেশেন্ট পোর্টালে লগ ইন করুন। আপনি যদি নতুন হন তাহলে আপনার নাম, ফোন নম্বর/ইমেল ঠিকানা এবং পাসওয়ার্ড ব্যবহার করে একটি খুব সহজ প্রক্রিয়ায় নিজেকে নিবন্ধন করুন।',
+            eng: '',
+        },
+        para3: {
+            bang: 'বুক অ্যাপয়েন্টমেন্ট বাটনে ক্লিক করুন এবং আপনার সুবিধাজনক সময় অনুযায়ী ডাক্তারের ডাক্তারের অ্যাপয়েন্টমেন্ট বুক করুন।',
+            eng: '',
+        },
+        para4: {
+            bang: 'অনলাইন পেমেন্টের মাধ্যমে আপনার অ্যাপয়েন্টমেন্ট নিশ্চিত করুন।',
+            eng: '',
+        },
+    },
+    CustomerReview: {
+        head1: {
+            bang: 'আমাদের ক্লায়েন্টরা কি বলেন',
+            eng: 'What our clients say',
+        },
+        name1: {
+            bang: 'হাবিবুর রহমান',
+            eng: 'Habibur Rahman',
+        },
+        name2: {
+            bang: 'ইমাম হাশেম',
+            eng: 'Imam Hashem',
+        },
+        name3: {
+            bang: 'তাসনিমা ওয়াহিদ',
+            eng: 'Tasnima Waheed',
+        },
+        para1: {
+            bang: 'আমি খুশি যে বাংলাদেশে এখন বিশ্বমানের অনলাইন চিকিৎসার বিকল্প রয়েছে। এটি আমার মতো অনেক রোগীকে চিকিৎসার জন্য বিদেশে যাওয়ার ভারী ব্যয় বহন না করে স্বাভাবিক জীবনযাপন করার সুযোগ দেয়।',
+            eng: "I am glad that we now have world-class online treatment options available in Bangladesh. This gives a chance to many patients like me to lead normal lives without having to incur heavy expenses of going abroad for the same treatment.",
+        },
+        para2: {
+            bang: 'আমি সত্যিই খুশি যে ডাক্তাররা আমার অবস্থা এবং থেরাপি সম্পর্কে আরও জানার সুযোগ দিয়েছেন যা আমাকে চিকিৎসা করতে সাহায্য করেছিল। পিঠের ব্যথা ছাড়াই আমি আমার দৈনন্দিন জীবনে ফিরে এসেছি। আমি অবশেষে শান্তিতে আছি।',
+            eng: "I am really happy that the doctors gave me an opportunity to learn more about my condition and the therapy which helped me undergo the procedure. I'm back to my routine and with no lingering back pain. I'm finally at peace.",
+        },
+        para3: {
+            bang: 'নেক্সটজেন মাইহেলথ ভিসিপি চিকিৎসার জন্য সেরা অনলাইন প্ল্যাটফর্ম। আমি তাদের একজন ডাক্তার দ্বারা চিকিৎসা করেছি। ডাক্তার খুব ভাল এবং আমার চিকিৎসা করার সময় অনেক যত্ন নেন। এটা সত্যিই একটি ভাল অভিজ্ঞতা ছিল।',
+            eng: "NextGen MyHealth VCP is the best online platform for medical treatment. I have been treated by one of their doctors. The doctor was very good and took great care of me during my treatment. It was truly a good experience.",
+        },
+    },
+    JoinDoctor: {
+        head1: {
+            bang: 'আপনি কি একজন ডাক্তার এবং',
+            eng: 'Are you a doctor and',
+        },
+        head2: {
+            bang: 'আমাদের সাথে যোগ দিতে চান?',
+            eng: 'want to join us?',
+        },
+        para1: {
+            bang: 'এই',
+            eng: 'Fill up the',
+        },
+        para2: {
+            bang: 'Google Form',
+            eng: 'Google Form',
+        },
+        para3: {
+            bang: 'পূরণ করুন',
+            eng: '',
+        },
+    },
+}
+
+export const aboutusData = {
+    WhoWeAre: {
+        head1: {
+            bang: 'আমাদের',
+            eng: 'Our',
+        },
+        head2: {
+            bang: 'পরিচিতি',
+            eng: 'Introduction',
+        },
+        para1: {
+            bang: 'নেক্সটজেন ডিজিটেক লিমিটেড একটি বেসরকারি গবেষণা-ভিত্তিক কোম্পানি যা ডাক্তার, চিকিৎসা বিশেষজ্ঞ, গবেষক এবং আইটি বিশেষজ্ঞদের একটি দল নিয়ে গঠিত। নেক্সটজেন ডিজিটেক, রোগী এবং ডাক্তার উভয়ের উন্নয়নের জন্য প্রতিনিয়ত আপসহীনভাবে কাজ করে যাচ্ছে। নেক্সটজেন মাইহেলথ ভিসিপি নেক্সটজেন ডিজিটেক লিমিটেড বাংলাদেশের একটি স্বাস্থ্য পণ্য। এটির উদ্ভাবনী ভার্চুয়াল স্বাস্থ্যসেবা প্ল্যাটফর্ম বাংলাদেশের জনগণের স্বাস্থ্যসেবা বিষয়ক ভোগান্তি কমাতে বদ্ধপরিকর।',
+            eng: 'NextGen Digitech Ltd. is a private research-based company that brings together a team of doctors, medical specialists, researchers, and IT experts. NextGen Digitech consistently works to enhance both patient and doctor experiences. NextGen MyHealth VCP is a health product of NextGen Digitech Ltd. It is an innovative virtual healthcare platform aiming to reduce the burden on the public regarding healthcare services in Bangladesh.',
+        },
+        para2: {
+            bang: 'নেক্সটজেন ডিজিটেক লিমিটেড একটি বেসরকারি গবেষণা-ভিত্তিক কোম্পানি যা ডাক্তার, চিকিৎসা বিশেষজ্ঞ, গবেষক এবং আইটি বিশেষজ্ঞদের একটি দল নিয়ে গঠিত। নেক্সটজেন ডিজিটেক, রোগী এবং ডাক্তার উভয়ের উন্নয়নের জন্য প্রতিনিয়ত আপসহীনভাবে কাজ করে যাচ্ছে। নেক্সটজেন মাইহেলথ ভিসিপি নেক্সটজেন ডিজিটেক লিমিটেড বাংলাদেশের একটি স্বাস্থ্য পণ্য। এটির উদ্ভাবনী ভার্চুয়াল স্বাস্থ্যসেবা প্ল্যাটফর্ম বাংলাদেশের জনগণের স্বাস্থ্যসেবা বিষয়ক ভোগান্তি কমাতে বদ্ধপরিকর।',
+            eng: 'NextGen Digitech Ltd. is a private research-based company that brings together a team of doctors, medical specialists, researchers, and IT experts. NextGen Digitech consistently works to enhance both patient and doctor experiences. NextGen MyHealth VCP is a health product of NextGen Digitech Ltd. It is an innovative virtual healthcare platform aiming to reduce the burden on the public regarding healthcare services in Bangladesh.',
+        },
+    },
+    OurAdvantages: {
+        head1: {
+            bang: 'আমাদের প্ল্যাটফর্ম ব্যবহার করার সুবিধা',
+            eng: 'The advantages of using our platform',
+        },
+        pointhead1: {
+            bang: 'ব্যবহারকারী বান্ধব পোর্টাল',
+            eng: 'User friendly portal',
+        },
+        pointhead2: {
+            bang: 'স্বনামধন্য বিশেষজ্ঞ ডাক্তার',
+            eng: 'Renowned specialist doctors',
+        },
+        pointhead3: {
+            bang: 'ই-প্রেসক্রিপশন সেবা',
+            eng: 'E-prescription service',
+        },
+        pointhead4: {
+            bang: 'অ্যাপয়েন্টমেন্ট নোটিফিকেশন',
+            eng: 'Appointment Notification',
+        },
+        pointhead5: {
+            bang: 'ডায়াগনস্টিক রিপোর্ট আপলোড',
+            eng: 'Upload Diagnostic Report',
+        },
+        pointhead6: {
+            bang: 'সপ্তাহব্যাপী সেবা',
+            eng: 'Week-long service',
+        },
+        pointpera1: {
+            bang: 'রোগী এবং ডাক্তার পক্ষের সকল বয়সের ব্যবহারকারীদের জন্য ব্যবহার করা সহজ।',
+            eng: 'Easy to use for users of all ages, both patients and doctors.',
+        },
+        pointpera2: {
+            bang: 'নেক্সটজেন মাইহেলথ ভিসিপি-তে আছেন দেশ - বিদেশের সকল বিখ্যাত বিশেষজ্ঞ ডাক্তারণ।',
+            eng: 'NexGen MyHealth VCP has renowned specialist doctors from both within the country and abroad.',
+        },
+        pointpera3: {
+            bang: 'ভিডিও সেশনের সমাপ্তির পর ডাক্তার ই-প্রেসক্রিপশন আপলোড করবেন। ই-প্রেসক্রিপশনটি তখনই বা পরে ডাউনলোড এবং ব্যবহার করা যাবে।',
+            eng: 'After the video session, the doctor will upload the e-prescription. The e-prescription can be downloaded and used either immediately or later.',
+        },
+        pointpera4: {
+            bang: 'অনলাইন পরামর্শের জন্য রোগী এবং ডাক্তার উভয়কে এসএমএস এবং ই-মেইলের মাধ্যমে প্রাথমিকভাবে জানানো হবে।',
+            eng: 'For online consultation, both the patient and the doctor will be initially informed through SMS and email.',
+        },
+        pointpera5: {
+            bang: 'রোগী পোর্টালে তার ডায়াগনস্টিক রিপোর্ট আপলোড করতে স্মার্টফোন ক্যামেরা এবং উল্লেখিত ছবি আপলোড উভয় বিকল্পই ব্যবহার করতে পারেন।',
+            eng: 'The patient can upload their diagnostic report on the patient portal using either the smartphone camera or by selecting the relevant image.',
+        },
+        pointpera6: {
+            bang: 'নেক্সটজেন মাইহেলথ ভিসিপি সপ্তাহে সাত দিনই সেবা প্রদানের জন্য নিবেদিত।',
+            eng: 'NextGen MyHealth VCP offers services seven days, every week.',
+        },
+    },
+}
+
+export const contactusData = {
+    Form: {
+        head1: {
+            bang: 'যোগাযোগ করুন',
+            eng: 'Contact Us',
+        },
+        head2: {
+            bang: 'বার্তা লিখুন',
+            eng: 'Write a Message',
+        },
+        name: {
+            bang: 'নাম',
+            eng: 'Name',
+        },
+        email: {
+            bang: 'ই-মেইল',
+            eng: 'Email',
+        },
+        msg: {
+            bang: 'বার্তা (প্রশ্নের বিবরণ)',
+            eng: 'Message (Description of the question)',
+        },
+        para1: {
+            bang: 'নেক্সটজেন মাইহেলথ ভিসিপি',
+            eng: 'NextGen MyHealth VCP',
+        },
+        para1: {
+            bang: 'স্বাস্থ্য বিভাগ',
+            eng: 'Health Division',
+        },
+        para1: {
+            bang: 'নেক্সটজেন ডিজিটেক লিমিটেড',
+            eng: 'NextGen DigiTech Ltd.',
+        },
+        para1: {
+            bang: 'টুল অ্যান্ড টেকনোলজি ইনস্টিটিউট, বিটাক শিল্প মন্ত্রণালয় ১১৬ (খ), তেজগাঁও শিল্প এলাকা, ঢাকা-১২০৮, বাংলাদেশ',
+            eng: 'Tool & Technology Institute, BITAC Ministry of Industries 116 (kha), Tejgaon Industrial Area, Dhaka-1208, Bangladesh.',
+        },
+        para1: {
+            bang: '+৮৮০১৩২১১১৯৩৯১',
+            eng: '+8801321119391',
+        },
+        para1: {
+            bang: 'info@nextgenmyhealth.com',
+            eng: 'info@nextgenmyhealth.com',
+        },
+        btn1: {
+            bang: 'বার্তা পাঠান',
+            eng: 'Send a message',
+        },
+    },
+}
+
+export const specialtiesData = {
+    head1: {
+        bang: 'মেডিসিন',
+        eng: 'Medicine',
+    },
+    head2: {
+        bang: 'সার্জারি',
+        eng: 'Surgery',
+    },
+}
+
+export const specialtydoctorsData = {
+    head1: {
+        bang: 'জন চিকিৎসক পাওয়া গেছে',
+        eng: 'We have found doctors',
     },
 }
 

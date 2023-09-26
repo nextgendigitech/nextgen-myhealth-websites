@@ -5,6 +5,7 @@ import boy_avatar from "../../../assets/images/boy_avatar.png";
 import girl_avatar from "../../../assets/images/girl_avatar.jpg";
 import { HBox, VBox } from "../../../components/Containers";
 import { H3, P2, P4 } from "../../../components/Typography";
+import { homeData } from '../../../data';
 
 const Container = styled(HBox)`
     margin-top: 30px;
@@ -45,31 +46,25 @@ const ReviewCard = ({ image, name, review, isMobile }) => {
 const CustomerReview = ({ isMobile }) => {
     return (
         <VBox style={{ width: "100%", marginTop: isMobile ? '60px' : '-140px' }}>
-            <H3 align="center" className="bold">
-                আমাদের ক্লায়েন্টরা কি বলেন
-            </H3>
+            <H3 align="center" className="bold">{homeData.CustomerReview.head1['bang']}</H3>
             <Container style={{ padding: isMobile ? "30px" : "50px" }} justify="space-around" align="center">
                 <ReviewCard
                     isMobile={isMobile}
                     image={boy_avatar}
-                    name="হাবিবুর রহমান"
-                    review="আমি খুশি যে বাংলাদেশে এখন বিশ্বমানের অনলাইন চিকিৎসার বিকল্প রয়েছে। 
-                        এটি আমার মতো অনেক রোগীকে চিকিৎসার জন্য বিদেশে যাওয়ার ভারী ব্যয় বহন না করে স্বাভাবিক জীবনযাপন করার সুযোগ দেয়।"
+                    name={homeData.CustomerReview.name1['bang']}
+                    review={homeData.CustomerReview.para1['bang']}
                 />
                 <ReviewCard
                     isMobile={isMobile}
                     image={boy_avatar}
-                    name="ইমাম হাশেম"
-                    review="আমি সত্যিই খুশি যে ডাক্তাররা আমার অবস্থা এবং থেরাপি সম্পর্কে আরও জানার সুযোগ দিয়েছেন যা আমাকে চিকিৎসা করতে সাহায্য করেছিল। 
-                        পিঠের ব্যথা ছাড়াই আমি আমার দৈনন্দিন জীবনে ফিরে এসেছি। আমি অবশেষে শান্তিতে আছি।"
+                    name={homeData.CustomerReview.name2['bang']}
+                    review={homeData.CustomerReview.para2['bang']}
                 />
                 <ReviewCard
                     isMobile={isMobile}
                     image={girl_avatar}
-                    name="তাসনিমা ওয়াহিদ"
-                    review="নেক্সটজেন মাইহেলথ ভিসিপি চিকিৎসার জন্য সেরা অনলাইন প্ল্যাটফর্ম।
-                        আমি তাদের একজন ডাক্তার দ্বারা চিকিৎসা করেছি। ডাক্তার খুব ভাল এবং আমার চিকিৎসা করার সময় অনেক যত্ন নেন।
-                        এটা সত্যিই একটি ভাল অভিজ্ঞতা ছিল।"
+                    name={homeData.CustomerReview.name3['bang']}
+                    review={homeData.CustomerReview.para3['bang']}
                 />
             </Container>
         </VBox>

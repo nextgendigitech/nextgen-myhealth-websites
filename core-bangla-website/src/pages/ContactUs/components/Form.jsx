@@ -43,9 +43,9 @@ const SButton = styled(Button)`
 const Form = ({isMobile}) => {
     
     return (
-        <Card style={{ alignSelf: 'center', width: isMobile ? "100%" : "65%", padding: isMobile ? "16px" : "32px" }}>
+        <Card className={isMobile ? "p-2" : "p-4"} style={{ alignSelf: 'center', width: isMobile ? "100%" : "65%" }}>
             <H5 align="center" justify="center" color="third">যোগাযোগ করুন</H5>
-            <Underline align="center" justify="center" style={{ marginBottom: isMobile ? "30px" : "50px", top: isMobile ? "8px" : "17px" }}/>
+            <Underline align="center" justify="center" className={isMobile ? "mb-2" : "mb-6"} style={{ top: isMobile ? "8px" : "17px" }}/>
             <HBox align="center">
                 <VBox style={{ width: isMobile ? "100%" : "50%" }}>
                     <P2 className="bold mb-2" color="third">বার্তা লিখুন</P2>
@@ -58,28 +58,29 @@ const Form = ({isMobile}) => {
                         className="p-1"
                     />
                     <SButton 
+                        className={isMobile ? "mt-2" : "mt-5"}
                         type="submit" 
                         color="third"  
                         size={isMobile ? 'sm' : 'md'}
-						style={{ marginTop: isMobile ? "16px" : "40px", height: isMobile ? 30 : 45 }}
+						style={{ height: isMobile ? 30 : 45 }}
                         elevated
                     >
                         বার্তা পাঠান
                     </SButton>
                 </VBox>
-                <VBox style={{ marginBottom: isMobile ? "0px" : "48px", paddingTop: isMobile ? "24px" : "", paddingLeft: isMobile ? "" : "48px" , width: isMobile ? "100%" : "45%", alignItems: isMobile ? "center" : "" }}>
+                <VBox className={isMobile ? "pt-3" : "mb-6 pl-6"} style={{ width: isMobile ? "100%" : "45%", alignItems: isMobile ? "center" : "" }}>
                     <P2 className="bold">নেক্সটজেন মাইহেলথ ভিসিপি</P2>
                     <P3>স্বাস্থ্য বিভাগ</P3>
                     <P3 color="first">নেক্সটজেন ডিজিটেক লিমিটেড</P3>
-                    <P3>টুল অ্যান্ড টেকনোলজি ইনস্টিটিউট, বিট্যাক শিল্প</P3>
-                    <P3>মন্ত্রণালয় ১১৬ (খ), তেজগাঁও শিল্প এলাকা,</P3>
-                    <P3>ঢাকা-১২০৮, বাংলাদেশ</P3>
-                    <HBox style={{ marginTop: isMobile ? "8px" : "24px" }}>
-                        <HiOutlinePhone/>
+                    <P3 align= {isMobile ? "center" : ""}>
+                        টুল অ্যান্ড টেকনোলজি ইনস্টিটিউট, বিটাক শিল্প মন্ত্রণালয় ১১৬ (খ), তেজগাঁও শিল্প এলাকা, ঢাকা-১২০৮, বাংলাদেশ
+                    </P3>
+                    <HBox className={isMobile ? "mt-1" : "mt-3"}>
+                        <HiOutlinePhone className="mr-1"/>
                         <P3>+৮৮০১৩২১১১৯৩৯১</P3>
                     </HBox>
-                    <HBox style={{ marginTop: isMobile ? "8px" : "24px" }}>
-                        <AiOutlineMail/>
+                    <HBox className={isMobile ? "mt-1" : "mt-3"}>
+                        <AiOutlineMail className="mr-1"/>
                         <P3>info@nextgenmyhealth.com</P3>
                     </HBox>
                 </VBox>

@@ -12,6 +12,7 @@ import right_arrow from "../../../assets/images/right_arrow.png";
 import { Button } from '../../../components/Buttons';
 import { HBox, VBox } from "../../../components/Containers";
 import { P2, P3 } from "../../../components/Typography";
+import { homeData } from '../../../data';
 
 const Container = styled(HBox)`
     display: inline-block; 
@@ -106,26 +107,26 @@ const SpecialtiesSummary = ({ isMobile }) => {
             <HBox justify='space-around' align='center'>
                 <VBox className="" align='center' style={{ width: isMobile ? '35%' : '25%' }}>
                     <TitleCard className="p-1 mb-3" justify="center" align='center'>
-                        <P3>আমাদের কাছে যে সকল</P3>
-                        <P2 color='third'>বিশেষজ্ঞ চিকিৎসক</P2>
-                        <P3>আছেন</P3>
+                        <P3>{homeData.SpecialtiesSummary.head1['bang']}</P3>
+                        <P2 color='third'>{homeData.SpecialtiesSummary.head2['bang']}</P2>
+                        <P3>{homeData.SpecialtiesSummary.head3['bang']}</P3>
                     </TitleCard>
                     <SLink to='/specialties'>
-                        <SButton className='mb-5' color='third' style={{ fontSize: isMobile ? "12px" : "16px" }} elevated>সব বিশেষজ্ঞ ডাক্তার দেখুন</SButton> 
+                        <SButton className='mb-5' color='third' style={{ fontSize: isMobile ? "12px" : "16px" }} elevated>{homeData.SpecialtiesSummary.btn1['bang']}</SButton> 
                     </SLink>
                 </VBox>
                 <VBox align='center' className="" style={{ width: isMobile ? '60%' : '25%' }}>
                     <SLink to='/specialty-doctors/Internal Medicine'>
-                        <SpecialtiesCard className='mt-2' isMobile={isMobile} icon={internal_medicine} name="ইন্টারনাল মেডিসিন"/>
+                        <SpecialtiesCard className='mt-2' isMobile={isMobile} icon={internal_medicine} name={homeData.SpecialtiesSummary.point1['bang']}/>
                     </SLink>
                     <SLink to='/specialty-doctors/Cardiology'>
-                        <SpecialtiesCard isMobile={isMobile} icon={cardiology} name="হৃদরোগ"/>
+                        <SpecialtiesCard isMobile={isMobile} icon={cardiology} name={homeData.SpecialtiesSummary.point2['bang']}/>
                     </SLink>
                     <SLink to='/specialty-doctors/Respiratory Medicine'>
-                        <SpecialtiesCard isMobile={isMobile} icon={respiratory_medicine} name="ফুসফুস"/>
+                        <SpecialtiesCard isMobile={isMobile} icon={respiratory_medicine} name={homeData.SpecialtiesSummary.point3['bang']}/>
                     </SLink>
                     <SLink to='/specialty-doctors/Neurology'>
-                        <SpecialtiesCard isMobile={isMobile} icon={neurology} name="স্নায়ুরোগ"/>
+                        <SpecialtiesCard isMobile={isMobile} icon={neurology} name={homeData.SpecialtiesSummary.point4['bang']}/>
                     </SLink>
                     <SLink to='/specialties'>
                         <RoundButton style={{ height: isMobile ? '40px' : '50px', marginTop: isMobile ? '12px' : '24px', marginBottom: isMobile ? '12px' : '24px' }} elevated>

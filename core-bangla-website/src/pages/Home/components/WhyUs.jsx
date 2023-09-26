@@ -5,6 +5,7 @@ import { VBox, HBox } from '../../../components/Containers';
 import { H2, H3, P2 } from '../../../components/Typography';
 import colors from '../../../config/colors';
 import responsive from '../../../config/responsive';
+import { homeData } from '../../../data';
 
 const Container = styled(VBox)`
     padding-left: 8%;
@@ -150,8 +151,8 @@ const WhyUs = ({ isMobile }) => {
                 <CenterCircle align='center' justify='center'>
                     <CircleTextContainerOuter align='center'>
                         <CircleTextContainerInner align='center'>
-                            <CenterCircleText className='bold' align='center'>কারণ আমাদের</CenterCircleText>
-                            <CenterCircleText className='bold' align='center'>আছে</CenterCircleText>
+                            <CenterCircleText className='bold' align='center'>{homeData.WhyUs.head2['bang']}</CenterCircleText>
+                            {/* <CenterCircleText className='bold' align='center'>আছে</CenterCircleText> */}
                         </CircleTextContainerInner>
                     </CircleTextContainerOuter>
                 </CenterCircle>
@@ -163,7 +164,7 @@ const WhyUs = ({ isMobile }) => {
         <VBox justify={justify} align={align} style={{position: 'relative', width: width}}>
             <Item1 className='m-2' height={Item_height} width={Item_width} top_position='0' justify='center' align='center'>
                 <ItemTextContainer justify='center' align='center'>
-                    <P2 align='center'>নিবন্ধিত বিশেষজ্ঞ চিকিৎসক</P2>
+                    <P2 align='center'>{homeData.WhyUs.point1['bang']}</P2>
                 </ItemTextContainer>
             </Item1>
 
@@ -173,7 +174,7 @@ const WhyUs = ({ isMobile }) => {
                 
             <Item2 className='mb-2 ml-2 mr-2' height={Item_height} width={Item_width} top_position='-21px' justify='center' align='center'>
                 <ItemTextContainer justify='center' align='center'>
-                    <P2 align='center'>ই-প্রেসক্রিপশন সেবা</P2>
+                    <P2 align='center'>{homeData.WhyUs.point2['bang']}</P2>
                 </ItemTextContainer>
             </Item2>
 
@@ -183,7 +184,7 @@ const WhyUs = ({ isMobile }) => {
 
             <Item3 className='ml-2 mr-2' height={Item_height} width={Item_width} top_position='-42px' justify='center' align='center'>    
                 <ItemTextContainer justify='center' align='center'>
-                    <P2 align='center'>ডায়গনিস্টিক রিপোর্ট আপলোড</P2>
+                    <P2 align='center'>{homeData.WhyUs.point3['bang']}</P2>
                 </ItemTextContainer>
                      
             </Item3>
@@ -194,7 +195,7 @@ const WhyUs = ({ isMobile }) => {
         <VBox justify={justify} align={align} style={{position: 'relative', width: width}}>
             <Item1 className='m-2' height={Item_height} width={Item_width} top_position='0' justify='center' align='center' style={{transform: 'ScaleX(-1)'}}>
                 <ItemTextContainer justify='center' align='center'>
-                    <P2 align='center' style={{transform: 'ScaleX(-1)'}}>ভিডিও এবং অডিও পরামর্শ</P2>
+                    <P2 align='center' style={{transform: 'ScaleX(-1)'}}>{homeData.WhyUs.point4['bang']}</P2>
                 </ItemTextContainer>
             </Item1>
 
@@ -204,8 +205,8 @@ const WhyUs = ({ isMobile }) => {
 
             <Item2 className='mb-2 ml-2 mr-2' height={Item_height} width={Item_width} top_position='-21px' justify='center' align='center' style={{transform: 'ScaleX(-1)'}}>
                 <ItemTextContainer justify='center' align='center'>
-                    <P2 align='center' style={{transform: 'ScaleX(-1)'}}>অনলাইন এবং অফলাইন</P2>
-                    <P2 align='center' style={{transform: 'ScaleX(-1)'}}>পরামর্শ</P2>
+                    <P2 align='center' style={{transform: 'ScaleX(-1)'}}>{homeData.WhyUs.point5['bang']}</P2>
+                    {/* <P2 align='center' style={{transform: 'ScaleX(-1)'}}>পরামর্শ</P2> */}
                 </ItemTextContainer>
             </Item2>
 
@@ -215,7 +216,7 @@ const WhyUs = ({ isMobile }) => {
 
             <Item3 className='ml-2 mr-2' height={Item_height} width={Item_width} top_position='-42px' justify='center' align='center' style={{transform: 'ScaleX(-1)'}}>
                 <ItemTextContainer justify='center' align='center'>
-                    <P2 className='p-3' align='center' style={{transform: 'ScaleX(-1)'}}>ক্লাউড-ভিত্তিক ডেটা এবং গোপনীয়তার নিরাপত্তা</P2>
+                    <P2 className='p-3' align='center' style={{transform: 'ScaleX(-1)'}}>{homeData.WhyUs.point6['bang']}</P2>
                 </ItemTextContainer>
             </Item3>
         </VBox>
@@ -223,7 +224,7 @@ const WhyUs = ({ isMobile }) => {
 
     return (
         <Container align='center' style={{marginTop: isMobile ? '60px' : '0px'}}>
-            <H3 className="bold">কেন আমাদের প্লাটফর্ম ব্যবহার করবেন?</H3>
+            <H3 className="bold">{homeData.WhyUs.head1['bang']}</H3>
             <Underline className="my-2" />
 
             {isMobile ?
