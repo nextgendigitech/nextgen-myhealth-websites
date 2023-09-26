@@ -1,5 +1,6 @@
 import { Backdrop, Box, CircularProgress, Grid } from '@mui/material'
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
 import SpecialtyContainer from '../../components/SpecialtyContainer'
 import Gastroenterology from '../../images/specialties/gastroenterology.png';
 import GeneralPhysician from '../../images/specialties/generalphysician.png';
@@ -18,9 +19,6 @@ import Psychiatry from '../../images/specialties/psychiratry.png';
 import Rehab from '../../images/specialties/rehabilitation.png';
 import Pediatrics from '../../images/specialties/pediatrics.png';
 import AestheticDermatology from '../../images/specialties/female_beautification.png';
-import Modal from '../../components/Modal';
-import DoctorList from '../DoctorList';
-import { fetchDoctors }  from '../../services/apis';
 
 const MedicineSection = () => {
     const specialityMedicineList = [
@@ -112,35 +110,6 @@ const MedicineSection = () => {
             specialityBangla: 'এস্থেটিক ডার্মাটোলজি'
         }]
     ]
-
-    const [openDialog, setOpenDialog] = useState(false)
-    const [selectedSpecialty, setSelectedSpecialty] = useState('')
-    const [doctors, setDoctors] = useState([])
-    const [loader, setLoader] = useState(false)
-
-    const handleClick = (specialty) => {
-        setOpenDialog(true)
-        setSelectedSpecialty(specialty)
-        // showDoctorList(specialty)
-    }
-
-    const handleClose = () => {
-        setOpenDialog(false)
-    }
-
-    const showDoctorList = (specialty) => {
-        setDoctors([])
-        setLoader(true)
-        fetchDoctors(specialty)
-        .then((response) => {
-            setDoctors(response.data.doctors)
-            setLoader(false)
-        })
-    }
-    
-    useEffect(() => {
-      openDialog && showDoctorList(selectedSpecialty)
-    }, [openDialog])
     
   return (
     <>
@@ -171,13 +140,14 @@ const MedicineSection = () => {
                             mb: 1,
                         }}
                     >
-                        <SpecialtyContainer key={index} image={medicine.image} specialityHeader={medicine.specialityHeader} specialityBangla={medicine.specialityBangla} handleClick={() => handleClick(medicine.specialityHeader)} />
+                    <Link to={`/specialities/${medicine.specialityHeader}`} style={{textDecoration: 'none'}}>
+                        <SpecialtyContainer key={index} image={medicine.image} specialityHeader={medicine.specialityHeader} specialityBangla={medicine.specialityBangla} />
+                    </Link>
                     </Grid>
                 )}
             </Grid>
         )}
     </Box>
-    <Modal open={openDialog} loader={loader} handleClose={handleClose} modalHeader={selectedSpecialty} fullScreen={true} modalContent={<DoctorList doctors={doctors} loader={loader}/>}/>
     </>
   )
 }

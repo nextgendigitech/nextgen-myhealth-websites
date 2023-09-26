@@ -25,16 +25,16 @@ const Container = styled(HBox)`
 `
 
 const LogoImage = styled.img`
-    @media only screen and (max-width: ${responsive.xs-1}px) { // xs
+    @media only screen and (max-width: ${responsive.xs}px) { // xs
         height: 65px;
     }
-    @media only screen and (min-width: ${responsive.xs}px) and (max-width: ${responsive.sm-1}px) {  // sm
+    @media only screen and (min-width: ${responsive.xs}px) and (max-width: ${responsive.sm}px) {  // sm
         height: 70px;
     }
-    @media only screen and (min-width: ${responsive.sm}px) and (max-width: ${responsive.md-1}px) {  // md
+    @media only screen and (min-width: ${responsive.sm}px) and (max-width: ${responsive.md}px) {  // md
         height: 80px;
     }
-    @media only screen and (min-width: ${responsive.md}px) and (max-width: ${responsive.lg-1}px) {  // lg
+    @media only screen and (min-width: ${responsive.md}px) and (max-width: ${responsive.lg}px) {  // lg
         height: 80px;
     }
     @media only screen and (min-width: ${responsive.lg}px) {  // xl

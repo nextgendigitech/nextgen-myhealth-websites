@@ -19,22 +19,22 @@ const Container = styled(VBox)`
     
 `
 
-const SurgerySection = () => {
+const SurgerySection = ({ isMobile }) => {
     return (
         <Container align='center'>
             <H3 className='bold mt-7'>সার্জারি</H3>
             <HBox justify='center'>
-                <SpecialtyCard image={GeneralSurgeryImage} specialtyBang='জেনারেল সার্জারি' specialtyEng='General Surgery' />
-                <SpecialtyCard image={OrthopedicSurgeryImage} specialtyBang='অর্থোপেডিক সার্জারি' specialtyEng='Orthopedic Surgery' />
-                <SpecialtyCard image={NeurologySurgeryImage} specialtyBang='স্নায়ু সার্জারি' specialtyEng='Neurosurgery' />
-                <SpecialtyCard image={GynecologyAndObstetricsImage} specialtyBang='স্ত্রীরোগ ও প্রসূতি' specialtyEng='Gynecology & Obstetrics' />
-                <SpecialtyCard image={ENTAndHeadNeckSurgeryImage} specialtyBang='নাক, কান ও গলা' specialtyEng='ENT & Head Neck Surgery' />
-                <SpecialtyCard image={OpthalmologyImage} specialtyBang='চক্ষু' specialtyEng='Ophthalmology' />
-                <SpecialtyCard image={DentalSurgeryImage} specialtyBang='ডেন্টাল সার্জারি' specialtyEng='Oral & Dental Surgery' />
-                <SpecialtyCard image={UrologyImage} specialtyBang='মুত্ররোগ সার্জারি' specialtyEng='Urology' />
-                <SpecialtyCard image={ColorectalSurgeryImage} specialtyBang='কোলন, রেকটাম সার্জারি' specialtyEng='Colorectal Surgery' />
-                <SpecialtyCard image={PediatricsSurgeryImage} specialtyBang='শিশুরোগ সার্জারি' specialtyEng='Pediatric Surgery' />
-                <SpecialtyCard image={VascularSurgeryImage} specialtyBang='রক্তনালী সার্জারি' specialtyEng='Vascular Surgery' />
+                <SpecialtyCard isMobile={isMobile} image={GeneralSurgeryImage} specialtyBang='জেনারেল সার্জারি' specialtyEng='General Surgery' />
+                <SpecialtyCard isMobile={isMobile} image={OrthopedicSurgeryImage} specialtyBang='অর্থোপেডিক সার্জারি' specialtyEng='Orthopedic Surgery' />
+                <SpecialtyCard isMobile={isMobile} image={NeurologySurgeryImage} specialtyBang='স্নায়ু সার্জারি' specialtyEng='Neurosurgery' />
+                <SpecialtyCard isMobile={isMobile} image={GynecologyAndObstetricsImage} specialtyBang='স্ত্রীরোগ ও প্রসূতি' specialtyEng='Gynecology & Obstetrics' />
+                <SpecialtyCard isMobile={isMobile} image={ENTAndHeadNeckSurgeryImage} specialtyBang='নাক, কান ও গলা' specialtyEng='ENT & Head Neck Surgery' />
+                <SpecialtyCard isMobile={isMobile} image={OpthalmologyImage} specialtyBang='চক্ষু' specialtyEng='Ophthalmology' />
+                <SpecialtyCard isMobile={isMobile} image={DentalSurgeryImage} specialtyBang='ডেন্টাল সার্জারি' specialtyEng='Oral & Dental Surgery' />
+                <SpecialtyCard isMobile={isMobile} image={UrologyImage} specialtyBang='মুত্ররোগ সার্জারি' specialtyEng='Urology' />
+                <SpecialtyCard isMobile={isMobile} image={ColorectalSurgeryImage} specialtyBang='কোলন, রেকটাম সার্জারি' specialtyEng='Colorectal Surgery' />
+                <SpecialtyCard isMobile={isMobile} image={PediatricsSurgeryImage} specialtyBang='শিশুরোগ সার্জারি' specialtyEng='Pediatric Surgery' />
+                <SpecialtyCard isMobile={isMobile} image={VascularSurgeryImage} specialtyBang='রক্তনালী সার্জারি' specialtyEng='Vascular Surgery' />
             </HBox>
         </Container>
     );

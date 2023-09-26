@@ -14,6 +14,7 @@ import { HBox, VBox } from "../../../components/Containers";
 import { P2, P3 } from "../../../components/Typography";
 
 const Container = styled(HBox)`
+    margin-top: 50px;
     display: inline-block; 
     width: 100%;
     border: dashed 7px white;
