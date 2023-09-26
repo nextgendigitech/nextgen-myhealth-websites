@@ -23,16 +23,16 @@ const Banner = ({ isMobile }) => {
 	return (
 		<Container justify='space-between' align='center'>
 			<VBox style={{ width: isMobile ? '65%' : '60%' }}>
-				<H3 className='bold mb-2' style={{ lineHeight: isMobile ? 1 : 1.2, paddingTop: isMobile ? '8%' : '1%' }}>স্{homeData.banner.bang.head1}</H3>
-				<H3 className='bold' color='third'>{homeData.banner.bang.head2}</H3>
+				<H3 className='bold mb-2' style={{ lineHeight: isMobile ? 1 : 1.2, paddingTop: isMobile ? '8%' : '1%' }}>{homeData.banner.head1['bang']}</H3>
+				<H3 className='bold' color='third'>{homeData.banner.head2['bang']}</H3>
 				<VBox className='bold mb-4'> 
 					<HBox>
-						<H1 color='second' className='bold' style={{ lineHeight: isMobile ? 1 : 1.2 }}>{homeData.banner.bang.head31}</H1>
-						<H1 color='first' className='bold' style={{ lineHeight: isMobile ? 1 : 1.2 }}>{homeData.banner.bang.head32}</H1>
+						<H1 color='second' className='bold' style={{ lineHeight: isMobile ? 1 : 1.2 }}>{homeData.banner.head31['bang']}</H1>
+						<H1 color='first' className='bold' style={{ lineHeight: isMobile ? 1 : 1.2 }}>{homeData.banner.head32['bang']}</H1>
 					</HBox>
-					<H4 color='third' style={{ lineHeight: isMobile ? 1 : 0.5 }}>{homeData.banner.bang.head4}</H4>
+					<H4 color='third' style={{ lineHeight: isMobile ? 1 : 0.5 }}>{homeData.banner.head4['bang']}</H4>
 				</VBox>
-				<P2>{homeData.banner.bang.para1}</P2>
+				<P2>{homeData.banner.para1['bang']}</P2>
 				<HBox className='bold px-0 mt-4'>
 					<Link style={{textDecoration: 'none'}} to='/specialties'>
 						<Button
@@ -41,7 +41,7 @@ const Banner = ({ isMobile }) => {
 							style={{ borderRadius: 25, height: isMobile ? 30 : 50 }}
 							elevated
 						>
-							{homeData.banner.bang.btn1}
+							{homeData.banner.btn1['bang']}
 						</Button>
 					</Link> 
 				</HBox>
