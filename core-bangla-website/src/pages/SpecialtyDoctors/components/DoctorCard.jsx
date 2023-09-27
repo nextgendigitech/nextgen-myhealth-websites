@@ -7,7 +7,7 @@ import colors from "../../../config/colors";
 import { Button } from '../../../components/Buttons';
 import { HBox, VBox } from "../../../components/Containers";
 import { P2, P4 } from "../../../components/Typography";
-
+import { specialtydoctorsData } from '../../../data';
 import noImage from '../../../assets/images/no_image.svg';
 
 const CardContainer = styled(HBox)`
@@ -28,15 +28,15 @@ const DoctorCard = ({ id, name, bmdc, qualification, specialty,
     return (
         <CardContainer align="center" justify="center"
             className={isMobile ? "m-1 py-2 px-1" : "m-5 p-2"}
-            style={{ width: isMobile ? "100%" : "calc(50% - 100px)", height: isMobile ? "" : "250px" }}
+            style={{ width: isMobile ? "100%" : "calc(50% - 110px)", height: isMobile ? "" : "270px" }}
         >
             <VBox align='center' style={{ width: "20%" }}>
                 <Image
                     className="mb-3"
                     src={`${import.meta.env.VITE_SERVER_URL}${image}` ? `${import.meta.env.VITE_SERVER_URL}${image}` : noImage}
                 />
-                <P4 className="bold">বি.এম.ডি.সি&nbsp;</P4>
-                <P4 className="bold">{qualification.includes("MBBS") ? "এ-" : ""}{bmdc}</P4>
+                <P4 className="bold">{specialtydoctorsData.doctorcard.head1['bang']}</P4>
+                <P4 className="bold">{qualification.includes("MBBS") ? specialtydoctorsData.doctorcard.head2['bang'] : ""}{bmdc}</P4>
                 <P2 className={isMobile ? "bold mt-1" : "bold mt-2"} color="first"><TbCurrencyTaka/>{fee}</P2>
             </VBox>
             <VBox className={isMobile ? "pl-5" : "pl-3"} style={{ width: "80%" }}>
@@ -51,20 +51,22 @@ const DoctorCard = ({ id, name, bmdc, qualification, specialty,
                     )}
                 </VBox>
                 <P4 className="bold mb-1" >{qualification}</P4>
-                <P4 className={isMobile ? "bold mb-2" : "bold mb-3"}>অভিজ্ঞতা: {experience}</P4>
+                <P4 className={isMobile ? "bold mb-2" : "bold mb-3"}>
+                    {experience ? specialtydoctorsData.doctorcard.head3['bang'] : ""}{experience}
+                    {/* {experience?.substring(0,2) ? experience.substring(0,2) + "+ Years" : ""} */}
+                </P4>
                 <HBox justify="space-around">
                     <NavLink to= {`/doctor-profile/${id}`} style={{textDecoration: 'none'}}>
                         <Button 
-                            className='mb-1'
-                            style={{ fontSize: "15px", width: "fit-content", borderRadius: 25, height: isMobile ? 25 : 40 }} 
+                            style={{ fontSize: "14px", width: "fit-content", borderRadius: 25, height: isMobile ? 25 : 37 }} 
                             color='first' 
-                            elevated>বিস্তারিত দেখুন</Button> 
+                            elevated>{specialtydoctorsData.doctorcard.btn1['bang']}</Button> 
                     </NavLink>
                     <Link to={`https://patient.nextgenmyhealth.com/doctor/${id}`} style={{textDecoration: 'none'}} target='_blank'>
                         <Button 
-                            style={{ fontSize: "15px", width: "fit-content", borderRadius: 25, height: isMobile ? 25 : 40 }}
+                            style={{ fontSize: "14px", width: "fit-content", borderRadius: 25, height: isMobile ? 25 : 37 }}
                             color='third' 
-                            elevated>অ্যাপয়েন্টমেন্ট নিন</Button> 
+                            elevated>{specialtydoctorsData.doctorcard.btn2['bang']}</Button> 
                     </Link>
                 </HBox>
             </VBox>

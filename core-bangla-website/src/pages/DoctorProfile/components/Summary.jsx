@@ -54,9 +54,9 @@ const Summary = ({ consultation_fee, followup_fee, appointment_schedules, isMobi
                     </HBox>
                     <HBox align="center" justify="right">
                         <P3 justify="center">Spoken Language: English, Bangla</P3>
-                        <VerticalLine className="mr-1" style={{ height: "60px" }}/>
+                        <VerticalLine className="mr-1" style={{ height: "60px"}}/>
                     </HBox>
-                    <HBox align="center">
+                    <HBox align="center" style={{flexWrap: "nowrap"}}>
                         {appointment_schedules ? (
                             <>
                                 <VerticalLine className="mr-1" style={{ height: "90px" }}/>
@@ -99,10 +99,10 @@ const Summary = ({ consultation_fee, followup_fee, appointment_schedules, isMobi
             :
             <>
                 <HSummaryCard 
-                    className="py-3 pl-6 my-3" 
+                    className="py-3 pl-5 my-3" 
                     align="center" 
                 >
-                    <VerticalLine style={{ height: "110px" }}/>
+                    <VerticalLine style={{ height: "120px" }}/>
                     <VBox className="pl-3" style={{ width: "23%" }}>
                         <P3>
                             Consultation fee: <TbCurrencyTaka />
@@ -113,30 +113,30 @@ const Summary = ({ consultation_fee, followup_fee, appointment_schedules, isMobi
                             {followup_fee}
                         </P3>
                     </VBox>
-                    <VerticalLine style={{ height: "110px" }}/>
+                    <VerticalLine style={{ height: "120px" }}/>
                     <P3 className="pl-3 mr-3" style={{ width: "25%" }}>Spoken Language: English, Bangla</P3>
-                    <VerticalLine style={{ height: "110px" }}/>
-                    <VBox className="pl-3">
+                    <VerticalLine style={{ height: "120px" }}/>
+                    <VBox className="pl-3" style={{ flexWrap: "nowrap", width: "45%" }}>
                         <P3>Consultation time:</P3>
                         {appointment_schedules ? (
                             <>
                                 <HBox>
                                     <P3>Sunday: {appointment_schedules.sunday ? "Available" : "Not available"},&nbsp;</P3>
-                                    <P3>Monday: {appointment_schedules.monday ? "Available" : "Not available"},&nbsp;</P3>
-                                    <P3>Tuesday: {appointment_schedules.tuesday ? "Available" : "Not available"},&nbsp;</P3>
-                                    
+                                    <P3>Monday: {appointment_schedules.monday ? "Available" : "Not available"},&nbsp;</P3>  
                                 </HBox>
                                 <HBox>
-                                    <P3>Wednesday: {appointment_schedules.wednesday ? "Available" : "Not available"},&nbsp;</P3>
+                                    <P3>Tuesday: {appointment_schedules.tuesday ? "Available" : "Not available"},&nbsp;</P3>
+                                    <P3>Wednesday: {appointment_schedules.wednesday ? "Available" : "Not available"},&nbsp;</P3>   
+                                </HBox>
+                                <HBox>
                                     <P3>Thursday: {appointment_schedules.thursday ? "Available" : "Not available"},&nbsp;</P3>
-                                    <P3>Friday: {appointment_schedules.friday ? "Available" : "Not available"},&nbsp;</P3>
+                                    <P3>Friday: {appointment_schedules.friday ? "Available" : "Not available"},&nbsp;</P3> 
                                 </HBox>
                                 <HBox>
                                     <P3>Saturday: {appointment_schedules.saturday ? "Available" : "Not available"}</P3>
                                 </HBox>
                                 <HBox>
                                     <P3>Time: {getTime(appointment_schedules.startTime)}&nbsp;-&nbsp;{getTime(appointment_schedules.endTime)}</P3>
-                                    {/* <P3>End Time: {getTime(appointment_schedules.endTime)}</P3> */}
                                 </HBox>
                             </>
                             ) : (

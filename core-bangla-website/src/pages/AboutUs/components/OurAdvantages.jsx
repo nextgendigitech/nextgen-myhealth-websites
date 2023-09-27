@@ -3,6 +3,7 @@ import styled from "styled-components";
 import colors from "../../../config/colors";
 import { HBox, VBox } from "../../../components/Containers";
 import { H3, P2, P4 } from "../../../components/Typography";
+import { aboutusData } from "../../../data";
 
 const Container = styled(VBox)`
     width: 100%;
@@ -32,7 +33,7 @@ const LowerHalfCircleCard = styled.div`
 const TopContentCard = ({ title, detail, isMobile }) => {
     return (
         <UpperHalfCircleCard className={isMobile ? "mb-2" : "mb-6 mx-4"}>
-            <VBox className='pt-6 px-2'>
+            <VBox className='pt-6 px-3'>
                 <P2 className="bold" color="white" align="center">{title}</P2>
                 <P4 color="white" className="mt-2" align="center">{detail}</P4>
             </VBox>
@@ -44,7 +45,7 @@ const TopContentCard = ({ title, detail, isMobile }) => {
 const BottomContentCard = ({ title, detail, isMobile }) => {
     return (
         <LowerHalfCircleCard className={isMobile ? "mb-2" : "mx-4"}>
-            <VBox className='pt-2 px-2'>
+            <VBox className='pt-2 px-3'>
                 <P2 className="bold mb-2" color="white" align="center">{title}</P2>
                 <P4 color="white" align="center">{detail}</P4>
             </VBox>
@@ -56,42 +57,42 @@ const BottomContentCard = ({ title, detail, isMobile }) => {
 const OurAdvantages = ({ isMobile }) => {
   return (
     <Container style={{paddingTop: isMobile ? '60px' : '100px'}}>
-        <H3 align="center" className={isMobile ? "bold mb-2" : "bold mb-4"}>আমাদের প্ল্যাটফর্ম ব্যবহার করার সুবিধা</H3>
+        <H3 align="center" className={isMobile ? "bold mb-2" : "bold mb-4"}>{aboutusData.OurAdvantages.head1['bang']}</H3>
         <HBox justify="center" align="center"> 
             <VContainer>
                 <TopContentCard
                     isMobile={isMobile}
-                    title="ব্যবহারকারী বান্ধব পোর্টাল"
-                    detail="রোগী এবং ডাক্তার পক্ষের সকল বয়সের ব্যবহারকারীদের জন্য ব্যবহার করা সহজ।"
+                    title={aboutusData.OurAdvantages.pointhead1['bang']}
+                    detail={aboutusData.OurAdvantages.pointpera1['bang']}
                 />
                 <BottomContentCard 
                     isMobile={isMobile}
-                    title="অ্যাপয়েন্টমেন্ট নোটিফিকেশন"
-                    detail="অনলাইন পরামর্শের জন্য রোগী এবং ডাক্তার উভয়কে এসএমএস এবং ই-মেইলের মাধ্যমে প্রাথমিকভাবে জানানো হবে।"
+                    title={aboutusData.OurAdvantages.pointhead4['bang']}
+                    detail={aboutusData.OurAdvantages.pointpera4['bang']}
                 />
             </VContainer>
             <VContainer>
                 <TopContentCard 
                     isMobile={isMobile}
-                    title="স্বনামধন্য বিশেষজ্ঞ ডাক্তার"
-                    detail="নেক্সটজেন মাইহেলথ ভিসিপি-তে আছেন দেশ - বিদেশের সকল বিখ্যাত বিশেষজ্ঞ ডাক্তারণ।"
+                    title={aboutusData.OurAdvantages.pointhead2['bang']}
+                    detail={aboutusData.OurAdvantages.pointpera2['bang']}
                 />
                 <BottomContentCard 
                     isMobile={isMobile}
-                    title="ডায়াগনস্টিক রিপোর্ট আপলোড"
-                    detail="রোগী পোর্টালে তার ডায়াগনস্টিক রিপোর্ট আপলোড করতে স্মার্টফোন ক্যামেরা এবং উল্লেখিত ছবি আপলোড উভয় বিকল্পই ব্যবহার করতে পারেন।"
+                    title={aboutusData.OurAdvantages.pointhead5['bang']}
+                    detail={aboutusData.OurAdvantages.pointpera5['bang']}
                 />
             </VContainer>
             <VContainer>
                 <TopContentCard 
                     isMobile={isMobile}
-                    title="ই-প্রেসক্রিপশন সেবা"
-                    detail="ভিডিও সেশনের সমাপ্তির পর ডাক্তার ই-প্রেসক্রিপশন আপলোড করবেন। ই-প্রেসক্রিপশনটি তখনই বা পরে ডাউনলোড এবং ব্যবহার করা যাবে।"
+                    title={aboutusData.OurAdvantages.pointhead3['bang']}
+                    detail={aboutusData.OurAdvantages.pointpera3['bang']}
                 />
                 <BottomContentCard 
                     isMobile={isMobile}
-                    title="সপ্তাহব্যাপী সেবা"
-                    detail="নেক্সটজেন মাইহেলথ ভিসিপি সপ্তাহে সাত দিনই সেবা প্রদানের জন্য নিবেদিত।"
+                    title={aboutusData.OurAdvantages.pointhead6['bang']}
+                    detail={aboutusData.OurAdvantages.pointpera6['bang']}
                 />
             </VContainer>
         </HBox>

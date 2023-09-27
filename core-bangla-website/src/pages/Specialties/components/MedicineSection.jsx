@@ -19,6 +19,9 @@ import DermatologyImage from '../../../assets/images/specialties/dermatology.png
 import PsychiatryImage from '../../../assets/images/specialties/psychiatry.png';
 import PhysicalMedicineImage from '../../../assets/images/specialties/physical_medicine.png';
 import AestheticDermatologyImage from '../../../assets/images/specialties/aesthetic_dermatology.png';
+import GeneralPhysicianImage from '../../../assets/images/specialties/generalphysician.png';
+import { specialtyEtoB } from "../../../data";
+import { specialtiesData } from "../../../data";
 
 const Container = styled(VBox)`
     
@@ -27,8 +30,9 @@ const Container = styled(VBox)`
 const MedicineSection = ({ isMobile }) => {
     return (
         <Container align='center'>
-            <H3 className='bold mt-7'>মেডিসিন</H3>
+            <H3 className='bold mt-7'>{specialtiesData.specialtysection.head1['bang']}</H3>
             <HBox justify='center'>
+                <SpecialtyCard isMobile={isMobile} image={GeneralPhysicianImage} specialtyBang='জেনারেল ফিজিসিয়ান' specialtyEng='General Physician' />
                 <SpecialtyCard isMobile={isMobile} image={InternalMedicineImage} specialtyBang='ইন্টারনাল মেডিসিন' specialtyEng='Internal Medicine' />
                 <SpecialtyCard isMobile={isMobile} image={CardiologyImage} specialtyBang='হৃদরোগ' specialtyEng='Cardiology' />
                 <SpecialtyCard isMobile={isMobile} image={RespiratoryMedicineImage} specialtyBang='ফুসফুস' specialtyEng='Respiratory Medicine' />

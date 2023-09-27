@@ -117,8 +117,12 @@ const Banner = ({id, image, name, bmdc, doctor_type, qualification, specialty,
                         <P2 className="bold">{consultation_fee}</P2>
                     </HBox>
                     <HBox className={isMobile ? "mb-3" : "mb-2"}>
-                        <P3>Experience:</P3>
-                        <P3 className="bold ml-1">{experience}</P3>
+                        {experience != null &&
+                            <>
+                                <P3>Experience:</P3>
+                                <P3 className="bold ml-1">{experience}</P3>
+                            </>
+                        }
                     </HBox>
                     <HBox justify={isMobile ? "center" : "flex-end"}>
                         <Link to={`https://patient.nextgenmyhealth.com/doctor/${id}`} style={{textDecoration: 'none'}} target='_blank'>
@@ -135,8 +139,7 @@ const Banner = ({id, image, name, bmdc, doctor_type, qualification, specialty,
                                     অ্যাপয়েন্টমেন্ট নিন
                             </Button>
                         </Link>
-                    </HBox>
-                    
+                    </HBox>   
                 </VBox>
             </HBox>
             {!isMobile && (

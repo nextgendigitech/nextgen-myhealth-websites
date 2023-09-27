@@ -1,4 +1,4 @@
-export const navbarrData = {
+export const navbarData = {
     head1: {
         bang: 'হোম',
         eng: 'home'
@@ -93,6 +93,10 @@ export const footerData = {
         bang: 'বিশেষজ্ঞ ডাক্তার',
         eng: 'Specialties'
     },
+    para42: {
+        bang: 'ব্লগ',
+        eng: 'Blog'
+    },
     para13: {
         bang: 'ডাক্তার অনুসন্ধান করুন',
         eng: 'Find doctor'
@@ -102,20 +106,20 @@ export const footerData = {
         eng: 'Payment'
     },
     footer1: {
-        bang: 'নিয়ম ও শর্তাবলী',
-        eng: 'Terms and Conditions'
+        bang: 'নিয়ম ও শর্তাবলী ',
+        eng: 'Terms and Conditions '
     },
     footer2: {
-        bang: 'গোপনীয়তা নীতিমালা',
-        eng: 'Privacy Policy'
+        bang: 'গোপনীয়তা নীতিমালা ',
+        eng: 'Privacy Policy '
     },
     footer3: {
-        bang: 'ফেরত নীতিমালা',
-        eng: 'Refund policy'
+        bang: 'ফেরত নীতিমালা ',
+        eng: 'Refund policy '
     },
     footer4: {
-        bang: 'কপিরাইট © 2023 নেক্সটজেন ডিজিটেক লিমিটেড.',
-        eng: 'Copyright © 2023 NextGen DigiTech Ltd. All rights reserved.'
+        bang: 'কপিরাইট © ',
+        eng: 'Copyright © '
     },
 }
 
@@ -232,7 +236,7 @@ export const homeData = {
             eng: 'See all specialist doctors',
         },
     },
-    BookingSteps: {
+    bookingsteps: {
         head1: {
             bang: 'ঘণ্টার পর ঘণ্টা লাইনে দাঁড়িয়ে থাকার দিন শেষ!',
             eng: '',
@@ -347,12 +351,8 @@ export const homeData = {
 export const aboutusData = {
     WhoWeAre: {
         head1: {
-            bang: 'আমাদের',
-            eng: 'Our',
-        },
-        head2: {
-            bang: 'পরিচিতি',
-            eng: 'Introduction',
+            bang: 'আমাদের পরিচিতি',
+            eng: 'Our Introduction',
         },
         para1: {
             bang: 'নেক্সটজেন ডিজিটেক লিমিটেড একটি বেসরকারি গবেষণা-ভিত্তিক কোম্পানি যা ডাক্তার, চিকিৎসা বিশেষজ্ঞ, গবেষক এবং আইটি বিশেষজ্ঞদের একটি দল নিয়ে গঠিত। নেক্সটজেন ডিজিটেক, রোগী এবং ডাক্তার উভয়ের উন্নয়নের জন্য প্রতিনিয়ত আপসহীনভাবে কাজ করে যাচ্ছে। নেক্সটজেন মাইহেলথ ভিসিপি নেক্সটজেন ডিজিটেক লিমিটেড বাংলাদেশের একটি স্বাস্থ্য পণ্য। এটির উদ্ভাবনী ভার্চুয়াল স্বাস্থ্যসেবা প্ল্যাটফর্ম বাংলাদেশের জনগণের স্বাস্থ্যসেবা বিষয়ক ভোগান্তি কমাতে বদ্ধপরিকর।',
@@ -445,23 +445,23 @@ export const contactusData = {
             bang: 'নেক্সটজেন মাইহেলথ ভিসিপি',
             eng: 'NextGen MyHealth VCP',
         },
-        para1: {
+        para2: {
             bang: 'স্বাস্থ্য বিভাগ',
             eng: 'Health Division',
         },
-        para1: {
+        para3: {
             bang: 'নেক্সটজেন ডিজিটেক লিমিটেড',
             eng: 'NextGen DigiTech Ltd.',
         },
-        para1: {
+        para4: {
             bang: 'টুল অ্যান্ড টেকনোলজি ইনস্টিটিউট, বিটাক শিল্প মন্ত্রণালয় ১১৬ (খ), তেজগাঁও শিল্প এলাকা, ঢাকা-১২০৮, বাংলাদেশ',
             eng: 'Tool & Technology Institute, BITAC Ministry of Industries 116 (kha), Tejgaon Industrial Area, Dhaka-1208, Bangladesh.',
         },
-        para1: {
+        para5: {
             bang: '+৮৮০১৩২১১১৯৩৯১',
             eng: '+8801321119391',
         },
-        para1: {
+        para6: {
             bang: 'info@nextgenmyhealth.com',
             eng: 'info@nextgenmyhealth.com',
         },
@@ -473,24 +473,169 @@ export const contactusData = {
 }
 
 export const specialtiesData = {
-    head1: {
-        bang: 'মেডিসিন',
-        eng: 'Medicine',
+    specialtysection: {
+        head1: {
+            bang: 'মেডিসিন',
+            eng: 'Medicine',
+        },
+        head2: {
+            bang: 'সার্জারি',
+            eng: 'Surgery',
+        },
     },
-    head2: {
-        bang: 'সার্জারি',
-        eng: 'Surgery',
+}
+export const specialtylistData = {
+    pnt1: {
+        bang: 'জেনারেল ফিজিসিয়ান',
+        eng: 'General Physician',
+    },
+    pnt2: {
+        bang: 'ইন্টারনাল মেডিসিন',
+        eng: 'Internal Medicine',
+    },
+    pnt3: {
+        bang: 'হৃদরোগ',
+        eng: 'Cardiology',
+    },
+    pnt4: {
+        bang: 'কিডনি',
+        eng: 'Nephrology',
+    },
+    pnt5: {
+        bang: 'ফুসফুস',
+        eng: 'Respiratory Medicine',
+    },
+    pnt6: {
+        bang: 'বাতরোগ',
+        eng: 'Rheumatology',
+    },
+    pnt7: {
+        bang: 'পরিপাকতন্ত্র',
+        eng: 'Gastroenterology',
+    },
+    pnt8: {
+        bang: 'লিভার',
+        eng: 'Hepatology',
+    },
+    pnt9: {
+        bang: 'স্নায়ুরোগ',
+        eng: 'Neurology',
+    },
+    pnt10: {
+        bang: 'ক্যান্সার',
+        eng: 'Oncology',
+    },
+    pnt11: {
+        bang: 'রক্তরোগ',
+        eng: 'Hematology',
+    },
+    pnt12: {
+        bang: 'হরমোন',
+        eng: 'Endocrinology',
+    },
+    pnt13: {
+        bang: 'চর্ম ও যৌনরোগ',
+        eng: 'Dermatology & Venereology',
+    },
+    pnt14: {
+        bang: 'শিশুরোগ',
+        eng: 'Pediatrics',
+    },
+    pnt15: {
+        bang: 'মনোরোগ',
+        eng: 'Psychiatry',
+    },
+    pnt16: {
+        bang: 'ফিজিক্যাল মেডিসিন',
+        eng: 'Physical Medicine & Rehabilitation',
+    },
+    pnt17: {
+        bang: 'এস্থেটিক ডার্মাটোলজি',
+        eng: 'Aesthetic Dermatology',
+    },
+    pnt18: {
+        bang: 'জেনারেল সার্জারি',
+        eng: 'General Surgery',
+    },
+    pnt19: {
+        bang: 'অর্থোপেডিক সার্জারি',
+        eng: 'Orthopedic Surgery',
+    },
+    pnt20: {
+        bang: 'স্নায়ু সার্জারি',
+        eng: 'Neurosurgery',
+    },
+    pnt21: {
+        bang: 'স্ত্রীরোগ ও প্রসূতি',
+        eng: 'Gynecology & Obstetrics',
+    },
+    pnt22: {
+        bang: 'নাক, কান ও গলা',
+        eng: 'ENT & Head Neck Surgery',
+    },
+    pnt23: {
+        bang: 'চক্ষু',
+        eng: 'Ophthalmology',
+    },
+    pnt24: {
+        bang: 'ডেন্টাল সার্জারি',
+        eng: 'Oral & Dental Surgery',
+    },
+    pnt25: {
+        bang: 'মুত্ররোগ সার্জারি',
+        eng: 'Urology',
+    },
+    pnt26: {
+        bang: 'কোলন, রেকটাম সার্জারি',
+        eng: 'Colorectal Surgery',
+    },
+    pnt27: {
+        bang: 'শিশুরোগ সার্জারি',
+        eng: 'Pediatric Surgery',
+    },
+    pnt28: {
+        bang: 'রক্তনালী সার্জারি',
+        eng: 'Vascular Surgery',
     },
 }
 
 export const specialtydoctorsData = {
-    head1: {
-        bang: 'জন চিকিৎসক পাওয়া গেছে',
-        eng: 'We have found doctors',
+    index: {
+        head11: {
+            bang: '',
+            eng: 'We have found ',
+        },
+        head12: {
+            bang: ' জন চিকিৎসক পাওয়া গেছে',
+            eng: ' doctors',
+        },
     },
+    doctorcard: {
+        head1: {
+            bang: 'বি.এম.ডি.সি ',
+            eng: 'B.M.D.C ',
+        },
+        head2: {
+            bang: 'এ-',
+            eng: 'A-',
+        },
+        head3: {
+            bang: 'অভিজ্ঞতা: ',
+            eng: 'Experience: '
+        },
+        btn1: {
+            bang: 'বিস্তারিত দেখুন',
+            eng: 'View details'
+        },
+        btn2: {
+            bang: 'অ্যাপয়েন্টমেন্ট নিন',
+            eng: 'Book Appointment'
+        },
+    }
 }
 
 export const specialtyEtoB = {
+    'General Physician': 'জেনারেল ফিজিসিয়ান',
     'Internal Medicine': 'ইন্টারনাল মেডিসিন',
     'Cardiology': 'হৃদরোগ',
     'Nephrology': 'কিডনি',

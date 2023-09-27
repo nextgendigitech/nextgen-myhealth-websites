@@ -11,6 +11,8 @@ import DoctorCard from "./components/DoctorCard";
 import ClipLoader from "react-spinners/ClipLoader";
 import { BiArrowBack } from 'react-icons/bi';
 import responsive from '../../config/responsive';
+import { specialtylistData } from "../../data";
+import { specialtydoctorsData } from "../../data";
 
 
 const TitleCard = styled(VBox)`
@@ -82,11 +84,30 @@ const SpecialtyDoctors = () => {
         window.history.back();
     };
 
+    const getBanglaSpecialty = ({specialty}) => {
+        let foundkey;
+        let bang_value;
+        let eng_value;
+        for (const key in specialtylistData) {
+            if (specialtylistData[key].eng === specialty) {
+                // bang_value = specialtylistData[key].bang;
+                // eng_value = specialtylistData[key].eng;
+                // break;
+                foundkey = key;
+                console.log(specialty);
+                return foundkey;
+            }
+        }
+    };
+
+    console.log(getBanglaSpecialty);
     return (
+        
         <VBox>
             <TitleCard justify="center" align="center" className={isMobile ? "mt-2" : "mt-4"} style={{ height: isMobile ? '40px' : '70px', borderRadius: isMobile ? '0px 15px' : '0px 30px'}}>
                 <BiArrowBack justify="center" style={{ marginRight:"90%", cursor: "pointer" }} onClick={goBack} />
-                <H3 style={{ position: "absolute" }}>{specialtyEtoB[specialty]}</H3>
+                {/* <H3 style={{ position: "absolute" }}>{specialtyEtoB[specialty]}</H3> */}
+                {/* <H3 style={{ position: "absolute" }}>{getBanglaSpecialty(specialty)['bang']}</H3> */}
             </TitleCard>
             {
                 isLoading ?
@@ -102,9 +123,9 @@ const SpecialtyDoctors = () => {
                 :
                 <VBox>
                     <VBox className={isMobile ? "mt-3" : "mt-6 ml-8 pl-6"} style={{ alignItems: isMobile ? "center" : "" }}>
-                        <P2 className="bold">{doctors.length} জন চিকিৎসক পাওয়া গেছে</P2>
+                        <P2 className="bold">{specialtydoctorsData.index.head11['bang']}{doctors.length}{specialtydoctorsData.index.head12['bang']}</P2>
                     </VBox>
-                    <HBox justify="center" style={{marginRight: isMobile ? "10px" : "120px", marginLeft: isMobile ? "10px" : "120px"}}>
+                    <HBox justify="center" style={{marginRight: isMobile ? "10px" : "100px", marginLeft: isMobile ? "10px" : "100px"}}>
                         {doctors.map((doctor, index) => (
                             <DoctorCard
                                 isMobile={isMobile}

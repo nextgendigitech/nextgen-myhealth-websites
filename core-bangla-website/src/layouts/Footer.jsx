@@ -10,6 +10,7 @@ import logo from '../assets/images/Website-Logo.png'
 import colors from '../config/colors';
 import responsive from '../config/responsive';
 import DoctorSearchDlg from './DoctorSearchDlg';
+import { footerData } from '../data';
 
 const FooterContainer1 = styled(VBox)`
     padding-left: 8%;
@@ -113,48 +114,48 @@ const Footer = () => {
 
     const ContactHtml = () => (
         <VBox>    
-            <P2 className='bold'>নেক্সটজেন মাইহেলথ ভিসিপি</P2>
-            <P3>স্বাস্থ্য বিভাগ</P3>
-            <P3 color='first'>নেক্সটজেন ডিজিটেক লিমিটেড</P3>
-            <P3>টুল অ্যান্ড টেকনোলজি ইনস্টিটিউট, বিটাক শিল্প</P3>
-            <P3>মন্ত্রণালয় ১১৬ (খ), তেজগাঁও শিল্প এলাকা,</P3>
-            <P3>ঢাকা-১২০৮, বাংলাদেশ</P3>
-            <HBox align='center'><PhoneIcon className='mt-2' /><P3 className='ml-1 mt-2'> +৮৮০ ১৩২১১১৯৩৯১</P3></HBox>
-            <HBox align='center'><EmailIcon className='mt-2' /><P3 className='ml-1 mt-2'>info@nextgenmyhealth.com</P3></HBox>
+            <P2 className='bold'>{footerData.head1['bang']}</P2>
+            <P3>{footerData.para11['bang']}</P3>
+            <P3 color='first'>{footerData.para21['bang']}</P3>
+            <P3>{footerData.para31['bang']}</P3>
+            <P3>{footerData.para41['bang']}</P3>
+            <P3>{footerData.para51['bang']}</P3>
+            <HBox align='center'><PhoneIcon className='mt-2' /><P3 className='ml-1 mt-2'>{footerData.para61['bang']}</P3></HBox>
+            <HBox align='center'><EmailIcon className='mt-2' /><P3 className='ml-1 mt-2'>{footerData.para71['bang']}</P3></HBox>
          </VBox>
     )
 
     const CompanyHtml = (margin1, margin2) => (
         <VBox>    
-            <P2 className={margin1}>কোম্পানী</P2>
+            <P2 className={margin1}>{footerData.head2['bang']}</P2>
             <SNavLink to='/contact-us'>
-                <P3 className={margin2}>যোগাযোগ করুন</P3>
+                <P3 className={margin2}>{footerData.para12['bang']}</P3>
             </SNavLink>
             <SNavLink to='/about-us'>
-                <P3 className={margin2}>পরিচিতি</P3>
+                <P3 className={margin2}>{footerData.para22['bang']}</P3>
             </SNavLink>
             <SNavLink to='/specialties'>
-                <P3 className={margin2}>বিশেষজ্ঞ ডাক্তার</P3>
+                <P3 className={margin2}>{footerData.para32['bang']}</P3>
             </SNavLink>
             {/* <SNavLink to='/blog'>
-                <P3 className={margin2}>ব্লগ</P3>
+                <P3 className={margin2}>{footerData.para42['bang']}</P3>
             </SNavLink> */}
         </VBox>
     )
 
     const ServiceHtml = (margin1, margin2) => (
         <VBox>    
-            <P2 className={margin1}>সেবাসমূহ</P2>
-            <P3 className={margin2} onClick={() => setOpenDoctorSearchDlg(true)}>ডাক্তার অনুসন্ধান করুন</P3>
+            <P2 className={margin1}>{footerData.head3['bang']}</P2>
+            <P3 className={margin2} onClick={() => setOpenDoctorSearchDlg(true)}>{footerData.para13['bang']}</P3>
             {/* <P4 className='mt-2'>প্রতিনিয়ত জিজ্ঞাসিত প্রশ্ন</P4> */}
         </VBox>
     )
 
     const PaymentHtml = (margin1, margin2) => (
         <VBox>    
-            <P2 className={margin1}>অর্থ প্রদান</P2>
+            <P2 className={margin1}>{footerData.head4['bang']}</P2>
             <SNavLink to='/payment'>
-                <P3 className={margin2}>পেমেন্ট</P3>
+                <P3 className={margin2}>{footerData.para14['bang']}</P3>
             </SNavLink>
         </VBox>
     )
@@ -189,18 +190,18 @@ const Footer = () => {
                 <VBox align='center'>
                     <HBox className='mt-4 mb-1'>
                         <SNavLink to='/terms-conditions'>
-                            <P3 style={{ color: colors.grey }}>নিয়ম ও শর্তাবলী&nbsp;</P3>
+                            <P3 style={{ color: colors.grey }}>{footerData.footer1['bang']}</P3>
                         </SNavLink>
                         <P3 className='mx-0_5' style={{ color: colors.grey }}>|</P3>
                         <SNavLink to='/privacy-policy'>
-                            <P3 style={{ color: colors.grey }}>গোপনীয়তা নীতিমালা&nbsp;</P3>  
+                            <P3 style={{ color: colors.grey }}>{footerData.footer2['bang']}</P3>  
                         </SNavLink>
                         <P3 className='mx-0_5' style={{ color: colors.grey }}>|</P3>
                         <SNavLink to='/refund-policy'>
-                            <P3 style={{ color: colors.grey }}>ফেরত নীতিমালা&nbsp;</P3>
+                            <P3 style={{ color: colors.grey }}>{footerData.footer3['bang']}</P3>
                         </SNavLink>
                     </HBox>
-                    <P3 className='mb-4' style={{ color: colors.grey }}>কপিরাইট © {new Date().getFullYear()} নেক্সটজেন ডিজিটেক লিমিটেড.</P3>
+                    <P3 className='mb-4' style={{ color: colors.grey }}>{footerData.footer4['bang']}{new Date().getFullYear()}&nbsp;{footerData.para21['bang']}</P3>
                 </VBox>
             </FooterContainer2>
 
