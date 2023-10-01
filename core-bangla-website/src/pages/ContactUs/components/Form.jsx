@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { HiOutlinePhone } from "react-icons/hi";
 import { AiOutlineMail } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 import colors from "../../../config/colors";
 import { Button } from "../../../components/Buttons";
@@ -71,7 +72,9 @@ const Form = ({isMobile}) => {
                 <VBox className={isMobile ? "pt-3" : "mb-6 pl-6"} style={{ width: isMobile ? "100%" : "45%", alignItems: isMobile ? "center" : "" }}>
                     <P2 className="bold">{contactusData.Form.para1['bang']}</P2>
                     <P3>{contactusData.Form.para2['bang']}</P3>
-                    <P3 color="first">{contactusData.Form.para3['bang']}</P3>
+                    <Link to={"https://nextgendgtech.com/"} style={{ textDecoration: 'none' }} target='_blank'>
+                        <P3 color="first">{contactusData.Form.para3['bang']}</P3>
+                    </Link>
                     <P3 align= {isMobile ? "center" : ""}>{contactusData.Form.para4['bang']}</P3>
                     <HBox className={isMobile ? "mt-1" : "mt-3"}>
                         <HiOutlinePhone className="mr-1"/>

@@ -6,14 +6,12 @@ import { useParams } from "react-router-dom";
 
 import { HBox, VBox } from "../../components/Containers";
 import { H3, P2 } from "../../components/Typography";
-import { specialtyEtoB } from "../../data";
 import DoctorCard from "./components/DoctorCard";
 import ClipLoader from "react-spinners/ClipLoader";
 import { BiArrowBack } from 'react-icons/bi';
 import responsive from '../../config/responsive';
-import { specialtylistData } from "../../data";
 import { specialtydoctorsData } from "../../data";
-
+import { specialtyEtoB } from "../../data";
 
 const TitleCard = styled(VBox)`
     width: 100%;
@@ -84,30 +82,13 @@ const SpecialtyDoctors = () => {
         window.history.back();
     };
 
-    const getBanglaSpecialty = ({specialty}) => {
-        let foundkey;
-        let bang_value;
-        let eng_value;
-        for (const key in specialtylistData) {
-            if (specialtylistData[key].eng === specialty) {
-                // bang_value = specialtylistData[key].bang;
-                // eng_value = specialtylistData[key].eng;
-                // break;
-                foundkey = key;
-                console.log(specialty);
-                return foundkey;
-            }
-        }
-    };
 
-    console.log(getBanglaSpecialty);
     return (
         
         <VBox>
             <TitleCard justify="center" align="center" className={isMobile ? "mt-2" : "mt-4"} style={{ height: isMobile ? '40px' : '70px', borderRadius: isMobile ? '0px 15px' : '0px 30px'}}>
                 <BiArrowBack justify="center" style={{ marginRight:"90%", cursor: "pointer" }} onClick={goBack} />
-                {/* <H3 style={{ position: "absolute" }}>{specialtyEtoB[specialty]}</H3> */}
-                {/* <H3 style={{ position: "absolute" }}>{getBanglaSpecialty(specialty)['bang']}</H3> */}
+                <H3 style={{ position: "absolute" }}>{specialtyEtoB[specialty]}</H3>
             </TitleCard>
             {
                 isLoading ?

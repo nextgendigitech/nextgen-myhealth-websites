@@ -10,7 +10,7 @@ import { BiArrowBack } from "react-icons/bi";
 import { HBox } from "../../../components/Containers";
 import { H3, P3, P4 } from "../../../components/Typography";
 import colors from "../../../config/colors";
-import { Button } from "../../../components/Buttons";
+import { doctorProfile } from "../../../data";
 
 const TitleCard = styled(HBox)`
     width: 100%;
@@ -57,7 +57,7 @@ const Header = ({isMobile}) => {
                 style={{ cursor: "pointer" }} 
                 onClick={goBack} 
             />
-            <H3>ডাক্তার সম্পর্কে বিস্তারিত</H3>
+            <H3>{doctorProfile.header.head1["bang"]}</H3>
             {/* <FiShare2 className="ml-1" justify="center" style={{ marginRight: isMobile ? "16px" : "60px", cursor: "pointer" }} onClick={copyToClipboard} /> */}
             {/* <Button
                 className="ml-1"
@@ -70,7 +70,7 @@ const Header = ({isMobile}) => {
 			</Button> */}
             <HBox className={isMobile ? "clickable mr-2" : "clickable mr-8"} justify="center" onClick={copyToClipboard}>
                 <FiShare2 />
-                <P3 className="ml-1"><a>Share</a></P3>
+                <P3 className="ml-1"><a>{doctorProfile.header.head2["bang"]}</a></P3>
             </HBox>
             <Snackbar
                 open={showAlert}

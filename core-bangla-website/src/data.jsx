@@ -62,8 +62,8 @@ export const footerData = {
         eng: 'NextGen DigiTech Ltd.'
     },
     para31: {
-        bang: 'টুল অ্যান্ড টেকনোলজি ইনস্টিটিউট, বিটাক শিল্প',
-        eng: 'Tool & Technology Institute, BITAC'
+        bang: 'টুল অ্যান্ড টেকনোলজি ইনস্টিটিউট, বিটাক, শিল্প',
+        eng: 'Tool & Technology Institute, BITAC, '
     },
     para41: {
         bang: 'মন্ত্রণালয় ১১৬ (খ), তেজগাঁও শিল্প এলাকা,',
@@ -120,6 +120,21 @@ export const footerData = {
     footer4: {
         bang: 'কপিরাইট © ',
         eng: 'Copyright © '
+    },
+}
+
+export const doctorsearchdlgData = {
+    head1: {
+        bang: 'বি.এম.ডি.সি:',
+        eng: 'B.M.D.C:',
+    },
+    head2: {
+        bang: 'এ-',
+        eng: 'A-',
+    },
+    head3: {
+        bang: 'অ্যাপয়েন্টমেন্ট নিন',
+        eng: 'Book Appointment',
     },
 }
 
@@ -346,6 +361,12 @@ export const homeData = {
             eng: '',
         },
     },
+    qrcode: {
+        head1: {
+            bang: 'পেশেন্ট অ্যাপ ডাউনলোড করুন',
+            eng: 'Download the Patient App',
+        },
+    }
 }
 
 export const aboutusData = {
@@ -454,8 +475,8 @@ export const contactusData = {
             eng: 'NextGen DigiTech Ltd.',
         },
         para4: {
-            bang: 'টুল অ্যান্ড টেকনোলজি ইনস্টিটিউট, বিটাক শিল্প মন্ত্রণালয় ১১৬ (খ), তেজগাঁও শিল্প এলাকা, ঢাকা-১২০৮, বাংলাদেশ',
-            eng: 'Tool & Technology Institute, BITAC Ministry of Industries 116 (kha), Tejgaon Industrial Area, Dhaka-1208, Bangladesh.',
+            bang: 'টুল অ্যান্ড টেকনোলজি ইনস্টিটিউট, বিটাক, শিল্প মন্ত্রণালয় ১১৬ (খ), তেজগাঁও শিল্প এলাকা, ঢাকা-১২০৮, বাংলাদেশ',
+            eng: 'Tool & Technology Institute, BITAC, Ministry of Industries 116 (kha), Tejgaon Industrial Area, Dhaka-1208, Bangladesh.',
         },
         para5: {
             bang: '+৮৮০১৩২১১১৯৩৯১',
@@ -484,120 +505,121 @@ export const specialtiesData = {
         },
     },
 }
-export const specialtylistData = {
-    pnt1: {
-        bang: 'জেনারেল ফিজিসিয়ান',
-        eng: 'General Physician',
-    },
-    pnt2: {
-        bang: 'ইন্টারনাল মেডিসিন',
-        eng: 'Internal Medicine',
-    },
-    pnt3: {
-        bang: 'হৃদরোগ',
-        eng: 'Cardiology',
-    },
-    pnt4: {
-        bang: 'কিডনি',
-        eng: 'Nephrology',
-    },
-    pnt5: {
-        bang: 'ফুসফুস',
-        eng: 'Respiratory Medicine',
-    },
-    pnt6: {
-        bang: 'বাতরোগ',
-        eng: 'Rheumatology',
-    },
-    pnt7: {
-        bang: 'পরিপাকতন্ত্র',
-        eng: 'Gastroenterology',
-    },
-    pnt8: {
-        bang: 'লিভার',
-        eng: 'Hepatology',
-    },
-    pnt9: {
-        bang: 'স্নায়ুরোগ',
-        eng: 'Neurology',
-    },
-    pnt10: {
-        bang: 'ক্যান্সার',
-        eng: 'Oncology',
-    },
-    pnt11: {
-        bang: 'রক্তরোগ',
-        eng: 'Hematology',
-    },
-    pnt12: {
-        bang: 'হরমোন',
-        eng: 'Endocrinology',
-    },
-    pnt13: {
-        bang: 'চর্ম ও যৌনরোগ',
-        eng: 'Dermatology & Venereology',
-    },
-    pnt14: {
-        bang: 'শিশুরোগ',
-        eng: 'Pediatrics',
-    },
-    pnt15: {
-        bang: 'মনোরোগ',
-        eng: 'Psychiatry',
-    },
-    pnt16: {
-        bang: 'ফিজিক্যাল মেডিসিন',
-        eng: 'Physical Medicine & Rehabilitation',
-    },
-    pnt17: {
-        bang: 'এস্থেটিক ডার্মাটোলজি',
-        eng: 'Aesthetic Dermatology',
-    },
-    pnt18: {
-        bang: 'জেনারেল সার্জারি',
-        eng: 'General Surgery',
-    },
-    pnt19: {
-        bang: 'অর্থোপেডিক সার্জারি',
-        eng: 'Orthopedic Surgery',
-    },
-    pnt20: {
-        bang: 'স্নায়ু সার্জারি',
-        eng: 'Neurosurgery',
-    },
-    pnt21: {
-        bang: 'স্ত্রীরোগ ও প্রসূতি',
-        eng: 'Gynecology & Obstetrics',
-    },
-    pnt22: {
-        bang: 'নাক, কান ও গলা',
-        eng: 'ENT & Head Neck Surgery',
-    },
-    pnt23: {
-        bang: 'চক্ষু',
-        eng: 'Ophthalmology',
-    },
-    pnt24: {
-        bang: 'ডেন্টাল সার্জারি',
-        eng: 'Oral & Dental Surgery',
-    },
-    pnt25: {
-        bang: 'মুত্ররোগ সার্জারি',
-        eng: 'Urology',
-    },
-    pnt26: {
-        bang: 'কোলন, রেকটাম সার্জারি',
-        eng: 'Colorectal Surgery',
-    },
-    pnt27: {
-        bang: 'শিশুরোগ সার্জারি',
-        eng: 'Pediatric Surgery',
-    },
-    pnt28: {
-        bang: 'রক্তনালী সার্জারি',
-        eng: 'Vascular Surgery',
-    },
-}
+
+// export const specialtylistData = {
+//     pnt1: {
+//         bang: 'জেনারেল ফিজিসিয়ান',
+//         eng: 'General Physician',
+//     },
+//     pnt2: {
+//         bang: 'ইন্টারনাল মেডিসিন',
+//         eng: 'Internal Medicine',
+//     },
+//     pnt3: {
+//         bang: 'হৃদরোগ',
+//         eng: 'Cardiology',
+//     },
+//     pnt4: {
+//         bang: 'কিডনি',
+//         eng: 'Nephrology',
+//     },
+//     pnt5: {
+//         bang: 'ফুসফুস',
+//         eng: 'Respiratory Medicine',
+//     },
+//     pnt6: {
+//         bang: 'বাতরোগ',
+//         eng: 'Rheumatology',
+//     },
+//     pnt7: {
+//         bang: 'পরিপাকতন্ত্র',
+//         eng: 'Gastroenterology',
+//     },
+//     pnt8: {
+//         bang: 'লিভার',
+//         eng: 'Hepatology',
+//     },
+//     pnt9: {
+//         bang: 'স্নায়ুরোগ',
+//         eng: 'Neurology',
+//     },
+//     pnt10: {
+//         bang: 'ক্যান্সার',
+//         eng: 'Oncology',
+//     },
+//     pnt11: {
+//         bang: 'রক্তরোগ',
+//         eng: 'Hematology',
+//     },
+//     pnt12: {
+//         bang: 'হরমোন',
+//         eng: 'Endocrinology',
+//     },
+//     pnt13: {
+//         bang: 'চর্ম ও যৌনরোগ',
+//         eng: 'Dermatology & Venereology',
+//     },
+//     pnt14: {
+//         bang: 'শিশুরোগ',
+//         eng: 'Pediatrics',
+//     },
+//     pnt15: {
+//         bang: 'মনোরোগ',
+//         eng: 'Psychiatry',
+//     },
+//     pnt16: {
+//         bang: 'ফিজিক্যাল মেডিসিন',
+//         eng: 'Physical Medicine & Rehabilitation',
+//     },
+//     pnt17: {
+//         bang: 'এস্থেটিক ডার্মাটোলজি',
+//         eng: 'Aesthetic Dermatology',
+//     },
+//     pnt18: {
+//         bang: 'জেনারেল সার্জারি',
+//         eng: 'General Surgery',
+//     },
+//     pnt19: {
+//         bang: 'অর্থোপেডিক সার্জারি',
+//         eng: 'Orthopedic Surgery',
+//     },
+//     pnt20: {
+//         bang: 'স্নায়ু সার্জারি',
+//         eng: 'Neurosurgery',
+//     },
+//     pnt21: {
+//         bang: 'স্ত্রীরোগ ও প্রসূতি',
+//         eng: 'Gynecology & Obstetrics',
+//     },
+//     pnt22: {
+//         bang: 'নাক, কান ও গলা',
+//         eng: 'ENT & Head Neck Surgery',
+//     },
+//     pnt23: {
+//         bang: 'চক্ষু',
+//         eng: 'Ophthalmology',
+//     },
+//     pnt24: {
+//         bang: 'ডেন্টাল সার্জারি',
+//         eng: 'Oral & Dental Surgery',
+//     },
+//     pnt25: {
+//         bang: 'মুত্ররোগ সার্জারি',
+//         eng: 'Urology',
+//     },
+//     pnt26: {
+//         bang: 'কোলন, রেকটাম সার্জারি',
+//         eng: 'Colorectal Surgery',
+//     },
+//     pnt27: {
+//         bang: 'শিশুরোগ সার্জারি',
+//         eng: 'Pediatric Surgery',
+//     },
+//     pnt28: {
+//         bang: 'রক্তনালী সার্জারি',
+//         eng: 'Vascular Surgery',
+//     },
+// }
 
 export const specialtydoctorsData = {
     index: {
@@ -665,6 +687,135 @@ export const specialtyEtoB = {
     'Pediatric Surgery': 'শিশুরোগ সার্জারি',
     'Vascular Surgery': 'রক্তনালী সার্জারি',
 };
+
+export const doctorProfile = {
+    banner: {
+        head1: {
+            bang: 'বি.এম.ডি.সি: ',
+            eng: 'B.M.D.C: ',
+        },
+        head2: {
+            bang: 'এ-',
+            eng: 'A-',
+        },
+        head3: {
+            bang: 'পরামর্শ ফি: ',
+            eng: 'Consultation Fee: ',
+        },
+        head4: {
+            bang: 'অভিজ্ঞতা: ',
+            eng: 'Experience: ',
+        },
+        head5: {
+            bang: 'অ্যাপয়েন্টমেন্ট নিন',
+            eng: 'Book Appointment',
+        },
+        head6: {
+            bang: 'অনলাইন',
+            eng: 'Online',
+        },
+        head7: {
+            bang: 'অফলাইন',
+            eng: 'Offline',
+        },
+    },
+    header: {
+        head1: {
+            bang: 'ডাক্তার সম্পর্কে বিস্তারিত',
+            eng: 'Details about Doctor',
+        },
+        head2: {
+            bang: 'শেয়ার',
+            eng: 'Share',
+        },
+    },
+    summary: {
+        head1: {
+            bang: 'পরামর্শ ফি: ',
+            eng: 'Consultation Fee: ',
+        },
+        head2: {
+            bang: 'ফলোআপ ফি: ',
+            eng: 'Followup Fee: ',
+        },
+        head3: {
+            bang: 'ভাষা: ',
+            eng: 'Spoken Language: ',
+        },
+        head4: {
+            bang: 'পরামর্শের সময়: ',
+            eng: 'Consultation Time: ',
+        },
+        pnt1: {
+            bang: 'বাংলা',
+            eng: 'Bangla',
+        },
+        pnt2: {
+            bang: 'ইংরেজি',
+            eng: 'English',
+        },
+        pera1: {
+            bang: 'কোনো সময়সূচি নেই',
+            eng: 'No Schedule Available',
+        },
+    },
+    week: {
+        day1: {
+            bang: 'রবিবার',
+            eng: 'Sunday',
+        },
+        day2: {
+            bang: 'সোমবার',
+            eng: 'Monday',
+        },
+        day3: {
+            bang: 'মঙ্গলবার',
+            eng: 'Tuesday',
+        },
+        day4: {
+            bang: 'বুধবার',
+            eng: 'Wednesday',
+        },
+        day5: {
+            bang: 'বৃহস্পতিবার',
+            eng: 'Thursday',
+        },
+        day6: {
+            bang: 'শুক্রবার',
+            eng: 'Friday',
+        },
+        day7: {
+            bang: 'শনিবার',
+            eng: 'Saturday',
+        },
+        time: {
+            bang: 'সময়',
+            eng: 'Time',
+        },
+    },
+    details: {
+        head1: {
+            bang: 'অধিভুক্তি:',
+            eng: 'Affliliation(s):',
+        },
+        head2: {
+            bang: 'চেম্বার:',
+            eng: 'Chamber(s):',
+        },
+        head3: {
+            bang: 'অন্যান্য তথ্য:',
+            eng: 'Other Information:'
+        },
+        para1: {
+            bang: 'নেক্সটজেন মাইহেলথে যোগদান:',
+            eng: 'Joined NextGen MyHealth:'
+        },
+        para2: {
+            bang: 'উপস্থিত রোগী:',
+            eng: 'Patient Attended:'
+        }
+    },
+}
 
 export const termsAndConditionsData = {
     'Terms & Conditions': [

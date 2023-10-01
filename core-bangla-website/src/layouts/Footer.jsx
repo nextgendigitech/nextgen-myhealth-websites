@@ -3,6 +3,7 @@ import { HiOutlinePhone } from 'react-icons/hi'
 import { AiOutlineMail } from 'react-icons/ai'
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
+import { Link } from "react-router-dom";
 
 import { HBox, VBox } from '../components/Containers';
 import { P2, P3, P4 } from '../components/Typography';
@@ -11,6 +12,7 @@ import colors from '../config/colors';
 import responsive from '../config/responsive';
 import DoctorSearchDlg from './DoctorSearchDlg';
 import { footerData } from '../data';
+
 
 const FooterContainer1 = styled(VBox)`
     padding-left: 8%;
@@ -116,7 +118,9 @@ const Footer = () => {
         <VBox>    
             <P2 className='bold'>{footerData.head1['bang']}</P2>
             <P3>{footerData.para11['bang']}</P3>
-            <P3 color='first'>{footerData.para21['bang']}</P3>
+            <Link to={"https://nextgendgtech.com/"} style={{ textDecoration: 'none' }} target='_blank'>
+                <P3 color='first'>{footerData.para21['bang']}</P3>
+            </Link>
             <P3>{footerData.para31['bang']}</P3>
             <P3>{footerData.para41['bang']}</P3>
             <P3>{footerData.para51['bang']}</P3>
