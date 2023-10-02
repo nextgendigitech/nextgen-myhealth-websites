@@ -205,8 +205,13 @@ const Footer = () => {
                             <P3 style={{ color: colors.grey }}>{footerData.footer3['bang']}</P3>
                         </SNavLink>
                     </HBox>
-                    <P3 className='mb-4' style={{ color: colors.grey }}>{footerData.footer4['bang']}{new Date().getFullYear()}&nbsp;{footerData.para21['bang']}</P3>
+                    <Link to={"https://nextgendgtech.com/"} style={{ textDecoration: 'none' }} target='_blank'>
+                        <P3 className='mb-4' style={{ color: colors.grey }}>
+                            {footerData.footer4['bang']}{new Date().getFullYear()}&nbsp;{footerData.para21['bang']}
+                        </P3>
+                    </Link>
                 </VBox>
+
             </FooterContainer2>
 
             <DoctorSearchDlg
