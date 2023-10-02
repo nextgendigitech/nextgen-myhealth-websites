@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { HiOutlinePhone } from 'react-icons/hi';
 import styled from 'styled-components';
+import { connect } from 'react-redux';
 
 import { HBox } from '../components/Containers';
 import { P2, P3 } from '../components/Typography';
@@ -14,6 +15,8 @@ import youtubeLogo from '../assets/images/youtube_logo.png';
 import searchIcon from '../assets/images/search_icon.png';
 import DoctorSearchDlg from './DoctorSearchDlg';
 import { topbarData } from '../data';
+import CheckButton from '../components/CheckButton';
+import { toggleLang } from '../services/actions/generalAction';
 
 const Container = styled(HBox)`
     position: sticky;
@@ -57,7 +60,11 @@ const DoctorSearchIcon = styled.img`
     height: 70%;
 `
 
-const TopBar = () => {
+const TopBar = ({ language, toggleLang }) => {
+    const [languages, setLanguages] = useState([
+        {text: 'বাং', checked: true},
+        {text: 'En', checked: false},
+    ]);
     const [openSearchDlg, setOpenSearchDlg] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
 
@@ -78,6 +85,15 @@ const TopBar = () => {
         return () => window.removeEventListener('resize', () => setResponsiveness());
     }, []);
 
+    useEffect(() => {
+        toggleLang(getLanguage());
+    }, [languages]);
+
+    const getLanguage = () => {
+        if (languages[0].checked) return 'bang';
+        else return 'eng';
+    }
+
     return (
         <Container justify='space-between' align='center'>
             <IconContainer>
@@ -92,16 +108,23 @@ const TopBar = () => {
                 </Link>
             </IconContainer>
             <P2 className="bold">
-                {isMobile ? <HiOutlinePhone style={{position: 'relative', top:'2px'}}/> : topbarData.head1['bang']} {topbarData.head2['bang']}
+                {isMobile ? <HiOutlinePhone style={{position: 'relative', top:'2px'}}/> : topbarData.head1[language]} {topbarData.head2['bang']}
             </P2>
-            <SearchBar
-                size='sm'
-                onClick={() => setOpenSearchDlg(true)}
-            >
-                {!isMobile && <P3>{topbarData.btn1['bang']}</P3>}
-                <DoctorSearchIcon className={isMobile ? '' : 'ml-8'} src={searchIcon} />
-            </SearchBar>
-
+            <HBox align='center'>
+                <SearchBar
+                    size='sm'
+                    onClick={() => setOpenSearchDlg(true)}
+                >
+                    {!isMobile && <P3>{topbarData.btn1[language]}</P3>}
+                    <DoctorSearchIcon className={isMobile ? '' : 'ml-8'} src={searchIcon} />
+                </SearchBar>
+                <CheckButton
+                    className='ml-2'
+                    size='md'
+                    items={languages}
+                    setItems={setLanguages}
+                />
+            </HBox>
             <DoctorSearchDlg
                 isMobile={isMobile}
                 open={openSearchDlg}
@@ -111,4 +134,8 @@ const TopBar = () => {
     );
 }
 
-export default TopBar;
+const mapStateToProps = state => ({
+    language: state.general.language,
+});
+
+export default connect(mapStateToProps, { toggleLang })(TopBar);

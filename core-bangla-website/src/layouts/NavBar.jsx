@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import { Drawer, List, ListItem, ListItemText } from '@mui/material';
 import { GiHamburgerMenu } from 'react-icons/gi';
+import { connect } from 'react-redux';
 
 import { HBox } from '../components/Containers';
 import { Button } from '../components/Buttons';
@@ -63,7 +64,7 @@ const MenuIcon = styled(GiHamburgerMenu)`
     flex-shrink: 0;
 `
 
-const NavBar = () => {
+const NavBar = ({ language }) => {
     const [isMobile, setIsMobile] = useState(false);
     const [openNavDrawer, setOpenNavDrawer] = useState(false);
 
@@ -112,21 +113,21 @@ const NavBar = () => {
                             <ListItem className='mb-2'>
                                 <ListItemText>
                                     <SNavLink to='/' onClick={handleClickMenuItem}>
-                                        <P1>{navbarData.head1['bang']}</P1>
+                                        <P1>{navbarData.head1[language]}</P1>
                                     </SNavLink>
                                 </ListItemText>
                             </ListItem>
                             <ListItem className='mb-2'>
                                 <ListItemText>
                                     <SNavLink to='/about-us' onClick={handleClickMenuItem}>
-                                        <P1>{navbarData.head2['bang']}</P1>
+                                        <P1>{navbarData.head2[language]}</P1>
                                     </SNavLink>
                                 </ListItemText>
                             </ListItem>
                             <ListItem>
                                 <ListItemText>
                                     <SNavLink to='/specialties' onClick={handleClickMenuItem}>
-                                        <P1>{navbarData.head3['bang']}</P1>
+                                        <P1>{navbarData.head3[language]}</P1>
                                     </SNavLink>
                                 </ListItemText>
                             </ListItem>
@@ -150,14 +151,14 @@ const NavBar = () => {
                         <SLink to='https://patient.nextgenmyhealth.com/login' target='_blank'>
                             <Button color='first' elevated>
                                 <P2 className='bold' color='white' style={{flexShrink: '0'}}>
-                                    {navbarData.btn1['bang']}
+                                    {navbarData.btn1[language]}
                                 </P2>
                             </Button>
                         </SLink>
                         <SLink to='https://doctor.nextgenmyhealth.com/login' target='_blank'>
                             <Button className='ml-3' color='third' elevated>
                                 <P2 className='bold' color='white' style={{flexShrink: '0'}}>
-                                    {navbarData.btn2['bang']}
+                                    {navbarData.btn2[language]}
                                 </P2>
                             </Button>
                         </SLink>
@@ -168,4 +169,8 @@ const NavBar = () => {
     );
 }
 
-export default NavBar;
+const mapStateToProps = state => ({
+    language: state.general.language,
+});
+
+export default connect(mapStateToProps, {})(NavBar);
