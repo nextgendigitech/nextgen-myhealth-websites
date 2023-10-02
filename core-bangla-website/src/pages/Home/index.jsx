@@ -8,6 +8,7 @@ import SpecialtiesSummary from "./components/SpecialtiesSummary";
 import BookingSteps from "./components/BookingSteps";
 import CustomerReview from "./components/CustomerReview";
 import JoinDoctor from "./components/JoinDoctor";
+import QRcode from "./components/QRcode";
 import responsive from '../../config/responsive';
 
 const Home = () => {
@@ -39,6 +40,7 @@ const Home = () => {
             <BookingSteps isMobile={isMobile} />
             <CustomerReview isMobile={isMobile} />
             <JoinDoctor isMobile={isMobile} />
+            <QRcode isMobile={isMobile} />
         </VBox>
     );
 }

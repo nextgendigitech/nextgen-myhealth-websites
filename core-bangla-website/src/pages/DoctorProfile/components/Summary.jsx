@@ -6,6 +6,7 @@ import { getTime } from "../../../utils";
 import { HBox, VBox } from "../../../components/Containers";
 import { P3 } from "../../../components/Typography";
 import colors from "../../../config/colors";
+import { doctorProfile } from "../../../data";
 
 const HSummaryCard = styled(HBox)`
     width: 100%;
@@ -43,17 +44,19 @@ const Summary = ({ consultation_fee, followup_fee, appointment_schedules, isMobi
                         <VerticalLine className="mr-1" style={{ height: "60px" }}/>
                         <VBox justify="center">
                             <P3>
-                                Consultation fee: <TbCurrencyTaka />
+                                {doctorProfile.summary.head1["bang"]}<TbCurrencyTaka />
                                 {consultation_fee}
                             </P3>
                             <P3>
-                                Followup fee: <TbCurrencyTaka />
+                            {doctorProfile.summary.head2["bang"]}<TbCurrencyTaka />
                                 {followup_fee}
                             </P3>
                         </VBox>
                     </HBox>
                     <HBox align="center" justify="right">
-                        <P3 justify="center">Spoken Language: English, Bangla</P3>
+                        <P3 justify="center">
+                            {doctorProfile.summary.head3["bang"]}{doctorProfile.summary.pnt1["bang"]}, {doctorProfile.summary.pnt2["bang"]}    
+                        </P3>
                         <VerticalLine className="mr-1" style={{ height: "60px"}}/>
                     </HBox>
                     <HBox align="center" style={{flexWrap: "nowrap"}}>
@@ -61,35 +64,25 @@ const Summary = ({ consultation_fee, followup_fee, appointment_schedules, isMobi
                             <>
                                 <VerticalLine className="mr-1" style={{ height: "90px" }}/>
                                 <VBox>
-                                    <P3>Consultation time:</P3>
-                                    <HBox>
-                                        <P3>Sunday: {appointment_schedules.sunday ? "Available" : "Not available"},&nbsp;</P3>
-                                        <P3>Monday: {appointment_schedules.monday ? "Available" : "Not available"},&nbsp;</P3>
-                                        
-                                    </HBox>
-                                    <HBox>
-                                        <P3>Tuesday: {appointment_schedules.tuesday ? "Available" : "Not available"},&nbsp;</P3>
-                                        <P3>Wednesday: {appointment_schedules.wednesday ? "Available" : "Not available"},&nbsp;</P3>
-                                    </HBox>
-                                    <HBox>
-                                        <P3>Thursday: {appointment_schedules.thursday ? "Available" : "Not available"},&nbsp;</P3>
-                                        <P3>Friday: {appointment_schedules.friday ? "Available" : "Not available"},&nbsp;</P3>
-                                    </HBox>
-                                    <HBox>
-                                        <P3>Saturday: {appointment_schedules.saturday ? "Available" : "Not available"}</P3>
-                                    </HBox>
-                                    <HBox>
-                                        <P3>Time: {getTime(appointment_schedules.startTime)}&nbsp;-&nbsp;{getTime(appointment_schedules.endTime)}</P3>
-                                        {/* <P3>End Time: {getTime(appointment_schedules.endTime)}</P3> */}
-                                    </HBox>
+                                    <P3>{doctorProfile.summary.head4["bang"]}</P3>
+                                    <P3>
+                                        {appointment_schedules.sunday ? doctorProfile.week.day1["bang"]+", " : ""}
+                                        {appointment_schedules.monday ? doctorProfile.week.day2["bang"]+", " : ""}
+                                        {appointment_schedules.tuesday ? doctorProfile.week.day3["bang"]+", " : ""}
+                                        {appointment_schedules.wednesday ? doctorProfile.week.day4["bang"]+", " : ""}
+                                        {appointment_schedules.thursday ? doctorProfile.week.day5["bang"]+", " : ""}
+                                        {appointment_schedules.friday ? doctorProfile.week.day6["bang"]+", " : ""} 
+                                        {appointment_schedules.saturday ? doctorProfile.week.day7["bang"] : ""}
+                                    </P3>
+                                    <P3>{doctorProfile.week.time["bang"]}: {getTime(appointment_schedules.startTime)}&nbsp;-&nbsp;{getTime(appointment_schedules.endTime)}</P3>
                                 </VBox>
                             </>
                             ) : (
                             <>
                                 <VerticalLine className="mr-1" style={{ height: "60px" }}/>
                                 <VBox>
-                                    <P3>Consultation time:</P3>
-                                    <P3>No schedule available</P3>  
+                                    <P3>{doctorProfile.summary.head4["bang"]}</P3>
+                                    <P3>{doctorProfile.summary.pera1["bang"]}</P3>  
                                 </VBox>     
                             </>
                         )}
@@ -105,42 +98,54 @@ const Summary = ({ consultation_fee, followup_fee, appointment_schedules, isMobi
                     <VerticalLine style={{ height: "120px" }}/>
                     <VBox className="pl-3" style={{ width: "23%" }}>
                         <P3>
-                            Consultation fee: <TbCurrencyTaka />
+                        {doctorProfile.summary.head1["bang"]}<TbCurrencyTaka />
                             {consultation_fee}
                         </P3>
                         <P3>
-                            Followup fee: <TbCurrencyTaka />
+                        {doctorProfile.summary.head2["bang"]}<TbCurrencyTaka />
                             {followup_fee}
                         </P3>
                     </VBox>
                     <VerticalLine style={{ height: "120px" }}/>
-                    <P3 className="pl-3 mr-3" style={{ width: "25%" }}>Spoken Language: English, Bangla</P3>
+                    <P3 className="pl-3 mr-3" style={{ width: "25%" }}>
+                        {doctorProfile.summary.head3["bang"]}{doctorProfile.summary.pnt1["bang"]}, {doctorProfile.summary.pnt2["bang"]}
+                    </P3>
                     <VerticalLine style={{ height: "120px" }}/>
                     <VBox className="pl-3" style={{ flexWrap: "nowrap", width: "45%" }}>
-                        <P3>Consultation time:</P3>
+                        <P3>{doctorProfile.summary.head4["bang"]}</P3>
                         {appointment_schedules ? (
                             <>
-                                <HBox>
-                                    <P3>Sunday: {appointment_schedules.sunday ? "Available" : "Not available"},&nbsp;</P3>
-                                    <P3>Monday: {appointment_schedules.monday ? "Available" : "Not available"},&nbsp;</P3>  
+                                {/* <HBox>
+                                    <P3>{doctorProfile.week.day1["bang"]}: {appointment_schedules.sunday ? "Available" : "Not available"},&nbsp;</P3>
+                                    <P3>{doctorProfile.week.day2["bang"]}: {appointment_schedules.monday ? "Available" : "Not available"},&nbsp;</P3>  
                                 </HBox>
                                 <HBox>
-                                    <P3>Tuesday: {appointment_schedules.tuesday ? "Available" : "Not available"},&nbsp;</P3>
-                                    <P3>Wednesday: {appointment_schedules.wednesday ? "Available" : "Not available"},&nbsp;</P3>   
+                                    <P3>{doctorProfile.week.day3["bang"]}: {appointment_schedules.tuesday ? "Available" : "Not available"},&nbsp;</P3>
+                                    <P3>{doctorProfile.week.day4["bang"]}: {appointment_schedules.wednesday ? "Available" : "Not available"},&nbsp;</P3>   
                                 </HBox>
                                 <HBox>
-                                    <P3>Thursday: {appointment_schedules.thursday ? "Available" : "Not available"},&nbsp;</P3>
-                                    <P3>Friday: {appointment_schedules.friday ? "Available" : "Not available"},&nbsp;</P3> 
+                                    <P3>{doctorProfile.week.day5["bang"]}: {appointment_schedules.thursday ? "Available" : "Not available"},&nbsp;</P3>
+                                    <P3>{doctorProfile.week.day6["bang"]}: {appointment_schedules.friday ? "Available" : "Not available"},&nbsp;</P3> 
                                 </HBox>
                                 <HBox>
-                                    <P3>Saturday: {appointment_schedules.saturday ? "Available" : "Not available"}</P3>
+                                    <P3>{doctorProfile.week.day7["bang"]}: {appointment_schedules.saturday ? "Available" : "Not available"}</P3>
                                 </HBox>
                                 <HBox>
-                                    <P3>Time: {getTime(appointment_schedules.startTime)}&nbsp;-&nbsp;{getTime(appointment_schedules.endTime)}</P3>
-                                </HBox>
+                                    <P3>{doctorProfile.week.time["bang"]}: {getTime(appointment_schedules.startTime)}&nbsp;-&nbsp;{getTime(appointment_schedules.endTime)}</P3>
+                                </HBox> */}
+                                <P3>
+                                    {appointment_schedules.sunday ? doctorProfile.week.day1["bang"]+", " : ""}
+                                    {appointment_schedules.monday ? doctorProfile.week.day2["bang"]+", " : ""}
+                                    {appointment_schedules.tuesday ? doctorProfile.week.day3["bang"]+", " : ""}
+                                    {appointment_schedules.wednesday ? doctorProfile.week.day4["bang"]+", " : ""}
+                                    {appointment_schedules.thursday ? doctorProfile.week.day5["bang"]+", " : ""}
+                                    {appointment_schedules.friday ? doctorProfile.week.day6["bang"]+", " : ""} 
+                                    {appointment_schedules.saturday ? doctorProfile.week.day7["bang"] : ""}
+                                </P3>
+                                <P3>{doctorProfile.week.time["bang"]}: {getTime(appointment_schedules.startTime)}&nbsp;-&nbsp;{getTime(appointment_schedules.endTime)}</P3>
                             </>
                             ) : (
-                            <P3>No schedule available</P3>
+                            <P3>{doctorProfile.summary.pera1["bang"]}</P3>
                         )}
                     </VBox>
                 </HSummaryCard>

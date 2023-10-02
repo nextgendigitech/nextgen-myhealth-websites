@@ -6,6 +6,8 @@ import { Button } from "../../../components/Buttons";
 import { HBox, VBox } from "../../../components/Containers";
 import { P1, P2, P3, P4 } from "../../../components/Typography";
 import colors from "../../../config/colors";
+import { doctorProfile } from "../../../data";
+import { specialtyEtoB } from "../../../data";
 
 
 const BannerCard = styled(VBox)`
@@ -52,14 +54,15 @@ const Banner = ({id, image, name, bmdc, doctor_type, qualification, specialty,
             <HBox justify="center" style={{ width: "100%", 
                             flexDirection: isMobile ? "column" : "row", 
                             alignItems: isMobile ? "center" : "" }}>
-                <VBox style={{ width: isMobile ? "fit-content" : "22%" }}>
+                <VBox style={{ width: isMobile ? "fit-content" : "22%" }} align={isMobile ? "center" : ""} justify={isMobile ? "center" : ""}>
                     <Image className="mb-3" 
                             style={{ width: isMobile ? "100px" : "160px" }} 
                             src={`${import.meta.env.VITE_SERVER_URL}${image}`} 
-                            alt="image"/>
+                            alt="image"
+                            />
                     <P3 className="bold" 
                         style={{ marginTop: isMobile ? "-10px" : "" }}>
-                            বি.এম.ডি.সি: {doctor_type===("MBBS") ? "এ-" : ""}{bmdc}
+                            {doctorProfile.banner.head1["bang"]} {doctor_type===("MBBS") ? doctorProfile.banner.head2["bang"] : ""}{bmdc}
                     </P3>
                 </VBox>
                 {!isMobile && (
@@ -82,12 +85,14 @@ const Banner = ({id, image, name, bmdc, doctor_type, qualification, specialty,
                                     borderRadius: "20px",
                                 }}
                             >
-                                {is_online ? "Online" : "Offline"}
+                                {is_online ? doctorProfile.banner.head6["bang"] : doctorProfile.banner.head7["bang"]}
                             </P4>
                         </Chip>
                     </HBox>
                     <P3 className={isMobile ? "mb-1" : "mb-2"} style={{ textAlign: isMobile ? "center" : "" }}>{qualification}</P3>
-                    <P3 className={isMobile ? "mb-1" : "mb-2"} style={{ textAlign: isMobile ? "center" : "" }}>{designation}, {department}, {institution}</P3>
+                    <P3 className={isMobile ? "mb-1" : "mb-2"} style={{ textAlign: isMobile ? "center" : "" }}>
+                        {designation ? designation+", " : ""}{department ? department+", " : ""}{institution}
+                    </P3>
                     <Chip className={isMobile ? "mb-1" : "mb-2"} style={{ justifyContent: isMobile ? "center" : "", 
                                     alignContent: isMobile ? "center" : "" }}>
                         {typeof specialty === "object" ? specialty.map((spec, index) => (
@@ -96,7 +101,7 @@ const Banner = ({id, image, name, bmdc, doctor_type, qualification, specialty,
                                 style={{ backgroundColor: colors.blue, borderRadius: "5px" }} 
                                 key={index}
                             >
-                                {spec}
+                                {specialtyEtoB[spec]}
                             </P4>
                         ))
                         : 
@@ -107,19 +112,19 @@ const Banner = ({id, image, name, bmdc, doctor_type, qualification, specialty,
                                 align="center" 
                                 style={{ backgroundColor: colors.blue, borderRadius: "5px" }}
                             >
-                                {specialty}
+                                {specialtyEtoB[specialty]}
                             </P4>
                         )}
                     </Chip>
                     <HBox style={{ marginBottom: isMobile ? "1px" : "16px" }} align="center">
-                        <P3 className="">Consultation fee: </P3>
+                        <P3 className="">{doctorProfile.banner.head3["bang"]}</P3>
                         <P2 className="bold mt-0_5"><TbCurrencyTaka/></P2>
                         <P2 className="bold">{consultation_fee}</P2>
                     </HBox>
                     <HBox className={isMobile ? "mb-3" : "mb-2"}>
                         {experience != null &&
                             <>
-                                <P3>Experience:</P3>
+                                <P3>{doctorProfile.banner.head4["bang"]}</P3>
                                 <P3 className="bold ml-1">{experience}</P3>
                             </>
                         }
@@ -136,7 +141,7 @@ const Banner = ({id, image, name, bmdc, doctor_type, qualification, specialty,
                                             width: "fit-content" }}
                                     elevated
                                 >
-                                    অ্যাপয়েন্টমেন্ট নিন
+                                    {doctorProfile.banner.head5["bang"]}
                             </Button>
                         </Link>
                     </HBox>   

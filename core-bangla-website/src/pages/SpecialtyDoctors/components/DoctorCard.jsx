@@ -28,7 +28,7 @@ const DoctorCard = ({ id, name, bmdc, qualification, specialty,
     return (
         <CardContainer align="center" justify="center"
             className={isMobile ? "m-1 py-2 px-1" : "m-5 p-2"}
-            style={{ width: isMobile ? "100%" : "calc(50% - 110px)", height: isMobile ? "" : "270px" }}
+            style={{ width: isMobile ? "100%" : "calc(50% - 120px)", height: isMobile ? "" : "270px" }}
         >
             <VBox align='center' style={{ width: "20%" }}>
                 <Image
@@ -50,19 +50,19 @@ const DoctorCard = ({ id, name, bmdc, qualification, specialty,
                         <P4 className="bold mb-1">{specialty}</P4>
                     )}
                 </VBox>
-                <P4 className="bold mb-1" >{qualification}</P4>
+                <P4 className="bold mb-1">{qualification}</P4>
                 <P4 className={isMobile ? "bold mb-2" : "bold mb-3"}>
                     {experience ? specialtydoctorsData.doctorcard.head3['bang'] : ""}{experience}
                     {/* {experience?.substring(0,2) ? experience.substring(0,2) + "+ Years" : ""} */}
                 </P4>
-                <HBox justify="space-around">
-                    <NavLink to= {`/doctor-profile/${id}`} style={{textDecoration: 'none'}}>
+                <HBox justify="space-around" >
+                    <NavLink to= {`/doctor-profile/${id}`} style={{textDecoration: 'none'}} className={isMobile ? "mb-1" : ""}>
                         <Button 
                             style={{ fontSize: "14px", width: "fit-content", borderRadius: 25, height: isMobile ? 25 : 37 }} 
                             color='first' 
                             elevated>{specialtydoctorsData.doctorcard.btn1['bang']}</Button> 
                     </NavLink>
-                    <Link to={`https://patient.nextgenmyhealth.com/doctor/${id}`} style={{textDecoration: 'none'}} target='_blank'>
+                    <Link to={`https://patient.nextgenmyhealth.com/doctor/${id}`} style={{textDecoration: 'none'}} target='_blank' className={isMobile ? "mb-1" : ""}>
                         <Button 
                             style={{ fontSize: "14px", width: "fit-content", borderRadius: 25, height: isMobile ? 25 : 37 }}
                             color='third' 
