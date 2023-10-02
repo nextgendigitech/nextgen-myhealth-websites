@@ -6,6 +6,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import IconButton from "@mui/material/IconButton";
 import { FiShare2 } from "react-icons/fi";
 import { BiArrowBack } from "react-icons/bi";
+import { connect } from 'react-redux';
 
 import { HBox } from "../../../components/Containers";
 import { H3, P3, P4 } from "../../../components/Typography";

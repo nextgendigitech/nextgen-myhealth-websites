@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 
 import colors from "../../../config/colors";
 import responsive from "../../../config/responsive";
@@ -101,32 +102,32 @@ const SpecialtiesCard = ({ icon, name, className, isMobile }) => {
     );
 }
 
-const SpecialtiesSummary = ({ isMobile }) => {
+const SpecialtiesSummary = ({ isMobile, language }) => {
     return (
         <Container justify='space-around' style={{marginTop: isMobile ? '30px' : '60px'}}>
             <HBox justify='space-around' align='center'>
                 <VBox className="" align='center' style={{ width: isMobile ? '35%' : '25%' }}>
                     <TitleCard className="p-1 mb-3" justify="center" align='center'>
-                        <P3>{homeData.SpecialtiesSummary.head1['bang']}</P3>
-                        <P2 color='third'>{homeData.SpecialtiesSummary.head2['bang']}</P2>
-                        <P3>{homeData.SpecialtiesSummary.head3['bang']}</P3>
+                        <P3>{homeData.SpecialtiesSummary.head1[language]}</P3>
+                        <P2 color='third'>{homeData.SpecialtiesSummary.head2[language]}</P2>
+                        <P3>{homeData.SpecialtiesSummary.head3[language]}</P3>
                     </TitleCard>
                     <SLink to='/specialties'>
-                        <SButton className='mb-5' color='third' style={{ fontSize: isMobile ? "12px" : "16px" }} elevated>{homeData.SpecialtiesSummary.btn1['bang']}</SButton> 
+                        <SButton className='mb-5' color='third' style={{ fontSize: isMobile ? "12px" : "16px" }} elevated>{homeData.SpecialtiesSummary.btn1[language]}</SButton> 
                     </SLink>
                 </VBox>
                 <VBox align='center' className="" style={{ width: isMobile ? '60%' : '25%' }}>
                     <SLink to='/specialty-doctors/Internal Medicine'>
-                        <SpecialtiesCard className='mt-2' isMobile={isMobile} icon={internal_medicine} name={homeData.SpecialtiesSummary.point1['bang']}/>
+                        <SpecialtiesCard className='mt-2' isMobile={isMobile} icon={internal_medicine} name={homeData.SpecialtiesSummary.point1[language]}/>
                     </SLink>
                     <SLink to='/specialty-doctors/Cardiology'>
-                        <SpecialtiesCard isMobile={isMobile} icon={cardiology} name={homeData.SpecialtiesSummary.point2['bang']}/>
+                        <SpecialtiesCard isMobile={isMobile} icon={cardiology} name={homeData.SpecialtiesSummary.point2[language]}/>
                     </SLink>
                     <SLink to='/specialty-doctors/Respiratory Medicine'>
-                        <SpecialtiesCard isMobile={isMobile} icon={respiratory_medicine} name={homeData.SpecialtiesSummary.point3['bang']}/>
+                        <SpecialtiesCard isMobile={isMobile} icon={respiratory_medicine} name={homeData.SpecialtiesSummary.point3[language]}/>
                     </SLink>
                     <SLink to='/specialty-doctors/Neurology'>
-                        <SpecialtiesCard isMobile={isMobile} icon={neurology} name={homeData.SpecialtiesSummary.point4['bang']}/>
+                        <SpecialtiesCard isMobile={isMobile} icon={neurology} name={homeData.SpecialtiesSummary.point4[language]}/>
                     </SLink>
                     <SLink to='/specialties'>
                         <RoundButton style={{ height: isMobile ? '40px' : '50px', marginTop: isMobile ? '12px' : '24px', marginBottom: isMobile ? '12px' : '24px' }} elevated>
@@ -142,4 +143,8 @@ const SpecialtiesSummary = ({ isMobile }) => {
     );
 }
 
-export default SpecialtiesSummary;
+const mapStateToProps = state => ({
+    language: state.general.language,
+});
+
+export default connect(mapStateToProps, {})(SpecialtiesSummary);

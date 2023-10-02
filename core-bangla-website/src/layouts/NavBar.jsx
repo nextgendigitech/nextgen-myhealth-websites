@@ -11,7 +11,7 @@ import { P1, P2 } from '../components/Typography';
 import logo from '../assets/images/Website-Logo.png'
 import colors from '../config/colors';
 import responsive from '../config/responsive';
-import { navbarData } from '../data';
+import { navbarData, Links } from '../data';
 
 const Container = styled(HBox)`
     position: sticky;
@@ -20,8 +20,6 @@ const Container = styled(HBox)`
     width: 100%;
     border: 1px solid ${colors.grey};
     background-color: ${colors.veryLightGreen};
-    padding-left: 8%;
-    padding-right: 8%;
     z-index: 10;
     flex-wrap: nowrap;
 `
@@ -91,7 +89,11 @@ const NavBar = ({ language }) => {
     }
 
     return (
-        <Container justify='space-between' align='center'>
+        <Container 
+            justify='space-between' 
+            align='center' 
+            style={{ paddingLeft: isMobile ? "40px" : "100px", paddingRight: isMobile ? "40px" : "100px" }}
+        >
             <SNavLink to='/'>
                 <LogoImage src={logo} />
             </SNavLink>
@@ -137,25 +139,25 @@ const NavBar = ({ language }) => {
                 :
                 <>
                     <HBox style={{flexShrink: '0', flexWrap: 'nowrap'}}>
-                        <SNavLink to='/'>
-                            হোম
+                        <SNavLink to='/' onClick={handleClickMenuItem}>
+                            <P1>{navbarData.head1[language]}</P1>
                         </SNavLink>
-                        <SNavLink className='mx-4' to='/about-us'>
-                            পরিচিতি
+                        <SNavLink className='mx-4' to='/about-us' onClick={handleClickMenuItem}>
+                            <P1>{navbarData.head2[language]}</P1>
                         </SNavLink>
-                        <SNavLink to='/specialties'>
-                            বিশেষজ্ঞ ডাক্তার
+                        <SNavLink to='/specialties' onClick={handleClickMenuItem}>
+                            <P1>{navbarData.head3[language]}</P1>
                         </SNavLink>
                     </HBox>
                     <HBox className='ml-6' style={{flexWrap: 'nowrap'}}>
-                        <SLink to='https://patient.nextgenmyhealth.com/login' target='_blank'>
+                        <SLink to={Links.navbar.link1} target='_blank'>
                             <Button color='first' elevated>
                                 <P2 className='bold' color='white' style={{flexShrink: '0'}}>
                                     {navbarData.btn1[language]}
                                 </P2>
                             </Button>
                         </SLink>
-                        <SLink to='https://doctor.nextgenmyhealth.com/login' target='_blank'>
+                        <SLink to={Links.navbar.link2} target='_blank'>
                             <Button className='ml-3' color='third' elevated>
                                 <P2 className='bold' color='white' style={{flexShrink: '0'}}>
                                     {navbarData.btn2[language]}

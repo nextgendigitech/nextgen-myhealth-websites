@@ -32,7 +32,7 @@ const Home = () => {
     }, []);
 
     return (
-        <VBox>
+        <VBox >
             <Banner isMobile={isMobile} />
             <ShortIntro isMobile={isMobile} />
             <WhyUs isMobile={isMobile} />

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { TbCurrencyTaka } from "react-icons/tb";
 import { getTime } from "../../../utils";
-
+import { connect } from 'react-redux';
 
 import { HBox, VBox } from "../../../components/Containers";
 import { P3 } from "../../../components/Typography";

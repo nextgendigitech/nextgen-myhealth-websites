@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { TbCurrencyTaka } from "react-icons/tb";
 import { Link } from "react-router-dom";
+import { connect } from 'react-redux';
 
 import { Button } from "../../../components/Buttons";
 import { HBox, VBox } from "../../../components/Containers";

@@ -4,6 +4,7 @@ import { AiOutlineMail } from 'react-icons/ai'
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import { Link } from "react-router-dom";
+import { connect } from 'react-redux';
 
 import { HBox, VBox } from '../components/Containers';
 import { P2, P3, P4 } from '../components/Typography';
@@ -11,7 +12,7 @@ import logo from '../assets/images/Website-Logo.png'
 import colors from '../config/colors';
 import responsive from '../config/responsive';
 import DoctorSearchDlg from './DoctorSearchDlg';
-import { footerData } from '../data';
+import { footerData, Links } from '../data';
 
 
 const FooterContainer1 = styled(VBox)`
@@ -91,7 +92,7 @@ const SNavLink = styled(NavLink)`
     }
 `
 
-const Footer = () => {
+const Footer = ({ language }) => {
     const [openDoctorSearchDlg, setOpenDoctorSearchDlg] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
 
@@ -121,14 +122,20 @@ const Footer = () => {
             style={{ width: isMobile ? '100%' : '25%' }}
         >
             <VBox>
-                <P2 className='bold'>{footerData.head1['bang']}</P2>
-                <P3>{footerData.para11['bang']}</P3>
-                <Link to={"https://nextgendgtech.com/"} style={{ textDecoration: 'none' }} target='_blank'>
-                    <P3 color='first'>{footerData.para21['bang']}</P3>
+                <P2 className='bold'>{footerData.head1[language]}</P2>
+                <P3>{footerData.para11[language]}</P3>
+                <Link to={Links.footer.link1} style={{ textDecoration: 'none' }} target='_blank'>
+                    <P3 color='first'>{footerData.para21[language]}</P3>
                 </Link>
-                <P3>{footerData.para31['bang']}</P3>
-                <HBox align='center' className='mt-2'><PhoneIcon className='' /><P3 className='ml-1'>{footerData.para61['bang']}</P3></HBox>
-                <HBox align='center' className='mt-1'><EmailIcon className='' /><P3 className='ml-1'>{footerData.para71['bang']}</P3></HBox>
+                <P3>{footerData.para31[language]}</P3>
+                <HBox align='center' className='mt-2'>
+                    <PhoneIcon />
+                    <P3 className='ml-1'>{Links.phoneandemail.phone[language]}</P3>
+                </HBox>
+                <HBox align='center' className='mt-1'>
+                    <EmailIcon />
+                    <P3 className='ml-1'>{Links.phoneandemail.email[language]}</P3>
+                </HBox>
             </VBox>
          </VBox>
     )
@@ -136,18 +143,18 @@ const Footer = () => {
     const CompanyHtml = () => (
         <VBox align={isMobile ? 'flex-start' : 'center'} style={{ width: isMobile ? '25%' : '25%' }}>
             <VBox>
-                <P2 className='bold'>{footerData.head2['bang']}</P2>
+                <P2 className='bold'>{footerData.head2[language]}</P2>
                 <SNavLink to='/contact-us'>
-                    <P3 className='mt-2'>{footerData.para12['bang']}</P3>
+                    <P3 className='mt-2'>{footerData.para12[language]}</P3>
                 </SNavLink>
                 <SNavLink to='/about-us'>
-                    <P3 className='mt-2'>{footerData.para22['bang']}</P3>
+                    <P3 className='mt-2'>{footerData.para22[language]}</P3>
                 </SNavLink>
                 <SNavLink to='/specialties'>
-                    <P3 className='mt-2'>{footerData.para32['bang']}</P3>
+                    <P3 className='mt-2'>{footerData.para32[language]}</P3>
                 </SNavLink>
                 {/* <SNavLink to='/blog'>
-                    <P3 className={margin2}>{footerData.para42['bang']}</P3>
+                    <P3 className={margin2}>{footerData.para42[language]}</P3>
                 </SNavLink> */}
             </VBox>
         </VBox>
@@ -156,8 +163,8 @@ const Footer = () => {
     const ServiceHtml = () => (
         <VBox align={isMobile ? 'flex-start' : 'center'} style={{ width: isMobile ? '25%' : '25%' }}>
             <VBox>
-                <P2 className='bold'>{footerData.head3['bang']}</P2>
-                <P3 className='mt-2 clickable' onClick={() => setOpenDoctorSearchDlg(true)}>{footerData.para13['bang']}</P3>
+                <P2 className='bold'>{footerData.head3[language]}</P2>
+                <P3 className='mt-2 clickable' onClick={() => setOpenDoctorSearchDlg(true)}>{footerData.para13[language]}</P3>
                 {/* <P4 className='mt-2'>প্রতিনিয়ত জিজ্ঞাসিত প্রশ্ন</P4> */}
             </VBox>
         </VBox>
@@ -166,9 +173,9 @@ const Footer = () => {
     const PaymentHtml = () => (
         <VBox align={isMobile ? 'flex-start' : 'center'} style={{ width: isMobile ? '25%' : '25%' }}>
             <VBox>
-                <P2 className='bold'>{footerData.head4['bang']}</P2>
+                <P2 className='bold'>{footerData.head4[language]}</P2>
                 <SNavLink to='/payment'>
-                    <P3 className='mt-2'>{footerData.para14['bang']}</P3>
+                    <P3 className='mt-2'>{footerData.para14[language]}</P3>
                 </SNavLink>
             </VBox>
         </VBox>
@@ -190,20 +197,20 @@ const Footer = () => {
                 <VBox align='center'>
                     <HBox className='mt-2 mb-1'>
                         <SNavLink to='/terms-conditions'>
-                            <P3 style={{ color: colors.grey }}>{footerData.footer1['bang']}</P3>
+                            <P3 style={{ color: colors.grey }}>{footerData.footer1[language]}</P3>
                         </SNavLink>
                         <P3 className='mx-0_5' style={{ color: colors.grey }}>|</P3>
                         <SNavLink to='/privacy-policy'>
-                            <P3 style={{ color: colors.grey }}>{footerData.footer2['bang']}</P3>
+                            <P3 style={{ color: colors.grey }}>{footerData.footer2[language]}</P3>
                         </SNavLink>
                         <P3 className='mx-0_5' style={{ color: colors.grey }}>|</P3>
                         <SNavLink to='/refund-policy'>
-                            <P3 style={{ color: colors.grey }}>{footerData.footer3['bang']}</P3>
+                            <P3 style={{ color: colors.grey }}>{footerData.footer3[language]}</P3>
                         </SNavLink>
                     </HBox>
-                    <Link className='mb-2' to={"https://nextgendgtech.com/"} style={{ textDecoration: 'none' }} target='_blank'>
+                    <Link className='mb-2' to={Links.footer.link1} style={{ textDecoration: 'none' }} target='_blank'>
                         <P3 style={{ color: colors.grey }}>
-                            {footerData.footer4['bang']}{new Date().getFullYear()}&nbsp;{footerData.para21['bang']}
+                            {footerData.footer4[language]}{new Date().getFullYear()}&nbsp;{footerData.para21[language]}
                         </P3>
                     </Link>
                 </VBox>
@@ -219,4 +226,8 @@ const Footer = () => {
     );
 }
 
-export default Footer;
+const mapStateToProps = state => ({
+    language: state.general.language,
+});
+
+export default connect(mapStateToProps, {})(Footer);

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { connect } from 'react-redux';
 
 import { VBox } from "../../../components/Containers";
 import { P2, P3 } from "../../../components/Typography";

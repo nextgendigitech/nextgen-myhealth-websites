@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { FaArrowRightLong } from 'react-icons/fa6';
+import { connect } from 'react-redux';
 
 import { P1, P2, P3, P4, H1, H2, H3, H4, H6 } from '../../../components/Typography'
 import { HBox, VBox } from '../../../components/Containers';
@@ -9,8 +10,6 @@ import responsive from '../../../config/responsive';
 import { homeData } from '../../../data';
 
 const Container = styled(HBox)`
-    padding-left: 8%;
-    padding-right: 8%;
     width: 100%;
 `
 
@@ -69,20 +68,24 @@ const Image = styled.img`
 //     color: ${colors.darkGreen};
 // `
 
-const ShortIntro = ({ isMobile }) => {
+const ShortIntro = ({ isMobile, language }) => {
     return (
-        <Container align='space-around' style={{marginTop: isMobile ? '60px' : '100px'}}>
+        <Container align='space-around' style={{ paddingLeft: isMobile ? "40px" : "100px", paddingRight: isMobile ? "40px" : "100px", marginTop: isMobile ? '60px' : '100px' }} >
             <VBox style={{ width: '30%' }}>
                 <GreenBox />
                 <Image className='' src={image}/>
             </VBox>
             <VBox style={{ width: '70%' }}>
-                <H3 className='bold' color='third'>{homeData.shortIntro.head1['bang']}</H3>
-                <H3 className='bold'>{homeData.shortIntro.head2['bang']}</H3>
-                <P2 className='mt-2'>{homeData.shortIntro.para1['bang']}</P2>
+                <H3 className='bold' color='third'>{homeData.shortIntro.head1[language]}</H3>
+                <H3 className='bold'>{homeData.shortIntro.head2[language]}</H3>
+                <P2 className='mt-2'>{homeData.shortIntro.para1[language]}</P2>
             </VBox>
         </Container>
     );
 }
 
-export default ShortIntro;
+const mapStateToProps = state => ({
+    language: state.general.language,
+});
+
+export default connect(mapStateToProps, {})(ShortIntro);

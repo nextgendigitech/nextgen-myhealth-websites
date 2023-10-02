@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { connect } from 'react-redux';
 
 import patient_mobile_app from "../../../assets/images/patient_mobile_app.jpg";
 import google_play_store from "../../../assets/images/google_play_store.png";
@@ -7,7 +8,7 @@ import qrcode_download_app from "../../../assets/images/qrcode_download_app.png"
 import colors from "../../../config/colors";
 import { HBox, VBox } from "../../../components/Containers";
 import { H4, H5, P3 } from "../../../components/Typography";
-import { homeData } from '../../../data';
+import { homeData, Links } from '../../../data';
 
 const Container = styled(VBox)`
     width: 100%;
@@ -22,18 +23,17 @@ const Container = styled(VBox)`
 `
 
 const Image = styled.img`
-    /* height: 430px; */
     border: solid 3px ${colors.darkGrey};
     box-shadow: 0px 3px 5px ${colors.shadow};
 `
 
-const QRcode = ({ isMobile }) => {
+const QRcode = ({ isMobile, language }) => {
     return (
         <Container className={isMobile ? "p-2" : "p-5"} justify="center" style={{marginTop: isMobile ? '60px' : '100px'}}>
-            <H4 className="bold pb-2" align="center">{homeData.qrcode.head1['bang']}</H4>
+            <H4 className="bold pb-2" align="center">{homeData.qrcode.head1[language]}</H4>
             <HBox justify="center"> 
                 <VBox style={{width: "40%"}} justify="center">  
-                    <Link to={"https://play.google.com/store/apps/details?id=com.nextgen_digitech.myhealth_patients&pcampaignid=web_share"} 
+                    <Link to={Links.qrcode.link1} 
                         style={{ textDecoration: 'none', marginLeft: isMobile ? "-8px" : "-4px" }} target='_blank'
                     >
                         <img src={google_play_store} style={{ width: "50%" }}/>
@@ -46,4 +46,8 @@ const QRcode = ({ isMobile }) => {
     );
 }
 
-export default QRcode;
+const mapStateToProps = state => ({
+    language: state.general.language,
+});
+
+export default connect(mapStateToProps, {})(QRcode);

@@ -1,7 +1,41 @@
+export const Links = {
+    topbar : {
+        link1 : "https://www.facebook.com/nextgenmyhealthvcp",
+        link2 : "https://www.linkedin.com/company/nextgen-myhealth-vcp/",
+        link3 : "https://www.youtube.com/channel/UCSDFJqW2y9UYs6IMWGK2i9w",
+    },
+    navbar : {
+        link1 : "https://patient.nextgenmyhealth.com/login",
+        link2 : "https://doctor.nextgenmyhealth.com/login",
+    },
+    footer : {
+        link1 : "https://nextgendgtech.com/",
+    },
+    joindoctor : {
+        link1 : "https://docs.google.com/forms/d/e/1FAIpQLSe2oTRWq02VzSy7S5HyZLXbUtGdY1uwZrnmZjM5bEXNPWZMZA/viewform?pli=1",
+    },
+    qrcode : {
+        link1 : "https://play.google.com/store/apps/details?id=com.nextgen_digitech.myhealth_patients&pcampaignid=web_share",
+    },
+    aboutus : {
+        link1 : "https://www.youtube.com/embed/NdZ9vPHAy7w",
+    },
+    phoneandemail : {
+        phone: {
+            bang: '+৮৮০১৩২১১১৯৩৯১',
+            eng: '+8801321119391',
+        },
+        email: {
+            bang: 'info@nextgenmyhealth.com',
+            eng: 'info@nextgenmyhealth.com',
+        },
+    }
+}
+
 export const navbarData = {
     head1: {
         bang: 'হোম',
-        eng: 'home'
+        eng: 'Home'
     },
     head2: {
         bang: 'পরিচিতি',
@@ -62,16 +96,8 @@ export const footerData = {
         eng: 'NextGen DigiTech Ltd.'
     },
     para31: {
-        bang: 'টুল অ্যান্ড টেকনোলজি ইনস্টিটিউট, বিটাক, মন্ত্রণালয় ১১৬ (খ), তেজগাঁও শিল্প এলাকা, ঢাকা-১২০৮, বাংলাদেশ',
+        bang: 'টুল অ্যান্ড টেকনোলজি ইনস্টিটিউট, বিটাক, শিল্প মন্ত্রণালয় ১১৬ (খ), তেজগাঁও শিল্প এলাকা, ঢাকা-১২০৮, বাংলাদেশ',
         eng: 'Tool & Technology Institute, BITAC, Ministry of Industries 116 (kha), Tejgaon Industrial Area, Dhaka-1208, Bangladesh'
-    },
-    para61: {
-        bang: ' +৮৮০১৩২১১১৯৩৯১',
-        eng: '+8801321119391'
-    },
-    para71: {
-        bang: 'info@nextgenmyhealth.com',
-        eng: 'info@nextgenmyhealth.com'
     },
     para12: {
         bang: 'যোগাযোগ করুন',
@@ -134,7 +160,7 @@ export const homeData = {
     banner: {
         head1: {
             bang: 'স্বাগতম আপনাকে',
-            eng: 'Welcome',
+            eng: 'Welcome to',
         },
         head2: {
             bang: 'নেক্সটজেন',
@@ -142,7 +168,7 @@ export const homeData = {
         },
         head31: {
             bang: 'মাই',
-            eng: 'my'
+            eng: 'My'
         },
         head32: {
             bang: 'হেলথ',
@@ -178,7 +204,7 @@ export const homeData = {
     WhyUs: {
         head1: {
             bang: 'কেন আমাদের প্লাটফর্ম ব্যবহার করবেন?',
-            eng: '"Why should you use our platform?"',
+            eng: 'Why should you use our platform?',
         },
         head2: {
             bang: 'কারণ আমাদের আছে',
@@ -270,35 +296,35 @@ export const homeData = {
         },
         parahead1: {
             bang: 'ডাক্তার অনুসন্ধান করুন',
-            eng: '',
+            eng: 'Find all doctors',
         },
         parahead2: {
             bang: 'লগ ইন করুন',
-            eng: '',
+            eng: 'Login into your account',
         },
         parahead3: {
             bang: 'অ্যাপয়েন্টমেন্ট নির্বাচন করুন',
-            eng: '',
+            eng: 'Choose preferable appointment slot',
         },
         parahead4: {
             bang: 'অ্যাপয়েন্টমেন্ট বুক করুন',
-            eng: '',
+            eng: 'Book appointment',
         },
         para1: {
             bang: 'স্পেশালাইজেশন, প্রোফাইল, এবং অভিজ্ঞতা দ্বারা বা আপনার প্রয়োজন এবং উপসর্গ অনুসারে একজন ডাক্তার খুঁজুন।',
-            eng: '',
+            eng: 'Find a doctor based on specialization, profile, and experience, or according to your needs and preferences.',
         },
         para2: {
             bang: 'ফোন নম্বর/ইমেল ঠিকানা এবং পাসওয়ার্ড দিয়ে পেশেন্ট পোর্টালে লগ ইন করুন। আপনি যদি নতুন হন তাহলে আপনার নাম, ফোন নম্বর/ইমেল ঠিকানা এবং পাসওয়ার্ড ব্যবহার করে একটি খুব সহজ প্রক্রিয়ায় নিজেকে নিবন্ধন করুন।',
-            eng: '',
+            eng: 'Log in to the patient portal using your phone number/email and password. If you are new, register yourself using your name, phone number/email, and password through a very simple process.',
         },
         para3: {
             bang: 'বুক অ্যাপয়েন্টমেন্ট বাটনে ক্লিক করুন এবং আপনার সুবিধাজনক সময় অনুযায়ী ডাক্তারের ডাক্তারের অ্যাপয়েন্টমেন্ট বুক করুন।',
-            eng: '',
+            eng: 'Click on the "Book Appointment" button and schedule an appointment with the doctor of your choice based on your convenience.',
         },
         para4: {
             bang: 'অনলাইন পেমেন্টের মাধ্যমে আপনার অ্যাপয়েন্টমেন্ট নিশ্চিত করুন।',
-            eng: '',
+            eng: 'Confirm your appointment by making an online payment.',
         },
     },
     CustomerReview: {
@@ -415,7 +441,7 @@ export const aboutusData = {
         },
         pointpera3: {
             bang: 'ভিডিও সেশনের সমাপ্তির পর ডাক্তার ই-প্রেসক্রিপশন আপলোড করবেন। ই-প্রেসক্রিপশনটি তখনই বা পরে ডাউনলোড এবং ব্যবহার করা যাবে।',
-            eng: 'After the video session, the doctor will upload the e-prescription. The e-prescription can be downloaded and used either immediately or later.',
+            eng: 'Doctor will upload the e-prescription after video session. The e-prescription can be downloaded and used anytime.',
         },
         pointpera4: {
             bang: 'অনলাইন পরামর্শের জন্য রোগী এবং ডাক্তার উভয়কে এসএমএস এবং ই-মেইলের মাধ্যমে প্রাথমিকভাবে জানানো হবে।',
@@ -423,7 +449,7 @@ export const aboutusData = {
         },
         pointpera5: {
             bang: 'রোগী পোর্টালে তার ডায়াগনস্টিক রিপোর্ট আপলোড করতে স্মার্টফোন ক্যামেরা এবং উল্লেখিত ছবি আপলোড উভয় বিকল্পই ব্যবহার করতে পারেন।',
-            eng: 'The patient can upload their diagnostic report on the patient portal using either the smartphone camera or by selecting the relevant image.',
+            eng: 'The patient can upload their diagnostic report on the patient portal using either smartphone camera or by selecting relevant image.',
         },
         pointpera6: {
             bang: 'নেক্সটজেন মাইহেলথ ভিসিপি সপ্তাহে সাত দিনই সেবা প্রদানের জন্য নিবেদিত।',
@@ -470,14 +496,6 @@ export const contactusData = {
             bang: 'টুল অ্যান্ড টেকনোলজি ইনস্টিটিউট, বিটাক, শিল্প মন্ত্রণালয় ১১৬ (খ), তেজগাঁও শিল্প এলাকা, ঢাকা-১২০৮, বাংলাদেশ',
             eng: 'Tool & Technology Institute, BITAC, Ministry of Industries 116 (kha), Tejgaon Industrial Area, Dhaka-1208, Bangladesh.',
         },
-        para5: {
-            bang: '+৮৮০১৩২১১১৯৩৯১',
-            eng: '+8801321119391',
-        },
-        para6: {
-            bang: 'info@nextgenmyhealth.com',
-            eng: 'info@nextgenmyhealth.com',
-        },
         btn1: {
             bang: 'বার্তা পাঠান',
             eng: 'Send a message',
@@ -497,121 +515,6 @@ export const specialtiesData = {
         },
     },
 }
-
-// export const specialtylistData = {
-//     pnt1: {
-//         bang: 'জেনারেল ফিজিসিয়ান',
-//         eng: 'General Physician',
-//     },
-//     pnt2: {
-//         bang: 'ইন্টারনাল মেডিসিন',
-//         eng: 'Internal Medicine',
-//     },
-//     pnt3: {
-//         bang: 'হৃদরোগ',
-//         eng: 'Cardiology',
-//     },
-//     pnt4: {
-//         bang: 'কিডনি',
-//         eng: 'Nephrology',
-//     },
-//     pnt5: {
-//         bang: 'ফুসফুস',
-//         eng: 'Respiratory Medicine',
-//     },
-//     pnt6: {
-//         bang: 'বাতরোগ',
-//         eng: 'Rheumatology',
-//     },
-//     pnt7: {
-//         bang: 'পরিপাকতন্ত্র',
-//         eng: 'Gastroenterology',
-//     },
-//     pnt8: {
-//         bang: 'লিভার',
-//         eng: 'Hepatology',
-//     },
-//     pnt9: {
-//         bang: 'স্নায়ুরোগ',
-//         eng: 'Neurology',
-//     },
-//     pnt10: {
-//         bang: 'ক্যান্সার',
-//         eng: 'Oncology',
-//     },
-//     pnt11: {
-//         bang: 'রক্তরোগ',
-//         eng: 'Hematology',
-//     },
-//     pnt12: {
-//         bang: 'হরমোন',
-//         eng: 'Endocrinology',
-//     },
-//     pnt13: {
-//         bang: 'চর্ম ও যৌনরোগ',
-//         eng: 'Dermatology & Venereology',
-//     },
-//     pnt14: {
-//         bang: 'শিশুরোগ',
-//         eng: 'Pediatrics',
-//     },
-//     pnt15: {
-//         bang: 'মনোরোগ',
-//         eng: 'Psychiatry',
-//     },
-//     pnt16: {
-//         bang: 'ফিজিক্যাল মেডিসিন',
-//         eng: 'Physical Medicine & Rehabilitation',
-//     },
-//     pnt17: {
-//         bang: 'এস্থেটিক ডার্মাটোলজি',
-//         eng: 'Aesthetic Dermatology',
-//     },
-//     pnt18: {
-//         bang: 'জেনারেল সার্জারি',
-//         eng: 'General Surgery',
-//     },
-//     pnt19: {
-//         bang: 'অর্থোপেডিক সার্জারি',
-//         eng: 'Orthopedic Surgery',
-//     },
-//     pnt20: {
-//         bang: 'স্নায়ু সার্জারি',
-//         eng: 'Neurosurgery',
-//     },
-//     pnt21: {
-//         bang: 'স্ত্রীরোগ ও প্রসূতি',
-//         eng: 'Gynecology & Obstetrics',
-//     },
-//     pnt22: {
-//         bang: 'নাক, কান ও গলা',
-//         eng: 'ENT & Head Neck Surgery',
-//     },
-//     pnt23: {
-//         bang: 'চক্ষু',
-//         eng: 'Ophthalmology',
-//     },
-//     pnt24: {
-//         bang: 'ডেন্টাল সার্জারি',
-//         eng: 'Oral & Dental Surgery',
-//     },
-//     pnt25: {
-//         bang: 'মুত্ররোগ সার্জারি',
-//         eng: 'Urology',
-//     },
-//     pnt26: {
-//         bang: 'কোলন, রেকটাম সার্জারি',
-//         eng: 'Colorectal Surgery',
-//     },
-//     pnt27: {
-//         bang: 'শিশুরোগ সার্জারি',
-//         eng: 'Pediatric Surgery',
-//     },
-//     pnt28: {
-//         bang: 'রক্তনালী সার্জারি',
-//         eng: 'Vascular Surgery',
-//     },
-// }
 
 export const specialtydoctorsData = {
     index: {
@@ -806,6 +709,61 @@ export const doctorProfile = {
             bang: 'উপস্থিত রোগী:',
             eng: 'Patient Attended:'
         }
+    },
+}
+
+export const payment = {
+    banner : {
+        head1 : {
+            bang: 'সহজ এবং সুরক্ষিত মাধ্যমে পেমেন্ট করুন ',
+            eng: 'Make payment easily and securely',
+        },
+        para11 : {
+            bang: 'নেক্সটজেন',
+            eng: 'in NextGen',
+        },
+        para12 : {
+            bang: 'মাই',
+            eng: 'My',
+        },
+        para13 : {
+            bang: 'হেলথ',
+            eng: 'Health',
+        },
+        para14 : {
+            bang: 'ভিসিপি',
+            eng: 'VCP',
+        },
+        para15 : {
+            bang: 'তে',
+            eng: '',
+        },
+    },
+    method : {
+        head1 : {
+            bang: 'পেমেন্ট সম্পূর্ণ করতে আপনার পছন্দের নিম্নোক্ত যেকোনো পদ্ধতি অনুসরণ করুন। যেকোনো প্রয়োজনে আমাদের সাথে যোগাযোগ করুন।',
+            eng: 'To complete the payment, follow any of your preferred methods listed below. Feel free to contact us if needed.',
+        },
+        para11 : {
+            bang: '',
+            eng: '',
+        },
+        para12 : {
+            bang: '',
+            eng: '',
+        },
+        para13 : {
+            bang: '',
+            eng: '',
+        },
+        para14 : {
+            bang: '',
+            eng: '',
+        },
+        para15 : {
+            bang: '',
+            eng: '',
+        },
     },
 }
 

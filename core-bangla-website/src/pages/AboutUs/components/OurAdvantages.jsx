@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { connect } from 'react-redux';
+
 
 import colors from "../../../config/colors";
 import { HBox, VBox } from "../../../components/Containers";
@@ -32,8 +34,8 @@ const LowerHalfCircleCard = styled.div`
 
 const TopContentCard = ({ title, detail, isMobile }) => {
     return (
-        <UpperHalfCircleCard className={isMobile ? "mb-2" : "mb-6 mx-4"}>
-            <VBox className='pt-6 px-3'>
+        <UpperHalfCircleCard className={isMobile ? "mb-2 mx-1" : "mb-6 mx-4"}>
+            <VBox className='pt-5 px-3'>
                 <P2 className="bold" color="white" align="center">{title}</P2>
                 <P4 color="white" className="mt-2" align="center">{detail}</P4>
             </VBox>
@@ -54,45 +56,45 @@ const BottomContentCard = ({ title, detail, isMobile }) => {
     );
 }
 
-const OurAdvantages = ({ isMobile }) => {
+const OurAdvantages = ({ isMobile, language }) => {
   return (
     <Container style={{paddingTop: isMobile ? '60px' : '100px'}}>
-        <H3 align="center" className={isMobile ? "bold mb-2" : "bold mb-4"}>{aboutusData.OurAdvantages.head1['bang']}</H3>
+        <H3 align="center" className={isMobile ? "bold mb-2" : "bold mb-4"}>{aboutusData.OurAdvantages.head1[language]}</H3>
         <HBox justify="center" align="center"> 
             <VContainer>
                 <TopContentCard
                     isMobile={isMobile}
-                    title={aboutusData.OurAdvantages.pointhead1['bang']}
-                    detail={aboutusData.OurAdvantages.pointpera1['bang']}
+                    title={aboutusData.OurAdvantages.pointhead1[language]}
+                    detail={aboutusData.OurAdvantages.pointpera1[language]}
                 />
                 <BottomContentCard 
                     isMobile={isMobile}
-                    title={aboutusData.OurAdvantages.pointhead4['bang']}
-                    detail={aboutusData.OurAdvantages.pointpera4['bang']}
+                    title={aboutusData.OurAdvantages.pointhead4[language]}
+                    detail={aboutusData.OurAdvantages.pointpera4[language]}
                 />
             </VContainer>
             <VContainer>
                 <TopContentCard 
                     isMobile={isMobile}
-                    title={aboutusData.OurAdvantages.pointhead2['bang']}
-                    detail={aboutusData.OurAdvantages.pointpera2['bang']}
+                    title={aboutusData.OurAdvantages.pointhead2[language]}
+                    detail={aboutusData.OurAdvantages.pointpera2[language]}
                 />
                 <BottomContentCard 
                     isMobile={isMobile}
-                    title={aboutusData.OurAdvantages.pointhead5['bang']}
-                    detail={aboutusData.OurAdvantages.pointpera5['bang']}
+                    title={aboutusData.OurAdvantages.pointhead5[language]}
+                    detail={aboutusData.OurAdvantages.pointpera5[language]}
                 />
             </VContainer>
             <VContainer>
                 <TopContentCard 
                     isMobile={isMobile}
-                    title={aboutusData.OurAdvantages.pointhead3['bang']}
-                    detail={aboutusData.OurAdvantages.pointpera3['bang']}
+                    title={aboutusData.OurAdvantages.pointhead3[language]}
+                    detail={aboutusData.OurAdvantages.pointpera3[language]}
                 />
                 <BottomContentCard 
                     isMobile={isMobile}
-                    title={aboutusData.OurAdvantages.pointhead6['bang']}
-                    detail={aboutusData.OurAdvantages.pointpera6['bang']}
+                    title={aboutusData.OurAdvantages.pointhead6[language]}
+                    detail={aboutusData.OurAdvantages.pointpera6[language]}
                 />
             </VContainer>
         </HBox>
@@ -100,4 +102,8 @@ const OurAdvantages = ({ isMobile }) => {
   );
 }
 
-export default OurAdvantages;
+const mapStateToProps = state => ({
+    language: state.general.language,
+});
+
+export default connect(mapStateToProps, {})(OurAdvantages);
