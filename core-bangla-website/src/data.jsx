@@ -62,16 +62,8 @@ export const footerData = {
         eng: 'NextGen DigiTech Ltd.'
     },
     para31: {
-        bang: 'টুল অ্যান্ড টেকনোলজি ইনস্টিটিউট, বিটাক, শিল্প',
-        eng: 'Tool & Technology Institute, BITAC, '
-    },
-    para41: {
-        bang: 'মন্ত্রণালয় ১১৬ (খ), তেজগাঁও শিল্প এলাকা,',
-        eng: 'Ministry of Industries 116 (kha), Tejgaon Industrial Area,'
-    },
-    para51: {
-        bang: 'ঢাকা-১২০৮, বাংলাদেশ',
-        eng: 'Dhaka-1208, Bangladesh'
+        bang: 'টুল অ্যান্ড টেকনোলজি ইনস্টিটিউট, বিটাক, মন্ত্রণালয় ১১৬ (খ), তেজগাঁও শিল্প এলাকা, ঢাকা-১২০৮, বাংলাদেশ',
+        eng: 'Tool & Technology Institute, BITAC, Ministry of Industries 116 (kha), Tejgaon Industrial Area, Dhaka-1208, Bangladesh'
     },
     para61: {
         bang: ' +৮৮০১৩২১১১৯৩৯১',
