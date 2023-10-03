@@ -48,22 +48,22 @@ const Chip = styled(HBox)`
     padding-right: 3px;
 `
 
-const Banner = ({id, image, name, bmdc, doctor_type, qualification, specialty,
-    experience, institution, designation, department, consultation_fee, is_online, isMobile }) => {
+const Banner = ({id, image, name, bmdc, doctor_type, qualification, specialty, experience, institution, 
+                    designation, department, consultation_fee, is_online, isMobile, language }) => {
     return (          
         <BannerCard className={isMobile ? "py-2 px-1 my-2" : "p-4 my-4"} justify="center" align="center" >
             <HBox justify="center" style={{ width: "100%", 
                             flexDirection: isMobile ? "column" : "row", 
                             alignItems: isMobile ? "center" : "" }}>
-                <VBox style={{ width: isMobile ? "fit-content" : "22%" }} align={isMobile ? "center" : ""} justify={isMobile ? "center" : ""}>
+                <VBox style={{ width: isMobile ? "fit-content" : "22%" }} align={isMobile ? "center" : "center"} justify={isMobile ? "center" : ""}>
                     <Image className="mb-3" 
                             style={{ width: isMobile ? "100px" : "160px" }} 
                             src={`${import.meta.env.VITE_SERVER_URL}${image}`} 
                             alt="image"
                             />
-                    <P3 className="bold" 
+                    <P3 className="bold"
                         style={{ marginTop: isMobile ? "-10px" : "" }}>
-                            {doctorProfile.banner.head1["bang"]} {doctor_type===("MBBS") ? doctorProfile.banner.head2["bang"] : ""}{bmdc}
+                            {doctorProfile.banner.head1[language]} {doctor_type===("MBBS") ? doctorProfile.banner.head2[language] : ""}{bmdc}
                     </P3>
                 </VBox>
                 {!isMobile && (
@@ -86,7 +86,7 @@ const Banner = ({id, image, name, bmdc, doctor_type, qualification, specialty,
                                     borderRadius: "20px",
                                 }}
                             >
-                                {is_online ? doctorProfile.banner.head6["bang"] : doctorProfile.banner.head7["bang"]}
+                                {is_online ? doctorProfile.banner.head6[language] : doctorProfile.banner.head7[language]}
                             </P4>
                         </Chip>
                     </HBox>
@@ -102,7 +102,7 @@ const Banner = ({id, image, name, bmdc, doctor_type, qualification, specialty,
                                 style={{ backgroundColor: colors.blue, borderRadius: "5px" }} 
                                 key={index}
                             >
-                                {specialtyEtoB[spec]}
+                                { language == 'bang' ? specialtyEtoB[spec] : spec }
                             </P4>
                         ))
                         : 
@@ -113,19 +113,19 @@ const Banner = ({id, image, name, bmdc, doctor_type, qualification, specialty,
                                 align="center" 
                                 style={{ backgroundColor: colors.blue, borderRadius: "5px" }}
                             >
-                                {specialtyEtoB[specialty]}
+                                { language == 'bang' ? specialtyEtoB[specialty] : specialty }
                             </P4>
                         )}
                     </Chip>
                     <HBox style={{ marginBottom: isMobile ? "1px" : "16px" }} align="center">
-                        <P3 className="">{doctorProfile.banner.head3["bang"]}</P3>
+                        <P3 className="">{doctorProfile.banner.head3[language]}</P3>
                         <P2 className="bold mt-0_5"><TbCurrencyTaka/></P2>
                         <P2 className="bold">{consultation_fee}</P2>
                     </HBox>
                     <HBox className={isMobile ? "mb-3" : "mb-2"}>
-                        {experience != null &&
+                        {experience != null && experience != "" &&
                             <>
-                                <P3>{doctorProfile.banner.head4["bang"]}</P3>
+                                <P3>{doctorProfile.banner.head4[language]}</P3>
                                 <P3 className="bold ml-1">{experience}</P3>
                             </>
                         }
@@ -142,7 +142,7 @@ const Banner = ({id, image, name, bmdc, doctor_type, qualification, specialty,
                                             width: "fit-content" }}
                                     elevated
                                 >
-                                    {doctorProfile.banner.head5["bang"]}
+                                    {doctorProfile.banner.head5[language]}
                             </Button>
                         </Link>
                     </HBox>   
@@ -155,4 +155,8 @@ const Banner = ({id, image, name, bmdc, doctor_type, qualification, specialty,
     );
 }
 
-export default Banner;
+const mapStateToProps = state => ({
+    language: state.general.language,
+});
+
+export default connect(mapStateToProps, {})(Banner);

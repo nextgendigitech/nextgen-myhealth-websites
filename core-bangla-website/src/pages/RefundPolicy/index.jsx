@@ -50,7 +50,7 @@ const RefundPolicy = () => {
     }
 
     return (
-        <VBox>
+        <VBox style={{ backgroundColor: colors.lightGrey }}>
             <TitleCard className={isMobile ? "mt-2" : "mt-4"} justify="space-between" align="center" style={{ height: isMobile ? '40px' : '70px', borderRadius: isMobile ? '0px 15px' : '0px 30px'}}>
                 <BiArrowBack 
                     className={isMobile ? "ml-2" : "ml-8"}

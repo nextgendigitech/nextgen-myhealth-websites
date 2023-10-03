@@ -67,7 +67,7 @@ const ItemTextContainer = styled(VBox)`
     height: 93%;
     width: 96%;
     border-radius: 25% 25% 25% 25% / 50% 50% 50% 50%;
-    background-color: ${colors.white};
+    background-color: ${colors.lightGrey};
 `
 
 const CircleContainer = styled(HBox)`
@@ -77,6 +77,7 @@ const CircleContainer = styled(HBox)`
     top: ${props => props.top_position};
     left: ${props => props.left_position};
     z-index: 1;
+    background-color: ${colors.lightGrey};
 `
 
 const Circle = styled(HBox)`
@@ -128,7 +129,7 @@ const CircleTextContainerOuter = styled(VBox)`
     border-bottom: 6px solid ${colors.darkGreen};
     padding: 10px;
     margin-bottom: 10%;
-    box-shadow: 0 10px 5px -5px ${colors.lessDarkGrey};
+    box-shadow: 0 10px 5px -5px ${colors.lessDarkGrey};  
 `
 
 const CircleTextContainerInner = styled(VBox)`

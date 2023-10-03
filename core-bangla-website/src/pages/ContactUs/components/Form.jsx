@@ -15,6 +15,7 @@ const Card = styled(VBox)`
     border: 1px solid ${colors.white};
     border-radius: 8px;
     box-shadow: 2px 5px 10px 2px ${colors.grey};
+    z-index: 3;
 `
 
 const Input = styled.input`
@@ -45,7 +46,10 @@ const SButton = styled(Button)`
 const Form = ({ isMobile, language }) => {
     
     return (
-        <Card className={isMobile ? "p-2" : "p-4"} style={{ alignSelf: 'center', width: isMobile ? "100%" : "65%" }}>
+        <Card 
+            className={isMobile ? "p-2" : "p-4"} 
+            style={{ alignSelf: 'center', width: isMobile ? "100%" : "65%", marginBottom: isMobile ? "40px" : "100px",
+                        backgroundColor: colors.white }}>
             <H5 align="center" justify="center" color="third">{contactusData.Form.head1[language]}</H5>
             <Underline align="center" justify="center" className={isMobile ? "mb-2" : "mb-6"} style={{ top: isMobile ? "8px" : "17px" }}/>
             <HBox align="center">

@@ -3,6 +3,7 @@ import colors from "../../config/colors";
 import styled from "styled-components";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import { connect } from 'react-redux';
 
 import { HBox, VBox } from "../../components/Containers";
 import { H3, P2 } from "../../components/Typography";
@@ -19,7 +20,7 @@ const TitleCard = styled(VBox)`
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
 `
 
-const SpecialtyDoctors = () => {
+const SpecialtyDoctors = ({ language }) => {
     let { specialty } = useParams();
     const [doctors, setDoctors] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
@@ -83,12 +84,15 @@ const SpecialtyDoctors = () => {
     };
 
 
-    return (
-        
-        <VBox>
+    return (   
+        <VBox style={{ backgroundColor: colors.lightGrey }}>
             <TitleCard justify="center" align="center" className={isMobile ? "mt-2" : "mt-4"} style={{ height: isMobile ? '40px' : '70px', borderRadius: isMobile ? '0px 15px' : '0px 30px'}}>
                 <BiArrowBack justify="center" style={{ marginRight:"90%", cursor: "pointer" }} onClick={goBack} />
-                <H3 style={{ position: "absolute" }}>{specialtyEtoB[specialty]}</H3>
+                { language == 'bang' ?
+                    <H3 style={{ position: "absolute" }}>{specialtyEtoB[specialty]}</H3>
+                    :
+                    <H3 style={{ position: "absolute" }}>{specialty}</H3>
+                }
             </TitleCard>
             {
                 isLoading ?
@@ -104,7 +108,7 @@ const SpecialtyDoctors = () => {
                 :
                 <VBox>
                     <VBox className={isMobile ? "mt-3" : "mt-6 ml-8 pl-6"} style={{ alignItems: isMobile ? "center" : "" }}>
-                        <P2 className="bold">{specialtydoctorsData.index.head11['bang']}{doctors.length}{specialtydoctorsData.index.head12['bang']}</P2>
+                        <P2 className="bold">{specialtydoctorsData.index.head11[language]}{doctors.length}{specialtydoctorsData.index.head12[language]}</P2>
                     </VBox>
                     <HBox justify="center" style={{marginRight: isMobile ? "10px" : "100px", marginLeft: isMobile ? "10px" : "100px"}}>
                         {doctors.map((doctor, index) => (
@@ -129,4 +133,8 @@ const SpecialtyDoctors = () => {
     );
 }
 
-export default SpecialtyDoctors;
+const mapStateToProps = state => ({
+    language: state.general.language,
+});
+
+export default connect(mapStateToProps, {})(SpecialtyDoctors);

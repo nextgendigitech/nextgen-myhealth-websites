@@ -16,8 +16,6 @@ import { footerData, Links } from '../data';
 
 
 const FooterContainer1 = styled(VBox)`
-    padding-left: 8%;
-    padding-right: 8%;
     background-color: ${colors.mercury};
     border-radius: 30px 30px 0px 0px;
 `
@@ -183,7 +181,10 @@ const Footer = ({ language }) => {
 
     return (
         <>
-            <FooterContainer1 justify='space-between' className={isMobile ? 'pb-4' : 'pb-7'} style={{ marginTop: isMobile ? '60px' : '100px' }}>
+            <FooterContainer1 
+                justify='space-between' 
+                className={isMobile ? 'pb-4' : 'pb-7'} 
+                style={{ paddingLeft: isMobile ? "40px" : "100px", paddingRight: isMobile ? "40px" : "100px" }}>
                 <LogoImage className='mt-4' src={logo} />
                 <HBox justify='space-between'>
                     {ContactHtml()}

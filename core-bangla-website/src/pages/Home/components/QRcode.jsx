@@ -7,7 +7,7 @@ import google_play_store from "../../../assets/images/google_play_store.png";
 import qrcode_download_app from "../../../assets/images/qrcode_download_app.png";
 import colors from "../../../config/colors";
 import { HBox, VBox } from "../../../components/Containers";
-import { H4, H5, P3 } from "../../../components/Typography";
+import { H4 } from "../../../components/Typography";
 import { homeData, Links } from '../../../data';
 
 const Container = styled(VBox)`
@@ -29,7 +29,7 @@ const Image = styled.img`
 
 const QRcode = ({ isMobile, language }) => {
     return (
-        <Container className={isMobile ? "p-2" : "p-5"} justify="center" style={{marginTop: isMobile ? '60px' : '100px'}}>
+        <Container className={isMobile ? "p-2" : "p-5"} justify="center" style={{marginTop: isMobile ? '60px' : '100px', marginBottom: isMobile ? '60px' : '100px',}}>
             <H4 className="bold pb-2" align="center">{homeData.qrcode.head1[language]}</H4>
             <HBox justify="center"> 
                 <VBox style={{width: "40%"}} justify="center">  

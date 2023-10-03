@@ -58,7 +58,7 @@ const BottomContentCard = ({ title, detail, isMobile }) => {
 
 const OurAdvantages = ({ isMobile, language }) => {
   return (
-    <Container style={{paddingTop: isMobile ? '60px' : '100px'}}>
+    <Container style={{paddingTop: isMobile ? '60px' : '100px',  marginBottom: isMobile ? '60px' : '100px',}}>
         <H3 align="center" className={isMobile ? "bold mb-2" : "bold mb-4"}>{aboutusData.OurAdvantages.head1[language]}</H3>
         <HBox justify="center" align="center"> 
             <VContainer>

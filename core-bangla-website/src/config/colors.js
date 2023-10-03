@@ -19,7 +19,8 @@ const colors = {
     mercury: '#DAEBE2',
     white: '#FFFFFF',
     lightBlack: '#333333',
-    transparent: 'rgba(0,0,0,0)'
+    transparent: 'rgba(0,0,0,0)',
+    lesslightGrey: '#f2f2f2'
 }
 
 export default colors;

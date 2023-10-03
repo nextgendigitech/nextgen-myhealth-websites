@@ -29,7 +29,8 @@ export const Links = {
             bang: 'info@nextgenmyhealth.com',
             eng: 'info@nextgenmyhealth.com',
         },
-    }
+    },
+    doctorapp : "https://patient.nextgenmyhealth.com/doctor/",
 }
 
 export const navbarData = {
@@ -153,6 +154,26 @@ export const doctorsearchdlgData = {
     head3: {
         bang: 'অ্যাপয়েন্টমেন্ট নিন',
         eng: 'Book Appointment',
+    },
+    head4: {
+        bang: 'অভিজ্ঞতা: ',
+        eng: 'Experience: '
+    },
+    pera1: {
+        bang: 'ডাক্তার অনুসন্ধান করুন...',
+        eng: 'Search doctors...',
+    },
+    pera2: {
+        bang: '',
+        eng: 'We have found ',
+    },
+    pera3: {
+        bang: ' জন চিকিৎসক পাওয়া গেছে।',
+        eng: ' doctors.',
+    },
+    pera4: {
+        bang: ' জন চিকিৎসক পাওয়া গেছে।',
+        eng: ' doctor.',
     },
 }
 
@@ -400,6 +421,10 @@ export const aboutusData = {
         para2: {
             bang: 'নেক্সটজেন ডিজিটেক লিমিটেড একটি বেসরকারি গবেষণা-ভিত্তিক কোম্পানি যা ডাক্তার, চিকিৎসা বিশেষজ্ঞ, গবেষক এবং আইটি বিশেষজ্ঞদের একটি দল নিয়ে গঠিত। নেক্সটজেন ডিজিটেক, রোগী এবং ডাক্তার উভয়ের উন্নয়নের জন্য প্রতিনিয়ত আপসহীনভাবে কাজ করে যাচ্ছে। নেক্সটজেন মাইহেলথ ভিসিপি নেক্সটজেন ডিজিটেক লিমিটেড বাংলাদেশের একটি স্বাস্থ্য পণ্য। এটির উদ্ভাবনী ভার্চুয়াল স্বাস্থ্যসেবা প্ল্যাটফর্ম বাংলাদেশের জনগণের স্বাস্থ্যসেবা বিষয়ক ভোগান্তি কমাতে বদ্ধপরিকর।',
             eng: 'NextGen Digitech Ltd. is a private research-based company that brings together a team of doctors, medical specialists, researchers, and IT experts. NextGen Digitech consistently works to enhance both patient and doctor experiences. NextGen MyHealth VCP is a health product of NextGen Digitech Ltd. It is an innovative virtual healthcare platform aiming to reduce the burden on the public regarding healthcare services in Bangladesh.',
+        },
+        title1 : {
+            bang : 'ভার্চুয়াল কেয়ার প্লাটফর্ম - নেক্সটজেন মাইহেলথ ভিসিপি',
+            eng : 'Virtual Care Platform - NextGen MyHealth VCP'
         },
     },
     OurAdvantages: {
@@ -706,9 +731,13 @@ export const doctorProfile = {
             eng: 'Joined NextGen MyHealth:'
         },
         para2: {
-            bang: 'উপস্থিত রোগী:',
+            bang: 'রোগী দেখেছেন:',
             eng: 'Patient Attended:'
-        }
+        },
+        para3: {
+            bang: 'জন',
+            eng: ''
+        },
     },
 }
 
@@ -716,11 +745,11 @@ export const payment = {
     banner : {
         head1 : {
             bang: 'সহজ এবং সুরক্ষিত মাধ্যমে পেমেন্ট করুন ',
-            eng: 'Make payment easily and securely',
+            eng: 'Make payment easily and securely in',
         },
         para11 : {
             bang: 'নেক্সটজেন',
-            eng: 'in NextGen',
+            eng: 'NextGen',
         },
         para12 : {
             bang: 'মাই',
@@ -745,22 +774,42 @@ export const payment = {
             eng: 'To complete the payment, follow any of your preferred methods listed below. Feel free to contact us if needed.',
         },
         para11 : {
-            bang: '',
-            eng: '',
+            bang: 'নগদ/চেক/ব্যাঙ্ক আমানত',
+            eng: 'Nagad/Cheque/Bank Deposit',
         },
         para12 : {
-            bang: '',
-            eng: '',
+            bang: 'অ্যাকাউন্ট নম্বর: 2104174034072',
+            eng: 'Account Number: 2104174034072',
         },
         para13 : {
-            bang: '',
-            eng: '',
+            bang: 'সুইফট কোড: PRBLBDDH001',
+            eng: 'SWIFT Code: PRBLBDDH001',
         },
         para14 : {
-            bang: '',
-            eng: '',
+            bang: 'প্রাইম ব্যাংক লিমিটেড',
+            eng: 'Prime Bank Ltd.',
         },
         para15 : {
+            bang: 'আদমজী কোর্ট অ্যানেক্স বিল্ডিং ২, ১১৯-১২০',
+            eng: 'Adamjee Court Annex Building 2, 119-120 Motijheel C/A,',
+        },
+        para16 : {
+            bang: 'মতিঝিল সি/এ, ঢাকা ১০০০, বাংলাদেশ',
+            eng: '',
+        },
+        para17 : {
+            bang: 'বিকাশ নম্বর:',
+            eng: '',
+        },
+        para18 : {
+            bang: 'প্রকার: মার্চেন্ট অ্যাকাউন্ট',
+            eng: '',
+        },
+        para19 : {
+            bang: 'আপনি যদি পেমেন্ট সংক্রান্ত কোনো সমস্যার সম্মুখীন হন, তাহলে অনুগ্রহ করে +৮৮০ ১৩২১১১৯৩৯১ এ কল করুন',
+            eng: '',
+        },
+        para20 : {
             bang: '',
             eng: '',
         },

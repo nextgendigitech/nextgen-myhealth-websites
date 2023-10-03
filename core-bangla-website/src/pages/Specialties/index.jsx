@@ -4,6 +4,7 @@ import { VBox } from "../../components/Containers";
 import MedicineSection from "./components/MedicineSection";
 import SurgerySection from "./components/SurgerySection";
 import responsive from '../../config/responsive';
+import colors from "../../config/colors";
 
 const Specialties = () => {
     const [isMobile, setIsMobile] = useState(false);
@@ -30,7 +31,7 @@ const Specialties = () => {
     }, []);
 
     return (
-        <VBox>
+        <VBox style={{ backgroundColor: colors.lightGrey }}>
             <MedicineSection isMobile={isMobile} />
             <SurgerySection isMobile={isMobile} />
         </VBox>

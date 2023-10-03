@@ -5,6 +5,7 @@ import Banner from "./components/Banner";
 import WhoWeAre from "./components/WhoWeAre";
 import OurAdvantages from "./components/OurAdvantages";
 import responsive from "../../config/responsive";
+import colors from "../../config/colors";
 
 const AboutUs = () => {
     const [isMobile, setIsMobile] = useState(false);
@@ -31,7 +32,7 @@ const AboutUs = () => {
     });
 
     return (
-        <VBox>
+        <VBox style={{ backgroundColor: colors.lightGrey }}>
             <Banner isMobile={isMobile}/>
             <WhoWeAre isMobile={isMobile}/>
             <OurAdvantages isMobile={isMobile}/>

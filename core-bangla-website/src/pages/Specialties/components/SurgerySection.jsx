@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { connect } from 'react-redux';
 
 import { VBox, HBox } from "../../../components/Containers";
 import { H3 } from '../../../components/Typography';
@@ -17,14 +18,11 @@ import VascularImage from '../../../assets/images/specialties/vascular_surgery.p
 import { specialtyEtoB } from "../../../data";
 import { specialtiesData } from "../../../data";
 
-const Container = styled(VBox)`
-    
-`
 
-const Section = ({ isMobile }) => {
+const SurgerySection = ({ isMobile, language }) => {
     return (
-        <Container align='center'>
-            <H3 className='bold mt-7'>{specialtiesData.specialtysection.head2['bang']}</H3>
+        <VBox align='center' style={{  marginBottom: isMobile ? '60px' : '100px' }}>
+            <H3 className='bold mt-7'>{specialtiesData.specialtysection.head2[language]}</H3>
             <HBox justify='center'>
                 <SpecialtyCard isMobile={isMobile} image={GeneralImage} specialtyBang={specialtyEtoB['General Surgery']} specialtyEng='General Surgery'/>
                 <SpecialtyCard isMobile={isMobile} image={OrthopedicImage} specialtyBang={specialtyEtoB['Orthopedic Surgery']} specialtyEng='Orthopedic Surgery'/>
@@ -38,8 +36,12 @@ const Section = ({ isMobile }) => {
                 <SpecialtyCard isMobile={isMobile} image={PediatricsImage} specialtyBang={specialtyEtoB['Pediatric Surgery']} specialtyEng='Pediatric Surgery' />
                 <SpecialtyCard isMobile={isMobile} image={VascularImage} specialtyBang={specialtyEtoB['Vascular Surgery']} specialtyEng='Vascular Surgery' />
             </HBox>
-        </Container>
+        </VBox>
     );
 }
 
-export default Section;
+const mapStateToProps = state => ({
+    language: state.general.language,
+});
+
+export default connect(mapStateToProps, {})(SurgerySection);

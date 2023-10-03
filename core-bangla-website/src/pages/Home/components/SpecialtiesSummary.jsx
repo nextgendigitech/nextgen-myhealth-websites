@@ -18,10 +18,10 @@ import { homeData } from '../../../data';
 const Container = styled(HBox)`
     display: inline-block; 
     width: 100%;
-    border: dashed 7px white;
+    border: dashed 7px ${colors.lightGrey};
     border-radius: 35px;
     border-image-slice: 8;
-    background-image: linear-gradient(white, white), linear-gradient(20deg, ${colors.darkGreen}, ${colors.veryLightGreen}, 
+    background-image: linear-gradient(${colors.lightGrey}, ${colors.lightGrey}), linear-gradient(20deg, ${colors.darkGreen}, ${colors.veryLightGreen}, 
         ${colors.darkGreen}, ${colors.veryLightGreen}, ${colors.darkGreen});
     background-origin: border-box;
     background-clip: content-box, border-box;
@@ -96,7 +96,7 @@ const SpecialtiesCard = ({ icon, name, className, isMobile }) => {
                 <Icon style={{ width: isMobile ? '22px' : '30px' }} src={icon} className="mx-2"/>
             </HBox>
             <HBox justify='center' align='center' style={{ width: 'clac(100% - 15%)'}}>
-                <P2 className="bold" style={{ marginLeft: isMobile ? '20px' : '30px' }}>{name}</P2>
+                <P2 style={{ marginLeft: isMobile ? '20px' : '30px' }}>{name}</P2>
             </HBox>
         </CardContainer>
     );

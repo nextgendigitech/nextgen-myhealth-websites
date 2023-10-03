@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { connect } from 'react-redux';
 
-
 import colors from "../../../config/colors";
 import { VBox, HBox } from "../../../components/Containers";
 import { H2, P1, P2 } from "../../../components/Typography";
@@ -48,12 +47,12 @@ const WhoWeAre = ({ isMobile, language }) => {
                     <H2 color="third" className="bold">{aboutusData.WhoWeAre.head1[language]}</H2>
                 </VBox>
             </HBox>
-            <P1 style={{ width: "100%" }}>{aboutusData.WhoWeAre.para1[language]}</P1>
+            <P2 style={{ width: "100%" }}>{aboutusData.WhoWeAre.para1[language]}</P2>
             <HBox justify="center" style={{ marginTop: isMobile ? '60px' : '100px' }}>
                 <VideoContainer
                     style={{ width: isMobile ? "80%" : "40%", marginRight: isMobile ? "23%" : "" }}
                     src={Links.aboutus.link1}
-                    title="Virtual Care Platform - NextGen MyHealth VCP" 
+                    title={aboutusData.WhoWeAre.title1[language]}
                     frameborder="0" 
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                     allowfullscreen 

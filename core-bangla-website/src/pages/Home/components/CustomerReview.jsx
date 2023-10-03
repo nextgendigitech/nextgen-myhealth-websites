@@ -23,7 +23,7 @@ const Container = styled(HBox)`
 
 const CardContainer = styled(VBox)`
     width: 25%;
-    background: ${colors.white};
+    background: ${colors.lightGrey};
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
     border-radius: 0px 30px;
 `

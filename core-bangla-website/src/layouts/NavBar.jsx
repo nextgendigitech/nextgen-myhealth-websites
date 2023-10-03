@@ -140,26 +140,26 @@ const NavBar = ({ language }) => {
                 <>
                     <HBox style={{flexShrink: '0', flexWrap: 'nowrap'}}>
                         <SNavLink to='/' onClick={handleClickMenuItem}>
-                            <P1>{navbarData.head1[language]}</P1>
+                            {navbarData.head1[language]}
                         </SNavLink>
                         <SNavLink className='mx-4' to='/about-us' onClick={handleClickMenuItem}>
-                            <P1>{navbarData.head2[language]}</P1>
+                            {navbarData.head2[language]}
                         </SNavLink>
                         <SNavLink to='/specialties' onClick={handleClickMenuItem}>
-                            <P1>{navbarData.head3[language]}</P1>
+                            {navbarData.head3[language]}
                         </SNavLink>
                     </HBox>
                     <HBox className='ml-6' style={{flexWrap: 'nowrap'}}>
                         <SLink to={Links.navbar.link1} target='_blank'>
                             <Button color='first' elevated>
-                                <P2 className='bold' color='white' style={{flexShrink: '0'}}>
+                                <P2 color='white' style={{flexShrink: '0'}}>
                                     {navbarData.btn1[language]}
                                 </P2>
                             </Button>
                         </SLink>
                         <SLink to={Links.navbar.link2} target='_blank'>
                             <Button className='ml-3' color='third' elevated>
-                                <P2 className='bold' color='white' style={{flexShrink: '0'}}>
+                                <P2 color='white' style={{flexShrink: '0'}}>
                                     {navbarData.btn2[language]}
                                 </P2>
                             </Button>

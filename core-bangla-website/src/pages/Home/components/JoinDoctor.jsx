@@ -42,7 +42,7 @@ const JoinDoctor = ({ isMobile, language }) => {
             <VBox justify="center" align="center" style={{ width: "50%" }}>
                 <H5>{homeData.JoinDoctor.head1[language]}</H5>
                 <H5>{homeData.JoinDoctor.head2[language]}</H5>
-                <P3 className="bold">
+                <P3>
                     {homeData.JoinDoctor.para1[language]}
                     <a className="mx-0_5" href={Links.joindoctor.link1} target="_blank">
                         {homeData.JoinDoctor.para2[language]}

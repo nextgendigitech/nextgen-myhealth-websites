@@ -98,13 +98,13 @@ const TopBar = ({ language, toggleLang }) => {
             align='center' 
             style={{ paddingLeft: isMobile ? "20px" : "100px", paddingRight: isMobile ? "20px" : "100px" }}>
             <IconContainer>
-                <Link to={Links.topbar.link1} target="_blank">
-                    <IconImage src={facebookIcon} alt="Facebook Image" className='ml-1' />
+                <Link to={Links.topbar.link1} target="_blank" className='ml-1'>
+                    <IconImage src={facebookIcon} alt="Facebook Image" />
                 </Link>
                 {/* <Link to={Links.topbar.link2} target='_blank'>
                     <IconImage src={linkedinIcon} alt="LinkedIn Image" className={isMobile ? 'mx-1' : 'mx-3'} />
                 </Link> */}
-                <Link to={Links.topbar.link3} target='_blank'>
+                <Link to={Links.topbar.link3} target='_blank' className='ml-1'>
                     <IconImage src={youtubeLogo} alt="Youtube Image" />
                 </Link>
             </IconContainer>

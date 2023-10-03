@@ -1,15 +1,11 @@
-import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
 
 import { HBox, VBox } from '../../../components/Containers';
-import { H2, P1, P3 } from '../../../components/Typography';
+import { H2, P1, P3, P2 } from '../../../components/Typography';
 import colors from '../../../config/colors';
-import responsive from '../../../config/responsive';
 import { homeData } from '../../../data';
 
-const Container = styled(VBox)`
-`
 
 const LeftStepBox = styled(VBox)`
     position: relative;
@@ -35,7 +31,7 @@ const Circle = styled(VBox)`
 
 const BookingSteps = ({ isMobile, language }) => {
     return (
-        <Container style={{ marginTop: isMobile ? '60px' : '100px', paddingLeft: isMobile ? "40px" : "100px", paddingRight: isMobile ? "40px" : "100px" }}>
+        <VBox style={{ marginTop: isMobile ? '60px' : '100px', paddingLeft: isMobile ? "40px" : "100px", paddingRight: isMobile ? "40px" : "100px" }}>
             <VBox align='center' className='mb-4'>
                 <P1 className='bold' color='third'>{homeData.bookingsteps.head1[language]}</P1>
                 <P1 className='bold'>{homeData.bookingsteps.head2[language]}</P1>
@@ -44,16 +40,11 @@ const BookingSteps = ({ isMobile, language }) => {
             <HBox>
                 <LeftStepBox align='center' justify='flex-end'>
                     <Circle align='center' justify='center' className='mb-4'>
-                        {/* {isMobile ?
-                            <></>
-                            :
-                            <P2 className='bold' color='third'>স্টেপ</P2>
-                        } */}
                         <H2 className='bold' color='third'>{homeData.bookingsteps.num1[language]}</H2>
                     </Circle>
                     <VBox style={{ width: '80%' }} className='mb-1'>
                         <P3 className='bold' color='third' align='left'>{homeData.bookingsteps.parahead1[language]}</P3>
-                        <P3 className='bold' align='left'>{homeData.bookingsteps.para1[language]}</P3>
+                        <P3 align='left'>{homeData.bookingsteps.para1[language]}</P3>
                     </VBox>
                 </LeftStepBox>
             </HBox>
@@ -61,16 +52,11 @@ const BookingSteps = ({ isMobile, language }) => {
             <HBox justify='flex-end' style={{position: 'relative', top: `${isMobile ? '0px' : '-75px'}`}}>
                 <RightStepBox align='center' justify='flex-end'>
                     <Circle align='center' justify='center' className='mb-4'>
-                        {/* {isMobile ?
-                            <></>
-                            :
-                            <P2 className='bold' color='third'>স্টেপ</P2>
-                        } */}
                         <H2 className='bold' color='third'>{homeData.bookingsteps.num2[language]}</H2>
                     </Circle>
                     <VBox style={{ width: '80%' }} className='mb-1'>
                         <P3 className='bold' color='third'>{homeData.bookingsteps.parahead2[language]}</P3>
-                        <P3 className='bold'>{homeData.bookingsteps.para2[language]}</P3>
+                        <P3>{homeData.bookingsteps.para2[language]}</P3>
                     </VBox>
                 </RightStepBox>
             </HBox>
@@ -78,16 +64,11 @@ const BookingSteps = ({ isMobile, language }) => {
             <HBox style={{position: 'relative', top: `${isMobile ? '0' : '-150px'}`}}>
                 <LeftStepBox align='center' justify='flex-end'>
                     <Circle align='center' justify='center' className='mb-4'>
-                        {/* {isMobile ?
-                            <></>
-                            :
-                            <P2 className='bold' color='third'>স্টেপ</P2>
-                        } */}
                         <H2 className='bold' color='third'>{homeData.bookingsteps.num3[language]}</H2>
                     </Circle>
                     <VBox style={{ width: '80%' }} className='mb-1'>
                         <P3 className='bold' color='third' align='left'>{homeData.bookingsteps.parahead3[language]}</P3>
-                        <P3 className='bold' align='left'>{homeData.bookingsteps.para3[language]}</P3>
+                        <P3 align='left'>{homeData.bookingsteps.para3[language]}</P3>
                     </VBox>
                 </LeftStepBox>
             </HBox>
@@ -95,20 +76,15 @@ const BookingSteps = ({ isMobile, language }) => {
             <HBox justify='flex-end' style={{position: 'relative', top: `${isMobile ? '0' : '-240px'}`}}>
                 <RightStepBox align='center' justify='flex-end'>
                     <Circle align='center' justify='center' className='mb-4'>
-                        {/* {isMobile ?
-                            <></>
-                            :
-                            <P2 className='bold' color='third'>স্টেপ</P2>
-                        } */}
                         <H2 className='bold' color='third'>{homeData.bookingsteps.num4[language]}</H2>
                     </Circle>
                     <VBox style={{ width: '80%' }} className='mb-1'>
                         <P3 className='bold' color='third'>{homeData.bookingsteps.parahead4[language]}</P3>
-                        <P3 className='bold'>{homeData.bookingsteps.para4[language]}</P3>
+                        <P3>{homeData.bookingsteps.para4[language]}</P3>
                     </VBox>
                 </RightStepBox>
             </HBox>
-        </Container>
+        </VBox>
     );
 }
 
