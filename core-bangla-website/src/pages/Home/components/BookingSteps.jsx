@@ -55,7 +55,7 @@ const BookingSteps = () => {
     }, []);
 
     return (
-        <Container style={{ marginTop: isMobile ? '60px' : '100px' }}>
+        <Container style={{ marginTop: isMobile ? '60px' : '100px', marginBottom: isMobile ? '-400px' : '0px' }}>
             <VBox align='center' className='mb-4'>
                 <P1 className='bold' color='third'>{homeData.bookingsteps.head1['bang']}</P1>
                 <P1 className='bold'>{homeData.bookingsteps.head2['bang']}</P1>
@@ -64,67 +64,47 @@ const BookingSteps = () => {
             <HBox>
                 <LeftStepBox align='center' justify='flex-end'>
                     <Circle align='center' justify='center' className='mb-4'>
-                        {/* {isMobile ?
-                            <></>
-                            :
-                            <P2 className='bold' color='third'>স্টেপ</P2>
-                        } */}
                         <H2 className='bold' color='third'>{homeData.bookingsteps.num1['bang']}</H2>
                     </Circle>
                     <VBox style={{ width: '80%' }} className='mb-1'>
                         <P3 className='bold' color='third' align='left'>{homeData.bookingsteps.parahead1['bang']}</P3>
-                        <P3 className='bold' align='left'>{homeData.bookingsteps.para1['bang']}</P3>
+                        <P3 align='left'>{homeData.bookingsteps.para1['bang']}</P3>
                     </VBox>
                 </LeftStepBox>
             </HBox>
 
-            <HBox justify='flex-end' style={{position: 'relative', top: `${isMobile ? '0px' : '-75px'}`}}>
+            <HBox justify='flex-end' style={{position: 'relative', top: isMobile ? '-150px' : '-75px'}}>
                 <RightStepBox align='center' justify='flex-end'>
                     <Circle align='center' justify='center' className='mb-4'>
-                        {/* {isMobile ?
-                            <></>
-                            :
-                            <P2 className='bold' color='third'>স্টেপ</P2>
-                        } */}
                         <H2 className='bold' color='third'>{homeData.bookingsteps.num2['bang']}</H2>
                     </Circle>
                     <VBox style={{ width: '80%' }} className='mb-1'>
                         <P3 className='bold' color='third'>{homeData.bookingsteps.parahead2['bang']}</P3>
-                        <P3 className='bold'>{homeData.bookingsteps.para2['bang']}</P3>
+                        <P3>{homeData.bookingsteps.para2['bang']}</P3>
                     </VBox>
                 </RightStepBox>
             </HBox>
 
-            <HBox style={{position: 'relative', top: `${isMobile ? '0' : '-150px'}`}}>
+            <HBox style={{position: 'relative', top: isMobile ? '-250px' : '-150px'}}>
                 <LeftStepBox align='center' justify='flex-end'>
                     <Circle align='center' justify='center' className='mb-4'>
-                        {/* {isMobile ?
-                            <></>
-                            :
-                            <P2 className='bold' color='third'>স্টেপ</P2>
-                        } */}
                         <H2 className='bold' color='third'>{homeData.bookingsteps.num3['bang']}</H2>
                     </Circle>
                     <VBox style={{ width: '80%' }} className='mb-1'>
                         <P3 className='bold' color='third' align='left'>{homeData.bookingsteps.parahead3['bang']}</P3>
-                        <P3 className='bold' align='left'>{homeData.bookingsteps.para3['bang']}</P3>
+                        <P3 align='left'>{homeData.bookingsteps.para3['bang']}</P3>
                     </VBox>
                 </LeftStepBox>
             </HBox>
 
-            <HBox justify='flex-end' style={{position: 'relative', top: `${isMobile ? '0' : '-240px'}`}}>
+            <HBox justify='flex-end' style={{position: 'relative', top: isMobile ? '-360px' : '-240px'}}>
                 <RightStepBox align='center' justify='flex-end'>
                     <Circle align='center' justify='center' className='mb-4'>
-                        {/* {isMobile ?
-                            <></>
-                            :
-                            <P2 className='bold' color='third'>স্টেপ</P2>
-                        } */}
                         <H2 className='bold' color='third'>{homeData.bookingsteps.num4['bang']}</H2>
                     </Circle>
                     <VBox style={{ width: '80%' }} className='mb-1'>
                         <P3 className='bold' color='third'>{homeData.bookingsteps.parahead4['bang']}</P3>
-                        <P3 className='bold'>{homeData.bookingsteps.para4['bang']}</P3>
+                        <P3>{homeData.bookingsteps.para4['bang']}</P3>
                     </VBox>
                 </RightStepBox>
             </HBox>
