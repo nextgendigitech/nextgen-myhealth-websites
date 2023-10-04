@@ -55,7 +55,7 @@ const BookingSteps = () => {
     }, []);
 
     return (
-        <Container style={{ marginTop: isMobile ? '60px' : '100px', marginBottom: isMobile ? '-400px' : '0px' }}>
+        <Container style={{ marginTop: isMobile ? '60px' : '100px', marginBottom: isMobile ? '-350px' : '0px' }}>
             <VBox align='center' className='mb-4'>
                 <P1 className='bold' color='third'>{homeData.bookingsteps.head1['bang']}</P1>
                 <P1 className='bold'>{homeData.bookingsteps.head2['bang']}</P1>
@@ -85,7 +85,7 @@ const BookingSteps = () => {
                 </RightStepBox>
             </HBox>
 
-            <HBox style={{position: 'relative', top: isMobile ? '-250px' : '-150px'}}>
+            <HBox style={{position: 'relative', top: isMobile ? '-200px' : '-150px'}}>
                 <LeftStepBox align='center' justify='flex-end'>
                     <Circle align='center' justify='center' className='mb-4'>
                         <H2 className='bold' color='third'>{homeData.bookingsteps.num3['bang']}</H2>

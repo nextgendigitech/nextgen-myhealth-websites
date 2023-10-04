@@ -26,6 +26,12 @@ const Container = styled(HBox)`
     flex-wrap: nowrap;
 `
 
+const MobilePortalContainer = styled(HBox)`
+    height: 50px;
+    background-color: ${colors.veryLightGreen};
+    border-bottom: 1px solid ${colors.grey};
+`
+
 const LogoImage = styled.img`
     @media only screen and (max-width: ${responsive.xs}px) { // xs
         height: 65px;
@@ -91,81 +97,99 @@ const NavBar = ({ language }) => {
     }
 
     return (
-        <Container justify='space-between' align='center'>
-            <SNavLink to='/'>
-                <LogoImage src={logo} />
-            </SNavLink>
-            {
-            isMobile ?
-                <>
-                    <MenuIcon onClick={() => setOpenNavDrawer(!openNavDrawer)} />
-                    <Drawer
-                        open={openNavDrawer}
-                        anchor='right'
-                        PaperProps={{ style: { width: '50%', backgroundColor: `${colors.veryLightGreen}` } }}
-                        onClose={() => setOpenNavDrawer(false)}
+        <>
+            <Container justify='space-between' align='center'>
+                <SNavLink to='/'>
+                    <LogoImage src={logo} />
+                </SNavLink>
+                {
+                isMobile ?
+                    <>
+                        <MenuIcon onClick={() => setOpenNavDrawer(!openNavDrawer)} />
+                        <Drawer
+                            open={openNavDrawer}
+                            anchor='right'
+                            PaperProps={{ style: { width: '50%', backgroundColor: `${colors.veryLightGreen}` } }}
+                            onClose={() => setOpenNavDrawer(false)}
 
-                    >
-                        <List>
-                            <ListItem className='mb-4'>
-                                <LogoImage src={logo} />
-                            </ListItem>
-                            <ListItem className='mb-2'>
-                                <ListItemText>
-                                    <SNavLink to='/' onClick={handleClickMenuItem}>
-                                        <P1>{navbarData.head1[language]}</P1>
-                                    </SNavLink>
-                                </ListItemText>
-                            </ListItem>
-                            <ListItem className='mb-2'>
-                                <ListItemText>
-                                    <SNavLink to='/about-us' onClick={handleClickMenuItem}>
-                                        <P1>{navbarData.head2[language]}</P1>
-                                    </SNavLink>
-                                </ListItemText>
-                            </ListItem>
-                            <ListItem>
-                                <ListItemText>
-                                    <SNavLink to='/specialties' onClick={handleClickMenuItem}>
-                                        <P1>{navbarData.head3[language]}</P1>
-                                    </SNavLink>
-                                </ListItemText>
-                            </ListItem>
-                        </List>
-                    </Drawer>
-                </>
-                :
-                <>
-                    <HBox style={{flexShrink: '0', flexWrap: 'nowrap'}}>
-                        <SNavLink to='/'>
-                            হোম
-                        </SNavLink>
-                        <SNavLink className='mx-4' to='/about-us'>
-                            পরিচিতি
-                        </SNavLink>
-                        <SNavLink to='/specialties'>
-                            বিশেষজ্ঞ ডাক্তার
-                        </SNavLink>
-                    </HBox>
-                    <HBox className='ml-6' style={{flexWrap: 'nowrap'}}>
-                        <SLink to='https://patient.nextgenmyhealth.com/login' target='_blank'>
-                            <Button color='first' elevated>
-                                <P2 className='bold' color='white' style={{flexShrink: '0'}}>
-                                    {navbarData.btn1[language]}
-                                </P2>
-                            </Button>
-                        </SLink>
-                        <SLink to='https://doctor.nextgenmyhealth.com/login' target='_blank'>
-                            <Button className='ml-3' color='third' elevated>
-                                <P2 className='bold' color='white' style={{flexShrink: '0'}}>
-                                    {navbarData.btn2[language]}
-                                </P2>
-                            </Button>
-                        </SLink>
-                    </HBox>
-                </>
-            }
-        </Container>
+                        >
+                            <List>
+                                <ListItem className='mb-4'>
+                                    <LogoImage src={logo} />
+                                </ListItem>
+                                <ListItem className='mb-2'>
+                                    <ListItemText>
+                                        <SNavLink to='/' onClick={handleClickMenuItem}>
+                                            <P1>{navbarData.head1[language]}</P1>
+                                        </SNavLink>
+                                    </ListItemText>
+                                </ListItem>
+                                <ListItem className='mb-2'>
+                                    <ListItemText>
+                                        <SNavLink to='/about-us' onClick={handleClickMenuItem}>
+                                            <P1>{navbarData.head2[language]}</P1>
+                                        </SNavLink>
+                                    </ListItemText>
+                                </ListItem>
+                                <ListItem>
+                                    <ListItemText>
+                                        <SNavLink to='/specialties' onClick={handleClickMenuItem}>
+                                            <P1>{navbarData.head3[language]}</P1>
+                                        </SNavLink>
+                                    </ListItemText>
+                                </ListItem>
+                            </List>
+                        </Drawer>
+                    </>
+                    :
+                    <>
+                        <HBox style={{flexShrink: '0', flexWrap: 'nowrap'}}>
+                            <SNavLink to='/'>
+                                হোম
+                            </SNavLink>
+                            <SNavLink className='mx-4' to='/about-us'>
+                                পরিচিতি
+                            </SNavLink>
+                            <SNavLink to='/specialties'>
+                                বিশেষজ্ঞ ডাক্তার
+                            </SNavLink>
+                        </HBox>
+                        <HBox className='ml-6' style={{flexWrap: 'nowrap'}}>
+                            <SLink to='https://patient.nextgenmyhealth.com/login' target='_blank'>
+                                <Button color='first' elevated>
+                                    <P2 className='bold' color='white' style={{flexShrink: '0'}}>
+                                        {navbarData.btn1[language]}
+                                    </P2>
+                                </Button>
+                            </SLink>
+                            <SLink to='https://doctor.nextgenmyhealth.com/login' target='_blank'>
+                                <Button className='ml-3' color='third' elevated>
+                                    <P2 className='bold' color='white' style={{flexShrink: '0'}}>
+                                        {navbarData.btn2[language]}
+                                    </P2>
+                                </Button>
+                            </SLink>
+                        </HBox>
+                    </>
+                }
+            </Container>
+            {isMobile && <MobilePortalContainer justify='center' align='center'>
+                <SLink to='https://patient.nextgenmyhealth.com/login' target='_blank'>
+                    <Button size='sm' color='first' elevated>
+                        <P2 className='bold' color='white' style={{flexShrink: '0'}}>
+                            {navbarData.btn1[language]}
+                        </P2>
+                    </Button>
+                </SLink>
+                <SLink to='https://doctor.nextgenmyhealth.com/login' target='_blank'>
+                    <Button size='sm' className='ml-3' color='third' elevated>
+                        <P2 className='bold' color='white' style={{flexShrink: '0'}}>
+                            {navbarData.btn2[language]}
+                        </P2>
+                    </Button>
+                </SLink>
+            </MobilePortalContainer>}
+        </>
     );
 }
 
