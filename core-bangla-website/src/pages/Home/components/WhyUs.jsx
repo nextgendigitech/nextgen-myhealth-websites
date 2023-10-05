@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import { VBox, HBox } from '../../../components/Containers';
 import { H2, H3, P2 } from '../../../components/Typography';
 import colors from '../../../config/colors';
-import responsive from '../../../config/responsive';
 import { homeData } from '../../../data';
 
 const Container = styled(VBox)`
@@ -88,40 +87,32 @@ const Circle = styled(HBox)`
 `
 
 const CenterCircleContainerOuter = styled(VBox)`
+    height: ${props => props.height};
+    width: ${props => props.width};
 `
 
 const CenterCircleContainerInner = styled(VBox)`
     height: ${props => props.height};
     width: ${props => props.width};
+    max-height: 600px;
+    max-width: 600px;
+    min-height: 250px;
+    min-width: 250px;
     margin-top: 5%;
     border-radius: 50%;
     background-image: linear-gradient(to top left, ${colors.grey}, ${colors.lightGrey});
     box-shadow: 0 0 30px 12px ${colors.grey};
-
-    @media only screen and (min-width: ${responsive.sm}px) and (max-width: ${responsive.md-1}px) {
-        height: 350px;
-        width: 350px;
-    }
-    @media only screen and (max-width: ${responsive.xs-1}px) {
-        height: 250px;
-        width: 250px;
-    }
 `
 
 const CenterCircle = styled(VBox)`
-    height: 100%;
-    width: auto;
+    height: ${props => props.height};
+    width: ${props => props.width};
+    max-height: 570px;
+    max-width: 570px;
+    min-height: 220px;
+    min-width: 220px;
     border-radius: 50%;
     background-image: linear-gradient(to bottom left, ${colors.grey}, ${colors.lightGrey}); 
-
-    @media only screen and (min-width: ${responsive.sm}px) and (max-width: ${responsive.md-1}px) {
-        height: 300px;
-        width: 300px;
-    }
-    @media only screen and (max-width: ${responsive.xs-1}px) {
-        height: 200px;
-        width: 200px;
-    }
 `
 
 const CircleTextContainerOuter = styled(VBox)`
@@ -144,15 +135,16 @@ const CenterCircleText = styled(H2)`
     text-shadow: 4px 4px 5px ${colors.lessDarkGrey};
 `
 
-const WhyUs = ({ isMobile, language }) => {
-    const CenterHtml = (height, width, justify, align, CenterCircleContainerInner_height, CenterCircleContainerInner_width) => (
-        <CenterCircleContainerOuter className={isMobile ? '':'p-5'} justify={justify} align={align} style={{height: height, width: width}}>
-            <CenterCircleContainerInner className='p-3' height={CenterCircleContainerInner_height} width={CenterCircleContainerInner_width}>
-                <CenterCircle align='center' justify='center'>
+
+const WhyUs = ({ isMobile }) => {
+    const CenterHtml = (height, width, justify, align, CenterCircleContainerInner_height, CenterCircleContainerInner_width,
+                        CenterCircle_height, CenterCircle_width, padding) => (
+        <CenterCircleContainerOuter className={padding} justify={justify} align={align} height={height} width={width}>
+            <CenterCircleContainerInner align='center' justify='center' height={CenterCircleContainerInner_height} width={CenterCircleContainerInner_width}>
+                <CenterCircle align='center' justify='center' height={CenterCircle_height} width={CenterCircle_width}>
                     <CircleTextContainerOuter align='center'>
                         <CircleTextContainerInner align='center'>
-                            <CenterCircleText className='bold' align='center'>{homeData.WhyUs.head2[language]}</CenterCircleText>
-                            {/* <CenterCircleText className='bold' align='center'>আছে</CenterCircleText> */}
+                            <CenterCircleText className='bold' align='center'>{homeData.WhyUs.head2['bang']}</CenterCircleText>
                         </CircleTextContainerInner>
                     </CircleTextContainerOuter>
                 </CenterCircle>
@@ -205,8 +197,7 @@ const WhyUs = ({ isMobile, language }) => {
 
             <Item2 className='mb-2 ml-2 mr-2' height={Item_height} width={Item_width} top_position='-21px' justify='center' align='center' style={{transform: 'ScaleX(-1)'}}>
                 <ItemTextContainer justify='center' align='center'>
-                    <P2 align='center' style={{transform: 'ScaleX(-1)'}}>{homeData.WhyUs.point5[language]}</P2>
-                    {/* <P2 align='center' style={{transform: 'ScaleX(-1)'}}>পরামর্শ</P2> */}
+                    <P2 align='center' style={{transform: 'ScaleX(-1)'}}>{homeData.WhyUs.point5['bang']}</P2>
                 </ItemTextContainer>
             </Item2>
 
@@ -229,14 +220,14 @@ const WhyUs = ({ isMobile, language }) => {
 
             {isMobile ?
                 <VBox align='center' style={{height: 'fit-content', width: '100%'}}>
-                    {CenterHtml('100%', 'initial', 'center', 'center', '350px', '350px')}
+                    {CenterHtml('100%', 'initial', 'center', 'center', '36vw', '36vw', '32.7vw', '32.7vw', '')}
                     {LeftHtml('initial', 'center', 'center', '150px', '300px', '30.4%', '59.8%')}
                     {RightHtml('initial', 'center', 'center', '150px', '300px', '30.4%', '59.8%')}
                 </VBox> 
                 :
                 <HBox justify='center' style={{height: '700px', width: '100%'}}>
                     {LeftHtml('25%', 'center', 'initial', '25%', 'auto', '34.4%', '58.8%')}
-                    {CenterHtml('initial', '50%', 'initial', 'initial', '90%', 'auto')}
+                    {CenterHtml('initial', '50%', 'center', 'center', '36vw', '36vw', '32.7vw', '32.7vw', 'pb-6')}
                     {RightHtml('25%', 'center', 'initial', '25%', 'auto', '34.4%', '58.8%')}
                 </HBox>
             }
