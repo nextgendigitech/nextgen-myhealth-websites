@@ -48,11 +48,6 @@ const DoctorImage = styled.img`
     height: 120px;
     width: 120px;
     border-radius: 50%;
-
-    @media only screen and (max-width: ${responsive.mobileThresh-1}px) {
-        height: 80px;
-        width: 80px;
-    }
 `
 
 const SLink = styled(Link)`
@@ -62,6 +57,7 @@ const SLink = styled(Link)`
 const DoctorCardContainer = styled(HBox)`
     border: 1px solid ${colors.grey};
     border-radius: 10px;
+
     &:hover {
         box-shadow: 0px 0px 6px 6px ${colors.grey};
     }
@@ -70,10 +66,13 @@ const DoctorCardContainer = styled(HBox)`
 const DoctorCard = ({ id, name, image, bmdc, doctorType, qualification,
                       specialty, fee, experience, affiliation, isMobile, language }) => {
     return (
-        <DoctorCardContainer className='mb-3'>
+        <DoctorCardContainer className={isMobile ? 'm-1' : 'm-2'}>
             <HBox style={{width: '100%', flexWrap: 'nowrap'}}>
                 <VBox className={`${isMobile ? 'ml-1 mb-2 mt-2' : 'ml-2 mb-2 mt-2'}`} justify='center'>
-                    <DoctorImage src={`${import.meta.env.VITE_SERVER_URL}${image}`} />
+                    <DoctorImage
+                        src={`${import.meta.env.VITE_SERVER_URL}${image}`}
+                        style={{ height: isMobile ? '80px' : '120px', width: isMobile ? '80px' : '120px' }}
+                    />
                     <P3 className='bold mt-2' color='third' align='center'>
                         {doctorsearchdlgData.head1[language]} {isMobile && <br />}
                         {doctorType==='MBBS' ? doctorsearchdlgData.head2[language] : ''}{bmdc}</P3>
