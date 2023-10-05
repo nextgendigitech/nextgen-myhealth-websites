@@ -96,7 +96,11 @@ const NavBar = ({ language }) => {
 
     return (
         <>
-            <Container justify='space-between' align='center'>
+            <Container
+                justify='space-between'
+                align='center'
+                style={{ paddingLeft: isMobile ? "20px" : "100px", paddingRight: isMobile ? "20px" : "100px" }}
+            >
                 <SNavLink to='/'>
                     <LogoImage src={logo} />
                 </SNavLink>
@@ -143,13 +147,13 @@ const NavBar = ({ language }) => {
                     <>
                         <HBox style={{flexShrink: '0', flexWrap: 'nowrap'}}>
                             <SNavLink to='/'>
-                                হোম
+                                {navbarData.head1[language]}
                             </SNavLink>
                             <SNavLink className='mx-4' to='/about-us'>
-                                পরিচিতি
+                                {navbarData.head2[language]}
                             </SNavLink>
                             <SNavLink to='/specialties'>
-                                বিশেষজ্ঞ ডাক্তার
+                                {navbarData.head3[language]}
                             </SNavLink>
                         </HBox>
                         <HBox className='ml-6' style={{flexWrap: 'nowrap'}}>

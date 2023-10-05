@@ -136,7 +136,7 @@ const CenterCircleText = styled(H2)`
 `
 
 
-const WhyUs = ({ isMobile }) => {
+const WhyUs = ({ isMobile, language }) => {
     const CenterHtml = (height, width, justify, align, CenterCircleContainerInner_height, CenterCircleContainerInner_width,
                         CenterCircle_height, CenterCircle_width, padding) => (
         <CenterCircleContainerOuter className={padding} justify={justify} align={align} height={height} width={width}>
@@ -144,7 +144,7 @@ const WhyUs = ({ isMobile }) => {
                 <CenterCircle align='center' justify='center' height={CenterCircle_height} width={CenterCircle_width}>
                     <CircleTextContainerOuter align='center'>
                         <CircleTextContainerInner align='center'>
-                            <CenterCircleText className='bold' align='center'>{homeData.WhyUs.head2['bang']}</CenterCircleText>
+                            <CenterCircleText className='bold' align='center'>{homeData.WhyUs.head2[language]}</CenterCircleText>
                         </CircleTextContainerInner>
                     </CircleTextContainerOuter>
                 </CenterCircle>
@@ -197,7 +197,7 @@ const WhyUs = ({ isMobile }) => {
 
             <Item2 className='mb-2 ml-2 mr-2' height={Item_height} width={Item_width} top_position='-21px' justify='center' align='center' style={{transform: 'ScaleX(-1)'}}>
                 <ItemTextContainer justify='center' align='center'>
-                    <P2 align='center' style={{transform: 'ScaleX(-1)'}}>{homeData.WhyUs.point5['bang']}</P2>
+                    <P2 align='center' style={{transform: 'ScaleX(-1)'}}>{homeData.WhyUs.point5[language]}</P2>
                 </ItemTextContainer>
             </Item2>
 
