@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-
+import { SnackbarProvider } from "notistack";
 import { VBox } from "../../components/Containers";
 import Map from "./components/Map";
 import Form from "./components/Form";
@@ -33,7 +33,9 @@ const ContactUs = () => {
     return (
         <VBox style={{ backgroundColor: colors.lightGrey }}>
             <Map isMobile={isMobile}/>
-            <Form isMobile={isMobile}/>
+            <SnackbarProvider maxSnack={1}>
+                <Form isMobile={isMobile}/>
+            </SnackbarProvider>
         </VBox>
     );
 }
