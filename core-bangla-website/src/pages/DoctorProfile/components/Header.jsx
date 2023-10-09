@@ -73,7 +73,7 @@ const Header = ({ isMobile, language }) => {
                     sx={{
                         backgroundColor: colors.green, fontSize: "12px"
                     }}
-                    message="Doctor profile link is copied to clipboard!"
+                    message="Doctor profile link is copied to clipboard."
                     action={
                         <IconButton size="small" aria-label="close" color="inherit" onClick={closeShowAlert}>
                             <CloseIcon fontSize="small" />
