@@ -497,9 +497,9 @@ export const contactusData = {
             bang: 'নাম',
             eng: 'Name',
         },
-        email: {
-            bang: 'ই-মেইল',
-            eng: 'Email',
+        contact: {
+            bang: 'ফোন বা ইমেইল',
+            eng: 'Phone or Email',
         },
         msg: {
             bang: 'বার্তা (প্রশ্নের বিবরণ)',

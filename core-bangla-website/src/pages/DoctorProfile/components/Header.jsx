@@ -1,12 +1,9 @@
 import { useState } from "react";
 import styled from "styled-components";
-import Snackbar from "@mui/material/Snackbar";
-import SnackbarContent from "@mui/material/SnackbarContent";
-import CloseIcon from "@mui/icons-material/Close";
-import IconButton from "@mui/material/IconButton";
 import { FiShare2 } from "react-icons/fi";
 import { BiArrowBack } from "react-icons/bi";
 import { connect } from 'react-redux';
+import { useSnackbar } from "notistack";
 
 import { HBox } from "../../../components/Containers";
 import { H3, P3, P4 } from "../../../components/Typography";
@@ -20,24 +17,17 @@ const TitleCard = styled(HBox)`
 `
 
 const Header = ({ isMobile, language }) => {
-    const [showAlert, setShowAlert] = useState(false);
+    const { enqueueSnackbar, closeSnackbar } = useSnackbar();
 
     const copyToClipboard = () => {
         const pageUrl = window.location.href;
         navigator.clipboard.writeText(pageUrl)
             .then(() => {
-                setShowAlert(true);
-                setTimeout(() => {
-                  setShowAlert(false);
-                }, 3000);
+                enqueueSnackbar("Doctor profile link is copied to clipboard.");
             })
             .catch((error) => {
                 console.error("Error copying to clipboard:", error);
             });
-    }
-
-    const closeShowAlert = () => {
-        setShowAlert(false);
     }
 
     const goBack = () => {
@@ -63,24 +53,6 @@ const Header = ({ isMobile, language }) => {
                 <FiShare2 />
                 <P3 className="ml-1"><a>{doctorProfile.header.head2[language]}</a></P3>
             </HBox>
-            <Snackbar
-                open={showAlert}
-                autoHideDuration={3000}
-                onClose={closeShowAlert}
-                anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
-            >
-                <SnackbarContent
-                    sx={{
-                        backgroundColor: colors.green, fontSize: "12px"
-                    }}
-                    message="Doctor profile link is copied to clipboard."
-                    action={
-                        <IconButton size="small" aria-label="close" color="inherit" onClick={closeShowAlert}>
-                            <CloseIcon fontSize="small" />
-                        </IconButton>
-                    }
-                />
-            </Snackbar>
         </TitleCard>
     );
 }

@@ -47,49 +47,66 @@ const SButton = styled(Button)`
 `
 
 const Form = ({ isMobile, language }) => {
+    const { enqueueSnackbar, closeSnackbar } = useSnackbar();
     const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
+    const [emailOrPhone, setEmailOrPhone] = useState("");
     const [message, setMessage] = useState("");
-    const { enqueueSnackbar } = useSnackbar();
     
     const handleFormSubmit = () => {
-        enqueueSnackbar('Submitting Query...', {persist: true});
-        axios({
-            method: 'POST',
-            url: `${import.meta.env.VITE_SERVER_URL}/website/contact-us/`,
-            data: {
-                name: name,
-                email: email,
-                message: message,
-            },
-        })
-        .then((response) => {
-            // setIsLoading(false);
-            if (response.status === 200) {
-                enqueueSnackbar(
-                    'Query submitted successfully. NextGen MyHealth Team will contact you shortly', 
-                    {variant: 'success',
-                    autoHideDuration: 5000,
-                    anchorOrigin: {
-                    vertical: 'bottom',
-                    horizontal: 'left',},
-                    });
-                setName("");
-                setEmail("");
-                setMessage("");
-            } else {
-                console.log('SUBMIT QUERY FAILED', response.status);
+        if (validate()) {
+            enqueueSnackbar('Submitting Query...', { persist: true });
+            axios({
+                method: 'POST',
+                url: `${import.meta.env.VITE_SERVER_URL}/website/contact-us/`,
+                data: {
+                    name: name,
+                    email_or_phone: emailOrPhone,
+                    message: message,
+                },
+            })
+            .then((response) => {
+                // setIsLoading(false);
+                closeSnackbar();
+                if (response.status === 200) {
+                    enqueueSnackbar('Query submitted successfully. NextGen MyHealth Team will contact you shortly', { variant: 'success' });
+
+                    setName("");
+                    setEmailOrPhone("");
+                    setMessage("");
+                } else {
+                    console.log('SUBMIT QUERY FAILED', response.status);
+                    enqueueSnackbar('Query submission failed! Please try again.', {variant: 'error'});
+                }
+            })
+            .catch((error) => {
+                // setIsLoading(false);
+                closeSnackbar();
+                console.log('SUBMIT QUERY ERROR', error);
                 enqueueSnackbar('Query submission failed! Please try again.', {variant: 'error'});
-            }
-        })
-        .catch((error) => {
-            // setIsLoading(false);
-            console.log('SUBMIT QUERY ERROR 2', error);
-            enqueueSnackbar('Query submission failed! Please try again.', {variant: 'error'});
-        })
+            })
+        }
     };
 
-      
+    const validate = () => {
+        var ok = true;
+
+        if (!name) {
+            enqueueSnackbar('Please fill up the name field.', { variant: 'error' });
+            return false;
+        }
+
+        if (!emailOrPhone) {
+            enqueueSnackbar('Please fill up the contact details field.', { variant: 'error' });
+            return false;
+        }
+
+        if (!message) {
+            enqueueSnackbar('Please fill up the message field.', { variant: 'error' });
+            return false;
+        }
+
+        return true;
+    }
    
     return (
         <Card 
@@ -113,11 +130,11 @@ const Form = ({ isMobile, language }) => {
                     <Input 
                         className="p-1 mb-2" 
                         type="email" 
-                        placeholder={contactusData.Form.email[language]} 
+                        placeholder={contactusData.Form.contact[language]} 
                         style={{ fontSize: isMobile ? "70%" : "" }} 
                         name="email"
-                        value={email}
-                        onChange={e => setEmail(e.target.value)}
+                        value={emailOrPhone}
+                        onChange={e => setEmailOrPhone(e.target.value)}
                         required/>
                     <Textarea
                         style={{ fontSize: isMobile ? "85%" : "" }}
