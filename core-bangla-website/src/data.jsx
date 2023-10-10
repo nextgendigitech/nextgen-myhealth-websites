@@ -211,11 +211,11 @@ export const homeData = {
     shortIntro: {
         head1: {
             bang: 'আমরা কারা?',
-            eng: 'Who we are?',
+            eng: 'Who We Are?',
         },
         head2: {
             bang: 'আমাদের সংক্ষিপ্ত পরিচিতি',
-            eng: 'Our short introduction',
+            eng: 'Our Short Introduction',
         },
         para1: {
             bang: 'নেক্সটজেন মাইহেলথ ভিসিপি, নেক্সটজেন ডিজিটেক লিমিটেড বাংলাদেশের একটি স্বাস্থ্য সেবা প্রদানকারী প্ল্যাটফর্ম। নেক্সটজেন মাইহেলথ ভিসিপি আমেরিকা, ইউরোপ, যুক্তরাজ্য এবং বাংলাদেশের সহস্রাধিক বিএমডিসি নিবন্ধিত বিশেষজ্ঞ চিকিৎসকদের সঙ্গে ঘরে বসে ভিডিও কলের মাধ্যমে পরামর্শ ও স্বাস্থ্যসেবা নেয়া সম্ভব করেছে। প্রযুক্তির নিত্যনতুন উদ্ভাবন ব্যবহার করে স্বাস্থ্যসেবাকে দেশের প্রত্যন্ত অঞ্চল থেকে শহর পর্যন্ত সকলের কাছে পৌঁছে দেয়ার লক্ষ্যে বাংলাদেশে শুরু হয় নেক্সটজেন মাইহেলথ ভিসিপি এর কার্যক্রম।',
@@ -225,11 +225,11 @@ export const homeData = {
     WhyUs: {
         head1: {
             bang: 'কেন আমাদের প্লাটফর্ম ব্যবহার করবেন?',
-            eng: 'Why should you use our platform?',
+            eng: 'Why Should You Use Our Platform?',
         },
         head2: {
             bang: 'কারণ আমাদের আছে',
-            eng: 'Because we have',
+            eng: 'Because We Have',
         },
         point1: {
             bang: 'নিবন্ধিত বিশেষজ্ঞ চিকিৎসক',
@@ -287,7 +287,7 @@ export const homeData = {
         },
         btn1: {
             bang: 'সব বিশেষজ্ঞ ডাক্তার দেখুন',
-            eng: 'See all specialist doctors',
+            eng: 'See All Specialist Doctors',
         },
     },
     bookingsteps: {
@@ -351,7 +351,7 @@ export const homeData = {
     CustomerReview: {
         head1: {
             bang: 'আমাদের ক্লায়েন্টরা কি বলেন',
-            eng: 'What our clients say',
+            eng: 'What Our Clients Say',
         },
         name1: {
             bang: 'হাবিবুর রহমান',
@@ -430,19 +430,19 @@ export const aboutusData = {
     OurAdvantages: {
         head1: {
             bang: 'আমাদের প্ল্যাটফর্ম ব্যবহার করার সুবিধা',
-            eng: 'The advantages of using our platform',
+            eng: 'The Advantages of Using Our Platform',
         },
         pointhead1: {
             bang: 'ব্যবহারকারী বান্ধব পোর্টাল',
-            eng: 'User friendly portal',
+            eng: 'User Friendly Portal',
         },
         pointhead2: {
             bang: 'স্বনামধন্য বিশেষজ্ঞ ডাক্তার',
-            eng: 'Renowned specialist doctors',
+            eng: 'Renowned Specialist Doctors',
         },
         pointhead3: {
             bang: 'ই-প্রেসক্রিপশন সেবা',
-            eng: 'E-prescription service',
+            eng: 'E-Prescription Service',
         },
         pointhead4: {
             bang: 'অ্যাপয়েন্টমেন্ট নোটিফিকেশন',
@@ -454,7 +454,7 @@ export const aboutusData = {
         },
         pointhead6: {
             bang: 'সপ্তাহব্যাপী সেবা',
-            eng: 'Week-long service',
+            eng: 'Week-Long service',
         },
         pointpera1: {
             bang: 'রোগী এবং ডাক্তার পক্ষের সকল বয়সের ব্যবহারকারীদের জন্য ব্যবহার করা সহজ।',
@@ -497,9 +497,9 @@ export const contactusData = {
             bang: 'নাম',
             eng: 'Name',
         },
-        email: {
-            bang: 'ই-মেইল',
-            eng: 'Email',
+        contact: {
+            bang: 'ফোন বা ইমেইল',
+            eng: 'Phone or Email',
         },
         msg: {
             bang: 'বার্তা (প্রশ্নের বিবরণ)',

@@ -95,7 +95,7 @@ const TopBar = ({ language, toggleLang }) => {
     return (
         <Container 
             justify='space-between' 
-            align='center' 
+            align='center'
             style={{ paddingLeft: isMobile ? "20px" : "100px", paddingRight: isMobile ? "20px" : "100px" }}>
             <IconContainer>
                 <Link to={Links.topbar.link1} target="_blank" className='ml-1'>

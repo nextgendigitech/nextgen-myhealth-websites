@@ -48,11 +48,6 @@ const DoctorImage = styled.img`
     height: 120px;
     width: 120px;
     border-radius: 50%;
-
-    @media only screen and (max-width: ${responsive.mobileThresh-1}px) {
-        height: 80px;
-        width: 80px;
-    }
 `
 
 const SLink = styled(Link)`
@@ -60,7 +55,9 @@ const SLink = styled(Link)`
 `
 
 const DoctorCardContainer = styled(HBox)`
-    border-radius: 20px;
+    border: 1px solid ${colors.grey};
+    border-radius: 10px;
+
     &:hover {
         box-shadow: 0px 0px 6px 6px ${colors.grey};
     }
@@ -69,34 +66,28 @@ const DoctorCardContainer = styled(HBox)`
 const DoctorCard = ({ id, name, image, bmdc, doctorType, qualification,
                       specialty, fee, experience, affiliation, isMobile, language }) => {
     return (
-        <DoctorCardContainer className='mb-3'>
-            <HBox style={{width: '100%'}}>
-                <VBox className={isMobile ? 'ml-1 mb-2 mt-2' : 'ml-2 mb-2 mt-2'} justify='center'>
-                    <DoctorImage src={`${import.meta.env.VITE_SERVER_URL}${image}`} />
+        <DoctorCardContainer className={isMobile ? 'm-1' : 'm-2'}>
+            <HBox style={{width: '100%', flexWrap: 'nowrap'}}>
+                <VBox className={`${isMobile ? 'ml-1 mb-2 mt-2' : 'ml-2 mb-2 mt-2'}`} justify='center'>
+                    <DoctorImage
+                        src={`${import.meta.env.VITE_SERVER_URL}${image}`}
+                        style={{ height: isMobile ? '80px' : '120px', width: isMobile ? '80px' : '120px' }}
+                    />
                     <P3 className='bold mt-2' color='third' align='center'>
                         {doctorsearchdlgData.head1[language]} {isMobile && <br />}
                         {doctorType==='MBBS' ? doctorsearchdlgData.head2[language] : ''}{bmdc}</P3>
                 </VBox>
-                <VBox className='mt-2' style={{ width: isMobile ? '70%' : '50%' }}>
-                    <P2 className='bold ml-2'>{name}</P2>
+                <VBox className='mt-2' style={{width: `${isMobile ? '70%' : '50%'}`}}>
+                    <P2 className='bold ml-2' color='first'>{name}</P2>
                     <P3 className='ml-2'>{qualification}</P3>
-                    <P3 className='ml-2' color='second'>{specialty}</P3>
-                    {affiliation && <P3 className='ml-2' color='first'>{`${affiliation.designation} at ${affiliation.institution}`}</P3>}
-                    {experience && <P3 className='ml-2'>{doctorsearchdlgData.head4[language]} {experience}</P3>}
+                    <P3 className='ml-2'>{specialty}</P3>
+                    {affiliation && <P3 className='ml-2'>{`${affiliation.designation} at ${affiliation.institution}`}</P3>}
+                    {experience && <P3 className='ml-2'>{`Experience: ${experience}`}</P3>}
                     {isMobile &&
-                        <VBox className='mt-1' align='center'>
-                            <Button 
-                                className='bold ml-2' 
-                                size='xs' 
-                                color='third' 
-                                style={{ height: 30, borderRadius: 15 }}
-                            >
-                                <P2 color='white' style={{flexShrink: '0'}}>
-                                    {doctorsearchdlgData.head3[language]}
-                                </P2>
-                            </Button>
-                            <P2 className='bold mt-1' color='first'><TbCurrencyTaka />{fee}</P2>
-                        </VBox>
+                        <HBox className='mt-1 mb-2' align='center' style={{flexWrap: 'nowrap'}}>
+                            <P2 className='bold ml-2' style={{whiteSpace: 'nowrap'}}><TbCurrencyTaka />{fee}</P2>
+                            <Button className='bold ml-1' size='xs' color='third' style={{ height: 30, borderRadius: 15 }}><P2 color='white' style={{flexShrink: '0'}}>অ্যাপয়েন্টমেন্ট নিন</P2></Button>
+                        </HBox>
                     }
                 </VBox>
                 {!isMobile &&
