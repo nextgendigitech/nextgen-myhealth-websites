@@ -180,8 +180,8 @@ const Footer = ({ language }) => {
     )
 
     return (
-        <>
-            <FooterContainer1 
+        <VBox style={{ backgroundColor: colors.lightGrey }}>
+            <FooterContainer1
                 justify='space-between' 
                 className={isMobile ? 'pb-4' : 'pb-7'} 
                 style={{ paddingLeft: isMobile ? "40px" : "100px", paddingRight: isMobile ? "40px" : "100px" }}>
@@ -223,7 +223,7 @@ const Footer = ({ language }) => {
                 setOpen={setOpenDoctorSearchDlg}
                 isMobile={isMobile}
             />
-        </>
+        </VBox>
     );
 }
 

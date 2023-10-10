@@ -28,7 +28,7 @@ const DoctorCard = ({ id, name, bmdc, qualification, specialty,
                       experience, affiliation, image, fee, isMobile, language }) => {
     return (
         <CardContainer align="center" justify="center"
-            className={isMobile ? "m-1 py-2 px-1" : "m-5 p-2"}
+            className={isMobile ? "m-1 py-2 px-1" : "mx-5 my-3 p-2"}
             style={{ width: isMobile ? "100%" : "calc(50% - 120px)", height: isMobile ? "" : "270px" }}
         >
             <VBox align='center' style={{ width: "20%" }}>

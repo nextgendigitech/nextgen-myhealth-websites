@@ -40,7 +40,9 @@ const VideoContainer = styled.iframe`
 
 const WhoWeAre = ({ isMobile, language }) => {
     return (
-        <Container style={{ marginTop: isMobile ? '30px' : '100px', paddingLeft: isMobile ? "40px" : "100px", paddingRight: isMobile ? "40px" : "100px" }}>
+        <Container style={{ marginTop: isMobile ? '30px' : '100px', 
+                            paddingLeft: isMobile ? "40px" : "100px", 
+                            paddingRight: isMobile ? "40px" : "100px" }}>
             <HBox align="center" className={isMobile ? "mb-3" : "mb-4"} >
                 <VerticalBorder/>
                 <VBox className="ml-2" style={{ width: "150px" }}>
