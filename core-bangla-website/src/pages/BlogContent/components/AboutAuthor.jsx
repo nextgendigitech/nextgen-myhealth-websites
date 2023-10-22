@@ -5,6 +5,7 @@ import bp from "../../../assets/images/blood_pressure.png";
 import { HBox, VBox } from "../../../components/Containers";
 import { H2, P1, P2, P3, P4 } from "../../../components/Typography";
 import colors from "../../../config/colors";
+import { getDate, getTimeFromDateTime } from '../../../utils';
 
 
 const HorizontalLine = styled.div`
@@ -12,7 +13,7 @@ const HorizontalLine = styled.div`
     width: 100%;
 `
 
-const AboutAuthor = ({isMobile}) => {
+const AboutAuthor = ({isMobile, created_at}) => {
     return (
         <VBox>
             <HorizontalLine/>
@@ -26,7 +27,7 @@ const AboutAuthor = ({isMobile}) => {
             </HBox>
             <HBox justify="flex-end" className={isMobile ? "" : "mb-1"}>
                 <P3 className="mr-1" style={{ fontSize: "15px" }}><BiSolidTime style={{color: colors.lightBlack}}/></P3>
-                <P3>23.09.2023</P3>
+                <P3>{getDate(created_at)}</P3>
             </HBox>
             <HorizontalLine/>
         </VBox>

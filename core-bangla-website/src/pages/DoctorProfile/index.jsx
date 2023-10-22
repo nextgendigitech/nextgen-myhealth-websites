@@ -65,7 +65,7 @@ const DoctorProfile = () => {
     }
 
     return (
-        <VBox style={{ backgroundColor: colors.lightGrey }}>
+        <VBox style={{ width: "100% - 20px", backgroundColor: colors.lightGrey }} className={isMobile ? "pb-3" : "pb-8"}>
             <Header isMobile={isMobile}/>
             <VBox style={{ margin: isMobile ? "0px 40px" : "0px 100px" }}>
                 <Banner

@@ -85,7 +85,7 @@ const SpecialtyDoctors = ({ language }) => {
 
 
     return (   
-        <VBox style={{ backgroundColor: colors.lightGrey }}>
+        <VBox style={{ backgroundColor: colors.lightGrey }} className={isMobile ? "pb-3" : "pb-8"}>
             <TitleCard justify="center" align="center" className={isMobile ? "mt-2" : "mt-4"} style={{ height: isMobile ? '40px' : '70px', borderRadius: isMobile ? '0px 15px' : '0px 30px'}}>
                 <BiArrowBack justify="center" style={{ marginRight:"90%", cursor: "pointer" }} onClick={goBack} />
                 { language == 'bang' ?

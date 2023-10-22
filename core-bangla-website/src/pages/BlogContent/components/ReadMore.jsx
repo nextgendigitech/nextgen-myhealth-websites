@@ -16,7 +16,7 @@ const Article = ({isMobile, image, title}) => {
 
 const ReadMore = ({isMobile}) => {
     return (
-        <VBox className={isMobile ? "mt-3" : "mt-5"}>
+        <VBox className={isMobile ? "mt-3 pb-3" : "mt-5 pb-8"}>
             <P2>Read More...</P2>
             <HBox className="mt-1" justify="space-between">
                 <Article isMobile={isMobile} image={bp} title="Article 1" />

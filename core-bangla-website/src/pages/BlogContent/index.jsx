@@ -1,17 +1,19 @@
 import { useState, useEffect } from "react";
-import styled from "styled-components";
 import { useParams } from "react-router-dom";
+import axios from "axios";
+import { connect } from 'react-redux';
 
-import { HBox, VBox } from "../../components/Containers";
+import { VBox } from "../../components/Containers";
 import ContentBody from "./components/ContentBody";
 import AboutAuthor from "./components/AboutAuthor";
 import ReadMore from "./components/ReadMore";
 import responsive from '../../config/responsive';
+import { blogData } from "../../data";
 
-
-const BlogContent = () => {
-    let { title } = useParams();
-    // const [isLoading, setIsLoading] = useState(false);
+const BlogContent = ({language}) => {
+    let { id } = useParams();
+    const [isLoading, setIsLoading] = useState(false);
+    const [blog, setBlog] = useState({});
     const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
@@ -34,18 +36,55 @@ const BlogContent = () => {
         window.scrollTo(0, 0);
     });
 
-    // useEffect(() => {
-    //     setIsLoading(true);
-    //     fetchDoctor();
-    // }, []);
+    useEffect(() => {
+        setIsLoading(true);
+        fetchBlog();
+    }, []);
+
+    const fetchBlog = () => {
+        setIsLoading(true);
+        axios({
+            method: "GET",
+            url: `${import.meta.env.VITE_SERVER_URL}/website/blog-list/`,
+            params: {
+                id: id
+            },
+        })
+        .then((response) => {
+            setIsLoading(false);
+            if (response.status === 200) {
+                setBlog(response.data);
+            } else {
+                console.log("BLOG CONTENT FETCH FAILED", response.status);
+            }
+        })
+        .catch((error) => {
+            setIsLoading(false);
+            console.log("BLOG CONTENT FETCH ERROR", error);
+        })
+    }
 
     return (
         <VBox className={isMobile ? "mx-2 mt-1" : "mx-8 px-6"}>
-            <ContentBody isMobile={isMobile} title={title}/>
-            <AboutAuthor isMobile={isMobile}/>
+            <ContentBody 
+                language={language}
+                isMobile={isMobile} 
+                id={blog[id-1]?.id}
+                title={blog[id-1]?.title}
+                content={blog[id-1]?.content}
+                created_at={blog[id-1]?.created_at}
+            />
+            <AboutAuthor 
+                isMobile={isMobile}
+                created_at={blog[id-1]?.created_at}
+            />
             <ReadMore isMobile={isMobile}/>
         </VBox>
     )
 }
 
-export default BlogContent;
+const mapStateToProps = state => ({
+    language: state.general.language,
+});
+
+export default connect(mapStateToProps, {})(BlogContent);

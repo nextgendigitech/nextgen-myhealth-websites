@@ -816,6 +816,35 @@ export const payment = {
     },
 }
 
+export const blogData = {
+    bloglist: {
+        search: {
+            bang: 'শিরোনাম দ্বারা অনুসন্ধান করুন...',
+            eng: 'Search by Title...',
+        },
+        btn1: {
+            bang: 'অনুসন্ধান',
+            eng: 'Search',
+        },
+        btn2: {
+            bang: 'বাতিল',
+            eng: 'Cancel',
+        },
+    },
+    header: {
+        head: {
+            bang: 'স্বাস্থ্য ব্লগ',
+            eng: 'Health Blog',
+        },
+    },
+    blogcontentbody: {
+        share: {
+            bang: 'পোস্ট শেয়ার করুন:',
+            eng: 'Share the post:',
+        },
+    },
+}
+
 export const termsAndConditionsData = {
     'Terms & Conditions': [
             'Please read these terms and conditions (“Terms and Conditions“) carefully before using the website and services.These terms & conditions create a contract between you & NextGen MyHealth VCP.If you are under age of 18 please confirm that you have your parents or legal guardian’s permission to use this platform.',
