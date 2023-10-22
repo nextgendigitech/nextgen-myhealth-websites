@@ -85,8 +85,13 @@ const SpecialtyDoctors = ({ language }) => {
 
 
     return (   
+<<<<<<< HEAD
         <VBox style={{ backgroundColor: colors.lightGrey }} className={isMobile ? "pb-3" : "pb-8"}>
             <TitleCard justify="center" align="center" className={isMobile ? "mt-2" : "mt-4"} style={{ height: isMobile ? '40px' : '70px', borderRadius: isMobile ? '0px 15px' : '0px 30px'}}>
+=======
+        <VBox className={isMobile ? "pt-2" : "mt-4"} style={{ paddingBottom: isMobile ? '60px' : '100px', backgroundColor: colors.lightGrey }}>
+            <TitleCard justify="center" align="center" style={{ height: isMobile ? '40px' : '70px', borderRadius: isMobile ? '0px 15px' : '0px 30px'}}>
+>>>>>>> 98e6798b10e9b07f2047f680ba9a20f3c4c394fc
                 <BiArrowBack justify="center" style={{ marginRight:"90%", cursor: "pointer" }} onClick={goBack} />
                 { language == 'bang' ?
                     <H3 style={{ position: "absolute" }}>{specialtyEtoB[specialty]}</H3>
@@ -107,7 +112,10 @@ const SpecialtyDoctors = ({ language }) => {
                 </HBox>
                 :
                 <VBox>
-                    <VBox className={isMobile ? "mt-3" : "mt-6 ml-8 pl-6"} style={{ alignItems: isMobile ? "center" : "" }}>
+                    <VBox className={isMobile ? "mt-3" : "mt-6"} 
+                        style={{ paddingLeft: isMobile ? "40px" : "100px", 
+                            paddingRight: isMobile ? "40px" : "100px", 
+                            alignItems: isMobile ? "center" : "" }}>
                         <P2 className="bold">{specialtydoctorsData.index.head11[language]}{doctors.length}{specialtydoctorsData.index.head12[language]}</P2>
                     </VBox>
                     <HBox justify="center" style={{marginRight: isMobile ? "10px" : "100px", marginLeft: isMobile ? "10px" : "100px"}}>

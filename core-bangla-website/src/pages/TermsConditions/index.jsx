@@ -60,7 +60,8 @@ const TermsConditions = () => {
                 <H3 className="bold" color="third">নিয়ম ও শর্তাবলী</H3>
                 <HBox />
             </TitleCard>
-            <VBox className={isMobile ? "mx-2 my-3" : "m-8 px-7 py-1"}>
+            <VBox className={isMobile ? "my-3" : "my-8 py-1"}
+                style={{ paddingLeft: isMobile ? "40px" : "100px", paddingRight: isMobile ? "40px" : "100px" }}>
                 {Object.keys(termsAndConditionsData).map((key) => ( 
                     <VBox className={isMobile ? "mb-2" : "mb-6"}>
                         <H6 color='third' className="bold">{key}</H6>

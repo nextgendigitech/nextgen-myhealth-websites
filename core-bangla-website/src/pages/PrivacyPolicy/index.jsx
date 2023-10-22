@@ -49,7 +49,9 @@ const PrivacyPolicy = () => {
 
     return (
         <VBox style={{ backgroundColor: colors.lightGrey }}>
-            <TitleCard className={isMobile ? "mt-2" : "mt-4"} justify="space-between" align="center" style={{ height: isMobile ? '40px' : '70px', borderRadius: isMobile ? '0px 15px' : '0px 30px'}}>
+            <TitleCard className={isMobile ? "mt-2" : "mt-4"} justify="space-between" align="center" 
+                style={{ height: isMobile ? '40px' : '70px', 
+                        borderRadius: isMobile ? '0px 15px' : '0px 30px'}}>
                 <BiArrowBack 
                     className={isMobile ? "ml-2" : "ml-8"}
                     justify="center" 
@@ -59,7 +61,8 @@ const PrivacyPolicy = () => {
                 <H3 className="bold" color="third">গোপনীয়তা নীতিমালা</H3>
                 <HBox />
             </TitleCard>
-            <VBox className={isMobile ? "mx-2 my-3" : "m-8 px-7 py-1"}>
+            <VBox className={isMobile ? "my-3" : "my-8 py-1"}
+                style={{ paddingLeft: isMobile ? "40px" : "100px", paddingRight: isMobile ? "40px" : "100px" }}>
                 {Object.keys(privacyPolicyData).map((key) => ( 
                     <VBox className={isMobile ? "mb-2" : "mb-6"}>
                         <H6 color='third' className="bold">{key}</H6>
