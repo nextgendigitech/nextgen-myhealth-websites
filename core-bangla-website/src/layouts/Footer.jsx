@@ -151,9 +151,9 @@ const Footer = ({ language }) => {
                 <SNavLink to='/specialties'>
                     <P3 className='mt-2'>{footerData.para32[language]}</P3>
                 </SNavLink>
-                {/* <SNavLink to='/blog'>
-                    <P3 className={margin2}>{footerData.para42[language]}</P3>
-                </SNavLink> */}
+                <SNavLink to='/blog'>
+                    <P3 className='mt-2'>{footerData.para42[language]}</P3>
+                </SNavLink>
             </VBox>
         </VBox>
     )
