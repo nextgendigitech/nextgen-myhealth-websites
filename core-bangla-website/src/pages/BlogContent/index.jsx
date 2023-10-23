@@ -38,7 +38,7 @@ const BlogContent = ({language}) => {
 
     useEffect(() => {
         setIsLoading(true);
-        fetchBlog();
+            fetchBlog();
     }, []);
 
     const fetchBlog = () => {
@@ -47,13 +47,21 @@ const BlogContent = ({language}) => {
             method: "GET",
             url: `${import.meta.env.VITE_SERVER_URL}/website/blog-list/`,
             params: {
-                id: id
+                id: id,
+                offset: 0,
+                limit: 1
             },
         })
         .then((response) => {
             setIsLoading(false);
             if (response.status === 200) {
-                setBlog(response.data);
+                const specificBlog = response.data.find(blogItem => blogItem.id === parseInt(id, 10));
+                console.log(specificBlog)
+                if (specificBlog) {
+                    setBlog(specificBlog);
+                } else {
+                    console.log("BLOG NOT FOUND");
+                }
             } else {
                 console.log("BLOG CONTENT FETCH FAILED", response.status);
             }
@@ -63,20 +71,20 @@ const BlogContent = ({language}) => {
             console.log("BLOG CONTENT FETCH ERROR", error);
         })
     }
-
+    
     return (
         <VBox className={isMobile ? "mx-2 mt-1" : "mx-8 px-6"}>
             <ContentBody 
                 language={language}
                 isMobile={isMobile} 
-                id={blog[id-1]?.id}
-                title={blog[id-1]?.title}
-                content={blog[id-1]?.content}
-                created_at={blog[id-1]?.created_at}
+                id={blog?.id}
+                title={blog?.title}
+                content={blog?.content}
+                created_at={blog?.created_at}
             />
             <AboutAuthor 
                 isMobile={isMobile}
-                created_at={blog[id-1]?.created_at}
+                created_at={blog?.created_at}
             />
             <ReadMore isMobile={isMobile}/>
         </VBox>

@@ -32,6 +32,10 @@ const Home = () => {
         return () => window.removeEventListener('resize', () => setResponsiveness());
     }, []);
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    });
+
     return (
         <VBox style={{ backgroundColor: colors.lightGrey }}>
             <Banner isMobile={isMobile} />

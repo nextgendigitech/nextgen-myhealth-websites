@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import styled from "styled-components";
-import { BiSearchAlt2, BiX } from "react-icons/bi";
-import PropTypes from 'prop-types';
-import { useSnackbar } from 'notistack';
+// import { BiSearchAlt2, BiX } from "react-icons/bi";
+// import PropTypes from 'prop-types';
+// import { useSnackbar } from 'notistack';
 import { connect } from 'react-redux';
 
 import colors from "../../config/colors";
@@ -35,18 +35,43 @@ const Blog = ({language}) => {
     // const { enqueueSnackbar, closeSnackbar } = useSnackbar();
     const [blogs, setBlogs] = useState([]);
     const [searchKey, setSearchKey] = useState("");
+    const [ordering, setOrdering] = useState({orderBy: 'created_at', direction: '-'});
     const [isLoading, setIsLoading] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
     const [isSearching, setIsSearching] = useState(false);
-
-
+    
     const handleSearch = () => {
-        const filteredBlogs = blogs.filter((blog) =>
-            blog.title.toLowerCase().includes(searchKey.toLowerCase())
-        );
+        const filteredBlogs = blogs.filter((blog) => {
+            return blog.title.toLowerCase().includes(searchKey.toLowerCase()) ||
+            blog.content.toLowerCase().includes(searchKey.toLowerCase());
+        });
         setBlogs(filteredBlogs);
         setIsSearching(true);
     };
+
+    ////
+    // const handleSearch = () => {
+    //     const threshold = 0.9;
+    
+    //     const filteredBlogs = blogs.filter((blog) => {
+    //       const title = blog.title.toLowerCase();
+    //       const content = blog.content.toLowerCase();
+    //       const searchString = searchKey.toLowerCase();
+    
+    //       const minLengthForMatch = Math.floor(searchString.length * threshold);
+    
+    //       const titleMatches = searchString.split('').filter(char => title.includes(char)).length;
+    //       const contentMatches = searchString.split('').filter(char => content.includes(char)).length;
+    
+    //       return titleMatches + contentMatches >= minLengthForMatch;
+    //     });
+    
+    //     setFilteredBlogs(filteredBlogs);
+    //     setBlogs(filteredBlogs);
+    //     console.log(blogs);
+    // };
+    
+    ////
 
     const clearSearch = () => {
         setSearchKey("");
@@ -70,6 +95,7 @@ const Blog = ({language}) => {
 
         return () => window.removeEventListener('resize', () => setResponsiveness());
     }, []);
+
     useEffect(() => {
         window.scrollTo(0, 0);
     });
@@ -89,6 +115,10 @@ const Blog = ({language}) => {
             method: 'GET',
             url: `${import.meta.env.VITE_SERVER_URL}/website/blog-list/`,
             params: {
+                key: searchKey,
+                order_by: ordering.orderBy,
+                direction: ordering.direction,
+                // id: filtering.id,
                 offset: 0,
                 limit: 1000
             },
@@ -122,9 +152,9 @@ const Blog = ({language}) => {
                     />
                 </HBox>
                 :
-                <VBox>
+                <VBox className={isMobile ? "mb-2" : "mb-4"}>
                     {isMobile ? (
-                        <VBox style={{ margin: isMobile ? "4% 4%" : "4% 8%", flexWrap: "nowrap" }}>
+                        <VBox style={{ margin: "4% 4%", flexWrap: "nowrap" }}>
                             <Category isMobile={isMobile} />
                             <VBox justify="center" className="mb-3">
                                 <SearchBar
@@ -162,7 +192,7 @@ const Blog = ({language}) => {
                             </VBox>
                         </VBox> 
                     ):(
-                        <HBox style={{ margin: isMobile ? "4% 4%" : "4% 8%", flexWrap: "nowrap" }}>
+                        <HBox style={{ margin:"4% 8%", flexWrap: "nowrap" }}>
                             <Category isMobile={isMobile} style={{ width: "25%" }} /> 
                             <VBox className="ml-2" >
                                 <HBox align="center" className="ml-5 mb-6">

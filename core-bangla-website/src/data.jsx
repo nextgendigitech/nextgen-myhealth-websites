@@ -820,7 +820,7 @@ export const blogData = {
     bloglist: {
         search: {
             bang: 'শিরোনাম দ্বারা অনুসন্ধান করুন...',
-            eng: 'Search by Title...',
+            eng: 'Search by Title, Content...',
         },
         btn1: {
             bang: 'অনুসন্ধান',

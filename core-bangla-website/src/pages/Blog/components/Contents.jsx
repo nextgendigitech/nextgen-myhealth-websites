@@ -20,7 +20,7 @@ const HorizontalLine = styled.div`
     width: 100%;
 `
 
-const ContentCard = ({ title, content, isMobile, id, language }) => {
+const ContentCard = ({ title, content, isMobile, id, created_at }) => {
 
     const editedContent = (content, maxLines) => {
         const plainText = content.replace(/<[^>]+>/g, '');
@@ -39,15 +39,15 @@ const ContentCard = ({ title, content, isMobile, id, language }) => {
                     <Image src={bp} className={isMobile ? "mb-2" : ""} style={{ width: isMobile ? "100%" : "28%" }}/>
                     <VBox className={isMobile ? "" : "ml-2 pl-2"} style={{ width: isMobile ? "100%" : "70%" }}>
                         <P2 className="bold mb-2">{title}</P2>
-                        <LinesEllipsis
-                            text={ editedContent(content, 4) }
-                            maxLine="4"
-                            ellipsis="..."
-                            style={{ color: 'black' }}
-                        />  
-                        {/* <P3>{content}</P3> */}
+                        <P3>
+                            <LinesEllipsis
+                                text={ editedContent(content, 4) }
+                                maxLine="4"
+                                ellipsis="..."
+                                style={{ color: 'black' }}
+                            /> 
+                        </P3>
                         {/* <P3>{created_at}</P3> */}
-                        {/* <P3>{id}</P3> */}
                     </VBox>
                 </HBox>
             </VBox>

@@ -26,8 +26,11 @@ const AboutAuthor = ({isMobile, created_at}) => {
                 </VBox>
             </HBox>
             <HBox justify="flex-end" className={isMobile ? "" : "mb-1"}>
-                <P3 className="mr-1" style={{ fontSize: "15px" }}><BiSolidTime style={{color: colors.lightBlack}}/></P3>
+                <P3 className="mr-1" style={{ fontSize: "15px" }}>
+                    <BiSolidTime style={{color: colors.lightBlack}}/>
+                </P3>
                 <P3>{getDate(created_at)}</P3>
+                {/* <P3>{created_at.slice(0, 10)}</P3> */}
             </HBox>
             <HorizontalLine/>
         </VBox>
