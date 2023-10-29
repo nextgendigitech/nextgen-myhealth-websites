@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import styled from "styled-components";
-// import { BiSearchAlt2, BiX } from "react-icons/bi";
-// import PropTypes from 'prop-types';
-// import { useSnackbar } from 'notistack';
 import { connect } from 'react-redux';
+import { Scrollbars } from 'react-custom-scrollbars-2';
+import ReactPaginate from "react-paginate";
 
 import colors from "../../config/colors";
 import { HBox, VBox } from "../../components/Containers";
@@ -32,52 +31,16 @@ const SearchBar = styled.input`
 `
 
 const Blog = ({language}) => {
-    // const { enqueueSnackbar, closeSnackbar } = useSnackbar();
+    const pageSize = 10;
     const [blogs, setBlogs] = useState([]);
     const [searchKey, setSearchKey] = useState("");
-    const [ordering, setOrdering] = useState({orderBy: 'created_at', direction: '-'});
     const [isLoading, setIsLoading] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
-    const [isSearching, setIsSearching] = useState(false);
-    
-    const handleSearch = () => {
-        const filteredBlogs = blogs.filter((blog) => {
-            return blog.title.toLowerCase().includes(searchKey.toLowerCase()) ||
-            blog.content.toLowerCase().includes(searchKey.toLowerCase());
-        });
-        setBlogs(filteredBlogs);
-        setIsSearching(true);
-    };
-
-    ////
-    // const handleSearch = () => {
-    //     const threshold = 0.9;
-    
-    //     const filteredBlogs = blogs.filter((blog) => {
-    //       const title = blog.title.toLowerCase();
-    //       const content = blog.content.toLowerCase();
-    //       const searchString = searchKey.toLowerCase();
-    
-    //       const minLengthForMatch = Math.floor(searchString.length * threshold);
-    
-    //       const titleMatches = searchString.split('').filter(char => title.includes(char)).length;
-    //       const contentMatches = searchString.split('').filter(char => content.includes(char)).length;
-    
-    //       return titleMatches + contentMatches >= minLengthForMatch;
-    //     });
-    
-    //     setFilteredBlogs(filteredBlogs);
-    //     setBlogs(filteredBlogs);
-    //     console.log(blogs);
-    // };
-    
-    ////
-
-    const clearSearch = () => {
-        setSearchKey("");
-        setIsSearching(false);
-        fetchBlogs();
-    };
+    const [offset, setOffset] = useState(0)
+    const [limit, setLimit] = useState(pageSize);
+    const [hasMore, setHasMore] = useState(true);
+    const [count, setCount] = useState(null);
+    const [pageNumber, setPageNumber] = useState(0);
 
     useEffect(() => {
         const setResponsiveness = () => {
@@ -100,33 +63,30 @@ const Blog = ({language}) => {
         window.scrollTo(0, 0);
     });
 
-    useEffect(() => {
-        fetchBlogs();
-        setIsLoading(true);
-        setTimeout(() => {
-            setIsLoading(false)
-        }, 5000)
-    }, []);
-
+    const handlePageChange = ({ selected }) => {
+        setPageNumber(selected);
+    };
 
     const fetchBlogs = () => {
         setIsLoading(true);
+        const newOffset = pageNumber * pageSize;
         axios({
             method: 'GET',
             url: `${import.meta.env.VITE_SERVER_URL}/website/blog-list/`,
             params: {
                 key: searchKey,
-                order_by: ordering.orderBy,
-                direction: ordering.direction,
-                // id: filtering.id,
-                offset: 0,
-                limit: 1000
+                offset: newOffset,
+                limit: limit
             },
         })
         .then((response) => {
             setIsLoading(false);
             if (response.status === 200) {
-                setBlogs(response.data);
+                setBlogs(blogs.concat(response.data.blogs));
+                setHasMore(response.data.has_more);
+                setCount(response.data.count);
+                setOffset(offset+pageSize);
+                setLimit(limit+pageSize);
             } else {
                 console.log('BLOG LIST FETCH FAILED', response.status);
             }
@@ -137,8 +97,38 @@ const Blog = ({language}) => {
         })
     }
 
+    const handleSearch = () => {
+        setCount(null);
+        setOffset(0);
+        setLimit(pageSize);
+        setHasMore(true);
+        setBlogs([]);
+    };
+
+    const clearSearch = () => {
+        setSearchKey("");
+        setCount(null);
+        setOffset(0);
+        setLimit(pageSize);
+        setHasMore(true);
+        setBlogs([]);
+    };
+
+    const handleFetchBlogs = () => {
+        if (hasMore & !isLoading) {
+            fetchBlogs();
+        }
+    }
+
+    const handleScrollUpdate = (values) => {
+        const { scrollTop, scrollHeight, clientHeight } = values;
+        const pad = 100;
+        const t = ((scrollTop + pad) / (scrollHeight - clientHeight));
+        if (t > 1) handleFetchBlogs();
+    };
+
     return (
-        <VBox className="pb-2">
+        <VBox className="mb-4">
             <Header isMobile={isMobile} language={language}/>
             {
                 isLoading ?
@@ -156,7 +146,7 @@ const Blog = ({language}) => {
                     {isMobile ? (
                         <VBox style={{ margin: "4% 4%", flexWrap: "nowrap" }}>
                             <Category isMobile={isMobile} />
-                            <VBox justify="center" className="mb-3">
+                            <VBox justify="center" className="mb-3" style={{ position: 'fixed' }}>
                                 <SearchBar
                                     className='pl-1'
                                     value={searchKey}
@@ -175,7 +165,8 @@ const Blog = ({language}) => {
                                 </HBox>
                             </VBox> 
                             <VBox align="center">
-                                {blogs.length === 0 ? (
+                                {
+                                blogs.length === 0 ? (
                                     <P2>No result.</P2>
                                 ) : (
                                     blogs.map((blog, index) => (
@@ -188,14 +179,15 @@ const Blog = ({language}) => {
                                             created_at={blog.created_at}
                                         />
                                     ))
-                                )}
+                                )
+                                }
                             </VBox>
                         </VBox> 
                     ):(
                         <HBox style={{ margin:"4% 8%", flexWrap: "nowrap" }}>
                             <Category isMobile={isMobile} style={{ width: "25%" }} /> 
-                            <VBox className="ml-2" >
-                                <HBox align="center" className="ml-5 mb-6">
+                            <VBox style={{ width: "100%" }}>
+                                <HBox align="center" className="ml-5 mb-6 mt-2">
                                     <SearchBar
                                         className="pl-1 mr-1"
                                         value={searchKey}
@@ -209,22 +201,41 @@ const Blog = ({language}) => {
                                         </Button>
                                     )}
                                 </HBox>
-                                <VBox className="ml-2">
-                                    {blogs.length === 0 ? (
-                                        <P2>No result.</P2>
-                                    ) : (
-                                        blogs.map((blog, index) => (
-                                            <Contents
-                                                isMobile={isMobile}
-                                                id={blog.id}
-                                                key={index}
-                                                title={blog.title}
-                                                content={blog.content}
-                                                created_at={blog.created_at}
-                                            />
-                                        ))
+                                {/* <Scrollbars
+                                    style={{ height: '100vh', scrollMarginLeft: "200px" }}
+                                    onUpdate={handleScrollUpdate}
+                                    renderThumbVertical={({ style, ...props }) =>
+                                        <div {...props} style={{ ...style, backgroundColor: colors.darkGrey, width: '5px', borderRadius: '3px', opacity: '0.4'}}/>
+                                }>
+                                    {blogs.length ?
+                                        <VBox className="ml-2">
+                                            {
+                                                blogs.map((blog, index) => (
+                                                    <Contents
+                                                        isMobile={isMobile}
+                                                        id={blog.id}
+                                                        key={index}
+                                                        title={blog.title}
+                                                        content={blog.content}
+                                                        created_at={blog.created_at}
+                                                    />
+                                                ))
+                                            }
+                                        </VBox>
+                                    : (
+                                        <VBox className="ml-4">
+                                            <P2>No result.</P2>
+                                        </VBox>
                                     )}
-                                </VBox>
+                                </Scrollbars> */}
+                                <ReactPaginate
+                                    pageCount={Math.ceil(count / pageSize)}
+                                    pageRangeDisplayed={5}
+                                    marginPagesDisplayed={2}
+                                    onPageChange={handlePageChange}
+                                    containerClassName="pagination"
+                                    activeClassName="active"
+                                />
                             </VBox>
                         </HBox> 
                     )}

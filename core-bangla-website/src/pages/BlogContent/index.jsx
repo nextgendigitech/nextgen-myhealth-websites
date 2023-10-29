@@ -45,7 +45,7 @@ const BlogContent = ({language}) => {
         setIsLoading(true);
         axios({
             method: "GET",
-            url: `${import.meta.env.VITE_SERVER_URL}/website/blog-list/`,
+            url: `${import.meta.env.VITE_SERVER_URL}/website/blog-details/`,
             params: {
                 id: id,
                 offset: 0,
@@ -55,13 +55,7 @@ const BlogContent = ({language}) => {
         .then((response) => {
             setIsLoading(false);
             if (response.status === 200) {
-                const specificBlog = response.data.find(blogItem => blogItem.id === parseInt(id, 10));
-                console.log(specificBlog)
-                if (specificBlog) {
-                    setBlog(specificBlog);
-                } else {
-                    console.log("BLOG NOT FOUND");
-                }
+                setBlog(response.data);
             } else {
                 console.log("BLOG CONTENT FETCH FAILED", response.status);
             }
@@ -71,7 +65,7 @@ const BlogContent = ({language}) => {
             console.log("BLOG CONTENT FETCH ERROR", error);
         })
     }
-    
+
     return (
         <VBox className={isMobile ? "mx-2 mt-1" : "mx-8 px-6"}>
             <ContentBody 
