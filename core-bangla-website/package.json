@@ -38,6 +38,7 @@
     "react-share": "^4.4.1",
     "react-spinners": "^0.13.8",
     "react-to-print": "^2.14.15",
+    "react-whatsapp": "^0.3.0",
     "redux": "^4.2.1",
     "redux-thunk": "^2.4.2",
     "styled-components": "^5.3.11"

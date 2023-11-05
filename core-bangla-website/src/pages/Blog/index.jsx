@@ -2,8 +2,9 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import styled from "styled-components";
 import { connect } from 'react-redux';
-import { Scrollbars } from 'react-custom-scrollbars-2';
-import ReactPaginate from "react-paginate";
+import Pagination from '@mui/material/Pagination';
+import Stack from '@mui/material/Stack';
+import ReactWhatsapp from 'react-whatsapp';
 
 import colors from "../../config/colors";
 import { HBox, VBox } from "../../components/Containers";
@@ -31,16 +32,20 @@ const SearchBar = styled.input`
 `
 
 const Blog = ({language}) => {
-    const pageSize = 10;
+
+    const phoneNumber = '+8801689607454';
+
+    const handleWhatsAppCall = () => {
+        window.open(`https://wa.me/${phoneNumber}`, '_blank');
+    };
+
+    const pageSize = 2;
     const [blogs, setBlogs] = useState([]);
     const [searchKey, setSearchKey] = useState("");
     const [isLoading, setIsLoading] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
-    const [offset, setOffset] = useState(0)
-    const [limit, setLimit] = useState(pageSize);
-    const [hasMore, setHasMore] = useState(true);
     const [count, setCount] = useState(null);
-    const [pageNumber, setPageNumber] = useState(0);
+    const [page, setPage] = useState(1);
 
     useEffect(() => {
         const setResponsiveness = () => {
@@ -63,30 +68,31 @@ const Blog = ({language}) => {
         window.scrollTo(0, 0);
     });
 
-    const handlePageChange = ({ selected }) => {
-        setPageNumber(selected);
-    };
+    useEffect(() => {
+        fetchBlogs();
+    }, [page, pageSize]);
 
-    const fetchBlogs = () => {
+    const handlePageChange = (event, newPage) => {
+        setPage(newPage);        
+    }
+
+    const fetchBlogs = (key=searchKey) => {
         setIsLoading(true);
-        const newOffset = pageNumber * pageSize;
         axios({
             method: 'GET',
             url: `${import.meta.env.VITE_SERVER_URL}/website/blog-list/`,
             params: {
-                key: searchKey,
-                offset: newOffset,
-                limit: limit
+                key: key,
+                offset: (page-1) * pageSize,
+                limit: (page-1) * pageSize + pageSize,
             },
         })
         .then((response) => {
             setIsLoading(false);
             if (response.status === 200) {
-                setBlogs(blogs.concat(response.data.blogs));
-                setHasMore(response.data.has_more);
+                // setBlogs(blogs.concat(response.data.blogs));
+                setBlogs(response.data.blogs);
                 setCount(response.data.count);
-                setOffset(offset+pageSize);
-                setLimit(limit+pageSize);
             } else {
                 console.log('BLOG LIST FETCH FAILED', response.status);
             }
@@ -99,36 +105,26 @@ const Blog = ({language}) => {
 
     const handleSearch = () => {
         setCount(null);
-        setOffset(0);
-        setLimit(pageSize);
-        setHasMore(true);
+        setPage(1);
         setBlogs([]);
+        fetchBlogs();
     };
 
     const clearSearch = () => {
         setSearchKey("");
-        setCount(null);
-        setOffset(0);
-        setLimit(pageSize);
-        setHasMore(true);
+        setPage(1);
         setBlogs([]);
+        fetchBlogs("");
     };
 
-    const handleFetchBlogs = () => {
-        if (hasMore & !isLoading) {
-            fetchBlogs();
-        }
-    }
-
-    const handleScrollUpdate = (values) => {
-        const { scrollTop, scrollHeight, clientHeight } = values;
-        const pad = 100;
-        const t = ((scrollTop + pad) / (scrollHeight - clientHeight));
-        if (t > 1) handleFetchBlogs();
-    };
 
     return (
         <VBox className="mb-4">
+            <VBox className="mt-5">
+            <ReactWhatsapp number="+8801689607454" /></VBox>
+            <button onClick={handleWhatsAppCall}>
+                Call on WhatsApp
+            </button>
             <Header isMobile={isMobile} language={language}/>
             {
                 isLoading ?
@@ -166,23 +162,31 @@ const Blog = ({language}) => {
                             </VBox> 
                             <VBox align="center">
                                 {
-                                blogs.length === 0 ? (
-                                    <P2>No result.</P2>
-                                ) : (
+                                    blogs.length === 0 ? (
+                                        <P2 className="ml-5">No result.</P2>
+                                    ) : (
                                     blogs.map((blog, index) => (
                                         <Contents
                                             isMobile={isMobile}
-                                            id={blog.id}
+                                            id={blog?.id}
                                             key={index}
-                                            title={blog.title}
-                                            content={blog.content}
-                                            created_at={blog.created_at}
+                                            title={blog?.title}
+                                            content={blog?.content}
+                                            created_at={blog?.created_at}
                                         />
-                                    ))
-                                )
-                                }
+                                    )))}
+                                </VBox>
+                                <VBox justify="center" align="center">
+                                    <Stack spacing={5}>
+                                        <Pagination   
+                                            count={Math.ceil(count / pageSize)}
+                                            page={page} 
+                                            color="primary"
+                                            onChange={handlePageChange}
+                                        />
+                                    </Stack>
+                                </VBox>
                             </VBox>
-                        </VBox> 
                     ):(
                         <HBox style={{ margin:"4% 8%", flexWrap: "nowrap" }}>
                             <Category isMobile={isMobile} style={{ width: "25%" }} /> 
@@ -201,41 +205,32 @@ const Blog = ({language}) => {
                                         </Button>
                                     )}
                                 </HBox>
-                                {/* <Scrollbars
-                                    style={{ height: '100vh', scrollMarginLeft: "200px" }}
-                                    onUpdate={handleScrollUpdate}
-                                    renderThumbVertical={({ style, ...props }) =>
-                                        <div {...props} style={{ ...style, backgroundColor: colors.darkGrey, width: '5px', borderRadius: '3px', opacity: '0.4'}}/>
-                                }>
-                                    {blogs.length ?
-                                        <VBox className="ml-2">
-                                            {
-                                                blogs.map((blog, index) => (
-                                                    <Contents
-                                                        isMobile={isMobile}
-                                                        id={blog.id}
-                                                        key={index}
-                                                        title={blog.title}
-                                                        content={blog.content}
-                                                        created_at={blog.created_at}
-                                                    />
-                                                ))
-                                            }
-                                        </VBox>
-                                    : (
-                                        <VBox className="ml-4">
-                                            <P2>No result.</P2>
-                                        </VBox>
-                                    )}
-                                </Scrollbars> */}
-                                <ReactPaginate
-                                    pageCount={Math.ceil(count / pageSize)}
-                                    pageRangeDisplayed={5}
-                                    marginPagesDisplayed={2}
-                                    onPageChange={handlePageChange}
-                                    containerClassName="pagination"
-                                    activeClassName="active"
-                                />
+                                <VBox>
+                                    {
+                                    blogs.length === 0 ? (
+                                        <P2 className="ml-5">No result.</P2>
+                                    ) : (
+                                    blogs.map((blog, index) => (
+                                        <Contents
+                                            isMobile={isMobile}
+                                            id={blog?.id}
+                                            key={index}
+                                            title={blog?.title}
+                                            content={blog?.content}
+                                            created_at={blog?.created_at}
+                                        />
+                                    )))}
+                                </VBox>
+                                <VBox justify="center" align="center">
+                                    <Stack spacing={5}>
+                                        <Pagination   
+                                            count={Math.ceil(count / pageSize)}
+                                            page={page} 
+                                            color="primary"
+                                            onChange={handlePageChange}
+                                        />
+                                    </Stack>
+                                </VBox>
                             </VBox>
                         </HBox> 
                     )}
