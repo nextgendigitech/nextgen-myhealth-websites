@@ -1,24 +1,24 @@
 export const Links = {
     topbar : {
-        link1 : "https://www.facebook.com/nextgenmyhealthvcp",
-        link2 : "https://www.linkedin.com/company/nextgen-myhealth-vcp/",
-        link3 : "https://www.youtube.com/channel/UCSDFJqW2y9UYs6IMWGK2i9w",
+        link1 : "https://www. facebook. com/nextgenmyhealthvcp",
+        link2 : "https://www. linkedin. com/company/nextgen-myhealth-vcp/",
+        link3 : "https://www. youtube. com/channel/UCSDFJqW2y9UYs6IMWGK2i9w",
     },
     navbar : {
-        link1 : "https://patient.nextgenmyhealth.com/login",
-        link2 : "https://doctor.nextgenmyhealth.com/login",
+        link1 : "https://patient. nextgenmyhealth. com/login",
+        link2 : "https://doctor. nextgenmyhealth. com/login",
     },
     footer : {
-        link1 : "https://nextgendgtech.com/",
+        link1 : "https://nextgendgtech. com/",
     },
     joindoctor : {
-        link1 : "https://docs.google.com/forms/d/e/1FAIpQLSe2oTRWq02VzSy7S5HyZLXbUtGdY1uwZrnmZjM5bEXNPWZMZA/viewform?pli=1",
+        link1 : "https://docs. google. com/forms/d/e/1FAIpQLSe2oTRWq02VzSy7S5HyZLXbUtGdY1uwZrnmZjM5bEXNPWZMZA/viewform?pli=1",
     },
     qrcode : {
-        link1 : "https://play.google.com/store/apps/details?id=com.nextgen_digitech.myhealth_patients&pcampaignid=web_share",
+        link1 : "https://play. google. com/store/apps/details?id=com. nextgen_digitech. myhealth_patients&pcampaignid=web_share",
     },
     aboutus : {
-        link1 : "https://www.youtube.com/embed/NdZ9vPHAy7w",
+        link1 : "https://www. youtube. com/embed/NdZ9vPHAy7w",
     },
     phoneandemail : {
         phone: {
@@ -26,11 +26,11 @@ export const Links = {
             eng: '+8801321119391',
         },
         email: {
-            bang: 'info@nextgenmyhealth.com',
-            eng: 'info@nextgenmyhealth.com',
+            bang: 'info@nextgenmyhealth. com',
+            eng: 'info@nextgenmyhealth. com',
         },
     },
-    doctorapp : "https://patient.nextgenmyhealth.com/doctor/",
+    doctorapp : "https://patient. nextgenmyhealth. com/doctor/",
 }
 
 export const navbarData = {
@@ -144,8 +144,8 @@ export const footerData = {
 
 export const doctorsearchdlgData = {
     head1: {
-        bang: 'বি.এম.ডি.সি:',
-        eng: 'B.M.D.C:',
+        bang: 'বি. এম. ডি. সি:',
+        eng: 'B. M. D. C:',
     },
     head2: {
         bang: 'এ-',
@@ -160,8 +160,8 @@ export const doctorsearchdlgData = {
         eng: 'Experience: '
     },
     pera1: {
-        bang: 'ডাক্তার অনুসন্ধান করুন...',
-        eng: 'Search doctors...',
+        bang: 'ডাক্তার অনুসন্ধান করুন. . .',
+        eng: 'Search doctors. . .',
     },
     pera2: {
         bang: '',
@@ -218,8 +218,8 @@ export const homeData = {
             eng: 'Our Short Introduction',
         },
         para1: {
-            bang: 'নেক্সটজেন মাইহেলথ ভিসিপি, নেক্সটজেন ডিজিটেক লিমিটেড বাংলাদেশের একটি স্বাস্থ্য সেবা প্রদানকারী প্ল্যাটফর্ম। নেক্সটজেন মাইহেলথ ভিসিপি আমেরিকা, ইউরোপ, যুক্তরাজ্য এবং বাংলাদেশের সহস্রাধিক বিএমডিসি নিবন্ধিত বিশেষজ্ঞ চিকিৎসকদের সঙ্গে ঘরে বসে ভিডিও কলের মাধ্যমে পরামর্শ ও স্বাস্থ্যসেবা নেয়া সম্ভব করেছে। প্রযুক্তির নিত্যনতুন উদ্ভাবন ব্যবহার করে স্বাস্থ্যসেবাকে দেশের প্রত্যন্ত অঞ্চল থেকে শহর পর্যন্ত সকলের কাছে পৌঁছে দেয়ার লক্ষ্যে বাংলাদেশে শুরু হয় নেক্সটজেন মাইহেলথ ভিসিপি এর কার্যক্রম।',
-            eng: 'NextGen MyHealth VCP, NextGen DigiTech Ltd. is a healthcare service provider platform in Bangladesh. NextGen MyHealth VCP has made it possible to consult and receive healthcare services through video calls with registered specialist doctors from America, Europe, the United Kingdom, and numerous BMDC registered specialists in Bangladesh. Utilizing cutting-edge technology, NextGen MyHealth VCP aims to reach healthcare services from rural areas to urban areas, commencing in Bangladesh.',
+            bang: 'নেক্সটজেন মাইহেলথ ভিসিপি, নেক্সটজেন ডিজিটেক লিমিটেড এর একটি পণ্য, বাংলাদেশের একটি স্বাস্থ্য সেবা প্রদানকারী প্ল্যাটফর্ম। নেক্সটজেন মাইহেলথ ভিসিপি আমেরিকা, ইউরোপ, যুক্তরাজ্য এবং বাংলাদেশের সহস্রাধিক বিএমডিসি নিবন্ধিত বিশেষজ্ঞ চিকিৎসকদের সঙ্গে ঘরে বসে ভিডিও কলের মাধ্যমে পরামর্শ ও স্বাস্থ্যসেবা নেয়া সম্ভব করেছে। প্রযুক্তির নিত্যনতুন উদ্ভাবন ব্যবহার করে স্বাস্থ্যসেবাকে দেশের প্রত্যন্ত অঞ্চল থেকে শহর পর্যন্ত সকলের কাছে পৌঁছে দেয়ার লক্ষ্যে বাংলাদেশে শুরু হয় নেক্সটজেন মাইহেলথ ভিসিপি এর কার্যক্রম।',
+            eng: 'NextGen MyHealth VCP, a product of NextGen DigiTech Ltd. is a healthcare service provider platform in Bangladesh. NextGen MyHealth VCP has made it possible to consult and receive healthcare services through video calls with registered specialist doctors from America, Europe, the United Kingdom, and numerous BMDC registered specialists in Bangladesh. Utilizing cutting-edge technology, NextGen MyHealth VCP aims to reach healthcare services from rural areas to urban areas, commencing in Bangladesh.',
         },
     },
     WhyUs: {
@@ -367,15 +367,15 @@ export const homeData = {
         },
         para1: {
             bang: 'আমি খুশি যে বাংলাদেশে এখন বিশ্বমানের অনলাইন চিকিৎসার বিকল্প রয়েছে। এটি আমার মতো অনেক রোগীকে চিকিৎসার জন্য বিদেশে যাওয়ার ভারী ব্যয় বহন না করে স্বাভাবিক জীবনযাপন করার সুযোগ দেয়।',
-            eng: "I am glad that we now have world-class online treatment options available in Bangladesh. This gives a chance to many patients like me to lead normal lives without having to incur heavy expenses of going abroad for the same treatment.",
+            eng: "I am glad that we now have world-class online treatment options available in Bangladesh. This gives a chance to many patients like me to lead normal lives without having to incur heavy expenses of going abroad for the same treatment. ",
         },
         para2: {
             bang: 'আমি সত্যিই খুশি যে ডাক্তাররা আমার অবস্থা এবং থেরাপি সম্পর্কে আরও জানার সুযোগ দিয়েছেন যা আমাকে চিকিৎসা করতে সাহায্য করেছিল। পিঠের ব্যথা ছাড়াই আমি আমার দৈনন্দিন জীবনে ফিরে এসেছি। আমি অবশেষে শান্তিতে আছি।',
-            eng: "I am really happy that the doctors gave me an opportunity to learn more about my condition and the therapy which helped me undergo the procedure. I'm back to my routine and with no lingering back pain. I'm finally at peace.",
+            eng: "I am really happy that the doctors gave me an opportunity to learn more about my condition and the therapy which helped me undergo the procedure. I'm back to my routine and with no lingering back pain. I'm finally at peace. ",
         },
         para3: {
             bang: 'নেক্সটজেন মাইহেলথ ভিসিপি চিকিৎসার জন্য সেরা অনলাইন প্ল্যাটফর্ম। আমি তাদের একজন ডাক্তার দ্বারা চিকিৎসা করেছি। ডাক্তার খুব ভাল এবং আমার চিকিৎসা করার সময় অনেক যত্ন নেন। এটা সত্যিই একটি ভাল অভিজ্ঞতা ছিল।',
-            eng: "NextGen MyHealth VCP is the best online platform for medical treatment. I have been treated by one of their doctors. The doctor was very good and took great care of me during my treatment. It was truly a good experience.",
+            eng: "NextGen MyHealth VCP is the best online platform for medical treatment. I have been treated by one of their doctors. The doctor was very good and took great care of me during my treatment. It was truly a good experience. ",
         },
     },
     JoinDoctor: {
@@ -433,7 +433,7 @@ export const aboutusData = {
             eng: 'The Advantages of Using Our Platform',
         },
         pointhead1: {
-            bang: 'ব্যবহারকারী বান্ধব পোর্টাল',
+            bang: 'ব্যবহার বান্ধব পোর্টাল',
             eng: 'User Friendly Portal',
         },
         pointhead2: {
@@ -457,8 +457,8 @@ export const aboutusData = {
             eng: 'Week-Long service',
         },
         pointpera1: {
-            bang: 'রোগী এবং ডাক্তার পক্ষের সকল বয়সের ব্যবহারকারীদের জন্য ব্যবহার করা সহজ।',
-            eng: 'Easy to use for users of all ages, both patients and doctors.',
+            bang: 'ডাক্তার এবং রোগী, সবার জন্য সহপোযোগী ইন্টারফেস।',
+            eng: 'Doctor and patient, a collaborative interface for everyone.',
         },
         pointpera2: {
             bang: 'নেক্সটজেন মাইহেলথ ভিসিপি-তে আছেন দেশ - বিদেশের সকল বিখ্যাত বিশেষজ্ঞ ডাক্তারণ।',
@@ -554,8 +554,8 @@ export const specialtydoctorsData = {
     },
     doctorcard: {
         head1: {
-            bang: 'বি.এম.ডি.সি ',
-            eng: 'B.M.D.C ',
+            bang: 'বি. এম. ডি. সি ',
+            eng: 'B. M. D. C ',
         },
         head2: {
             bang: 'এ-',
@@ -611,8 +611,8 @@ export const specialtyEtoB = {
 export const doctorProfile = {
     banner: {
         head1: {
-            bang: 'বি.এম.ডি.সি: ',
-            eng: 'B.M.D.C: ',
+            bang: 'বি. এম. ডি. সি: ',
+            eng: 'B. M. D. C: ',
         },
         head2: {
             bang: 'এ-',
@@ -819,8 +819,8 @@ export const payment = {
 export const blogData = {
     bloglist: {
         search: {
-            bang: 'শিরোনাম দ্বারা অনুসন্ধান করুন...',
-            eng: 'Search by Title, Content...',
+            bang: 'শিরোনাম দ্বারা অনুসন্ধান করুন. . .',
+            eng: 'Search by Title, Content. . .',
         },
         btn1: {
             bang: 'অনুসন্ধান',
@@ -847,7 +847,7 @@ export const blogData = {
 
 export const termsAndConditionsData = {
     'Terms & Conditions': [
-            'Please read these terms and conditions (“Terms and Conditions“) carefully before using the website and services.These terms & conditions create a contract between you & NextGen MyHealth VCP.If you are under age of 18 please confirm that you have your parents or legal guardian’s permission to use this platform.',
+            'Please read these terms and conditions (“Terms and Conditions“) carefully before using the website and services. These terms & conditions create a contract between you & NextGen MyHealth VCP. If you are under age of 18 please confirm that you have your parents or legal guardian’s permission to use this platform.',
             'The Site reserves the right to amend, modify, add, change, or remove portions of these Terms and Conditions under this Agreement at any time without any prior notification. Changes will be effective once posted on the Site without any notice provided on the Site or by any other means. You shall check these Terms and Conditions regularly for updates. Your continued use of the site once the changes of Terms and Conditions had been made shall be construed as your acceptance of the changed Terms and Conditions. Hence, you shall adhere to the subsequent changes accordingly and agree to be held accountable for non-compliance of any terms as contained here in.'
     ],
     'Introduction': [
@@ -872,7 +872,7 @@ export const termsAndConditionsData = {
             '(vii) Since the internet and device are required to receive the service, sometimes due to device charge or internet problem, the doctor may provide the service earlier or later than the doctor’s scheduled time, which should be considered as system delay by the service recipient.',
     ],
     'Limitation of Liability': [
-            'Under no circumstances, including, but not limited to, negligence, will we or our subsidiaries, parent companies or affiliates be liable for any direct, indirect, incidental, special or consequential damages that result from the use of, or the inability to use, the site, including its materials, products, or services, or third-party materials, products, or services made available through the site, even if we are advised beforehand of the possibility of such damages. (because some states do not allow the exclusion or limitation of certain categories of damages, the above limitation may not apply to you. In such states, our liability and the liability of our subsidiaries, parent companies and affiliates, is limited to the fullest extent permitted by such state law.) You specifically acknowledge and agree that we are not liable for any defamatory, offensive or illegal conduct of any user. If you are dissatisfied with the site, or any materials, products, or services on the site, or with any of the site’s terms and conditions, your sole and exclusive remedy is to discontinue using the site.',
+            'Under no circumstances, including, but not limited to, negligence, will we or our subsidiaries, parent companies or affiliates be liable for any direct, indirect, incidental, special or consequential damages that result from the use of, or the inability to use, the site, including its materials, products, or services, or third-party materials, products, or services made available through the site, even if we are advised beforehand of the possibility of such damages. (because some states do not allow the exclusion or limitation of certain categories of damages, the above limitation may not apply to you. In such states, our liability and the liability of our subsidiaries, parent companies and affiliates, is limited to the fullest extent permitted by such state law. ) You specifically acknowledge and agree that we are not liable for any defamatory, offensive or illegal conduct of any user. If you are dissatisfied with the site, or any materials, products, or services on the site, or with any of the site’s terms and conditions, your sole and exclusive remedy is to discontinue using the site.',
     ],
     "Creation and Maintenance of Member's Account": [
             '(i) Users must be registered on the Sites to access or use the Services (a registered User is also referred to as a “Member” below). One user may only register one account at a time on the Site with the approval of NextGen MyHealth VCP. It reserves the right to cancel or terminate a user’s member account if it has reasons to believe that the user has concurrently registered or is in control of two or more member accounts. Further, NextGen MyHealth VCP reserves the right to reject an user’s application for registration for any reason as NextGen MyHealth VCP deems appropriate.',
@@ -959,8 +959,8 @@ export const refundPolicyData = {
     'Refund and Cancellation': [
         '1. If the doctor is not available for the consultation or the waiting time is more than 60 minutes then customers can cancel the consultation and a refund will be made.',
         '2. Consultation fees will not be refunded in any way after consulting a doctor.',
-        '3. If a Patient cancels a consultation prior to the video call of the Doctor after acceptance by the Doctor of the Patient’s request before the expiry of 60 minutes from the Initiation Request, a 5% fee will be deducted and the remaining fee will be refunded to the Patient. There may be additional charges to make the refund. For example, if the user wants the money to be refunded to bKash, Nagad etc.The transaction fee will be deducted.',
-        '4. For any cancellation and refund please email to: info@nextgenmyhealth.com',
+        '3. If a Patient cancels a consultation prior to the video call of the Doctor after acceptance by the Doctor of the Patient’s request before the expiry of 60 minutes from the Initiation Request, a 5% fee will be deducted and the remaining fee will be refunded to the Patient. There may be additional charges to make the refund. For example, if the user wants the money to be refunded to bKash, Nagad etc. The transaction fee will be deducted.',
+        '4. For any cancellation and refund please email to: info@nextgenmyhealth. com',
         '5. Refund process may take up to 10 working days.'
     ]
 };

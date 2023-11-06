@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 // import ReactQuill from 'react-quill';
 import LinesEllipsis from 'react-lines-ellipsis';
 
-
 import 'react-quill/dist/quill.bubble.css';
 import { HBox, VBox } from "../../../components/Containers";
 import { P2, P3 } from "../../../components/Typography";
@@ -16,7 +15,7 @@ const Image = styled.img`
 `
 
 const HorizontalLine = styled.div`
-    border-bottom: 1px solid ${colors.green};
+    border-bottom: 1px solid ${colors.lightBlue};
     width: 100%;
 `
 
@@ -35,7 +34,7 @@ const ContentCard = ({ title, content, isMobile, id, created_at }) => {
             style={{ textDecoration: 'none' }}
         >
             <VBox>
-                <HBox className={isMobile ? "mt-2" : "my-2"} style={{ width: "100%" }}>
+                <HBox className={isMobile ? "mt-2" : "mt-1 mb-5"} style={{ width: "100%" }}>
                     <Image src={bp} className={isMobile ? "mb-2" : ""} style={{ width: isMobile ? "100%" : "28%" }}/>
                     <VBox className={isMobile ? "" : "ml-2 pl-2"} style={{ width: isMobile ? "100%" : "70%" }}>
                         <P2 className="bold mb-2">{title}</P2>
@@ -58,7 +57,7 @@ const ContentCard = ({ title, content, isMobile, id, created_at }) => {
 const Contents = ({isMobile, id, title, content, created_at}) => {
   return (
     <VBox className={isMobile ? "" : "ml-4"}>
-        <HorizontalLine className="mb-2" />
+        {/* <HorizontalLine className="mb-2" /> */}
         <ContentCard
             isMobile={isMobile}
             id={id}
