@@ -90,7 +90,6 @@ const Blog = ({language}) => {
         .then((response) => {
             setIsLoading(false);
             if (response.status === 200) {
-                // setBlogs(blogs.concat(response.data.blogs));
                 setBlogs(response.data.blogs);
                 setCount(response.data.count);
             } else {
@@ -173,6 +172,7 @@ const Blog = ({language}) => {
                                             title={blog?.title}
                                             content={blog?.content}
                                             created_at={blog?.created_at}
+                                            cover_image={blog?.cover_image}
                                         />
                                     )))}
                                 </VBox>
@@ -218,6 +218,7 @@ const Blog = ({language}) => {
                                             title={blog?.title}
                                             content={blog?.content}
                                             created_at={blog?.created_at}
+                                            cover_image={blog?.cover_image}
                                         />
                                     )))}
                                 </VBox>

@@ -60,7 +60,7 @@ const Banner = ({id, image, name, bmdc, doctor_type, qualification, specialty, e
                             style={{ width: isMobile ? "100px" : "160px" }} 
                             src={`${import.meta.env.VITE_SERVER_URL}${image}`} 
                             alt="image"
-                            />
+                    />
                     <P3 className="bold"
                         style={{ marginTop: isMobile ? "-10px" : "" }}>
                             {doctorProfile.banner.head1[language]} {doctor_type===("MBBS") ? doctorProfile.banner.head2[language] : ""}{bmdc}

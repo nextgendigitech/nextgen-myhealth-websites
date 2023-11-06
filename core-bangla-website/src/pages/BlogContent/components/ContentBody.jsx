@@ -1,3 +1,4 @@
+import styled from "styled-components";
 import { BsFacebook } from "react-icons/bs";
 import { AiFillMail } from "react-icons/ai";
 import ReactQuill from 'react-quill';
@@ -11,6 +12,10 @@ import { H3, P2, P3 } from "../../../components/Typography";
 import colors from "../../../config/colors";
 import 'react-quill/dist/quill.bubble.css';
 import { blogData } from "../../../data";
+
+
+const Image = styled.img`
+`
 
 const handleEmailShare = () => {
     const subject = "Check out this page!";
@@ -27,7 +32,7 @@ const handleEmailShare = () => {
 };
 
 
-const ContentBody = ({id, title, content, isMobile, language}) => {
+const ContentBody = ({id, title, content, isMobile, language, cover_image}) => {
     const pageUrl = window.location.href;
 
     const quillStyle = {
@@ -50,13 +55,18 @@ const ContentBody = ({id, title, content, isMobile, language}) => {
     return (
         <VBox>
             <H3 
+                justify="center" align="center" 
                 className={isMobile ? "bold my-2" : "bold mt-5 mb-3"} 
-                justify="center" 
-                align="center" 
                 style={{ color: colors.green }}
             >
                 {title}
             </H3>
+            <VBox justify="center" align="center" className="mb-2">
+                <Image
+                    src={`${import.meta.env.VITE_SERVER_URL}${cover_image}`} 
+                    style={{height: '200px', width: 'auto'}}
+                />
+            </VBox>
             <ReactQuill value={content} readOnly={true} theme={'bubble'} style={quillStyle} />
             <HBox className={isMobile ? "my-2" : "my-4"}>
                 <P2 className="mr-2">{blogData.blogcontentbody.share[language]}</P2>
