@@ -15,7 +15,6 @@ const BlogContent = ({language}) => {
     const [isLoading, setIsLoading] = useState(false);
     const [blog, setBlog] = useState({});
     const [isMobile, setIsMobile] = useState(false);
-    const [author, setAuthor] = useState({})
 
     useEffect(() => {
         const setResponsiveness = () => {
@@ -56,8 +55,7 @@ const BlogContent = ({language}) => {
         .then((response) => {
             setIsLoading(false);
             if (response.status === 200) {
-                setBlog(response.data.blog);
-                setAuthor(response.data.author)
+                setBlog(response.data);
             } else {
                 console.log("BLOG CONTENT FETCH FAILED", response.status);
             }
@@ -67,7 +65,6 @@ const BlogContent = ({language}) => {
             console.log("BLOG CONTENT FETCH ERROR", error);
         })
     }
-
 
     return (  
         <VBox className={isMobile ? "mx-2 mt-1" : "mx-8 px-6"}>
@@ -83,9 +80,9 @@ const BlogContent = ({language}) => {
             <AboutAuthor 
                 isMobile={isMobile}
                 created_at={blog?.created_at}
-                author_name={author?.name}
-                author_details={author?.details}
-                author_image={author?.image}
+                author_name={blog?.author?.name}
+                author_details={blog?.author?.details}
+                author_image={blog?.author?.image}
             />
             <ReadMore isMobile={isMobile}/>
         </VBox>

@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { connect } from 'react-redux';
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
-import ReactWhatsapp from 'react-whatsapp';
+// import ReactWhatsapp from 'react-whatsapp';
 
 import colors from "../../config/colors";
 import { HBox, VBox } from "../../components/Containers";
@@ -33,13 +33,13 @@ const SearchBar = styled.input`
 
 const Blog = ({language}) => {
 
-    const phoneNumber = '+8801689607454';
+    // const phoneNumber = '+8801689607454';
 
-    const handleWhatsAppCall = () => {
-        window.open(`https://wa.me/${phoneNumber}`, '_blank');
-    };
+    // const handleWhatsAppCall = () => {
+    //     window.open(`https://wa.me/${phoneNumber}`, '_blank');
+    // };
 
-    const pageSize = 2;
+    const pageSize = 3;
     const [blogs, setBlogs] = useState([]);
     const [searchKey, setSearchKey] = useState("");
     const [isLoading, setIsLoading] = useState(false);
@@ -119,11 +119,11 @@ const Blog = ({language}) => {
 
     return (
         <VBox className="mb-4">
-            <VBox className="mt-5">
+            {/* <VBox className="mt-5">
             <ReactWhatsapp number="+8801689607454" /></VBox>
             <button onClick={handleWhatsAppCall}>
                 Call on WhatsApp
-            </button>
+            </button> */}
             <Header isMobile={isMobile} language={language}/>
             {
                 isLoading ?

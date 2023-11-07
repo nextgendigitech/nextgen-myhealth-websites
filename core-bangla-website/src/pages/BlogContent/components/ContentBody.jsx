@@ -4,7 +4,7 @@ import { AiFillMail } from "react-icons/ai";
 import ReactQuill from 'react-quill';
 import { FacebookShareButton } from "react-share";
 import { Tooltip } from '@mui/material';
-import { jsPDF } from "jspdf";
+// import { jsPDF } from "jspdf";
 
 import 'react-quill/dist/quill.snow.css';
 import { HBox, VBox } from "../../../components/Containers";
@@ -13,9 +13,6 @@ import colors from "../../../config/colors";
 import 'react-quill/dist/quill.bubble.css';
 import { blogData } from "../../../data";
 
-
-const Image = styled.img`
-`
 
 const handleEmailShare = () => {
     const subject = "Check out this page!";
@@ -62,10 +59,12 @@ const ContentBody = ({id, title, content, isMobile, language, cover_image}) => {
                 {title}
             </H3>
             <VBox justify="center" align="center" className="mb-2">
-                <Image
-                    src={`${import.meta.env.VITE_SERVER_URL}${cover_image}`} 
-                    style={{height: '200px', width: 'auto'}}
-                />
+                {cover_image?
+                    <img
+                        src={`${import.meta.env.VITE_SERVER_URL}${cover_image}`} 
+                        style={{height: '200px', width: 'auto'}}
+                    /> : <></>
+                }
             </VBox>
             <ReactQuill value={content} readOnly={true} theme={'bubble'} style={quillStyle} />
             <HBox className={isMobile ? "my-2" : "my-4"}>
