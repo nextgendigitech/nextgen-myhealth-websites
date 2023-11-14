@@ -29,7 +29,7 @@ const handleEmailShare = () => {
 };
 
 
-const ContentBody = ({id, title, content, isMobile, language, cover_image}) => {
+const ContentBody = ({id, title, content, isMobile, language, cover_image, categories}) => {
     const pageUrl = window.location.href;
 
     const quillStyle = {
@@ -67,6 +67,10 @@ const ContentBody = ({id, title, content, isMobile, language, cover_image}) => {
                 }
             </VBox>
             <ReactQuill value={content} readOnly={true} theme={'bubble'} style={quillStyle} />
+            <HBox>
+                <P2>Category: </P2>
+                {/* <P2>{category}</P2> */}
+            </HBox>
             <HBox className={isMobile ? "my-2" : "my-4"}>
                 <P2 className="mr-2">{blogData.blogcontentbody.share[language]}</P2>
                 <Tooltip title='Facebook' arrow>

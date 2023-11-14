@@ -13,7 +13,6 @@ const HorizontalLine = styled.div`
 `
 
 const AboutAuthor = ({isMobile, created_at, author_image, author_name, author_details}) => {
-    console.log(author_image? "yes" : "no")
     return (
         <VBox>
             <HorizontalLine/>

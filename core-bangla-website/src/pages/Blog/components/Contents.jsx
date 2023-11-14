@@ -12,7 +12,6 @@ const ContentCard = ({ title, content, isMobile, id, created_at, cover_image }) 
     const editedContent = (content, maxLines) => {
         const element = document.createElement("div");
         element.innerHTML = content;
-        console.log(element.innerHTML)
         const plainText = element.textContent;
         const truncatedText = plainText.split('\n').slice(0, maxLines).join('\n');
         return truncatedText;

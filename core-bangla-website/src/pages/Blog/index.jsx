@@ -4,7 +4,6 @@ import styled from "styled-components";
 import { connect } from 'react-redux';
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
-// import ReactWhatsapp from 'react-whatsapp';
 
 import colors from "../../config/colors";
 import { HBox, VBox } from "../../components/Containers";
@@ -31,16 +30,16 @@ const SearchBar = styled.input`
     }
 `
 
+const VerticalLine = styled.div`
+    border-left: 1px solid ${colors.green};
+    margin-left: 8px;
+`
+
 const Blog = ({language}) => {
-
-    // const phoneNumber = '+8801689607454';
-
-    // const handleWhatsAppCall = () => {
-    //     window.open(`https://wa.me/${phoneNumber}`, '_blank');
-    // };
 
     const pageSize = 3;
     const [blogs, setBlogs] = useState([]);
+    const [blogCategory, setBlogCategory] = useState([]);
     const [searchKey, setSearchKey] = useState("");
     const [isLoading, setIsLoading] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
@@ -72,6 +71,10 @@ const Blog = ({language}) => {
         fetchBlogs();
     }, [page, pageSize]);
 
+    useEffect(() => {
+        fetchBlogCategory();
+    }, [page]);
+
     const handlePageChange = (event, newPage) => {
         setPage(newPage);        
     }
@@ -102,6 +105,30 @@ const Blog = ({language}) => {
         })
     }
 
+    const fetchBlogCategory = () => {
+        setIsLoading(true);
+        axios({
+            method: 'GET',
+            url: `${import.meta.env.VITE_SERVER_URL}/website/blog-category/`,
+            params: {
+                offset: 0,
+                limit: 1000
+            },
+        })
+        .then((response) => {
+            setIsLoading(false);
+            if (response.status === 200) {
+                setBlogCategory(response.data);
+            } else {
+                console.log('BLOG CATEGORY LIST FETCH FAILED', response.status);
+            }
+        })
+        .catch((error) => {
+            setIsLoading(false);
+            console.log('BLOG CATEGORY LIST FETCH ERROR', error);
+        })
+    }
+
     const handleSearch = () => {
         setCount(null);
         setPage(1);
@@ -116,14 +143,8 @@ const Blog = ({language}) => {
         fetchBlogs("");
     };
 
-
     return (
         <VBox className="mb-4">
-            {/* <VBox className="mt-5">
-            <ReactWhatsapp number="+8801689607454" /></VBox>
-            <button onClick={handleWhatsAppCall}>
-                Call on WhatsApp
-            </button> */}
             <Header isMobile={isMobile} language={language}/>
             {
                 isLoading ?
@@ -140,8 +161,8 @@ const Blog = ({language}) => {
                 <VBox className={isMobile ? "mb-2" : "mb-4"}>
                     {isMobile ? (
                         <VBox style={{ margin: "4% 4%", flexWrap: "nowrap" }}>
-                            <Category isMobile={isMobile} />
-                            <VBox justify="center" className="mb-3" style={{ position: 'fixed' }}>
+                            <Category isMobile={isMobile} data={blogCategory} />
+                            <VBox justify="center" className="mb-3">
                                 <SearchBar
                                     className='pl-1'
                                     value={searchKey}
@@ -189,7 +210,18 @@ const Blog = ({language}) => {
                             </VBox>
                     ):(
                         <HBox style={{ margin:"4% 8%", flexWrap: "nowrap" }}>
-                            <Category isMobile={isMobile} style={{ width: "25%" }} /> 
+                            {
+                            blogCategory.length === 0 ? (
+                                <P2 className="ml-5">No category.</P2>
+                            ) : (
+                                    <Category 
+                                        isMobile={isMobile} 
+                                        style={{ width: "25%" }}
+                                        data={blogCategory}
+                                    />
+                                ) 
+                            }
+                            <VerticalLine/> 
                             <VBox style={{ width: "100%" }}>
                                 <HBox align="center" className="ml-5 mb-6 mt-2">
                                     <SearchBar
