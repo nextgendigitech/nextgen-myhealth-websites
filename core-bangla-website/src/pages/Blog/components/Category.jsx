@@ -36,10 +36,10 @@ const Category = ({isMobile, data}) => {
                         <HBox>
                             {data.map((categorydata, index) => (
                                 <Chip style={{ justifyContent: "center", alignContent: "center" }}>
-                                    <P2 className="bold px-1 mr-1 mb-3" 
+                                    <P3 className="bold px-1 mr-1 mb-3" 
                                         color="white" 
                                         style={{ backgroundColor: colors.green, borderRadius: "5px" }} 
-                                    >{categorydata.name}</P2>
+                                    >{categorydata.name}</P3>
                                 </Chip>
                             ))} 
                         </HBox>

@@ -12,7 +12,15 @@ import { H3, P2, P3 } from "../../../components/Typography";
 import colors from "../../../config/colors";
 import 'react-quill/dist/quill.bubble.css';
 import { blogData } from "../../../data";
+import { Category, Person2Rounded } from "@mui/icons-material";
 
+
+const Chip = styled(HBox)`
+    color: ${colors.white};
+    width: fit-content;
+    padding-left: 3px; 
+    padding-right: 3px;
+`
 
 const handleEmailShare = () => {
     const subject = "Check out this page!";
@@ -29,7 +37,7 @@ const handleEmailShare = () => {
 };
 
 
-const ContentBody = ({id, title, content, isMobile, language, cover_image, categories}) => {
+const ContentBody = ({id, title, content, isMobile, language, cover_image, blog_category}) => {
     const pageUrl = window.location.href;
 
     const quillStyle = {
@@ -67,9 +75,23 @@ const ContentBody = ({id, title, content, isMobile, language, cover_image, categ
                 }
             </VBox>
             <ReactQuill value={content} readOnly={true} theme={'bubble'} style={quillStyle} />
-            <HBox>
-                <P2>Category: </P2>
-                {/* <P2>{category}</P2> */}
+            <HBox className={isMobile ? "mt-2" : "mt-4"}>
+                { blog_category.length != 0 ? (
+                <>
+                    <P2 className="mr-1">Category: </P2>
+                    <Chip className={isMobile ? "mb-1" : "mb-2"} style={{ justifyContent: isMobile ? "center" : "", 
+                                    alignContent: isMobile ? "center" : "" }}>
+                        {blog_category.map((cat, index) => (
+                            <P2 className="bold px-1 mr-1 mb-1" 
+                                color="white" 
+                                style={{ backgroundColor: colors.blue, borderRadius: "5px" }} 
+                                key={index}
+                            >
+                                {cat?.name}
+                            </P2>
+                        ))}
+                    </Chip>
+                </>) : <></> }
             </HBox>
             <HBox className={isMobile ? "my-2" : "my-4"}>
                 <P2 className="mr-2">{blogData.blogcontentbody.share[language]}</P2>

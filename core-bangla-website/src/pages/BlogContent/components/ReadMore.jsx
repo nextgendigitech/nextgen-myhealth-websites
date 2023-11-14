@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 import bp from "../../../assets/images/blood_pressure.png";
 import { HBox, VBox } from "../../../components/Containers";
@@ -14,7 +16,67 @@ const Article = ({isMobile, image, title}) => {
     )
 }
 
-const ReadMore = ({isMobile}) => {
+const ReadMore = ({isMobile, blog_category}) => {
+
+    const [blogs, setBlogs] = useState([]);
+    const [blogCategory, setBlogCategory] = useState([]);
+    const [searchKey, setSearchKey] = useState("");
+    const [isLoading, setIsLoading] = useState(false);
+    const [selectedCategory, setSelectedCategory] = useState(null);
+
+
+    useEffect(() => {
+        fetchBlogs();
+    }, [1]);
+
+    const fetchBlogs = (key=selectedCategory) => {
+        setIsLoading(true);
+        axios({
+            method: 'GET',
+            url: `${import.meta.env.VITE_SERVER_URL}/website/blog-list/`,
+            params: {
+                key: key,
+            },
+        })
+        .then((response) => {
+            setIsLoading(false);
+            if (response.status === 200) {
+                setBlogs(response.data.blogs);
+            } else {
+                console.log('BLOG LIST FETCH FAILED', response.status);
+            }
+        })
+        .catch((error) => {
+            setIsLoading(false);
+            console.log('BLOG LIST FETCH ERROR', error);
+        })
+    }
+
+    const fetchBlogCategory = () => {
+        setIsLoading(true);
+        axios({
+            method: 'GET',
+            url: `${import.meta.env.VITE_SERVER_URL}/website/blog-category/`,
+            params: {
+                offset: 0,
+                limit: 1000
+            },
+        })
+        .then((response) => {
+            setIsLoading(false);
+            if (response.status === 200) {
+                setBlogCategory(response.data);
+            } else {
+                console.log('BLOG CATEGORY LIST FETCH FAILED', response.status);
+            }
+        })
+        .catch((error) => {
+            setIsLoading(false);
+            console.log('BLOG CATEGORY LIST FETCH ERROR', error);
+        })
+    }
+
+
     return (
         <VBox className={isMobile ? "mt-3 pb-3" : "mt-5 pb-8"}>
             <P2>Read More...</P2>

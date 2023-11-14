@@ -65,7 +65,7 @@ const BlogContent = ({language}) => {
             console.log("BLOG CONTENT FETCH ERROR", error);
         })
     }
-console.log(blog.category)
+
     return (  
         <VBox className={isMobile ? "mx-2 mt-1" : "mx-8 px-6"}>
             <ContentBody 
@@ -76,6 +76,7 @@ console.log(blog.category)
                 content={blog?.content}
                 created_at={blog?.created_at}
                 cover_image={blog?.cover_image}
+                blog_category={blog?.category?.length ? blog.category : ""}
             />
             <AboutAuthor 
                 isMobile={isMobile}
@@ -84,7 +85,10 @@ console.log(blog.category)
                 author_details={blog?.author?.details}
                 author_image={blog?.author?.image}
             />
-            <ReadMore isMobile={isMobile}/>
+            <ReadMore 
+                isMobile={isMobile}
+                blog_category={blog?.category?.length ? blog.category : ""}
+            />
         </VBox>
     )
 }

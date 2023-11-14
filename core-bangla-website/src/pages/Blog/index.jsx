@@ -45,6 +45,7 @@ const Blog = ({language}) => {
     const [isMobile, setIsMobile] = useState(false);
     const [count, setCount] = useState(null);
     const [page, setPage] = useState(1);
+    const [selectedCategory, setSelectedCategory] = useState(null);
 
     useEffect(() => {
         const setResponsiveness = () => {
