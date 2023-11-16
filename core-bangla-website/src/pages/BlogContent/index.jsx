@@ -39,7 +39,8 @@ const BlogContent = ({language}) => {
     useEffect(() => {
         setIsLoading(true);
             fetchBlog();
-    }, []);
+    }, [id]);
+
 
     const fetchBlog = () => {
         setIsLoading(true);
@@ -71,7 +72,7 @@ const BlogContent = ({language}) => {
             <ContentBody 
                 language={language}
                 isMobile={isMobile} 
-                id={blog?.id}
+                id={id}
                 title={blog?.title}
                 content={blog?.content}
                 created_at={blog?.created_at}
@@ -87,7 +88,7 @@ const BlogContent = ({language}) => {
             />
             <ReadMore 
                 isMobile={isMobile}
-                blog_category={blog?.category?.length ? blog.category : ""}
+                blog_id={id}
             />
         </VBox>
     )

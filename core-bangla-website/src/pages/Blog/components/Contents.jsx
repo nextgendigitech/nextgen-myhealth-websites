@@ -7,7 +7,7 @@ import { P2, P3 } from "../../../components/Typography";
 import no_image from '../../../assets/images/no-image.png';
 
 
-const ContentCard = ({ title, content, isMobile, id, created_at, cover_image }) => {
+const ContentCard = ({ title, content, isMobile, id, cover_image }) => {
 
     const editedContent = (content, maxLines) => {
         const element = document.createElement("div");
@@ -34,7 +34,7 @@ const ContentCard = ({ title, content, isMobile, id, created_at, cover_image }) 
                         : 
                         <img 
                             src={no_image} 
-                            className={isMobile ? "mb-2" : ""}
+                            className={isMobile ? "mb-2" : "mr-5"}
                             style={{ width: isMobile ? "50%" : "20%" }}
                         /> 
                     }
@@ -52,7 +52,6 @@ const ContentCard = ({ title, content, isMobile, id, created_at, cover_image }) 
                                 style={{ color: 'black' }}
                             /> 
                         </P3>
-                        {/* <P3>{created_at}</P3> */}
                     </VBox>
                 </HBox>
             </VBox>
@@ -60,7 +59,7 @@ const ContentCard = ({ title, content, isMobile, id, created_at, cover_image }) 
     );
 }
 
-const Contents = ({isMobile, id, title, content, created_at, cover_image}) => {
+const Contents = ({isMobile, id, title, content, cover_image}) => {
   return (
     <VBox className={isMobile ? "" : "ml-4"}>
         <ContentCard
@@ -68,7 +67,6 @@ const Contents = ({isMobile, id, title, content, created_at, cover_image}) => {
             id={id}
             title={title}
             content={content}
-            created_at={created_at}
             cover_image={cover_image}
         />
     </VBox>
