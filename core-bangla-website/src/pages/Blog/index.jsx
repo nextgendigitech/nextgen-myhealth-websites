@@ -39,13 +39,12 @@ const Blog = ({language}) => {
 
     const pageSize = 3;
     const [blogs, setBlogs] = useState([]);
-    const [blogCategory, setBlogCategory] = useState([]);
     const [searchKey, setSearchKey] = useState("");
     const [isLoading, setIsLoading] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
     const [count, setCount] = useState(null);
     const [page, setPage] = useState(1);
-    const [selectedCategory, setSelectedCategory] = useState(null);
+    const [selectedCategory, setSelectedCategory] = useState("");
 
     useEffect(() => {
         const setResponsiveness = () => {
@@ -69,24 +68,21 @@ const Blog = ({language}) => {
     });
 
     useEffect(() => {
-        fetchBlogs();
+        fetchBlogs(searchKey, selectedCategory);
     }, [page, pageSize]);
-
-    useEffect(() => {
-        fetchBlogCategory();
-    }, [page]);
 
     const handlePageChange = (event, newPage) => {
         setPage(newPage);        
     }
 
-    const fetchBlogs = (key=searchKey) => {
+    const fetchBlogs = (key, categoryKey) => {
         setIsLoading(true);
         axios({
             method: 'GET',
             url: `${import.meta.env.VITE_SERVER_URL}/website/blog-list/`,
             params: {
                 key: key,
+                categoryKey: categoryKey,
                 offset: (page-1) * pageSize,
                 limit: (page-1) * pageSize + pageSize,
             },
@@ -106,42 +102,24 @@ const Blog = ({language}) => {
         })
     }
 
-    const fetchBlogCategory = () => {
-        setIsLoading(true);
-        axios({
-            method: 'GET',
-            url: `${import.meta.env.VITE_SERVER_URL}/website/blog-category/`,
-            params: {
-                offset: 0,
-                limit: 1000
-            },
-        })
-        .then((response) => {
-            setIsLoading(false);
-            if (response.status === 200) {
-                setBlogCategory(response.data);
-            } else {
-                console.log('BLOG CATEGORY LIST FETCH FAILED', response.status);
-            }
-        })
-        .catch((error) => {
-            setIsLoading(false);
-            console.log('BLOG CATEGORY LIST FETCH ERROR', error);
-        })
-    }
-
-    const handleSearch = () => {
+    const handleSearch = (key=searchKey, categoryKey=selectedCategory) => {
         setCount(null);
         setPage(1);
         setBlogs([]);
-        fetchBlogs();
+        fetchBlogs(key, categoryKey);
     };
 
     const clearSearch = () => {
         setSearchKey("");
+        setSelectedCategory("");
         setPage(1);
         setBlogs([]);
-        fetchBlogs("");
+        fetchBlogs("", "");
+    };
+
+    const handleCategoryData = (selectedCategory) => {
+        setSelectedCategory(selectedCategory.name);
+        handleSearch("", selectedCategory.name);
     };
 
     return (
@@ -162,7 +140,11 @@ const Blog = ({language}) => {
                 <VBox className={isMobile ? "mb-2" : "mb-4"}>
                     {isMobile ? (
                         <VBox style={{ margin: "4% 4%", flexWrap: "nowrap" }}>
-                            <Category isMobile={isMobile} data={blogCategory} />
+                            <Category 
+                                isMobile={isMobile} 
+                                clear={clearSearch}
+                                selectedCategory={handleCategoryData}
+                            />
                             <VBox justify="center" className="mb-3">
                                 <SearchBar
                                     className='pl-1'
@@ -171,7 +153,7 @@ const Blog = ({language}) => {
                                     placeholder={blogData.bloglist.search[language]}
                                 />
                                 <HBox className="mt-2" justify="center">
-                                    <Button size='sm' className="mx-2" cursor="pointer" onClick={handleSearch}>
+                                    <Button size='sm' className="mx-2" cursor="pointer" onClick={() => handleSearch()}>
                                         {blogData.bloglist.btn1[language]}
                                     </Button>
                                     {searchKey && (
@@ -198,7 +180,7 @@ const Blog = ({language}) => {
                                         />
                                     )))}
                                 </VBox>
-                                <VBox justify="center" align="center">
+                                <VBox justify="center" align="center" className="mt-6">
                                     <Stack spacing={5}>
                                         <Pagination   
                                             count={Math.ceil(count / pageSize)}
@@ -211,17 +193,12 @@ const Blog = ({language}) => {
                             </VBox>
                     ):(
                         <HBox style={{ margin:"4% 8%", flexWrap: "nowrap" }}>
-                            {
-                            blogCategory.length === 0 ? (
-                                <P2 className="ml-5">No category.</P2>
-                            ) : (
-                                    <Category 
-                                        isMobile={isMobile} 
-                                        style={{ width: "25%" }}
-                                        data={blogCategory}
-                                    />
-                                ) 
-                            }
+                            <Category 
+                                isMobile={isMobile} 
+                                style={{ width: "25%" }}
+                                clear={clearSearch}
+                                selectedCategory={handleCategoryData}
+                            />
                             <VerticalLine/> 
                             <VBox style={{ width: "100%" }}>
                                 <HBox align="center" className="ml-5 mb-6 mt-2">
@@ -231,7 +208,7 @@ const Blog = ({language}) => {
                                         onChange={(e) => setSearchKey(e.target.value)}
                                         placeholder={blogData.bloglist.search[language]}
                                     />
-                                    <Button onClick={handleSearch} cursor="pointer">{blogData.bloglist.btn1[language]}</Button>
+                                    <Button onClick={() => handleSearch()} cursor="pointer">{blogData.bloglist.btn1[language]}</Button>
                                     {searchKey && (
                                         <Button className="ml-1" color='second' cursor="pointer" onClick={clearSearch}>
                                             {blogData.bloglist.btn2[language]}
