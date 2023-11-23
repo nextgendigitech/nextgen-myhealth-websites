@@ -46,6 +46,10 @@ export const navbarData = {
         bang: 'বিশেষজ্ঞ ডাক্তার',
         eng: 'Specialties'
     },
+    head4: {
+        bang: 'ব্লগ',
+        eng: 'Blog'
+    },
     btn1: {
         bang: 'পেশেন্ট পোর্টাল',
         eng: 'Patient Portal'

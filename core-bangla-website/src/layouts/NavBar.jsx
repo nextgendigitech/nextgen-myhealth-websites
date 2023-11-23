@@ -140,6 +140,13 @@ const NavBar = ({ language }) => {
                                         </SNavLink>
                                     </ListItemText>
                                 </ListItem>
+                                <ListItem>
+                                    <ListItemText>
+                                        <SNavLink to='/blog' onClick={handleClickMenuItem}>
+                                            <P1>{navbarData.head4[language]}</P1>
+                                        </SNavLink>
+                                    </ListItemText>
+                                </ListItem>
                             </List>
                         </Drawer>
                     </>
@@ -149,14 +156,17 @@ const NavBar = ({ language }) => {
                             <SNavLink to='/'>
                                 {navbarData.head1[language]}
                             </SNavLink>
-                            <SNavLink className='mx-4' to='/about-us'>
+                            <SNavLink className='ml-4' to='/about-us'>
                                 {navbarData.head2[language]}
                             </SNavLink>
-                            <SNavLink to='/specialties'>
+                            <SNavLink className='ml-4' to='/specialties'>
                                 {navbarData.head3[language]}
                             </SNavLink>
+                            <SNavLink className='ml-4' to='/blog'>
+                                {navbarData.head4[language]}
+                            </SNavLink>
                         </HBox>
-                        <HBox className='ml-6' style={{flexWrap: 'nowrap'}}>
+                        <HBox className='ml-5' style={{flexWrap: 'nowrap'}}>
                             <SLink to='https://patient.nextgenmyhealth.com/login' target='_blank'>
                                 <Button color='first' elevated>
                                     <P2 className='bold' color='white' style={{flexShrink: '0'}}>

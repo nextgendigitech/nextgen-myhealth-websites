@@ -4,11 +4,9 @@ import LinesEllipsis from 'react-lines-ellipsis';
 import 'react-quill/dist/quill.bubble.css';
 import { HBox, VBox } from "../../../components/Containers";
 import { P2, P3 } from "../../../components/Typography";
-import no_image from '../../../assets/images/no-image.png';
+import noImage from '../../../assets/images/no-image.png';
 
-
-const ContentCard = ({ title, content, isMobile, id, cover_image }) => {
-
+const ContentCard = ({ title, content, isMobile, id, coverImage }) => {
     const editedContent = (content, maxLines) => {
         const element = document.createElement("div");
         element.innerHTML = content;
@@ -25,15 +23,15 @@ const ContentCard = ({ title, content, isMobile, id, cover_image }) => {
         >
             <VBox>
                 <HBox className={isMobile ? "mt-2" : "mt-1 mb-5"} style={{ width: "100%" }}>
-                    {cover_image?
+                    {coverImage?
                         <img 
-                            src={`${import.meta.env.VITE_SERVER_URL}${cover_image}`}  
+                            src={`${import.meta.env.VITE_SERVER_URL}${coverImage}`}  
                             className={isMobile ? "mb-2" : ""} 
                             style={{ width: isMobile ? "50%" : "25%" }}
                         /> 
                         : 
                         <img 
-                            src={no_image} 
+                            src={noImage} 
                             className={isMobile ? "mb-2" : "mr-5"}
                             style={{ width: isMobile ? "50%" : "20%" }}
                         /> 
@@ -59,7 +57,7 @@ const ContentCard = ({ title, content, isMobile, id, cover_image }) => {
     );
 }
 
-const Contents = ({isMobile, id, title, content, cover_image}) => {
+const Contents = ({isMobile, id, title, content, coverImage}) => {
   return (
     <VBox className={isMobile ? "" : "ml-4"}>
         <ContentCard
@@ -67,10 +65,10 @@ const Contents = ({isMobile, id, title, content, cover_image}) => {
             id={id}
             title={title}
             content={content}
-            cover_image={cover_image}
+            coverImage={coverImage}
         />
     </VBox>
   )
 }
 
-export default Contents
+export default Contents;

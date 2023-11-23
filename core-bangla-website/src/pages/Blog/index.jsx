@@ -36,7 +36,6 @@ const VerticalLine = styled.div`
 `
 
 const Blog = ({language}) => {
-
     const pageSize = 3;
     const [blogs, setBlogs] = useState([]);
     const [searchKey, setSearchKey] = useState("");
@@ -68,21 +67,21 @@ const Blog = ({language}) => {
     });
 
     useEffect(() => {
-        fetchBlogs(searchKey, selectedCategory);
-    }, [page, pageSize]);
+        fetchBlogs();
+    }, [page, pageSize, selectedCategory]);
 
     const handlePageChange = (event, newPage) => {
         setPage(newPage);        
     }
 
-    const fetchBlogs = (key, categoryKey) => {
+    const fetchBlogs = (key=searchKey) => {
         setIsLoading(true);
         axios({
             method: 'GET',
             url: `${import.meta.env.VITE_SERVER_URL}/website/blog-list/`,
             params: {
                 key: key,
-                categoryKey: categoryKey,
+                categoryKey: selectedCategory,
                 offset: (page-1) * pageSize,
                 limit: (page-1) * pageSize + pageSize,
             },
@@ -102,24 +101,19 @@ const Blog = ({language}) => {
         })
     }
 
-    const handleSearch = (key=searchKey, categoryKey=selectedCategory) => {
+    const handleSearch = () => {
         setCount(null);
         setPage(1);
         setBlogs([]);
-        fetchBlogs(key, categoryKey);
+        setSelectedCategory("");
+        fetchBlogs();
     };
 
     const clearSearch = () => {
         setSearchKey("");
-        setSelectedCategory("");
         setPage(1);
         setBlogs([]);
-        fetchBlogs("", "");
-    };
-
-    const handleCategoryData = (selectedCategory) => {
-        setSelectedCategory(selectedCategory.name);
-        handleSearch("", selectedCategory.name);
+        fetchBlogs("");
     };
 
     return (
@@ -141,9 +135,9 @@ const Blog = ({language}) => {
                     {isMobile ? (
                         <VBox style={{ margin: "4% 4%", flexWrap: "nowrap" }}>
                             <Category 
-                                isMobile={isMobile} 
-                                clear={clearSearch}
-                                selectedCategory={handleCategoryData}
+                                isMobile={isMobile}
+                                selectedCategory={selectedCategory}
+                                setSelectedCategory={setSelectedCategory}
                             />
                             <VBox justify="center" className="mb-3">
                                 <SearchBar
@@ -166,7 +160,7 @@ const Blog = ({language}) => {
                             <VBox align="center">
                                 {
                                     blogs.length === 0 ? (
-                                        <P2 className="ml-5">No result.</P2>
+                                        <P2 className="ml-5">No blogs found.</P2>
                                     ) : (
                                     blogs.map((blog, index) => (
                                         <Contents
@@ -175,8 +169,8 @@ const Blog = ({language}) => {
                                             key={index}
                                             title={blog?.title}
                                             content={blog?.content}
-                                            created_at={blog?.created_at}
-                                            cover_image={blog?.cover_image}
+                                            createdAt={blog?.created_at}
+                                            coverImage={blog?.cover_image}
                                         />
                                     )))}
                                 </VBox>
@@ -196,8 +190,8 @@ const Blog = ({language}) => {
                             <Category 
                                 isMobile={isMobile} 
                                 style={{ width: "25%" }}
-                                clear={clearSearch}
-                                selectedCategory={handleCategoryData}
+                                selectedCategory={selectedCategory}
+                                setSelectedCategory={setSelectedCategory}
                             />
                             <VerticalLine/> 
                             <VBox style={{ width: "100%" }}>
@@ -218,7 +212,7 @@ const Blog = ({language}) => {
                                 <VBox>
                                     {
                                     blogs.length === 0 ? (
-                                        <P2 className="ml-5">No result.</P2>
+                                        <P2 className="ml-5">No blogs found.</P2>
                                     ) : (
                                     blogs.map((blog, index) => (
                                         <Contents
@@ -227,8 +221,8 @@ const Blog = ({language}) => {
                                             key={index}
                                             title={blog?.title}
                                             content={blog?.content}
-                                            created_at={blog?.created_at}
-                                            cover_image={blog?.cover_image}
+                                            createdAt={blog?.created_at}
+                                            coverImage={blog?.cover_image}
                                         />
                                     )))}
                                 </VBox>

@@ -4,21 +4,20 @@ import axios from "axios";
 
 import { HBox, VBox } from "../../../components/Containers";
 import { P2, P3 } from "../../../components/Typography";
-import no_image from '../../../assets/images/no-image.png';
+import noImage from '../../../assets/images/no-image.png';
 
-
-const Article = ({isMobile, cover_image, title}) => {
+const Article = ({isMobile, coverImage, title}) => {
     return (
         <VBox style={{width: "24%"}}>
             {cover_image?
                 <img 
-                    src={`${import.meta.env.VITE_SERVER_URL}${cover_image}`}  
+                    src={`${import.meta.env.VITE_SERVER_URL}${coverImage}`}  
                     className="my-2"
                     style={{ width: isMobile? "170px" : "150px", height: isMobile? "130px" : "110px" }}
                 /> 
                 : 
                 <img 
-                    src={no_image} 
+                    src={noImage} 
                     className="my-2"
                     style={{ width: isMobile? "170px" : "150px", height: isMobile? "130px" : "110px" }}
                 /> 
@@ -28,23 +27,22 @@ const Article = ({isMobile, cover_image, title}) => {
     )
 }
 
-const ReadMore = ({isMobile, blog_id}) => {
+const ReadMore = ({isMobile, blogId}) => {
     const [blogs, setBlogs] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
         setIsLoading(true);
             fetchBlogs();
-    }, [blog_id]);
-
+    }, [blogId]);
 
     const fetchBlogs = () => {
         setIsLoading(true);
         axios({
             method: 'GET',
-            url: `${import.meta.env.VITE_SERVER_URL}/website/blogsuggestion-list/`,
+            url: `${import.meta.env.VITE_SERVER_URL}/website/blog-suggestion-list/`,
             params: {
-                id: blog_id,
+                blog_id: blogId,
                 offset: 0,
                 limit: 4
             },
@@ -81,7 +79,7 @@ const ReadMore = ({isMobile, blog_id}) => {
                             <Article
                                 isMobile={isMobile}
                                 title={blog?.title}
-                                cover_image={blog?.cover_image}
+                                coverImage={blog?.cover_image}
                             /> 
                         </Link>   
                     )))

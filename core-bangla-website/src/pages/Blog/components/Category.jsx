@@ -7,18 +7,19 @@ import { H2, P2, P3, P4 } from "../../../components/Typography";
 import colors from "../../../config/colors";
 
 const Chip = styled(HBox)`
-    color: ${colors.veryLightGrey};
-    padding-left: 3px; 
-    padding-right: 3px;
+    background-color: ${props => props.background};  // Caution! This prop must be a hex color.
+    border-radius: 5px;
+    block-size: fit-content;
 `
+
 const HorizontalLine = styled.div`
     border-bottom: 1px solid ${colors.green};
     width: 100%;
     margin-bottom: 20px;
 `
 
-const Category = ({ isMobile, clear, selectedCategory }) => {
-    const [blogCategory, setBlogCategory] = useState([]);
+const Category = ({ isMobile, selectedCategory, setSelectedCategory }) => {
+    const [categories, setCategories] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
@@ -29,7 +30,7 @@ const Category = ({ isMobile, clear, selectedCategory }) => {
         setIsLoading(true);
         axios({
             method: 'GET',
-            url: `${import.meta.env.VITE_SERVER_URL}/website/blog-category/`,
+            url: `${import.meta.env.VITE_SERVER_URL}/website/blog-category-list/`,
             params: {
                 offset: 0,
                 limit: 1000
@@ -38,7 +39,7 @@ const Category = ({ isMobile, clear, selectedCategory }) => {
         .then((response) => {
             setIsLoading(false);
             if (response.status === 200) {
-                setBlogCategory(response.data);
+                setCategories(response.data);
             } else {
                 console.log('BLOG CATEGORY LIST FETCH FAILED', response.status);
             }
@@ -49,86 +50,76 @@ const Category = ({ isMobile, clear, selectedCategory }) => {
         })
     }
 
-    const handleCategoryClick = (categorydata) => {
-        selectedCategory(categorydata);
-    };
-
     return (
         <>
             {
                 isMobile ? (
-                    <HBox>
-                        <Chip className="mb-3 mr-2">
-                            <P2
-                                className="bold px-2 py-1"
-                                color= {colors.white}
-                                style={{
-                                    backgroundColor: colors.lessDarkGrey,
-                                    borderRadius: "5px",
-                                }}
-                            > 
-                                Category
-                            </P2>
-                        </Chip>
-                        <HBox>
-                            {blogCategory.map((categorydata, index) => (
-                                <Chip style={{ justifyContent: "center", alignContent: "center" }}>
-                                    <P3 className="bold px-1 mr-1 mb-3" 
-                                        color="white" 
-                                        onClick={() => handleCategoryClick(categorydata)}
-                                        style={{ backgroundColor: colors.green, borderRadius: "5px", textAlign: "right", cursor: "pointer" }} 
-                                    >
-                                        {categorydata.name}
-                                    </P3>
-                                </Chip>
-                            ))}
-                            <P2 
-                                color="first"
-                                onClick={clear} 
-                                className="mb-2" 
-                                style={{textAlign: "right", cursor: "pointer"}}
-                            >
-                                See All
-                            </P2>
-                        </HBox>
-                        <HorizontalLine/>
-                    </HBox>
-                ) : (
-                    <HBox style={{ flexWrap: "nowrap" }}>
-                        <VBox className="mr-3" >
-                            <Chip className="ml-1 mb-5">
+                    <VBox>
+                        <HBox align='center' className="mb-3">
+                            <Chip background={colors.lessDarkGrey} className="mr-2 px-2 py-1">
                                 <P2
-                                    className="bold px-4 py-2"
-                                    color= {colors.white}
-                                    justify="center"
-                                    align="center"
-                                    style={{
-                                        backgroundColor: colors.lessDarkGrey,
-                                        borderRadius: "5px",
-                                    }}
+                                    className="bold"
+                                    color='white'
                                 > 
                                     Category
                                 </P2>
                             </Chip>
-                            {blogCategory.map((categorydata, index) => (
-                                <>
-                                    <P2 
-                                        className="mb-2"
-                                        onClick={() => handleCategoryClick(categorydata)}
-                                        style={{textAlign: "right", cursor: "pointer" }}>
-                                        {categorydata.name}
-                                    </P2>
-                                    <HorizontalLine/>
-                                </>
-                            ))}
-                            <P2 
-                                color="first"
-                                onClick={clear} 
-                                className="mb-2" 
+                            <HBox>
+                                <Chip background={!selectedCategory ? colors.blue : colors.green} className="mr-1 px-1 clickable">
+                                        <P3
+                                            className="bold"
+                                            color='white'
+                                            onClick={() => setSelectedCategory("")}
+                                        >
+                                            All
+                                        </P3>
+                                </Chip>
+                                {categories.map((category, index) => (
+                                    <Chip background={selectedCategory===category.name ? colors.blue : colors.green} className="mr-1 px-1 clickable">
+                                        <P3
+                                            className="bold"
+                                            color='white'
+                                            onClick={() => setSelectedCategory(category.name)}
+                                        >
+                                            {category.name}
+                                        </P3>
+                                    </Chip>
+                                ))}
+                            </HBox>
+                        </HBox>
+                        <HorizontalLine/>
+                    </VBox>
+                ) : (
+                    <HBox style={{ flexWrap: "nowrap" }}>
+                        <VBox className="mr-3" >
+                            <Chip background={colors.lessDarkGrey} className="ml-1 mb-5 px-4 py-2">
+                                <P2
+                                    className="bold"
+                                    color='white'
+                                > 
+                                    Category
+                                </P2>
+                            </Chip>
+                            <P2
+                                onClick={() => setSelectedCategory("")}
+                                className="mb-2"
+                                color={!selectedCategory ? 'first' : 'default'}
                                 style={{textAlign: "right", cursor: "pointer"}}
                             >
-                                See All
+                                All
                             </P2>
+                            {categories.map((category, index) => (
+                                <>
+                                    <HorizontalLine/>
+                                    <P2 
+                                        className="mb-2"
+                                        color={category.name === selectedCategory ? 'first' : 'default'}
+                                        onClick={() => setSelectedCategory(category.name)}
+                                        style={{textAlign: "right", cursor: "pointer" }}>
+                                        {category.name}
+                                    </P2>
+                                </>
+                            ))}
                         </VBox>
                     </HBox>
                 )
@@ -137,4 +128,4 @@ const Category = ({ isMobile, clear, selectedCategory }) => {
     )
 }
 
-export default Category
+export default Category;

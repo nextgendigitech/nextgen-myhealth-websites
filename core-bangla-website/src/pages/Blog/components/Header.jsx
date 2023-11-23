@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { connect } from 'react-redux';
 
 import { HBox } from "../../../components/Containers";
 import { H3, P3, P4 } from "../../../components/Typography";
