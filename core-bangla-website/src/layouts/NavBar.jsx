@@ -11,7 +11,7 @@ import { P1, P2 } from '../components/Typography';
 import logo from '../assets/images/Website-Logo.png'
 import colors from '../config/colors';
 import responsive from '../config/responsive';
-import { navbarData } from '../data';
+import { navbarData, Links } from '../data';
 
 const Container = styled(HBox)`
     position: sticky;
@@ -20,8 +20,6 @@ const Container = styled(HBox)`
     width: 100%;
     border: 1px solid ${colors.grey};
     background-color: ${colors.veryLightGreen};
-    padding-left: 8%;
-    padding-right: 8%;
     z-index: 10;
     flex-wrap: nowrap;
 `
@@ -98,7 +96,11 @@ const NavBar = ({ language }) => {
 
     return (
         <>
-            <Container justify='space-between' align='center'>
+            <Container
+                justify='space-between'
+                align='center'
+                style={{ paddingLeft: isMobile ? "20px" : "100px", paddingRight: isMobile ? "20px" : "100px" }}
+            >
                 <SNavLink to='/'>
                     <LogoImage src={logo} />
                 </SNavLink>
@@ -138,6 +140,13 @@ const NavBar = ({ language }) => {
                                         </SNavLink>
                                     </ListItemText>
                                 </ListItem>
+                                <ListItem>
+                                    <ListItemText>
+                                        <SNavLink to='/blog' onClick={handleClickMenuItem}>
+                                            <P1>{navbarData.head4[language]}</P1>
+                                        </SNavLink>
+                                    </ListItemText>
+                                </ListItem>
                             </List>
                         </Drawer>
                     </>
@@ -145,16 +154,19 @@ const NavBar = ({ language }) => {
                     <>
                         <HBox style={{flexShrink: '0', flexWrap: 'nowrap'}}>
                             <SNavLink to='/'>
-                                হোম
+                                {navbarData.head1[language]}
                             </SNavLink>
-                            <SNavLink className='mx-4' to='/about-us'>
-                                পরিচিতি
+                            <SNavLink className='ml-4' to='/about-us'>
+                                {navbarData.head2[language]}
                             </SNavLink>
-                            <SNavLink to='/specialties'>
-                                বিশেষজ্ঞ ডাক্তার
+                            <SNavLink className='ml-4' to='/specialties'>
+                                {navbarData.head3[language]}
+                            </SNavLink>
+                            <SNavLink className='ml-4' to='/blog'>
+                                {navbarData.head4[language]}
                             </SNavLink>
                         </HBox>
-                        <HBox className='ml-6' style={{flexWrap: 'nowrap'}}>
+                        <HBox className='ml-5' style={{flexWrap: 'nowrap'}}>
                             <SLink to='https://patient.nextgenmyhealth.com/login' target='_blank'>
                                 <Button color='first' elevated>
                                     <P2 className='bold' color='white' style={{flexShrink: '0'}}>

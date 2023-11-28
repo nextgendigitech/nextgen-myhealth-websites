@@ -1,101 +1,74 @@
-import styled from "styled-components";
-import { BiSearchAlt2 } from "react-icons/bi";
 import { Link } from "react-router-dom";
+import LinesEllipsis from 'react-lines-ellipsis';
 
+import 'react-quill/dist/quill.bubble.css';
 import { HBox, VBox } from "../../../components/Containers";
-import { H3, P2, P3, P4 } from "../../../components/Typography";
-import colors from "../../../config/colors";
-import { Button } from "../../../components/Buttons";
-import bp from "../../../assets/images/blood_pressure.png";
+import { P2, P3 } from "../../../components/Typography";
+import noImage from '../../../assets/images/no-image.png';
 
-const SearchBar = styled(Button)`
-    width: fit-content;
-    height: 2.5em;
-    background-color: ${colors.lightGrey};
-    border: 1px solid ${colors.grey};
-    border-radius: 10px;
-    box-shadow: 0px 2px 3px ${colors.grey};
-    font-size: 1rem;
+const ContentCard = ({ title, content, isMobile, id, coverImage }) => {
+    const editedContent = (content, maxLines) => {
+        const element = document.createElement("div");
+        element.innerHTML = content;
+        const plainText = element.textContent;
+        const truncatedText = plainText.split('\n').slice(0, maxLines).join('\n');
+        return truncatedText;
+    };
 
-    &:hover {
-        background-color: ${colors.lightGrey};
-        color: ${colors.darkGrey};
-    }
-`
-
-const Image = styled.img`
-    width: 25%;
-`
-
-const HorizontalLine = styled.div`
-    border-bottom: 1px solid ${colors.green};
-    width: 100%;
-`
-
-const ContentCard = ({ image, title, detail, isMobile }) => {
     return (
         <Link
             className='clickable'
-            to={`/blog-content/${title}`}
+            to={`/blog-content/${id}`}
             style={{ textDecoration: 'none' }}
         >
             <VBox>
-                <HBox className={isMobile ? "mt-2" : "my-2"} style={{ width: "100%" }}>
-                    <Image src={image} className={isMobile ? "mb-2" : ""} style={{ width: isMobile ? "100%" : "28%" }}/>
-                    <VBox className={isMobile ? "" : "ml-2 pl-2"} style={{ width: isMobile ? "100%" : "70%" }}>
+                <HBox className={isMobile ? "mt-2" : "mt-1 mb-5"} style={{ width: "100%" }}>
+                    {coverImage?
+                        <img 
+                            src={`${import.meta.env.VITE_SERVER_URL}${coverImage}`}  
+                            className={isMobile ? "mb-2" : ""} 
+                            style={{ width: isMobile ? "50%" : "25%" }}
+                        /> 
+                        : 
+                        <img 
+                            src={noImage} 
+                            className={isMobile ? "mb-2" : "mr-5"}
+                            style={{ width: isMobile ? "50%" : "20%" }}
+                        /> 
+                    }
+                    <VBox 
+                        justify={isMobile? "" : "center"} 
+                        className={isMobile ? "" : "ml-2 pl-2"} 
+                        style={{ width: isMobile ? "100%" : "72%"}}
+                    >
                         <P2 className="bold mb-2">{title}</P2>
-                        <P3>{detail}</P3>
+                        <P3>
+                            <LinesEllipsis
+                                text={ editedContent(content, 4) }
+                                maxLine="3"
+                                ellipsis="..."
+                                style={{ color: 'black' }}
+                            /> 
+                        </P3>
                     </VBox>
                 </HBox>
-                <HorizontalLine className="my-2" />
             </VBox>
         </Link>
     );
 }
 
-const Contents = ({isMobile}) => {
+const Contents = ({isMobile, id, title, content, coverImage}) => {
   return (
     <VBox className={isMobile ? "" : "ml-4"}>
-        <HBox justify="flex-end">
-            <SearchBar className={isMobile ? "mb-4" : "mb-6"} size="sm"> 
-                <P2>অনুসন্ধান করুন</P2>
-                <BiSearchAlt2 className="ml-3" />
-            </SearchBar>
-        </HBox> 
-        <HorizontalLine className="mb-2" />
         <ContentCard
             isMobile={isMobile}
-            image={bp}
-            title="কানে পানি গেলে কি বের করে আনাটা জরুরি"
-            detail="হঠাৎ করে কানে পানি যেতেই পারে। এতে ভয়ের কিছু নেই। অনেকেই মনে করেন, কানে পানি গেলেই কানের ক্ষতি হয়ে যাবে। এই ধারণাটির কোনো বৈজ্ঞানিক ভিত্তিই নেই। 
-                    সুস্থ কানে পানি গেলে আদতে কোনো অসুস্থতাই সৃষ্টি হয় না। তবে সুস্থ কানে পানি গেলে বের করার চেষ্টা করতে গেলেই বাধে বিপত্তি। যেসব কাজ থেকে বিরত থাকতে হবে:
-                    কানে পানি গেলে ভয় পাওয়া যাবে না;
-                    কান থেকে পানি বের করার কোনো চেষ্টাও করা যাবে না;
-                    নাক চেপে ধরে কান দিয়ে বাতাস বের করার চেষ্টা করেন অনেকেই। প্রচলিত বিশ্বাস হলো এভাবে বাতাসের চাপে কানের পানি বেরিয়ে আসবে। 
-                    এ ধরনের প্রচেষ্টায় ..."
-        />
-        <ContentCard
-            isMobile={isMobile}
-            image={bp}
-            title="3 Simple Changes to lower Blood Pressure"
-            detail="Hypertension or high blood pressure can lead to severe health problems including heart attacks and stroke. 
-            Aneurysms can also form, which means the blood vessel walls can weaken and bulge out -- and if they rupture, 
-            that could cause.... Hypertension or high blood pressure can lead to severe health problems including heart attacks and stroke. 
-            Aneurysms can also form, which means the blood vessel walls can weaken and bulge out -- and if they rupture, 
-            that could cause..."
-        />
-        <ContentCard
-            isMobile={isMobile}
-            image={bp}
-            title="3 Simple Changes to lower Blood Pressure"
-            detail="Hypertension or high blood pressure can lead to severe health problems including heart attacks and stroke. 
-            Aneurysms can also form, which means the blood vessel walls can weaken and bulge out -- and if they rupture, 
-            that could cause.... Hypertension or high blood pressure can lead to severe health problems including heart attacks and stroke. 
-            Aneurysms can also form, which means the blood vessel walls can weaken and bulge out -- and if they rupture, 
-            that could cause..."
+            id={id}
+            title={title}
+            content={content}
+            coverImage={coverImage}
         />
     </VBox>
   )
 }
 
-export default Contents
+export default Contents;

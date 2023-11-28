@@ -1,10 +1,11 @@
 import styled from "styled-components";
+import { connect } from 'react-redux';
 
 import joindoctorbanner from "../../../assets/images/join_doctor_banner.png";
 import colors from "../../../config/colors";
 import { HBox, VBox } from "../../../components/Containers";
 import { H5, P3 } from "../../../components/Typography";
-import { homeData } from '../../../data';
+import { homeData, Links } from '../../../data';
 
 const Container = styled(HBox)`
     width: 100%;
@@ -34,19 +35,19 @@ const Image = styled.img`
     height: auto;
 `
 
-const JoinDoctor = ({ isMobile }) => {
+const JoinDoctor = ({ isMobile, language }) => {
     return (
         <Container justify="center" style={{marginTop: isMobile ? '60px' : '100px'}}>
             <TopBorder />
             <VBox justify="center" align="center" style={{ width: "50%" }}>
-                <H5>{homeData.JoinDoctor.head1['bang']}</H5>
-                <H5>{homeData.JoinDoctor.head2['bang']}</H5>
-                <P3 className="bold">
-                    {homeData.JoinDoctor.para1['bang']}
-                    <a className="mx-0_5" href="https://docs.google.com/forms/d/e/1FAIpQLSe2oTRWq02VzSy7S5HyZLXbUtGdY1uwZrnmZjM5bEXNPWZMZA/viewform?pli=1" target="_blank">
-                        {homeData.JoinDoctor.para2['bang']}
+                <H5>{homeData.JoinDoctor.head1[language]}</H5>
+                <H5>{homeData.JoinDoctor.head2[language]}</H5>
+                <P3>
+                    {homeData.JoinDoctor.para1[language]}
+                    <a className="mx-0_5" href={Links.joindoctor.link1} target="_blank">
+                        {homeData.JoinDoctor.para2[language]}
                     </a>
-                    {homeData.JoinDoctor.para3['bang']}
+                    {homeData.JoinDoctor.para3[language]}
                 </P3>
             </VBox>
             <Image src={joindoctorbanner} style={{ width: isMobile ? "35%" : "25%" }}/>
@@ -55,4 +56,8 @@ const JoinDoctor = ({ isMobile }) => {
     );
 }
 
-export default JoinDoctor;
+const mapStateToProps = state => ({
+    language: state.general.language,
+});
+
+export default connect(mapStateToProps, {})(JoinDoctor);

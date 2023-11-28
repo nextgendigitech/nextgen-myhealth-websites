@@ -10,6 +10,7 @@ import CustomerReview from "./components/CustomerReview";
 import JoinDoctor from "./components/JoinDoctor";
 import QRcode from "./components/QRcode";
 import responsive from '../../config/responsive';
+import colors from "../../config/colors";
 
 const Home = () => {
     const [isMobile, setIsMobile] = useState(false);
@@ -31,8 +32,12 @@ const Home = () => {
         return () => window.removeEventListener('resize', () => setResponsiveness());
     }, []);
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    });
+
     return (
-        <VBox>
+        <VBox style={{ backgroundColor: colors.lightGrey }}>
             <Banner isMobile={isMobile} />
             <ShortIntro isMobile={isMobile} />
             <WhyUs isMobile={isMobile} />

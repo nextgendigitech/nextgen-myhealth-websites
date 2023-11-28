@@ -8,7 +8,7 @@ import Banner from "./components/Banner";
 import Summary from "./components/Summary";
 import Details from "./components/Details";
 import responsive from "../../config/responsive";
-
+import colors from "../../config/colors";
 
 const DoctorProfile = () => {
     let { id } = useParams();
@@ -65,9 +65,9 @@ const DoctorProfile = () => {
     }
 
     return (
-        <VBox>
+        <VBox style={{ width: "100% - 20px", backgroundColor: colors.lightGrey }} className={isMobile ? "pb-3" : "pb-8"}>
             <Header isMobile={isMobile}/>
-            <VBox style={{ margin: isMobile ? "0% 4%" : "0% 8%" }}>
+            <VBox style={{ paddingLeft: isMobile ? "20px" : "100px", paddingRight: isMobile ? "20px" : "100px" }}>
                 <Banner
                     isMobile={isMobile}
                     id={doctor?.id}

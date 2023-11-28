@@ -38,7 +38,7 @@ function App() {
                 <Route path='/privacy-policy' element={<PrivacyPolicy />} />
                 <Route path='/refund-policy' element={<RefundPolicy />} />
                 <Route path='/blog' element={<Blog />} />
-                <Route path='/blog-content/:title' element={<BlogContent />} />  
+                <Route path='/blog-content/:id' element={<BlogContent />} />  
             </Routes>
             <Footer />
         </BrowserRouter>

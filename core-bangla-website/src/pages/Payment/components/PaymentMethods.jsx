@@ -1,14 +1,14 @@
 import styled from 'styled-components';
+import { connect } from 'react-redux';
 
 import { VBox, HBox } from '../../../components/Containers';
 import { H1, P2 } from '../../../components/Typography';
 import bkash_image from '../../../assets/images/bkash_image.png';
 import colors from '../../../config/colors';
 import responsive from '../../../config/responsive';
+import { payment } from '../../../data';
 
 const Container = styled(VBox)`
-    padding-left: 8%;
-    padding-right: 8%;
 `
 
 const BankPayment = styled(VBox)`
@@ -47,7 +47,7 @@ const PaymentHelp = styled(HBox)`
     background-color: ${colors.lightBlue};
 `
 
-const PaymentMethods = ({ isMobile }) => {
+const PaymentMethods = ({ isMobile, language }) => {
     const Bank = () => (
         <BankPayment align='center' style={{ width: isMobile ? '100%' : '50%', marginTop: isMobile ? '0px' : '30px' }}>
             <Circle className='mt-8' justify='center' align='center'><H1 className='bold'>B</H1></Circle>
@@ -72,18 +72,14 @@ const PaymentMethods = ({ isMobile }) => {
 
     return (
         <>
-        <Container>
+        <Container style={{ paddingLeft: isMobile ? "40px" : "100px", paddingRight: isMobile ? "40px" : "100px" }}>
             <VBox className='py-3 px-3' align='center' style={{border: `5px solid ${colors.darkGreen}`, borderRadius: '0 15px 0 15px'}}>
-                {isMobile ?
-                    <P2 className='bold' align='center'>
-                        পেমেন্ট সম্পূর্ণ করতে আপনার পছন্দের নিম্নোক্ত যেকোনো পদ্ধতি অনুসরণ করুন | যেকোনো প্রয়োজনে আমাদের সাথে যোগাযোগ করুন |
-                    </P2>
-                    :
-                    <>
-                        <P2 className='bold'>পেমেন্ট সম্পূর্ণ করতে আপনার পছন্দের নিম্নোক্ত যেকোনো পদ্ধতি অনুসরণ করুন |</P2>
-                        <P2 className='bold'>যেকোনো প্রয়োজনে আমাদের সাথে যোগাযোগ করুন |</P2>
-                    </>
-                }
+                <P2 
+                    className='bold' 
+                    align='center' 
+                    style={{ paddingLeft: isMobile ? "" : "140px", paddingRight: isMobile ? "" : "140px" }}>
+                    {payment.method.head1[language]} 
+                </P2>
             </VBox>
             
             {isMobile ?
@@ -106,4 +102,8 @@ const PaymentMethods = ({ isMobile }) => {
     );
 }
 
-export default PaymentMethods;
+const mapStateToProps = state => ({
+    language: state.general.language,
+});
+
+export default connect(mapStateToProps, {})(PaymentMethods);

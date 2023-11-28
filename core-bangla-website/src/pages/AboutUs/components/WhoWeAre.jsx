@@ -1,13 +1,12 @@
 import styled from "styled-components";
+import { connect } from 'react-redux';
 
 import colors from "../../../config/colors";
 import { VBox, HBox } from "../../../components/Containers";
 import { H2, P1, P2 } from "../../../components/Typography";
-import { aboutusData } from "../../../data";
+import { Links, aboutusData } from "../../../data";
 
 const Container = styled(VBox)`
-    padding-left: 8%;
-    padding-right: 8%;
     width: 100%;
 `
 
@@ -39,31 +38,37 @@ const VideoContainer = styled.iframe`
     border-radius: 15px;
 `
 
-const WhoWeAre = ({ isMobile }) => {
+const WhoWeAre = ({ isMobile, language }) => {
     return (
-        <Container style={{ marginTop: isMobile ? '60px' : '100px' }}>
-            <HBox align="center" className="mb-4" >
+        <Container style={{ marginTop: isMobile ? '30px' : '100px', 
+                            paddingLeft: isMobile ? "40px" : "100px", 
+                            paddingRight: isMobile ? "40px" : "100px" }}>
+            <HBox align="center" className={isMobile ? "mb-3" : "mb-4"} >
                 <VerticalBorder/>
                 <VBox className="ml-2" style={{ width: "150px" }}>
-                    <H2 color="third" className="bold">{aboutusData.WhoWeAre.head1['bang']}</H2>
+                    <H2 color="third" className="bold">{aboutusData.WhoWeAre.head1[language]}</H2>
                 </VBox>
             </HBox>
-            <P1 style={{ width: "100%" }}>{aboutusData.WhoWeAre.para1['bang']}</P1>
+            <P2 style={{ width: "100%" }}>{aboutusData.WhoWeAre.para1[language]}</P2>
             <HBox justify="center" style={{ marginTop: isMobile ? '60px' : '100px' }}>
                 <VideoContainer
                     style={{ width: isMobile ? "80%" : "40%", marginRight: isMobile ? "23%" : "" }}
-                    src="https://www.youtube.com/embed/NdZ9vPHAy7w" 
-                    title="Virtual Care Platform - NextGen MyHealth VCP" 
+                    src={Links.aboutus.link1}
+                    title={aboutusData.WhoWeAre.title1[language]}
                     frameborder="0" 
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                     allowfullscreen 
                 />
-                <CardContainer className={isMobile ? "p-3" : "py-6 pr-7 pl-7"} style={{ width: isMobile ? "100%" : "50%" }}>
-                    <P2>{aboutusData.WhoWeAre.para1['bang']}</P2>
+                <CardContainer className={isMobile ? "mt-2 p-3" : "py-6 pr-7 pl-7"} style={{ width: isMobile ? "100%" : "50%" }}>
+                    <P2>{aboutusData.WhoWeAre.para1[language]}</P2>
                 </CardContainer>
             </HBox>
         </Container>
     );
 }
 
-export default WhoWeAre;
+const mapStateToProps = state => ({
+    language: state.general.language,
+});
+
+export default connect(mapStateToProps, {})(WhoWeAre);

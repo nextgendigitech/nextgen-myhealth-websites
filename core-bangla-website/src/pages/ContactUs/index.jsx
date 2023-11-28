@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
-
 import { VBox } from "../../components/Containers";
 import Map from "./components/Map";
 import Form from "./components/Form";
 import responsive from '../../config/responsive';
+import colors from "../../config/colors";
 
 const ContactUs = () => {
     const [isMobile, setIsMobile] = useState(false);
@@ -30,7 +30,7 @@ const ContactUs = () => {
     });
 
     return (
-        <VBox>
+        <VBox style={{ backgroundColor: colors.lightGrey }}>
             <Map isMobile={isMobile}/>
             <Form isMobile={isMobile}/>
         </VBox>

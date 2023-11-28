@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { connect } from 'react-redux';
 
 import { VBox, HBox } from '../../../components/Containers';
 import { H2, H3, P2 } from '../../../components/Typography';
@@ -6,8 +7,7 @@ import colors from '../../../config/colors';
 import { homeData } from '../../../data';
 
 const Container = styled(VBox)`
-    padding-left: 8%;
-    padding-right: 8%;
+
 `
 
 const Underline = styled.div`
@@ -66,7 +66,7 @@ const ItemTextContainer = styled(VBox)`
     height: 93%;
     width: 96%;
     border-radius: 25% 25% 25% 25% / 50% 50% 50% 50%;
-    background-color: ${colors.white};
+    background-color: ${colors.lightGrey};
 `
 
 const CircleContainer = styled(HBox)`
@@ -76,6 +76,7 @@ const CircleContainer = styled(HBox)`
     top: ${props => props.top_position};
     left: ${props => props.left_position};
     z-index: 1;
+    background-color: ${colors.lightGrey};
 `
 
 const Circle = styled(HBox)`
@@ -119,7 +120,7 @@ const CircleTextContainerOuter = styled(VBox)`
     border-bottom: 6px solid ${colors.darkGreen};
     padding: 10px;
     margin-bottom: 10%;
-    box-shadow: 0 10px 5px -5px ${colors.lessDarkGrey};
+    box-shadow: 0 10px 5px -5px ${colors.lessDarkGrey};  
 `
 
 const CircleTextContainerInner = styled(VBox)`
@@ -134,7 +135,8 @@ const CenterCircleText = styled(H2)`
     text-shadow: 4px 4px 5px ${colors.lessDarkGrey};
 `
 
-const WhyUs = ({ isMobile }) => {
+
+const WhyUs = ({ isMobile, language }) => {
     const CenterHtml = (height, width, justify, align, CenterCircleContainerInner_height, CenterCircleContainerInner_width,
                         CenterCircle_height, CenterCircle_width, padding) => (
         <CenterCircleContainerOuter className={padding} justify={justify} align={align} height={height} width={width}>
@@ -142,7 +144,7 @@ const WhyUs = ({ isMobile }) => {
                 <CenterCircle align='center' justify='center' height={CenterCircle_height} width={CenterCircle_width}>
                     <CircleTextContainerOuter align='center'>
                         <CircleTextContainerInner align='center'>
-                            <CenterCircleText className='bold' align='center'>{homeData.WhyUs.head2['bang']}</CenterCircleText>
+                            <CenterCircleText className='bold' align='center'>{homeData.WhyUs.head2[language]}</CenterCircleText>
                         </CircleTextContainerInner>
                     </CircleTextContainerOuter>
                 </CenterCircle>
@@ -154,7 +156,7 @@ const WhyUs = ({ isMobile }) => {
         <VBox justify={justify} align={align} style={{position: 'relative', width: width}}>
             <Item1 className='m-2' height={Item_height} width={Item_width} top_position='0' justify='center' align='center'>
                 <ItemTextContainer justify='center' align='center'>
-                    <P2 align='center'>{homeData.WhyUs.point1['bang']}</P2>
+                    <P2 align='center'>{homeData.WhyUs.point1[language]}</P2>
                 </ItemTextContainer>
             </Item1>
 
@@ -164,7 +166,7 @@ const WhyUs = ({ isMobile }) => {
                 
             <Item2 className='mb-2 ml-2 mr-2' height={Item_height} width={Item_width} top_position='-21px' justify='center' align='center'>
                 <ItemTextContainer justify='center' align='center'>
-                    <P2 align='center'>{homeData.WhyUs.point2['bang']}</P2>
+                    <P2 align='center'>{homeData.WhyUs.point2[language]}</P2>
                 </ItemTextContainer>
             </Item2>
 
@@ -174,7 +176,7 @@ const WhyUs = ({ isMobile }) => {
 
             <Item3 className='ml-2 mr-2' height={Item_height} width={Item_width} top_position='-42px' justify='center' align='center'>    
                 <ItemTextContainer justify='center' align='center'>
-                    <P2 align='center'>{homeData.WhyUs.point3['bang']}</P2>
+                    <P2 align='center'>{homeData.WhyUs.point3[language]}</P2>
                 </ItemTextContainer>
                      
             </Item3>
@@ -185,7 +187,7 @@ const WhyUs = ({ isMobile }) => {
         <VBox justify={justify} align={align} style={{position: 'relative', width: width}}>
             <Item1 className='m-2' height={Item_height} width={Item_width} top_position='0' justify='center' align='center' style={{transform: 'ScaleX(-1)'}}>
                 <ItemTextContainer justify='center' align='center'>
-                    <P2 align='center' style={{transform: 'ScaleX(-1)'}}>{homeData.WhyUs.point4['bang']}</P2>
+                    <P2 align='center' style={{transform: 'ScaleX(-1)'}}>{homeData.WhyUs.point4[language]}</P2>
                 </ItemTextContainer>
             </Item1>
 
@@ -195,7 +197,7 @@ const WhyUs = ({ isMobile }) => {
 
             <Item2 className='mb-2 ml-2 mr-2' height={Item_height} width={Item_width} top_position='-21px' justify='center' align='center' style={{transform: 'ScaleX(-1)'}}>
                 <ItemTextContainer justify='center' align='center'>
-                    <P2 align='center' style={{transform: 'ScaleX(-1)'}}>{homeData.WhyUs.point5['bang']}</P2>
+                    <P2 align='center' style={{transform: 'ScaleX(-1)'}}>{homeData.WhyUs.point5[language]}</P2>
                 </ItemTextContainer>
             </Item2>
 
@@ -205,15 +207,15 @@ const WhyUs = ({ isMobile }) => {
 
             <Item3 className='ml-2 mr-2' height={Item_height} width={Item_width} top_position='-42px' justify='center' align='center' style={{transform: 'ScaleX(-1)'}}>
                 <ItemTextContainer justify='center' align='center'>
-                    <P2 className='p-3' align='center' style={{transform: 'ScaleX(-1)'}}>{homeData.WhyUs.point6['bang']}</P2>
+                    <P2 className='p-3' align='center' style={{transform: 'ScaleX(-1)'}}>{homeData.WhyUs.point6[language]}</P2>
                 </ItemTextContainer>
             </Item3>
         </VBox>
     );
 
     return (
-        <Container align='center' style={{marginTop: isMobile ? '60px' : '0px'}}>
-            <H3 className="bold">{homeData.WhyUs.head1['bang']}</H3>
+        <Container align='center' style={{marginTop: isMobile ? '60px' : '0px', paddingLeft: isMobile ? "40px" : "100px", paddingRight: isMobile ? "40px" : "100px"}}>
+            <H3 className="bold">{homeData.WhyUs.head1[language]}</H3>
             <Underline className="my-2" />
 
             {isMobile ?
@@ -233,4 +235,8 @@ const WhyUs = ({ isMobile }) => {
     );
 }
 
-export default WhyUs;
+const mapStateToProps = state => ({
+    language: state.general.language,
+});
+
+export default connect(mapStateToProps, {})(WhyUs);

@@ -14,7 +14,7 @@ import linkedinIcon from '../assets/images/linkedin_icon.png';
 import youtubeLogo from '../assets/images/youtube_logo.png';
 import searchIcon from '../assets/images/search_icon.png';
 import DoctorSearchDlg from './DoctorSearchDlg';
-import { topbarData } from '../data';
+import { topbarData, Links } from '../data';
 import CheckButton from '../components/CheckButton';
 import { toggleLang } from '../services/actions/generalAction';
 
@@ -25,8 +25,6 @@ const Container = styled(HBox)`
     width: 100%;
     border: 1px solid ${colors.grey};
     background: ${colors.mercury};
-    padding-left: 8%;
-    padding-right: 8%;
     z-index: 10;
     flex-wrap: nowrap;
 `
@@ -57,7 +55,7 @@ const SearchBar = styled(Button)`
 `
 
 const DoctorSearchIcon = styled.img`
-    height: 70%;
+    height: 60%;
 `
 
 const TopBar = ({ language, toggleLang }) => {
@@ -95,23 +93,27 @@ const TopBar = ({ language, toggleLang }) => {
     }
 
     return (
-        <Container justify='space-between' align='center'>
+        <Container 
+            justify='space-between' 
+            align='center'
+            style={{ paddingLeft: isMobile ? "20px" : "100px", paddingRight: isMobile ? "20px" : "100px" }}>
             <IconContainer>
-                <Link to="https://www.facebook.com/nextgenmyhealthvcp" target="_blank">
-                    <IconImage src={facebookIcon} alt="Facebook Image" className='ml-1' />
+                <Link to={Links.topbar.link1} target="_blank" className='ml-1'>
+                    <IconImage src={facebookIcon} alt="Facebook Image" />
                 </Link>
-                <Link to='https://www.linkedin.com/company/nextgen-myhealth-vcp/' target='_blank'>
+                {/* <Link to={Links.topbar.link2} target='_blank'>
                     <IconImage src={linkedinIcon} alt="LinkedIn Image" className={isMobile ? 'mx-1' : 'mx-3'} />
-                </Link>
-                <Link to='https://www.youtube.com/channel/UCSDFJqW2y9UYs6IMWGK2i9w' target='_blank'>
+                </Link> */}
+                <Link to={Links.topbar.link3} target='_blank' className='ml-1'>
                     <IconImage src={youtubeLogo} alt="Youtube Image" />
                 </Link>
             </IconContainer>
             <P2 className="bold">
-                {isMobile ? <HiOutlinePhone style={{position: 'relative', top:'2px'}}/> : topbarData.head1[language]} {topbarData.head2['bang']}
+                {isMobile ? <HiOutlinePhone style={{position: 'relative', top:'2px'}}/> : topbarData.head1[language]} {topbarData.head2[language]}
             </P2>
             <HBox align='center'>
                 <SearchBar
+                    style={{ width: isMobile ? "50px" : "" }}
                     size='sm'
                     onClick={() => setOpenSearchDlg(true)}
                 >
@@ -119,7 +121,7 @@ const TopBar = ({ language, toggleLang }) => {
                     <DoctorSearchIcon className={isMobile ? '' : 'ml-8'} src={searchIcon} />
                 </SearchBar>
                 <CheckButton
-                    className='ml-2'
+                    className={isMobile ? "ml-1" : "ml-2"}
                     size='md'
                     items={languages}
                     setItems={setLanguages}

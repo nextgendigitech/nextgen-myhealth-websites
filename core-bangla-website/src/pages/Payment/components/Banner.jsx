@@ -1,26 +1,31 @@
 import styled from 'styled-components';
+import { connect } from 'react-redux';
 
 import { VBox, HBox } from '../../../components/Containers';
 import { H3 } from '../../../components/Typography';
 import banner_image from '../../../assets/images/payment_banner_image.png';
 import colors from '../../../config/colors';
+import { payment } from '../../../data';
 
 const Container = styled(HBox)`
     padding-left: 8%;
     padding-right: 8%;
 `
 
-const Banner = ({ isMobile }) => {
+const Banner = ({ isMobile, language }) => {
     const BannerImage = (height, width) => (
         <img src={banner_image} style={{height: height, width: width}}/>
     )
 
     const BannerHtml = (height, width) => (
-        <H3 className={isMobile ? 'bold mt-8' : 'bold'} align='center' style={{height: height, width: width}}>সহজ এবং সুরক্ষিত মাধ্যমে পেমেন্ট করুন  
-        <span style={{color: `${colors.darkGreen}`}}> নেক্সটজেন</span> 
-        <span style={{color: `${colors.red}`}}> মাই</span>
-        <span style={{color: `${colors.blue}`}}>হেলথ</span>
-        <span style={{color: `${colors.darkGreen}`}}> ভিসিপি</span> তে</H3>
+        <H3 className={isMobile ? 'bold mt-8' : 'bold'} align='center' style={{height: height, width: width}}>
+            {payment.banner.head1[language]}
+            <span style={{color: `${colors.darkGreen}`}}> {payment.banner.para11[language]}</span> 
+            <span style={{color: `${colors.red}`}}> {payment.banner.para12[language]}</span>
+            <span style={{color: `${colors.blue}`}}>{payment.banner.para13[language]}</span>
+            <span style={{color: `${colors.darkGreen}`}}> {payment.banner.para14[language]}</span> 
+            {payment.banner.para15[language]}
+        </H3>
     )
 
     return (
@@ -40,4 +45,8 @@ const Banner = ({ isMobile }) => {
     );
 }
 
-export default Banner;
+const mapStateToProps = state => ({
+    language: state.general.language,
+});
+
+export default connect(mapStateToProps, {})(Banner);

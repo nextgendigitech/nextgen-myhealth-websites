@@ -1,7 +1,42 @@
+export const Links = {
+    topbar : {
+        link1 : "https://www. facebook. com/nextgenmyhealthvcp",
+        link2 : "https://www. linkedin. com/company/nextgen-myhealth-vcp/",
+        link3 : "https://www. youtube. com/channel/UCSDFJqW2y9UYs6IMWGK2i9w",
+    },
+    navbar : {
+        link1 : "https://patient. nextgenmyhealth. com/login",
+        link2 : "https://doctor. nextgenmyhealth. com/login",
+    },
+    footer : {
+        link1 : "https://nextgendgtech. com/",
+    },
+    joindoctor : {
+        link1 : "https://docs. google. com/forms/d/e/1FAIpQLSe2oTRWq02VzSy7S5HyZLXbUtGdY1uwZrnmZjM5bEXNPWZMZA/viewform?pli=1",
+    },
+    qrcode : {
+        link1 : "https://play. google. com/store/apps/details?id=com. nextgen_digitech. myhealth_patients&pcampaignid=web_share",
+    },
+    aboutus : {
+        link1 : "https://www. youtube. com/embed/NdZ9vPHAy7w",
+    },
+    phoneandemail : {
+        phone: {
+            bang: '+৮৮০১৩২১১১৯৩৯১',
+            eng: '+8801321119391',
+        },
+        email: {
+            bang: 'info@nextgenmyhealth. com',
+            eng: 'info@nextgenmyhealth. com',
+        },
+    },
+    doctorapp : "https://patient. nextgenmyhealth. com/doctor/",
+}
+
 export const navbarData = {
     head1: {
         bang: 'হোম',
-        eng: 'home'
+        eng: 'Home'
     },
     head2: {
         bang: 'পরিচিতি',
@@ -10,6 +45,10 @@ export const navbarData = {
     head3: {
         bang: 'বিশেষজ্ঞ ডাক্তার',
         eng: 'Specialties'
+    },
+    head4: {
+        bang: 'ব্লগ',
+        eng: 'Blog'
     },
     btn1: {
         bang: 'পেশেন্ট পোর্টাল',
@@ -62,16 +101,8 @@ export const footerData = {
         eng: 'NextGen DigiTech Ltd.'
     },
     para31: {
-        bang: 'টুল অ্যান্ড টেকনোলজি ইনস্টিটিউট, বিটাক, মন্ত্রণালয় ১১৬ (খ), তেজগাঁও শিল্প এলাকা, ঢাকা-১২০৮, বাংলাদেশ',
+        bang: 'টুল অ্যান্ড টেকনোলজি ইনস্টিটিউট, বিটাক, শিল্প মন্ত্রণালয় ১১৬ (খ), তেজগাঁও শিল্প এলাকা, ঢাকা-১২০৮, বাংলাদেশ',
         eng: 'Tool & Technology Institute, BITAC, Ministry of Industries 116 (kha), Tejgaon Industrial Area, Dhaka-1208, Bangladesh'
-    },
-    para61: {
-        bang: ' +৮৮০১৩২১১১৯৩৯১',
-        eng: '+8801321119391'
-    },
-    para71: {
-        bang: 'info@nextgenmyhealth.com',
-        eng: 'info@nextgenmyhealth.com'
     },
     para12: {
         bang: 'যোগাযোগ করুন',
@@ -117,8 +148,8 @@ export const footerData = {
 
 export const doctorsearchdlgData = {
     head1: {
-        bang: 'বি.এম.ডি.সি:',
-        eng: 'B.M.D.C:',
+        bang: 'বি. এম. ডি. সি:',
+        eng: 'B. M. D. C:',
     },
     head2: {
         bang: 'এ-',
@@ -128,13 +159,33 @@ export const doctorsearchdlgData = {
         bang: 'অ্যাপয়েন্টমেন্ট নিন',
         eng: 'Book Appointment',
     },
+    head4: {
+        bang: 'অভিজ্ঞতা: ',
+        eng: 'Experience: '
+    },
+    pera1: {
+        bang: 'ডাক্তার অনুসন্ধান করুন. . .',
+        eng: 'Search doctors. . .',
+    },
+    pera2: {
+        bang: '',
+        eng: 'We have found ',
+    },
+    pera3: {
+        bang: ' জন চিকিৎসক পাওয়া গেছে।',
+        eng: ' doctors.',
+    },
+    pera4: {
+        bang: ' জন চিকিৎসক পাওয়া গেছে।',
+        eng: ' doctor.',
+    },
 }
 
 export const homeData = {
     banner: {
         head1: {
             bang: 'স্বাগতম আপনাকে',
-            eng: 'Welcome',
+            eng: 'Welcome to',
         },
         head2: {
             bang: 'নেক্সটজেন',
@@ -142,7 +193,7 @@ export const homeData = {
         },
         head31: {
             bang: 'মাই',
-            eng: 'my'
+            eng: 'My'
         },
         head32: {
             bang: 'হেলথ',
@@ -164,25 +215,25 @@ export const homeData = {
     shortIntro: {
         head1: {
             bang: 'আমরা কারা?',
-            eng: 'Who we are?',
+            eng: 'Who We Are?',
         },
         head2: {
             bang: 'আমাদের সংক্ষিপ্ত পরিচিতি',
-            eng: 'Our short introduction',
+            eng: 'Our Short Introduction',
         },
         para1: {
-            bang: 'নেক্সটজেন মাইহেলথ ভিসিপি, নেক্সটজেন ডিজিটেক লিমিটেড বাংলাদেশের একটি স্বাস্থ্য সেবা প্রদানকারী প্ল্যাটফর্ম। নেক্সটজেন মাইহেলথ ভিসিপি আমেরিকা, ইউরোপ, যুক্তরাজ্য এবং বাংলাদেশের সহস্রাধিক বিএমডিসি নিবন্ধিত বিশেষজ্ঞ চিকিৎসকদের সঙ্গে ঘরে বসে ভিডিও কলের মাধ্যমে পরামর্শ ও স্বাস্থ্যসেবা নেয়া সম্ভব করেছে। প্রযুক্তির নিত্যনতুন উদ্ভাবন ব্যবহার করে স্বাস্থ্যসেবাকে দেশের প্রত্যন্ত অঞ্চল থেকে শহর পর্যন্ত সকলের কাছে পৌঁছে দেয়ার লক্ষ্যে বাংলাদেশে শুরু হয় নেক্সটজেন মাইহেলথ ভিসিপি এর কার্যক্রম।',
-            eng: 'NextGen MyHealth VCP, NextGen DigiTech Ltd. is a healthcare service provider platform in Bangladesh. NextGen MyHealth VCP has made it possible to consult and receive healthcare services through video calls with registered specialist doctors from America, Europe, the United Kingdom, and numerous BMDC registered specialists in Bangladesh. Utilizing cutting-edge technology, NextGen MyHealth VCP aims to reach healthcare services from rural areas to urban areas, commencing in Bangladesh.',
+            bang: 'নেক্সটজেন মাইহেলথ ভিসিপি, নেক্সটজেন ডিজিটেক লিমিটেড এর একটি পণ্য, বাংলাদেশের একটি স্বাস্থ্য সেবা প্রদানকারী প্ল্যাটফর্ম। নেক্সটজেন মাইহেলথ ভিসিপি আমেরিকা, ইউরোপ, যুক্তরাজ্য এবং বাংলাদেশের সহস্রাধিক বিএমডিসি নিবন্ধিত বিশেষজ্ঞ চিকিৎসকদের সঙ্গে ঘরে বসে ভিডিও কলের মাধ্যমে পরামর্শ ও স্বাস্থ্যসেবা নেয়া সম্ভব করেছে। প্রযুক্তির নিত্যনতুন উদ্ভাবন ব্যবহার করে স্বাস্থ্যসেবাকে দেশের প্রত্যন্ত অঞ্চল থেকে শহর পর্যন্ত সকলের কাছে পৌঁছে দেয়ার লক্ষ্যে বাংলাদেশে শুরু হয় নেক্সটজেন মাইহেলথ ভিসিপি এর কার্যক্রম।',
+            eng: 'NextGen MyHealth VCP, a product of NextGen DigiTech Ltd. is a healthcare service provider platform in Bangladesh. NextGen MyHealth VCP has made it possible to consult and receive healthcare services through video calls with registered specialist doctors from America, Europe, the United Kingdom, and numerous BMDC registered specialists in Bangladesh. Utilizing cutting-edge technology, NextGen MyHealth VCP aims to reach healthcare services from rural areas to urban areas, commencing in Bangladesh.',
         },
     },
     WhyUs: {
         head1: {
             bang: 'কেন আমাদের প্লাটফর্ম ব্যবহার করবেন?',
-            eng: '"Why should you use our platform?"',
+            eng: 'Why Should You Use Our Platform?',
         },
         head2: {
             bang: 'কারণ আমাদের আছে',
-            eng: 'Because we have',
+            eng: 'Because We Have',
         },
         point1: {
             bang: 'নিবন্ধিত বিশেষজ্ঞ চিকিৎসক',
@@ -240,7 +291,7 @@ export const homeData = {
         },
         btn1: {
             bang: 'সব বিশেষজ্ঞ ডাক্তার দেখুন',
-            eng: 'See all specialist doctors',
+            eng: 'See All Specialist Doctors',
         },
     },
     bookingsteps: {
@@ -270,41 +321,41 @@ export const homeData = {
         },
         parahead1: {
             bang: 'ডাক্তার অনুসন্ধান করুন',
-            eng: '',
+            eng: 'Find all doctors',
         },
         parahead2: {
             bang: 'লগ ইন করুন',
-            eng: '',
+            eng: 'Login into your account',
         },
         parahead3: {
             bang: 'অ্যাপয়েন্টমেন্ট নির্বাচন করুন',
-            eng: '',
+            eng: 'Choose preferable appointment slot',
         },
         parahead4: {
             bang: 'অ্যাপয়েন্টমেন্ট বুক করুন',
-            eng: '',
+            eng: 'Book appointment',
         },
         para1: {
             bang: 'স্পেশালাইজেশন, প্রোফাইল, এবং অভিজ্ঞতা দ্বারা বা আপনার প্রয়োজন এবং উপসর্গ অনুসারে একজন ডাক্তার খুঁজুন।',
-            eng: '',
+            eng: 'Find a doctor based on specialization, profile, and experience, or according to your needs and preferences.',
         },
         para2: {
             bang: 'ফোন নম্বর/ইমেল ঠিকানা এবং পাসওয়ার্ড দিয়ে পেশেন্ট পোর্টালে লগ ইন করুন। আপনি যদি নতুন হন তাহলে আপনার নাম, ফোন নম্বর/ইমেল ঠিকানা এবং পাসওয়ার্ড ব্যবহার করে একটি খুব সহজ প্রক্রিয়ায় নিজেকে নিবন্ধন করুন।',
-            eng: '',
+            eng: 'Log in to the patient portal using your phone number/email and password. If you are new, register yourself using your name, phone number/email, and password through a very simple process.',
         },
         para3: {
             bang: 'বুক অ্যাপয়েন্টমেন্ট বাটনে ক্লিক করুন এবং আপনার সুবিধাজনক সময় অনুযায়ী ডাক্তারের ডাক্তারের অ্যাপয়েন্টমেন্ট বুক করুন।',
-            eng: '',
+            eng: 'Click on the "Book Appointment" button and schedule an appointment with the doctor of your choice based on your convenience.',
         },
         para4: {
             bang: 'অনলাইন পেমেন্টের মাধ্যমে আপনার অ্যাপয়েন্টমেন্ট নিশ্চিত করুন।',
-            eng: '',
+            eng: 'Confirm your appointment by making an online payment.',
         },
     },
     CustomerReview: {
         head1: {
             bang: 'আমাদের ক্লায়েন্টরা কি বলেন',
-            eng: 'What our clients say',
+            eng: 'What Our Clients Say',
         },
         name1: {
             bang: 'হাবিবুর রহমান',
@@ -320,15 +371,15 @@ export const homeData = {
         },
         para1: {
             bang: 'আমি খুশি যে বাংলাদেশে এখন বিশ্বমানের অনলাইন চিকিৎসার বিকল্প রয়েছে। এটি আমার মতো অনেক রোগীকে চিকিৎসার জন্য বিদেশে যাওয়ার ভারী ব্যয় বহন না করে স্বাভাবিক জীবনযাপন করার সুযোগ দেয়।',
-            eng: "I am glad that we now have world-class online treatment options available in Bangladesh. This gives a chance to many patients like me to lead normal lives without having to incur heavy expenses of going abroad for the same treatment.",
+            eng: "I am glad that we now have world-class online treatment options available in Bangladesh. This gives a chance to many patients like me to lead normal lives without having to incur heavy expenses of going abroad for the same treatment. ",
         },
         para2: {
             bang: 'আমি সত্যিই খুশি যে ডাক্তাররা আমার অবস্থা এবং থেরাপি সম্পর্কে আরও জানার সুযোগ দিয়েছেন যা আমাকে চিকিৎসা করতে সাহায্য করেছিল। পিঠের ব্যথা ছাড়াই আমি আমার দৈনন্দিন জীবনে ফিরে এসেছি। আমি অবশেষে শান্তিতে আছি।',
-            eng: "I am really happy that the doctors gave me an opportunity to learn more about my condition and the therapy which helped me undergo the procedure. I'm back to my routine and with no lingering back pain. I'm finally at peace.",
+            eng: "I am really happy that the doctors gave me an opportunity to learn more about my condition and the therapy which helped me undergo the procedure. I'm back to my routine and with no lingering back pain. I'm finally at peace. ",
         },
         para3: {
             bang: 'নেক্সটজেন মাইহেলথ ভিসিপি চিকিৎসার জন্য সেরা অনলাইন প্ল্যাটফর্ম। আমি তাদের একজন ডাক্তার দ্বারা চিকিৎসা করেছি। ডাক্তার খুব ভাল এবং আমার চিকিৎসা করার সময় অনেক যত্ন নেন। এটা সত্যিই একটি ভাল অভিজ্ঞতা ছিল।',
-            eng: "NextGen MyHealth VCP is the best online platform for medical treatment. I have been treated by one of their doctors. The doctor was very good and took great care of me during my treatment. It was truly a good experience.",
+            eng: "NextGen MyHealth VCP is the best online platform for medical treatment. I have been treated by one of their doctors. The doctor was very good and took great care of me during my treatment. It was truly a good experience. ",
         },
     },
     JoinDoctor: {
@@ -375,23 +426,27 @@ export const aboutusData = {
             bang: 'নেক্সটজেন ডিজিটেক লিমিটেড একটি বেসরকারি গবেষণা-ভিত্তিক কোম্পানি যা ডাক্তার, চিকিৎসা বিশেষজ্ঞ, গবেষক এবং আইটি বিশেষজ্ঞদের একটি দল নিয়ে গঠিত। নেক্সটজেন ডিজিটেক, রোগী এবং ডাক্তার উভয়ের উন্নয়নের জন্য প্রতিনিয়ত আপসহীনভাবে কাজ করে যাচ্ছে। নেক্সটজেন মাইহেলথ ভিসিপি নেক্সটজেন ডিজিটেক লিমিটেড বাংলাদেশের একটি স্বাস্থ্য পণ্য। এটির উদ্ভাবনী ভার্চুয়াল স্বাস্থ্যসেবা প্ল্যাটফর্ম বাংলাদেশের জনগণের স্বাস্থ্যসেবা বিষয়ক ভোগান্তি কমাতে বদ্ধপরিকর।',
             eng: 'NextGen Digitech Ltd. is a private research-based company that brings together a team of doctors, medical specialists, researchers, and IT experts. NextGen Digitech consistently works to enhance both patient and doctor experiences. NextGen MyHealth VCP is a health product of NextGen Digitech Ltd. It is an innovative virtual healthcare platform aiming to reduce the burden on the public regarding healthcare services in Bangladesh.',
         },
+        title1 : {
+            bang : 'ভার্চুয়াল কেয়ার প্লাটফর্ম - নেক্সটজেন মাইহেলথ ভিসিপি',
+            eng : 'Virtual Care Platform - NextGen MyHealth VCP'
+        },
     },
     OurAdvantages: {
         head1: {
             bang: 'আমাদের প্ল্যাটফর্ম ব্যবহার করার সুবিধা',
-            eng: 'The advantages of using our platform',
+            eng: 'The Advantages of Using Our Platform',
         },
         pointhead1: {
-            bang: 'ব্যবহারকারী বান্ধব পোর্টাল',
-            eng: 'User friendly portal',
+            bang: 'ব্যবহার বান্ধব পোর্টাল',
+            eng: 'User Friendly Portal',
         },
         pointhead2: {
             bang: 'স্বনামধন্য বিশেষজ্ঞ ডাক্তার',
-            eng: 'Renowned specialist doctors',
+            eng: 'Renowned Specialist Doctors',
         },
         pointhead3: {
             bang: 'ই-প্রেসক্রিপশন সেবা',
-            eng: 'E-prescription service',
+            eng: 'E-Prescription Service',
         },
         pointhead4: {
             bang: 'অ্যাপয়েন্টমেন্ট নোটিফিকেশন',
@@ -403,11 +458,11 @@ export const aboutusData = {
         },
         pointhead6: {
             bang: 'সপ্তাহব্যাপী সেবা',
-            eng: 'Week-long service',
+            eng: 'Week-Long service',
         },
         pointpera1: {
-            bang: 'রোগী এবং ডাক্তার পক্ষের সকল বয়সের ব্যবহারকারীদের জন্য ব্যবহার করা সহজ।',
-            eng: 'Easy to use for users of all ages, both patients and doctors.',
+            bang: 'ডাক্তার এবং রোগী, সবার জন্য সহপোযোগী ইন্টারফেস।',
+            eng: 'Doctor and patient, a collaborative interface for everyone.',
         },
         pointpera2: {
             bang: 'নেক্সটজেন মাইহেলথ ভিসিপি-তে আছেন দেশ - বিদেশের সকল বিখ্যাত বিশেষজ্ঞ ডাক্তারণ।',
@@ -415,7 +470,7 @@ export const aboutusData = {
         },
         pointpera3: {
             bang: 'ভিডিও সেশনের সমাপ্তির পর ডাক্তার ই-প্রেসক্রিপশন আপলোড করবেন। ই-প্রেসক্রিপশনটি তখনই বা পরে ডাউনলোড এবং ব্যবহার করা যাবে।',
-            eng: 'After the video session, the doctor will upload the e-prescription. The e-prescription can be downloaded and used either immediately or later.',
+            eng: 'Doctor will upload the e-prescription after video session. The e-prescription can be downloaded and used anytime.',
         },
         pointpera4: {
             bang: 'অনলাইন পরামর্শের জন্য রোগী এবং ডাক্তার উভয়কে এসএমএস এবং ই-মেইলের মাধ্যমে প্রাথমিকভাবে জানানো হবে।',
@@ -423,7 +478,7 @@ export const aboutusData = {
         },
         pointpera5: {
             bang: 'রোগী পোর্টালে তার ডায়াগনস্টিক রিপোর্ট আপলোড করতে স্মার্টফোন ক্যামেরা এবং উল্লেখিত ছবি আপলোড উভয় বিকল্পই ব্যবহার করতে পারেন।',
-            eng: 'The patient can upload their diagnostic report on the patient portal using either the smartphone camera or by selecting the relevant image.',
+            eng: 'The patient can upload their diagnostic report on the patient portal using either smartphone camera or by selecting relevant image.',
         },
         pointpera6: {
             bang: 'নেক্সটজেন মাইহেলথ ভিসিপি সপ্তাহে সাত দিনই সেবা প্রদানের জন্য নিবেদিত।',
@@ -446,9 +501,9 @@ export const contactusData = {
             bang: 'নাম',
             eng: 'Name',
         },
-        email: {
-            bang: 'ই-মেইল',
-            eng: 'Email',
+        contact: {
+            bang: 'ফোন বা ইমেইল',
+            eng: 'Phone or Email',
         },
         msg: {
             bang: 'বার্তা (প্রশ্নের বিবরণ)',
@@ -470,14 +525,6 @@ export const contactusData = {
             bang: 'টুল অ্যান্ড টেকনোলজি ইনস্টিটিউট, বিটাক, শিল্প মন্ত্রণালয় ১১৬ (খ), তেজগাঁও শিল্প এলাকা, ঢাকা-১২০৮, বাংলাদেশ',
             eng: 'Tool & Technology Institute, BITAC, Ministry of Industries 116 (kha), Tejgaon Industrial Area, Dhaka-1208, Bangladesh.',
         },
-        para5: {
-            bang: '+৮৮০১৩২১১১৯৩৯১',
-            eng: '+8801321119391',
-        },
-        para6: {
-            bang: 'info@nextgenmyhealth.com',
-            eng: 'info@nextgenmyhealth.com',
-        },
         btn1: {
             bang: 'বার্তা পাঠান',
             eng: 'Send a message',
@@ -498,121 +545,6 @@ export const specialtiesData = {
     },
 }
 
-// export const specialtylistData = {
-//     pnt1: {
-//         bang: 'জেনারেল ফিজিসিয়ান',
-//         eng: 'General Physician',
-//     },
-//     pnt2: {
-//         bang: 'ইন্টারনাল মেডিসিন',
-//         eng: 'Internal Medicine',
-//     },
-//     pnt3: {
-//         bang: 'হৃদরোগ',
-//         eng: 'Cardiology',
-//     },
-//     pnt4: {
-//         bang: 'কিডনি',
-//         eng: 'Nephrology',
-//     },
-//     pnt5: {
-//         bang: 'ফুসফুস',
-//         eng: 'Respiratory Medicine',
-//     },
-//     pnt6: {
-//         bang: 'বাতরোগ',
-//         eng: 'Rheumatology',
-//     },
-//     pnt7: {
-//         bang: 'পরিপাকতন্ত্র',
-//         eng: 'Gastroenterology',
-//     },
-//     pnt8: {
-//         bang: 'লিভার',
-//         eng: 'Hepatology',
-//     },
-//     pnt9: {
-//         bang: 'স্নায়ুরোগ',
-//         eng: 'Neurology',
-//     },
-//     pnt10: {
-//         bang: 'ক্যান্সার',
-//         eng: 'Oncology',
-//     },
-//     pnt11: {
-//         bang: 'রক্তরোগ',
-//         eng: 'Hematology',
-//     },
-//     pnt12: {
-//         bang: 'হরমোন',
-//         eng: 'Endocrinology',
-//     },
-//     pnt13: {
-//         bang: 'চর্ম ও যৌনরোগ',
-//         eng: 'Dermatology & Venereology',
-//     },
-//     pnt14: {
-//         bang: 'শিশুরোগ',
-//         eng: 'Pediatrics',
-//     },
-//     pnt15: {
-//         bang: 'মনোরোগ',
-//         eng: 'Psychiatry',
-//     },
-//     pnt16: {
-//         bang: 'ফিজিক্যাল মেডিসিন',
-//         eng: 'Physical Medicine & Rehabilitation',
-//     },
-//     pnt17: {
-//         bang: 'এস্থেটিক ডার্মাটোলজি',
-//         eng: 'Aesthetic Dermatology',
-//     },
-//     pnt18: {
-//         bang: 'জেনারেল সার্জারি',
-//         eng: 'General Surgery',
-//     },
-//     pnt19: {
-//         bang: 'অর্থোপেডিক সার্জারি',
-//         eng: 'Orthopedic Surgery',
-//     },
-//     pnt20: {
-//         bang: 'স্নায়ু সার্জারি',
-//         eng: 'Neurosurgery',
-//     },
-//     pnt21: {
-//         bang: 'স্ত্রীরোগ ও প্রসূতি',
-//         eng: 'Gynecology & Obstetrics',
-//     },
-//     pnt22: {
-//         bang: 'নাক, কান ও গলা',
-//         eng: 'ENT & Head Neck Surgery',
-//     },
-//     pnt23: {
-//         bang: 'চক্ষু',
-//         eng: 'Ophthalmology',
-//     },
-//     pnt24: {
-//         bang: 'ডেন্টাল সার্জারি',
-//         eng: 'Oral & Dental Surgery',
-//     },
-//     pnt25: {
-//         bang: 'মুত্ররোগ সার্জারি',
-//         eng: 'Urology',
-//     },
-//     pnt26: {
-//         bang: 'কোলন, রেকটাম সার্জারি',
-//         eng: 'Colorectal Surgery',
-//     },
-//     pnt27: {
-//         bang: 'শিশুরোগ সার্জারি',
-//         eng: 'Pediatric Surgery',
-//     },
-//     pnt28: {
-//         bang: 'রক্তনালী সার্জারি',
-//         eng: 'Vascular Surgery',
-//     },
-// }
-
 export const specialtydoctorsData = {
     index: {
         head11: {
@@ -626,8 +558,8 @@ export const specialtydoctorsData = {
     },
     doctorcard: {
         head1: {
-            bang: 'বি.এম.ডি.সি ',
-            eng: 'B.M.D.C ',
+            bang: 'বি. এম. ডি. সি ',
+            eng: 'B. M. D. C ',
         },
         head2: {
             bang: 'এ-',
@@ -683,8 +615,8 @@ export const specialtyEtoB = {
 export const doctorProfile = {
     banner: {
         head1: {
-            bang: 'বি.এম.ডি.সি: ',
-            eng: 'B.M.D.C: ',
+            bang: 'বি. এম. ডি. সি: ',
+            eng: 'B. M. D. C: ',
         },
         head2: {
             bang: 'এ-',
@@ -803,15 +735,123 @@ export const doctorProfile = {
             eng: 'Joined NextGen MyHealth:'
         },
         para2: {
-            bang: 'উপস্থিত রোগী:',
+            bang: 'রোগী দেখেছেন:',
             eng: 'Patient Attended:'
-        }
+        },
+        para3: {
+            bang: 'জন',
+            eng: ''
+        },
+    },
+}
+
+export const payment = {
+    banner : {
+        head1 : {
+            bang: 'সহজ এবং সুরক্ষিত মাধ্যমে পেমেন্ট করুন ',
+            eng: 'Make payment easily and securely in',
+        },
+        para11 : {
+            bang: 'নেক্সটজেন',
+            eng: 'NextGen',
+        },
+        para12 : {
+            bang: 'মাই',
+            eng: 'My',
+        },
+        para13 : {
+            bang: 'হেলথ',
+            eng: 'Health',
+        },
+        para14 : {
+            bang: 'ভিসিপি',
+            eng: 'VCP',
+        },
+        para15 : {
+            bang: 'তে',
+            eng: '',
+        },
+    },
+    method : {
+        head1 : {
+            bang: 'পেমেন্ট সম্পূর্ণ করতে আপনার পছন্দের নিম্নোক্ত যেকোনো পদ্ধতি অনুসরণ করুন। যেকোনো প্রয়োজনে আমাদের সাথে যোগাযোগ করুন।',
+            eng: 'To complete the payment, follow any of your preferred methods listed below. Feel free to contact us if needed.',
+        },
+        para11 : {
+            bang: 'নগদ/চেক/ব্যাঙ্ক আমানত',
+            eng: 'Nagad/Cheque/Bank Deposit',
+        },
+        para12 : {
+            bang: 'অ্যাকাউন্ট নম্বর: 2104174034072',
+            eng: 'Account Number: 2104174034072',
+        },
+        para13 : {
+            bang: 'সুইফট কোড: PRBLBDDH001',
+            eng: 'SWIFT Code: PRBLBDDH001',
+        },
+        para14 : {
+            bang: 'প্রাইম ব্যাংক লিমিটেড',
+            eng: 'Prime Bank Ltd.',
+        },
+        para15 : {
+            bang: 'আদমজী কোর্ট অ্যানেক্স বিল্ডিং ২, ১১৯-১২০',
+            eng: 'Adamjee Court Annex Building 2, 119-120 Motijheel C/A,',
+        },
+        para16 : {
+            bang: 'মতিঝিল সি/এ, ঢাকা ১০০০, বাংলাদেশ',
+            eng: '',
+        },
+        para17 : {
+            bang: 'বিকাশ নম্বর:',
+            eng: '',
+        },
+        para18 : {
+            bang: 'প্রকার: মার্চেন্ট অ্যাকাউন্ট',
+            eng: '',
+        },
+        para19 : {
+            bang: 'আপনি যদি পেমেন্ট সংক্রান্ত কোনো সমস্যার সম্মুখীন হন, তাহলে অনুগ্রহ করে +৮৮০ ১৩২১১১৯৩৯১ এ কল করুন',
+            eng: '',
+        },
+        para20 : {
+            bang: '',
+            eng: '',
+        },
+    },
+}
+
+export const blogData = {
+    bloglist: {
+        search: {
+            bang: 'শিরোনাম দ্বারা অনুসন্ধান করুন. . .',
+            eng: 'Search by Title, Content. . .',
+        },
+        btn1: {
+            bang: 'অনুসন্ধান',
+            eng: 'Search',
+        },
+        btn2: {
+            bang: 'বাতিল',
+            eng: 'Cancel',
+        },
+    },
+    header: {
+        head: {
+            bang: 'স্বাস্থ্য ব্লগ',
+            eng: 'Health Blog',
+        },
+    },
+    blogcontentbody: {
+        share: {
+            bang: 'পোস্ট শেয়ার করুন:',
+            eng: 'Share the post:',
+        },
     },
 }
 
 export const termsAndConditionsData = {
     'Terms & Conditions': [
-            'Please read these terms and conditions (“Terms and Conditions“) carefully before using the website and services.These terms & conditions create a contract between you & NextGen MyHealth VCP.If you are under age of 18 please confirm that you have your parents or legal guardian’s permission to use this platform.',
+            'Please read these terms and conditions (“Terms and Conditions“) carefully before using the website and services. These terms & conditions create a contract between you & NextGen MyHealth VCP. If you are under age of 18 please confirm that you have your parents or legal guardian’s permission to use this platform.',
             'The Site reserves the right to amend, modify, add, change, or remove portions of these Terms and Conditions under this Agreement at any time without any prior notification. Changes will be effective once posted on the Site without any notice provided on the Site or by any other means. You shall check these Terms and Conditions regularly for updates. Your continued use of the site once the changes of Terms and Conditions had been made shall be construed as your acceptance of the changed Terms and Conditions. Hence, you shall adhere to the subsequent changes accordingly and agree to be held accountable for non-compliance of any terms as contained here in.'
     ],
     'Introduction': [
@@ -836,7 +876,7 @@ export const termsAndConditionsData = {
             '(vii) Since the internet and device are required to receive the service, sometimes due to device charge or internet problem, the doctor may provide the service earlier or later than the doctor’s scheduled time, which should be considered as system delay by the service recipient.',
     ],
     'Limitation of Liability': [
-            'Under no circumstances, including, but not limited to, negligence, will we or our subsidiaries, parent companies or affiliates be liable for any direct, indirect, incidental, special or consequential damages that result from the use of, or the inability to use, the site, including its materials, products, or services, or third-party materials, products, or services made available through the site, even if we are advised beforehand of the possibility of such damages. (because some states do not allow the exclusion or limitation of certain categories of damages, the above limitation may not apply to you. In such states, our liability and the liability of our subsidiaries, parent companies and affiliates, is limited to the fullest extent permitted by such state law.) You specifically acknowledge and agree that we are not liable for any defamatory, offensive or illegal conduct of any user. If you are dissatisfied with the site, or any materials, products, or services on the site, or with any of the site’s terms and conditions, your sole and exclusive remedy is to discontinue using the site.',
+            'Under no circumstances, including, but not limited to, negligence, will we or our subsidiaries, parent companies or affiliates be liable for any direct, indirect, incidental, special or consequential damages that result from the use of, or the inability to use, the site, including its materials, products, or services, or third-party materials, products, or services made available through the site, even if we are advised beforehand of the possibility of such damages. (because some states do not allow the exclusion or limitation of certain categories of damages, the above limitation may not apply to you. In such states, our liability and the liability of our subsidiaries, parent companies and affiliates, is limited to the fullest extent permitted by such state law. ) You specifically acknowledge and agree that we are not liable for any defamatory, offensive or illegal conduct of any user. If you are dissatisfied with the site, or any materials, products, or services on the site, or with any of the site’s terms and conditions, your sole and exclusive remedy is to discontinue using the site.',
     ],
     "Creation and Maintenance of Member's Account": [
             '(i) Users must be registered on the Sites to access or use the Services (a registered User is also referred to as a “Member” below). One user may only register one account at a time on the Site with the approval of NextGen MyHealth VCP. It reserves the right to cancel or terminate a user’s member account if it has reasons to believe that the user has concurrently registered or is in control of two or more member accounts. Further, NextGen MyHealth VCP reserves the right to reject an user’s application for registration for any reason as NextGen MyHealth VCP deems appropriate.',
@@ -923,8 +963,8 @@ export const refundPolicyData = {
     'Refund and Cancellation': [
         '1. If the doctor is not available for the consultation or the waiting time is more than 60 minutes then customers can cancel the consultation and a refund will be made.',
         '2. Consultation fees will not be refunded in any way after consulting a doctor.',
-        '3. If a Patient cancels a consultation prior to the video call of the Doctor after acceptance by the Doctor of the Patient’s request before the expiry of 60 minutes from the Initiation Request, a 5% fee will be deducted and the remaining fee will be refunded to the Patient. There may be additional charges to make the refund. For example, if the user wants the money to be refunded to bKash, Nagad etc.The transaction fee will be deducted.',
-        '4. For any cancellation and refund please email to: info@nextgenmyhealth.com',
+        '3. If a Patient cancels a consultation prior to the video call of the Doctor after acceptance by the Doctor of the Patient’s request before the expiry of 60 minutes from the Initiation Request, a 5% fee will be deducted and the remaining fee will be refunded to the Patient. There may be additional charges to make the refund. For example, if the user wants the money to be refunded to bKash, Nagad etc. The transaction fee will be deducted.',
+        '4. For any cancellation and refund please email to: info@nextgenmyhealth. com',
         '5. Refund process may take up to 10 working days.'
     ]
 };

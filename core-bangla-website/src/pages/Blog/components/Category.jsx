@@ -1,141 +1,131 @@
 import styled from "styled-components";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 import { HBox, VBox } from "../../../components/Containers";
 import { H2, P2, P3, P4 } from "../../../components/Typography";
 import colors from "../../../config/colors";
 
 const Chip = styled(HBox)`
-    color: ${colors.veryLightGrey};
-    padding-left: 3px; 
-    padding-right: 3px;
+    background-color: ${props => props.background};  // Caution! This prop must be a hex color.
+    border-radius: 5px;
+    block-size: fit-content;
 `
+
 const HorizontalLine = styled.div`
     border-bottom: 1px solid ${colors.green};
     width: 100%;
     margin-bottom: 20px;
 `
 
-const VerticalLine = styled.div`
-    border-left: 1px solid ${colors.green};
-    margin-left: 8px;
-`
+const Category = ({ isMobile, selectedCategory, setSelectedCategory }) => {
+    const [categories, setCategories] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
 
-const Category_list = ({isMobile, title, HorizontalLine }) => {
+    useEffect(() => {
+        fetchBlogCategory();
+    }, [1]);
+
+    const fetchBlogCategory = () => {
+        setIsLoading(true);
+        axios({
+            method: 'GET',
+            url: `${import.meta.env.VITE_SERVER_URL}/website/blog-category-list/`,
+            params: {
+                offset: 0,
+                limit: 1000
+            },
+        })
+        .then((response) => {
+            setIsLoading(false);
+            if (response.status === 200) {
+                setCategories(response.data);
+            } else {
+                console.log('BLOG CATEGORY LIST FETCH FAILED', response.status);
+            }
+        })
+        .catch((error) => {
+            setIsLoading(false);
+            console.log('BLOG CATEGORY LIST FETCH ERROR', error);
+        })
+    }
+
     return (
         <>
-            {isMobile ? ( 
-                <HBox>
-                    <Chip style={{ justifyContent: "center", alignContent: "center" }}>
-                        <P2 className="bold px-1 mr-1 mb-3" 
-                            color="white" 
-                            style={{ backgroundColor: colors.green, borderRadius: "5px" }} 
-                        >{title}</P2>
-                    </Chip>
-                </HBox>
-            ) : (
-                <VBox>
-                    <P2 className="mb-2" style={{textAlign: "right"}}>{title}</P2>
-                    <HorizontalLine/>
-                </VBox>
-            )}
-        </>
-
-    );
-}
-
-const Category = ({isMobile}) => {
-  return (
-    <>
-        {
-            isMobile ? (
-                <HBox>
-                    <Chip className="mb-3 mr-2">
-                        <P2
-                            className="bold px-2 py-1"
-                            color= {colors.white}
-                            style={{
-                                backgroundColor: colors.lessDarkGrey,
-                                borderRadius: "5px",
-                            }}
-                        > 
-                            Category
-                        </P2>
-                    </Chip>
-                    <Category_list 
-                        style={{
-                            backgroundColor: colors.lessDarkGrey,
-                            borderRadius: "5px",
-                        }}
-                        isMobile={isMobile}
-                        title="Fever"
-                    />
-                    <Category_list 
-                        isMobile={isMobile}
-                        title="Dengue"
-                    />
-                    <Category_list 
-                        isMobile={isMobile}
-                        title="Covid"
-                    />
-                    <Category_list 
-                        isMobile={isMobile}
-                        title="Anxiety"
-                    />
-                    <Category_list 
-                        isMobile={isMobile}
-                        title="Anemia"
-                    />
-                    <HorizontalLine/>
-                </HBox>
-            ) : (
-                <HBox style={{ flexWrap: "nowrap" }}>
-                    <VBox className="mr-3" >
-                        <Chip className="ml-1 mb-5">
-                            <P2
-                                className="bold px-4 py-2"
-                                color= {colors.white}
-                                justify="center"
-                                align="center"
-                                style={{
-                                    backgroundColor: colors.lessDarkGrey,
-                                    borderRadius: "5px",
-                                }}
-                            > 
-                                Category
-                            </P2>
-                        </Chip>
-                        <Category_list 
-                            isMobile={isMobile}
-                            title="Fever"
-                            HorizontalLine={HorizontalLine}
-                        />
-                                    <Category_list 
-                            isMobile={isMobile}
-                            title="Dengue"
-                            HorizontalLine={HorizontalLine}
-                        />
-                                    <Category_list 
-                            isMobile={isMobile}
-                            title="Covid"
-                            HorizontalLine={HorizontalLine}
-                        />
-                                    <Category_list 
-                            isMobile={isMobile}
-                            title="Anxiety"
-                            HorizontalLine={HorizontalLine}
-                        />
-                                    <Category_list 
-                            isMobile={isMobile}
-                            title="Anemia"
-                            HorizontalLine={HorizontalLine}
-                        />
+            {
+                isMobile ? (
+                    <VBox>
+                        <HBox align='center' className="mb-3">
+                            <Chip background={colors.lessDarkGrey} className="mr-2 px-2 py-1">
+                                <P2
+                                    className="bold"
+                                    color='white'
+                                > 
+                                    Category
+                                </P2>
+                            </Chip>
+                            <HBox>
+                                <Chip background={!selectedCategory ? colors.blue : colors.green} className="mr-1 px-1 clickable">
+                                        <P3
+                                            className="bold"
+                                            color='white'
+                                            onClick={() => setSelectedCategory("")}
+                                        >
+                                            All
+                                        </P3>
+                                </Chip>
+                                {categories.map((category, index) => (
+                                    <Chip background={selectedCategory===category.name ? colors.blue : colors.green} className="mr-1 px-1 clickable">
+                                        <P3
+                                            className="bold"
+                                            color='white'
+                                            onClick={() => setSelectedCategory(category.name)}
+                                        >
+                                            {category.name}
+                                        </P3>
+                                    </Chip>
+                                ))}
+                            </HBox>
+                        </HBox>
+                        <HorizontalLine/>
                     </VBox>
-                    <VerticalLine/>
-                </HBox>
-            )
-        }
-    </>
-  )
+                ) : (
+                    <HBox style={{ flexWrap: "nowrap" }}>
+                        <VBox className="mr-3" >
+                            <Chip background={colors.lessDarkGrey} className="ml-1 mb-5 px-4 py-2">
+                                <P2
+                                    className="bold"
+                                    color='white'
+                                > 
+                                    Category
+                                </P2>
+                            </Chip>
+                            <P2
+                                onClick={() => setSelectedCategory("")}
+                                className="mb-2"
+                                color={!selectedCategory ? 'first' : 'default'}
+                                style={{textAlign: "right", cursor: "pointer"}}
+                            >
+                                All
+                            </P2>
+                            {categories.map((category, index) => (
+                                <>
+                                    <HorizontalLine/>
+                                    <P2 
+                                        className="mb-2"
+                                        color={category.name === selectedCategory ? 'first' : 'default'}
+                                        onClick={() => setSelectedCategory(category.name)}
+                                        style={{textAlign: "right", cursor: "pointer" }}>
+                                        {category.name}
+                                    </P2>
+                                </>
+                            ))}
+                        </VBox>
+                    </HBox>
+                )
+            }
+        </>
+    )
 }
 
-export default Category
+export default Category;
