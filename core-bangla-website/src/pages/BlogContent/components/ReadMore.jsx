@@ -9,7 +9,7 @@ import noImage from '../../../assets/images/no-image.png';
 const Article = ({isMobile, coverImage, title}) => {
     return (
         <VBox style={{width: "24%"}}>
-            {cover_image?
+            {coverImage?
                 <img 
                     src={`${import.meta.env.VITE_SERVER_URL}${coverImage}`}  
                     className="my-2"
