@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import colors from "../../../config/colors";
 import { VBox, HBox } from "../../../components/Containers";
 import { H2, P1, P2 } from "../../../components/Typography";
-import { Links, aboutusData } from "../../../data";
+import { links, aboutusData } from "../../../data";
 
 const Container = styled(VBox)`
     width: 100%;
@@ -46,21 +46,21 @@ const WhoWeAre = ({ isMobile, language }) => {
             <HBox align="center" className={isMobile ? "mb-3" : "mb-4"} >
                 <VerticalBorder/>
                 <VBox className="ml-2" style={{ width: "150px" }}>
-                    <H2 color="third" className="bold">{aboutusData.WhoWeAre.head1[language]}</H2>
+                    <H2 color="third" className="bold">{aboutusData.whoWeAre.head1[language]}</H2>
                 </VBox>
             </HBox>
-            <P2 style={{ width: "100%" }}>{aboutusData.WhoWeAre.para1[language]}</P2>
-            <HBox justify="center" style={{ marginTop: isMobile ? '60px' : '100px' }}>
+            {/* <P2 style={{ width: "100%" }}>{aboutusData.whoWeAre.para1[language]}</P2> */}
+            <HBox justify="center" >
                 <VideoContainer
                     style={{ width: isMobile ? "80%" : "40%", marginRight: isMobile ? "23%" : "" }}
-                    src={Links.aboutus.link1}
-                    title={aboutusData.WhoWeAre.title1[language]}
+                    src={links.aboutus.link1}
+                    title={aboutusData.whoWeAre.title1[language]}
                     frameborder="0" 
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                     allowfullscreen 
                 />
                 <CardContainer className={isMobile ? "mt-2 p-3" : "py-6 pr-7 pl-7"} style={{ width: isMobile ? "100%" : "50%" }}>
-                    <P2>{aboutusData.WhoWeAre.para1[language]}</P2>
+                    <P2>{aboutusData.whoWeAre.para1[language]}</P2>
                 </CardContainer>
             </HBox>
         </Container>

@@ -8,18 +8,18 @@ import noImage from '../../../assets/images/no-image.png';
 
 const Article = ({isMobile, coverImage, title}) => {
     return (
-        <VBox style={{width: "24%"}}>
-            {cover_image?
+        <VBox style={{ width: isMobile? "40%" : "25%" }}>
+            {coverImage?
                 <img 
                     src={`${import.meta.env.VITE_SERVER_URL}${coverImage}`}  
                     className="my-2"
-                    style={{ width: isMobile? "170px" : "150px", height: isMobile? "130px" : "110px" }}
+                    style={{ width: isMobile? "120px" : "150px", height: isMobile? "120px" : "110px" }}
                 /> 
                 : 
                 <img 
                     src={noImage} 
                     className="my-2"
-                    style={{ width: isMobile? "170px" : "150px", height: isMobile? "130px" : "110px" }}
+                    style={{ width: isMobile? "120px" : "150px", height: isMobile? "120px" : "110px" }}
                 /> 
             }
             <P3>{title}</P3>
@@ -64,12 +64,12 @@ const ReadMore = ({isMobile, blogId}) => {
     return (
         <VBox className={isMobile ? "mt-3 pb-3" : "mt-5 pb-8"}>
             <P2>Read Related Articles...</P2>
-            <HBox className="mt-1" justify="flex-start" style={{ flexWrap:"nowrap" }}>
+            <HBox className="mt-1" justify="space-between" style={{ flexWrap: isMobile? "" : "nowrap" }} >
                 {
                     blogs.length === 0 ? (
                         <></>
                     ) : (
-                    blogs.map((blog, index) => ( 
+                    blogs.map((blog) => ( 
                         <Link
                             key={blog?.id}
                             className='clickable'

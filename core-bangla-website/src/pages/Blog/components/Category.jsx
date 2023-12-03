@@ -18,7 +18,7 @@ const HorizontalLine = styled.div`
     margin-bottom: 20px;
 `
 
-const Category = ({ isMobile, selectedCategory, setSelectedCategory }) => {
+const Category = ({ isMobile, selectedCategory, setSelectedCategory, setPage }) => {
     const [categories, setCategories] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
 
@@ -50,6 +50,11 @@ const Category = ({ isMobile, selectedCategory, setSelectedCategory }) => {
         })
     }
 
+    const handleCategorySelection = (category) => {
+        setSelectedCategory(category);
+        setPage(1);
+    };
+
     return (
         <>
             {
@@ -64,22 +69,22 @@ const Category = ({ isMobile, selectedCategory, setSelectedCategory }) => {
                                     Category
                                 </P2>
                             </Chip>
-                            <HBox>
+                            <HBox className={isMobile? "mt-1" : ""}>
                                 <Chip background={!selectedCategory ? colors.blue : colors.green} className="mr-1 px-1 clickable">
                                         <P3
                                             className="bold"
                                             color='white'
-                                            onClick={() => setSelectedCategory("")}
+                                            onClick={() => handleCategorySelection("")}
                                         >
                                             All
                                         </P3>
                                 </Chip>
-                                {categories.map((category, index) => (
-                                    <Chip background={selectedCategory===category.name ? colors.blue : colors.green} className="mr-1 px-1 clickable">
+                                {categories.map((category) => (
+                                    <Chip background={selectedCategory===category.name ? colors.blue : colors.green} className="mr-1 mb-1 px-1 clickable">
                                         <P3
                                             className="bold"
                                             color='white'
-                                            onClick={() => setSelectedCategory(category.name)}
+                                            onClick={() => handleCategorySelection(category.name)}
                                         >
                                             {category.name}
                                         </P3>
@@ -101,7 +106,7 @@ const Category = ({ isMobile, selectedCategory, setSelectedCategory }) => {
                                 </P2>
                             </Chip>
                             <P2
-                                onClick={() => setSelectedCategory("")}
+                                onClick={() => handleCategorySelection("")}
                                 className="mb-2"
                                 color={!selectedCategory ? 'first' : 'default'}
                                 style={{textAlign: "right", cursor: "pointer"}}
@@ -114,7 +119,7 @@ const Category = ({ isMobile, selectedCategory, setSelectedCategory }) => {
                                     <P2 
                                         className="mb-2"
                                         color={category.name === selectedCategory ? 'first' : 'default'}
-                                        onClick={() => setSelectedCategory(category.name)}
+                                        onClick={() => handleCategorySelection(category.name)}
                                         style={{textAlign: "right", cursor: "pointer" }}>
                                         {category.name}
                                     </P2>

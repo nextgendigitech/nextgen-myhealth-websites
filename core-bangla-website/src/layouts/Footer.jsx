@@ -12,7 +12,7 @@ import logo from '../assets/images/Website-Logo.png'
 import colors from '../config/colors';
 import responsive from '../config/responsive';
 import DoctorSearchDlg from './DoctorSearchDlg';
-import { footerData, Links } from '../data';
+import { footerData, links } from '../data';
 
 
 const FooterContainer1 = styled(VBox)`
@@ -122,17 +122,17 @@ const Footer = ({ language }) => {
             <VBox>
                 <P2 className='bold'>{footerData.head1[language]}</P2>
                 <P3>{footerData.para11[language]}</P3>
-                <Link to={Links.footer.link1} style={{ textDecoration: 'none' }} target='_blank'>
+                <Link to={links.footer.link1} style={{ textDecoration: 'none' }} target='_blank'>
                     <P3 color='first'>{footerData.para21[language]}</P3>
                 </Link>
                 <P3>{footerData.para31[language]}</P3>
                 <HBox align='center' className='mt-2'>
                     <PhoneIcon />
-                    <P3 className='ml-1'>{Links.phoneandemail.phone[language]}</P3>
+                    <P3 className='ml-1'>{links.phoneandemail.phone[language]}</P3>
                 </HBox>
                 <HBox align='center' className='mt-1'>
                     <EmailIcon />
-                    <P3 className='ml-1'>{Links.phoneandemail.email[language]}</P3>
+                    <P3 className='ml-1'>{links.phoneandemail.email[language]}</P3>
                 </HBox>
             </VBox>
          </VBox>
@@ -209,7 +209,7 @@ const Footer = ({ language }) => {
                             <P3 style={{ color: colors.grey }}>{footerData.footer3[language]}</P3>
                         </SNavLink>
                     </HBox>
-                    <Link className='mb-2' to={Links.footer.link1} style={{ textDecoration: 'none' }} target='_blank'>
+                    <Link className='mb-2' to={links.footer.link1} style={{ textDecoration: 'none' }} target='_blank'>
                         <P3 style={{ color: colors.grey }}>
                             {footerData.footer4[language]}{new Date().getFullYear()}&nbsp;{footerData.para21[language]}
                         </P3>

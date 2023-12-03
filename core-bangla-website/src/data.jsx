@@ -1,24 +1,24 @@
-export const Links = {
+export const links = {
     topbar : {
-        link1 : "https://www. facebook. com/nextgenmyhealthvcp",
-        link2 : "https://www. linkedin. com/company/nextgen-myhealth-vcp/",
-        link3 : "https://www. youtube. com/channel/UCSDFJqW2y9UYs6IMWGK2i9w",
+        link1 : "https://www.facebook.com/nextgenmyhealthvcp",
+        link2 : "https://www.linkedin.com/company/nextgen-myhealth-vcp/",
+        link3 : "https://www.youtube.com/channel/UCSDFJqW2y9UYs6IMWGK2i9w",
     },
     navbar : {
-        link1 : "https://patient. nextgenmyhealth. com/login",
-        link2 : "https://doctor. nextgenmyhealth. com/login",
+        link1 : "https://patient.nextgenmyhealth.com/login",
+        link2 : "https://doctor.nextgenmyhealth.com/login",
     },
     footer : {
-        link1 : "https://nextgendgtech. com/",
+        link1 : "https://nextgendgtech.com/",
     },
     joindoctor : {
-        link1 : "https://docs. google. com/forms/d/e/1FAIpQLSe2oTRWq02VzSy7S5HyZLXbUtGdY1uwZrnmZjM5bEXNPWZMZA/viewform?pli=1",
+        link1 : "https://docs.google.com/forms/d/e/1FAIpQLSe2oTRWq02VzSy7S5HyZLXbUtGdY1uwZrnmZjM5bEXNPWZMZA/viewform?pli=1",
     },
     qrcode : {
-        link1 : "https://play. google. com/store/apps/details?id=com. nextgen_digitech. myhealth_patients&pcampaignid=web_share",
+        link1 : "https://play.google.com/store/apps/details?id=com.nextgen_digitech.myhealth_patients&pcampaignid=web_share",
     },
     aboutus : {
-        link1 : "https://www. youtube. com/embed/NdZ9vPHAy7w",
+        link1 : "https://www.youtube.com/embed/NdZ9vPHAy7w",
     },
     phoneandemail : {
         phone: {
@@ -26,11 +26,11 @@ export const Links = {
             eng: '+8801321119391',
         },
         email: {
-            bang: 'info@nextgenmyhealth. com',
-            eng: 'info@nextgenmyhealth. com',
+            bang: 'info@nextgenmyhealth.com',
+            eng: 'info@nextgenmyhealth.com',
         },
     },
-    doctorapp : "https://patient. nextgenmyhealth. com/doctor/",
+    doctorapp : "https://patient.nextgenmyhealth.com/doctor/",
 }
 
 export const navbarData = {
@@ -204,8 +204,8 @@ export const homeData = {
             eng: 'Virtual Care Platform'
         },
         para1: {
-            bang: 'জরুরী সমস্যায় আক্রান্ত রোগীদের জন্য আমরা সর্বদা প্রস্তুত। আপনি যেকোন সময় আমাদের সাথে সহজেই যোগাযোগ করতে পারেন। আমরা সর্বোচ্চ মানের সেবা দেওয়ার চেষ্টা করি।',
-            eng: 'For patients in critical conditions, we are always ready. You can easily reach out to us at any time. We strive to provide the highest quality of service.'
+            bang: 'জরুরী অবস্থায় আক্রান্ত রোগীদের জন্য আমরা সর্বদা পাশে আছি এবং সর্বোচ্চ মানের সেবা প্রদানের চেষ্টা করি।',
+            eng: 'We are always here for patients in need of emergency care, and we strive to provide the highest quality of service.'
         },
         btn1: {
             bang: 'অ্যাপয়েন্টমেন্ট নিন',
@@ -226,7 +226,7 @@ export const homeData = {
             eng: 'NextGen MyHealth VCP, a product of NextGen DigiTech Ltd. is a healthcare service provider platform in Bangladesh. NextGen MyHealth VCP has made it possible to consult and receive healthcare services through video calls with registered specialist doctors from America, Europe, the United Kingdom, and numerous BMDC registered specialists in Bangladesh. Utilizing cutting-edge technology, NextGen MyHealth VCP aims to reach healthcare services from rural areas to urban areas, commencing in Bangladesh.',
         },
     },
-    WhyUs: {
+    whyUs: {
         head1: {
             bang: 'কেন আমাদের প্লাটফর্ম ব্যবহার করবেন?',
             eng: 'Why Should You Use Our Platform?',
@@ -260,7 +260,7 @@ export const homeData = {
             eng: 'Cloud-based Data and Privacy Security',
         },
     },
-    SpecialtiesSummary: {
+    specialtiesSummary: {
         head1: {
             bang: 'আমাদের কাছে যে সকল',
             eng: 'We have the following',
@@ -294,7 +294,7 @@ export const homeData = {
             eng: 'See All Specialist Doctors',
         },
     },
-    bookingsteps: {
+    bookingSteps: {
         head1: {
             bang: 'ঘণ্টার পর ঘণ্টা লাইনে দাঁড়িয়ে থাকার দিন শেষ!',
             eng: '',
@@ -352,7 +352,7 @@ export const homeData = {
             eng: 'Confirm your appointment by making an online payment.',
         },
     },
-    CustomerReview: {
+    customerReview: {
         head1: {
             bang: 'আমাদের ক্লায়েন্টরা কি বলেন',
             eng: 'What Our Clients Say',
@@ -370,8 +370,8 @@ export const homeData = {
             eng: 'Tasnima Waheed',
         },
         para1: {
-            bang: 'আমি খুশি যে বাংলাদেশে এখন বিশ্বমানের অনলাইন চিকিৎসার বিকল্প রয়েছে। এটি আমার মতো অনেক রোগীকে চিকিৎসার জন্য বিদেশে যাওয়ার ভারী ব্যয় বহন না করে স্বাভাবিক জীবনযাপন করার সুযোগ দেয়।',
-            eng: "I am glad that we now have world-class online treatment options available in Bangladesh. This gives a chance to many patients like me to lead normal lives without having to incur heavy expenses of going abroad for the same treatment. ",
+            bang: 'বাংলাদেশে অনলাইন চিকিৎসার উত্থান আমার মতো অনেক রোগীর জন্য একটি আশীর্বাদ। এটি আমাদেরকে বিদেশে যাওয়ার ব্যয়বহুল এবং সময়সাপেক্ষ যাত্রা এড়াতে এবং আমাদের বাড়ির আরাম থেকে মানসম্মত চিকিৎসা পেতে দেয়।',
+            eng: "The rise of online healthcare in Bangladesh is a blessing for many patients like me. It allows us to avoid the costly and time-consuming journey of going abroad and to get quality healthcare from the comfort of our homes.",
         },
         para2: {
             bang: 'আমি সত্যিই খুশি যে ডাক্তাররা আমার অবস্থা এবং থেরাপি সম্পর্কে আরও জানার সুযোগ দিয়েছেন যা আমাকে চিকিৎসা করতে সাহায্য করেছিল। পিঠের ব্যথা ছাড়াই আমি আমার দৈনন্দিন জীবনে ফিরে এসেছি। আমি অবশেষে শান্তিতে আছি।',
@@ -382,7 +382,7 @@ export const homeData = {
             eng: "NextGen MyHealth VCP is the best online platform for medical treatment. I have been treated by one of their doctors. The doctor was very good and took great care of me during my treatment. It was truly a good experience. ",
         },
     },
-    JoinDoctor: {
+    joinDoctor: {
         head1: {
             bang: 'আপনি কি একজন ডাক্তার এবং',
             eng: 'Are you a doctor and',
@@ -413,7 +413,7 @@ export const homeData = {
 }
 
 export const aboutusData = {
-    WhoWeAre: {
+    whoWeAre: {
         head1: {
             bang: 'আমাদের পরিচিতি',
             eng: 'Our Introduction',
@@ -431,7 +431,7 @@ export const aboutusData = {
             eng : 'Virtual Care Platform - NextGen MyHealth VCP'
         },
     },
-    OurAdvantages: {
+    ourAdvantages: {
         head1: {
             bang: 'আমাদের প্ল্যাটফর্ম ব্যবহার করার সুবিধা',
             eng: 'The Advantages of Using Our Platform',
@@ -488,7 +488,7 @@ export const aboutusData = {
 }
 
 export const contactusData = {
-    Form: {
+    form: {
         head1: {
             bang: 'যোগাযোগ করুন',
             eng: 'Contact Us',
@@ -533,7 +533,7 @@ export const contactusData = {
 }
 
 export const specialtiesData = {
-    specialtysection: {
+    specialtySection: {
         head1: {
             bang: 'মেডিসিন',
             eng: 'Medicine',
@@ -556,7 +556,7 @@ export const specialtydoctorsData = {
             eng: ' doctors',
         },
     },
-    doctorcard: {
+    doctorCard: {
         head1: {
             bang: 'বি. এম. ডি. সি ',
             eng: 'B. M. D. C ',

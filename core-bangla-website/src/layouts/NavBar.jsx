@@ -11,7 +11,7 @@ import { P1, P2 } from '../components/Typography';
 import logo from '../assets/images/Website-Logo.png'
 import colors from '../config/colors';
 import responsive from '../config/responsive';
-import { navbarData, Links } from '../data';
+import { navbarData, links } from '../data';
 
 const Container = styled(HBox)`
     position: sticky;

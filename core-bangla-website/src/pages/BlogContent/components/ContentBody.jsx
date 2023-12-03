@@ -71,7 +71,7 @@ const ContentBody = ({id, title, content, isMobile, language, coverImage, blogCa
                     /> : <></>
                 }
             </VBox>
-            <ReactQuill value={content} readOnly={true} theme={'bubble'} style={quillStyle} />
+            <ReactQuill value={content} readOnly={true} theme={'bubble'} />
             <HBox className={isMobile ? "mt-2" : "mt-4"}>
                 { blogCategory.length != 0 ? (
                 <>

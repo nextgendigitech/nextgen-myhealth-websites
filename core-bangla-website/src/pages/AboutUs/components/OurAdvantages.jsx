@@ -59,42 +59,42 @@ const BottomContentCard = ({ title, detail, isMobile }) => {
 const OurAdvantages = ({ isMobile, language }) => {
   return (
     <Container style={{paddingTop: isMobile ? '60px' : '100px',  marginBottom: isMobile ? '60px' : '100px',}}>
-        <H3 align="center" className={isMobile ? "bold mb-2" : "bold mb-4"}>{aboutusData.OurAdvantages.head1[language]}</H3>
+        <H3 align="center" className={isMobile ? "bold mb-2" : "bold mb-4"}>{aboutusData.ourAdvantages.head1[language]}</H3>
         <HBox justify="center" align="center"> 
             <VContainer>
                 <TopContentCard
                     isMobile={isMobile}
-                    title={aboutusData.OurAdvantages.pointhead1[language]}
-                    detail={aboutusData.OurAdvantages.pointpera1[language]}
+                    title={aboutusData.ourAdvantages.pointhead1[language]}
+                    detail={aboutusData.ourAdvantages.pointpera1[language]}
                 />
                 <BottomContentCard 
                     isMobile={isMobile}
-                    title={aboutusData.OurAdvantages.pointhead4[language]}
-                    detail={aboutusData.OurAdvantages.pointpera4[language]}
+                    title={aboutusData.ourAdvantages.pointhead4[language]}
+                    detail={aboutusData.ourAdvantages.pointpera4[language]}
                 />
             </VContainer>
             <VContainer>
                 <TopContentCard 
                     isMobile={isMobile}
-                    title={aboutusData.OurAdvantages.pointhead2[language]}
-                    detail={aboutusData.OurAdvantages.pointpera2[language]}
+                    title={aboutusData.ourAdvantages.pointhead2[language]}
+                    detail={aboutusData.ourAdvantages.pointpera2[language]}
                 />
                 <BottomContentCard 
                     isMobile={isMobile}
-                    title={aboutusData.OurAdvantages.pointhead5[language]}
-                    detail={aboutusData.OurAdvantages.pointpera5[language]}
+                    title={aboutusData.ourAdvantages.pointhead5[language]}
+                    detail={aboutusData.ourAdvantages.pointpera5[language]}
                 />
             </VContainer>
             <VContainer>
                 <TopContentCard 
                     isMobile={isMobile}
-                    title={aboutusData.OurAdvantages.pointhead3[language]}
-                    detail={aboutusData.OurAdvantages.pointpera3[language]}
+                    title={aboutusData.ourAdvantages.pointhead3[language]}
+                    detail={aboutusData.ourAdvantages.pointpera3[language]}
                 />
                 <BottomContentCard 
                     isMobile={isMobile}
-                    title={aboutusData.OurAdvantages.pointhead6[language]}
-                    detail={aboutusData.OurAdvantages.pointpera6[language]}
+                    title={aboutusData.ourAdvantages.pointhead6[language]}
+                    detail={aboutusData.ourAdvantages.pointpera6[language]}
                 />
             </VContainer>
         </HBox>

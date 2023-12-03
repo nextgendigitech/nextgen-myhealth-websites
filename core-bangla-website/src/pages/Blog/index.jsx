@@ -74,14 +74,14 @@ const Blog = ({language}) => {
         setPage(newPage);        
     }
 
-    const fetchBlogs = (key=searchKey) => {
+    const fetchBlogs = (key=searchKey, categoryKey=selectedCategory) => {
         setIsLoading(true);
         axios({
             method: 'GET',
             url: `${import.meta.env.VITE_SERVER_URL}/website/blog-list/`,
             params: {
                 key: key,
-                categoryKey: selectedCategory,
+                categoryKey: categoryKey,
                 offset: (page-1) * pageSize,
                 limit: (page-1) * pageSize + pageSize,
             },
@@ -91,6 +91,9 @@ const Blog = ({language}) => {
             if (response.status === 200) {
                 setBlogs(response.data.blogs);
                 setCount(response.data.count);
+                if (categoryKey === setSelectedCategory) {
+                    setPage(1);
+                }
             } else {
                 console.log('BLOG LIST FETCH FAILED', response.status);
             }
@@ -102,10 +105,10 @@ const Blog = ({language}) => {
     }
 
     const handleSearch = () => {
+        setSelectedCategory("");
         setCount(null);
         setPage(1);
         setBlogs([]);
-        setSelectedCategory("");
         fetchBlogs();
     };
 
@@ -138,6 +141,7 @@ const Blog = ({language}) => {
                                 isMobile={isMobile}
                                 selectedCategory={selectedCategory}
                                 setSelectedCategory={setSelectedCategory}
+                                setPage={setPage}
                             />
                             <VBox justify="center" className="mb-3">
                                 <SearchBar
@@ -192,6 +196,7 @@ const Blog = ({language}) => {
                                 style={{ width: "25%" }}
                                 selectedCategory={selectedCategory}
                                 setSelectedCategory={setSelectedCategory}
+                                setPage={setPage}
                             />
                             <VerticalLine/> 
                             <VBox style={{ width: "100%" }}>

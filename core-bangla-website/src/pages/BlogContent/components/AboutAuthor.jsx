@@ -22,11 +22,11 @@ const AboutAuthor = ({isMobile, createdAt, authorImage, authorName, authorDetail
                     {authorImage ?
                         <img 
                             src={`${import.meta.env.VITE_SERVER_URL}${authorImage}`}  
-                            style={{ height: isMobile? "70px" : "100px", width: isMobile? "100px": "" }}
+                            style={{ height: isMobile? "70px" : "100px", width: isMobile? "80px": "" }}
                         /> 
-                        : <img src={noImage} style={{ height: isMobile? "70px" : "100px", width: isMobile? "100px": "" }}/>
+                        : <img src={noImage} style={{ height: isMobile? "70px" : "100px", width: isMobile? "80px": "" }}/>
                     }
-                    <VBox className="my-1 ml-2" justify={isMobile? "" : "center"} style={{ width: "70%" }}>
+                    <VBox className="mb-1 ml-2" justify={isMobile? "" : "center"} style={{ width: "70%" }}>
                         <P3>লিখেছেন</P3>
                         <P3>{authorName}</P3>
                         <P3>{authorDetails}</P3>

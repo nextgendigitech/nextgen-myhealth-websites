@@ -11,7 +11,7 @@ import colors from "../../../config/colors";
 import { Button } from "../../../components/Buttons";
 import { HBox, VBox } from "../../../components/Containers";
 import { H5, P2, P3 } from "../../../components/Typography";
-import { contactusData, Links } from "../../../data";
+import { contactusData, links } from "../../../data";
 
 
 const Card = styled(VBox)`
@@ -161,17 +161,17 @@ const Form = ({ isMobile, language }) => {
                 <VBox className={isMobile ? "pt-3" : "mb-6 pl-6"} style={{ width: isMobile ? "100%" : "45%", alignItems: isMobile ? "center" : "" }}>
                     <P2 className="bold">{contactusData.Form.para1[language]}</P2>
                     <P3>{contactusData.Form.para2[language]}</P3>
-                    <Link to={Links.footer.link1} style={{ textDecoration: 'none' }} target='_blank'>
+                    <Link to={links.footer.link1} style={{ textDecoration: 'none' }} target='_blank'>
                         <P3 color="first">{contactusData.Form.para3[language]}</P3>
                     </Link>
                     <P3 align= {isMobile ? "center" : ""}>{contactusData.Form.para4[language]}</P3>
                     <HBox className={isMobile ? "mt-1" : "mt-3"}>
                         <HiOutlinePhone className="mr-1"/>
-                        <P3>{Links.phoneandemail.phone[language]}</P3>
+                        <P3>{links.phoneandemail.phone[language]}</P3>
                     </HBox>
                     <HBox className={isMobile ? "mt-1" : "mt-3"}>
                         <AiOutlineMail className="mr-1"/>
-                        <P3>{Links.phoneandemail.email[language]}</P3>
+                        <P3>{links.phoneandemail.email[language]}</P3>
                     </HBox>
                 </VBox>
             </HBox>

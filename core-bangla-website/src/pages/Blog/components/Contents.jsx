@@ -27,19 +27,19 @@ const ContentCard = ({ title, content, isMobile, id, coverImage }) => {
                         <img 
                             src={`${import.meta.env.VITE_SERVER_URL}${coverImage}`}  
                             className={isMobile ? "mb-2" : ""} 
-                            style={{ width: isMobile ? "50%" : "25%" }}
+                            style={{ width: isMobile ? "50%" : "20%" }}
                         /> 
                         : 
                         <img 
                             src={noImage} 
-                            className={isMobile ? "mb-2" : "mr-5"}
+                            className={isMobile ? "mb-2" : ""}
                             style={{ width: isMobile ? "50%" : "20%" }}
                         /> 
                     }
                     <VBox 
                         justify={isMobile? "" : "center"} 
                         className={isMobile ? "" : "ml-2 pl-2"} 
-                        style={{ width: isMobile ? "100%" : "72%"}}
+                        style={{ width: isMobile ? "100%" : "75%"}}
                     >
                         <P2 className="bold mb-2">{title}</P2>
                         <P3>

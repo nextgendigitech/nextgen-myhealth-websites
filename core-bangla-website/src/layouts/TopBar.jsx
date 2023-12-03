@@ -14,7 +14,7 @@ import linkedinIcon from '../assets/images/linkedin_icon.png';
 import youtubeLogo from '../assets/images/youtube_logo.png';
 import searchIcon from '../assets/images/search_icon.png';
 import DoctorSearchDlg from './DoctorSearchDlg';
-import { topbarData, Links } from '../data';
+import { topbarData, links } from '../data';
 import CheckButton from '../components/CheckButton';
 import { toggleLang } from '../services/actions/generalAction';
 
@@ -98,13 +98,13 @@ const TopBar = ({ language, toggleLang }) => {
             align='center'
             style={{ paddingLeft: isMobile ? "20px" : "100px", paddingRight: isMobile ? "20px" : "100px" }}>
             <IconContainer>
-                <Link to={Links.topbar.link1} target="_blank" className='ml-1'>
+                <Link to={links.topbar.link1} target="_blank" className='ml-1'>
                     <IconImage src={facebookIcon} alt="Facebook Image" />
                 </Link>
-                {/* <Link to={Links.topbar.link2} target='_blank'>
+                {/* <Link to={links.topbar.link2} target='_blank'>
                     <IconImage src={linkedinIcon} alt="LinkedIn Image" className={isMobile ? 'mx-1' : 'mx-3'} />
                 </Link> */}
-                <Link to={Links.topbar.link3} target='_blank' className='ml-1'>
+                <Link to={links.topbar.link3} target='_blank' className='ml-1'>
                     <IconImage src={youtubeLogo} alt="Youtube Image" />
                 </Link>
             </IconContainer>
