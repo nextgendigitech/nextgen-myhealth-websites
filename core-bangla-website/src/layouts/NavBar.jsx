@@ -133,7 +133,7 @@ const NavBar = ({ language }) => {
                                         </SNavLink>
                                     </ListItemText>
                                 </ListItem>
-                                <ListItem>
+                                <ListItem className='mb-2'>
                                     <ListItemText>
                                         <SNavLink to='/specialties' onClick={handleClickMenuItem}>
                                             <P1>{navbarData.head3[language]}</P1>
