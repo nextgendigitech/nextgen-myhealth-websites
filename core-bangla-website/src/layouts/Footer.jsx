@@ -113,6 +113,10 @@ const Footer = ({ language }) => {
         return () => window.removeEventListener('resize', () => setResponsiveness());
     }, []);
 
+    const handlePhoneCall = () => {
+        window.location.href = `tel:${links.phoneandemail.phone[language]}`;
+    };
+
     const ContactHtml = () => (
         <VBox
             align={isMobile ? 'flex-start' : 'center'}
@@ -128,7 +132,9 @@ const Footer = ({ language }) => {
                 <P3>{footerData.para31[language]}</P3>
                 <HBox align='center' className='mt-2'>
                     <PhoneIcon />
-                    <P3 className='ml-1'>{links.phoneandemail.phone[language]}</P3>
+                    <P3 className='ml-1' onClick={handlePhoneCall} style={{ cursor: 'pointer' }}>
+                        {links.phoneandemail.phone[language]}
+                    </P3>
                 </HBox>
                 <HBox align='center' className='mt-1'>
                     <EmailIcon />

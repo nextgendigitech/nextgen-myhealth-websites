@@ -36,8 +36,8 @@ const DoctorCard = ({ id, name, bmdc, qualification, specialty,
                     className="mb-3"
                     src={`${import.meta.env.VITE_SERVER_URL}${image}` ? `${import.meta.env.VITE_SERVER_URL}${image}` : noImage}
                 />
-                <P4>{specialtydoctorsData.doctorcard.head1[language]}</P4>
-                <P4 className="bold">{qualification.includes("MBBS") ? specialtydoctorsData.doctorcard.head2[language] : ""}{bmdc}</P4>
+                <P4>{specialtydoctorsData.doctorCard.head1[language]}</P4>
+                <P4 className="bold">{qualification.includes("MBBS") ? specialtydoctorsData.doctorCard.head2[language] : ""}{bmdc}</P4>
                 <P2 className={isMobile ? "bold mt-1" : "bold mt-2"} color="first"><TbCurrencyTaka/>{fee}</P2>
             </VBox>
             <VBox className={isMobile ? "pl-5" : "pl-3"} style={{ width: "80%" }}>
@@ -53,7 +53,7 @@ const DoctorCard = ({ id, name, bmdc, qualification, specialty,
                 </VBox>
                 <P4 className="mb-1">{qualification}</P4>
                 <P4 className={isMobile ? "bold mb-2" : "mb-3"}>
-                    {experience ? specialtydoctorsData.doctorcard.head3[language] : ""}{experience}
+                    {experience ? specialtydoctorsData.doctorCard.head3[language] : ""}{experience}
                     {/* {experience?.substring(0,2) ? experience.substring(0,2) + "+ Years" : ""} */}
                 </P4>
                 <HBox justify="space-around" >
@@ -61,13 +61,13 @@ const DoctorCard = ({ id, name, bmdc, qualification, specialty,
                         <Button 
                             style={{ fontSize: "14px", width: "fit-content", borderRadius: 25, height: isMobile ? 25 : 37 }} 
                             color='first' 
-                            elevated>{specialtydoctorsData.doctorcard.btn1[language]}</Button> 
+                            elevated>{specialtydoctorsData.doctorCard.btn1[language]}</Button> 
                     </NavLink>
                     <Link to={`https://patient.nextgenmyhealth.com/doctor/${id}`} style={{textDecoration: 'none'}} target='_blank' className={isMobile ? "mb-1" : ""}>
                         <Button 
                             style={{ fontSize: "14px", width: "fit-content", borderRadius: 25, height: isMobile ? 25 : 37 }}
                             color='third' 
-                            elevated>{specialtydoctorsData.doctorcard.btn2[language]}</Button> 
+                            elevated>{specialtydoctorsData.doctorCard.btn2[language]}</Button> 
                     </Link>
                 </HBox>
             </VBox>

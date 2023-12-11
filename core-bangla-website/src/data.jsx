@@ -148,8 +148,8 @@ export const footerData = {
 
 export const doctorsearchdlgData = {
     head1: {
-        bang: 'বি. এম. ডি. সি:',
-        eng: 'B. M. D. C:',
+        bang: 'বিএমডিসি:',
+        eng: 'BMDC:',
     },
     head2: {
         bang: 'এ-',
@@ -222,8 +222,8 @@ export const homeData = {
             eng: 'Our Short Introduction',
         },
         para1: {
-            bang: 'নেক্সটজেন মাইহেলথ ভিসিপি, নেক্সটজেন ডিজিটেক লিমিটেড এর একটি পণ্য, বাংলাদেশের একটি স্বাস্থ্য সেবা প্রদানকারী প্ল্যাটফর্ম। নেক্সটজেন মাইহেলথ ভিসিপি আমেরিকা, ইউরোপ, যুক্তরাজ্য এবং বাংলাদেশের সহস্রাধিক বিএমডিসি নিবন্ধিত বিশেষজ্ঞ চিকিৎসকদের সঙ্গে ঘরে বসে ভিডিও কলের মাধ্যমে পরামর্শ ও স্বাস্থ্যসেবা নেয়া সম্ভব করেছে। প্রযুক্তির নিত্যনতুন উদ্ভাবন ব্যবহার করে স্বাস্থ্যসেবাকে দেশের প্রত্যন্ত অঞ্চল থেকে শহর পর্যন্ত সকলের কাছে পৌঁছে দেয়ার লক্ষ্যে বাংলাদেশে শুরু হয় নেক্সটজেন মাইহেলথ ভিসিপি এর কার্যক্রম।',
-            eng: 'NextGen MyHealth VCP, a product of NextGen DigiTech Ltd. is a healthcare service provider platform in Bangladesh. NextGen MyHealth VCP has made it possible to consult and receive healthcare services through video calls with registered specialist doctors from America, Europe, the United Kingdom, and numerous BMDC registered specialists in Bangladesh. Utilizing cutting-edge technology, NextGen MyHealth VCP aims to reach healthcare services from rural areas to urban areas, commencing in Bangladesh.',
+            bang: 'নেক্সটজেন মাইহেলথ ভিসিপি, নেক্সটজেন ডিজিটেক লিমিটেড এর একটি পণ্য, বাংলাদেশের একটি স্বাস্থ্য সেবা প্রদানকারী প্ল্যাটফর্ম। নেক্সটজেন মাইহেলথ ভিসিপি বাংলাদেশের সহস্রাধিক বিএমডিসি নিবন্ধিত বিশেষজ্ঞ চিকিৎসকদের সঙ্গে ঘরে বসে ভিডিও কলের মাধ্যমে পরামর্শ ও স্বাস্থ্যসেবা নেয়া সম্ভব করেছে। প্রযুক্তির নিত্যনতুন উদ্ভাবন ব্যবহার করে স্বাস্থ্যসেবাকে দেশের প্রত্যন্ত অঞ্চল থেকে শহর পর্যন্ত সকলের কাছে পৌঁছে দেয়ার লক্ষ্যে বাংলাদেশে শুরু হয় নেক্সটজেন মাইহেলথ ভিসিপি এর কার্যক্রম।',
+            eng: 'NextGen MyHealth VCP, a product of NextGen DigiTech Ltd. is a healthcare service provider platform in Bangladesh. NextGen MyHealth VCP has made it possible to consult and receive healthcare services through video calls with numerous BMDC registered specialists in Bangladesh. Utilizing cutting-edge technology, NextGen MyHealth VCP aims to reach healthcare services from rural areas to urban areas, commencing in Bangladesh.',
         },
     },
     whyUs: {
@@ -297,11 +297,11 @@ export const homeData = {
     bookingSteps: {
         head1: {
             bang: 'ঘণ্টার পর ঘণ্টা লাইনে দাঁড়িয়ে থাকার দিন শেষ!',
-            eng: '',
+            eng: 'End the days of standing in line for hours!',
         },
         head2: {
             bang: 'পরামর্শ নিন কিছু সহজ পদক্ষেপেই',
-            eng: '',
+            eng: 'Get advice in few simple steps',
         },
         num1: {
             bang: '১',
@@ -370,8 +370,8 @@ export const homeData = {
             eng: 'Tasnima Waheed',
         },
         para1: {
-            bang: 'বাংলাদেশে অনলাইন চিকিৎসার উত্থান আমার মতো অনেক রোগীর জন্য একটি আশীর্বাদ। এটি আমাদেরকে বিদেশে যাওয়ার ব্যয়বহুল এবং সময়সাপেক্ষ যাত্রা এড়াতে এবং আমাদের বাড়ির আরাম থেকে মানসম্মত চিকিৎসা পেতে দেয়।',
-            eng: "The rise of online healthcare in Bangladesh is a blessing for many patients like me. It allows us to avoid the costly and time-consuming journey of going abroad and to get quality healthcare from the comfort of our homes.",
+            bang: 'বাংলাদেশে অনলাইন চিকিৎসার উত্থান আমার মতো অনেক রোগীর জন্য একটি আশীর্বাদ। এটি আমাদেরকে হাসপাতালে যাওয়ার ব্যয়বহুল এবং সময়সাপেক্ষ যাত্রা এড়াতে এবং আমাদের বাড়ির আরাম থেকে মানসম্মত চিকিৎসা পেতে দেয়।',
+            eng: "The rise of online healthcare in Bangladesh is a blessing for many patients like me. It allows us to avoid the costly and time-consuming journey of going hospital and to get quality healthcare from the comfort of our homes.",
         },
         para2: {
             bang: 'আমি সত্যিই খুশি যে ডাক্তাররা আমার অবস্থা এবং থেরাপি সম্পর্কে আরও জানার সুযোগ দিয়েছেন যা আমাকে চিকিৎসা করতে সাহায্য করেছিল। পিঠের ব্যথা ছাড়াই আমি আমার দৈনন্দিন জীবনে ফিরে এসেছি। আমি অবশেষে শান্তিতে আছি।',
@@ -558,8 +558,8 @@ export const specialtydoctorsData = {
     },
     doctorCard: {
         head1: {
-            bang: 'বি. এম. ডি. সি ',
-            eng: 'B. M. D. C ',
+            bang: 'বিএমডিসি ',
+            eng: 'BMDC ',
         },
         head2: {
             bang: 'এ-',
@@ -615,8 +615,8 @@ export const specialtyEtoB = {
 export const doctorProfile = {
     banner: {
         head1: {
-            bang: 'বি. এম. ডি. সি: ',
-            eng: 'B. M. D. C: ',
+            bang: 'বিএমডিসি: ',
+            eng: 'BMDC: ',
         },
         head2: {
             bang: 'এ-',

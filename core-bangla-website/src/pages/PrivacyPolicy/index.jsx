@@ -7,6 +7,9 @@ import { VBox, HBox } from "../../components/Containers";
 import { H3, H6, P3 } from "../../components/Typography";
 import { privacyPolicyData } from '../../data';
 import responsive from '../../config/responsive';
+import { footerData } from '../../data';
+import { connect } from 'react-redux';
+
 
 const Line = styled.div`
     width: 100%;
@@ -19,7 +22,7 @@ const TitleCard = styled(HBox)`
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
 `
 
-const PrivacyPolicy = () => {
+const PrivacyPolicy = ({language}) => {
     const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
@@ -58,17 +61,17 @@ const PrivacyPolicy = () => {
                     style={{ cursor: "pointer" }} 
                     onClick={goBack} 
                 />
-                <H3 className="bold" color="third">গোপনীয়তা নীতিমালা</H3>
+                <H3 className="bold" color="third">{footerData.footer2[language]}</H3>
                 <HBox />
             </TitleCard>
             <VBox className={isMobile ? "my-3" : "my-8 py-1"}
-                style={{ paddingLeft: isMobile ? "40px" : "100px", paddingRight: isMobile ? "40px" : "100px" }}>
+                style={{ paddingLeft: isMobile ? "15px" : "100px", paddingRight: isMobile ? "15px" : "100px" }}>
                 {Object.keys(privacyPolicyData).map((key) => ( 
                     <VBox className={isMobile ? "mb-2" : "mb-6"}>
                         <H6 color='third' className="bold">{key}</H6>
                         <Line className={isMobile ? "" : "mb-0_5"} />
                         {privacyPolicyData[key].map((paragraph) => (
-                            <P3 className={isMobile ? "mt-2 mx-3" : 'mt-4 mx-3'} style={{ textAlign: 'justify' }}>{paragraph}</P3>
+                            <P3 className={isMobile ? "mt-2 mx-1" : 'mt-4 mx-3'} style={{ textAlign: 'justify' }}>{paragraph}</P3>
                         ))}
                     </VBox>
                 ))}
@@ -77,4 +80,8 @@ const PrivacyPolicy = () => {
     );
 }
 
-export default PrivacyPolicy;
+const mapStateToProps = state => ({
+    language: state.general.language,
+});
+
+export default connect(mapStateToProps, {})(PrivacyPolicy);

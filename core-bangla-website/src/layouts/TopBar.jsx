@@ -92,6 +92,10 @@ const TopBar = ({ language, toggleLang }) => {
         else return 'eng';
     }
 
+    const handlePhoneCall = () => {
+        window.location.href = `tel:${topbarData.head2[language]}`;
+    };
+
     return (
         <Container 
             justify='space-between' 
@@ -108,7 +112,7 @@ const TopBar = ({ language, toggleLang }) => {
                     <IconImage src={youtubeLogo} alt="Youtube Image" />
                 </Link>
             </IconContainer>
-            <P2 className="bold">
+            <P2 className="bold" onClick={handlePhoneCall} style={{ cursor: 'pointer' }}>
                 {isMobile ? <HiOutlinePhone style={{position: 'relative', top:'2px'}}/> : topbarData.head1[language]} {topbarData.head2[language]}
             </P2>
             <HBox align='center'>
