@@ -112,9 +112,12 @@ const TopBar = ({ language, toggleLang }) => {
                     <IconImage src={youtubeLogo} alt="Youtube Image" />
                 </Link>
             </IconContainer>
-            <P2 className="bold" onClick={handlePhoneCall} style={{ cursor: 'pointer' }}>
-                {isMobile ? <HiOutlinePhone style={{position: 'relative', top:'2px'}}/> : topbarData.head1[language]} {topbarData.head2[language]}
-            </P2>
+            <HBox align='center' className='clickable' onClick={handlePhoneCall}>
+                <HiOutlinePhone style={{position: 'relative'}}/>
+                <P2 className="bold">
+                    {topbarData.head2[language]}
+                </P2>
+            </HBox>
             <HBox align='center'>
                 <SearchBar
                     style={{ width: isMobile ? "50px" : "" }}

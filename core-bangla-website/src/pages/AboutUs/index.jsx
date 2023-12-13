@@ -33,7 +33,7 @@ const AboutUs = () => {
 
     return (
         <VBox style={{ backgroundColor: colors.lightGrey }}>
-            <Banner isMobile={isMobile}/>
+            {/* <Banner isMobile={isMobile}/> */}
             <WhoWeAre isMobile={isMobile}/>
             <OurAdvantages isMobile={isMobile}/>
         </VBox>

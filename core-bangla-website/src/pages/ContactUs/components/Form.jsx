@@ -68,7 +68,7 @@ const Form = ({ isMobile, language }) => {
                 // setIsLoading(false);
                 closeSnackbar();
                 if (response.status === 200) {
-                    enqueueSnackbar('Query submitted successfully. NextGen MyHealth Team will contact you shortly', { variant: 'success' });
+                    enqueueSnackbar('Query submitted successfully. NextGen MyHealth team will contact you shortly.', { variant: 'success' });
 
                     setName("");
                     setEmailOrPhone("");
