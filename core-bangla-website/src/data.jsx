@@ -370,8 +370,8 @@ export const homeData = {
             eng: 'Tasnima Waheed',
         },
         para1: {
-            bang: 'বাংলাদেশে অনলাইন চিকিৎসার উত্থান আমার মতো অনেক রোগীর জন্য একটি আশীর্বাদ। এটি আমাদেরকে হাসপাতালে যাওয়ার ব্যয়বহুল এবং সময়সাপেক্ষ যাত্রা এড়াতে এবং আমাদের বাড়ির আরাম থেকে মানসম্মত চিকিৎসা পেতে দেয়।',
-            eng: "The rise of online healthcare in Bangladesh is a blessing for many patients like me. It allows us to avoid the costly and time-consuming journey of going hospital and to get quality healthcare from the comfort of our homes.",
+            bang: 'বাংলাদেশে অনলাইন চিকিৎসার সুযোগ আমার মতো অনেক রোগীর জন্য একটি আশীর্বাদ। এটি আমাদেরকে হাসপাতালে যাওয়ার ব্যয়বহুল এবং সময়সাপেক্ষ যাত্রা এড়াতে এবং আমাদের বাড়ির আরাম থেকে মানসম্মত চিকিৎসা পেতে দেয়।',
+            eng: "The scope of online healthcare in Bangladesh is a blessing for many patients like me. It allows us to avoid the costly and time-consuming journey of going hospital and to get quality healthcare from the comfort of our homes.",
         },
         para2: {
             bang: 'আমি সত্যিই খুশি যে ডাক্তাররা আমার অবস্থা এবং থেরাপি সম্পর্কে আরও জানার সুযোগ দিয়েছেন যা আমাকে চিকিৎসা করতে সাহায্য করেছিল। পিঠের ব্যথা ছাড়াই আমি আমার দৈনন্দিন জীবনে ফিরে এসেছি। আমি অবশেষে শান্তিতে আছি।',
