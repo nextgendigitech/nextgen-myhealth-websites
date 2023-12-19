@@ -184,7 +184,7 @@ export const doctorsearchdlgData = {
 export const homeData = {
     banner: {
         head1: {
-            bang: 'স্বাগতম আপনাকে',
+            bang: 'আপনাকে স্বাগতম',
             eng: 'Welcome to',
         },
         head2: {
@@ -204,8 +204,8 @@ export const homeData = {
             eng: 'Virtual Care Platform'
         },
         para1: {
-            bang: 'জরুরী অবস্থায় আক্রান্ত রোগীদের জন্য আমরা সর্বদা পাশে আছি এবং সর্বোচ্চ মানের সেবা প্রদানের চেষ্টা করি।',
-            eng: 'We are always here for patients in need of emergency care, and we strive to provide the highest quality of service.'
+            bang: 'জরুরি এবং স্বাস্থ্যজনিত যেকোনো সমস্যায় আমরা চিকিৎসা সেবা নিয়ে সর্বদা আপনার পাশে আছি। আপনাকে সঠিক চিকিৎসার মাধ্যমে সুস্বাস্থ্য প্রদান করাই আমাদের কাজের মূলমন্ত্র।',
+            eng: 'We are always by your side with medical care in need of emergency and health-related problem. Providing you with good health through proper treatment is the main principle of our work.'
         },
         btn1: {
             bang: 'অ্যাপয়েন্টমেন্ট নিন',
@@ -344,7 +344,7 @@ export const homeData = {
             eng: 'Log in to the patient portal using your phone number/email and password. If you are new, register yourself using your name, phone number/email, and password through a very simple process.',
         },
         para3: {
-            bang: 'বুক অ্যাপয়েন্টমেন্ট বাটনে ক্লিক করুন এবং আপনার সুবিধাজনক সময় অনুযায়ী ডাক্তারের ডাক্তারের অ্যাপয়েন্টমেন্ট বুক করুন।',
+            bang: 'বুক অ্যাপয়েন্টমেন্ট বাটনে ক্লিক করুন এবং আপনার সুবিধাজনক সময় অনুযায়ী ডাক্তারের অ্যাপয়েন্টমেন্ট বুক করুন।',
             eng: 'Click on the "Book Appointment" button and schedule an appointment with the doctor of your choice based on your convenience.',
         },
         para4: {
@@ -370,16 +370,16 @@ export const homeData = {
             eng: 'Tasnima Waheed',
         },
         para1: {
-            bang: 'বাংলাদেশে অনলাইন চিকিৎসার উত্থান আমার মতো অনেক রোগীর জন্য একটি আশীর্বাদ। এটি আমাদেরকে হাসপাতালে যাওয়ার ব্যয়বহুল এবং সময়সাপেক্ষ যাত্রা এড়াতে এবং আমাদের বাড়ির আরাম থেকে মানসম্মত চিকিৎসা পেতে দেয়।',
-            eng: "The rise of online healthcare in Bangladesh is a blessing for many patients like me. It allows us to avoid the costly and time-consuming journey of going hospital and to get quality healthcare from the comfort of our homes.",
+            bang: 'বাংলাদেশে অনলাইন চিকিৎসা ব্যবস্থা আমার মতো অনেক রোগীর জন্য একটি আশীর্বাদ। রাস্তার ব্যয়বহুল যাতায়াত এবং জ্যামজটকে এড়িয়ে সঠিক চিকিৎসা সেবা পাওয়ার এটি একটি নির্ভরযোগ্য প্রতিষ্ঠান। বাড়িতে বসেই কোনরকম জটিলতা ছাড়াই আমি ডাক্তারের সাথে কথা বলেছি এবং চিকিৎসা নিয়েছি। আলহামদুলিল্লাহ, আমি এখন ভালো আছি।',
+            eng: "Online healthcare in Bangladesh is a blessing for many patients like me. It is a reliable institution to get the right medical care without having to deal with the expensive traffic and congestion on the roads. I was able to talk to a doctor and receive treatment from home without any hassle. Alhamdulillah, I am now well.",
         },
         para2: {
-            bang: 'আমি সত্যিই খুশি যে ডাক্তাররা আমার অবস্থা এবং থেরাপি সম্পর্কে আরও জানার সুযোগ দিয়েছেন যা আমাকে চিকিৎসা করতে সাহায্য করেছিল। পিঠের ব্যথা ছাড়াই আমি আমার দৈনন্দিন জীবনে ফিরে এসেছি। আমি অবশেষে শান্তিতে আছি।',
-            eng: "I am really happy that the doctors gave me an opportunity to learn more about my condition and the therapy which helped me undergo the procedure. I'm back to my routine and with no lingering back pain. I'm finally at peace. ",
+            bang: 'আমি এই প্ল্যাটফর্ম ব্যবহার করে চিকিৎসা নিয়েছি। আমি সত্যিই আনন্দিত যে, ডাক্তার আমাকে যথেষ্ট সময় নিয়ে আমার শারীরিক জটিলতার বিষয়গুলো বুঝিয়ে বলেছেন। পরবর্তীতে কি কি ব্যবস্থা গ্রহন করলে আমি এই জটিলতা থেকে মুক্তি পাবো তার পথও সুনিপুণ ভাবে দেখিয়ে দিয়েছেন। তাদের এই পথ চলাকে স্বাগত জানাই এবং এই প্রতিষ্ঠানের সর্বদা উন্নতি কামনা করছি।',
+            eng: "I have received medical care using this platform. I am really happy that the doctor took enough time to explain the details of my physical complications to me. He also showed me the way to get rid of these complications by taking proper measures in the future. I welcome their journey and wish this institution always progress.",
         },
         para3: {
-            bang: 'নেক্সটজেন মাইহেলথ ভিসিপি চিকিৎসার জন্য সেরা অনলাইন প্ল্যাটফর্ম। আমি তাদের একজন ডাক্তার দ্বারা চিকিৎসা করেছি। ডাক্তার খুব ভাল এবং আমার চিকিৎসা করার সময় অনেক যত্ন নেন। এটা সত্যিই একটি ভাল অভিজ্ঞতা ছিল।',
-            eng: "NextGen MyHealth VCP is the best online platform for medical treatment. I have been treated by one of their doctors. The doctor was very good and took great care of me during my treatment. It was truly a good experience. ",
+            bang: 'আমি ব্যক্তি জীবনে কিছুটা ব্যস্ত সময় কাটাই। তাই স্বাস্থ্য সম্পর্কিত যেকোনো সমস্যায় আমি অনলাইনের ওপর নির্ভরশীল। আমার মতে, নেক্সটজেন মাইহেলথ ভিসিপি একটি সেরা প্ল্যাটফর্ম। আমি তাদের প্ল্যাটফর্মের যে ডাক্তারকে দেখিয়েছি, তাকে আমার খুবই যত্নবান মনে হয়েছে। এটি সত্যি আমার জন্য একটি ভালো অভিজ্ঞতা ছিল।',
+            eng: "I use to be busy in my personal life. So, I rely on online for any health-related problem. In my opinion, NextGen MyHealth VCP is a great platform. The doctor I saw on their platform seemed very caring to me. It was really a good experience for me.",
         },
     },
     joinDoctor: {
@@ -465,7 +465,7 @@ export const aboutusData = {
             eng: 'Doctor and patient, a collaborative interface for everyone.',
         },
         pointpera2: {
-            bang: 'নেক্সটজেন মাইহেলথ ভিসিপি-তে আছেন দেশ - বিদেশের সকল বিখ্যাত বিশেষজ্ঞ ডাক্তারণ।',
+            bang: 'নেক্সটজেন মাইহেলথ ভিসিপি-তে আছেন দেশ - বিদেশের সকল বিখ্যাত বিশেষজ্ঞ ডাক্তারগণ।',
             eng: 'NexGen MyHealth VCP has renowned specialist doctors from both within the country and abroad.',
         },
         pointpera3: {

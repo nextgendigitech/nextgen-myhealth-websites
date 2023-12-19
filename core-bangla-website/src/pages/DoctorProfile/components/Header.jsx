@@ -41,7 +41,8 @@ const Header = ({ isMobile, language }) => {
             className={isMobile ? "mt-2" : "mt-4"}
             style={{alignContent: "center", 
                     height: isMobile ? "40px" : "70px", 
-                    borderRadius: isMobile ? "0px 15px" : "0px 30px"}}>
+                    borderRadius: isMobile ? "0px 15px" : "0px 30px"}}
+                    className={isMobile ? "mt-2" : "mt-4"}>
             <BiArrowBack 
                 className={isMobile ? "ml-2" : "ml-8"}
                 justify="center" 
