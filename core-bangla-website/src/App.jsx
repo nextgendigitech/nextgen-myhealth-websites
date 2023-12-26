@@ -28,6 +28,7 @@ function App() {
             <NavBar />
             <Routes>
                 <Route path="/" element={<Home />} />
+                <Route path="/:language" element={<Home />} />
                 <Route path='/about-us' element={<AboutUs />} />
                 <Route path='/specialties' element={<Specialties />} />
                 <Route path='/specialty-doctors/:specialty' element={<SpecialtyDoctors />} />
