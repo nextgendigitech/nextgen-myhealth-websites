@@ -3,7 +3,7 @@ import {
 } from '../actions/types';
 
 const initialState = {
-    language: 'bang',  // bang, eng
+    language: 'eng',  // bang, eng
 }
 
 export default function (state = initialState, action) {

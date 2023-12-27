@@ -50,6 +50,10 @@ export const navbarData = {
         bang: 'ব্লগ',
         eng: 'Blog'
     },
+    head5: {
+        bang: 'যোগাযোগ করুন',
+        eng: 'Contact Us'
+    },
     btn1: {
         bang: 'পেশেন্ট পোর্টাল',
         eng: 'Patient Portal'
@@ -379,7 +383,7 @@ export const homeData = {
         },
         para3: {
             bang: 'আমি ব্যক্তি জীবনে কিছুটা ব্যস্ত সময় কাটাই। তাই স্বাস্থ্য সম্পর্কিত যেকোনো সমস্যায় আমি অনলাইনের ওপর নির্ভরশীল। আমার মতে, নেক্সটজেন মাইহেলথ ভিসিপি একটি সেরা প্ল্যাটফর্ম। আমি তাদের প্ল্যাটফর্মের যে ডাক্তারকে দেখিয়েছি, তাকে আমার খুবই যত্নবান মনে হয়েছে। এটি সত্যি আমার জন্য একটি ভালো অভিজ্ঞতা ছিল।',
-            eng: "I use to be busy in my personal life. So, I rely on online for any health-related problem. In my opinion, NextGen MyHealth VCP is a great platform. The doctor I saw on their platform seemed very caring to me. It was really a good experience for me.",
+            eng: "I am used to be busy in my personal life. So, I rely on online for any health-related problem. In my opinion, NextGen MyHealth VCP is a great platform. The doctor I saw on their platform seemed very caring to me. It was really a good experience for me.",
         },
     },
     joinDoctor: {

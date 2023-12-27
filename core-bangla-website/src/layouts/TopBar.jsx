@@ -60,8 +60,8 @@ const DoctorSearchIcon = styled.img`
 
 const TopBar = ({ language, toggleLang }) => {
     const [languages, setLanguages] = useState([
-        {text: 'বাং', checked: true},
-        {text: 'En', checked: false},
+        {text: 'বাং', checked: false},
+        {text: 'En', checked: true},
     ]);
     const [openSearchDlg, setOpenSearchDlg] = useState(false);
     const [isMobile, setIsMobile] = useState(false);

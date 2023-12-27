@@ -147,12 +147,19 @@ const NavBar = ({ language }) => {
                                         </SNavLink>
                                     </ListItemText>
                                 </ListItem>
+                                <ListItem>
+                                    <ListItemText>
+                                        <SNavLink to='/contact-us' onClick={handleClickMenuItem}>
+                                            <P1>{navbarData.head5[language]}</P1>
+                                        </SNavLink>
+                                    </ListItemText>
+                                </ListItem>
                             </List>
                         </Drawer>
                     </>
                     :
                     <>
-                        <HBox style={{flexShrink: '0', flexWrap: 'nowrap'}}>
+                        <HBox className="px-3" style={{flexShrink: '0', flexWrap: 'nowrap'}}>
                             <SNavLink to='/'>
                                 {navbarData.head1[language]}
                             </SNavLink>
@@ -164,6 +171,9 @@ const NavBar = ({ language }) => {
                             </SNavLink>
                             <SNavLink className='ml-4' to='/blog'>
                                 {navbarData.head4[language]}
+                            </SNavLink>
+                            <SNavLink className='ml-4' to='/contact-us'>
+                                {navbarData.head5[language]}
                             </SNavLink>
                         </HBox>
                         <HBox className='ml-5' style={{flexWrap: 'nowrap'}}>
