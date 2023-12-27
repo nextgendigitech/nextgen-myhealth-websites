@@ -38,10 +38,10 @@ const Header = ({ isMobile, language }) => {
         <TitleCard 
             justify="space-between" 
             align="center" 
+            className={isMobile ? "mt-2" : "mt-4"}
             style={{alignContent: "center", 
                     height: isMobile ? "40px" : "70px", 
-                    borderRadius: isMobile ? "0px 15px" : "0px 30px"}}
-                    className={isMobile ? "mt-2" : "mt-4"}>
+                    borderRadius: isMobile ? "0px 15px" : "0px 30px"}}>
             <BiArrowBack 
                 className={isMobile ? "ml-2" : "ml-8"}
                 justify="center" 

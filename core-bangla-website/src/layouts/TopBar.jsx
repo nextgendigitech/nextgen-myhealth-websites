@@ -87,6 +87,19 @@ const TopBar = ({ language, toggleLang }) => {
         toggleLang(getLanguage());
     }, [languages]);
 
+    useEffect(() => {
+        let values = [...languages];
+        if (language === 'bang') {
+            values[0].checked = true;
+            values[1].checked = false;
+        }
+        else {
+            values[0].checked = false;
+            values[1].checked = true;
+        }
+        setLanguages(values);
+    }, [language]);
+
     const getLanguage = () => {
         if (languages[0].checked) return 'bang';
         else return 'eng';
