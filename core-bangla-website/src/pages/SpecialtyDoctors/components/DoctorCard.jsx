@@ -63,7 +63,7 @@ const DoctorCard = ({ id, name, bmdc, qualification, specialty,
                             color='first' 
                             elevated>{specialtydoctorsData.doctorCard.btn1[language]}</Button> 
                     </NavLink>
-                    <Link to={`https://patient.nextgenmyhealth.com/doctor/${id}`} style={{textDecoration: 'none'}} target='_blank' className={isMobile ? "mb-1" : ""}>
+                    <Link to={`https://patient.nextgenmyhealth.com/appointment-schedule/${id}`} style={{textDecoration: 'none'}} target='_blank' className={isMobile ? "mb-1" : ""}>
                         <Button 
                             style={{ fontSize: "14px", width: "fit-content", borderRadius: 25, height: isMobile ? 25 : 37 }}
                             color='third' 
