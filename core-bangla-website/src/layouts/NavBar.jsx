@@ -11,7 +11,7 @@ import { P1, P2 } from '../components/Typography';
 import logo from '../assets/images/Website-Logo.png'
 import colors from '../config/colors';
 import responsive from '../config/responsive';
-import { navbarData, Links } from '../data';
+import { navbarData, links } from '../data';
 
 const Container = styled(HBox)`
     position: sticky;
@@ -133,10 +133,24 @@ const NavBar = ({ language }) => {
                                         </SNavLink>
                                     </ListItemText>
                                 </ListItem>
-                                <ListItem>
+                                <ListItem className='mb-2'>
                                     <ListItemText>
                                         <SNavLink to='/specialties' onClick={handleClickMenuItem}>
                                             <P1>{navbarData.head3[language]}</P1>
+                                        </SNavLink>
+                                    </ListItemText>
+                                </ListItem>
+                                <ListItem>
+                                    <ListItemText>
+                                        <SNavLink to='/blog' onClick={handleClickMenuItem}>
+                                            <P1>{navbarData.head4[language]}</P1>
+                                        </SNavLink>
+                                    </ListItemText>
+                                </ListItem>
+                                <ListItem>
+                                    <ListItemText>
+                                        <SNavLink to='/contact-us' onClick={handleClickMenuItem}>
+                                            <P1>{navbarData.head5[language]}</P1>
                                         </SNavLink>
                                     </ListItemText>
                                 </ListItem>
@@ -145,18 +159,24 @@ const NavBar = ({ language }) => {
                     </>
                     :
                     <>
-                        <HBox style={{flexShrink: '0', flexWrap: 'nowrap'}}>
+                        <HBox className="px-3" style={{flexShrink: '0', flexWrap: 'nowrap'}}>
                             <SNavLink to='/'>
                                 {navbarData.head1[language]}
                             </SNavLink>
-                            <SNavLink className='mx-4' to='/about-us'>
+                            <SNavLink className='ml-4' to='/about-us'>
                                 {navbarData.head2[language]}
                             </SNavLink>
-                            <SNavLink to='/specialties'>
+                            <SNavLink className='ml-4' to='/specialties'>
                                 {navbarData.head3[language]}
                             </SNavLink>
+                            <SNavLink className='ml-4' to='/blog'>
+                                {navbarData.head4[language]}
+                            </SNavLink>
+                            <SNavLink className='ml-4' to='/contact-us'>
+                                {navbarData.head5[language]}
+                            </SNavLink>
                         </HBox>
-                        <HBox className='ml-6' style={{flexWrap: 'nowrap'}}>
+                        <HBox className='ml-5' style={{flexWrap: 'nowrap'}}>
                             <SLink to='https://patient.nextgenmyhealth.com/login' target='_blank'>
                                 <Button color='first' elevated>
                                     <P2 className='bold' color='white' style={{flexShrink: '0'}}>

@@ -14,7 +14,7 @@ import { P2, P3 } from "../components/Typography";
 import colors from "../config/colors";
 import responsive from "../config/responsive";
 import searchIcon from "../assets/images/doctor_search.png";
-import { doctorsearchdlgData, Links } from "../data";
+import { doctorsearchdlgData, links } from "../data";
 
 const DlgContainer = styled.div`
     overflow-y: hidden;
@@ -244,7 +244,7 @@ const DoctorSearchDlg = ({ open, setOpen, isMobile, language }) => {
                     {doctors.length ?
                         <VBox>
                             {doctors.map((doctor, index) => (
-                                <SLink to={Links.doctorapp+doctor.id} target='_blank'>
+                                <SLink to={links.doctorapp+doctor.id} target='_blank'>
                                     <DoctorCard
                                         index={index}
                                         id={doctor.id}

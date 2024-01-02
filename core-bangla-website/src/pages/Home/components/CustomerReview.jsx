@@ -46,25 +46,25 @@ const ReviewCard = ({ image, name, review, isMobile }) => {
 const CustomerReview = ({ isMobile, language }) => {
     return (
         <VBox style={{ width: "100%", marginTop: isMobile ? '60px' : '-140px' }}>
-            <H3 align="center" className="bold">{homeData.CustomerReview.head1[language]}</H3>
+            <H3 align="center" className="bold">{homeData.customerReview.head1[language]}</H3>
             <Container style={{ padding: isMobile ? "20px" : "40px" }} justify="space-around" align="center">
                 <ReviewCard
                     isMobile={isMobile}
                     image={boy_avatar}
-                    name={homeData.CustomerReview.name1[language]}
-                    review={homeData.CustomerReview.para1[language]}
+                    name={homeData.customerReview.name1[language]}
+                    review={homeData.customerReview.para1[language]}
                 />
                 <ReviewCard
                     isMobile={isMobile}
                     image={boy_avatar}
-                    name={homeData.CustomerReview.name2[language]}
-                    review={homeData.CustomerReview.para2[language]}
+                    name={homeData.customerReview.name2[language]}
+                    review={homeData.customerReview.para2[language]}
                 />
                 <ReviewCard
                     isMobile={isMobile}
                     image={girl_avatar}
-                    name={homeData.CustomerReview.name3[language]}
-                    review={homeData.CustomerReview.para3[language]}
+                    name={homeData.customerReview.name3[language]}
+                    review={homeData.customerReview.para3[language]}
                 />
             </Container>
         </VBox>

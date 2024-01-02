@@ -144,7 +144,7 @@ const WhyUs = ({ isMobile, language }) => {
                 <CenterCircle align='center' justify='center' height={CenterCircle_height} width={CenterCircle_width}>
                     <CircleTextContainerOuter align='center'>
                         <CircleTextContainerInner align='center'>
-                            <CenterCircleText className='bold' align='center'>{homeData.WhyUs.head2[language]}</CenterCircleText>
+                            <CenterCircleText className='bold' align='center'>{homeData.whyUs.head2[language]}</CenterCircleText>
                         </CircleTextContainerInner>
                     </CircleTextContainerOuter>
                 </CenterCircle>
@@ -156,7 +156,7 @@ const WhyUs = ({ isMobile, language }) => {
         <VBox justify={justify} align={align} style={{position: 'relative', width: width}}>
             <Item1 className='m-2' height={Item_height} width={Item_width} top_position='0' justify='center' align='center'>
                 <ItemTextContainer justify='center' align='center'>
-                    <P2 align='center'>{homeData.WhyUs.point1[language]}</P2>
+                    <P2 align='center'>{homeData.whyUs.point1[language]}</P2>
                 </ItemTextContainer>
             </Item1>
 
@@ -166,7 +166,7 @@ const WhyUs = ({ isMobile, language }) => {
                 
             <Item2 className='mb-2 ml-2 mr-2' height={Item_height} width={Item_width} top_position='-21px' justify='center' align='center'>
                 <ItemTextContainer justify='center' align='center'>
-                    <P2 align='center'>{homeData.WhyUs.point2[language]}</P2>
+                    <P2 align='center'>{homeData.whyUs.point2[language]}</P2>
                 </ItemTextContainer>
             </Item2>
 
@@ -176,7 +176,7 @@ const WhyUs = ({ isMobile, language }) => {
 
             <Item3 className='ml-2 mr-2' height={Item_height} width={Item_width} top_position='-42px' justify='center' align='center'>    
                 <ItemTextContainer justify='center' align='center'>
-                    <P2 align='center'>{homeData.WhyUs.point3[language]}</P2>
+                    <P2 align='center'>{homeData.whyUs.point3[language]}</P2>
                 </ItemTextContainer>
                      
             </Item3>
@@ -187,7 +187,7 @@ const WhyUs = ({ isMobile, language }) => {
         <VBox justify={justify} align={align} style={{position: 'relative', width: width}}>
             <Item1 className='m-2' height={Item_height} width={Item_width} top_position='0' justify='center' align='center' style={{transform: 'ScaleX(-1)'}}>
                 <ItemTextContainer justify='center' align='center'>
-                    <P2 align='center' style={{transform: 'ScaleX(-1)'}}>{homeData.WhyUs.point4[language]}</P2>
+                    <P2 align='center' style={{transform: 'ScaleX(-1)'}}>{homeData.whyUs.point4[language]}</P2>
                 </ItemTextContainer>
             </Item1>
 
@@ -197,7 +197,7 @@ const WhyUs = ({ isMobile, language }) => {
 
             <Item2 className='mb-2 ml-2 mr-2' height={Item_height} width={Item_width} top_position='-21px' justify='center' align='center' style={{transform: 'ScaleX(-1)'}}>
                 <ItemTextContainer justify='center' align='center'>
-                    <P2 align='center' style={{transform: 'ScaleX(-1)'}}>{homeData.WhyUs.point5[language]}</P2>
+                    <P2 align='center' style={{transform: 'ScaleX(-1)'}}>{homeData.whyUs.point5[language]}</P2>
                 </ItemTextContainer>
             </Item2>
 
@@ -207,7 +207,7 @@ const WhyUs = ({ isMobile, language }) => {
 
             <Item3 className='ml-2 mr-2' height={Item_height} width={Item_width} top_position='-42px' justify='center' align='center' style={{transform: 'ScaleX(-1)'}}>
                 <ItemTextContainer justify='center' align='center'>
-                    <P2 className='p-3' align='center' style={{transform: 'ScaleX(-1)'}}>{homeData.WhyUs.point6[language]}</P2>
+                    <P2 className='p-3' align='center' style={{transform: 'ScaleX(-1)'}}>{homeData.whyUs.point6[language]}</P2>
                 </ItemTextContainer>
             </Item3>
         </VBox>
@@ -215,7 +215,7 @@ const WhyUs = ({ isMobile, language }) => {
 
     return (
         <Container align='center' style={{marginTop: isMobile ? '60px' : '0px', paddingLeft: isMobile ? "40px" : "100px", paddingRight: isMobile ? "40px" : "100px"}}>
-            <H3 className="bold">{homeData.WhyUs.head1[language]}</H3>
+            <H3 className="bold">{homeData.whyUs.head1[language]}</H3>
             <Underline className="my-2" />
 
             {isMobile ?

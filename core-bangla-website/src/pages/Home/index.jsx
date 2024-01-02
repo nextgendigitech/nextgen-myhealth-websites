@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { connect } from "react-redux";
 
 import { VBox } from "../../components/Containers";
 import Banner from "./components/Banner";
@@ -11,9 +13,11 @@ import JoinDoctor from "./components/JoinDoctor";
 import QRcode from "./components/QRcode";
 import responsive from '../../config/responsive';
 import colors from "../../config/colors";
+import { toggleLang } from "../../services/actions/generalAction";
 
-const Home = () => {
+const Home = ({ toggleLang }) => {
     const [isMobile, setIsMobile] = useState(false);
+    let { language } = useParams();
 
     useEffect(() => {
         const setResponsiveness = () => {
@@ -33,6 +37,10 @@ const Home = () => {
     }, []);
 
     useEffect(() => {
+        if (language) {
+            if (language === 'bangla') toggleLang('bang');
+            else if (language === 'english') toggleLang('eng');
+        };
         window.scrollTo(0, 0);
     });
 
@@ -50,4 +58,4 @@ const Home = () => {
     );
 }
 
-export default Home;
+export default connect(null, { toggleLang })(Home);

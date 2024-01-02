@@ -29,22 +29,22 @@ const Circle = styled(VBox)`
     border-radius: 50%;
 `
 
-const BookingSteps = ({ isMobile, language }) => {
+const bookingSteps = ({ isMobile, language }) => {
     return (
         <VBox style={{ marginTop: isMobile ? '60px' : '100px', marginBottom: isMobile ? '-350px' : '0px' }}>
             <VBox align='center' className='mb-4'>
-                <P1 className='bold' color='third'>{homeData.bookingsteps.head1[language]}</P1>
-                <P1 className='bold'>{homeData.bookingsteps.head2[language]}</P1>
+                <P1 className='bold' color='third'>{homeData.bookingSteps.head1[language]}</P1>
+                <P1 className='bold'>{homeData.bookingSteps.head2[language]}</P1>
             </VBox>
 
             <HBox>
                 <LeftStepBox align='center' justify='flex-end'>
                     <Circle align='center' justify='center' className='mb-4'>
-                        <H2 className='bold' color='third'>{homeData.bookingsteps.num1[language]}</H2>
+                        <H2 className='bold' color='third'>{homeData.bookingSteps.num1[language]}</H2>
                     </Circle>
                     <VBox style={{ width: '80%' }} className='mb-1'>
-                        <P3 className='bold' color='third' align='left'>{homeData.bookingsteps.parahead1[language]}</P3>
-                        <P3 align='left'>{homeData.bookingsteps.para1[language]}</P3>
+                        <P3 className='bold' color='third' align='left'>{homeData.bookingSteps.parahead1[language]}</P3>
+                        <P3 align='left'>{homeData.bookingSteps.para1[language]}</P3>
                     </VBox>
                 </LeftStepBox>
             </HBox>
@@ -52,11 +52,11 @@ const BookingSteps = ({ isMobile, language }) => {
             <HBox justify='flex-end' style={{position: 'relative', top: isMobile ? '-150px' : '-75px'}}>
                 <RightStepBox align='center' justify='flex-end'>
                     <Circle align='center' justify='center' className='mb-4'>
-                        <H2 className='bold' color='third'>{homeData.bookingsteps.num2[language]}</H2>
+                        <H2 className='bold' color='third'>{homeData.bookingSteps.num2[language]}</H2>
                     </Circle>
                     <VBox style={{ width: '80%' }} className='mb-1'>
-                        <P3 className='bold' color='third'>{homeData.bookingsteps.parahead2[language]}</P3>
-                        <P3>{homeData.bookingsteps.para2[language]}</P3>
+                        <P3 className='bold' color='third'>{homeData.bookingSteps.parahead2[language]}</P3>
+                        <P3>{homeData.bookingSteps.para2[language]}</P3>
                     </VBox>
                 </RightStepBox>
             </HBox>
@@ -64,11 +64,11 @@ const BookingSteps = ({ isMobile, language }) => {
             <HBox style={{position: 'relative', top: isMobile ? '-200px' : '-150px'}}>
                 <LeftStepBox align='center' justify='flex-end'>
                     <Circle align='center' justify='center' className='mb-4'>
-                        <H2 className='bold' color='third'>{homeData.bookingsteps.num3[language]}</H2>
+                        <H2 className='bold' color='third'>{homeData.bookingSteps.num3[language]}</H2>
                     </Circle>
                     <VBox style={{ width: '80%' }} className='mb-1'>
-                        <P3 className='bold' color='third' align='left'>{homeData.bookingsteps.parahead3[language]}</P3>
-                        <P3 align='left'>{homeData.bookingsteps.para3[language]}</P3>
+                        <P3 className='bold' color='third' align='left'>{homeData.bookingSteps.parahead3[language]}</P3>
+                        <P3 align='left'>{homeData.bookingSteps.para3[language]}</P3>
                     </VBox>
                 </LeftStepBox>
             </HBox>
@@ -76,11 +76,11 @@ const BookingSteps = ({ isMobile, language }) => {
             <HBox justify='flex-end' style={{position: 'relative', top: isMobile ? '-360px' : '-240px'}}>
                 <RightStepBox align='center' justify='flex-end'>
                     <Circle align='center' justify='center' className='mb-4'>
-                        <H2 className='bold' color='third'>{homeData.bookingsteps.num4[language]}</H2>
+                        <H2 className='bold' color='third'>{homeData.bookingSteps.num4[language]}</H2>
                     </Circle>
                     <VBox style={{ width: '80%' }} className='mb-1'>
-                        <P3 className='bold' color='third'>{homeData.bookingsteps.parahead4[language]}</P3>
-                        <P3>{homeData.bookingsteps.para4[language]}</P3>
+                        <P3 className='bold' color='third'>{homeData.bookingSteps.parahead4[language]}</P3>
+                        <P3>{homeData.bookingSteps.para4[language]}</P3>
                     </VBox>
                 </RightStepBox>
             </HBox>
@@ -92,4 +92,4 @@ const mapStateToProps = state => ({
     language: state.general.language,
 });
 
-export default connect(mapStateToProps, {})(BookingSteps);
+export default connect(mapStateToProps, {})(bookingSteps);

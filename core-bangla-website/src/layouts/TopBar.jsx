@@ -14,7 +14,7 @@ import linkedinIcon from '../assets/images/linkedin_icon.png';
 import youtubeLogo from '../assets/images/youtube_logo.png';
 import searchIcon from '../assets/images/search_icon.png';
 import DoctorSearchDlg from './DoctorSearchDlg';
-import { topbarData, Links } from '../data';
+import { topbarData, links } from '../data';
 import CheckButton from '../components/CheckButton';
 import { toggleLang } from '../services/actions/generalAction';
 
@@ -60,8 +60,8 @@ const DoctorSearchIcon = styled.img`
 
 const TopBar = ({ language, toggleLang }) => {
     const [languages, setLanguages] = useState([
-        {text: 'বাং', checked: true},
-        {text: 'En', checked: false},
+        {text: 'বাং', checked: false},
+        {text: 'En', checked: true},
     ]);
     const [openSearchDlg, setOpenSearchDlg] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
@@ -87,10 +87,27 @@ const TopBar = ({ language, toggleLang }) => {
         toggleLang(getLanguage());
     }, [languages]);
 
+    useEffect(() => {
+        let values = [...languages];
+        if (language === 'bang') {
+            values[0].checked = true;
+            values[1].checked = false;
+        }
+        else {
+            values[0].checked = false;
+            values[1].checked = true;
+        }
+        setLanguages(values);
+    }, [language]);
+
     const getLanguage = () => {
         if (languages[0].checked) return 'bang';
         else return 'eng';
     }
+
+    const handlePhoneCall = () => {
+        window.location.href = `tel:${topbarData.head2[language]}`;
+    };
 
     return (
         <Container 
@@ -98,19 +115,22 @@ const TopBar = ({ language, toggleLang }) => {
             align='center'
             style={{ paddingLeft: isMobile ? "20px" : "100px", paddingRight: isMobile ? "20px" : "100px" }}>
             <IconContainer>
-                <Link to={Links.topbar.link1} target="_blank" className='ml-1'>
+                <Link to={links.topbar.link1} target="_blank" className='ml-1'>
                     <IconImage src={facebookIcon} alt="Facebook Image" />
                 </Link>
-                {/* <Link to={Links.topbar.link2} target='_blank'>
+                {/* <Link to={links.topbar.link2} target='_blank'>
                     <IconImage src={linkedinIcon} alt="LinkedIn Image" className={isMobile ? 'mx-1' : 'mx-3'} />
                 </Link> */}
-                <Link to={Links.topbar.link3} target='_blank' className='ml-1'>
+                <Link to={links.topbar.link3} target='_blank' className='ml-1'>
                     <IconImage src={youtubeLogo} alt="Youtube Image" />
                 </Link>
             </IconContainer>
-            <P2 className="bold">
-                {isMobile ? <HiOutlinePhone style={{position: 'relative', top:'2px'}}/> : topbarData.head1[language]} {topbarData.head2[language]}
-            </P2>
+            <HBox align='center' className='clickable' onClick={handlePhoneCall}>
+                <HiOutlinePhone style={{position: 'relative'}}/>
+                <P2 className="bold">
+                    {topbarData.head2[language]}
+                </P2>
+            </HBox>
             <HBox align='center'>
                 <SearchBar
                     style={{ width: isMobile ? "50px" : "" }}

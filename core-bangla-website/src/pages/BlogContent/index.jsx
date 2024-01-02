@@ -9,7 +9,6 @@ import AboutAuthor from "./components/AboutAuthor";
 import ReadMore from "./components/ReadMore";
 import responsive from '../../config/responsive';
 
-
 const BlogContent = ({language}) => {
     let { id } = useParams();
     const [isLoading, setIsLoading] = useState(false);
@@ -40,7 +39,6 @@ const BlogContent = ({language}) => {
         setIsLoading(true);
             fetchBlog();
     }, [id]);
-
 
     const fetchBlog = () => {
         setIsLoading(true);
@@ -75,20 +73,20 @@ const BlogContent = ({language}) => {
                 id={id}
                 title={blog?.title}
                 content={blog?.content}
-                created_at={blog?.created_at}
-                cover_image={blog?.cover_image}
-                blog_category={blog?.category?.length ? blog.category : ""}
+                createdAt={blog?.created_at}
+                coverImage={blog?.cover_image}
+                blogCategory={blog?.category?.length ? blog.category : ""}
             />
             <AboutAuthor 
                 isMobile={isMobile}
-                created_at={blog?.created_at}
-                author_name={blog?.author?.name}
-                author_details={blog?.author?.details}
-                author_image={blog?.author?.image}
+                createdAt={blog?.created_at}
+                authorName={blog?.author?.name}
+                authorDetails={blog?.author?.details}
+                authorImage={blog?.author?.image}
             />
             <ReadMore 
                 isMobile={isMobile}
-                blog_id={id}
+                blogId={id}
             />
         </VBox>
     )

@@ -22,7 +22,7 @@ import { specialtiesData } from "../../../data";
 const SurgerySection = ({ isMobile, language }) => {
     return (
         <VBox align='center' className={isMobile ? 'mt-5' : 'mt-7'} style={{  paddingBottom: isMobile ? '60px' : '100px' }}>
-            <H3 className='bold'>{specialtiesData.specialtysection.head2[language]}</H3>
+            <H3 className='bold'>{specialtiesData.specialtySection.head2[language]}</H3>
             <HBox justify='center'>
                 <SpecialtyCard isMobile={isMobile} image={GeneralImage} specialtyBang={specialtyEtoB['General Surgery']} specialtyEng='General Surgery'/>
                 <SpecialtyCard isMobile={isMobile} image={OrthopedicImage} specialtyBang={specialtyEtoB['Orthopedic Surgery']} specialtyEng='Orthopedic Surgery'/>

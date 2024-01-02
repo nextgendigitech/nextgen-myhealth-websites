@@ -1,24 +1,24 @@
-export const Links = {
+export const links = {
     topbar : {
-        link1 : "https://www. facebook. com/nextgenmyhealthvcp",
-        link2 : "https://www. linkedin. com/company/nextgen-myhealth-vcp/",
-        link3 : "https://www. youtube. com/channel/UCSDFJqW2y9UYs6IMWGK2i9w",
+        link1 : "https://www.facebook.com/nextgenmyhealthvcp",
+        link2 : "https://www.linkedin.com/company/nextgen-myhealth-vcp/",
+        link3 : "https://www.youtube.com/channel/UCSDFJqW2y9UYs6IMWGK2i9w",
     },
     navbar : {
-        link1 : "https://patient. nextgenmyhealth. com/login",
-        link2 : "https://doctor. nextgenmyhealth. com/login",
+        link1 : "https://patient.nextgenmyhealth.com/login",
+        link2 : "https://doctor.nextgenmyhealth.com/login",
     },
     footer : {
-        link1 : "https://nextgendgtech. com/",
+        link1 : "https://nextgendgtech.com/",
     },
     joindoctor : {
-        link1 : "https://docs. google. com/forms/d/e/1FAIpQLSe2oTRWq02VzSy7S5HyZLXbUtGdY1uwZrnmZjM5bEXNPWZMZA/viewform?pli=1",
+        link1 : "https://docs.google.com/forms/d/e/1FAIpQLSe2oTRWq02VzSy7S5HyZLXbUtGdY1uwZrnmZjM5bEXNPWZMZA/viewform?pli=1",
     },
     qrcode : {
-        link1 : "https://play. google. com/store/apps/details?id=com. nextgen_digitech. myhealth_patients&pcampaignid=web_share",
+        link1 : "https://play.google.com/store/apps/details?id=com.nextgen_digitech.myhealth_patients&pcampaignid=web_share",
     },
     aboutus : {
-        link1 : "https://www. youtube. com/embed/NdZ9vPHAy7w",
+        link1 : "https://www.youtube.com/embed/NdZ9vPHAy7w",
     },
     phoneandemail : {
         phone: {
@@ -26,11 +26,11 @@ export const Links = {
             eng: '+8801321119391',
         },
         email: {
-            bang: 'info@nextgenmyhealth. com',
-            eng: 'info@nextgenmyhealth. com',
+            bang: 'info@nextgenmyhealth.com',
+            eng: 'info@nextgenmyhealth.com',
         },
     },
-    doctorapp : "https://patient. nextgenmyhealth. com/doctor/",
+    doctorapp : "https://patient.nextgenmyhealth.com/doctor/",
 }
 
 export const navbarData = {
@@ -45,6 +45,14 @@ export const navbarData = {
     head3: {
         bang: 'বিশেষজ্ঞ ডাক্তার',
         eng: 'Specialties'
+    },
+    head4: {
+        bang: 'ব্লগ',
+        eng: 'Blog'
+    },
+    head5: {
+        bang: 'যোগাযোগ করুন',
+        eng: 'Contact Us'
     },
     btn1: {
         bang: 'পেশেন্ট পোর্টাল',
@@ -144,8 +152,8 @@ export const footerData = {
 
 export const doctorsearchdlgData = {
     head1: {
-        bang: 'বি. এম. ডি. সি:',
-        eng: 'B. M. D. C:',
+        bang: 'বিএমডিসি:',
+        eng: 'BMDC:',
     },
     head2: {
         bang: 'এ-',
@@ -180,7 +188,7 @@ export const doctorsearchdlgData = {
 export const homeData = {
     banner: {
         head1: {
-            bang: 'স্বাগতম আপনাকে',
+            bang: 'আপনাকে স্বাগতম',
             eng: 'Welcome to',
         },
         head2: {
@@ -200,8 +208,8 @@ export const homeData = {
             eng: 'Virtual Care Platform'
         },
         para1: {
-            bang: 'জরুরী সমস্যায় আক্রান্ত রোগীদের জন্য আমরা সর্বদা প্রস্তুত। আপনি যেকোন সময় আমাদের সাথে সহজেই যোগাযোগ করতে পারেন। আমরা সর্বোচ্চ মানের সেবা দেওয়ার চেষ্টা করি।',
-            eng: 'For patients in critical conditions, we are always ready. You can easily reach out to us at any time. We strive to provide the highest quality of service.'
+            bang: 'জরুরি এবং স্বাস্থ্যজনিত যেকোনো সমস্যায় আমরা চিকিৎসা সেবা নিয়ে সর্বদা আপনার পাশে আছি। আপনাকে সঠিক চিকিৎসার মাধ্যমে সুস্বাস্থ্য প্রদান করাই আমাদের কাজের মূলমন্ত্র।',
+            eng: 'We are always by your side with medical care in need of emergency and health-related problem. Providing you with good health through proper treatment is the main principle of our work.'
         },
         btn1: {
             bang: 'অ্যাপয়েন্টমেন্ট নিন',
@@ -218,11 +226,11 @@ export const homeData = {
             eng: 'Our Short Introduction',
         },
         para1: {
-            bang: 'নেক্সটজেন মাইহেলথ ভিসিপি, নেক্সটজেন ডিজিটেক লিমিটেড এর একটি পণ্য, বাংলাদেশের একটি স্বাস্থ্য সেবা প্রদানকারী প্ল্যাটফর্ম। নেক্সটজেন মাইহেলথ ভিসিপি আমেরিকা, ইউরোপ, যুক্তরাজ্য এবং বাংলাদেশের সহস্রাধিক বিএমডিসি নিবন্ধিত বিশেষজ্ঞ চিকিৎসকদের সঙ্গে ঘরে বসে ভিডিও কলের মাধ্যমে পরামর্শ ও স্বাস্থ্যসেবা নেয়া সম্ভব করেছে। প্রযুক্তির নিত্যনতুন উদ্ভাবন ব্যবহার করে স্বাস্থ্যসেবাকে দেশের প্রত্যন্ত অঞ্চল থেকে শহর পর্যন্ত সকলের কাছে পৌঁছে দেয়ার লক্ষ্যে বাংলাদেশে শুরু হয় নেক্সটজেন মাইহেলথ ভিসিপি এর কার্যক্রম।',
-            eng: 'NextGen MyHealth VCP, a product of NextGen DigiTech Ltd. is a healthcare service provider platform in Bangladesh. NextGen MyHealth VCP has made it possible to consult and receive healthcare services through video calls with registered specialist doctors from America, Europe, the United Kingdom, and numerous BMDC registered specialists in Bangladesh. Utilizing cutting-edge technology, NextGen MyHealth VCP aims to reach healthcare services from rural areas to urban areas, commencing in Bangladesh.',
+            bang: 'নেক্সটজেন মাইহেলথ ভিসিপি, নেক্সটজেন ডিজিটেক লিমিটেড এর একটি পণ্য, বাংলাদেশের একটি স্বাস্থ্য সেবা প্রদানকারী প্ল্যাটফর্ম। নেক্সটজেন মাইহেলথ ভিসিপি বাংলাদেশের সহস্রাধিক বিএমডিসি নিবন্ধিত বিশেষজ্ঞ চিকিৎসকদের সঙ্গে ঘরে বসে ভিডিও কলের মাধ্যমে পরামর্শ ও স্বাস্থ্যসেবা নেয়া সম্ভব করেছে। প্রযুক্তির নিত্যনতুন উদ্ভাবন ব্যবহার করে স্বাস্থ্যসেবাকে দেশের প্রত্যন্ত অঞ্চল থেকে শহর পর্যন্ত সকলের কাছে পৌঁছে দেয়ার লক্ষ্যে বাংলাদেশে শুরু হয় নেক্সটজেন মাইহেলথ ভিসিপি এর কার্যক্রম।',
+            eng: 'NextGen MyHealth VCP, a product of NextGen DigiTech Ltd. is a healthcare service provider platform in Bangladesh. NextGen MyHealth VCP has made it possible to consult and receive healthcare services through video calls with numerous BMDC registered specialists in Bangladesh. Utilizing cutting-edge technology, NextGen MyHealth VCP aims to reach healthcare services from rural areas to urban areas, commencing in Bangladesh.',
         },
     },
-    WhyUs: {
+    whyUs: {
         head1: {
             bang: 'কেন আমাদের প্লাটফর্ম ব্যবহার করবেন?',
             eng: 'Why Should You Use Our Platform?',
@@ -256,7 +264,7 @@ export const homeData = {
             eng: 'Cloud-based Data and Privacy Security',
         },
     },
-    SpecialtiesSummary: {
+    specialtiesSummary: {
         head1: {
             bang: 'আমাদের কাছে যে সকল',
             eng: 'We have the following',
@@ -290,14 +298,14 @@ export const homeData = {
             eng: 'See All Specialist Doctors',
         },
     },
-    bookingsteps: {
+    bookingSteps: {
         head1: {
             bang: 'ঘণ্টার পর ঘণ্টা লাইনে দাঁড়িয়ে থাকার দিন শেষ!',
-            eng: '',
+            eng: 'End the days of standing in line for hours!',
         },
         head2: {
             bang: 'পরামর্শ নিন কিছু সহজ পদক্ষেপেই',
-            eng: '',
+            eng: 'Get advice in few simple steps',
         },
         num1: {
             bang: '১',
@@ -340,7 +348,7 @@ export const homeData = {
             eng: 'Log in to the patient portal using your phone number/email and password. If you are new, register yourself using your name, phone number/email, and password through a very simple process.',
         },
         para3: {
-            bang: 'বুক অ্যাপয়েন্টমেন্ট বাটনে ক্লিক করুন এবং আপনার সুবিধাজনক সময় অনুযায়ী ডাক্তারের ডাক্তারের অ্যাপয়েন্টমেন্ট বুক করুন।',
+            bang: 'বুক অ্যাপয়েন্টমেন্ট বাটনে ক্লিক করুন এবং আপনার সুবিধাজনক সময় অনুযায়ী ডাক্তারের অ্যাপয়েন্টমেন্ট বুক করুন।',
             eng: 'Click on the "Book Appointment" button and schedule an appointment with the doctor of your choice based on your convenience.',
         },
         para4: {
@@ -348,7 +356,7 @@ export const homeData = {
             eng: 'Confirm your appointment by making an online payment.',
         },
     },
-    CustomerReview: {
+    customerReview: {
         head1: {
             bang: 'আমাদের ক্লায়েন্টরা কি বলেন',
             eng: 'What Our Clients Say',
@@ -366,19 +374,19 @@ export const homeData = {
             eng: 'Tasnima Waheed',
         },
         para1: {
-            bang: 'আমি খুশি যে বাংলাদেশে এখন বিশ্বমানের অনলাইন চিকিৎসার বিকল্প রয়েছে। এটি আমার মতো অনেক রোগীকে চিকিৎসার জন্য বিদেশে যাওয়ার ভারী ব্যয় বহন না করে স্বাভাবিক জীবনযাপন করার সুযোগ দেয়।',
-            eng: "I am glad that we now have world-class online treatment options available in Bangladesh. This gives a chance to many patients like me to lead normal lives without having to incur heavy expenses of going abroad for the same treatment. ",
+            bang: 'বাংলাদেশে অনলাইন চিকিৎসা ব্যবস্থা আমার মতো অনেক রোগীর জন্য একটি আশীর্বাদ। রাস্তার ব্যয়বহুল যাতায়াত এবং জ্যামজটকে এড়িয়ে সঠিক চিকিৎসা সেবা পাওয়ার এটি একটি নির্ভরযোগ্য প্রতিষ্ঠান। বাড়িতে বসেই কোনরকম জটিলতা ছাড়াই আমি ডাক্তারের সাথে কথা বলেছি এবং চিকিৎসা নিয়েছি। আলহামদুলিল্লাহ, আমি এখন ভালো আছি।',
+            eng: "Online healthcare in Bangladesh is a blessing for many patients like me. It is a reliable institution to get the right medical care without having to deal with the expensive traffic and congestion on the roads. I was able to talk to a doctor and receive treatment from home without any hassle. Alhamdulillah, I am now well.",
         },
         para2: {
-            bang: 'আমি সত্যিই খুশি যে ডাক্তাররা আমার অবস্থা এবং থেরাপি সম্পর্কে আরও জানার সুযোগ দিয়েছেন যা আমাকে চিকিৎসা করতে সাহায্য করেছিল। পিঠের ব্যথা ছাড়াই আমি আমার দৈনন্দিন জীবনে ফিরে এসেছি। আমি অবশেষে শান্তিতে আছি।',
-            eng: "I am really happy that the doctors gave me an opportunity to learn more about my condition and the therapy which helped me undergo the procedure. I'm back to my routine and with no lingering back pain. I'm finally at peace. ",
+            bang: 'আমি এই প্ল্যাটফর্ম ব্যবহার করে চিকিৎসা নিয়েছি। আমি সত্যিই আনন্দিত যে, ডাক্তার আমাকে যথেষ্ট সময় নিয়ে আমার শারীরিক জটিলতার বিষয়গুলো বুঝিয়ে বলেছেন। পরবর্তীতে কি কি ব্যবস্থা গ্রহন করলে আমি এই জটিলতা থেকে মুক্তি পাবো তার পথও সুনিপুণ ভাবে দেখিয়ে দিয়েছেন। তাদের এই পথ চলাকে স্বাগত জানাই এবং এই প্রতিষ্ঠানের সর্বদা উন্নতি কামনা করছি।',
+            eng: "I have received medical care using this platform. I am really happy that the doctor took enough time to explain the details of my physical complications to me. He also showed me the way to get rid of these complications by taking proper measures in the future. I welcome their journey and wish this institution always progress.",
         },
         para3: {
-            bang: 'নেক্সটজেন মাইহেলথ ভিসিপি চিকিৎসার জন্য সেরা অনলাইন প্ল্যাটফর্ম। আমি তাদের একজন ডাক্তার দ্বারা চিকিৎসা করেছি। ডাক্তার খুব ভাল এবং আমার চিকিৎসা করার সময় অনেক যত্ন নেন। এটা সত্যিই একটি ভাল অভিজ্ঞতা ছিল।',
-            eng: "NextGen MyHealth VCP is the best online platform for medical treatment. I have been treated by one of their doctors. The doctor was very good and took great care of me during my treatment. It was truly a good experience. ",
+            bang: 'আমি ব্যক্তি জীবনে কিছুটা ব্যস্ত সময় কাটাই। তাই স্বাস্থ্য সম্পর্কিত যেকোনো সমস্যায় আমি অনলাইনের ওপর নির্ভরশীল। আমার মতে, নেক্সটজেন মাইহেলথ ভিসিপি একটি সেরা প্ল্যাটফর্ম। আমি তাদের প্ল্যাটফর্মের যে ডাক্তারকে দেখিয়েছি, তাকে আমার খুবই যত্নবান মনে হয়েছে। এটি সত্যি আমার জন্য একটি ভালো অভিজ্ঞতা ছিল।',
+            eng: "I am used to be busy in my personal life. So, I rely on online for any health-related problem. In my opinion, NextGen MyHealth VCP is a great platform. The doctor I saw on their platform seemed very caring to me. It was really a good experience for me.",
         },
     },
-    JoinDoctor: {
+    joinDoctor: {
         head1: {
             bang: 'আপনি কি একজন ডাক্তার এবং',
             eng: 'Are you a doctor and',
@@ -409,7 +417,7 @@ export const homeData = {
 }
 
 export const aboutusData = {
-    WhoWeAre: {
+    whoWeAre: {
         head1: {
             bang: 'আমাদের পরিচিতি',
             eng: 'Our Introduction',
@@ -427,7 +435,7 @@ export const aboutusData = {
             eng : 'Virtual Care Platform - NextGen MyHealth VCP'
         },
     },
-    OurAdvantages: {
+    ourAdvantages: {
         head1: {
             bang: 'আমাদের প্ল্যাটফর্ম ব্যবহার করার সুবিধা',
             eng: 'The Advantages of Using Our Platform',
@@ -461,7 +469,7 @@ export const aboutusData = {
             eng: 'Doctor and patient, a collaborative interface for everyone.',
         },
         pointpera2: {
-            bang: 'নেক্সটজেন মাইহেলথ ভিসিপি-তে আছেন দেশ - বিদেশের সকল বিখ্যাত বিশেষজ্ঞ ডাক্তারণ।',
+            bang: 'নেক্সটজেন মাইহেলথ ভিসিপি-তে আছেন দেশ - বিদেশের সকল বিখ্যাত বিশেষজ্ঞ ডাক্তারগণ।',
             eng: 'NexGen MyHealth VCP has renowned specialist doctors from both within the country and abroad.',
         },
         pointpera3: {
@@ -484,7 +492,7 @@ export const aboutusData = {
 }
 
 export const contactusData = {
-    Form: {
+    form: {
         head1: {
             bang: 'যোগাযোগ করুন',
             eng: 'Contact Us',
@@ -529,7 +537,7 @@ export const contactusData = {
 }
 
 export const specialtiesData = {
-    specialtysection: {
+    specialtySection: {
         head1: {
             bang: 'মেডিসিন',
             eng: 'Medicine',
@@ -552,10 +560,10 @@ export const specialtydoctorsData = {
             eng: ' doctors',
         },
     },
-    doctorcard: {
+    doctorCard: {
         head1: {
-            bang: 'বি. এম. ডি. সি ',
-            eng: 'B. M. D. C ',
+            bang: 'বিএমডিসি ',
+            eng: 'BMDC ',
         },
         head2: {
             bang: 'এ-',
@@ -611,8 +619,8 @@ export const specialtyEtoB = {
 export const doctorProfile = {
     banner: {
         head1: {
-            bang: 'বি. এম. ডি. সি: ',
-            eng: 'B. M. D. C: ',
+            bang: 'বিএমডিসি: ',
+            eng: 'BMDC: ',
         },
         head2: {
             bang: 'এ-',

@@ -2,13 +2,13 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { connect } from 'react-redux';
 
-import patient_mobile_app from "../../../assets/images/patient_mobile_app.jpg";
+import patient_mobile_app from "../../../assets/images/patient_mobile_app.jpeg";
 import google_play_store from "../../../assets/images/google_play_store.png";
 import qrcode_download_app from "../../../assets/images/qrcode_download_app.png";
 import colors from "../../../config/colors";
 import { HBox, VBox } from "../../../components/Containers";
 import { H4 } from "../../../components/Typography";
-import { homeData, Links } from '../../../data';
+import { homeData, links } from '../../../data';
 
 const Container = styled(VBox)`
     width: 100%;
@@ -33,7 +33,7 @@ const QRcode = ({ isMobile, language }) => {
             <H4 className="bold pb-2" align="center">{homeData.qrcode.head1[language]}</H4>
             <HBox justify="center"> 
                 <VBox style={{width: "40%"}} justify="center">  
-                    <Link to={Links.qrcode.link1} 
+                    <Link to={links.qrcode.link1} 
                         style={{ textDecoration: 'none', marginLeft: isMobile ? "-8px" : "-4px" }} target='_blank'
                     >
                         <img src={google_play_store} style={{ width: "50%" }}/>

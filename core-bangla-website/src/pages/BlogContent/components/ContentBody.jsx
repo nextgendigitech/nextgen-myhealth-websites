@@ -12,8 +12,6 @@ import { H3, P2, P3 } from "../../../components/Typography";
 import colors from "../../../config/colors";
 import 'react-quill/dist/quill.bubble.css';
 import { blogData } from "../../../data";
-import { Category, Person2Rounded } from "@mui/icons-material";
-
 
 const Chip = styled(HBox)`
     color: ${colors.white};
@@ -36,8 +34,7 @@ const handleEmailShare = () => {
     }
 };
 
-
-const ContentBody = ({id, title, content, isMobile, language, cover_image, blog_category}) => {
+const ContentBody = ({id, title, content, isMobile, language, coverImage, blogCategory}) => {
     const pageUrl = window.location.href;
 
     const quillStyle = {
@@ -67,21 +64,21 @@ const ContentBody = ({id, title, content, isMobile, language, cover_image, blog_
                 {title}
             </H3>
             <VBox justify="center" align="center" className="mb-2">
-                {cover_image?
+                {coverImage?
                     <img
-                        src={`${import.meta.env.VITE_SERVER_URL}${cover_image}`} 
+                        src={`${import.meta.env.VITE_SERVER_URL}${coverImage}`} 
                         style={{height: '200px', width: 'auto'}}
                     /> : <></>
                 }
             </VBox>
-            <ReactQuill value={content} readOnly={true} theme={'bubble'} style={quillStyle} />
+            <ReactQuill value={content} readOnly={true} theme={'bubble'} />
             <HBox className={isMobile ? "mt-2" : "mt-4"}>
-                { blog_category.length != 0 ? (
+                { blogCategory.length != 0 ? (
                 <>
                     <P2 className="mr-1">Category: </P2>
                     <Chip className={isMobile ? "mb-1" : "mb-2"} style={{ justifyContent: isMobile ? "center" : "", 
                                     alignContent: isMobile ? "center" : "" }}>
-                        {blog_category.map((cat, index) => (
+                        {blogCategory.map((cat, index) => (
                             <P2 className="bold px-1 mr-1 mb-1" 
                                 color="white" 
                                 style={{ backgroundColor: colors.blue, borderRadius: "5px" }} 
@@ -117,4 +114,4 @@ const ContentBody = ({id, title, content, isMobile, language, cover_image, blog_
     )
 }
 
-export default ContentBody
+export default ContentBody;

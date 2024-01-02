@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import ClipLoader from "react-spinners/ClipLoader";
 
-import { VBox } from "../../components/Containers";
+import { HBox, VBox } from "../../components/Containers";
 import Header from "./components/Header";
 import Banner from "./components/Banner";
 import Summary from "./components/Summary";
@@ -63,43 +64,56 @@ const DoctorProfile = () => {
             console.log("DOCTOR DETAILS FETCH ERROR", error);
         })
     }
-
+    console.log(doctor)
     return (
         <VBox style={{ width: "100% - 20px", backgroundColor: colors.lightGrey }} className={isMobile ? "pb-3" : "pb-8"}>
             <Header isMobile={isMobile}/>
-            <VBox style={{ paddingLeft: isMobile ? "20px" : "100px", paddingRight: isMobile ? "20px" : "100px" }}>
-                <Banner
-                    isMobile={isMobile}
-                    id={doctor?.id}
-                    name={doctor?.name}
-                    is_online={doctor?.is_online}
-                    bmdc={doctor?.bmdc}
-                    image={doctor?.image}
-                    doctor_type={doctor?.doctor_type}
-                    qualification={doctor?.qualification}
-                    consultation_fee={doctor?.appointment_config?.fee}
-                    experience={doctor?.experience}
-                    institution={doctor?.affiliation_summary?.length ? doctor.affiliation_summary[0].institution : ""}
-                    designation={doctor?.affiliation_summary?.length ? doctor.affiliation_summary[0].designation : ""}
-                    department={doctor?.affiliation_summary?.length ? doctor.affiliation_summary[0].department : ""}
-                    specialty={doctor?.specialty}
-                />
-                <Summary 
-                    isMobile={isMobile}
-                    id={doctor?.id}
-                    consultation_fee={doctor?.appointment_config?.fee}
-                    followup_fee={doctor?.appointment_config?.followup_fee}
-                    appointment_schedules = {doctor.appointment_schedules && doctor.appointment_schedules.length > 0 ? doctor.appointment_schedules[0].schedule : null}
-                />
-                <Details
-                    isMobile={isMobile}
-                    id={doctor?.id}
-                    attended={doctor?.attended}
-                    created_at={doctor?.created_at?.length ? doctor.created_at : ""}
-                    affiliations={doctor?.affiliations?.length ? doctor.affiliations : ""}
-                    chambers={doctor?.chambers?.length ? doctor.chambers : ""}
-                />
-            </VBox>
+            {
+                isLoading ?
+                <HBox justify="center" align="center" className="p-5">
+                    <ClipLoader
+                        color= {colors.green}
+                        loading={isLoading}
+                        size={100}
+                        aria-label="Loading Spinner"
+                        data-testid="loader"
+                    />
+                </HBox>
+                :
+                <VBox style={{ paddingLeft: isMobile ? "20px" : "100px", paddingRight: isMobile ? "20px" : "100px" }}>
+                    <Banner
+                        isMobile={isMobile}
+                        id={doctor?.id}
+                        name={doctor?.name}
+                        is_online={doctor?.is_online}
+                        bmdc={doctor?.bmdc}
+                        image={doctor?.image}
+                        doctor_type={doctor?.doctor_type}
+                        qualification={doctor?.qualification}
+                        consultation_fee={doctor?.appointment_config?.fee}
+                        experience={doctor?.experience}
+                        institution={doctor?.affiliation_summary?.length ? doctor.affiliation_summary[0].institution : ""}
+                        designation={doctor?.affiliation_summary?.length ? doctor.affiliation_summary[0].designation : ""}
+                        department={doctor?.affiliation_summary?.length ? doctor.affiliation_summary[0].department : ""}
+                        specialty={doctor?.specialty}
+                    />
+                    <Summary 
+                        isMobile={isMobile}
+                        id={doctor?.id}
+                        consultation_fee={doctor?.appointment_config?.fee}
+                        followup_fee={doctor?.appointment_config?.followup_fee}
+                        appointment_schedules = {doctor.appointment_schedules && doctor.appointment_schedules.length > 0 ? doctor.appointment_schedules[0].schedule : null}
+                    />
+                    <Details
+                        isMobile={isMobile}
+                        id={doctor?.id}
+                        attended={doctor?.attended}
+                        created_at={doctor?.created_at?.length ? doctor.created_at : ""}
+                        affiliations={doctor?.affiliations?.length ? doctor.affiliations : ""}
+                        chambers={doctor?.chambers?.length ? doctor.chambers : ""}
+                    />
+                </VBox>
+            }
         </VBox>
     )
 }

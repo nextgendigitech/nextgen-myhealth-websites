@@ -108,26 +108,26 @@ const SpecialtiesSummary = ({ isMobile, language }) => {
             <HBox justify='space-around' align='center'>
                 <VBox className="" align='center' style={{ width: isMobile ? '35%' : '25%' }}>
                     <TitleCard className="p-1 mb-3" justify="center" align='center'>
-                        <P3>{homeData.SpecialtiesSummary.head1[language]}</P3>
-                        <P2 color='third'>{homeData.SpecialtiesSummary.head2[language]}</P2>
-                        <P3>{homeData.SpecialtiesSummary.head3[language]}</P3>
+                        <P3>{homeData.specialtiesSummary.head1[language]}</P3>
+                        <P2 color='third'>{homeData.specialtiesSummary.head2[language]}</P2>
+                        <P3>{homeData.specialtiesSummary.head3[language]}</P3>
                     </TitleCard>
                     <SLink to='/specialties'>
-                        <SButton className='mb-5' color='third' style={{ fontSize: isMobile ? "12px" : "16px" }} elevated>{homeData.SpecialtiesSummary.btn1[language]}</SButton> 
+                        <SButton className='mb-5' color='third' style={{ fontSize: isMobile ? "12px" : "16px" }} elevated>{homeData.specialtiesSummary.btn1[language]}</SButton> 
                     </SLink>
                 </VBox>
                 <VBox align='center' className="" style={{ width: isMobile ? '60%' : '25%' }}>
                     <SLink to='/specialty-doctors/Internal Medicine'>
-                        <SpecialtiesCard className='mt-2' isMobile={isMobile} icon={internal_medicine} name={homeData.SpecialtiesSummary.point1[language]}/>
+                        <SpecialtiesCard className='mt-2' isMobile={isMobile} icon={internal_medicine} name={homeData.specialtiesSummary.point1[language]}/>
                     </SLink>
                     <SLink to='/specialty-doctors/Cardiology'>
-                        <SpecialtiesCard isMobile={isMobile} icon={cardiology} name={homeData.SpecialtiesSummary.point2[language]}/>
+                        <SpecialtiesCard isMobile={isMobile} icon={cardiology} name={homeData.specialtiesSummary.point2[language]}/>
                     </SLink>
                     <SLink to='/specialty-doctors/Respiratory Medicine'>
-                        <SpecialtiesCard isMobile={isMobile} icon={respiratory_medicine} name={homeData.SpecialtiesSummary.point3[language]}/>
+                        <SpecialtiesCard isMobile={isMobile} icon={respiratory_medicine} name={homeData.specialtiesSummary.point3[language]}/>
                     </SLink>
                     <SLink to='/specialty-doctors/Neurology'>
-                        <SpecialtiesCard isMobile={isMobile} icon={neurology} name={homeData.SpecialtiesSummary.point4[language]}/>
+                        <SpecialtiesCard isMobile={isMobile} icon={neurology} name={homeData.specialtiesSummary.point4[language]}/>
                     </SLink>
                     <SLink to='/specialties'>
                         <RoundButton style={{ height: isMobile ? '40px' : '50px', marginTop: isMobile ? '12px' : '24px', marginBottom: isMobile ? '12px' : '24px' }} elevated>
