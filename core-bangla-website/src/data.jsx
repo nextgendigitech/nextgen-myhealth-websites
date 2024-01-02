@@ -33,6 +33,25 @@ export const links = {
     doctorapp : "https://patient.nextgenmyhealth.com/doctor/",
 }
 
+// export const languageData = {
+//     title1: {
+//         bang: "আপনি কি বাংলা ভাষায় পরিবর্তন করতে চান?",
+//         eng: "Do you want to switch to Bangla?",
+//     },
+//     title2: {
+//         bang: "আপনি কি বাংলা ভাষায় পরিবর্তন করতে চান?",
+//         eng: "Do you want to switch to English?",
+//     },
+//     btn1: {
+//         bang: "হ্যাঁ",
+//         eng: "Yes",
+//     },
+//     btn2: {
+//         bang: "না",
+//         eng: "No",
+//     },
+// }
+
 export const navbarData = {
     head1: {
         bang: 'হোম',

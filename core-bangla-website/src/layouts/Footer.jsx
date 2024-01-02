@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import { Link } from "react-router-dom";
 import { connect } from 'react-redux';
 
+import { toggleLang } from "../services/actions/generalAction";
 import { HBox, VBox } from '../components/Containers';
 import { P2, P3, P4 } from '../components/Typography';
 import logo from '../assets/images/Website-Logo.png'
@@ -25,6 +26,12 @@ const FooterContainer2 = styled(HBox)`
     padding-right: 8%;
     background-color: ${colors.lightBlack};
     justify-content: center;
+`
+
+const FooterContainer3 = styled(HBox)`
+    background-color: ${colors.deepMercury};
+    border-radius: 30px 30px 0px 0px;
+
 `
 
 const PhoneIcon = styled(HiOutlinePhone)`
@@ -90,7 +97,7 @@ const SNavLink = styled(NavLink)`
     }
 `
 
-const Footer = ({ language }) => {
+const Footer = ({ language, toggleLang }) => {
     const [openDoctorSearchDlg, setOpenDoctorSearchDlg] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
 
@@ -112,6 +119,14 @@ const Footer = ({ language }) => {
 
         return () => window.removeEventListener('resize', () => setResponsiveness());
     }, []);
+
+    const handleBangla = () => {
+        toggleLang('bang');
+    };
+
+    const handleEnglish = () => {
+        toggleLang('eng');
+    };
 
     const handlePhoneCall = () => {
         window.location.href = `tel:${links.phoneandemail.phone[language]}`;
@@ -186,20 +201,41 @@ const Footer = ({ language }) => {
     )
 
     return (
-        <VBox style={{ backgroundColor: colors.lightGrey }}>
-            <FooterContainer1
-                justify='space-between' 
-                className={isMobile ? 'pb-4' : 'pb-7'} 
-                style={{ paddingLeft: isMobile ? "40px" : "100px", paddingRight: isMobile ? "40px" : "100px" }}>
-                <LogoImage className='mt-4' src={logo} />
-                <HBox justify='space-between'>
-                    {ContactHtml()}
-                    {CompanyHtml()}
-                    {ServiceHtml()}
-                    {PaymentHtml()}
-                </HBox>
-            </FooterContainer1>
-
+        <>
+            <VBox style={{ backgroundColor: colors.lightGrey }}>
+                <FooterContainer1
+                    justify='space-between' 
+                    className='pb-3'
+                    style={{ paddingLeft: isMobile ? "40px" : "100px", paddingRight: isMobile ? "40px" : "100px" }}
+                >
+                    <LogoImage className='mt-4' src={logo} />
+                    <HBox justify='space-between'>
+                        {ContactHtml()}
+                        {CompanyHtml()}
+                        {ServiceHtml()}
+                        {PaymentHtml()}
+                    </HBox>
+                </FooterContainer1>
+            </VBox>
+            <VBox style={{ backgroundColor: colors.mercury }}>
+                <FooterContainer3 justify="center" align="center" className='py-2'>
+                    {language === 'eng' ? (
+                        <>
+                            <P2>
+                                আপনি যদি বাংলা ভাষায় পরিবর্তন করতে চান, তবে এখানে
+                            </P2>
+                            <P2 color="first" className='clickable pl-1' onClick={handleBangla}>ক্লিক করুন!</P2>
+                        </>
+                    ) : (
+                        <>
+                            <P2>
+                                If you want to switch to English language,
+                            </P2>
+                            <P2 color="first" className='clickable pl-1' onClick={handleEnglish}>Click here!</P2>
+                        </>
+                    )}
+                </FooterContainer3>
+            </VBox>
             <FooterContainer2>
                 <VBox align='center'>
                     <HBox className='mt-2 mb-1'>
@@ -229,7 +265,7 @@ const Footer = ({ language }) => {
                 setOpen={setOpenDoctorSearchDlg}
                 isMobile={isMobile}
             />
-        </VBox>
+        </>
     );
 }
 
@@ -237,4 +273,8 @@ const mapStateToProps = state => ({
     language: state.general.language,
 });
 
-export default connect(mapStateToProps, {})(Footer);
+const mapDispatchToProps = {
+    toggleLang,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Footer);
