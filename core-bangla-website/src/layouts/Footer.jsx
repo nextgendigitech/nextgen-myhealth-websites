@@ -30,7 +30,7 @@ const FooterContainer2 = styled(HBox)`
 
 const FooterContainer3 = styled(HBox)`
     background-color: ${colors.deepMercury};
-    border-radius: 30px 30px 0px 0px;
+    /* border-radius: 30px 30px 0px 0px; */
 
 `
 
@@ -222,16 +222,16 @@ const Footer = ({ language, toggleLang }) => {
                     {language === 'eng' ? (
                         <>
                             <P2>
-                                আপনি যদি বাংলা ভাষায় পরিবর্তন করতে চান, তবে এখানে
+                                আপনি যদি বাংলা ভাষায় পরিবর্তন করতে চান, তবে
                             </P2>
-                            <P2 color="first" className='clickable pl-1' onClick={handleBangla}>ক্লিক করুন!</P2>
+                            <P2 color="first" className='clickable pl-1' onClick={handleBangla}>এখানে ক্লিক করুন</P2>
                         </>
                     ) : (
                         <>
                             <P2>
                                 If you want to switch to English language,
                             </P2>
-                            <P2 color="first" className='clickable pl-1' onClick={handleEnglish}>Click here!</P2>
+                            <P2 color="first" className='clickable pl-1' onClick={handleEnglish}>click here</P2>
                         </>
                     )}
                 </FooterContainer3>

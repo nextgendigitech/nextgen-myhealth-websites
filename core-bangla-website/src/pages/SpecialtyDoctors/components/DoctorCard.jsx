@@ -8,7 +8,7 @@ import colors from "../../../config/colors";
 import { Button } from '../../../components/Buttons';
 import { HBox, VBox } from "../../../components/Containers";
 import { P2, P4 } from "../../../components/Typography";
-import { specialtydoctorsData } from '../../../data';
+import { specialtydoctorsData, links } from '../../../data';
 import noImage from '../../../assets/images/no_image.svg';
 
 const CardContainer = styled(HBox)`
@@ -63,7 +63,7 @@ const DoctorCard = ({ id, name, bmdc, qualification, specialty,
                             color='first' 
                             elevated>{specialtydoctorsData.doctorCard.btn1[language]}</Button> 
                     </NavLink>
-                    <Link to={`https://patient.nextgenmyhealth.com/appointment-schedule/${id}`} style={{textDecoration: 'none'}} target='_blank' className={isMobile ? "mb-1" : ""}>
+                    <Link to={links.appointmentschedule+id} style={{textDecoration: 'none'}} target='_blank' className={isMobile ? "mb-1" : ""}>
                         <Button 
                             style={{ fontSize: "14px", width: "fit-content", borderRadius: 25, height: isMobile ? 25 : 37 }}
                             color='third' 

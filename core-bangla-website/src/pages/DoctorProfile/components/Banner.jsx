@@ -9,6 +9,7 @@ import { P1, P2, P3, P4 } from "../../../components/Typography";
 import colors from "../../../config/colors";
 import { doctorProfile } from "../../../data";
 import { specialtyEtoB } from "../../../data";
+import { links } from "../../../data";
 
 
 const BannerCard = styled(VBox)`
@@ -131,7 +132,7 @@ const Banner = ({id, image, name, bmdc, doctor_type, qualification, specialty, e
                         }
                     </HBox>
                     <HBox justify={isMobile ? "center" : "flex-end"}>
-                        <Link to={`https://patient.nextgenmyhealth.com/appointment-schedule/${id}`} style={{textDecoration: 'none'}} target='_blank'>
+                        <Link to={links.appointmentschedule+id} style={{textDecoration: 'none'}} target='_blank'>
                             <Button
                                     className={isMobile ? "" : "mb-2"}
                                     color="third"
