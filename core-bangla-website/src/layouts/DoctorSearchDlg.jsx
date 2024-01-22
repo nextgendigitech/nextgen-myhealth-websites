@@ -244,7 +244,7 @@ const DoctorSearchDlg = ({ open, setOpen, isMobile, language }) => {
                     {doctors.length ?
                         <VBox>
                             {doctors.map((doctor, index) => (
-                                <SLink to={links.doctorapp+doctor.id} target='_blank'>
+                                <SLink to={links.appointmentschedule+doctor.id} target='_blank'>
                                     <DoctorCard
                                         index={index}
                                         id={doctor.id}

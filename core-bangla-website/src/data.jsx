@@ -30,7 +30,7 @@ export const links = {
             eng: 'info@nextgenmyhealth.com',
         },
     },
-    doctorapp : "https://patient.nextgenmyhealth.com/doctor/",
+    appointmentschedule: "https://patient.nextgenmyhealth.com/appointment-schedule/",
 }
 
 // export const languageData = {
@@ -231,8 +231,8 @@ export const homeData = {
             eng: 'We are always by your side with medical care in need of emergency and health-related problem. Providing you with good health through proper treatment is the main principle of our work.'
         },
         btn1: {
-            bang: 'অ্যাপয়েন্টমেন্ট নিন',
-            eng: 'Book Appointment',
+            bang: 'আমাদের বিশেষজ্ঞগণ',
+            eng: 'Our Specialists',
         },
     },
     shortIntro: {
