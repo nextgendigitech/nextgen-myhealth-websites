@@ -6,7 +6,7 @@ import { H1, P2 } from '../../../components/Typography';
 import bkash_image from '../../../assets/images/bkash_image.png';
 import colors from '../../../config/colors';
 import responsive from '../../../config/responsive';
-import { payment } from '../../../data';
+import { payment, links } from '../../../data';
 
 const Container = styled(VBox)`
 `
@@ -51,22 +51,22 @@ const PaymentMethods = ({ isMobile, language }) => {
     const Bank = () => (
         <BankPayment align='center' style={{ width: isMobile ? '100%' : '50%', marginTop: isMobile ? '0px' : '30px' }}>
             <Circle className='mt-8' justify='center' align='center'><H1 className='bold'>B</H1></Circle>
-            <P2 className='mt-5 bold'>নগদ/চেক/ব্যাঙ্ক আমানত</P2>
-            <P2 className='mt-3 bold'>নেক্সটজেন ডিজিটেক লিমিটেড</P2>
-            <P2 className='mt-3 bold'>অ্যাকাউন্ট নম্বর: 2104174034072</P2>
-            <P2 className='mt-3 bold'>সুইফট কোড: PRBLBDDH001</P2>
-            <P2 className='mt-3 bold'>প্রাইম ব্যাংক লিমিটেড</P2>
-            <P2 className='bold'>আদমজী কোর্ট অ্যানেক্স বিল্ডিং ২, ১১৯-১২০</P2>
-            <P2 className='bold'>মতিঝিল সি/এ, ঢাকা ১০০০, বাংলাদেশ</P2>
+            <P2 className='mt-5 bold'>{payment.method.para11[language]}</P2>
+            <P2 className='mt-3 bold'>{payment.method.para20[language]}</P2>
+            <P2 className='mt-3 bold'>{payment.method.para12[language]}</P2>
+            <P2 className='mt-3 bold'>{payment.method.para13[language]}</P2>
+            <P2 className='mt-3 bold'>{payment.method.para14[language]}</P2>
+            <P2 className='bold'>{payment.method.para15[language]}</P2>
+            <P2 className='bold'>{payment.method.para16[language]}</P2>
         </BankPayment>
     )
 
     const Bkash = () => (
         <BkashPayment style={{ width: isMobile ? '100%' : '45%', marginTop: isMobile ? '30px' : '30px' }} align='center'>
             <img className='mt-8' src={bkash_image} style={{width: '55%'}} />
-            <P2 className='mt-3 bold'>বিকাশ নম্বর:</P2>
-            <P2 className='mt-3 bold'>+৮৮০ ১৩২১১১৯৩৯১৮৩</P2>
-            <P2 className='mt-3 bold'>প্রকার: মার্চেন্ট অ্যাকাউন্ট</P2>
+            <P2 className='mt-3 bold'>{payment.method.para17[language]}</P2>
+            <P2 className='mt-3 bold'>{links.phoneandemail.phone[language]}</P2>
+            <P2 className='mt-3 bold'>{payment.method.para18[language]}</P2>
         </BkashPayment>
     )
 
@@ -95,8 +95,8 @@ const PaymentMethods = ({ isMobile, language }) => {
             }
         </Container>
 
-        <PaymentHelp justify='center' style={{ marginTop: isMobile ? '60px' : '100px' }}>
-            <P2 className='bold' color='second'>আপনি যদি পেমেন্ট সংক্রান্ত কোনো সমস্যার সম্মুখীন হন, তাহলে অনুগ্রহ করে +৮৮০ ১৩২১১১৯৩৯১ এ কল করুন</P2>
+        <PaymentHelp justify='center' style={{ marginTop: isMobile ? '60px' : '100px', marginBottom: isMobile ? '60px' : '100px' }}>
+            <P2 className='bold' color='second'>{payment.method.para19[language]}</P2>
         </PaymentHelp>
         </>
     );

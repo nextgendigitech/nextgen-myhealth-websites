@@ -441,13 +441,13 @@ export const aboutusData = {
             bang: 'আমাদের পরিচিতি',
             eng: 'Our Introduction',
         },
-        para1: {
-            bang: 'নেক্সটজেন ডিজিটেক লিমিটেড একটি বেসরকারি গবেষণা-ভিত্তিক কোম্পানি যা ডাক্তার, চিকিৎসা বিশেষজ্ঞ, গবেষক এবং আইটি বিশেষজ্ঞদের একটি দল নিয়ে গঠিত। নেক্সটজেন ডিজিটেক, রোগী এবং ডাক্তার উভয়ের উন্নয়নের জন্য প্রতিনিয়ত আপসহীনভাবে কাজ করে যাচ্ছে। নেক্সটজেন মাইহেলথ ভিসিপি নেক্সটজেন ডিজিটেক লিমিটেড বাংলাদেশের একটি স্বাস্থ্য পণ্য। এটির উদ্ভাবনী ভার্চুয়াল স্বাস্থ্যসেবা প্ল্যাটফর্ম বাংলাদেশের জনগণের স্বাস্থ্যসেবা বিষয়ক ভোগান্তি কমাতে বদ্ধপরিকর।',
-            eng: 'NextGen Digitech Ltd. is a private research-based company that brings together a team of doctors, medical specialists, researchers, and IT experts. NextGen Digitech consistently works to enhance both patient and doctor experiences. NextGen MyHealth VCP is a health product of NextGen Digitech Ltd. It is an innovative virtual healthcare platform aiming to reduce the burden on the public regarding healthcare services in Bangladesh.',
-        },
         para2: {
             bang: 'নেক্সটজেন ডিজিটেক লিমিটেড একটি বেসরকারি গবেষণা-ভিত্তিক কোম্পানি যা ডাক্তার, চিকিৎসা বিশেষজ্ঞ, গবেষক এবং আইটি বিশেষজ্ঞদের একটি দল নিয়ে গঠিত। নেক্সটজেন ডিজিটেক, রোগী এবং ডাক্তার উভয়ের উন্নয়নের জন্য প্রতিনিয়ত আপসহীনভাবে কাজ করে যাচ্ছে। নেক্সটজেন মাইহেলথ ভিসিপি নেক্সটজেন ডিজিটেক লিমিটেড বাংলাদেশের একটি স্বাস্থ্য পণ্য। এটির উদ্ভাবনী ভার্চুয়াল স্বাস্থ্যসেবা প্ল্যাটফর্ম বাংলাদেশের জনগণের স্বাস্থ্যসেবা বিষয়ক ভোগান্তি কমাতে বদ্ধপরিকর।',
             eng: 'NextGen Digitech Ltd. is a private research-based company that brings together a team of doctors, medical specialists, researchers, and IT experts. NextGen Digitech consistently works to enhance both patient and doctor experiences. NextGen MyHealth VCP is a health product of NextGen Digitech Ltd. It is an innovative virtual healthcare platform aiming to reduce the burden on the public regarding healthcare services in Bangladesh.',
+        },
+        para1: {
+            bang: 'নেক্সটজেন ডিজিটেক লিমিটেড একটি বেসরকারি গবেষণা-ভিত্তিক কোম্পানি যা বিশেষজ্ঞ ডাক্তার, গবেষক এবং আইটি বিশেষজ্ঞদের একটি দল নিয়ে গঠিত। নেক্সটজেন ডিজিটেক, রোগী এবং ডাক্তার উভয়ের উন্নয়নের জন্য প্রতিনিয়ত আপসহীনভাবে কাজ করে যাচ্ছে। নেক্সটজেন মাইহেলথ ভিসিপি নেক্সটজেন ডিজিটেক লিমিটেড বাংলাদেশের একটি স্বাস্থ্যসেবা। এটি একটি উদ্ভাবনী ভার্চুয়াল স্বাস্থ্যসেবা প্ল্যাটফর্ম যার লক্ষ্য স্বাস্থ্যসেবা সংক্রান্ত বিষয়ে বাংলাদেশের জনসাধারণের চাপ কমানো।',
+            eng: 'NextGen Digitech Ltd. is a private research-based company that brings together a team of medical specialists, researchers, and IT experts. NextGen Digitech consistently works to enhance both patient and doctor experiences. NextGen MyHealth VCP is a health service of NextGen Digitech Ltd. It is an innovative virtual healthcare platform aiming to reduce the burden on the public regarding healthcare services in Bangladesh.',
         },
         title1 : {
             bang : 'ভার্চুয়াল কেয়ার প্লাটফর্ম - নেক্সটজেন মাইহেলথ ভিসিপি',
@@ -818,27 +818,27 @@ export const payment = {
         },
         para15 : {
             bang: 'আদমজী কোর্ট অ্যানেক্স বিল্ডিং ২, ১১৯-১২০',
-            eng: 'Adamjee Court Annex Building 2, 119-120 Motijheel C/A,',
+            eng: 'Adamjee Court Annex Building 2, 119-120',
         },
         para16 : {
             bang: 'মতিঝিল সি/এ, ঢাকা ১০০০, বাংলাদেশ',
-            eng: '',
+            eng: 'Motijheel C/A, Dhaka 1000, Bangladesh',
         },
         para17 : {
             bang: 'বিকাশ নম্বর:',
-            eng: '',
+            eng: 'Bkash Number: ',
         },
         para18 : {
             bang: 'প্রকার: মার্চেন্ট অ্যাকাউন্ট',
-            eng: '',
+            eng: 'Type: Merchant Account',
         },
         para19 : {
             bang: 'আপনি যদি পেমেন্ট সংক্রান্ত কোনো সমস্যার সম্মুখীন হন, তাহলে অনুগ্রহ করে +৮৮০ ১৩২১১১৯৩৯১ এ কল করুন',
-            eng: '',
+            eng: 'If you face any problem regarding payment, please call on +880 1321119391',
         },
         para20 : {
-            bang: '',
-            eng: '',
+            bang: 'নেক্সটজেন ডিজিটেক লিমিটেড',
+            eng: 'NextGen DigiTech Ltd.',
         },
     },
 }
