@@ -65,7 +65,7 @@ const PaymentMethods = ({ isMobile, language }) => {
         <BkashPayment style={{ width: isMobile ? '100%' : '45%', marginTop: isMobile ? '30px' : '30px' }} align='center'>
             <img className='mt-8' src={bkash_image} style={{width: '55%'}} />
             <P2 className='mt-3 bold'>{payment.method.para17[language]}</P2>
-            <P2 className='mt-3 bold'>{links.phoneandemail.phone[language]}</P2>
+            <P2 className='mt-3 bold'>{links.phoneandemail.bkash[language]}</P2>
             <P2 className='mt-3 bold'>{payment.method.para18[language]}</P2>
         </BkashPayment>
     )

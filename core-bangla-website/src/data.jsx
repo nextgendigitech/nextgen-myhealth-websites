@@ -25,6 +25,10 @@ export const links = {
             bang: '+৮৮০১৩২১১১৯৩৯১',
             eng: '+8801321119391',
         },
+        bkash: {
+            bang: '+৮৮০১৩২১১১৯৩৮৩',
+            eng: '+8801321119383',
+        },
         email: {
             bang: 'info@nextgenmyhealth.com',
             eng: 'info@nextgenmyhealth.com',
